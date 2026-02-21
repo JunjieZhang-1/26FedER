@@ -1,0 +1,13 @@
+# 忽略整个数据集文件夹（推荐）
+data/
+
+# 忽略所有压缩包文件
+*.tar.gz
+*.zip
+
+# 忽略 Python 运行产生的缓存文件（顺手加上，保持仓库干净）
+__pycache__/
+*.pyc
+*.pycdata/
+*.tar.gz
+*.zip
