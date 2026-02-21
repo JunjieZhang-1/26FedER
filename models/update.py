@@ -457,7 +457,9 @@ class LocalUpdateFedRN(BaseLocalUpdate):
         不使用 neighbor_list，仅使用 GMM 筛选出的干净样本进行训练。
         """
         # 1. 拟合 GMM 获取概率
-        prob = self.fit_gmm(net)
+        #prob = self.fit_gmm(net)
+        # 注意：这里必须使用 self.net1 进行 fit_gmm，因为它代表了全局最新的共识知识
+        prob = self.fit_gmm(self.net1)
 
         # 2. 获取干净样本索引
         pred_clean_idx, _ = self.get_clean_idx(prob)

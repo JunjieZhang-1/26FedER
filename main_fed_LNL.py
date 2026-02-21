@@ -923,7 +923,7 @@ if __name__ == '__main__':
                     )
                     # 在此简单实现中，Edge聚合暂只处理模型1 (w)，如需处理 w2 需扩展代码
                 else:
-                    # 兼容 Default 方法
+                    # 兼容 Default 方法net_glob.load_state_dict(w_glob)
                     w, loss = local.train(net_local)
 
                 client_weights_list.append(w)
@@ -944,7 +944,10 @@ if __name__ == '__main__':
         if len(edge_weights_list) > 0:
             w_glob = FedAvg(edge_weights_list)
             net_glob.load_state_dict(w_glob)
-
+            # 必须遍历所有客户端对象，将最新的全局权重 w_glob 同步到它们的 net1 中
+            # 这样在下一轮 epoch 开始时，fit_gmm(self.net1) 才能基于最新的模型进行筛选
+            for i in range(args.num_users):
+                local_update_objects[i].net1.load_state_dict(w_glob)
         # ========================= [循环结束] =========================
 
         # ========================= [测试与日志输出] =========================
