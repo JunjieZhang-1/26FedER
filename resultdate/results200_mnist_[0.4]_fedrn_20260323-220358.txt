@@ -1,0 +1,76 @@
+Experiment Start: 20260323-220358
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='mnist', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=200, fed_method='fedavg', forget_rate=0.2, frac=0.4, gpu=0, group_noise_rate=[0.4], iid=False, labeling='soft', lambda_u=25, local_bs=10, local_ep=4, lr=0.01, lr_decay=0.1, method='fedrn', mm_alpha=4, model='cnn_mnist', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=1, num_classes=10, num_edges=5, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, warmup_epochs=200, weight_decay=0)
+==================================================
+Round   0
+train_acc: 16.035000 - train_loss: 2.270524 - test_acc: 20.210000 - test_loss: 2.246485
+------------------------------
+Round   1
+train_acc: 29.190000 - train_loss: 2.228745 - test_acc: 43.490000 - test_loss: 2.168382
+------------------------------
+Round   2
+train_acc: 33.175000 - train_loss: 2.185195 - test_acc: 52.300000 - test_loss: 2.085507
+------------------------------
+Round   3
+train_acc: 34.908333 - train_loss: 2.160086 - test_acc: 55.490000 - test_loss: 2.039386
+------------------------------
+Round   4
+train_acc: 39.538333 - train_loss: 2.128021 - test_acc: 63.110000 - test_loss: 1.977535
+------------------------------
+Round   5
+train_acc: 39.448333 - train_loss: 2.109947 - test_acc: 63.420000 - test_loss: 1.942063
+------------------------------
+Round   6
+train_acc: 44.363333 - train_loss: 2.092757 - test_acc: 71.940000 - test_loss: 1.907243
+------------------------------
+Round   7
+train_acc: 45.576667 - train_loss: 2.085979 - test_acc: 73.570000 - test_loss: 1.894585
+------------------------------
+Round   8
+train_acc: 51.388333 - train_loss: 2.061963 - test_acc: 84.910000 - test_loss: 1.848812
+------------------------------
+Round   9
+train_acc: 44.076667 - train_loss: 2.063316 - test_acc: 70.850000 - test_loss: 1.849216
+------------------------------
+Round  10
+train_acc: 44.731667 - train_loss: 2.055127 - test_acc: 72.040000 - test_loss: 1.834144
+------------------------------
+Round  11
+train_acc: 46.741667 - train_loss: 2.048136 - test_acc: 76.520000 - test_loss: 1.818485
+------------------------------
+Round  12
+train_acc: 49.396667 - train_loss: 2.035913 - test_acc: 81.440000 - test_loss: 1.796628
+------------------------------
+Round  13
+train_acc: 49.201667 - train_loss: 2.038043 - test_acc: 80.910000 - test_loss: 1.800108
+------------------------------
+Round  14
+train_acc: 52.531667 - train_loss: 2.032790 - test_acc: 86.620000 - test_loss: 1.793237
+------------------------------
+Round  15
+train_acc: 52.701667 - train_loss: 2.025823 - test_acc: 87.410000 - test_loss: 1.778828
+------------------------------
+Round  16
+train_acc: 48.181667 - train_loss: 2.020184 - test_acc: 78.570000 - test_loss: 1.766517
+------------------------------
+Round  17
+train_acc: 52.588333 - train_loss: 2.007441 - test_acc: 86.840000 - test_loss: 1.742256
+------------------------------
+Round  18
+train_acc: 52.703333 - train_loss: 2.011404 - test_acc: 87.110000 - test_loss: 1.751323
+------------------------------
+Round  19
+train_acc: 51.435000 - train_loss: 2.005223 - test_acc: 84.870000 - test_loss: 1.739114
+------------------------------
+Round  20
+train_acc: 52.825000 - train_loss: 2.002404 - test_acc: 86.750000 - test_loss: 1.733832
+------------------------------
+Round  21
+train_acc: 53.958333 - train_loss: 2.002402 - test_acc: 89.190000 - test_loss: 1.734687
+------------------------------
+Round  22
+train_acc: 53.648333 - train_loss: 1.998466 - test_acc: 88.830000 - test_loss: 1.726114
+------------------------------
+Round  23
+train_acc: 54.980000 - train_loss: 1.997837 - test_acc: 91.190000 - test_loss: 1.727183
+------------------------------

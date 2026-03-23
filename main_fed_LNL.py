@@ -862,8 +862,8 @@ if __name__ == '__main__':
     for i in range(NUM_EDGES):
         edge_clients_map[i] = all_client_ids[i * CLIENTS_PER_EDGE: (i + 1) * CLIENTS_PER_EDGE]
 
-    print(f"\nStructure: {NUM_EDGES} Edge Servers, {CLIENTS_PER_EDGE} Clients per Edge.")
-    print("Start Hierarchical Training (Client-Edge-Cloud)...\n")
+    print(f"\nStructure: {NUM_EDGES} 边缘服务器 ，每个服务器{CLIENTS_PER_EDGE}个客户端 .")
+    print("开始分层训练（客户端 - 边缘 - 云端）\n")
 
     ##############################
     # Training Loop (Client-Edge-Cloud)
@@ -883,7 +883,9 @@ if __name__ == '__main__':
         # ========================= [重构为三层循环结构] =========================
         # 存储每个 Edge 聚合后的模型 (用于最后 Cloud 聚合)
         edge_weights_list = []
-        edge_losses_list = []
+        edge_losses_list = [
+
+        ]
 
         # --- 第一层循环: 遍历每个 Edge Server ---
         for edge_id in range(NUM_EDGES):
