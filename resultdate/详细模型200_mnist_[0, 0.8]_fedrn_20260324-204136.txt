@@ -1,0 +1,16 @@
+Experiment Start: 20260324-204136
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='mnist', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=200, fed_method='fedavg', forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[0, 0.8], iid=False, labeling='soft', lambda_u=25, local_bs=50, local_ep=4, lr=0.01, lr_decay=0.1, method='fedrn', mm_alpha=4, model='cnn_mnist', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=1, num_classes=10, num_edges=5, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, warmup_epochs=60, weight_decay=0)
+==================================================
+Round   0
+  --> [Edge Server 4] Test Acc: 8.52% | Test Loss: 2.297905
+train_acc: 13.496667 - train_loss: 2.293376 - test_acc: 14.610000 - test_loss: 2.285991
+------------------------------
+Round   1
+  --> [Edge Server 4] Test Acc: 19.37% | Test Loss: 2.281828
+train_acc: 9.418333 - train_loss: 2.292494 - test_acc: 9.600000 - test_loss: 2.258143
+------------------------------
+Round   2
+  --> [Edge Server 4] Test Acc: 24.56% | Test Loss: 2.248075
+train_acc: 13.570000 - train_loss: 2.265172 - test_acc: 16.500000 - test_loss: 2.197923
+------------------------------

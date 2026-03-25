@@ -1,0 +1,156 @@
+Experiment Start: 20260325-151007
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=300, fed_method='fedavg', forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[0, 0.4], iid=False, labeling='soft', lambda_u=25, local_bs=50, local_ep=4, lr=0.01, lr_decay=0.1, method='fedrn', mm_alpha=4, model='cnn4conv', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=5, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, warmup_epochs=300, weight_decay=0)
+==================================================
+Round   0
+  --> [Edge Server 0] Test Acc: 15.41% | Test Loss: 3.907314
+  --> [Edge Server 1] Test Acc: 10.73% | Test Loss: 2.886643
+  --> [Edge Server 2] Test Acc: 19.68% | Test Loss: 2.619305
+  --> [Edge Server 3] Test Acc: 14.94% | Test Loss: 2.492640
+  --> [Edge Server 4] Test Acc: 16.88% | Test Loss: 2.448111
+train_acc: 15.362000 - train_loss: 2.344239 - test_acc: 16.470000 - test_loss: 2.329609
+------------------------------
+Round   1
+  --> [Edge Server 0] Test Acc: 21.22% | Test Loss: 2.614830
+  --> [Edge Server 1] Test Acc: 16.80% | Test Loss: 2.741209
+  --> [Edge Server 2] Test Acc: 20.08% | Test Loss: 2.515724
+  --> [Edge Server 3] Test Acc: 14.84% | Test Loss: 2.542657
+  --> [Edge Server 4] Test Acc: 13.57% | Test Loss: 2.491183
+train_acc: 19.094000 - train_loss: 2.244070 - test_acc: 23.880000 - test_loss: 2.193991
+------------------------------
+Round   2
+  --> [Edge Server 0] Test Acc: 24.77% | Test Loss: 2.679585
+  --> [Edge Server 1] Test Acc: 20.18% | Test Loss: 2.475507
+  --> [Edge Server 2] Test Acc: 15.07% | Test Loss: 3.124396
+  --> [Edge Server 3] Test Acc: 10.88% | Test Loss: 2.688345
+  --> [Edge Server 4] Test Acc: 17.74% | Test Loss: 2.502719
+train_acc: 20.304000 - train_loss: 2.257841 - test_acc: 22.400000 - test_loss: 2.207334
+------------------------------
+Round   3
+  --> [Edge Server 0] Test Acc: 20.98% | Test Loss: 2.705109
+  --> [Edge Server 1] Test Acc: 10.40% | Test Loss: 3.174154
+  --> [Edge Server 2] Test Acc: 17.59% | Test Loss: 2.685107
+  --> [Edge Server 3] Test Acc: 20.62% | Test Loss: 2.341179
+  --> [Edge Server 4] Test Acc: 17.36% | Test Loss: 2.656333
+train_acc: 17.198000 - train_loss: 2.195113 - test_acc: 22.680000 - test_loss: 2.083276
+------------------------------
+Round   4
+  --> [Edge Server 0] Test Acc: 21.89% | Test Loss: 2.615941
+  --> [Edge Server 1] Test Acc: 16.71% | Test Loss: 2.790578
+  --> [Edge Server 2] Test Acc: 22.88% | Test Loss: 2.321048
+  --> [Edge Server 3] Test Acc: 16.90% | Test Loss: 2.325824
+  --> [Edge Server 4] Test Acc: 15.62% | Test Loss: 2.364740
+train_acc: 19.920000 - train_loss: 2.197857 - test_acc: 22.820000 - test_loss: 2.108736
+------------------------------
+Round   5
+  --> [Edge Server 0] Test Acc: 10.12% | Test Loss: 3.461171
+  --> [Edge Server 1] Test Acc: 14.47% | Test Loss: 3.094482
+  --> [Edge Server 2] Test Acc: 25.61% | Test Loss: 2.332227
+  --> [Edge Server 3] Test Acc: 16.91% | Test Loss: 2.262308
+  --> [Edge Server 4] Test Acc: 21.82% | Test Loss: 2.159338
+train_acc: 16.228000 - train_loss: 2.240124 - test_acc: 20.100000 - test_loss: 2.139685
+------------------------------
+Round   6
+  --> [Edge Server 0] Test Acc: 20.34% | Test Loss: 2.595780
+  --> [Edge Server 1] Test Acc: 15.82% | Test Loss: 2.969164
+  --> [Edge Server 2] Test Acc: 15.91% | Test Loss: 2.582670
+  --> [Edge Server 3] Test Acc: 19.65% | Test Loss: 2.385942
+  --> [Edge Server 4] Test Acc: 20.60% | Test Loss: 2.235429
+train_acc: 21.760000 - train_loss: 2.182162 - test_acc: 25.940000 - test_loss: 2.090589
+------------------------------
+Round   7
+  --> [Edge Server 0] Test Acc: 23.67% | Test Loss: 2.626670
+  --> [Edge Server 1] Test Acc: 17.11% | Test Loss: 3.002924
+  --> [Edge Server 2] Test Acc: 22.55% | Test Loss: 2.191949
+  --> [Edge Server 3] Test Acc: 20.32% | Test Loss: 2.287403
+  --> [Edge Server 4] Test Acc: 22.83% | Test Loss: 2.195695
+train_acc: 18.572000 - train_loss: 2.152723 - test_acc: 21.360000 - test_loss: 2.062624
+------------------------------
+Round   8
+  --> [Edge Server 0] Test Acc: 22.27% | Test Loss: 3.569302
+  --> [Edge Server 1] Test Acc: 12.83% | Test Loss: 3.107822
+  --> [Edge Server 2] Test Acc: 12.39% | Test Loss: 2.767434
+  --> [Edge Server 3] Test Acc: 20.79% | Test Loss: 2.263365
+  --> [Edge Server 4] Test Acc: 10.33% | Test Loss: 2.494377
+train_acc: 22.020000 - train_loss: 2.132361 - test_acc: 27.020000 - test_loss: 2.016657
+------------------------------
+Round   9
+  --> [Edge Server 0] Test Acc: 24.56% | Test Loss: 2.643628
+  --> [Edge Server 1] Test Acc: 13.25% | Test Loss: 2.907220
+  --> [Edge Server 2] Test Acc: 16.72% | Test Loss: 2.492852
+  --> [Edge Server 3] Test Acc: 23.56% | Test Loss: 2.236353
+  --> [Edge Server 4] Test Acc: 14.29% | Test Loss: 2.385194
+train_acc: 24.258000 - train_loss: 2.130535 - test_acc: 28.950000 - test_loss: 2.014343
+------------------------------
+Round  10
+  --> [Edge Server 0] Test Acc: 17.35% | Test Loss: 3.501097
+  --> [Edge Server 1] Test Acc: 15.62% | Test Loss: 3.011760
+  --> [Edge Server 2] Test Acc: 19.21% | Test Loss: 2.488268
+  --> [Edge Server 3] Test Acc: 19.77% | Test Loss: 2.162639
+  --> [Edge Server 4] Test Acc: 27.29% | Test Loss: 2.079208
+train_acc: 21.652000 - train_loss: 2.190188 - test_acc: 25.380000 - test_loss: 2.050439
+------------------------------
+Round  11
+  --> [Edge Server 0] Test Acc: 26.80% | Test Loss: 2.456780
+  --> [Edge Server 1] Test Acc: 16.53% | Test Loss: 2.960935
+  --> [Edge Server 2] Test Acc: 27.48% | Test Loss: 2.194925
+  --> [Edge Server 3] Test Acc: 16.55% | Test Loss: 2.266528
+  --> [Edge Server 4] Test Acc: 19.07% | Test Loss: 2.161777
+train_acc: 27.942000 - train_loss: 2.083292 - test_acc: 34.210000 - test_loss: 1.939494
+------------------------------
+Round  12
+  --> [Edge Server 0] Test Acc: 27.98% | Test Loss: 2.471741
+  --> [Edge Server 1] Test Acc: 23.21% | Test Loss: 2.336084
+  --> [Edge Server 2] Test Acc: 16.96% | Test Loss: 2.531124
+  --> [Edge Server 3] Test Acc: 18.17% | Test Loss: 2.189144
+  --> [Edge Server 4] Test Acc: 26.87% | Test Loss: 2.086803
+train_acc: 28.998000 - train_loss: 2.075048 - test_acc: 35.400000 - test_loss: 1.927971
+------------------------------
+Round  13
+  --> [Edge Server 0] Test Acc: 27.46% | Test Loss: 2.541839
+  --> [Edge Server 1] Test Acc: 24.08% | Test Loss: 2.459254
+  --> [Edge Server 2] Test Acc: 25.89% | Test Loss: 2.159021
+  --> [Edge Server 3] Test Acc: 18.57% | Test Loss: 2.287368
+  --> [Edge Server 4] Test Acc: 21.97% | Test Loss: 2.298766
+train_acc: 26.126000 - train_loss: 2.067770 - test_acc: 32.480000 - test_loss: 1.928626
+------------------------------
+Round  14
+  --> [Edge Server 0] Test Acc: 20.67% | Test Loss: 2.472176
+  --> [Edge Server 1] Test Acc: 15.40% | Test Loss: 2.865361
+  --> [Edge Server 2] Test Acc: 25.75% | Test Loss: 2.212986
+  --> [Edge Server 3] Test Acc: 14.38% | Test Loss: 2.661569
+  --> [Edge Server 4] Test Acc: 24.29% | Test Loss: 2.119639
+train_acc: 24.270000 - train_loss: 2.137563 - test_acc: 29.270000 - test_loss: 1.991892
+------------------------------
+Round  15
+  --> [Edge Server 0] Test Acc: 15.37% | Test Loss: 3.013991
+  --> [Edge Server 1] Test Acc: 24.10% | Test Loss: 2.300028
+  --> [Edge Server 2] Test Acc: 27.53% | Test Loss: 2.148723
+  --> [Edge Server 3] Test Acc: 27.31% | Test Loss: 2.087758
+  --> [Edge Server 4] Test Acc: 23.31% | Test Loss: 2.162331
+train_acc: 27.432000 - train_loss: 2.061922 - test_acc: 33.500000 - test_loss: 1.921397
+------------------------------
+Round  16
+  --> [Edge Server 0] Test Acc: 25.87% | Test Loss: 2.282191
+  --> [Edge Server 1] Test Acc: 26.83% | Test Loss: 2.193653
+  --> [Edge Server 2] Test Acc: 26.38% | Test Loss: 2.095247
+  --> [Edge Server 3] Test Acc: 16.57% | Test Loss: 2.390341
+  --> [Edge Server 4] Test Acc: 23.90% | Test Loss: 2.132960
+train_acc: 32.596000 - train_loss: 2.005526 - test_acc: 38.210000 - test_loss: 1.871009
+------------------------------
+Round  17
+  --> [Edge Server 0] Test Acc: 18.61% | Test Loss: 2.609126
+  --> [Edge Server 1] Test Acc: 26.33% | Test Loss: 2.161380
+  --> [Edge Server 2] Test Acc: 13.20% | Test Loss: 2.514411
+  --> [Edge Server 3] Test Acc: 22.64% | Test Loss: 2.183029
+  --> [Edge Server 4] Test Acc: 20.26% | Test Loss: 2.178852
+train_acc: 28.388000 - train_loss: 2.044974 - test_acc: 33.980000 - test_loss: 1.892863
+------------------------------
+Round  18
+  --> [Edge Server 0] Test Acc: 29.01% | Test Loss: 2.285943
+  --> [Edge Server 1] Test Acc: 14.05% | Test Loss: 3.034338
+  --> [Edge Server 2] Test Acc: 25.85% | Test Loss: 2.246912
+  --> [Edge Server 3] Test Acc: 14.43% | Test Loss: 2.403212
+  --> [Edge Server 4] Test Acc: 26.01% | Test Loss: 2.106662
+train_acc: 23.886000 - train_loss: 2.094792 - test_acc: 25.220000 - test_loss: 1.981722
+------------------------------

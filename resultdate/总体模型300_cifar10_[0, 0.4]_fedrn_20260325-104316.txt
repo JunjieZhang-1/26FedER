@@ -1,0 +1,600 @@
+Round   0
+train_acc: 15.362000 - train_loss: 2.344239 - test_acc: 16.470000 - test_loss: 2.329609
+Round   1
+train_acc: 19.094000 - train_loss: 2.244070 - test_acc: 23.880000 - test_loss: 2.193991
+Round   2
+train_acc: 20.304000 - train_loss: 2.257841 - test_acc: 22.400000 - test_loss: 2.207334
+Round   3
+train_acc: 17.198000 - train_loss: 2.195113 - test_acc: 22.680000 - test_loss: 2.083276
+Round   4
+train_acc: 19.920000 - train_loss: 2.197857 - test_acc: 22.820000 - test_loss: 2.108736
+Round   5
+train_acc: 16.228000 - train_loss: 2.240124 - test_acc: 20.100000 - test_loss: 2.139685
+Round   6
+train_acc: 21.760000 - train_loss: 2.182162 - test_acc: 25.940000 - test_loss: 2.090589
+Round   7
+train_acc: 18.572000 - train_loss: 2.152723 - test_acc: 21.360000 - test_loss: 2.062624
+Round   8
+train_acc: 22.020000 - train_loss: 2.132361 - test_acc: 27.020000 - test_loss: 2.016657
+Round   9
+train_acc: 24.258000 - train_loss: 2.130535 - test_acc: 28.950000 - test_loss: 2.014343
+Round  10
+train_acc: 21.652000 - train_loss: 2.190188 - test_acc: 25.380000 - test_loss: 2.050439
+Round  11
+train_acc: 27.942000 - train_loss: 2.083292 - test_acc: 34.210000 - test_loss: 1.939494
+Round  12
+train_acc: 28.998000 - train_loss: 2.075048 - test_acc: 35.400000 - test_loss: 1.927971
+Round  13
+train_acc: 26.126000 - train_loss: 2.067770 - test_acc: 32.480000 - test_loss: 1.928626
+Round  14
+train_acc: 24.270000 - train_loss: 2.137563 - test_acc: 29.270000 - test_loss: 1.991892
+Round  15
+train_acc: 27.432000 - train_loss: 2.061922 - test_acc: 33.500000 - test_loss: 1.921397
+Round  16
+train_acc: 32.596000 - train_loss: 2.005526 - test_acc: 38.210000 - test_loss: 1.871009
+Round  17
+train_acc: 28.388000 - train_loss: 2.044974 - test_acc: 33.980000 - test_loss: 1.892863
+Round  18
+train_acc: 23.886000 - train_loss: 2.094792 - test_acc: 25.220000 - test_loss: 1.981722
+Round  19
+train_acc: 28.502000 - train_loss: 2.061728 - test_acc: 35.950000 - test_loss: 1.907392
+Round  20
+train_acc: 26.870000 - train_loss: 2.036364 - test_acc: 34.310000 - test_loss: 1.873275
+Round  21
+train_acc: 31.842000 - train_loss: 1.997050 - test_acc: 38.910000 - test_loss: 1.842848
+Round  22
+train_acc: 25.124000 - train_loss: 2.048322 - test_acc: 32.090000 - test_loss: 1.884989
+Round  23
+train_acc: 25.548000 - train_loss: 2.080065 - test_acc: 31.930000 - test_loss: 1.911097
+Round  24
+train_acc: 28.830000 - train_loss: 2.047269 - test_acc: 34.250000 - test_loss: 1.894201
+Round  25
+train_acc: 22.264000 - train_loss: 2.085654 - test_acc: 27.000000 - test_loss: 1.955600
+Round  26
+train_acc: 31.864000 - train_loss: 2.009024 - test_acc: 39.570000 - test_loss: 1.863124
+Round  27
+train_acc: 22.992000 - train_loss: 2.108321 - test_acc: 24.410000 - test_loss: 2.017991
+Round  28
+train_acc: 22.546000 - train_loss: 2.088954 - test_acc: 25.890000 - test_loss: 1.947188
+Round  29
+train_acc: 27.654000 - train_loss: 2.024152 - test_acc: 32.510000 - test_loss: 1.861736
+Round  30
+train_acc: 31.762000 - train_loss: 1.990183 - test_acc: 37.010000 - test_loss: 1.856927
+Round  31
+train_acc: 24.180000 - train_loss: 2.032554 - test_acc: 27.460000 - test_loss: 1.918727
+Round  32
+train_acc: 32.686000 - train_loss: 1.969378 - test_acc: 39.350000 - test_loss: 1.809413
+Round  33
+train_acc: 28.350000 - train_loss: 2.027952 - test_acc: 31.910000 - test_loss: 1.894938
+Round  34
+train_acc: 25.668000 - train_loss: 2.041352 - test_acc: 31.540000 - test_loss: 1.883535
+Round  35
+train_acc: 30.502000 - train_loss: 2.047051 - test_acc: 37.180000 - test_loss: 1.910245
+Round  36
+train_acc: 31.446000 - train_loss: 2.018607 - test_acc: 36.290000 - test_loss: 1.910869
+Round  37
+train_acc: 27.072000 - train_loss: 2.080241 - test_acc: 30.010000 - test_loss: 1.989099
+Round  38
+train_acc: 30.948000 - train_loss: 2.002910 - test_acc: 36.890000 - test_loss: 1.873993
+Round  39
+train_acc: 33.832000 - train_loss: 1.923903 - test_acc: 38.980000 - test_loss: 1.785788
+Round  40
+train_acc: 33.504000 - train_loss: 1.923062 - test_acc: 38.910000 - test_loss: 1.781746
+Round  41
+train_acc: 31.754000 - train_loss: 1.949006 - test_acc: 36.570000 - test_loss: 1.810789
+Round  42
+train_acc: 31.124000 - train_loss: 2.003400 - test_acc: 36.330000 - test_loss: 1.867686
+Round  43
+train_acc: 27.556000 - train_loss: 1.987168 - test_acc: 33.210000 - test_loss: 1.823582
+Round  44
+train_acc: 27.306000 - train_loss: 1.989880 - test_acc: 37.970000 - test_loss: 1.786634
+Round  45
+train_acc: 24.434000 - train_loss: 2.095233 - test_acc: 31.310000 - test_loss: 1.879633
+Round  46
+train_acc: 27.904000 - train_loss: 2.052506 - test_acc: 33.100000 - test_loss: 1.906964
+Round  47
+train_acc: 26.996000 - train_loss: 2.039206 - test_acc: 33.040000 - test_loss: 1.868161
+Round  48
+train_acc: 23.280000 - train_loss: 2.045893 - test_acc: 30.060000 - test_loss: 1.899739
+Round  49
+train_acc: 35.932000 - train_loss: 1.901372 - test_acc: 45.230000 - test_loss: 1.731645
+Round  50
+train_acc: 35.966000 - train_loss: 1.907457 - test_acc: 43.790000 - test_loss: 1.747085
+Round  51
+train_acc: 29.308000 - train_loss: 1.986945 - test_acc: 38.340000 - test_loss: 1.796863
+Round  52
+train_acc: 31.572000 - train_loss: 1.964853 - test_acc: 39.620000 - test_loss: 1.791929
+Round  53
+train_acc: 26.360000 - train_loss: 1.980857 - test_acc: 27.130000 - test_loss: 1.883645
+Round  54
+train_acc: 26.930000 - train_loss: 1.991284 - test_acc: 32.870000 - test_loss: 1.841231
+Round  55
+train_acc: 34.812000 - train_loss: 1.926499 - test_acc: 41.660000 - test_loss: 1.754342
+Round  56
+train_acc: 27.854000 - train_loss: 2.025364 - test_acc: 30.850000 - test_loss: 1.910128
+Round  57
+train_acc: 34.070000 - train_loss: 1.934409 - test_acc: 41.220000 - test_loss: 1.780589
+Round  58
+train_acc: 34.760000 - train_loss: 1.932386 - test_acc: 38.520000 - test_loss: 1.799398
+Round  59
+train_acc: 30.574000 - train_loss: 1.959872 - test_acc: 36.790000 - test_loss: 1.787754
+Round  60
+train_acc: 29.190000 - train_loss: 2.005223 - test_acc: 36.330000 - test_loss: 1.845036
+Round  61
+train_acc: 34.268000 - train_loss: 1.921860 - test_acc: 38.440000 - test_loss: 1.794084
+Round  62
+train_acc: 33.782000 - train_loss: 1.947642 - test_acc: 42.650000 - test_loss: 1.772518
+Round  63
+train_acc: 28.496000 - train_loss: 1.990795 - test_acc: 33.560000 - test_loss: 1.849945
+Round  64
+train_acc: 35.610000 - train_loss: 1.905129 - test_acc: 39.460000 - test_loss: 1.770284
+Round  65
+train_acc: 29.944000 - train_loss: 1.978978 - test_acc: 36.800000 - test_loss: 1.812126
+Round  66
+train_acc: 34.894000 - train_loss: 1.933408 - test_acc: 40.170000 - test_loss: 1.796824
+Round  67
+train_acc: 34.172000 - train_loss: 1.920151 - test_acc: 37.430000 - test_loss: 1.807899
+Round  68
+train_acc: 31.386000 - train_loss: 1.974205 - test_acc: 36.210000 - test_loss: 1.850835
+Round  69
+train_acc: 38.130000 - train_loss: 1.902591 - test_acc: 43.240000 - test_loss: 1.771395
+Round  70
+train_acc: 37.866000 - train_loss: 1.894827 - test_acc: 46.020000 - test_loss: 1.737448
+Round  71
+train_acc: 32.068000 - train_loss: 1.938474 - test_acc: 36.820000 - test_loss: 1.805924
+Round  72
+train_acc: 36.070000 - train_loss: 1.928911 - test_acc: 42.400000 - test_loss: 1.786255
+Round  73
+train_acc: 29.014000 - train_loss: 1.963318 - test_acc: 35.630000 - test_loss: 1.806034
+Round  74
+train_acc: 34.420000 - train_loss: 1.894828 - test_acc: 43.400000 - test_loss: 1.732942
+Round  75
+train_acc: 35.274000 - train_loss: 1.901599 - test_acc: 41.080000 - test_loss: 1.760648
+Round  76
+train_acc: 30.804000 - train_loss: 1.978511 - test_acc: 39.160000 - test_loss: 1.778248
+Round  77
+train_acc: 32.918000 - train_loss: 1.926932 - test_acc: 36.370000 - test_loss: 1.791553
+Round  78
+train_acc: 31.500000 - train_loss: 1.925780 - test_acc: 38.610000 - test_loss: 1.775015
+Round  79
+train_acc: 31.666000 - train_loss: 1.960980 - test_acc: 38.990000 - test_loss: 1.789438
+Round  80
+train_acc: 29.266000 - train_loss: 1.970926 - test_acc: 33.950000 - test_loss: 1.781739
+Round  81
+train_acc: 24.136000 - train_loss: 2.139818 - test_acc: 27.970000 - test_loss: 1.904634
+Round  82
+train_acc: 33.226000 - train_loss: 1.935786 - test_acc: 39.690000 - test_loss: 1.668168
+Round  83
+train_acc: 34.574000 - train_loss: 1.983230 - test_acc: 41.080000 - test_loss: 1.721507
+Round  84
+train_acc: 31.314000 - train_loss: 2.080069 - test_acc: 37.120000 - test_loss: 1.794464
+Round  85
+train_acc: 31.290000 - train_loss: 2.173880 - test_acc: 36.680000 - test_loss: 1.884647
+Round  86
+train_acc: 35.822000 - train_loss: 1.934002 - test_acc: 43.640000 - test_loss: 1.618236
+Round  87
+train_acc: 32.806000 - train_loss: 2.022840 - test_acc: 40.430000 - test_loss: 1.698862
+Round  88
+train_acc: 33.606000 - train_loss: 2.045215 - test_acc: 38.440000 - test_loss: 1.757729
+Round  89
+train_acc: 29.602000 - train_loss: 2.255251 - test_acc: 33.690000 - test_loss: 1.966016
+Round  90
+train_acc: 33.078000 - train_loss: 2.058315 - test_acc: 37.300000 - test_loss: 1.776758
+Round  91
+train_acc: 37.790000 - train_loss: 1.941922 - test_acc: 44.040000 - test_loss: 1.650789
+Round  92
+train_acc: 34.896000 - train_loss: 2.041251 - test_acc: 40.470000 - test_loss: 1.764521
+Round  93
+train_acc: 34.520000 - train_loss: 2.075370 - test_acc: 40.340000 - test_loss: 1.769997
+Round  94
+train_acc: 35.762000 - train_loss: 2.078994 - test_acc: 42.000000 - test_loss: 1.739416
+Round  95
+train_acc: 37.282000 - train_loss: 1.990623 - test_acc: 42.100000 - test_loss: 1.695085
+Round  96
+train_acc: 32.102000 - train_loss: 2.208241 - test_acc: 36.860000 - test_loss: 1.860445
+Round  97
+train_acc: 36.822000 - train_loss: 2.032076 - test_acc: 43.130000 - test_loss: 1.685793
+Round  98
+train_acc: 33.070000 - train_loss: 2.164524 - test_acc: 36.440000 - test_loss: 1.870801
+Round  99
+train_acc: 37.150000 - train_loss: 2.031535 - test_acc: 42.610000 - test_loss: 1.722110
+Round 100
+train_acc: 39.838000 - train_loss: 1.975329 - test_acc: 44.730000 - test_loss: 1.685947
+Round 101
+train_acc: 39.990000 - train_loss: 1.962336 - test_acc: 47.740000 - test_loss: 1.634282
+Round 102
+train_acc: 37.672000 - train_loss: 2.014951 - test_acc: 44.320000 - test_loss: 1.695499
+Round 103
+train_acc: 40.256000 - train_loss: 1.893168 - test_acc: 45.780000 - test_loss: 1.578464
+Round 104
+train_acc: 39.930000 - train_loss: 1.901763 - test_acc: 45.570000 - test_loss: 1.576628
+Round 105
+train_acc: 39.916000 - train_loss: 1.967118 - test_acc: 45.880000 - test_loss: 1.639354
+Round 106
+train_acc: 36.900000 - train_loss: 1.966841 - test_acc: 44.580000 - test_loss: 1.613251
+Round 107
+train_acc: 33.312000 - train_loss: 2.009948 - test_acc: 42.590000 - test_loss: 1.596661
+Round 108
+train_acc: 40.256000 - train_loss: 1.864504 - test_acc: 49.160000 - test_loss: 1.493253
+Round 109
+train_acc: 41.140000 - train_loss: 1.817361 - test_acc: 47.130000 - test_loss: 1.478582
+Round 110
+train_acc: 36.022000 - train_loss: 1.987305 - test_acc: 41.790000 - test_loss: 1.622741
+Round 111
+train_acc: 37.998000 - train_loss: 2.013883 - test_acc: 44.440000 - test_loss: 1.629885
+Round 112
+train_acc: 38.868000 - train_loss: 1.918832 - test_acc: 42.930000 - test_loss: 1.605467
+Round 113
+train_acc: 34.378000 - train_loss: 2.051258 - test_acc: 37.550000 - test_loss: 1.724423
+Round 114
+train_acc: 39.944000 - train_loss: 1.833719 - test_acc: 44.490000 - test_loss: 1.477405
+Round 115
+train_acc: 41.210000 - train_loss: 1.806401 - test_acc: 46.600000 - test_loss: 1.459228
+Round 116
+train_acc: 39.968000 - train_loss: 1.857367 - test_acc: 46.950000 - test_loss: 1.461355
+Round 117
+train_acc: 39.154000 - train_loss: 1.871829 - test_acc: 45.820000 - test_loss: 1.476069
+Round 118
+train_acc: 42.658000 - train_loss: 1.785604 - test_acc: 52.290000 - test_loss: 1.371247
+Round 119
+train_acc: 43.404000 - train_loss: 1.804860 - test_acc: 51.460000 - test_loss: 1.402397
+Round 120
+train_acc: 39.412000 - train_loss: 1.881918 - test_acc: 44.900000 - test_loss: 1.530190
+Round 121
+train_acc: 37.438000 - train_loss: 1.931271 - test_acc: 40.920000 - test_loss: 1.591698
+Round 122
+train_acc: 41.666000 - train_loss: 1.831416 - test_acc: 48.710000 - test_loss: 1.427004
+Round 123
+train_acc: 37.560000 - train_loss: 1.972107 - test_acc: 42.930000 - test_loss: 1.580245
+Round 124
+train_acc: 38.748000 - train_loss: 1.935109 - test_acc: 42.760000 - test_loss: 1.596145
+Round 125
+train_acc: 41.420000 - train_loss: 1.858944 - test_acc: 45.790000 - test_loss: 1.512914
+Round 126
+train_acc: 44.550000 - train_loss: 1.776761 - test_acc: 50.150000 - test_loss: 1.414879
+Round 127
+train_acc: 41.142000 - train_loss: 1.835539 - test_acc: 45.760000 - test_loss: 1.451230
+Round 128
+train_acc: 44.354000 - train_loss: 1.773059 - test_acc: 49.290000 - test_loss: 1.393390
+Round 129
+train_acc: 41.278000 - train_loss: 1.840381 - test_acc: 45.920000 - test_loss: 1.463088
+Round 130
+train_acc: 43.346000 - train_loss: 1.796548 - test_acc: 48.400000 - test_loss: 1.434715
+Round 131
+train_acc: 42.470000 - train_loss: 1.834780 - test_acc: 49.620000 - test_loss: 1.435822
+Round 132
+train_acc: 38.604000 - train_loss: 1.939593 - test_acc: 47.690000 - test_loss: 1.464608
+Round 133
+train_acc: 39.028000 - train_loss: 1.888863 - test_acc: 41.610000 - test_loss: 1.542617
+Round 134
+train_acc: 42.212000 - train_loss: 1.810900 - test_acc: 47.710000 - test_loss: 1.399892
+Round 135
+train_acc: 41.944000 - train_loss: 1.808092 - test_acc: 46.470000 - test_loss: 1.421147
+Round 136
+train_acc: 45.426000 - train_loss: 1.759637 - test_acc: 52.270000 - test_loss: 1.349685
+Round 137
+train_acc: 45.468000 - train_loss: 1.752689 - test_acc: 51.490000 - test_loss: 1.356936
+Round 138
+train_acc: 46.256000 - train_loss: 1.744611 - test_acc: 53.260000 - test_loss: 1.342183
+Round 139
+train_acc: 41.654000 - train_loss: 1.886192 - test_acc: 48.530000 - test_loss: 1.439739
+Round 140
+train_acc: 43.302000 - train_loss: 1.805945 - test_acc: 50.560000 - test_loss: 1.398178
+Round 141
+train_acc: 40.628000 - train_loss: 1.831320 - test_acc: 47.790000 - test_loss: 1.430506
+Round 142
+train_acc: 37.554000 - train_loss: 1.930133 - test_acc: 45.250000 - test_loss: 1.482115
+Round 143
+train_acc: 43.920000 - train_loss: 1.798536 - test_acc: 49.410000 - test_loss: 1.421300
+Round 144
+train_acc: 40.364000 - train_loss: 1.878294 - test_acc: 43.670000 - test_loss: 1.558116
+Round 145
+train_acc: 40.118000 - train_loss: 1.866912 - test_acc: 46.620000 - test_loss: 1.479723
+Round 146
+train_acc: 44.554000 - train_loss: 1.741790 - test_acc: 51.560000 - test_loss: 1.347998
+Round 147
+train_acc: 44.196000 - train_loss: 1.756677 - test_acc: 52.810000 - test_loss: 1.332556
+Round 148
+train_acc: 43.776000 - train_loss: 1.789165 - test_acc: 52.420000 - test_loss: 1.322936
+Round 149
+train_acc: 40.180000 - train_loss: 1.872688 - test_acc: 49.430000 - test_loss: 1.410812
+Round 150
+train_acc: 41.696000 - train_loss: 1.850866 - test_acc: 48.660000 - test_loss: 1.410604
+Round 151
+train_acc: 42.026000 - train_loss: 1.827542 - test_acc: 47.220000 - test_loss: 1.422307
+Round 152
+train_acc: 42.438000 - train_loss: 1.838993 - test_acc: 47.790000 - test_loss: 1.441311
+Round 153
+train_acc: 43.476000 - train_loss: 1.826385 - test_acc: 51.380000 - test_loss: 1.384076
+Round 154
+train_acc: 45.060000 - train_loss: 1.759392 - test_acc: 52.610000 - test_loss: 1.335182
+Round 155
+train_acc: 46.884000 - train_loss: 1.730496 - test_acc: 55.560000 - test_loss: 1.261833
+Round 156
+train_acc: 45.438000 - train_loss: 1.756503 - test_acc: 52.730000 - test_loss: 1.313503
+Round 157
+train_acc: 43.778000 - train_loss: 1.801920 - test_acc: 50.170000 - test_loss: 1.360684
+Round 158
+train_acc: 43.112000 - train_loss: 1.819620 - test_acc: 48.120000 - test_loss: 1.428996
+Round 159
+train_acc: 42.566000 - train_loss: 1.855731 - test_acc: 47.810000 - test_loss: 1.436139
+Round 160
+train_acc: 45.124000 - train_loss: 1.774074 - test_acc: 50.320000 - test_loss: 1.385458
+Round 161
+train_acc: 39.628000 - train_loss: 1.951971 - test_acc: 44.610000 - test_loss: 1.529144
+Round 162
+train_acc: 38.274000 - train_loss: 2.006374 - test_acc: 41.360000 - test_loss: 1.634159
+Round 163
+train_acc: 44.996000 - train_loss: 1.809849 - test_acc: 50.270000 - test_loss: 1.441719
+Round 164
+train_acc: 41.616000 - train_loss: 1.864707 - test_acc: 50.690000 - test_loss: 1.382330
+Round 165
+train_acc: 44.186000 - train_loss: 1.819211 - test_acc: 52.870000 - test_loss: 1.366227
+Round 166
+train_acc: 43.676000 - train_loss: 1.795263 - test_acc: 48.430000 - test_loss: 1.420696
+Round 167
+train_acc: 40.588000 - train_loss: 1.910908 - test_acc: 46.860000 - test_loss: 1.483434
+Round 168
+train_acc: 40.270000 - train_loss: 1.975030 - test_acc: 47.050000 - test_loss: 1.545222
+Round 169
+train_acc: 41.162000 - train_loss: 1.908651 - test_acc: 48.510000 - test_loss: 1.468082
+Round 170
+train_acc: 38.012000 - train_loss: 2.010027 - test_acc: 46.400000 - test_loss: 1.515730
+Round 171
+train_acc: 43.692000 - train_loss: 1.822444 - test_acc: 52.240000 - test_loss: 1.346471
+Round 172
+train_acc: 43.112000 - train_loss: 1.823056 - test_acc: 50.130000 - test_loss: 1.368370
+Round 173
+train_acc: 42.670000 - train_loss: 1.841888 - test_acc: 47.420000 - test_loss: 1.422971
+Round 174
+train_acc: 40.114000 - train_loss: 1.928137 - test_acc: 45.280000 - test_loss: 1.495308
+Round 175
+train_acc: 45.716000 - train_loss: 1.771877 - test_acc: 52.960000 - test_loss: 1.308768
+Round 176
+train_acc: 46.354000 - train_loss: 1.756258 - test_acc: 54.860000 - test_loss: 1.260003
+Round 177
+train_acc: 41.990000 - train_loss: 1.860872 - test_acc: 49.540000 - test_loss: 1.400880
+Round 178
+train_acc: 39.652000 - train_loss: 1.919314 - test_acc: 47.220000 - test_loss: 1.411427
+Round 179
+train_acc: 43.940000 - train_loss: 1.805424 - test_acc: 52.040000 - test_loss: 1.342728
+Round 180
+train_acc: 45.638000 - train_loss: 1.773741 - test_acc: 52.060000 - test_loss: 1.330591
+Round 181
+train_acc: 47.612000 - train_loss: 1.722734 - test_acc: 53.990000 - test_loss: 1.282761
+Round 182
+train_acc: 45.122000 - train_loss: 1.781190 - test_acc: 51.190000 - test_loss: 1.318625
+Round 183
+train_acc: 46.880000 - train_loss: 1.757896 - test_acc: 53.990000 - test_loss: 1.280728
+Round 184
+train_acc: 45.710000 - train_loss: 1.770925 - test_acc: 55.460000 - test_loss: 1.265056
+Round 185
+train_acc: 42.300000 - train_loss: 1.818951 - test_acc: 54.090000 - test_loss: 1.267905
+Round 186
+train_acc: 47.830000 - train_loss: 1.723587 - test_acc: 56.500000 - test_loss: 1.257186
+Round 187
+train_acc: 41.186000 - train_loss: 1.855727 - test_acc: 50.910000 - test_loss: 1.348851
+Round 188
+train_acc: 43.842000 - train_loss: 1.858696 - test_acc: 51.460000 - test_loss: 1.364517
+Round 189
+train_acc: 39.990000 - train_loss: 1.942539 - test_acc: 46.290000 - test_loss: 1.435984
+Round 190
+train_acc: 45.640000 - train_loss: 1.792860 - test_acc: 51.340000 - test_loss: 1.351692
+Round 191
+train_acc: 41.968000 - train_loss: 1.860382 - test_acc: 48.850000 - test_loss: 1.400390
+Round 192
+train_acc: 39.740000 - train_loss: 1.920309 - test_acc: 42.400000 - test_loss: 1.522089
+Round 193
+train_acc: 42.974000 - train_loss: 1.819128 - test_acc: 46.880000 - test_loss: 1.418859
+Round 194
+train_acc: 45.456000 - train_loss: 1.792720 - test_acc: 49.270000 - test_loss: 1.397121
+Round 195
+train_acc: 44.406000 - train_loss: 1.821799 - test_acc: 49.200000 - test_loss: 1.409809
+Round 196
+train_acc: 45.054000 - train_loss: 1.797841 - test_acc: 52.340000 - test_loss: 1.318817
+Round 197
+train_acc: 41.278000 - train_loss: 1.884418 - test_acc: 49.630000 - test_loss: 1.399636
+Round 198
+train_acc: 43.022000 - train_loss: 1.818039 - test_acc: 50.410000 - test_loss: 1.356947
+Round 199
+train_acc: 40.352000 - train_loss: 1.869740 - test_acc: 46.950000 - test_loss: 1.400628
+Round 200
+train_acc: 42.136000 - train_loss: 1.865579 - test_acc: 51.210000 - test_loss: 1.329643
+Round 201
+train_acc: 43.446000 - train_loss: 1.842319 - test_acc: 51.480000 - test_loss: 1.341029
+Round 202
+train_acc: 39.408000 - train_loss: 1.887941 - test_acc: 45.800000 - test_loss: 1.413065
+Round 203
+train_acc: 44.392000 - train_loss: 1.797606 - test_acc: 53.710000 - test_loss: 1.288362
+Round 204
+train_acc: 44.084000 - train_loss: 1.813479 - test_acc: 49.540000 - test_loss: 1.395975
+Round 205
+train_acc: 40.344000 - train_loss: 1.906765 - test_acc: 46.370000 - test_loss: 1.466815
+Round 206
+train_acc: 44.978000 - train_loss: 1.783143 - test_acc: 49.990000 - test_loss: 1.375719
+Round 207
+train_acc: 46.738000 - train_loss: 1.727968 - test_acc: 53.460000 - test_loss: 1.289705
+Round 208
+train_acc: 47.024000 - train_loss: 1.736742 - test_acc: 53.640000 - test_loss: 1.289980
+Round 209
+train_acc: 43.172000 - train_loss: 1.829224 - test_acc: 48.730000 - test_loss: 1.392920
+Round 210
+train_acc: 43.154000 - train_loss: 1.812871 - test_acc: 48.170000 - test_loss: 1.385396
+Round 211
+train_acc: 44.790000 - train_loss: 1.800093 - test_acc: 50.270000 - test_loss: 1.343269
+Round 212
+train_acc: 45.024000 - train_loss: 1.792727 - test_acc: 52.640000 - test_loss: 1.297055
+Round 213
+train_acc: 43.790000 - train_loss: 1.832193 - test_acc: 52.120000 - test_loss: 1.323567
+Round 214
+train_acc: 44.370000 - train_loss: 1.827391 - test_acc: 50.700000 - test_loss: 1.358162
+Round 215
+train_acc: 40.806000 - train_loss: 1.922977 - test_acc: 47.180000 - test_loss: 1.440562
+Round 216
+train_acc: 42.706000 - train_loss: 1.873058 - test_acc: 48.940000 - test_loss: 1.400268
+Round 217
+train_acc: 39.214000 - train_loss: 1.924847 - test_acc: 43.580000 - test_loss: 1.509763
+Round 218
+train_acc: 44.282000 - train_loss: 1.825075 - test_acc: 49.450000 - test_loss: 1.380108
+Round 219
+train_acc: 44.420000 - train_loss: 1.823705 - test_acc: 49.070000 - test_loss: 1.391077
+Round 220
+train_acc: 42.086000 - train_loss: 1.883848 - test_acc: 46.900000 - test_loss: 1.444317
+Round 221
+train_acc: 39.348000 - train_loss: 1.966189 - test_acc: 45.040000 - test_loss: 1.519022
+Round 222
+train_acc: 40.082000 - train_loss: 1.935556 - test_acc: 45.490000 - test_loss: 1.498815
+Round 223
+train_acc: 45.224000 - train_loss: 1.814839 - test_acc: 50.670000 - test_loss: 1.389273
+Round 224
+train_acc: 45.346000 - train_loss: 1.775058 - test_acc: 51.750000 - test_loss: 1.351897
+Round 225
+train_acc: 41.884000 - train_loss: 1.858518 - test_acc: 49.180000 - test_loss: 1.382844
+Round 226
+train_acc: 44.444000 - train_loss: 1.793789 - test_acc: 51.050000 - test_loss: 1.356269
+Round 227
+train_acc: 44.212000 - train_loss: 1.803721 - test_acc: 51.190000 - test_loss: 1.333276
+Round 228
+train_acc: 44.994000 - train_loss: 1.787240 - test_acc: 50.830000 - test_loss: 1.339999
+Round 229
+train_acc: 44.432000 - train_loss: 1.817571 - test_acc: 52.620000 - test_loss: 1.314512
+Round 230
+train_acc: 37.710000 - train_loss: 1.966834 - test_acc: 46.710000 - test_loss: 1.400635
+Round 231
+train_acc: 48.146000 - train_loss: 1.726225 - test_acc: 56.660000 - test_loss: 1.221104
+Round 232
+train_acc: 45.100000 - train_loss: 1.759950 - test_acc: 53.550000 - test_loss: 1.273424
+Round 233
+train_acc: 41.938000 - train_loss: 1.838646 - test_acc: 50.490000 - test_loss: 1.328819
+Round 234
+train_acc: 44.990000 - train_loss: 1.771928 - test_acc: 52.250000 - test_loss: 1.297303
+Round 235
+train_acc: 43.978000 - train_loss: 1.795023 - test_acc: 52.190000 - test_loss: 1.294585
+Round 236
+train_acc: 46.534000 - train_loss: 1.747341 - test_acc: 54.000000 - test_loss: 1.277245
+Round 237
+train_acc: 48.236000 - train_loss: 1.705509 - test_acc: 55.510000 - test_loss: 1.243468
+Round 238
+train_acc: 47.176000 - train_loss: 1.743242 - test_acc: 55.020000 - test_loss: 1.276761
+Round 239
+train_acc: 47.016000 - train_loss: 1.740585 - test_acc: 54.060000 - test_loss: 1.258944
+Round 240
+train_acc: 48.246000 - train_loss: 1.720578 - test_acc: 56.400000 - test_loss: 1.224634
+Round 241
+train_acc: 42.658000 - train_loss: 1.824452 - test_acc: 50.310000 - test_loss: 1.336232
+Round 242
+train_acc: 44.352000 - train_loss: 1.780273 - test_acc: 50.050000 - test_loss: 1.336362
+Round 243
+train_acc: 40.670000 - train_loss: 1.878923 - test_acc: 47.290000 - test_loss: 1.413826
+Round 244
+train_acc: 41.368000 - train_loss: 1.850217 - test_acc: 45.440000 - test_loss: 1.452592
+Round 245
+train_acc: 46.598000 - train_loss: 1.777420 - test_acc: 49.700000 - test_loss: 1.403695
+Round 246
+train_acc: 42.246000 - train_loss: 1.849977 - test_acc: 44.890000 - test_loss: 1.495232
+Round 247
+train_acc: 43.294000 - train_loss: 1.822876 - test_acc: 50.190000 - test_loss: 1.363418
+Round 248
+train_acc: 43.664000 - train_loss: 1.815745 - test_acc: 52.100000 - test_loss: 1.330552
+Round 249
+train_acc: 46.590000 - train_loss: 1.745979 - test_acc: 54.030000 - test_loss: 1.275708
+Round 250
+train_acc: 44.662000 - train_loss: 1.805491 - test_acc: 47.860000 - test_loss: 1.407790
+Round 251
+train_acc: 43.398000 - train_loss: 1.869760 - test_acc: 51.800000 - test_loss: 1.330316
+Round 252
+train_acc: 44.784000 - train_loss: 1.822870 - test_acc: 52.270000 - test_loss: 1.344277
+Round 253
+train_acc: 47.466000 - train_loss: 1.746533 - test_acc: 54.610000 - test_loss: 1.303379
+Round 254
+train_acc: 44.492000 - train_loss: 1.836253 - test_acc: 51.470000 - test_loss: 1.365963
+Round 255
+train_acc: 46.438000 - train_loss: 1.771712 - test_acc: 51.190000 - test_loss: 1.347327
+Round 256
+train_acc: 44.776000 - train_loss: 1.823249 - test_acc: 50.360000 - test_loss: 1.372131
+Round 257
+train_acc: 43.268000 - train_loss: 1.851096 - test_acc: 46.790000 - test_loss: 1.437972
+Round 258
+train_acc: 44.060000 - train_loss: 1.817290 - test_acc: 49.330000 - test_loss: 1.377876
+Round 259
+train_acc: 39.586000 - train_loss: 1.966667 - test_acc: 45.310000 - test_loss: 1.492039
+Round 260
+train_acc: 42.054000 - train_loss: 1.915017 - test_acc: 47.290000 - test_loss: 1.450930
+Round 261
+train_acc: 45.866000 - train_loss: 1.820701 - test_acc: 50.850000 - test_loss: 1.382359
+Round 262
+train_acc: 45.412000 - train_loss: 1.846253 - test_acc: 50.500000 - test_loss: 1.424807
+Round 263
+train_acc: 42.492000 - train_loss: 1.867677 - test_acc: 48.660000 - test_loss: 1.408277
+Round 264
+train_acc: 48.600000 - train_loss: 1.736066 - test_acc: 54.300000 - test_loss: 1.293245
+Round 265
+train_acc: 47.284000 - train_loss: 1.764661 - test_acc: 52.100000 - test_loss: 1.311710
+Round 266
+train_acc: 47.360000 - train_loss: 1.751994 - test_acc: 50.630000 - test_loss: 1.365326
+Round 267
+train_acc: 47.890000 - train_loss: 1.732205 - test_acc: 53.750000 - test_loss: 1.278352
+Round 268
+train_acc: 43.136000 - train_loss: 1.844975 - test_acc: 51.110000 - test_loss: 1.345126
+Round 269
+train_acc: 43.866000 - train_loss: 1.838994 - test_acc: 50.210000 - test_loss: 1.378127
+Round 270
+train_acc: 45.284000 - train_loss: 1.821513 - test_acc: 50.330000 - test_loss: 1.376207
+Round 271
+train_acc: 45.630000 - train_loss: 1.834434 - test_acc: 48.580000 - test_loss: 1.417820
+Round 272
+train_acc: 46.484000 - train_loss: 1.788170 - test_acc: 51.520000 - test_loss: 1.325043
+Round 273
+train_acc: 44.218000 - train_loss: 1.870149 - test_acc: 48.320000 - test_loss: 1.415372
+Round 274
+train_acc: 47.536000 - train_loss: 1.756993 - test_acc: 50.150000 - test_loss: 1.346147
+Round 275
+train_acc: 45.148000 - train_loss: 1.804270 - test_acc: 50.280000 - test_loss: 1.362511
+Round 276
+train_acc: 45.000000 - train_loss: 1.802741 - test_acc: 50.190000 - test_loss: 1.355134
+Round 277
+train_acc: 40.956000 - train_loss: 1.964396 - test_acc: 47.470000 - test_loss: 1.470776
+Round 278
+train_acc: 43.638000 - train_loss: 1.835829 - test_acc: 51.280000 - test_loss: 1.332635
+Round 279
+train_acc: 48.704000 - train_loss: 1.721370 - test_acc: 55.050000 - test_loss: 1.261332
+Round 280
+train_acc: 44.018000 - train_loss: 1.840647 - test_acc: 47.620000 - test_loss: 1.405149
+Round 281
+train_acc: 47.838000 - train_loss: 1.764950 - test_acc: 53.820000 - test_loss: 1.292220
+Round 282
+train_acc: 39.490000 - train_loss: 1.959432 - test_acc: 45.310000 - test_loss: 1.488516
+Round 283
+train_acc: 43.226000 - train_loss: 1.834295 - test_acc: 48.600000 - test_loss: 1.382429
+Round 284
+train_acc: 42.664000 - train_loss: 1.871516 - test_acc: 46.540000 - test_loss: 1.453311
+Round 285
+train_acc: 43.280000 - train_loss: 1.876110 - test_acc: 48.300000 - test_loss: 1.462345
+Round 286
+train_acc: 45.678000 - train_loss: 1.791294 - test_acc: 52.900000 - test_loss: 1.319382
+Round 287
+train_acc: 48.292000 - train_loss: 1.742358 - test_acc: 55.350000 - test_loss: 1.252139
+Round 288
+train_acc: 43.928000 - train_loss: 1.827194 - test_acc: 46.920000 - test_loss: 1.416761
+Round 289
+train_acc: 39.466000 - train_loss: 1.922900 - test_acc: 44.580000 - test_loss: 1.431452
+Round 290
+train_acc: 43.324000 - train_loss: 1.822907 - test_acc: 50.150000 - test_loss: 1.320862
+Round 291
+train_acc: 48.816000 - train_loss: 1.710453 - test_acc: 56.990000 - test_loss: 1.220033
+Round 292
+train_acc: 46.220000 - train_loss: 1.774390 - test_acc: 53.690000 - test_loss: 1.258990
+Round 293
+train_acc: 45.156000 - train_loss: 1.820150 - test_acc: 49.710000 - test_loss: 1.366354
+Round 294
+train_acc: 49.828000 - train_loss: 1.703621 - test_acc: 55.260000 - test_loss: 1.254710
+Round 295
+train_acc: 47.538000 - train_loss: 1.749980 - test_acc: 55.730000 - test_loss: 1.242355
+Round 296
+train_acc: 44.136000 - train_loss: 1.804346 - test_acc: 48.460000 - test_loss: 1.353008
+Round 297
+train_acc: 45.934000 - train_loss: 1.757350 - test_acc: 49.870000 - test_loss: 1.350183
+Round 298
+train_acc: 43.596000 - train_loss: 1.797146 - test_acc: 51.430000 - test_loss: 1.313237
+Round 299
+train_acc: 47.388000 - train_loss: 1.733305 - test_acc: 54.780000 - test_loss: 1.272820

@@ -1,0 +1,604 @@
+Experiment Start: 20260324-102203
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='mnist', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=200, fed_method='fedavg', forget_rate=0.2, frac=0.4, gpu=0, group_noise_rate=[0, 0.8], iid=False, labeling='soft', lambda_u=25, local_bs=10, local_ep=4, lr=0.01, lr_decay=0.1, method='fedrn', mm_alpha=4, model='cnn_mnist', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=1, num_classes=10, num_edges=5, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, warmup_epochs=200, weight_decay=0)
+==================================================
+Round   0
+train_acc: 13.788333 - train_loss: 2.268214 - test_acc: 15.220000 - test_loss: 2.241908
+------------------------------
+Round   1
+train_acc: 31.465000 - train_loss: 2.220038 - test_acc: 47.730000 - test_loss: 2.150748
+------------------------------
+Round   2
+train_acc: 34.388333 - train_loss: 2.174268 - test_acc: 54.630000 - test_loss: 2.063095
+------------------------------
+Round   3
+train_acc: 36.478333 - train_loss: 2.138364 - test_acc: 57.520000 - test_loss: 1.995690
+------------------------------
+Round   4
+train_acc: 41.713333 - train_loss: 2.105914 - test_acc: 67.120000 - test_loss: 1.930608
+------------------------------
+Round   5
+train_acc: 38.956667 - train_loss: 2.085282 - test_acc: 61.600000 - test_loss: 1.893790
+------------------------------
+Round   6
+train_acc: 46.115000 - train_loss: 2.067519 - test_acc: 74.190000 - test_loss: 1.856669
+------------------------------
+Round   7
+train_acc: 47.528333 - train_loss: 2.056211 - test_acc: 76.380000 - test_loss: 1.837426
+------------------------------
+Round   8
+train_acc: 51.613333 - train_loss: 2.032172 - test_acc: 84.460000 - test_loss: 1.788385
+------------------------------
+Round   9
+train_acc: 45.956667 - train_loss: 2.028298 - test_acc: 74.550000 - test_loss: 1.775996
+------------------------------
+Round  10
+train_acc: 48.353333 - train_loss: 2.020833 - test_acc: 78.770000 - test_loss: 1.763053
+------------------------------
+Round  11
+train_acc: 48.498333 - train_loss: 2.021694 - test_acc: 80.030000 - test_loss: 1.758299
+------------------------------
+Round  12
+train_acc: 51.831667 - train_loss: 2.003346 - test_acc: 85.830000 - test_loss: 1.727540
+------------------------------
+Round  13
+train_acc: 51.568333 - train_loss: 1.997121 - test_acc: 84.850000 - test_loss: 1.711067
+------------------------------
+Round  14
+train_acc: 54.895000 - train_loss: 2.004936 - test_acc: 89.880000 - test_loss: 1.737108
+------------------------------
+Round  15
+train_acc: 54.191667 - train_loss: 1.982437 - test_acc: 88.820000 - test_loss: 1.688453
+------------------------------
+Round  16
+train_acc: 51.743333 - train_loss: 1.971567 - test_acc: 84.710000 - test_loss: 1.667640
+------------------------------
+Round  17
+train_acc: 54.393333 - train_loss: 1.971498 - test_acc: 89.400000 - test_loss: 1.666236
+------------------------------
+Round  18
+train_acc: 54.980000 - train_loss: 1.975100 - test_acc: 90.490000 - test_loss: 1.677302
+------------------------------
+Round  19
+train_acc: 54.071667 - train_loss: 1.971368 - test_acc: 88.920000 - test_loss: 1.668005
+------------------------------
+Round  20
+train_acc: 55.335000 - train_loss: 1.967040 - test_acc: 90.820000 - test_loss: 1.660975
+------------------------------
+Round  21
+train_acc: 55.438333 - train_loss: 1.958565 - test_acc: 91.620000 - test_loss: 1.644595
+------------------------------
+Round  22
+train_acc: 55.108333 - train_loss: 1.968460 - test_acc: 90.810000 - test_loss: 1.667833
+------------------------------
+Round  23
+train_acc: 55.753333 - train_loss: 1.957022 - test_acc: 92.070000 - test_loss: 1.646395
+------------------------------
+Round  24
+train_acc: 54.581667 - train_loss: 1.953786 - test_acc: 90.250000 - test_loss: 1.637689
+------------------------------
+Round  25
+train_acc: 55.515000 - train_loss: 1.952208 - test_acc: 91.840000 - test_loss: 1.632714
+------------------------------
+Round  26
+train_acc: 55.985000 - train_loss: 1.946645 - test_acc: 92.330000 - test_loss: 1.623619
+------------------------------
+Round  27
+train_acc: 54.405000 - train_loss: 1.948204 - test_acc: 89.410000 - test_loss: 1.629008
+------------------------------
+Round  28
+train_acc: 54.023333 - train_loss: 1.944415 - test_acc: 88.960000 - test_loss: 1.618233
+------------------------------
+Round  29
+train_acc: 54.601667 - train_loss: 1.936454 - test_acc: 90.170000 - test_loss: 1.603759
+------------------------------
+Round  30
+train_acc: 52.998333 - train_loss: 1.939266 - test_acc: 86.270000 - test_loss: 1.611754
+------------------------------
+Round  31
+train_acc: 56.395000 - train_loss: 1.941796 - test_acc: 92.970000 - test_loss: 1.614981
+------------------------------
+Round  32
+train_acc: 55.441667 - train_loss: 1.937182 - test_acc: 91.280000 - test_loss: 1.604812
+------------------------------
+Round  33
+train_acc: 54.420000 - train_loss: 1.930139 - test_acc: 89.790000 - test_loss: 1.591222
+------------------------------
+Round  34
+train_acc: 56.655000 - train_loss: 1.940626 - test_acc: 93.240000 - test_loss: 1.612677
+------------------------------
+Round  35
+train_acc: 57.021667 - train_loss: 1.927960 - test_acc: 94.070000 - test_loss: 1.584773
+------------------------------
+Round  36
+train_acc: 55.946667 - train_loss: 1.936768 - test_acc: 92.120000 - test_loss: 1.604923
+------------------------------
+Round  37
+train_acc: 56.423333 - train_loss: 1.933626 - test_acc: 92.950000 - test_loss: 1.596092
+------------------------------
+Round  38
+train_acc: 56.166667 - train_loss: 1.929391 - test_acc: 92.250000 - test_loss: 1.594987
+------------------------------
+Round  39
+train_acc: 55.686667 - train_loss: 1.929309 - test_acc: 91.760000 - test_loss: 1.593256
+------------------------------
+Round  40
+train_acc: 53.473333 - train_loss: 1.929938 - test_acc: 87.250000 - test_loss: 1.590450
+------------------------------
+Round  41
+train_acc: 56.535000 - train_loss: 1.918178 - test_acc: 93.290000 - test_loss: 1.565305
+------------------------------
+Round  42
+train_acc: 54.833333 - train_loss: 1.915493 - test_acc: 90.590000 - test_loss: 1.560734
+------------------------------
+Round  43
+train_acc: 55.153333 - train_loss: 1.918671 - test_acc: 90.700000 - test_loss: 1.567388
+------------------------------
+Round  44
+train_acc: 56.488333 - train_loss: 1.915425 - test_acc: 92.920000 - test_loss: 1.565267
+------------------------------
+Round  45
+train_acc: 55.663333 - train_loss: 1.912048 - test_acc: 91.630000 - test_loss: 1.556497
+------------------------------
+Round  46
+train_acc: 56.310000 - train_loss: 1.907033 - test_acc: 92.580000 - test_loss: 1.549475
+------------------------------
+Round  47
+train_acc: 56.876667 - train_loss: 1.917512 - test_acc: 93.940000 - test_loss: 1.568496
+------------------------------
+Round  48
+train_acc: 55.550000 - train_loss: 1.910568 - test_acc: 91.970000 - test_loss: 1.549155
+------------------------------
+Round  49
+train_acc: 54.065000 - train_loss: 1.909901 - test_acc: 88.790000 - test_loss: 1.549760
+------------------------------
+Round  50
+train_acc: 55.278333 - train_loss: 1.911302 - test_acc: 91.260000 - test_loss: 1.554428
+------------------------------
+Round  51
+train_acc: 53.775000 - train_loss: 1.888053 - test_acc: 87.630000 - test_loss: 1.503739
+------------------------------
+Round  52
+train_acc: 53.280000 - train_loss: 1.892272 - test_acc: 86.980000 - test_loss: 1.515425
+------------------------------
+Round  53
+train_acc: 57.101667 - train_loss: 1.898216 - test_acc: 94.380000 - test_loss: 1.533588
+------------------------------
+Round  54
+train_acc: 57.123333 - train_loss: 1.888298 - test_acc: 94.190000 - test_loss: 1.509890
+------------------------------
+Round  55
+train_acc: 57.223333 - train_loss: 1.896048 - test_acc: 94.680000 - test_loss: 1.529234
+------------------------------
+Round  56
+train_acc: 57.810000 - train_loss: 1.887884 - test_acc: 95.490000 - test_loss: 1.513876
+------------------------------
+Round  57
+train_acc: 57.733333 - train_loss: 1.896187 - test_acc: 95.080000 - test_loss: 1.529874
+------------------------------
+Round  58
+train_acc: 55.268333 - train_loss: 1.897883 - test_acc: 91.110000 - test_loss: 1.527793
+------------------------------
+Round  59
+train_acc: 57.008333 - train_loss: 1.892456 - test_acc: 94.320000 - test_loss: 1.519108
+------------------------------
+Round  60
+train_acc: 57.238333 - train_loss: 1.890581 - test_acc: 94.810000 - test_loss: 1.517213
+------------------------------
+Round  61
+train_acc: 57.718333 - train_loss: 1.889152 - test_acc: 95.140000 - test_loss: 1.518543
+------------------------------
+Round  62
+train_acc: 56.321667 - train_loss: 1.891779 - test_acc: 92.630000 - test_loss: 1.524346
+------------------------------
+Round  63
+train_acc: 56.851667 - train_loss: 1.882769 - test_acc: 93.670000 - test_loss: 1.508909
+------------------------------
+Round  64
+train_acc: 57.390000 - train_loss: 1.880364 - test_acc: 94.680000 - test_loss: 1.501443
+------------------------------
+Round  65
+train_acc: 56.836667 - train_loss: 1.878560 - test_acc: 93.830000 - test_loss: 1.500681
+------------------------------
+Round  66
+train_acc: 55.781667 - train_loss: 1.872901 - test_acc: 92.090000 - test_loss: 1.487890
+------------------------------
+Round  67
+train_acc: 57.723333 - train_loss: 1.878057 - test_acc: 95.200000 - test_loss: 1.498274
+------------------------------
+Round  68
+train_acc: 57.635000 - train_loss: 1.875966 - test_acc: 95.090000 - test_loss: 1.495465
+------------------------------
+Round  69
+train_acc: 56.306667 - train_loss: 1.879510 - test_acc: 92.760000 - test_loss: 1.501340
+------------------------------
+Round  70
+train_acc: 56.365000 - train_loss: 1.878369 - test_acc: 92.770000 - test_loss: 1.500701
+------------------------------
+Round  71
+train_acc: 55.760000 - train_loss: 1.875713 - test_acc: 91.970000 - test_loss: 1.492941
+------------------------------
+Round  72
+train_acc: 57.713333 - train_loss: 1.876180 - test_acc: 95.300000 - test_loss: 1.496819
+------------------------------
+Round  73
+train_acc: 57.958333 - train_loss: 1.861551 - test_acc: 95.730000 - test_loss: 1.464585
+------------------------------
+Round  74
+train_acc: 57.235000 - train_loss: 1.875019 - test_acc: 94.340000 - test_loss: 1.495341
+------------------------------
+Round  75
+train_acc: 58.098333 - train_loss: 1.875214 - test_acc: 95.880000 - test_loss: 1.496393
+------------------------------
+Round  76
+train_acc: 57.806667 - train_loss: 1.866799 - test_acc: 95.610000 - test_loss: 1.477253
+------------------------------
+Round  77
+train_acc: 57.300000 - train_loss: 1.859394 - test_acc: 94.720000 - test_loss: 1.462352
+------------------------------
+Round  78
+train_acc: 57.836667 - train_loss: 1.848736 - test_acc: 95.660000 - test_loss: 1.433293
+------------------------------
+Round  79
+train_acc: 58.095000 - train_loss: 1.861284 - test_acc: 95.820000 - test_loss: 1.469773
+------------------------------
+Round  80
+train_acc: 58.181667 - train_loss: 1.864851 - test_acc: 96.150000 - test_loss: 1.473382
+------------------------------
+Round  81
+train_acc: 57.233333 - train_loss: 1.857267 - test_acc: 94.410000 - test_loss: 1.458815
+------------------------------
+Round  82
+train_acc: 56.888333 - train_loss: 1.854563 - test_acc: 93.690000 - test_loss: 1.452593
+------------------------------
+Round  83
+train_acc: 58.226667 - train_loss: 1.840816 - test_acc: 96.210000 - test_loss: 1.423610
+------------------------------
+Round  84
+train_acc: 58.283333 - train_loss: 1.837577 - test_acc: 96.320000 - test_loss: 1.416775
+------------------------------
+Round  85
+train_acc: 57.921667 - train_loss: 1.830761 - test_acc: 95.680000 - test_loss: 1.402548
+------------------------------
+Round  86
+train_acc: 57.861667 - train_loss: 1.851796 - test_acc: 95.550000 - test_loss: 1.450349
+------------------------------
+Round  87
+train_acc: 55.023333 - train_loss: 1.849647 - test_acc: 90.360000 - test_loss: 1.445477
+------------------------------
+Round  88
+train_acc: 57.943333 - train_loss: 1.839125 - test_acc: 95.640000 - test_loss: 1.419882
+------------------------------
+Round  89
+train_acc: 57.958333 - train_loss: 1.837206 - test_acc: 95.760000 - test_loss: 1.419926
+------------------------------
+Round  90
+train_acc: 58.155000 - train_loss: 1.838788 - test_acc: 96.120000 - test_loss: 1.424665
+------------------------------
+Round  91
+train_acc: 57.913333 - train_loss: 1.830667 - test_acc: 95.790000 - test_loss: 1.402932
+------------------------------
+Round  92
+train_acc: 58.158333 - train_loss: 1.849667 - test_acc: 96.030000 - test_loss: 1.447759
+------------------------------
+Round  93
+train_acc: 58.436667 - train_loss: 1.824671 - test_acc: 96.640000 - test_loss: 1.390028
+------------------------------
+Round  94
+train_acc: 58.298333 - train_loss: 1.823939 - test_acc: 96.320000 - test_loss: 1.386809
+------------------------------
+Round  95
+train_acc: 58.121667 - train_loss: 1.825591 - test_acc: 96.170000 - test_loss: 1.398377
+------------------------------
+Round  96
+train_acc: 57.725000 - train_loss: 1.843517 - test_acc: 95.150000 - test_loss: 1.429385
+------------------------------
+Round  97
+train_acc: 57.858333 - train_loss: 1.828143 - test_acc: 95.450000 - test_loss: 1.397925
+------------------------------
+Round  98
+train_acc: 57.980000 - train_loss: 1.822821 - test_acc: 95.390000 - test_loss: 1.392224
+------------------------------
+Round  99
+train_acc: 56.803333 - train_loss: 1.830262 - test_acc: 93.360000 - test_loss: 1.398728
+------------------------------
+Round 100
+train_acc: 56.935000 - train_loss: 1.836405 - test_acc: 93.760000 - test_loss: 1.420450
+------------------------------
+Round 101
+train_acc: 56.501667 - train_loss: 1.842774 - test_acc: 92.760000 - test_loss: 1.436415
+------------------------------
+Round 102
+train_acc: 57.966667 - train_loss: 1.840102 - test_acc: 95.540000 - test_loss: 1.429578
+------------------------------
+Round 103
+train_acc: 58.036667 - train_loss: 1.835736 - test_acc: 95.560000 - test_loss: 1.422539
+------------------------------
+Round 104
+train_acc: 57.056667 - train_loss: 1.833664 - test_acc: 93.830000 - test_loss: 1.419872
+------------------------------
+Round 105
+train_acc: 58.030000 - train_loss: 1.822587 - test_acc: 95.680000 - test_loss: 1.397681
+------------------------------
+Round 106
+train_acc: 58.221667 - train_loss: 1.816398 - test_acc: 96.160000 - test_loss: 1.380242
+------------------------------
+Round 107
+train_acc: 58.271667 - train_loss: 1.820333 - test_acc: 96.030000 - test_loss: 1.387240
+------------------------------
+Round 108
+train_acc: 58.095000 - train_loss: 1.805160 - test_acc: 95.940000 - test_loss: 1.355541
+------------------------------
+Round 109
+train_acc: 56.886667 - train_loss: 1.808498 - test_acc: 93.570000 - test_loss: 1.364997
+------------------------------
+Round 110
+train_acc: 57.793333 - train_loss: 1.800025 - test_acc: 95.200000 - test_loss: 1.344321
+------------------------------
+Round 111
+train_acc: 58.353333 - train_loss: 1.804335 - test_acc: 96.240000 - test_loss: 1.356368
+------------------------------
+Round 112
+train_acc: 58.151667 - train_loss: 1.817579 - test_acc: 95.920000 - test_loss: 1.386169
+------------------------------
+Round 113
+train_acc: 58.326667 - train_loss: 1.808411 - test_acc: 96.150000 - test_loss: 1.363455
+------------------------------
+Round 114
+train_acc: 58.468333 - train_loss: 1.810124 - test_acc: 96.430000 - test_loss: 1.361210
+------------------------------
+Round 115
+train_acc: 58.000000 - train_loss: 1.816393 - test_acc: 95.570000 - test_loss: 1.375104
+------------------------------
+Round 116
+train_acc: 58.468333 - train_loss: 1.807328 - test_acc: 96.290000 - test_loss: 1.361418
+------------------------------
+Round 117
+train_acc: 58.200000 - train_loss: 1.802739 - test_acc: 96.070000 - test_loss: 1.351940
+------------------------------
+Round 118
+train_acc: 58.255000 - train_loss: 1.803656 - test_acc: 95.660000 - test_loss: 1.358038
+------------------------------
+Round 119
+train_acc: 58.493333 - train_loss: 1.803564 - test_acc: 96.300000 - test_loss: 1.356993
+------------------------------
+Round 120
+train_acc: 58.520000 - train_loss: 1.795278 - test_acc: 96.460000 - test_loss: 1.337656
+------------------------------
+Round 121
+train_acc: 58.598333 - train_loss: 1.801032 - test_acc: 96.670000 - test_loss: 1.352230
+------------------------------
+Round 122
+train_acc: 58.461667 - train_loss: 1.797280 - test_acc: 96.460000 - test_loss: 1.347058
+------------------------------
+Round 123
+train_acc: 58.221667 - train_loss: 1.790781 - test_acc: 96.160000 - test_loss: 1.327207
+------------------------------
+Round 124
+train_acc: 58.603333 - train_loss: 1.781063 - test_acc: 96.810000 - test_loss: 1.305348
+------------------------------
+Round 125
+train_acc: 58.423333 - train_loss: 1.795198 - test_acc: 96.350000 - test_loss: 1.340044
+------------------------------
+Round 126
+train_acc: 57.985000 - train_loss: 1.803032 - test_acc: 95.390000 - test_loss: 1.354810
+------------------------------
+Round 127
+train_acc: 58.481667 - train_loss: 1.790703 - test_acc: 96.420000 - test_loss: 1.326733
+------------------------------
+Round 128
+train_acc: 58.588333 - train_loss: 1.784140 - test_acc: 96.440000 - test_loss: 1.317086
+------------------------------
+Round 129
+train_acc: 58.405000 - train_loss: 1.796674 - test_acc: 96.110000 - test_loss: 1.341500
+------------------------------
+Round 130
+train_acc: 58.450000 - train_loss: 1.792931 - test_acc: 96.370000 - test_loss: 1.333170
+------------------------------
+Round 131
+train_acc: 58.281667 - train_loss: 1.803772 - test_acc: 95.900000 - test_loss: 1.359002
+------------------------------
+Round 132
+train_acc: 58.355000 - train_loss: 1.790530 - test_acc: 96.120000 - test_loss: 1.324613
+------------------------------
+Round 133
+train_acc: 58.595000 - train_loss: 1.789888 - test_acc: 96.550000 - test_loss: 1.330061
+------------------------------
+Round 134
+train_acc: 58.381667 - train_loss: 1.799538 - test_acc: 96.030000 - test_loss: 1.350905
+------------------------------
+Round 135
+train_acc: 57.933333 - train_loss: 1.806389 - test_acc: 95.100000 - test_loss: 1.364965
+------------------------------
+Round 136
+train_acc: 58.455000 - train_loss: 1.798422 - test_acc: 96.150000 - test_loss: 1.351546
+------------------------------
+Round 137
+train_acc: 58.148333 - train_loss: 1.789164 - test_acc: 95.580000 - test_loss: 1.326902
+------------------------------
+Round 138
+train_acc: 58.445000 - train_loss: 1.789822 - test_acc: 96.180000 - test_loss: 1.332254
+------------------------------
+Round 139
+train_acc: 58.636667 - train_loss: 1.773320 - test_acc: 96.560000 - test_loss: 1.295085
+------------------------------
+Round 140
+train_acc: 58.138333 - train_loss: 1.774289 - test_acc: 95.640000 - test_loss: 1.296163
+------------------------------
+Round 141
+train_acc: 58.008333 - train_loss: 1.780548 - test_acc: 95.530000 - test_loss: 1.309185
+------------------------------
+Round 142
+train_acc: 57.421667 - train_loss: 1.781910 - test_acc: 94.320000 - test_loss: 1.309303
+------------------------------
+Round 143
+train_acc: 58.231667 - train_loss: 1.777331 - test_acc: 95.580000 - test_loss: 1.304004
+------------------------------
+Round 144
+train_acc: 58.138333 - train_loss: 1.782196 - test_acc: 95.620000 - test_loss: 1.317131
+------------------------------
+Round 145
+train_acc: 58.203333 - train_loss: 1.777005 - test_acc: 95.670000 - test_loss: 1.307282
+------------------------------
+Round 146
+train_acc: 58.705000 - train_loss: 1.769152 - test_acc: 96.620000 - test_loss: 1.288359
+------------------------------
+Round 147
+train_acc: 58.236667 - train_loss: 1.776965 - test_acc: 95.750000 - test_loss: 1.296590
+------------------------------
+Round 148
+train_acc: 57.991667 - train_loss: 1.779517 - test_acc: 95.290000 - test_loss: 1.307098
+------------------------------
+Round 149
+train_acc: 57.511667 - train_loss: 1.776150 - test_acc: 94.190000 - test_loss: 1.302138
+------------------------------
+Round 150
+train_acc: 58.023333 - train_loss: 1.780734 - test_acc: 95.360000 - test_loss: 1.313714
+------------------------------
+Round 151
+train_acc: 58.173333 - train_loss: 1.777026 - test_acc: 95.690000 - test_loss: 1.306068
+------------------------------
+Round 152
+train_acc: 58.195000 - train_loss: 1.783034 - test_acc: 95.660000 - test_loss: 1.315328
+------------------------------
+Round 153
+train_acc: 58.341667 - train_loss: 1.778780 - test_acc: 96.030000 - test_loss: 1.306987
+------------------------------
+Round 154
+train_acc: 58.635000 - train_loss: 1.767057 - test_acc: 96.530000 - test_loss: 1.282964
+------------------------------
+Round 155
+train_acc: 58.545000 - train_loss: 1.780412 - test_acc: 96.170000 - test_loss: 1.319637
+------------------------------
+Round 156
+train_acc: 58.453333 - train_loss: 1.786497 - test_acc: 96.110000 - test_loss: 1.334961
+------------------------------
+Round 157
+train_acc: 58.645000 - train_loss: 1.775679 - test_acc: 96.480000 - test_loss: 1.309086
+------------------------------
+Round 158
+train_acc: 58.270000 - train_loss: 1.777395 - test_acc: 95.600000 - test_loss: 1.311864
+------------------------------
+Round 159
+train_acc: 58.850000 - train_loss: 1.771953 - test_acc: 96.920000 - test_loss: 1.294835
+------------------------------
+Round 160
+train_acc: 58.538333 - train_loss: 1.771439 - test_acc: 96.390000 - test_loss: 1.299107
+------------------------------
+Round 161
+train_acc: 58.516667 - train_loss: 1.763698 - test_acc: 96.120000 - test_loss: 1.277376
+------------------------------
+Round 162
+train_acc: 58.523333 - train_loss: 1.767111 - test_acc: 96.170000 - test_loss: 1.286730
+------------------------------
+Round 163
+train_acc: 57.053333 - train_loss: 1.770084 - test_acc: 93.210000 - test_loss: 1.295409
+------------------------------
+Round 164
+train_acc: 58.333333 - train_loss: 1.760944 - test_acc: 96.000000 - test_loss: 1.277066
+------------------------------
+Round 165
+train_acc: 58.615000 - train_loss: 1.764448 - test_acc: 96.330000 - test_loss: 1.278543
+------------------------------
+Round 166
+train_acc: 58.430000 - train_loss: 1.767113 - test_acc: 96.050000 - test_loss: 1.282854
+------------------------------
+Round 167
+train_acc: 58.606667 - train_loss: 1.762200 - test_acc: 96.380000 - test_loss: 1.276178
+------------------------------
+Round 168
+train_acc: 58.491667 - train_loss: 1.758318 - test_acc: 96.340000 - test_loss: 1.269508
+------------------------------
+Round 169
+train_acc: 58.805000 - train_loss: 1.762321 - test_acc: 96.620000 - test_loss: 1.278713
+------------------------------
+Round 170
+train_acc: 58.540000 - train_loss: 1.781821 - test_acc: 96.140000 - test_loss: 1.317579
+------------------------------
+Round 171
+train_acc: 58.738333 - train_loss: 1.761877 - test_acc: 96.660000 - test_loss: 1.276579
+------------------------------
+Round 172
+train_acc: 58.750000 - train_loss: 1.768500 - test_acc: 96.550000 - test_loss: 1.294826
+------------------------------
+Round 173
+train_acc: 58.540000 - train_loss: 1.758919 - test_acc: 96.230000 - test_loss: 1.275503
+------------------------------
+Round 174
+train_acc: 58.273333 - train_loss: 1.763041 - test_acc: 95.670000 - test_loss: 1.274430
+------------------------------
+Round 175
+train_acc: 58.755000 - train_loss: 1.759951 - test_acc: 96.450000 - test_loss: 1.274429
+------------------------------
+Round 176
+train_acc: 58.676667 - train_loss: 1.764084 - test_acc: 96.420000 - test_loss: 1.283359
+------------------------------
+Round 177
+train_acc: 58.646667 - train_loss: 1.761586 - test_acc: 96.530000 - test_loss: 1.281985
+------------------------------
+Round 178
+train_acc: 58.238333 - train_loss: 1.761206 - test_acc: 95.610000 - test_loss: 1.280675
+------------------------------
+Round 179
+train_acc: 58.405000 - train_loss: 1.751732 - test_acc: 95.960000 - test_loss: 1.260330
+------------------------------
+Round 180
+train_acc: 58.561667 - train_loss: 1.753934 - test_acc: 96.230000 - test_loss: 1.265764
+------------------------------
+Round 181
+train_acc: 58.540000 - train_loss: 1.763934 - test_acc: 96.130000 - test_loss: 1.291451
+------------------------------
+Round 182
+train_acc: 58.411667 - train_loss: 1.759901 - test_acc: 96.070000 - test_loss: 1.277802
+------------------------------
+Round 183
+train_acc: 58.545000 - train_loss: 1.764465 - test_acc: 96.380000 - test_loss: 1.283143
+------------------------------
+Round 184
+train_acc: 58.343333 - train_loss: 1.767013 - test_acc: 95.610000 - test_loss: 1.293570
+------------------------------
+Round 185
+train_acc: 58.578333 - train_loss: 1.761796 - test_acc: 95.990000 - test_loss: 1.277644
+------------------------------
+Round 186
+train_acc: 58.768333 - train_loss: 1.765851 - test_acc: 96.520000 - test_loss: 1.288877
+------------------------------
+Round 187
+train_acc: 58.843333 - train_loss: 1.754567 - test_acc: 96.820000 - test_loss: 1.260974
+------------------------------
+Round 188
+train_acc: 58.650000 - train_loss: 1.746356 - test_acc: 96.350000 - test_loss: 1.242507
+------------------------------
+Round 189
+train_acc: 58.633333 - train_loss: 1.755725 - test_acc: 96.250000 - test_loss: 1.265102
+------------------------------
+Round 190
+train_acc: 58.501667 - train_loss: 1.762361 - test_acc: 96.080000 - test_loss: 1.285126
+------------------------------
+Round 191
+train_acc: 58.298333 - train_loss: 1.761285 - test_acc: 95.700000 - test_loss: 1.282018
+------------------------------
+Round 192
+train_acc: 58.673333 - train_loss: 1.758679 - test_acc: 96.500000 - test_loss: 1.277343
+------------------------------
+Round 193
+train_acc: 58.556667 - train_loss: 1.765965 - test_acc: 96.220000 - test_loss: 1.295011
+------------------------------
+Round 194
+train_acc: 58.573333 - train_loss: 1.755861 - test_acc: 96.110000 - test_loss: 1.271393
+------------------------------
+Round 195
+train_acc: 58.600000 - train_loss: 1.760226 - test_acc: 96.370000 - test_loss: 1.283921
+------------------------------
+Round 196
+train_acc: 58.091667 - train_loss: 1.762856 - test_acc: 95.100000 - test_loss: 1.285450
+------------------------------
+Round 197
+train_acc: 58.505000 - train_loss: 1.753106 - test_acc: 96.180000 - test_loss: 1.264979
+------------------------------
+Round 198
+train_acc: 57.560000 - train_loss: 1.764955 - test_acc: 94.010000 - test_loss: 1.292528
+------------------------------
+Round 199
+train_acc: 57.950000 - train_loss: 1.759842 - test_acc: 94.690000 - test_loss: 1.283176
+------------------------------

@@ -1,0 +1,6 @@
+Round   0
+train_acc: 13.496667 - train_loss: 2.293376 - test_acc: 14.610000 - test_loss: 2.285991
+Round   1
+train_acc: 9.418333 - train_loss: 2.292494 - test_acc: 9.600000 - test_loss: 2.258143
+Round   2
+train_acc: 13.570000 - train_loss: 2.265172 - test_acc: 16.500000 - test_loss: 2.197923
