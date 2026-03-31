@@ -144,6 +144,9 @@ def get_local_update_objects(args, dataset_train, dict_users=None, noise_rates=N
                                                         **local_update_args)
         elif args.method == 'dividemix':
             local_update_object = LocalUpdateDivideMix(**local_update_args)
+        # 👇 新增这一段：让 feder 在本地直接调用我们魔改过的 GMM+Coteaching 类
+        elif args.method == 'feder':
+            local_update_object = LocalUpdateCoteaching(**local_update_args)
 
         local_update_objects.append(local_update_object)
 
