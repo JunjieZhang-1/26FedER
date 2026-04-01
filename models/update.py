@@ -146,7 +146,7 @@ def get_local_update_objects(args, dataset_train, dict_users=None, noise_rates=N
             local_update_object = LocalUpdateDivideMix(**local_update_args)
         # 👇 新增这一段：让 feder 在本地直接调用我们魔改过的 GMM+Coteaching 类
         elif args.method == 'feder':
-            local_update_object = LocalUpdateCoteaching(**local_update_args)
+            local_update_object = LocalUpdateFedER(**local_update_args)
 
         local_update_objects.append(local_update_object)
 
@@ -931,3 +931,139 @@ class LocalUpdateDivideMix(BaseLocalUpdate):
         prob_dict = {idx: prob for idx, prob in zip(indices, prob)}
 
         return prob_dict, label_idx, unlabel_idx
+# =============================================================================
+# 🚀 终极杀器：LocalUpdateFedER (GMM 动态评估 + 双核交叉互学)
+# =============================================================================
+class LocalUpdateFedER(BaseLocalUpdate):
+    def __init__(self, args, user_idx=None, dataset=None, idxs=None):
+        super().__init__(
+            args=args,
+            user_idx=user_idx,
+            dataset=dataset,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        # 使用 reduction='none' 保留每个样本的 loss，以便于后续筛选
+        self.loss_func = nn.CrossEntropyLoss(reduction='none')
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+
+        # GMM需要的全量本地评估数据加载器
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        # 存储两个网络认为样本是干净的概率字典
+        self.prob1_dict = {}
+        self.prob2_dict = {}
+
+    # ---------------- 🌟 模块 1：GMM 拟合与软概率生成 ----------------
+    def fit_gmm(self, net):
+        net.eval()
+        losses_lst = []
+        idx_lst = []
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = net(inputs)
+                losses_lst.append(self.CE(outputs, targets))
+                idx_lst.append(idxs.cpu().numpy())
+
+        indices = np.concatenate(idx_lst)
+        losses = torch.cat(losses_lst).cpu().numpy()
+
+        # Loss 归一化，防止极端值导致 GMM 崩溃
+        if losses.max() > losses.min():
+            losses = (losses - losses.min()) / (losses.max() - losses.min() + 1e-8)
+        input_loss = losses.reshape(-1, 1)
+
+        # 运行 GMM 聚类
+        from sklearn.mixture import GaussianMixture
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()] # 取 Loss 较小的那个高斯分布的概率（即判定为干净数据的概率）
+
+        prob_dict = {idx: p for idx, p in zip(indices, prob)}
+        return prob_dict
+
+    # ---------------- 🌟 模块 2：训练拦截与概率更新 ----------------
+    def train_multiple_models(self, net1, net2):
+        # 只有在热身期结束（warmup_epochs）之后，才开始跑 GMM 清洗数据
+        if self.args.g_epoch >= self.args.warmup_epochs:
+            self.prob1_dict = self.fit_gmm(net1)
+            self.prob2_dict = self.fit_gmm(net2)
+        # 继续执行父类的双模型训练流程
+        return super().train_multiple_models(net1, net2)
+
+    # ---------------- 🌟 模块 3：前向传播与 Loss 计算分支 ----------------
+    def forward_pass(self, batch, net, net2=None):
+        images, labels, _, ids = batch
+        ids = ids.numpy()
+
+        images = images.to(self.args.device)
+        labels = labels.to(self.args.device)
+
+        log_probs1 = net(images)
+        log_probs2 = net2(images)
+
+        # 在预热期 (比如前 80 轮)：使用基础的硬截断 Co-teaching
+        if self.args.g_epoch < self.args.warmup_epochs:
+            loss1, loss2, _ = self.loss_coteaching(log_probs1, log_probs2, labels, self.args.forget_rate)
+            return loss1, loss2
+
+        # 过了预热期：开启魔改大招，GMM 软概率交叉选择！
+        else:
+            loss1, loss2 = self.loss_coteaching_gmm(log_probs1, log_probs2, labels, ids)
+            return loss1, loss2
+
+    # ---------------- 🌟 模块 4：GMM + Co-teaching 核心交叉逻辑 ----------------
+    def loss_coteaching_gmm(self, y_pred1, y_pred2, y_true, ids):
+        # 1. 计算当前批次样本的 Loss
+        loss_1 = self.loss_func(y_pred1, y_true)
+        loss_2 = self.loss_func(y_pred2, y_true)
+
+        # 2. 从各自的 GMM 字典里查找这些样本是“干净数据”的概率
+        p1 = np.array([self.prob1_dict.get(idx, 0.0) for idx in ids])
+        p2 = np.array([self.prob2_dict.get(idx, 0.0) for idx in ids])
+
+        # 3. 双方挑选概率大于阈值 (默认 p_threshold=0.5) 的样本作为干净数据
+        ind_1_update = np.where(p1 > self.args.p_threshold)[0]
+        ind_2_update = np.where(p2 > self.args.p_threshold)[0]
+
+        # 极其重要的防护机制：如果这批数据被 GMM 判定为全脏，为防止模型梯度断裂，强制取 Loss 最小的前 10%
+        if len(ind_1_update) == 0:
+            ind_1_update = np.argsort(loss_1.cpu().detach().numpy())[:max(1, int(len(ids)*0.1))]
+        if len(ind_2_update) == 0:
+            ind_2_update = np.argsort(loss_2.cpu().detach().numpy())[:max(1, int(len(ids)*0.1))]
+
+        # 4. 交叉教学精髓：互相喂数据！
+        # 网络 1 用网络 2 选出的干净数据 (ind_2_update) 进行更新
+        loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+        # 网络 2 用网络 1 选出的干净数据 (ind_1_update) 进行更新
+        loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+
+        return torch.mean(loss_1_update), torch.mean(loss_2_update)
+
+    # ---------------- 模块 5：预热期使用的基础硬截断 ----------------
+    def loss_coteaching(self, y_pred1, y_pred2, y_true, forget_rate):
+        loss_1 = self.loss_func(y_pred1, y_true)
+        ind_1_sorted = torch.argsort(loss_1)
+
+        loss_2 = self.loss_func(y_pred2, y_true)
+        ind_2_sorted = torch.argsort(loss_2)
+
+        remember_rate = 1 - forget_rate
+        num_remember = int(remember_rate * len(ind_1_sorted))
+        num_remember = max(1, num_remember)
+
+        ind_1_update = ind_1_sorted[:num_remember]
+        ind_2_update = ind_2_sorted[:num_remember]
+
+        loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+        loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+
+        ind_1_update = list(ind_1_update.cpu().detach().numpy())
+        return torch.mean(loss_1_update), torch.mean(loss_2_update), ind_1_update
