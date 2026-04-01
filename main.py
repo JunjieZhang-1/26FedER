@@ -325,7 +325,8 @@ if __name__ == '__main__':
                     # 3. 动态调整聚合权重 w_alpha
                     w_edge = FedAvg(client_weights_list, client_samples_list)  # 目前先用 FedAvg 顶替
                 else:
-                    w_edge = FedAvg(client_weights_list2, client_samples_list)
+                    # ✅ 已修复：恢复使用网络 1 的权重列表
+                    w_edge = FedAvg(client_weights_list, client_samples_list)
                 edge_weights_list.append(w_edge)
 
                 # 🔓 模型2 在边缘层进行聚合
@@ -336,6 +337,8 @@ if __name__ == '__main__':
                     else:
                         w_edge2 = FedAvg(client_weights_list2, client_samples_list)
                     edge_weights_list2.append(w_edge2)
+
+                # 记录样本数和损失
                 edge_samples_list.append(sum(client_samples_list))
                 avg_edge_loss = sum(client_losses) / len(client_losses)
                 edge_losses_list.append(avg_edge_loss)
@@ -347,6 +350,39 @@ if __name__ == '__main__':
 
                 edge_str = f"  --> [Edge Server {edge_id}] Test Acc: {edge_test_acc:.2f}% | Test Loss: {edge_test_loss:.6f}"
                 edge_log_strings.append(edge_str)
+
+
+            # # --- Edge Aggregation (边缘聚合) ---
+            # if len(client_weights_list) > 0:
+            #     if args.method == "feder" and epoch >= args.warmup_epochs:
+            #         # TODO: 在这里植入 FedER 独有的可靠邻居聚合机制！
+            #         # 1. 计算 client_weights_list 中各个模型的相似度矩阵
+            #         # 2. 识别出可靠邻居 (Reliable Neighbors)
+            #         # 3. 动态调整聚合权重 w_alpha
+            #         w_edge = FedAvg(client_weights_list, client_samples_list)  # 目前先用 FedAvg 顶替
+            #     else:
+            #         w_edge = FedAvg(client_weights_list2, client_samples_list)
+            #     edge_weights_list.append(w_edge)
+            #
+            #     # 🔓 模型2 在边缘层进行聚合
+            #     if args.send_2_models:
+            #         if args.method == "feder" and epoch >= args.warmup_epochs:
+            #             # TODO: 模型2的 FedER 聚合
+            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
+            #         else:
+            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
+            #         edge_weights_list2.append(w_edge2)
+            #     edge_samples_list.append(sum(client_samples_list))
+            #     avg_edge_loss = sum(client_losses) / len(client_losses)
+            #     edge_losses_list.append(avg_edge_loss)
+            #
+            #     # 评估模型1 (保持只看模型1的成绩即可)
+            #     net_edge = copy.deepcopy(net_glob).to(args.device)
+            #     net_edge.load_state_dict(w_edge)
+            #     edge_test_acc, edge_test_loss = test_img(net_edge, log_test_data_loader, args)
+            #
+            #     edge_str = f"  --> [Edge Server {edge_id}] Test Acc: {edge_test_acc:.2f}% | Test Loss: {edge_test_loss:.6f}"
+            #     edge_log_strings.append(edge_str)
 
         # --- Cloud Aggregation (云端聚合) ---
         if len(edge_weights_list) > 0:
