@@ -200,6 +200,9 @@ def args_parser():
     # 8：边缘服务器数量配置
     parser.add_argument('--num_edges', type=int, default=5,
                         help="边缘服务器的数量（默认5个）")
+    # 🚀 新增：FedER 专属超参数，用于控制专业性(exp)和相似度(sim)的权重
+    parser.add_argument('--feder_exp_weight', type=float, default=0.6,
+                        help='FedER聚合时专业性(exp)的权重占比。相似度(sim)的权重将自动设为 1 - feder_exp_weight')
     args = parser.parse_args()
     return args
 
