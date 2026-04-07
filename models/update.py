@@ -932,7 +932,7 @@ class LocalUpdateDivideMix(BaseLocalUpdate):
 
         return prob_dict, label_idx, unlabel_idx
 # =============================================================================
-# 🚀 终极杀器：LocalUpdateFedER (GMM 动态评估 + 双核交叉互学)
+# 2641LocalUpdateFedER (GMM 动态评估 + 双核交叉互学)
 # =============================================================================
 class LocalUpdateFedER(BaseLocalUpdate):
     def __init__(self, args, user_idx=None, dataset=None, idxs=None):
