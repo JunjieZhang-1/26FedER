@@ -90,7 +90,7 @@ def args_parser():
     parser = argparse.ArgumentParser()
 
     # 1. 算法选择参数（指定使用的抗噪声或联邦学习方法）
-    parser.add_argument('--method', type=str, default='dividemix',
+    parser.add_argument('--method', type=str, default='feder',
                         choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder'],
                         help='选择训练方法：default(默认，对应FedAvg)、fedrn(原论文方法)等抗噪声算法')
 
@@ -191,11 +191,11 @@ def args_parser():
     parser.add_argument('--p_threshold', default=0.5, type=float,
                         help="MixMatch算法的置信度阈值")
 
-    # # 7. FedRN算法专属参数（原论文核心参数
-    # parser.add_argument('--num_neighbors', type=int, default=2,
-    #                     help="FedRN选择的可靠邻居数量（默认2，与原论文最优设置一致）")
-    # parser.add_argument('--w_alpha', type=float, default=0.5,
-    #                     help="FedRN中专业性与相似度的权重系数（0.5表示两者同等重要）")
+    # 7. FedRN算法专属参数（原论文核心参数
+    parser.add_argument('--num_neighbors', type=int, default=2,
+                        help="FedRN选择的可靠邻居数量（默认2，与原论文最优设置一致）")
+    parser.add_argument('--w_alpha', type=float, default=0.5,
+                        help="FedRN中专业性与相似度的权重系数（0.5表示两者同等重要）")
 
     # 8：边缘服务器数量配置
     parser.add_argument('--num_edges', type=int, default=5,

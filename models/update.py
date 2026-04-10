@@ -315,7 +315,6 @@ class BaseLocalUpdate:
     def on_epoch_end(self):
         pass
 
-
 class LocalUpdateFedRN(BaseLocalUpdate):
     def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
         super().__init__(
@@ -336,25 +335,24 @@ class LocalUpdateFedRN(BaseLocalUpdate):
             pin_memory=True,
         )
         self.data_indices = np.array(idxs)
-        #不需要
-        # self.expertise = 0.5
-        # self.arbitrary_output = torch.rand((1, self.args.num_classes))
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
 
-    # def set_expertise(self):
-    #     self.net1.eval()
-    #     correct = 0
-    #     n_total = len(self.ldr_eval.dataset)
-    #
-    #     with torch.no_grad():
-    #         for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
-    #             inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
-    #             outputs = self.net1(inputs)
-    #             y_pred = outputs.data.max(1, keepdim=True)[1]
-    #             correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
-    #         expertise = correct / n_total
-    #
-    #     self.expertise = expertise
-    #
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        n_total = len(self.ldr_eval.dataset)
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self.net1(inputs)
+                y_pred = outputs.data.max(1, keepdim=True)[1]
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+            expertise = correct / n_total
+
+        self.expertise = expertise
+
     def set_arbitrary_output(self):
         arbitrary_output = self.net1(self.gaussian_noise.to(self.args.device))
         self.arbitrary_output = arbitrary_output
@@ -362,10 +360,8 @@ class LocalUpdateFedRN(BaseLocalUpdate):
     def train_phase1(self, net):
         # local training
         w, loss = self.train_single_model(net)
-
-        # self.set_expertise()
-        # self.set_arbitrary_output()
-        #[已删除] 不需要再计算专业度和任意输出
+        self.set_expertise()
+        self.set_arbitrary_output()
         return w, loss
 
     def fit_gmm(self, net):
@@ -390,32 +386,19 @@ class LocalUpdateFedRN(BaseLocalUpdate):
 
         return prob
 
-
-    def get_clean_idx(self, prob):#修改
-        # [保持原代码不变]
+    def get_clean_idx(self, prob):
         threshold = self.args.p_threshold
         pred = (prob > threshold)
         pred_clean_idx = pred.nonzero()[0]
         pred_clean_idx = self.data_indices[pred_clean_idx]
+        pred_noisy_idx = (1 - pred).nonzero()[0]
+        pred_noisy_idx = self.data_indices[pred_noisy_idx]
 
-        # 如果筛选为空，为了避免报错，可以使用全部数据或部分数据
         if len(pred_clean_idx) == 0:
-            pred_clean_idx = self.data_indices
+            pred_clean_idx = pred_noisy_idx
+            pred_noisy_idx = np.array([])
 
-        return pred_clean_idx, None
-    # def get_clean_idx(self, prob):
-    #     threshold = self.args.p_threshold
-    #     pred = (prob > threshold)
-    #     pred_clean_idx = pred.nonzero()[0]
-    #     pred_clean_idx = self.data_indices[pred_clean_idx]
-    #     pred_noisy_idx = (1 - pred).nonzero()[0]
-    #     pred_noisy_idx = self.data_indices[pred_noisy_idx]
-    #
-    #     if len(pred_clean_idx) == 0:
-    #         pred_clean_idx = pred_noisy_idx
-    #         pred_noisy_idx = np.array([])
-    #
-    #     return pred_clean_idx, pred_noisy_idx
+        return pred_clean_idx, pred_noisy_idx
 
     def finetune_head(self, neighbor_list, pred_clean_idx):
         loader = DataLoader(
@@ -453,64 +436,238 @@ class LocalUpdateFedRN(BaseLocalUpdate):
 
         return neighbor_list
 
-    # === [新增/修改] 核心训练函数 ===
-    def train_phase_self_clean(self, net):
-        """
-        替代原本的 train_phase2。
-        不使用 neighbor_list，仅使用 GMM 筛选出的干净样本进行训练。
-        """
-        # 1. 拟合 GMM 获取概率
-        #prob = self.fit_gmm(net)
-        # 注意：这里必须使用 self.net1 进行 fit_gmm，因为它代表了全局最新的共识知识
+    def train_phase2(self, net, prev_score, neighbor_list, neighbor_score_list):
+        # Prev fit GMM & get clean idx
         prob = self.fit_gmm(self.net1)
+        pred_clean_idx, pred_noisy_idx = self.get_clean_idx(prob)
 
-        # 2. 获取干净样本索引
-        pred_clean_idx, _ = self.get_clean_idx(prob)
+        prob_list = [prob]
+        neighbor_list = self.finetune_head(neighbor_list, pred_clean_idx)
+        for neighbor_net in neighbor_list:
+            neighbor_prob = self.fit_gmm(neighbor_net)
+            prob_list.append(neighbor_prob)
 
-        # 3. 更新训练用的 DataLoader，仅包含干净样本
-        # 注意：这里直接覆盖 self.ldr_train，这样 train_single_model 就会使用新数据
-        self.ldr_train = DataLoader(
-            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
-            batch_size=self.args.local_bs,
-            shuffle=True,  # 训练时需要 Shuffle
-            num_workers=self.args.num_workers,
-            pin_memory=True,
-        )
+        # Scores
+        score_list = [prev_score] + neighbor_score_list
+        score_list = [score / sum(score_list) for score in score_list]
 
-        # 4. 执行本地训练 (复用父类的 train_single_model)
+        # Get final prob
+        final_prob = np.zeros(len(prob))
+        for prob, score in zip(prob_list, score_list):
+            final_prob = np.add(final_prob, np.multiply(prob, score))
+        # Get final clean idx
+        final_clean_idx, final_noisy_idx = self.get_clean_idx(final_prob)
+
+        # Update loader with final clean idxs
+        self.ldr_train = DataLoader(DatasetSplit(self.dataset, final_clean_idx, real_idx_return=True),
+                                    batch_size=self.args.local_bs,
+                                    shuffle=True,
+                                    num_workers=self.args.num_workers,
+                                    pin_memory=True,
+                                    )
+        # local training
         w, loss = self.train_single_model(net)
-
+        self.set_expertise()
+        self.set_arbitrary_output()
         return w, loss
 
-    # def train_phase2(self, net):
-    #     # Prev fit GMM & get clean idx
-    #     # [修改] 不再接收 neighbor_list 等参数
-    #
-    #     # 1. 使用本地模型 (self.net1) 拟合 GMM 并计算概率
-    #     # p(clean|x; {c})
-    #     prob = self.fit_gmm(self.net1)
-    #
-    #     # 2. 根据概率筛选样本 (Sc = {x | p > 0.5})
-    #     # get_clean_idx 内部使用了 args.p_threshold (通常设为 0.5)
-    #     final_clean_idx, final_noisy_idx = self.get_clean_idx(prob)
-    #
-    #     # 3. 更新 DataLoader，只包含被判定为干净的样本
-    #     self.ldr_train = DataLoader(
-    #         DatasetSplit(self.dataset, final_clean_idx, real_idx_return=True),
-    #         batch_size=self.args.local_bs,
-    #         shuffle=True,
-    #         num_workers=self.args.num_workers,
-    #         pin_memory=True,
-    #     )
-    #
-    #     # 4. 在筛选后的数据集上进行本地训练
-    #     w, loss = self.train_single_model(net)
-    #
-    #     # [已删除] 不再更新指标
-    #     # self.set_expertise()
-    #     # self.set_arbitrary_output()
-    #
-    #     return w, loss
+
+## 26410以下是单gmm的fedrn没有使用邻居
+# class LocalUpdateFedRN(BaseLocalUpdate):
+#     def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+#         super().__init__(
+#             args=args,
+#             dataset=dataset,
+#             user_idx=user_idx,
+#             idxs=idxs,
+#             real_idx_return=True,
+#         )
+#         self.gaussian_noise = gaussian_noise
+#         self.CE = nn.CrossEntropyLoss(reduction='none')
+#
+#         self.ldr_eval = DataLoader(
+#             DatasetSplit(dataset, idxs, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=False,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#         self.data_indices = np.array(idxs)
+#         #不需要
+#         # self.expertise = 0.5
+#         # self.arbitrary_output = torch.rand((1, self.args.num_classes))
+#
+#     # def set_expertise(self):
+#     #     self.net1.eval()
+#     #     correct = 0
+#     #     n_total = len(self.ldr_eval.dataset)
+#     #
+#     #     with torch.no_grad():
+#     #         for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#     #             inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#     #             outputs = self.net1(inputs)
+#     #             y_pred = outputs.data.max(1, keepdim=True)[1]
+#     #             correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+#     #         expertise = correct / n_total
+#     #
+#     #     self.expertise = expertise
+#     #
+#     def set_arbitrary_output(self):
+#         arbitrary_output = self.net1(self.gaussian_noise.to(self.args.device))
+#         self.arbitrary_output = arbitrary_output
+#
+#     def train_phase1(self, net):
+#         # local training
+#         w, loss = self.train_single_model(net)
+#
+#         # self.set_expertise()
+#         # self.set_arbitrary_output()
+#         #[已删除] 不需要再计算专业度和任意输出
+#         return w, loss
+#
+#     def fit_gmm(self, net):
+#         losses = []
+#         net.eval()
+#
+#         with torch.no_grad():
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#                 outputs = net(inputs)
+#                 loss = self.CE(outputs, targets)
+#                 losses.append(loss)
+#
+#         losses = torch.cat(losses).cpu().numpy()
+#         losses = (losses - losses.min()) / (losses.max() - losses.min())
+#         input_loss = losses.reshape(-1, 1)
+#
+#         gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+#         gmm.fit(input_loss)
+#         prob = gmm.predict_proba(input_loss)
+#         prob = prob[:, gmm.means_.argmin()]
+#
+#         return prob
+#
+#
+#     def get_clean_idx(self, prob):#修改
+#         # [保持原代码不变]
+#         threshold = self.args.p_threshold
+#         pred = (prob > threshold)
+#         pred_clean_idx = pred.nonzero()[0]
+#         pred_clean_idx = self.data_indices[pred_clean_idx]
+#
+#         # 如果筛选为空，为了避免报错，可以使用全部数据或部分数据
+#         if len(pred_clean_idx) == 0:
+#             pred_clean_idx = self.data_indices
+#
+#         return pred_clean_idx, None
+#     # def get_clean_idx(self, prob):
+#     #     threshold = self.args.p_threshold
+#     #     pred = (prob > threshold)
+#     #     pred_clean_idx = pred.nonzero()[0]
+#     #     pred_clean_idx = self.data_indices[pred_clean_idx]
+#     #     pred_noisy_idx = (1 - pred).nonzero()[0]
+#     #     pred_noisy_idx = self.data_indices[pred_noisy_idx]
+#     #
+#     #     if len(pred_clean_idx) == 0:
+#     #         pred_clean_idx = pred_noisy_idx
+#     #         pred_noisy_idx = np.array([])
+#     #
+#     #     return pred_clean_idx, pred_noisy_idx
+#
+#     def finetune_head(self, neighbor_list, pred_clean_idx):
+#         loader = DataLoader(
+#             DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         optimizer_list = []
+#         for neighbor_net in neighbor_list:
+#             neighbor_net.train()
+#             body_params = [p for name, p in neighbor_net.named_parameters() if 'linear' not in name]
+#             head_params = [p for name, p in neighbor_net.named_parameters() if 'linear' in name]
+#
+#             optimizer = torch.optim.SGD([
+#                 {'params': head_params, 'lr': self.args.lr,
+#                  'momentum': self.args.momentum,
+#                  'weight_decay': self.args.weight_decay},
+#                 {'params': body_params, 'lr': 0.0},
+#             ])
+#             optimizer_list.append(optimizer)
+#
+#         for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+#             inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#
+#             for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+#                 neighbor_net.zero_grad()
+#
+#                 outputs = neighbor_net(inputs)
+#                 loss = self.loss_func(outputs, targets)
+#                 loss.backward()
+#                 optimizer.step()
+#
+#         return neighbor_list
+#
+#     # === [新增/修改] 核心训练函数 ===
+#     def train_phase_self_clean(self, net):
+#         """
+#         替代原本的 train_phase2。
+#         不使用 neighbor_list，仅使用 GMM 筛选出的干净样本进行训练。
+#         """
+#         # 1. 拟合 GMM 获取概率
+#         #prob = self.fit_gmm(net)
+#         # 注意：这里必须使用 self.net1 进行 fit_gmm，因为它代表了全局最新的共识知识
+#         prob = self.fit_gmm(self.net1)
+#
+#         # 2. 获取干净样本索引
+#         pred_clean_idx, _ = self.get_clean_idx(prob)
+#
+#         # 3. 更新训练用的 DataLoader，仅包含干净样本
+#         # 注意：这里直接覆盖 self.ldr_train，这样 train_single_model 就会使用新数据
+#         self.ldr_train = DataLoader(
+#             DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,  # 训练时需要 Shuffle
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         # 4. 执行本地训练 (复用父类的 train_single_model)
+#         w, loss = self.train_single_model(net)
+#
+#         return w, loss
+#
+#     # def train_phase2(self, net):
+#     #     # Prev fit GMM & get clean idx
+#     #     # [修改] 不再接收 neighbor_list 等参数
+#     #
+#     #     # 1. 使用本地模型 (self.net1) 拟合 GMM 并计算概率
+#     #     # p(clean|x; {c})
+#     #     prob = self.fit_gmm(self.net1)
+#     #
+#     #     # 2. 根据概率筛选样本 (Sc = {x | p > 0.5})
+#     #     # get_clean_idx 内部使用了 args.p_threshold (通常设为 0.5)
+#     #     final_clean_idx, final_noisy_idx = self.get_clean_idx(prob)
+#     #
+#     #     # 3. 更新 DataLoader，只包含被判定为干净的样本
+#     #     self.ldr_train = DataLoader(
+#     #         DatasetSplit(self.dataset, final_clean_idx, real_idx_return=True),
+#     #         batch_size=self.args.local_bs,
+#     #         shuffle=True,
+#     #         num_workers=self.args.num_workers,
+#     #         pin_memory=True,
+#     #     )
+#     #
+#     #     # 4. 在筛选后的数据集上进行本地训练
+#     #     w, loss = self.train_single_model(net)
+#     #
+#     #     # [已删除] 不再更新指标
+#     #     # self.set_expertise()
+#     #     # self.set_arbitrary_output()
+#     #
+#     #     return w, loss
 
 class LocalUpdateSELFIE(BaseLocalUpdate):
     def __init__(self, args, user_idx=None, dataset=None, idxs=None, noise_rate=0):
