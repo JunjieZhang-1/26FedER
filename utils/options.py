@@ -99,7 +99,7 @@ def args_parser():
                         help="联邦学习总通信轮次（默认500轮）")
     parser.add_argument('--num_users', type=int, default=100,
                         help="用户总数K（默认100个用户）")
-    parser.add_argument('--frac', type=float, default=0.1,
+    parser.add_argument('--frac', type=float, default=0.5,
                         help="每轮参与训练的用户比例C（默认10%）")
     parser.add_argument('--local_ep', type=int, default=4,
                         help="每个用户的本地训练轮次E（默认5轮）")
