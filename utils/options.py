@@ -90,8 +90,8 @@ def args_parser():
     parser = argparse.ArgumentParser()
 
     # 1. 算法选择参数（指定使用的抗噪声或联邦学习方法）
-    parser.add_argument('--method', type=str, default='feder',
-                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder'],
+    parser.add_argument('--method', type=str, default='fedrnn',
+                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn'],
                         help='选择训练方法：default(默认，对应FedAvg)、fedrn(原论文方法)等抗噪声算法')
 
     # 2. 联邦学习核心参数（控制联邦训练流程）
@@ -173,7 +173,7 @@ def args_parser():
     parser.add_argument('--queue_size', type=int, default=15,
                         help="SELFIE算法的历史队列大小")
     parser.add_argument('--forget_rate', type=float, default=0.2,
-                        help="Co-teaching算法的遗忘率")
+                        help="coteaching', 'coteaching+', 'dividemix'算法的遗忘率")
     parser.add_argument('--uncertainty_threshold', type=float, default=0.05,
                         help="SELFIE算法的不确定性阈值")
     parser.add_argument('--alpha', type=float, default=1.2,

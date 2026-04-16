@@ -484,6 +484,31 @@ class LocalUpdateFedRNN(BaseLocalUpdate):
 
         return w, loss
 
+    def train_phase_self_clean(self, net):
+        # 1. 拟合 GMM 获取概率 (用最新的全局共识模型 self.net1 拟合)
+        prob = self.fit_gmm(self.net1)
+
+        # 2. 获取干净样本索引
+        pred_clean_idx, _ = self.get_clean_idx(prob)
+
+        # 3. 更新 DataLoader，仅包含干净样本
+        self.ldr_train = DataLoader(
+            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        # 4. 执行本地训练 (复用父类的 train_single_model)
+        w, loss = self.train_single_model(net)
+
+        # 5. 更新用于找邻居和权重的特征（这很重要，不能删）
+        self.set_expertise()
+        self.set_arbitrary_output()
+
+        return w, loss
+
 
 class LocalUpdateFedRN(BaseLocalUpdate):
     def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
