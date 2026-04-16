@@ -90,8 +90,8 @@ def args_parser():
     parser = argparse.ArgumentParser()
 
     # 1. 算法选择参数（指定使用的抗噪声或联邦学习方法）
-    parser.add_argument('--method', type=str, default='fedrnn',
-                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn'],
+    parser.add_argument('--method', type=str, default='fedco',
+                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn','fedco'],
                         help='选择训练方法：default(默认，对应FedAvg)、fedrn(原论文方法)等抗噪声算法')
 
     # 2. 联邦学习核心参数（控制联邦训练流程）
@@ -99,7 +99,7 @@ def args_parser():
                         help="联邦学习总通信轮次（默认500轮）")
     parser.add_argument('--num_users', type=int, default=100,
                         help="用户总数K（默认100个用户）")
-    parser.add_argument('--frac', type=float, default=0.5,
+    parser.add_argument('--frac', type=float, default=0.1,
                         help="每轮参与训练的用户比例C（默认10%）")
     parser.add_argument('--local_ep', type=int, default=4,
                         help="每个用户的本地训练轮次E（默认5轮）")
@@ -166,7 +166,7 @@ def args_parser():
                         help="每组噪声对应的用户数量默认100（总和需等于num_users，如[50,50]表示两组各50用户）")
     parser.add_argument('--group_noise_rate', nargs='+', default=[0,0.4], type=float,
                         help="每组噪声率的范围，格式为[min1,max1,min2,max2...]")
-    parser.add_argument('--warmup_epochs', type=int, default=80,
+    parser.add_argument('--warmup_epochs', type=int, default=5,
                         help="热身轮次（FedRN算法中前100轮不进行邻居协作，与原论文一致）")
 
     # 6. 其他抗噪声算法参数（SELFIE、Co-teaching等）

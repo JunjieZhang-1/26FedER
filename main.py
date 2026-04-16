@@ -71,7 +71,7 @@ if __name__ == '__main__':
     # =============================================================================
     # 🔓 解除封印：允许开启双模型
     # =============================================================================
-    args.send_2_models = args.method in ['coteaching', 'coteaching+', 'dividemix','feder']
+    args.send_2_models = args.method in ['coteaching', 'coteaching+', 'dividemix','feder','fedco']
 
     # =============================================================================
     # 日志文件设置
@@ -202,7 +202,7 @@ if __name__ == '__main__':
         net_glob2 = net_glob2.to(args.device)
 
     forget_rate_schedule = []
-    if args.method in ['coteaching', 'coteaching+', 'dividemix']:
+    if args.method in ['coteaching', 'coteaching+', 'dividemix','fedco']:
         num_gradual = args.warmup_epochs
         forget_rate = args.forget_rate
         exponent = 1
@@ -354,7 +354,44 @@ if __name__ == '__main__':
 
                         # 4. 调用原版的 train_phase2 进行锁头微调和 GMM 投票清洗
                         w, loss = local.train_phase2(net_local, prev_score, neighbor_list, neighbor_score_list)
+                # 👇 🚀 增加全新方法 FedCO 的分支
+                elif args.method == "fedco":
+                    if epoch < args.warmup_epochs:
+                        # 预热期：双模型普通训练，不丢数据，同时生成指纹
+                        w, loss, w2, loss2 = local.train_phase1_dual(net_local, net_local2)
+                    else:
+                        # 发力期：寻找邻居共识
+                        sim_list, exp_list = [], []
+                        cosine_sim = torch.nn.CosineSimilarity()
+                        for user in current_edge_clients:
+                            sim = cosine_sim(local.arbitrary_output.to(args.device), local_update_objects[user].arbitrary_output.to(args.device)).item()
+                            exp = local_update_objects[user].expertise
+                            sim_list.append(sim)
+                            exp_list.append(exp)
 
+                        sim_list = [(s - min(sim_list)) / (max(sim_list) - min(sim_list) + 1e-8) for s in sim_list]
+                        exp_list = [(e - min(exp_list)) / (max(exp_list) - min(exp_list) + 1e-8) for e in exp_list]
+
+                        local_idx_in_edge = current_edge_clients.index(client_idx)
+                        w_alpha = getattr(args, 'w_alpha', 0.5)
+                        prev_score = w_alpha * exp_list[local_idx_in_edge] + (1 - w_alpha)
+
+                        score_list = []
+                        for n_idx, (exp, sim) in enumerate(zip(exp_list, sim_list)):
+                            if n_idx != local_idx_in_edge:
+                                score_list.append([w_alpha * exp + (1 - w_alpha) * sim, current_edge_clients[n_idx]])
+                        score_list.sort(key=lambda x: x[0], reverse=True)
+
+                        neighbor_list, neighbor_score_list = [], []
+                        num_neighbors = getattr(args, 'num_neighbors', 2)
+                        for k in range(min(num_neighbors, len(score_list))):
+                            n_score, n_global_idx = score_list[k]
+                            # 这里只需深拷贝网络1的参数即可，作为邻居的底座
+                            neighbor_list.append(copy.deepcopy(local_update_objects[n_global_idx].net1))
+                            neighbor_score_list.append(n_score)
+
+                        # 调用专属的双模型第二阶段训练！
+                        w, loss, w2, loss2 = local.train_phase2_dual(net_local, net_local2, prev_score, neighbor_list, neighbor_score_list)
                 # 🔓 恢复双模型本地训练调用
                 elif args.send_2_models:
                     w, loss, w2, loss2 = local.train(net_local, net_local2)
@@ -372,66 +409,24 @@ if __name__ == '__main__':
                     w2_cpu = {k: v.cpu() for k, v in w2.items()}
                     client_weights_list2.append(w2_cpu)
                     client_losses2.append(loss2)  # 🚀 新增：保存模型 2 的 Loss
-
             # --- Edge Aggregation (边缘聚合) ---
+            # 此时所有方法公平竞争，全部使用最基础的 FedAvg (按样本量加权)
             if len(client_weights_list) > 0:
-                if args.method == "feder" and epoch >= args.warmup_epochs:
-                    import torch
-                    import torch.nn.functional as F
-
-                    # 🌟 1. 计算模型 1 的专业性 (exp) 与相似度 (sim)
-                    last_layer_key = list(client_weights_list[0].keys())[-2]
-                    features1 = torch.stack([w[last_layer_key].flatten() for w in client_weights_list])
-                    sim_matrix1 = F.cosine_similarity(features1.unsqueeze(1), features1.unsqueeze(0), dim=-1)
-                    avg_sim1 = sim_matrix1.mean(dim=0)
-                    norm_sim1 = (avg_sim1 - avg_sim1.min()) / (avg_sim1.max() - avg_sim1.min() + 1e-8)
-
-                    losses_tensor1 = torch.tensor(client_losses)
-                    # 损失越小，专业性越高 (用 1 减去归一化后的 loss)
-                    norm_exp1 = 1.0 - (losses_tensor1 - losses_tensor1.min()) / (losses_tensor1.max() - losses_tensor1.min() + 1e-8)
-
-                    # 🌟 2. 计算模型 2 的专业性 (exp) 与相似度 (sim)
-                    features2 = torch.stack([w[last_layer_key].flatten() for w in client_weights_list2])
-                    sim_matrix2 = F.cosine_similarity(features2.unsqueeze(1), features2.unsqueeze(0), dim=-1)
-                    avg_sim2 = sim_matrix2.mean(dim=0)
-                    norm_sim2 = (avg_sim2 - avg_sim2.min()) / (avg_sim2.max() - avg_sim2.min() + 1e-8)
-
-                    losses_tensor2 = torch.tensor(client_losses2)
-                    norm_exp2 = 1.0 - (losses_tensor2 - losses_tensor2.min()) / (losses_tensor2.max() - losses_tensor2.min() + 1e-8)
-
-                    # 🌟 3. 严格按照你的设定计算得分：exp占0.4，sim占0.6
-                    exp_w = args.feder_exp_weight
-                    sim_w = 1.0 - exp_w
-
-                    score1 = exp_w * norm_exp1 + sim_w * norm_sim1
-                    score2 = exp_w * norm_exp2 + sim_w * norm_sim2
-
-                    # 🌟 4. 【核心创新：互相微调交叉聚合】
-                    # 极其巧妙的 Co-teaching 延伸：
-                    # 用模型 2 的评估得分，作为模型 1 的聚合权重
-                    agg_weights_for_net1 = (score2 / score2.sum()).tolist()
-                    # 用模型 1 的评估得分，作为模型 2 的聚合权重
-                    agg_weights_for_net2 = (score1 / score1.sum()).tolist()
-
-                    w_edge = FedAvg(client_weights_list, agg_weights_for_net1)
-                    w_edge2 = FedAvg(client_weights_list2, agg_weights_for_net2)
-
-                else:
-                    # ✅ 预热期：老老实实按样本量做常规 FedAvg
-                    w_edge = FedAvg(client_weights_list, client_samples_list)
-                    if args.send_2_models:
-                        w_edge2 = FedAvg(client_weights_list2, client_samples_list)
-
+                # 1. 聚合模型1 (所有的 Baseline 都有模型1)
+                w_edge = FedAvg(client_weights_list, client_samples_list)
                 edge_weights_list.append(w_edge)
+
+                # 2. 如果开启了双模型 (如 coteaching, dividemix), 则聚合模型2
                 if args.send_2_models:
+                    w_edge2 = FedAvg(client_weights_list2, client_samples_list)
                     edge_weights_list2.append(w_edge2)
 
-                # 记录样本数和损失
+                # 记录该边缘基站的总样本数和平均损失
                 edge_samples_list.append(sum(client_samples_list))
                 avg_edge_loss = sum(client_losses) / len(client_losses)
                 edge_losses_list.append(avg_edge_loss)
 
-                # 评估模型1 (因为交叉聚合，两个模型能力已拉平，只评估模型1即可)
+                # --- 边缘端即时评估 (仅用于观察，不影响训练) ---
                 net_edge = copy.deepcopy(net_glob).to(args.device)
                 net_edge.load_state_dict(w_edge)
                 edge_test_acc, edge_test_loss = test_img(net_edge, log_test_data_loader, args)
@@ -439,26 +434,61 @@ if __name__ == '__main__':
                 edge_str = f"  --> [Edge Server {edge_id+1}] Test Acc: {edge_test_acc:.2f}% | Test Loss: {edge_test_loss:.6f}"
                 edge_log_strings.append(edge_str)
 
+
             # # --- Edge Aggregation (边缘聚合) ---
             # if len(client_weights_list) > 0:
-            #     if args.method == "feder" and epoch >= args.warmup_epochs:
-            #         # TODO: 在这里植入 FedER 独有的可靠邻居聚合机制！
-            #         # 1. 计算 client_weights_list 中各个模型的相似度矩阵
-            #         # 2. 识别出可靠邻居 (Reliable Neighbors)
-            #         # 3. 动态调整聚合权重 w_alpha
-            #         w_edge = FedAvg(client_weights_list, client_samples_list)  # 目前先用 FedAvg 顶替
-            #     else:
-            #         # ✅ 已修复：恢复使用网络 1 的权重列表
-            #         w_edge = FedAvg(client_weights_list, client_samples_list)
-            #     edge_weights_list.append(w_edge)
             #
-            #     # 🔓 模型2 在边缘层进行聚合
+            #     # 边缘服务器内部评分
+            #     if args.method == "feder" and epoch >= args.warmup_epochs:
+            #         import torch
+            #         import torch.nn.functional as F
+            #
+            #         # 🌟 1. 计算模型 1 的专业性 (exp) 与相似度 (sim)
+            #         last_layer_key = list(client_weights_list[0].keys())[-2]
+            #         features1 = torch.stack([w[last_layer_key].flatten() for w in client_weights_list])
+            #         sim_matrix1 = F.cosine_similarity(features1.unsqueeze(1), features1.unsqueeze(0), dim=-1)
+            #         avg_sim1 = sim_matrix1.mean(dim=0)
+            #         norm_sim1 = (avg_sim1 - avg_sim1.min()) / (avg_sim1.max() - avg_sim1.min() + 1e-8)
+            #
+            #         losses_tensor1 = torch.tensor(client_losses)
+            #         # 损失越小，专业性越高 (用 1 减去归一化后的 loss)
+            #         norm_exp1 = 1.0 - (losses_tensor1 - losses_tensor1.min()) / (losses_tensor1.max() - losses_tensor1.min() + 1e-8)
+            #
+            #         # 🌟 2. 计算模型 2 的专业性 (exp) 与相似度 (sim)
+            #         features2 = torch.stack([w[last_layer_key].flatten() for w in client_weights_list2])
+            #         sim_matrix2 = F.cosine_similarity(features2.unsqueeze(1), features2.unsqueeze(0), dim=-1)
+            #         avg_sim2 = sim_matrix2.mean(dim=0)
+            #         norm_sim2 = (avg_sim2 - avg_sim2.min()) / (avg_sim2.max() - avg_sim2.min() + 1e-8)
+            #
+            #         losses_tensor2 = torch.tensor(client_losses2)
+            #         norm_exp2 = 1.0 - (losses_tensor2 - losses_tensor2.min()) / (losses_tensor2.max() - losses_tensor2.min() + 1e-8)
+            #
+            #         # 🌟 3. 严格按照你的设定计算得分：exp占0.4，sim占0.6
+            #         exp_w = args.feder_exp_weight
+            #         sim_w = 1.0 - exp_w
+            #
+            #         score1 = exp_w * norm_exp1 + sim_w * norm_sim1
+            #         score2 = exp_w * norm_exp2 + sim_w * norm_sim2
+            #
+            #         # 🌟 4. 【核心创新：互相微调交叉聚合】
+            #         # 极其巧妙的 Co-teaching 延伸：
+            #         # 用模型 2 的评估得分，作为模型 1 的聚合权重
+            #         agg_weights_for_net1 = (score2 / score2.sum()).tolist()
+            #         # 用模型 1 的评估得分，作为模型 2 的聚合权重
+            #         agg_weights_for_net2 = (score1 / score1.sum()).tolist()
+            #
+            #         w_edge = FedAvg(client_weights_list, agg_weights_for_net1)
+            #         w_edge2 = FedAvg(client_weights_list2, agg_weights_for_net2)
+            #
+            #     else:
+            #         # ✅ 预热期：老老实实按样本量做常规 FedAvg
+            #         w_edge = FedAvg(client_weights_list, client_samples_list)
+            #         if args.send_2_models:
+            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
+            #
+            #
+            #     edge_weights_list.append(w_edge)
             #     if args.send_2_models:
-            #         if args.method == "feder" and epoch >= args.warmup_epochs:
-            #             # TODO: 模型2的 FedER 聚合
-            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
-            #         else:
-            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
             #         edge_weights_list2.append(w_edge2)
             #
             #     # 记录样本数和损失
@@ -466,46 +496,16 @@ if __name__ == '__main__':
             #     avg_edge_loss = sum(client_losses) / len(client_losses)
             #     edge_losses_list.append(avg_edge_loss)
             #
-            #     # 评估模型1 (保持只看模型1的成绩即可)
+            #     # 评估模型1 (因为交叉聚合，两个模型能力已拉平，只评估模型1即可)
             #     net_edge = copy.deepcopy(net_glob).to(args.device)
             #     net_edge.load_state_dict(w_edge)
             #     edge_test_acc, edge_test_loss = test_img(net_edge, log_test_data_loader, args)
             #
-            #     edge_str = f"  --> [Edge Server {edge_id}] Test Acc: {edge_test_acc:.2f}% | Test Loss: {edge_test_loss:.6f}"
+            #     edge_str = f"  --> [Edge Server {edge_id+1}] Test Acc: {edge_test_acc:.2f}% | Test Loss: {edge_test_loss:.6f}"
             #     edge_log_strings.append(edge_str)
+            #
 
 
-            # # --- Edge Aggregation (边缘聚合) ---
-            # if len(client_weights_list) > 0:
-            #     if args.method == "feder" and epoch >= args.warmup_epochs:
-            #         # TODO: 在这里植入 FedER 独有的可靠邻居聚合机制！
-            #         # 1. 计算 client_weights_list 中各个模型的相似度矩阵
-            #         # 2. 识别出可靠邻居 (Reliable Neighbors)
-            #         # 3. 动态调整聚合权重 w_alpha
-            #         w_edge = FedAvg(client_weights_list, client_samples_list)  # 目前先用 FedAvg 顶替
-            #     else:
-            #         w_edge = FedAvg(client_weights_list2, client_samples_list)
-            #     edge_weights_list.append(w_edge)
-            #
-            #     # 🔓 模型2 在边缘层进行聚合
-            #     if args.send_2_models:
-            #         if args.method == "feder" and epoch >= args.warmup_epochs:
-            #             # TODO: 模型2的 FedER 聚合
-            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
-            #         else:
-            #             w_edge2 = FedAvg(client_weights_list2, client_samples_list)
-            #         edge_weights_list2.append(w_edge2)
-            #     edge_samples_list.append(sum(client_samples_list))
-            #     avg_edge_loss = sum(client_losses) / len(client_losses)
-            #     edge_losses_list.append(avg_edge_loss)
-            #
-            #     # 评估模型1 (保持只看模型1的成绩即可)
-            #     net_edge = copy.deepcopy(net_glob).to(args.device)
-            #     net_edge.load_state_dict(w_edge)
-            #     edge_test_acc, edge_test_loss = test_img(net_edge, log_test_data_loader, args)
-            #
-            #     edge_str = f"  --> [Edge Server {edge_id}] Test Acc: {edge_test_acc:.2f}% | Test Loss: {edge_test_loss:.6f}"
-            #     edge_log_strings.append(edge_str)
 
         # --- Cloud Aggregation (云端聚合) ---
         if len(edge_weights_list) > 0:
