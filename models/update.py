@@ -16,7 +16,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from sklearn.mixture import GaussianMixture
 
-from models.update import BaseLocalUpdate  # 根据你的实际导入路径调整
+
 
 class DatasetSplit(Dataset):
     def __init__(self, dataset, idxs, idx_return=False, real_idx_return=False):
