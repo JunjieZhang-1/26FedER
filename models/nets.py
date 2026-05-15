@@ -13,6 +13,10 @@ def get_model(args):
         return CNNMnist(args=args)
     else:
         return CNN4Conv(num_classes=args.num_classes)
+        print("🧠 [Model Router] 已加载: CNN4Conv_DualHead (双头架构)")
+
+
+
 
 def conv3x3(in_channels, out_channels, **kwargs):
     return nn.Sequential(
@@ -21,6 +25,30 @@ def conv3x3(in_channels, out_channels, **kwargs):
         nn.ReLU(),
         nn.MaxPool2d(2)
     )
+
+
+# class CNN4Conv(nn.Module):
+#     def __init__(self, num_classes):
+#         super(CNN4Conv, self).__init__()
+#         in_channels = 3
+#         num_classes = num_classes
+#         hidden_size = 64
+#
+#         self.features = nn.Sequential(
+#             conv3x3(in_channels, hidden_size),
+#             conv3x3(hidden_size, hidden_size),
+#             conv3x3(hidden_size, hidden_size),
+#             conv3x3(hidden_size, hidden_size)
+#         )
+#
+#         self.linear = nn.Linear(hidden_size * 2 * 2, num_classes)
+#
+#     def forward(self, x):
+#         features = self.features(x)
+#         features = features.view((features.size(0), -1))
+#         logits = self.linear(features)
+#
+#         return logits
 
 
 class CNN4Conv(nn.Module):
@@ -37,14 +65,26 @@ class CNN4Conv(nn.Module):
             conv3x3(hidden_size, hidden_size)
         )
 
-        self.linear = nn.Linear(hidden_size * 2 * 2, num_classes)
+        # ==========================================
+        # 🌟 修改点 1：拆分线性层，定义双头
+        # 原代码: self.linear = nn.Linear(hidden_size * 2 * 2, num_classes)
+        # ==========================================
+        self.fc_global = nn.Linear(hidden_size * 2 * 2, num_classes)  # 准备上传云端的全局头
+        self.fc_local = nn.Linear(hidden_size * 2 * 2, num_classes)  # 死守本地的个性化头
 
     def forward(self, x):
         features = self.features(x)
         features = features.view((features.size(0), -1))
-        logits = self.linear(features)
 
-        return logits
+        # ==========================================
+        # 🌟 修改点 2：双头分别进行预测，并同时返回
+        # 原代码: logits = self.linear(features); return logits
+        # ==========================================
+        logits_global = self.fc_global(features)
+        logits_local = self.fc_local(features)
+
+        return logits_global, logits_local
+
 # 新增这个专门跑 MNIST 的轻量级网络
 class CNNMnist(nn.Module):
     def __init__(self, args):

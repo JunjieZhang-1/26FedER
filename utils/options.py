@@ -90,12 +90,12 @@ def args_parser():
     parser = argparse.ArgumentParser()
 
     # 1. 算法选择参数（指定使用的抗噪声或联邦学习方法）
-    parser.add_argument('--method', type=str, default='fedrnn',
-                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn','fedco'],
+    parser.add_argument('--method', type=str, default='default',
+                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn','fedco''fedcoPFL'],
                         help='选择训练方法：default(默认，对应FedAvg)、fedrn(原论文方法)等抗噪声算法')
 
     # 2. 联邦学习核心参数（控制联邦训练流程）
-    parser.add_argument('--epochs', type=int, default=500,
+    parser.add_argument('--epochs', type=int, default=400,
                         help="联邦学习总通信轮次（默认500轮）")
     parser.add_argument('--num_users', type=int, default=100,
                         help="用户总数K（默认100个用户）")
@@ -123,7 +123,7 @@ def args_parser():
                         help="非IID数据划分方式：shard(分片划分)或dirichlet(狄利克雷分布划分)")
     parser.add_argument('--dd_alpha', type=float, default=0.5,
                         help="狄利克雷划分的浓度参数alpha（值越小，数据异质性越强）")
-    parser.add_argument('--num_shards', type=int, default=200,
+    parser.add_argument('--num_shards', type=int, default=500,
                         help="分片划分的总分片数（默认200，100用户各分2片）")
     parser.add_argument('--fed_method', type=str, default='fedavg', choices=['fedavg'],
                         help="联邦学习聚合方法（当前仅支持fedavg，即联邦平均）")
@@ -132,7 +132,7 @@ def args_parser():
     # parser.add_argument('--model', type=str, default='cnn4conv', choices=['cnn4conv'],
     #                     help="模型结构（默认cnn4conv，适用于CIFAR数据集的卷积神经网络）")
 
-    parser.add_argument('--model', type=str, default='cnn4conv', choices=['cnn4conv', 'cnn_mnist'],
+    parser.add_argument('--model', type=str, default='cnn4conv', choices=['cnn4conv', 'cnn_mnist','CNN4Conv_DualHead'],
                         help="模型结构（cnn_mnist适用手写体，cnn4conv适用CIFAR）26320##")
     # 4. 通用基础参数
     parser.add_argument('--dataset', type=str, default='cifar10',
@@ -164,7 +164,7 @@ def args_parser():
                         help="噪声类型列表（支持symmetric(对称噪声)和pairflip(成对噪声)）")
     parser.add_argument('--noise_group_num', nargs='+', default=[100], type=int,
                         help="每组噪声对应的用户数量默认100（总和需等于num_users，如[50,50]表示两组各50用户）")
-    parser.add_argument('--group_noise_rate', nargs='+', default=[0,0.4], type=float,
+    parser.add_argument('--group_noise_rate', nargs='+', default=[0,0.8], type=float,
                         help="每组噪声率的范围，格式为[min1,max1,min2,max2...]")
     parser.add_argument('--warmup_epochs', type=int, default=80,
                         help="热身轮次（FedRN算法中前100轮不进行邻居协作，与原论文一致）")

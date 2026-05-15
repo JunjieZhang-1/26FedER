@@ -1,7 +1,26 @@
+import torch                           # 🌟 新增这一行
+from torch.utils.data import Dataset   # 🌟 新增这一行
+
 from torchvision import transforms
 from torchvision.datasets import MNIST  # 👈 新增这一行
 from .cifar import CIFAR10, CIFAR100
 
+class DatasetSplit(Dataset):
+    """
+    一个用于联邦学习的自定义 Dataset 类。
+    作用：根据传入的索引列表 (idxs)，从庞大的全局数据集中单独切分出属于某个客户端的私有数据。
+    """
+    def __init__(self, dataset, idxs):
+        self.dataset = dataset
+        self.idxs = list(idxs)
+
+    def __len__(self):
+        return len(self.idxs)
+
+    def __getitem__(self, item):
+        image, label = self.dataset[self.idxs[item]]
+        return image, label
+# =============================================================
 
 def load_dataset(dataset):
     """
