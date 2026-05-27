@@ -16,6 +16,8 @@ def test_img(net_g, data_loader, args):
             data, target = data.to(args.device), target.to(args.device)
 
         log_probs = net_g(data)
+        if isinstance(log_probs, (tuple, list)):
+            log_probs = log_probs[0]
         # sum up batch loss
         test_loss += F.cross_entropy(log_probs, target, reduction='sum').item()
         # get the index of the max log-probability

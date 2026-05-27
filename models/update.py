@@ -157,6 +157,11 @@ def get_local_update_objects(args, dataset_train, dict_users=None, noise_rates=N
         elif args.method == 'feder':
             local_update_object = LocalUpdateFedER(**local_update_args)
 
+        elif args.method == 'pfedrn':
+            local_update_object = LocalUpdatePFedRN(
+                gaussian_noise=gaussian_noise,
+                **local_update_args)
+
         local_update_objects.append(local_update_object)
 
     return local_update_objects
@@ -2038,3 +2043,718 @@ class LocalUpdateFedCOPFL(BaseLocalUpdate):
             ep_loss2.append(sum(b_loss2) / len(b_loss2))
 
         return net1.state_dict(), sum(ep_loss1) / len(ep_loss1), net2.state_dict(), sum(ep_loss2) / len(ep_loss2)
+
+
+# class LocalUpdatePFedRN(BaseLocalUpdate):
+#     """
+#     PFedRN: FedRN + Personalized Local Model Guidance.
+#
+#     net1: global model，参与上传和 FedAvg 聚合。
+#     net2: personalized local model，只保存在客户端本地，不上传、不聚合。
+#
+#     Phase 1 warmup:
+#         同时训练 net1 和 net2，使用全部本地样本。
+#
+#     Phase 2 denoising:
+#         1. FedRN reliable-neighbor GMM 产生 p_rn_clean。
+#         2. personalized local model GMM 产生 p_local_clean。
+#         3. global-local prediction agreement 修正 clean probability。
+#         4. 用最终 clean samples 同时更新 global model 和 personalized model。
+#     """
+#
+#     def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+#         super().__init__(
+#             args=args,
+#             dataset=dataset,
+#             user_idx=user_idx,
+#             idxs=idxs,
+#             real_idx_return=True,
+#         )
+#         self.gaussian_noise = gaussian_noise
+#         self.CE = nn.CrossEntropyLoss(reduction='none')
+#
+#         self.ldr_eval = DataLoader(
+#             DatasetSplit(dataset, idxs, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=False,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#         self.data_indices = np.array(idxs)
+#         self.expertise = 0.5
+#         self.arbitrary_output = torch.rand((1, self.args.num_classes))
+#
+#     # -------------------------------------------------------------------------
+#     # 输出兼容：如果 CNN4Conv 返回 (logits_global, logits_local)，这里统一取出需要的 head。
+#     # -------------------------------------------------------------------------
+#     def _select_logits(self, outputs, head='global'):
+#         if isinstance(outputs, (tuple, list)):
+#             if head == 'local' and len(outputs) > 1:
+#                 return outputs[1]
+#             return outputs[0]
+#         return outputs
+#
+#     def _forward_logits(self, net, inputs, head='global'):
+#         outputs = net(inputs)
+#         return self._select_logits(outputs, head=head)
+#
+#     # -------------------------------------------------------------------------
+#     # FedRN 需要的 reliability signals
+#     # -------------------------------------------------------------------------
+#     def set_expertise(self):
+#         self.net1.eval()
+#         correct = 0
+#         n_total = len(self.ldr_eval.dataset)
+#
+#         with torch.no_grad():
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#                 outputs = self._forward_logits(self.net1, inputs, head='global')
+#                 y_pred = outputs.data.max(1, keepdim=True)[1]
+#                 correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+#
+#         self.expertise = correct / max(n_total, 1)
+#
+#     def set_arbitrary_output(self):
+#         self.net1.eval()
+#         with torch.no_grad():
+#             outputs = self._forward_logits(self.net1, self.gaussian_noise.to(self.args.device), head='global')
+#         self.arbitrary_output = outputs.detach()
+#
+#     # -------------------------------------------------------------------------
+#     # GMM clean probability
+#     # -------------------------------------------------------------------------
+#     def fit_gmm(self, net, head='global'):
+#         losses = []
+#         net.eval()
+#
+#         with torch.no_grad():
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#                 outputs = self._forward_logits(net, inputs, head=head)
+#                 loss = self.CE(outputs, targets)
+#                 losses.append(loss)
+#
+#         losses = torch.cat(losses).cpu().numpy()
+#
+#         # 防止全部 loss 接近导致除 0。
+#         loss_min, loss_max = losses.min(), losses.max()
+#         losses = (losses - loss_min) / (loss_max - loss_min + 1e-8)
+#         input_loss = losses.reshape(-1, 1)
+#
+#         gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+#         gmm.fit(input_loss)
+#         prob = gmm.predict_proba(input_loss)
+#         prob = prob[:, gmm.means_.argmin()]
+#
+#         return prob
+#
+#     def get_clean_idx(self, prob):
+#         threshold = self.args.p_threshold
+#         pred = (prob > threshold)
+#         pred_clean_idx = pred.nonzero()[0]
+#         pred_clean_idx = self.data_indices[pred_clean_idx]
+#         pred_noisy_idx = (1 - pred).nonzero()[0]
+#         pred_noisy_idx = self.data_indices[pred_noisy_idx]
+#
+#         # 避免极端情况下一个 clean 都选不到。
+#         if len(pred_clean_idx) == 0:
+#             pred_clean_idx = pred_noisy_idx
+#             pred_noisy_idx = np.array([])
+#
+#         return pred_clean_idx, pred_noisy_idx
+#
+#     # -------------------------------------------------------------------------
+#     # Neighbor head finetuning：兼容 linear / fc_global / fc_local 等命名。
+#     # -------------------------------------------------------------------------
+#     def finetune_head(self, neighbor_list, pred_clean_idx):
+#         """FedRN 原始逻辑：只在目标客户端的初筛 clean 样本上微调邻居模型的分类头。
+#
+#         兼容你现在的双头 CNN4Conv：只训练 global head（linear / fc_global / classifier），
+#         冻结 backbone 和 fc_local。这样等价于原 FedRN 的 "finetune linear head"。
+#         """
+#         loader = DataLoader(
+#             DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         optimizer_list = []
+#         for neighbor_net in neighbor_list:
+#             neighbor_net = neighbor_net.to(self.args.device)
+#             neighbor_net.train()
+#
+#             head_params = []
+#             body_params = []
+#             for name, p in neighbor_net.named_parameters():
+#                 # 原 FedRN 是 linear；当前双头模型使用 fc_global/fc_local。
+#                 # 为了恢复 FedRN，本阶段只微调 global 分类头，不训练 fc_local。
+#                 is_global_head = (
+#                     ('linear' in name)
+#                     or ('fc_global' in name)
+#                     or ('classifier' in name)
+#                 )
+#                 if is_global_head:
+#                     head_params.append(p)
+#                 else:
+#                     body_params.append(p)
+#
+#             param_groups = []
+#             if len(head_params) > 0:
+#                 param_groups.append({
+#                     'params': head_params,
+#                     'lr': self.args.lr,
+#                     'momentum': self.args.momentum,
+#                     'weight_decay': self.args.weight_decay,
+#                 })
+#             if len(body_params) > 0:
+#                 param_groups.append({
+#                     'params': body_params,
+#                     'lr': 0.0,
+#                 })
+#
+#             optimizer_list.append(torch.optim.SGD(param_groups))
+#
+#         for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+#             inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#
+#             for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+#                 neighbor_net.zero_grad()
+#                 outputs = self._forward_logits(neighbor_net, inputs, head='global')
+#                 loss = self.loss_func(outputs, targets)
+#                 loss.backward()
+#                 optimizer.step()
+#
+#         return neighbor_list
+#
+#     # -------------------------------------------------------------------------
+#     # global-local agreement
+#     # -------------------------------------------------------------------------
+#     def get_global_local_agreement(self, net_global, net_personal):
+#         agreement_list = []
+#         net_global.eval()
+#         net_personal.eval()
+#
+#         with torch.no_grad():
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#                 inputs = inputs.to(self.args.device)
+#                 logits_g = self._forward_logits(net_global, inputs, head='global')
+#                 logits_p = self._forward_logits(net_personal, inputs, head='local')
+#
+#                 pred_g = torch.argmax(logits_g, dim=1)
+#                 pred_p = torch.argmax(logits_p, dim=1)
+#                 agreement = pred_g.eq(pred_p).float().cpu().numpy()
+#                 agreement_list.append(agreement)
+#
+#         return np.concatenate(agreement_list, axis=0)
+#
+#     # -------------------------------------------------------------------------
+#     # 训练函数：不永久改变 self.ldr_train，避免下一轮 DataLoader 被 clean subset 污染。
+#     # -------------------------------------------------------------------------
+#     def train_global_and_personal(self, net_global, net_personal, train_indices):
+#         train_loader = DataLoader(
+#             DatasetSplit(self.dataset, train_indices, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         net_global.train()
+#         net_personal.train()
+#
+#         optimizer_args = dict(
+#             lr=self.args.lr,
+#             momentum=self.args.momentum,
+#             weight_decay=self.args.weight_decay,
+#         )
+#         optimizer_g = torch.optim.SGD(net_global.parameters(), **optimizer_args)
+#         optimizer_p = torch.optim.SGD(net_personal.parameters(), **optimizer_args)
+#
+#         epoch_loss_g = []
+#         epoch_loss_p = []
+#
+#         local_ep_g = self.args.local_ep
+#         local_ep_p = getattr(self.args, 'pfl_personal_ep', self.args.local_ep)
+#         total_ep = max(local_ep_g, local_ep_p)
+#
+#         for epoch in range(total_ep):
+#             batch_loss_g = []
+#             batch_loss_p = []
+#
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(train_loader):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#
+#                 if epoch < local_ep_g:
+#                     net_global.zero_grad()
+#                     logits_g = self._forward_logits(net_global, inputs, head='global')
+#                     loss_g = self.loss_func(logits_g, targets)
+#                     loss_g.backward()
+#                     optimizer_g.step()
+#                     batch_loss_g.append(loss_g.item())
+#
+#                 if epoch < local_ep_p:
+#                     net_personal.zero_grad()
+#                     logits_p = self._forward_logits(net_personal, inputs, head='local')
+#                     loss_p = self.loss_func(logits_p, targets)
+#                     loss_p.backward()
+#                     optimizer_p.step()
+#                     batch_loss_p.append(loss_p.item())
+#
+#             if len(batch_loss_g) > 0:
+#                 epoch_loss_g.append(sum(batch_loss_g) / len(batch_loss_g))
+#             if len(batch_loss_p) > 0:
+#                 epoch_loss_p.append(sum(batch_loss_p) / len(batch_loss_p))
+#
+#         loss_g_mean = sum(epoch_loss_g) / max(len(epoch_loss_g), 1)
+#         loss_p_mean = sum(epoch_loss_p) / max(len(epoch_loss_p), 1)
+#
+#         self.net1.load_state_dict(net_global.state_dict())
+#         self.net2.load_state_dict(net_personal.state_dict())
+#         self.last_updated = self.args.g_epoch
+#
+#         return net_global.state_dict(), loss_g_mean, net_personal.state_dict(), loss_p_mean
+#
+#     # -------------------------------------------------------------------------
+#     # FedRN-only local training helper
+#     # -------------------------------------------------------------------------
+#     def _train_global_fedrn_only(self, net_global, train_indices):
+#         """只训练 global model，恢复原 FedRN 的单模型本地更新逻辑。
+#
+#         注意：当前 CNN4Conv 可能返回 (logits_global, logits_local)，所以这里显式取 global head。
+#         net2 / local head 不参与 loss、不上传、不影响 FedRN。
+#         """
+#         train_loader = DataLoader(
+#             DatasetSplit(self.dataset, train_indices, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         net_global.train()
+#         optimizer = torch.optim.SGD(
+#             net_global.parameters(),
+#             lr=self.args.lr,
+#             momentum=self.args.momentum,
+#             weight_decay=self.args.weight_decay,
+#         )
+#
+#         epoch_loss = []
+#         for epoch in range(self.args.local_ep):
+#             batch_loss = []
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(train_loader):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#
+#                 net_global.zero_grad()
+#                 logits_g = self._forward_logits(net_global, inputs, head='global')
+#                 loss = self.loss_func(logits_g, targets)
+#                 loss.backward()
+#                 optimizer.step()
+#                 batch_loss.append(loss.item())
+#
+#             if len(batch_loss) > 0:
+#                 epoch_loss.append(sum(batch_loss) / len(batch_loss))
+#
+#         loss_mean = sum(epoch_loss) / max(len(epoch_loss), 1)
+#         self.net1.load_state_dict(net_global.state_dict())
+#         self.last_updated = self.args.g_epoch
+#
+#         return net_global.state_dict(), loss_mean
+#
+#     # -------------------------------------------------------------------------
+#     # Phase 1: 原 FedRN warmup，只训练 global model
+#     # -------------------------------------------------------------------------
+#     def train_phase1_pfedrn(self, net_global, net_personal):
+#         w_g, loss_g = self._train_global_fedrn_only(
+#             net_global,
+#             self.data_indices,
+#         )
+#         self.set_expertise()
+#         self.set_arbitrary_output()
+#
+#         # 为了兼容 main_pfedrn.py 的返回格式，保留 w_p/loss_p，但不训练、不使用 net2。
+#         return w_g, loss_g, net_personal.state_dict(), 0.0
+#
+#     # -------------------------------------------------------------------------
+#     # Phase 2: 恢复原 FedRN 方法，不使用 PFL local GMM，不使用 agreement
+#     # -------------------------------------------------------------------------
+#     def train_phase2_pfedrn(self, net_global, net_personal, prev_score, neighbor_list, neighbor_score_list):
+#         # 1. target client 当前 global model：loss-GMM 得到初筛 clean probability。
+#         prob = self.fit_gmm(self.net1, head='global')
+#         pred_clean_idx, pred_noisy_idx = self.get_clean_idx(prob)
+#
+#         # 2. 原 FedRN：在目标客户端初筛 clean 样本上微调邻居模型分类头。
+#         prob_list = [prob]
+#         neighbor_list = self.finetune_head(neighbor_list, pred_clean_idx)
+#         for neighbor_net in neighbor_list:
+#             neighbor_prob = self.fit_gmm(neighbor_net, head='global')
+#             prob_list.append(neighbor_prob)
+#
+#         # 3. 原 FedRN：根据 target 自身 score + reliable neighbors score 加权融合概率。
+#         score_list = [prev_score] + neighbor_score_list
+#         score_sum = sum(score_list) + 1e-8
+#         score_list = [score / score_sum for score in score_list]
+#
+#         final_prob = np.zeros(len(prob))
+#         for prob_item, score in zip(prob_list, score_list):
+#             final_prob = np.add(final_prob, np.multiply(prob_item, score))
+#
+#         # 4. 原 FedRN：根据 final_prob 选择 clean 样本。
+#         final_clean_idx, final_noisy_idx = self.get_clean_idx(final_prob)
+#         clean_ratio = float(len(final_clean_idx)) / float(len(self.data_indices) + 1e-8)
+#
+#         # 5. 原 FedRN：只用 clean 样本训练 global model；net2/PFL 不参与。
+#         w_g, loss_g = self._train_global_fedrn_only(
+#             net_global,
+#             final_clean_idx,
+#         )
+#
+#         self.set_expertise()
+#         self.set_arbitrary_output()
+#
+#         # agreement 固定 0，表示这个 ablation 完全不使用 PFL agreement。
+#         agreement_ratio = 0.0
+#
+#         # 为了兼容 main_pfedrn.py 的返回格式，w_p/loss_p 仍返回，但不参与训练。
+#         return w_g, loss_g, net_personal.state_dict(), 0.0, clean_ratio, agreement_ratio
+
+
+class LocalUpdatePFedRN(BaseLocalUpdate):
+    """
+    PFedRN: FedRN + Personalized Local Model Guidance.
+
+    net1: global model，参与上传和 FedAvg 聚合。
+    net2: personalized local model，只保存在客户端本地，不上传、不聚合。
+
+    Phase 1 warmup:
+        同时训练 net1 和 net2，使用全部本地样本。
+
+    Phase 2 denoising:
+        1. FedRN reliable-neighbor GMM 产生 p_rn_clean。
+        2. personalized local model GMM 产生 p_local_clean。
+        3. global-local prediction agreement 修正 clean probability。
+        4. 用最终 clean samples 同时更新 global model 和 personalized model。
+    """
+
+    def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+        super().__init__(
+            args=args,
+            dataset=dataset,
+            user_idx=user_idx,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.gaussian_noise = gaussian_noise
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        self.data_indices = np.array(idxs)
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
+
+    # -------------------------------------------------------------------------
+    # 输出兼容：如果 CNN4Conv 返回 (logits_global, logits_local)，这里统一取出需要的 head。
+    # -------------------------------------------------------------------------
+    def _select_logits(self, outputs, head='global'):
+        if isinstance(outputs, (tuple, list)):
+            if head == 'local' and len(outputs) > 1:
+                return outputs[1]
+            return outputs[0]
+        return outputs
+
+    def _forward_logits(self, net, inputs, head='global'):
+        outputs = net(inputs)
+        return self._select_logits(outputs, head=head)
+
+    # -------------------------------------------------------------------------
+    # FedRN 需要的 reliability signals
+    # -------------------------------------------------------------------------
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        n_total = len(self.ldr_eval.dataset)
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self._forward_logits(self.net1, inputs, head='global')
+                y_pred = outputs.data.max(1, keepdim=True)[1]
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+
+        self.expertise = correct / max(n_total, 1)
+
+    def set_arbitrary_output(self):
+        self.net1.eval()
+        with torch.no_grad():
+            outputs = self._forward_logits(self.net1, self.gaussian_noise.to(self.args.device), head='global')
+        self.arbitrary_output = outputs.detach()
+
+    # -------------------------------------------------------------------------
+    # GMM clean probability
+    # -------------------------------------------------------------------------
+    def fit_gmm(self, net, head='global'):
+        losses = []
+        net.eval()
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self._forward_logits(net, inputs, head=head)
+                loss = self.CE(outputs, targets)
+                losses.append(loss)
+
+        losses = torch.cat(losses).cpu().numpy()
+
+        # 防止全部 loss 接近导致除 0。
+        loss_min, loss_max = losses.min(), losses.max()
+        losses = (losses - loss_min) / (loss_max - loss_min + 1e-8)
+        input_loss = losses.reshape(-1, 1)
+
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()]
+
+        return prob
+
+    def get_clean_idx(self, prob):
+        threshold = self.args.p_threshold
+        pred = (prob > threshold)
+        pred_clean_idx = pred.nonzero()[0]
+        pred_clean_idx = self.data_indices[pred_clean_idx]
+        pred_noisy_idx = (1 - pred).nonzero()[0]
+        pred_noisy_idx = self.data_indices[pred_noisy_idx]
+
+        # 避免极端情况下一个 clean 都选不到。
+        if len(pred_clean_idx) == 0:
+            pred_clean_idx = pred_noisy_idx
+            pred_noisy_idx = np.array([])
+
+        return pred_clean_idx, pred_noisy_idx
+
+    # -------------------------------------------------------------------------
+    # Neighbor head finetuning：兼容 linear / fc_global / fc_local 等命名。
+    # -------------------------------------------------------------------------
+    def finetune_head(self, neighbor_list, pred_clean_idx):
+        loader = DataLoader(
+            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        optimizer_list = []
+        for neighbor_net in neighbor_list:
+            neighbor_net = neighbor_net.to(self.args.device)
+            neighbor_net.train()
+
+            head_params = []
+            body_params = []
+            for name, p in neighbor_net.named_parameters():
+                # 你的 CNN4Conv 使用 fc_global/fc_local；旧版 FedRN 使用 linear。
+                is_head = ('linear' in name) or ('fc' in name) or ('classifier' in name)
+                if is_head:
+                    head_params.append(p)
+                else:
+                    body_params.append(p)
+
+            param_groups = []
+            if len(head_params) > 0:
+                param_groups.append({
+                    'params': head_params,
+                    'lr': self.args.lr,
+                    'momentum': self.args.momentum,
+                    'weight_decay': self.args.weight_decay,
+                })
+            if len(body_params) > 0:
+                param_groups.append({
+                    'params': body_params,
+                    'lr': 0.0,
+                })
+
+            optimizer = torch.optim.SGD(param_groups)
+            optimizer_list.append(optimizer)
+
+        for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+            inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+            for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+                neighbor_net.zero_grad()
+                outputs = self._forward_logits(neighbor_net, inputs, head='global')
+                loss = self.loss_func(outputs, targets)
+                loss.backward()
+                optimizer.step()
+
+        return neighbor_list
+
+    # -------------------------------------------------------------------------
+    # global-local agreement
+    # -------------------------------------------------------------------------
+    def get_global_local_agreement(self, net_global, net_personal):
+        agreement_list = []
+        net_global.eval()
+        net_personal.eval()
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs = inputs.to(self.args.device)
+                logits_g = self._forward_logits(net_global, inputs, head='global')
+                logits_p = self._forward_logits(net_personal, inputs, head='local')
+
+                pred_g = torch.argmax(logits_g, dim=1)
+                pred_p = torch.argmax(logits_p, dim=1)
+                agreement = pred_g.eq(pred_p).float().cpu().numpy()
+                agreement_list.append(agreement)
+
+        return np.concatenate(agreement_list, axis=0)
+
+    # -------------------------------------------------------------------------
+    # 训练函数：不永久改变 self.ldr_train，避免下一轮 DataLoader 被 clean subset 污染。
+    # -------------------------------------------------------------------------
+    def train_global_and_personal(self, net_global, net_personal, train_indices):
+        train_loader = DataLoader(
+            DatasetSplit(self.dataset, train_indices, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        net_global.train()
+        net_personal.train()
+
+        optimizer_args = dict(
+            lr=self.args.lr,
+            momentum=self.args.momentum,
+            weight_decay=self.args.weight_decay,
+        )
+        optimizer_g = torch.optim.SGD(net_global.parameters(), **optimizer_args)
+        optimizer_p = torch.optim.SGD(net_personal.parameters(), **optimizer_args)
+
+        epoch_loss_g = []
+        epoch_loss_p = []
+
+        local_ep_g = self.args.local_ep
+        local_ep_p = getattr(self.args, 'pfl_personal_ep', self.args.local_ep)
+        total_ep = max(local_ep_g, local_ep_p)
+
+        for epoch in range(total_ep):
+            batch_loss_g = []
+            batch_loss_p = []
+
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(train_loader):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+                if epoch < local_ep_g:
+                    net_global.zero_grad()
+                    logits_g = self._forward_logits(net_global, inputs, head='global')
+                    loss_g = self.loss_func(logits_g, targets)
+                    loss_g.backward()
+                    optimizer_g.step()
+                    batch_loss_g.append(loss_g.item())
+
+                if epoch < local_ep_p:
+                    net_personal.zero_grad()
+                    logits_p = self._forward_logits(net_personal, inputs, head='local')
+                    loss_p = self.loss_func(logits_p, targets)
+                    loss_p.backward()
+                    optimizer_p.step()
+                    batch_loss_p.append(loss_p.item())
+
+            if len(batch_loss_g) > 0:
+                epoch_loss_g.append(sum(batch_loss_g) / len(batch_loss_g))
+            if len(batch_loss_p) > 0:
+                epoch_loss_p.append(sum(batch_loss_p) / len(batch_loss_p))
+
+        loss_g_mean = sum(epoch_loss_g) / max(len(epoch_loss_g), 1)
+        loss_p_mean = sum(epoch_loss_p) / max(len(epoch_loss_p), 1)
+
+        self.net1.load_state_dict(net_global.state_dict())
+        self.net2.load_state_dict(net_personal.state_dict())
+        self.last_updated = self.args.g_epoch
+
+        return net_global.state_dict(), loss_g_mean, net_personal.state_dict(), loss_p_mean
+
+    # -------------------------------------------------------------------------
+    # Phase 1: warmup
+    # -------------------------------------------------------------------------
+    def train_phase1_pfedrn(self, net_global, net_personal):
+        w_g, loss_g, w_p, loss_p = self.train_global_and_personal(
+            net_global,
+            net_personal,
+            self.data_indices,
+        )
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w_g, loss_g, w_p, loss_p
+
+    # -------------------------------------------------------------------------
+    # Phase 2: FedRN + PFL local model guidance
+    # -------------------------------------------------------------------------
+    def train_phase2_pfedrn(self, net_global, net_personal, prev_score, neighbor_list, neighbor_score_list):
+        # 1. target global model 的 clean probability。
+        prob_global = self.fit_gmm(self.net1, head='global')
+        pred_clean_idx, pred_noisy_idx = self.get_clean_idx(prob_global)
+
+        # 2. FedRN neighbor GMM。
+        prob_list = [prob_global]
+        neighbor_list = self.finetune_head(neighbor_list, pred_clean_idx)
+        for neighbor_net in neighbor_list:
+            neighbor_prob = self.fit_gmm(neighbor_net, head='global')
+            prob_list.append(neighbor_prob)
+
+        score_list = [prev_score] + neighbor_score_list
+        score_sum = sum(score_list) + 1e-8
+        score_list = [score / score_sum for score in score_list]
+
+        p_rn = np.zeros(len(prob_global))
+        for prob, score in zip(prob_list, score_list):
+            p_rn = np.add(p_rn, np.multiply(prob, score))
+
+        # 3. personalized local model 的 clean probability；local_weight=0 时完全关闭 PFL 融合。
+        local_weight = getattr(self.args, 'pfl_local_weight', 0.3)
+        local_weight = min(max(local_weight, 0.0), 1.0)
+
+        if local_weight > 0:
+            p_local = self.fit_gmm(self.net2, head='local')
+            final_prob = (1.0 - local_weight) * p_rn + local_weight * p_local
+        else:
+            final_prob = p_rn
+
+        # 4. global-local prediction agreement 修正；agree_weight=0 时完全关闭 agreement。
+        agree_weight = getattr(self.args, 'pfl_agree_weight', 0.15)
+        agree_weight = min(max(agree_weight, 0.0), 1.0)
+
+        if agree_weight > 0:
+            agreement = self.get_global_local_agreement(self.net1, self.net2)
+            final_prob = final_prob + agree_weight * (2.0 * agreement - 1.0)
+            final_prob = np.clip(final_prob, 0.0, 1.0)
+            agreement_ratio = float(np.mean(agreement))
+        else:
+            agreement_ratio = 0.0
+
+        # 5. 使用最终 clean probability 选择 clean samples。
+        final_clean_idx, final_noisy_idx = self.get_clean_idx(final_prob)
+        clean_ratio = float(len(final_clean_idx)) / float(len(self.data_indices) + 1e-8)
+
+        # 6. 用 clean samples 同时更新 global model 和 personalized model。
+        w_g, loss_g, w_p, loss_p = self.train_global_and_personal(
+            net_global,
+            net_personal,
+            final_clean_idx,
+        )
+
+        self.set_expertise()
+        self.set_arbitrary_output()
+
+        return w_g, loss_g, w_p, loss_p, clean_ratio, agreement_ratio

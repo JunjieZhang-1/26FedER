@@ -13,7 +13,6 @@ def get_model(args):
         return CNNMnist(args=args)
     else:
         return CNN4Conv(num_classes=args.num_classes)
-        print("🧠 [Model Router] 已加载: CNN4Conv_DualHead (双头架构)")
 
 
 

@@ -90,18 +90,18 @@ def args_parser():
     parser = argparse.ArgumentParser()
 
     # 1. 算法选择参数（指定使用的抗噪声或联邦学习方法）
-    parser.add_argument('--method', type=str, default='default',
-                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn','fedco''fedcoPFL'],
+    parser.add_argument('--method', type=str, default='pfedrn',
+                        choices=['default', 'selfie', 'jointoptim', 'coteaching', 'coteaching+', 'dividemix', 'fedrn','feder','fedrnn','fedco','fedcoPFL','pfedrn'],
                         help='选择训练方法：default(默认，对应FedAvg)、fedrn(原论文方法)等抗噪声算法')
 
     # 2. 联邦学习核心参数（控制联邦训练流程）
-    parser.add_argument('--epochs', type=int, default=400,
+    parser.add_argument('--epochs', type=int, default=500,
                         help="联邦学习总通信轮次（默认500轮）")
     parser.add_argument('--num_users', type=int, default=100,
                         help="用户总数K（默认100个用户）")
-    parser.add_argument('--frac', type=float, default=0.1,
+    parser.add_argument('--frac', type=float, default=0.5,
                         help="每轮参与训练的用户比例C（默认10%）")
-    parser.add_argument('--local_ep', type=int, default=4,
+    parser.add_argument('--local_ep', type=int, default=5,
                         help="每个用户的本地训练轮次E（默认5轮）")
     parser.add_argument('--local_bs', type=int, default=50,
                         help="用户本地训练的批次大小B")
@@ -123,7 +123,7 @@ def args_parser():
                         help="非IID数据划分方式：shard(分片划分)或dirichlet(狄利克雷分布划分)")
     parser.add_argument('--dd_alpha', type=float, default=0.5,
                         help="狄利克雷划分的浓度参数alpha（值越小，数据异质性越强）")
-    parser.add_argument('--num_shards', type=int, default=500,
+    parser.add_argument('--num_shards', type=int, default=200,
                         help="分片划分的总分片数（默认200，100用户各分2片）")
     parser.add_argument('--fed_method', type=str, default='fedavg', choices=['fedavg'],
                         help="联邦学习聚合方法（当前仅支持fedavg，即联邦平均）")
@@ -164,9 +164,9 @@ def args_parser():
                         help="噪声类型列表（支持symmetric(对称噪声)和pairflip(成对噪声)）")
     parser.add_argument('--noise_group_num', nargs='+', default=[100], type=int,
                         help="每组噪声对应的用户数量默认100（总和需等于num_users，如[50,50]表示两组各50用户）")
-    parser.add_argument('--group_noise_rate', nargs='+', default=[0,0.8], type=float,
+    parser.add_argument('--group_noise_rate', nargs='+', default=[0,0.4], type=float,
                         help="每组噪声率的范围，格式为[min1,max1,min2,max2...]")
-    parser.add_argument('--warmup_epochs', type=int, default=80,
+    parser.add_argument('--warmup_epochs', type=int, default=100,
                         help="热身轮次（FedRN算法中前100轮不进行邻居协作，与原论文一致）")
 
     # 6. 其他抗噪声算法参数（SELFIE、Co-teaching等）
@@ -194,7 +194,7 @@ def args_parser():
     # 7. FedRN算法专属参数（原论文核心参数
     parser.add_argument('--num_neighbors', type=int, default=2,
                         help="FedRN选择的可靠邻居数量（默认2，与原论文最优设置一致）")
-    parser.add_argument('--w_alpha', type=float, default=0.5,
+    parser.add_argument('--w_alpha', type=float, default=0.6,
                         help="FedRN中专业性与相似度的权重系数（0.5表示两者同等重要）")
 
     # 8：边缘服务器数量配置
@@ -203,6 +203,20 @@ def args_parser():
     # 🚀 新增：FedER 专属超参数，用于控制专业性(exp)和相似度(sim)的权重
     parser.add_argument('--feder_exp_weight', type=float, default=0.6,
                         help='FedER聚合时专业性(exp)的权重占比。相似度(sim)的权重将自动设为 1 - feder_exp_weight')
+
+
+    #pfedrn
+    parser.add_argument('--neighbor_scope', type=str, default='global', choices=['edge', 'global'],
+                        help='PFedRN/FedRN 邻居搜索范围：edge=同一边缘服务器内；global=全部客户端')
+
+    parser.add_argument('--pfl_local_weight', type=float, default=0.3,
+                        help='PFedRN 中 personalized local model 的 clean probability 融合权重')
+
+    parser.add_argument('--pfl_agree_weight', type=float, default=0,
+                        help='PFedRN 中 global-local 预测一致性修正强度')
+
+    parser.add_argument('--pfl_personal_ep', type=int, default=4,
+                        help='PFedRN 中 personalized model 每轮额外本地训练 epoch 数')
     args = parser.parse_args()
     return args
 

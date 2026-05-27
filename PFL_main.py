@@ -30,7 +30,7 @@ from utils.sampling import sample_iid, sample_noniid_shard, sample_dirichlet
 from utils.utils import noisify_label
 
 from models.fed import LocalModelWeights
-from models.nets import get_model
+from models.nets_original_fedrn import get_model
 from models.test import test_img
 from models.update import get_local_update_objects
 
