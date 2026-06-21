@@ -1,0 +1,22 @@
+Round   0
+train_loss: 0.661317 - test_acc: 10.030000 - test_loss: 6.280839
+Round   1
+train_loss: 0.693322 - test_acc: 9.710000 - test_loss: 7.139047
+Round   2
+train_loss: 0.927923 - test_acc: 12.490000 - test_loss: 4.744221
+Round   3
+train_loss: 0.790356 - test_acc: 13.520000 - test_loss: 4.904563
+Round   4
+train_loss: 0.712736 - test_acc: 13.710000 - test_loss: 4.578472
+Round   5
+train_loss: 0.456137 - test_acc: 12.770000 - test_loss: 5.334124
+Round   6
+train_loss: 0.381938 - test_acc: 12.230000 - test_loss: 4.690313
+Round   7
+train_loss: 0.457140 - test_acc: 13.170000 - test_loss: 5.252970
+Round   8
+train_loss: 0.489714 - test_acc: 13.150000 - test_loss: 4.923325
+Round   9
+train_loss: 0.569954 - test_acc: 11.370000 - test_loss: 4.899152
+Round  10
+train_loss: 0.552532 - test_acc: 9.710000 - test_loss: 5.919284

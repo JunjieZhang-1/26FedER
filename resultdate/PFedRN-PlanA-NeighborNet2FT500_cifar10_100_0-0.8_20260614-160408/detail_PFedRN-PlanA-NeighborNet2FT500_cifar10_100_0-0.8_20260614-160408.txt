@@ -1,0 +1,18 @@
+Experiment Start: 20260614-160408
+Args: Namespace(method='pfedrn', epochs=500, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, weight_decay=0.0, schedule=[], lr_decay=0.1, fed_method='fedavg', partition='shard', num_shards=200, dd_alpha=0.5, iid=False, split='user', model='cnn4conv', dataset='cifar10', num_classes=10, num_channels=3, img_size=32, gpu=0, seed=1, verbose=False, all_clients=False, num_workers=4, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[0, 0.8], noise_seed_mode='fedrn', warmup_epochs=100, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, neighbor_net1_weight=0.7, neighbor_net2_weight=0.3, net2_local_ep=5, exp_method='PFedRN-PlanA-NeighborNet2FT', save_dir='resultdate', log_client_stats=1, device=device(type='cuda', index=0))
+====================================================================================================
+
+==== Round   0 ====
+Global Test Acc: 19.78% | Loss: 2.2644 | Train Loss: 1.5903 | Clean Ratio: 1.000
+
+==== Round   1 ====
+Global Test Acc: 21.69% | Loss: 2.1599 | Train Loss: 1.6199 | Clean Ratio: 1.000
+
+==== Round   2 ====
+Global Test Acc: 18.67% | Loss: 2.2007 | Train Loss: 1.4386 | Clean Ratio: 1.000
+
+==== Round   3 ====
+Global Test Acc: 25.68% | Loss: 2.1206 | Train Loss: 1.5688 | Clean Ratio: 1.000
+
+==== Round   4 ====
+Global Test Acc: 26.60% | Loss: 2.1324 | Train Loss: 1.6481 | Clean Ratio: 1.000

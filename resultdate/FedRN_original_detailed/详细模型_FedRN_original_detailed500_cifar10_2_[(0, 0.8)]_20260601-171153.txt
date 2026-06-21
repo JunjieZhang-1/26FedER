@@ -1,0 +1,816 @@
+Experiment Start: 20260601-171153
+Args: Namespace(method='fedrn', epochs=500, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=8, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[(0, 0.8)], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, num_edges=1, feder_exp_weight=0.6, neighbor_scope='global', pfl_local_weight=0.3, pfl_agree_weight=0, pfl_personal_ep=1, recover_interval=2, recover_threshold=0.6, recover_max_ratio=0.4, recover_ep=1, recover_train_global=1, device=device(type='cuda', index=0), send_2_models=False, img_size=32)
+Actual clean labels in noisy train set: 30200/50000 (0.604000); Actual noisy labels: 19800 (0.396000)
+====================================================================================================
+
+==================== Round   0 ====================
+  --> selected_clients=10 local_loss=1.5930 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3216/5000(0.643) | ActualRoundNoisy=1784/5000(0.357) | ActualTrainClean=0.643(3216/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1784
+    [Client 037] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=352 ActualRoundNoisy=148 ActualTrainClean=0.704(352/500) CleanRecall=1.000 MissedClean=0 FalseClean=148
+    [Client 022] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=412 ActualRoundNoisy=88 ActualTrainClean=0.824(412/500) CleanRecall=1.000 MissedClean=0 FalseClean=88
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 052] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=292 ActualRoundNoisy=208 ActualTrainClean=0.584(292/500) CleanRecall=1.000 MissedClean=0 FalseClean=208
+    [Client 053] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=288 ActualRoundNoisy=212 ActualTrainClean=0.576(288/500) CleanRecall=1.000 MissedClean=0 FalseClean=212
+    [Client 054] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=284 ActualRoundNoisy=216 ActualTrainClean=0.568(284/500) CleanRecall=1.000 MissedClean=0 FalseClean=216
+    [Client 031] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=376 ActualRoundNoisy=124 ActualTrainClean=0.752(376/500) CleanRecall=1.000 MissedClean=0 FalseClean=124
+    [Client 063] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=248 ActualRoundNoisy=252 ActualTrainClean=0.496(248/500) CleanRecall=1.000 MissedClean=0 FalseClean=252
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+Train Acc: 13.68% | Train Loss: 2.3495 | Global Acc: 16.66% | Global Loss: 2.3113 | Local Train Loss: 1.5930 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3216/5000(0.643) | ActualRoundNoisy=1784/5000(0.357) | ActualTrainClean=0.643(3216/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1784
+
+==================== Round   1 ====================
+  --> selected_clients=10 local_loss=1.6157 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2980/5000(0.596) | ActualRoundNoisy=2020/5000(0.404) | ActualTrainClean=0.596(2980/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2020
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 027] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=392 ActualRoundNoisy=108 ActualTrainClean=0.784(392/500) CleanRecall=1.000 MissedClean=0 FalseClean=108
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 046] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=316 ActualRoundNoisy=184 ActualTrainClean=0.632(316/500) CleanRecall=1.000 MissedClean=0 FalseClean=184
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+    [Client 091] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=136 ActualRoundNoisy=364 ActualTrainClean=0.272(136/500) CleanRecall=1.000 MissedClean=0 FalseClean=364
+    [Client 059] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=264 ActualRoundNoisy=236 ActualTrainClean=0.528(264/500) CleanRecall=1.000 MissedClean=0 FalseClean=236
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+Train Acc: 14.65% | Train Loss: 2.3047 | Global Acc: 19.37% | Global Loss: 2.2372 | Local Train Loss: 1.6157 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2980/5000(0.596) | ActualRoundNoisy=2020/5000(0.404) | ActualTrainClean=0.596(2980/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2020
+
+==================== Round   2 ====================
+  --> selected_clients=10 local_loss=1.4360 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3112/5000(0.622) | ActualRoundNoisy=1888/5000(0.378) | ActualTrainClean=0.622(3112/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1888
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 091] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=136 ActualRoundNoisy=364 ActualTrainClean=0.272(136/500) CleanRecall=1.000 MissedClean=0 FalseClean=364
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 058] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=268 ActualRoundNoisy=232 ActualTrainClean=0.536(268/500) CleanRecall=1.000 MissedClean=0 FalseClean=232
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 028] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=388 ActualRoundNoisy=112 ActualTrainClean=0.776(388/500) CleanRecall=1.000 MissedClean=0 FalseClean=112
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 098] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=108 ActualRoundNoisy=392 ActualTrainClean=0.216(108/500) CleanRecall=1.000 MissedClean=0 FalseClean=392
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+Train Acc: 12.80% | Train Loss: 2.3778 | Global Acc: 14.52% | Global Loss: 2.3119 | Local Train Loss: 1.4360 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3112/5000(0.622) | ActualRoundNoisy=1888/5000(0.378) | ActualTrainClean=0.622(3112/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1888
+
+==================== Round   3 ====================
+  --> selected_clients=10 local_loss=1.5748 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3096/5000(0.619) | ActualRoundNoisy=1904/5000(0.381) | ActualTrainClean=0.619(3096/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1904
+    [Client 066] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=236 ActualRoundNoisy=264 ActualTrainClean=0.472(236/500) CleanRecall=1.000 MissedClean=0 FalseClean=264
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 033] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=368 ActualRoundNoisy=132 ActualTrainClean=0.736(368/500) CleanRecall=1.000 MissedClean=0 FalseClean=132
+    [Client 060] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=260 ActualRoundNoisy=240 ActualTrainClean=0.520(260/500) CleanRecall=1.000 MissedClean=0 FalseClean=240
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 026] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=396 ActualRoundNoisy=104 ActualTrainClean=0.792(396/500) CleanRecall=1.000 MissedClean=0 FalseClean=104
+    [Client 043] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=328 ActualRoundNoisy=172 ActualTrainClean=0.656(328/500) CleanRecall=1.000 MissedClean=0 FalseClean=172
+Train Acc: 16.75% | Train Loss: 2.2779 | Global Acc: 21.17% | Global Loss: 2.1891 | Local Train Loss: 1.5748 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3096/5000(0.619) | ActualRoundNoisy=1904/5000(0.381) | ActualTrainClean=0.619(3096/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1904
+
+==================== Round   4 ====================
+  --> selected_clients=10 local_loss=1.6594 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2924/5000(0.585) | ActualRoundNoisy=2076/5000(0.415) | ActualTrainClean=0.585(2924/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2076
+    [Client 037] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=352 ActualRoundNoisy=148 ActualTrainClean=0.704(352/500) CleanRecall=1.000 MissedClean=0 FalseClean=148
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 063] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=248 ActualRoundNoisy=252 ActualTrainClean=0.496(248/500) CleanRecall=1.000 MissedClean=0 FalseClean=252
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 024] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=404 ActualRoundNoisy=96 ActualTrainClean=0.808(404/500) CleanRecall=1.000 MissedClean=0 FalseClean=96
+    [Client 025] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=400 ActualRoundNoisy=100 ActualTrainClean=0.800(400/500) CleanRecall=1.000 MissedClean=0 FalseClean=100
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 081] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=176 ActualRoundNoisy=324 ActualTrainClean=0.352(176/500) CleanRecall=1.000 MissedClean=0 FalseClean=324
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+Train Acc: 17.96% | Train Loss: 2.2896 | Global Acc: 24.29% | Global Loss: 2.2104 | Local Train Loss: 1.6594 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2924/5000(0.585) | ActualRoundNoisy=2076/5000(0.415) | ActualTrainClean=0.585(2924/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2076
+
+==================== Round   5 ====================
+  --> selected_clients=10 local_loss=1.9043 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2272/5000(0.454) | ActualRoundNoisy=2728/5000(0.546) | ActualTrainClean=0.454(2272/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2728
+    [Client 091] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=136 ActualRoundNoisy=364 ActualTrainClean=0.272(136/500) CleanRecall=1.000 MissedClean=0 FalseClean=364
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 077] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=192 ActualRoundNoisy=308 ActualTrainClean=0.384(192/500) CleanRecall=1.000 MissedClean=0 FalseClean=308
+    [Client 099] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=104 ActualRoundNoisy=396 ActualTrainClean=0.208(104/500) CleanRecall=1.000 MissedClean=0 FalseClean=396
+    [Client 045] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=320 ActualRoundNoisy=180 ActualTrainClean=0.640(320/500) CleanRecall=1.000 MissedClean=0 FalseClean=180
+    [Client 037] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=352 ActualRoundNoisy=148 ActualTrainClean=0.704(352/500) CleanRecall=1.000 MissedClean=0 FalseClean=148
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 061] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=256 ActualRoundNoisy=244 ActualTrainClean=0.512(256/500) CleanRecall=1.000 MissedClean=0 FalseClean=244
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+Train Acc: 17.39% | Train Loss: 2.2683 | Global Acc: 23.38% | Global Loss: 2.1859 | Local Train Loss: 1.9043 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2272/5000(0.454) | ActualRoundNoisy=2728/5000(0.546) | ActualTrainClean=0.454(2272/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2728
+
+==================== Round   6 ====================
+  --> selected_clients=10 local_loss=1.5931 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3012/5000(0.602) | ActualRoundNoisy=1988/5000(0.398) | ActualTrainClean=0.602(3012/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1988
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 052] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=292 ActualRoundNoisy=208 ActualTrainClean=0.584(292/500) CleanRecall=1.000 MissedClean=0 FalseClean=208
+    [Client 079] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=184 ActualRoundNoisy=316 ActualTrainClean=0.368(184/500) CleanRecall=1.000 MissedClean=0 FalseClean=316
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 054] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=284 ActualRoundNoisy=216 ActualTrainClean=0.568(284/500) CleanRecall=1.000 MissedClean=0 FalseClean=216
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 032] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=372 ActualRoundNoisy=128 ActualTrainClean=0.744(372/500) CleanRecall=1.000 MissedClean=0 FalseClean=128
+    [Client 061] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=256 ActualRoundNoisy=244 ActualTrainClean=0.512(256/500) CleanRecall=1.000 MissedClean=0 FalseClean=244
+    [Client 031] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=376 ActualRoundNoisy=124 ActualTrainClean=0.752(376/500) CleanRecall=1.000 MissedClean=0 FalseClean=124
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+Train Acc: 17.43% | Train Loss: 2.2641 | Global Acc: 24.50% | Global Loss: 2.1455 | Local Train Loss: 1.5931 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3012/5000(0.602) | ActualRoundNoisy=1988/5000(0.398) | ActualTrainClean=0.602(3012/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1988
+
+==================== Round   7 ====================
+  --> selected_clients=10 local_loss=1.4088 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3164/5000(0.633) | ActualRoundNoisy=1836/5000(0.367) | ActualTrainClean=0.633(3164/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1836
+    [Client 079] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=184 ActualRoundNoisy=316 ActualTrainClean=0.368(184/500) CleanRecall=1.000 MissedClean=0 FalseClean=316
+    [Client 008] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=468 ActualRoundNoisy=32 ActualTrainClean=0.936(468/500) CleanRecall=1.000 MissedClean=0 FalseClean=32
+    [Client 033] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=368 ActualRoundNoisy=132 ActualTrainClean=0.736(368/500) CleanRecall=1.000 MissedClean=0 FalseClean=132
+    [Client 047] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=312 ActualRoundNoisy=188 ActualTrainClean=0.624(312/500) CleanRecall=1.000 MissedClean=0 FalseClean=188
+    [Client 083] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=168 ActualRoundNoisy=332 ActualTrainClean=0.336(168/500) CleanRecall=1.000 MissedClean=0 FalseClean=332
+    [Client 059] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=264 ActualRoundNoisy=236 ActualTrainClean=0.528(264/500) CleanRecall=1.000 MissedClean=0 FalseClean=236
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+Train Acc: 17.63% | Train Loss: 2.3058 | Global Acc: 23.32% | Global Loss: 2.1629 | Local Train Loss: 1.4088 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3164/5000(0.633) | ActualRoundNoisy=1836/5000(0.367) | ActualTrainClean=0.633(3164/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1836
+
+==================== Round   8 ====================
+  --> selected_clients=10 local_loss=1.1390 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3772/5000(0.754) | ActualRoundNoisy=1228/5000(0.246) | ActualTrainClean=0.754(3772/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1228
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 079] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=184 ActualRoundNoisy=316 ActualTrainClean=0.368(184/500) CleanRecall=1.000 MissedClean=0 FalseClean=316
+    [Client 004] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=484 ActualRoundNoisy=16 ActualTrainClean=0.968(484/500) CleanRecall=1.000 MissedClean=0 FalseClean=16
+    [Client 009] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=464 ActualRoundNoisy=36 ActualTrainClean=0.928(464/500) CleanRecall=1.000 MissedClean=0 FalseClean=36
+    [Client 059] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=264 ActualRoundNoisy=236 ActualTrainClean=0.528(264/500) CleanRecall=1.000 MissedClean=0 FalseClean=236
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 086] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=156 ActualRoundNoisy=344 ActualTrainClean=0.312(156/500) CleanRecall=1.000 MissedClean=0 FalseClean=344
+    [Client 027] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=392 ActualRoundNoisy=108 ActualTrainClean=0.784(392/500) CleanRecall=1.000 MissedClean=0 FalseClean=108
+Train Acc: 19.26% | Train Loss: 2.2411 | Global Acc: 25.34% | Global Loss: 2.0872 | Local Train Loss: 1.1390 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3772/5000(0.754) | ActualRoundNoisy=1228/5000(0.246) | ActualTrainClean=0.754(3772/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1228
+
+==================== Round   9 ====================
+  --> selected_clients=10 local_loss=1.5454 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2752/5000(0.550) | ActualRoundNoisy=2248/5000(0.450) | ActualTrainClean=0.550(2752/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2248
+    [Client 049] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=304 ActualRoundNoisy=196 ActualTrainClean=0.608(304/500) CleanRecall=1.000 MissedClean=0 FalseClean=196
+    [Client 097] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=112 ActualRoundNoisy=388 ActualTrainClean=0.224(112/500) CleanRecall=1.000 MissedClean=0 FalseClean=388
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 087] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=152 ActualRoundNoisy=348 ActualTrainClean=0.304(152/500) CleanRecall=1.000 MissedClean=0 FalseClean=348
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+    [Client 009] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=464 ActualRoundNoisy=36 ActualTrainClean=0.928(464/500) CleanRecall=1.000 MissedClean=0 FalseClean=36
+    [Client 092] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=132 ActualRoundNoisy=368 ActualTrainClean=0.264(132/500) CleanRecall=1.000 MissedClean=0 FalseClean=368
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+Train Acc: 14.22% | Train Loss: 2.2420 | Global Acc: 17.41% | Global Loss: 2.1179 | Local Train Loss: 1.5454 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2752/5000(0.550) | ActualRoundNoisy=2248/5000(0.450) | ActualTrainClean=0.550(2752/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2248
+
+==================== Round  10 ====================
+  --> selected_clients=10 local_loss=1.5808 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2888/5000(0.578) | ActualRoundNoisy=2112/5000(0.422) | ActualTrainClean=0.578(2888/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2112
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 078] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=188 ActualRoundNoisy=312 ActualTrainClean=0.376(188/500) CleanRecall=1.000 MissedClean=0 FalseClean=312
+    [Client 079] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=184 ActualRoundNoisy=316 ActualTrainClean=0.368(184/500) CleanRecall=1.000 MissedClean=0 FalseClean=316
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+    [Client 045] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=320 ActualRoundNoisy=180 ActualTrainClean=0.640(320/500) CleanRecall=1.000 MissedClean=0 FalseClean=180
+    [Client 008] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=468 ActualRoundNoisy=32 ActualTrainClean=0.936(468/500) CleanRecall=1.000 MissedClean=0 FalseClean=32
+Train Acc: 15.25% | Train Loss: 2.3424 | Global Acc: 20.23% | Global Loss: 2.1932 | Local Train Loss: 1.5808 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2888/5000(0.578) | ActualRoundNoisy=2112/5000(0.422) | ActualTrainClean=0.578(2888/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2112
+
+==================== Round  11 ====================
+  --> selected_clients=10 local_loss=1.5443 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2940/5000(0.588) | ActualRoundNoisy=2060/5000(0.412) | ActualTrainClean=0.588(2940/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2060
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 018] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=428 ActualRoundNoisy=72 ActualTrainClean=0.856(428/500) CleanRecall=1.000 MissedClean=0 FalseClean=72
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 086] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=156 ActualRoundNoisy=344 ActualTrainClean=0.312(156/500) CleanRecall=1.000 MissedClean=0 FalseClean=344
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 039] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=344 ActualRoundNoisy=156 ActualTrainClean=0.688(344/500) CleanRecall=1.000 MissedClean=0 FalseClean=156
+    [Client 051] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=296 ActualRoundNoisy=204 ActualTrainClean=0.592(296/500) CleanRecall=1.000 MissedClean=0 FalseClean=204
+Train Acc: 16.64% | Train Loss: 2.2580 | Global Acc: 23.73% | Global Loss: 2.1075 | Local Train Loss: 1.5443 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2940/5000(0.588) | ActualRoundNoisy=2060/5000(0.412) | ActualTrainClean=0.588(2940/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2060
+
+==================== Round  12 ====================
+  --> selected_clients=10 local_loss=1.6898 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2736/5000(0.547) | ActualRoundNoisy=2264/5000(0.453) | ActualTrainClean=0.547(2736/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2264
+    [Client 032] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=372 ActualRoundNoisy=128 ActualTrainClean=0.744(372/500) CleanRecall=1.000 MissedClean=0 FalseClean=128
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 051] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=296 ActualRoundNoisy=204 ActualTrainClean=0.592(296/500) CleanRecall=1.000 MissedClean=0 FalseClean=204
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 049] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=304 ActualRoundNoisy=196 ActualTrainClean=0.608(304/500) CleanRecall=1.000 MissedClean=0 FalseClean=196
+    [Client 046] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=316 ActualRoundNoisy=184 ActualTrainClean=0.632(316/500) CleanRecall=1.000 MissedClean=0 FalseClean=184
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 092] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=132 ActualRoundNoisy=368 ActualTrainClean=0.264(132/500) CleanRecall=1.000 MissedClean=0 FalseClean=368
+Train Acc: 19.40% | Train Loss: 2.2284 | Global Acc: 27.19% | Global Loss: 2.0946 | Local Train Loss: 1.6898 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2736/5000(0.547) | ActualRoundNoisy=2264/5000(0.453) | ActualTrainClean=0.547(2736/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2264
+
+==================== Round  13 ====================
+  --> selected_clients=10 local_loss=1.4820 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3148/5000(0.630) | ActualRoundNoisy=1852/5000(0.370) | ActualTrainClean=0.630(3148/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1852
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 014] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=444 ActualRoundNoisy=56 ActualTrainClean=0.888(444/500) CleanRecall=1.000 MissedClean=0 FalseClean=56
+    [Client 052] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=292 ActualRoundNoisy=208 ActualTrainClean=0.584(292/500) CleanRecall=1.000 MissedClean=0 FalseClean=208
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 018] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=428 ActualRoundNoisy=72 ActualTrainClean=0.856(428/500) CleanRecall=1.000 MissedClean=0 FalseClean=72
+    [Client 092] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=132 ActualRoundNoisy=368 ActualTrainClean=0.264(132/500) CleanRecall=1.000 MissedClean=0 FalseClean=368
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+Train Acc: 19.22% | Train Loss: 2.2210 | Global Acc: 25.46% | Global Loss: 2.0981 | Local Train Loss: 1.4820 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3148/5000(0.630) | ActualRoundNoisy=1852/5000(0.370) | ActualTrainClean=0.630(3148/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1852
+
+==================== Round  14 ====================
+  --> selected_clients=10 local_loss=1.3080 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3492/5000(0.698) | ActualRoundNoisy=1508/5000(0.302) | ActualTrainClean=0.698(3492/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1508
+    [Client 030] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=380 ActualRoundNoisy=120 ActualTrainClean=0.760(380/500) CleanRecall=1.000 MissedClean=0 FalseClean=120
+    [Client 062] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=252 ActualRoundNoisy=248 ActualTrainClean=0.504(252/500) CleanRecall=1.000 MissedClean=0 FalseClean=248
+    [Client 008] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=468 ActualRoundNoisy=32 ActualTrainClean=0.936(468/500) CleanRecall=1.000 MissedClean=0 FalseClean=32
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 026] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=396 ActualRoundNoisy=104 ActualTrainClean=0.792(396/500) CleanRecall=1.000 MissedClean=0 FalseClean=104
+Train Acc: 19.14% | Train Loss: 2.2372 | Global Acc: 25.37% | Global Loss: 2.0834 | Local Train Loss: 1.3080 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3492/5000(0.698) | ActualRoundNoisy=1508/5000(0.302) | ActualTrainClean=0.698(3492/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1508
+
+==================== Round  15 ====================
+  --> selected_clients=10 local_loss=1.4777 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3160/5000(0.632) | ActualRoundNoisy=1840/5000(0.368) | ActualTrainClean=0.632(3160/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1840
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 024] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=404 ActualRoundNoisy=96 ActualTrainClean=0.808(404/500) CleanRecall=1.000 MissedClean=0 FalseClean=96
+    [Client 017] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=432 ActualRoundNoisy=68 ActualTrainClean=0.864(432/500) CleanRecall=1.000 MissedClean=0 FalseClean=68
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 086] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=156 ActualRoundNoisy=344 ActualTrainClean=0.312(156/500) CleanRecall=1.000 MissedClean=0 FalseClean=344
+    [Client 011] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=456 ActualRoundNoisy=44 ActualTrainClean=0.912(456/500) CleanRecall=1.000 MissedClean=0 FalseClean=44
+    [Client 095] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=120 ActualRoundNoisy=380 ActualTrainClean=0.240(120/500) CleanRecall=1.000 MissedClean=0 FalseClean=380
+    [Client 071] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=216 ActualRoundNoisy=284 ActualTrainClean=0.432(216/500) CleanRecall=1.000 MissedClean=0 FalseClean=284
+    [Client 032] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=372 ActualRoundNoisy=128 ActualTrainClean=0.744(372/500) CleanRecall=1.000 MissedClean=0 FalseClean=128
+Train Acc: 16.22% | Train Loss: 2.2414 | Global Acc: 21.01% | Global Loss: 2.0977 | Local Train Loss: 1.4777 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3160/5000(0.632) | ActualRoundNoisy=1840/5000(0.368) | ActualTrainClean=0.632(3160/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1840
+
+==================== Round  16 ====================
+  --> selected_clients=10 local_loss=1.2862 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3508/5000(0.702) | ActualRoundNoisy=1492/5000(0.298) | ActualTrainClean=0.702(3508/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1492
+    [Client 009] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=464 ActualRoundNoisy=36 ActualTrainClean=0.928(464/500) CleanRecall=1.000 MissedClean=0 FalseClean=36
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+    [Client 010] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=460 ActualRoundNoisy=40 ActualTrainClean=0.920(460/500) CleanRecall=1.000 MissedClean=0 FalseClean=40
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 061] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=256 ActualRoundNoisy=244 ActualTrainClean=0.512(256/500) CleanRecall=1.000 MissedClean=0 FalseClean=244
+    [Client 008] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=468 ActualRoundNoisy=32 ActualTrainClean=0.936(468/500) CleanRecall=1.000 MissedClean=0 FalseClean=32
+    [Client 077] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=192 ActualRoundNoisy=308 ActualTrainClean=0.384(192/500) CleanRecall=1.000 MissedClean=0 FalseClean=308
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+Train Acc: 20.81% | Train Loss: 2.1936 | Global Acc: 30.01% | Global Loss: 2.0290 | Local Train Loss: 1.2862 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3508/5000(0.702) | ActualRoundNoisy=1492/5000(0.298) | ActualTrainClean=0.702(3508/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1492
+
+==================== Round  17 ====================
+  --> selected_clients=10 local_loss=1.6339 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2780/5000(0.556) | ActualRoundNoisy=2220/5000(0.444) | ActualTrainClean=0.556(2780/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2220
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 050] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=300 ActualRoundNoisy=200 ActualTrainClean=0.600(300/500) CleanRecall=1.000 MissedClean=0 FalseClean=200
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 047] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=312 ActualRoundNoisy=188 ActualTrainClean=0.624(312/500) CleanRecall=1.000 MissedClean=0 FalseClean=188
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 071] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=216 ActualRoundNoisy=284 ActualTrainClean=0.432(216/500) CleanRecall=1.000 MissedClean=0 FalseClean=284
+    [Client 092] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=132 ActualRoundNoisy=368 ActualTrainClean=0.264(132/500) CleanRecall=1.000 MissedClean=0 FalseClean=368
+Train Acc: 20.66% | Train Loss: 2.1888 | Global Acc: 27.57% | Global Loss: 2.0353 | Local Train Loss: 1.6339 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2780/5000(0.556) | ActualRoundNoisy=2220/5000(0.444) | ActualTrainClean=0.556(2780/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2220
+
+==================== Round  18 ====================
+  --> selected_clients=10 local_loss=1.6682 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2632/5000(0.526) | ActualRoundNoisy=2368/5000(0.474) | ActualTrainClean=0.526(2632/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2368
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 025] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=400 ActualRoundNoisy=100 ActualTrainClean=0.800(400/500) CleanRecall=1.000 MissedClean=0 FalseClean=100
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 076] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=196 ActualRoundNoisy=304 ActualTrainClean=0.392(196/500) CleanRecall=1.000 MissedClean=0 FalseClean=304
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 073] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=208 ActualRoundNoisy=292 ActualTrainClean=0.416(208/500) CleanRecall=1.000 MissedClean=0 FalseClean=292
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 045] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=320 ActualRoundNoisy=180 ActualTrainClean=0.640(320/500) CleanRecall=1.000 MissedClean=0 FalseClean=180
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+Train Acc: 17.93% | Train Loss: 2.2325 | Global Acc: 25.67% | Global Loss: 2.0663 | Local Train Loss: 1.6682 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2632/5000(0.526) | ActualRoundNoisy=2368/5000(0.474) | ActualTrainClean=0.526(2632/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2368
+
+==================== Round  19 ====================
+  --> selected_clients=10 local_loss=1.6736 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2716/5000(0.543) | ActualRoundNoisy=2284/5000(0.457) | ActualTrainClean=0.543(2716/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2284
+    [Client 011] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=456 ActualRoundNoisy=44 ActualTrainClean=0.912(456/500) CleanRecall=1.000 MissedClean=0 FalseClean=44
+    [Client 062] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=252 ActualRoundNoisy=248 ActualTrainClean=0.504(252/500) CleanRecall=1.000 MissedClean=0 FalseClean=248
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+Train Acc: 20.76% | Train Loss: 2.1906 | Global Acc: 29.09% | Global Loss: 2.0472 | Local Train Loss: 1.6736 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2716/5000(0.543) | ActualRoundNoisy=2284/5000(0.457) | ActualTrainClean=0.543(2716/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2284
+
+==================== Round  20 ====================
+  --> selected_clients=10 local_loss=1.3866 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3272/5000(0.654) | ActualRoundNoisy=1728/5000(0.346) | ActualTrainClean=0.654(3272/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1728
+    [Client 007] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=472 ActualRoundNoisy=28 ActualTrainClean=0.944(472/500) CleanRecall=1.000 MissedClean=0 FalseClean=28
+    [Client 014] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=444 ActualRoundNoisy=56 ActualTrainClean=0.888(444/500) CleanRecall=1.000 MissedClean=0 FalseClean=56
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 028] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=388 ActualRoundNoisy=112 ActualTrainClean=0.776(388/500) CleanRecall=1.000 MissedClean=0 FalseClean=112
+    [Client 066] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=236 ActualRoundNoisy=264 ActualTrainClean=0.472(236/500) CleanRecall=1.000 MissedClean=0 FalseClean=264
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 059] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=264 ActualRoundNoisy=236 ActualTrainClean=0.528(264/500) CleanRecall=1.000 MissedClean=0 FalseClean=236
+    [Client 097] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=112 ActualRoundNoisy=388 ActualTrainClean=0.224(112/500) CleanRecall=1.000 MissedClean=0 FalseClean=388
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+Train Acc: 20.55% | Train Loss: 2.1994 | Global Acc: 28.22% | Global Loss: 2.0645 | Local Train Loss: 1.3866 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3272/5000(0.654) | ActualRoundNoisy=1728/5000(0.346) | ActualTrainClean=0.654(3272/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1728
+
+==================== Round  21 ====================
+  --> selected_clients=10 local_loss=1.5077 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3172/5000(0.634) | ActualRoundNoisy=1828/5000(0.366) | ActualTrainClean=0.634(3172/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1828
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+    [Client 036] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=356 ActualRoundNoisy=144 ActualTrainClean=0.712(356/500) CleanRecall=1.000 MissedClean=0 FalseClean=144
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 069] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=224 ActualRoundNoisy=276 ActualTrainClean=0.448(224/500) CleanRecall=1.000 MissedClean=0 FalseClean=276
+    [Client 046] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=316 ActualRoundNoisy=184 ActualTrainClean=0.632(316/500) CleanRecall=1.000 MissedClean=0 FalseClean=184
+    [Client 061] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=256 ActualRoundNoisy=244 ActualTrainClean=0.512(256/500) CleanRecall=1.000 MissedClean=0 FalseClean=244
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 056] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=276 ActualRoundNoisy=224 ActualTrainClean=0.552(276/500) CleanRecall=1.000 MissedClean=0 FalseClean=224
+Train Acc: 23.06% | Train Loss: 2.1865 | Global Acc: 32.07% | Global Loss: 2.0456 | Local Train Loss: 1.5077 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3172/5000(0.634) | ActualRoundNoisy=1828/5000(0.366) | ActualTrainClean=0.634(3172/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1828
+
+==================== Round  22 ====================
+  --> selected_clients=10 local_loss=1.4848 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3028/5000(0.606) | ActualRoundNoisy=1972/5000(0.394) | ActualTrainClean=0.606(3028/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1972
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 058] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=268 ActualRoundNoisy=232 ActualTrainClean=0.536(268/500) CleanRecall=1.000 MissedClean=0 FalseClean=232
+    [Client 031] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=376 ActualRoundNoisy=124 ActualTrainClean=0.752(376/500) CleanRecall=1.000 MissedClean=0 FalseClean=124
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 018] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=428 ActualRoundNoisy=72 ActualTrainClean=0.856(428/500) CleanRecall=1.000 MissedClean=0 FalseClean=72
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 008] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=468 ActualRoundNoisy=32 ActualTrainClean=0.936(468/500) CleanRecall=1.000 MissedClean=0 FalseClean=32
+    [Client 007] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=472 ActualRoundNoisy=28 ActualTrainClean=0.944(472/500) CleanRecall=1.000 MissedClean=0 FalseClean=28
+Train Acc: 19.33% | Train Loss: 2.2390 | Global Acc: 25.89% | Global Loss: 2.0686 | Local Train Loss: 1.4848 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3028/5000(0.606) | ActualRoundNoisy=1972/5000(0.394) | ActualTrainClean=0.606(3028/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1972
+
+==================== Round  23 ====================
+  --> selected_clients=10 local_loss=1.5031 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3004/5000(0.601) | ActualRoundNoisy=1996/5000(0.399) | ActualTrainClean=0.601(3004/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1996
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 081] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=176 ActualRoundNoisy=324 ActualTrainClean=0.352(176/500) CleanRecall=1.000 MissedClean=0 FalseClean=324
+    [Client 022] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=412 ActualRoundNoisy=88 ActualTrainClean=0.824(412/500) CleanRecall=1.000 MissedClean=0 FalseClean=88
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+Train Acc: 19.98% | Train Loss: 2.2072 | Global Acc: 25.05% | Global Loss: 2.0912 | Local Train Loss: 1.5031 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3004/5000(0.601) | ActualRoundNoisy=1996/5000(0.399) | ActualTrainClean=0.601(3004/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1996
+
+==================== Round  24 ====================
+  --> selected_clients=10 local_loss=1.4978 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3028/5000(0.606) | ActualRoundNoisy=1972/5000(0.394) | ActualTrainClean=0.606(3028/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1972
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 073] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=208 ActualRoundNoisy=292 ActualTrainClean=0.416(208/500) CleanRecall=1.000 MissedClean=0 FalseClean=292
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 010] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=460 ActualRoundNoisy=40 ActualTrainClean=0.920(460/500) CleanRecall=1.000 MissedClean=0 FalseClean=40
+    [Client 023] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=408 ActualRoundNoisy=92 ActualTrainClean=0.816(408/500) CleanRecall=1.000 MissedClean=0 FalseClean=92
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 081] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=176 ActualRoundNoisy=324 ActualTrainClean=0.352(176/500) CleanRecall=1.000 MissedClean=0 FalseClean=324
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+Train Acc: 18.18% | Train Loss: 2.2089 | Global Acc: 24.61% | Global Loss: 2.0552 | Local Train Loss: 1.4978 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3028/5000(0.606) | ActualRoundNoisy=1972/5000(0.394) | ActualTrainClean=0.606(3028/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1972
+
+==================== Round  25 ====================
+  --> selected_clients=10 local_loss=1.3596 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3364/5000(0.673) | ActualRoundNoisy=1636/5000(0.327) | ActualTrainClean=0.673(3364/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1636
+    [Client 014] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=444 ActualRoundNoisy=56 ActualTrainClean=0.888(444/500) CleanRecall=1.000 MissedClean=0 FalseClean=56
+    [Client 076] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=196 ActualRoundNoisy=304 ActualTrainClean=0.392(196/500) CleanRecall=1.000 MissedClean=0 FalseClean=304
+    [Client 063] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=248 ActualRoundNoisy=252 ActualTrainClean=0.496(248/500) CleanRecall=1.000 MissedClean=0 FalseClean=252
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 017] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=432 ActualRoundNoisy=68 ActualTrainClean=0.864(432/500) CleanRecall=1.000 MissedClean=0 FalseClean=68
+    [Client 033] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=368 ActualRoundNoisy=132 ActualTrainClean=0.736(368/500) CleanRecall=1.000 MissedClean=0 FalseClean=132
+    [Client 022] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=412 ActualRoundNoisy=88 ActualTrainClean=0.824(412/500) CleanRecall=1.000 MissedClean=0 FalseClean=88
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+Train Acc: 19.23% | Train Loss: 2.2200 | Global Acc: 25.99% | Global Loss: 2.0529 | Local Train Loss: 1.3596 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3364/5000(0.673) | ActualRoundNoisy=1636/5000(0.327) | ActualTrainClean=0.673(3364/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1636
+
+==================== Round  26 ====================
+  --> selected_clients=10 local_loss=1.4785 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3208/5000(0.642) | ActualRoundNoisy=1792/5000(0.358) | ActualTrainClean=0.642(3208/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1792
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+    [Client 069] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=224 ActualRoundNoisy=276 ActualTrainClean=0.448(224/500) CleanRecall=1.000 MissedClean=0 FalseClean=276
+    [Client 039] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=344 ActualRoundNoisy=156 ActualTrainClean=0.688(344/500) CleanRecall=1.000 MissedClean=0 FalseClean=156
+    [Client 081] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=176 ActualRoundNoisy=324 ActualTrainClean=0.352(176/500) CleanRecall=1.000 MissedClean=0 FalseClean=324
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 036] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=356 ActualRoundNoisy=144 ActualTrainClean=0.712(356/500) CleanRecall=1.000 MissedClean=0 FalseClean=144
+Train Acc: 19.38% | Train Loss: 2.2190 | Global Acc: 27.72% | Global Loss: 2.0489 | Local Train Loss: 1.4785 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3208/5000(0.642) | ActualRoundNoisy=1792/5000(0.358) | ActualTrainClean=0.642(3208/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1792
+
+==================== Round  27 ====================
+  --> selected_clients=10 local_loss=1.3632 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3324/5000(0.665) | ActualRoundNoisy=1676/5000(0.335) | ActualTrainClean=0.665(3324/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1676
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 028] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=388 ActualRoundNoisy=112 ActualTrainClean=0.776(388/500) CleanRecall=1.000 MissedClean=0 FalseClean=112
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 047] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=312 ActualRoundNoisy=188 ActualTrainClean=0.624(312/500) CleanRecall=1.000 MissedClean=0 FalseClean=188
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 034] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=364 ActualRoundNoisy=136 ActualTrainClean=0.728(364/500) CleanRecall=1.000 MissedClean=0 FalseClean=136
+    [Client 073] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=208 ActualRoundNoisy=292 ActualTrainClean=0.416(208/500) CleanRecall=1.000 MissedClean=0 FalseClean=292
+Train Acc: 20.18% | Train Loss: 2.2054 | Global Acc: 27.89% | Global Loss: 2.0509 | Local Train Loss: 1.3632 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3324/5000(0.665) | ActualRoundNoisy=1676/5000(0.335) | ActualTrainClean=0.665(3324/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1676
+
+==================== Round  28 ====================
+  --> selected_clients=10 local_loss=1.5202 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2968/5000(0.594) | ActualRoundNoisy=2032/5000(0.406) | ActualTrainClean=0.594(2968/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2032
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 025] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=400 ActualRoundNoisy=100 ActualTrainClean=0.800(400/500) CleanRecall=1.000 MissedClean=0 FalseClean=100
+    [Client 058] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=268 ActualRoundNoisy=232 ActualTrainClean=0.536(268/500) CleanRecall=1.000 MissedClean=0 FalseClean=232
+    [Client 076] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=196 ActualRoundNoisy=304 ActualTrainClean=0.392(196/500) CleanRecall=1.000 MissedClean=0 FalseClean=304
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 087] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=152 ActualRoundNoisy=348 ActualTrainClean=0.304(152/500) CleanRecall=1.000 MissedClean=0 FalseClean=348
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 034] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=364 ActualRoundNoisy=136 ActualTrainClean=0.728(364/500) CleanRecall=1.000 MissedClean=0 FalseClean=136
+    [Client 018] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=428 ActualRoundNoisy=72 ActualTrainClean=0.856(428/500) CleanRecall=1.000 MissedClean=0 FalseClean=72
+Train Acc: 21.52% | Train Loss: 2.1927 | Global Acc: 31.40% | Global Loss: 1.9972 | Local Train Loss: 1.5202 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2968/5000(0.594) | ActualRoundNoisy=2032/5000(0.406) | ActualTrainClean=0.594(2968/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2032
+
+==================== Round  29 ====================
+  --> selected_clients=10 local_loss=1.4089 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3264/5000(0.653) | ActualRoundNoisy=1736/5000(0.347) | ActualTrainClean=0.653(3264/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1736
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 060] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=260 ActualRoundNoisy=240 ActualTrainClean=0.520(260/500) CleanRecall=1.000 MissedClean=0 FalseClean=240
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 011] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=456 ActualRoundNoisy=44 ActualTrainClean=0.912(456/500) CleanRecall=1.000 MissedClean=0 FalseClean=44
+    [Client 099] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=104 ActualRoundNoisy=396 ActualTrainClean=0.208(104/500) CleanRecall=1.000 MissedClean=0 FalseClean=396
+    [Client 025] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=400 ActualRoundNoisy=100 ActualTrainClean=0.800(400/500) CleanRecall=1.000 MissedClean=0 FalseClean=100
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+Train Acc: 22.44% | Train Loss: 2.1855 | Global Acc: 29.48% | Global Loss: 2.0326 | Local Train Loss: 1.4089 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3264/5000(0.653) | ActualRoundNoisy=1736/5000(0.347) | ActualTrainClean=0.653(3264/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1736
+
+==================== Round  30 ====================
+  --> selected_clients=10 local_loss=1.2529 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3504/5000(0.701) | ActualRoundNoisy=1496/5000(0.299) | ActualTrainClean=0.701(3504/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1496
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 007] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=472 ActualRoundNoisy=28 ActualTrainClean=0.944(472/500) CleanRecall=1.000 MissedClean=0 FalseClean=28
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 039] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=344 ActualRoundNoisy=156 ActualTrainClean=0.688(344/500) CleanRecall=1.000 MissedClean=0 FalseClean=156
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 071] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=216 ActualRoundNoisy=284 ActualTrainClean=0.432(216/500) CleanRecall=1.000 MissedClean=0 FalseClean=284
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 086] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=156 ActualRoundNoisy=344 ActualTrainClean=0.312(156/500) CleanRecall=1.000 MissedClean=0 FalseClean=344
+    [Client 014] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=444 ActualRoundNoisy=56 ActualTrainClean=0.888(444/500) CleanRecall=1.000 MissedClean=0 FalseClean=56
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+Train Acc: 16.21% | Train Loss: 2.2515 | Global Acc: 18.99% | Global Loss: 2.0928 | Local Train Loss: 1.2529 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3504/5000(0.701) | ActualRoundNoisy=1496/5000(0.299) | ActualTrainClean=0.701(3504/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1496
+
+==================== Round  31 ====================
+  --> selected_clients=10 local_loss=1.4619 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3148/5000(0.630) | ActualRoundNoisy=1852/5000(0.370) | ActualTrainClean=0.630(3148/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1852
+    [Client 032] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=372 ActualRoundNoisy=128 ActualTrainClean=0.744(372/500) CleanRecall=1.000 MissedClean=0 FalseClean=128
+    [Client 011] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=456 ActualRoundNoisy=44 ActualTrainClean=0.912(456/500) CleanRecall=1.000 MissedClean=0 FalseClean=44
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 087] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=152 ActualRoundNoisy=348 ActualTrainClean=0.304(152/500) CleanRecall=1.000 MissedClean=0 FalseClean=348
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 052] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=292 ActualRoundNoisy=208 ActualTrainClean=0.584(292/500) CleanRecall=1.000 MissedClean=0 FalseClean=208
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+    [Client 044] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=324 ActualRoundNoisy=176 ActualTrainClean=0.648(324/500) CleanRecall=1.000 MissedClean=0 FalseClean=176
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+Train Acc: 20.97% | Train Loss: 2.1977 | Global Acc: 29.19% | Global Loss: 2.0386 | Local Train Loss: 1.4619 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3148/5000(0.630) | ActualRoundNoisy=1852/5000(0.370) | ActualTrainClean=0.630(3148/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1852
+
+==================== Round  32 ====================
+  --> selected_clients=10 local_loss=1.6577 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2788/5000(0.558) | ActualRoundNoisy=2212/5000(0.442) | ActualTrainClean=0.558(2788/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2212
+    [Client 046] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=316 ActualRoundNoisy=184 ActualTrainClean=0.632(316/500) CleanRecall=1.000 MissedClean=0 FalseClean=184
+    [Client 034] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=364 ActualRoundNoisy=136 ActualTrainClean=0.728(364/500) CleanRecall=1.000 MissedClean=0 FalseClean=136
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 059] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=264 ActualRoundNoisy=236 ActualTrainClean=0.528(264/500) CleanRecall=1.000 MissedClean=0 FalseClean=236
+    [Client 078] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=188 ActualRoundNoisy=312 ActualTrainClean=0.376(188/500) CleanRecall=1.000 MissedClean=0 FalseClean=312
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 023] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=408 ActualRoundNoisy=92 ActualTrainClean=0.816(408/500) CleanRecall=1.000 MissedClean=0 FalseClean=92
+    [Client 030] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=380 ActualRoundNoisy=120 ActualTrainClean=0.760(380/500) CleanRecall=1.000 MissedClean=0 FalseClean=120
+Train Acc: 21.74% | Train Loss: 2.1739 | Global Acc: 29.38% | Global Loss: 2.0266 | Local Train Loss: 1.6577 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2788/5000(0.558) | ActualRoundNoisy=2212/5000(0.442) | ActualTrainClean=0.558(2788/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2212
+
+==================== Round  33 ====================
+  --> selected_clients=10 local_loss=1.6780 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2796/5000(0.559) | ActualRoundNoisy=2204/5000(0.441) | ActualTrainClean=0.559(2796/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2204
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 027] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=392 ActualRoundNoisy=108 ActualTrainClean=0.784(392/500) CleanRecall=1.000 MissedClean=0 FalseClean=108
+    [Client 079] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=184 ActualRoundNoisy=316 ActualTrainClean=0.368(184/500) CleanRecall=1.000 MissedClean=0 FalseClean=316
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 053] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=288 ActualRoundNoisy=212 ActualTrainClean=0.576(288/500) CleanRecall=1.000 MissedClean=0 FalseClean=212
+    [Client 063] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=248 ActualRoundNoisy=252 ActualTrainClean=0.496(248/500) CleanRecall=1.000 MissedClean=0 FalseClean=252
+    [Client 047] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=312 ActualRoundNoisy=188 ActualTrainClean=0.624(312/500) CleanRecall=1.000 MissedClean=0 FalseClean=188
+    [Client 069] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=224 ActualRoundNoisy=276 ActualTrainClean=0.448(224/500) CleanRecall=1.000 MissedClean=0 FalseClean=276
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+    [Client 010] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=460 ActualRoundNoisy=40 ActualTrainClean=0.920(460/500) CleanRecall=1.000 MissedClean=0 FalseClean=40
+Train Acc: 19.73% | Train Loss: 2.2092 | Global Acc: 24.88% | Global Loss: 2.0923 | Local Train Loss: 1.6780 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2796/5000(0.559) | ActualRoundNoisy=2204/5000(0.441) | ActualTrainClean=0.559(2796/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2204
+
+==================== Round  34 ====================
+  --> selected_clients=10 local_loss=1.2607 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3496/5000(0.699) | ActualRoundNoisy=1504/5000(0.301) | ActualTrainClean=0.699(3496/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1504
+    [Client 028] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=388 ActualRoundNoisy=112 ActualTrainClean=0.776(388/500) CleanRecall=1.000 MissedClean=0 FalseClean=112
+    [Client 046] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=316 ActualRoundNoisy=184 ActualTrainClean=0.632(316/500) CleanRecall=1.000 MissedClean=0 FalseClean=184
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 004] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=484 ActualRoundNoisy=16 ActualTrainClean=0.968(484/500) CleanRecall=1.000 MissedClean=0 FalseClean=16
+    [Client 054] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=284 ActualRoundNoisy=216 ActualTrainClean=0.568(284/500) CleanRecall=1.000 MissedClean=0 FalseClean=216
+    [Client 061] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=256 ActualRoundNoisy=244 ActualTrainClean=0.512(256/500) CleanRecall=1.000 MissedClean=0 FalseClean=244
+    [Client 094] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=124 ActualRoundNoisy=376 ActualTrainClean=0.248(124/500) CleanRecall=1.000 MissedClean=0 FalseClean=376
+    [Client 025] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=400 ActualRoundNoisy=100 ActualTrainClean=0.800(400/500) CleanRecall=1.000 MissedClean=0 FalseClean=100
+    [Client 018] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=428 ActualRoundNoisy=72 ActualTrainClean=0.856(428/500) CleanRecall=1.000 MissedClean=0 FalseClean=72
+    [Client 017] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=432 ActualRoundNoisy=68 ActualTrainClean=0.864(432/500) CleanRecall=1.000 MissedClean=0 FalseClean=68
+Train Acc: 22.14% | Train Loss: 2.1985 | Global Acc: 30.18% | Global Loss: 2.0444 | Local Train Loss: 1.2607 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3496/5000(0.699) | ActualRoundNoisy=1504/5000(0.301) | ActualTrainClean=0.699(3496/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1504
+
+==================== Round  35 ====================
+  --> selected_clients=10 local_loss=1.5557 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2908/5000(0.582) | ActualRoundNoisy=2092/5000(0.418) | ActualTrainClean=0.582(2908/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2092
+    [Client 078] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=188 ActualRoundNoisy=312 ActualTrainClean=0.376(188/500) CleanRecall=1.000 MissedClean=0 FalseClean=312
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 063] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=248 ActualRoundNoisy=252 ActualTrainClean=0.496(248/500) CleanRecall=1.000 MissedClean=0 FalseClean=252
+    [Client 060] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=260 ActualRoundNoisy=240 ActualTrainClean=0.520(260/500) CleanRecall=1.000 MissedClean=0 FalseClean=240
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 083] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=168 ActualRoundNoisy=332 ActualTrainClean=0.336(168/500) CleanRecall=1.000 MissedClean=0 FalseClean=332
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 023] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=408 ActualRoundNoisy=92 ActualTrainClean=0.816(408/500) CleanRecall=1.000 MissedClean=0 FalseClean=92
+    [Client 004] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=484 ActualRoundNoisy=16 ActualTrainClean=0.968(484/500) CleanRecall=1.000 MissedClean=0 FalseClean=16
+    [Client 047] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=312 ActualRoundNoisy=188 ActualTrainClean=0.624(312/500) CleanRecall=1.000 MissedClean=0 FalseClean=188
+Train Acc: 22.56% | Train Loss: 2.1835 | Global Acc: 29.58% | Global Loss: 2.0392 | Local Train Loss: 1.5557 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2908/5000(0.582) | ActualRoundNoisy=2092/5000(0.418) | ActualTrainClean=0.582(2908/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2092
+
+==================== Round  36 ====================
+  --> selected_clients=10 local_loss=1.2820 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3428/5000(0.686) | ActualRoundNoisy=1572/5000(0.314) | ActualTrainClean=0.686(3428/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1572
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 050] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=300 ActualRoundNoisy=200 ActualTrainClean=0.600(300/500) CleanRecall=1.000 MissedClean=0 FalseClean=200
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 025] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=400 ActualRoundNoisy=100 ActualTrainClean=0.800(400/500) CleanRecall=1.000 MissedClean=0 FalseClean=100
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 000] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=500 ActualRoundNoisy=0 ActualTrainClean=1.000(500/500) CleanRecall=1.000 MissedClean=0 FalseClean=0
+    [Client 044] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=324 ActualRoundNoisy=176 ActualTrainClean=0.648(324/500) CleanRecall=1.000 MissedClean=0 FalseClean=176
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+Train Acc: 15.57% | Train Loss: 2.2957 | Global Acc: 20.02% | Global Loss: 2.1169 | Local Train Loss: 1.2820 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3428/5000(0.686) | ActualRoundNoisy=1572/5000(0.314) | ActualTrainClean=0.686(3428/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1572
+
+==================== Round  37 ====================
+  --> selected_clients=10 local_loss=1.4223 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3196/5000(0.639) | ActualRoundNoisy=1804/5000(0.361) | ActualTrainClean=0.639(3196/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1804
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+    [Client 045] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=320 ActualRoundNoisy=180 ActualTrainClean=0.640(320/500) CleanRecall=1.000 MissedClean=0 FalseClean=180
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 044] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=324 ActualRoundNoisy=176 ActualTrainClean=0.648(324/500) CleanRecall=1.000 MissedClean=0 FalseClean=176
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+    [Client 017] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=432 ActualRoundNoisy=68 ActualTrainClean=0.864(432/500) CleanRecall=1.000 MissedClean=0 FalseClean=68
+    [Client 092] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=132 ActualRoundNoisy=368 ActualTrainClean=0.264(132/500) CleanRecall=1.000 MissedClean=0 FalseClean=368
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+Train Acc: 20.56% | Train Loss: 2.1922 | Global Acc: 29.34% | Global Loss: 2.0117 | Local Train Loss: 1.4223 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3196/5000(0.639) | ActualRoundNoisy=1804/5000(0.361) | ActualTrainClean=0.639(3196/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1804
+
+==================== Round  38 ====================
+  --> selected_clients=10 local_loss=1.8587 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2148/5000(0.430) | ActualRoundNoisy=2852/5000(0.570) | ActualTrainClean=0.430(2148/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2852
+    [Client 041] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=336 ActualRoundNoisy=164 ActualTrainClean=0.672(336/500) CleanRecall=1.000 MissedClean=0 FalseClean=164
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 095] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=120 ActualRoundNoisy=380 ActualTrainClean=0.240(120/500) CleanRecall=1.000 MissedClean=0 FalseClean=380
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 077] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=192 ActualRoundNoisy=308 ActualTrainClean=0.384(192/500) CleanRecall=1.000 MissedClean=0 FalseClean=308
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 085] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=160 ActualRoundNoisy=340 ActualTrainClean=0.320(160/500) CleanRecall=1.000 MissedClean=0 FalseClean=340
+    [Client 050] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=300 ActualRoundNoisy=200 ActualTrainClean=0.600(300/500) CleanRecall=1.000 MissedClean=0 FalseClean=200
+Train Acc: 20.54% | Train Loss: 2.1952 | Global Acc: 26.92% | Global Loss: 2.0722 | Local Train Loss: 1.8587 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2148/5000(0.430) | ActualRoundNoisy=2852/5000(0.570) | ActualTrainClean=0.430(2148/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2852
+
+==================== Round  39 ====================
+  --> selected_clients=10 local_loss=1.4913 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3172/5000(0.634) | ActualRoundNoisy=1828/5000(0.366) | ActualTrainClean=0.634(3172/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1828
+    [Client 030] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=380 ActualRoundNoisy=120 ActualTrainClean=0.760(380/500) CleanRecall=1.000 MissedClean=0 FalseClean=120
+    [Client 090] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=140 ActualRoundNoisy=360 ActualTrainClean=0.280(140/500) CleanRecall=1.000 MissedClean=0 FalseClean=360
+    [Client 050] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=300 ActualRoundNoisy=200 ActualTrainClean=0.600(300/500) CleanRecall=1.000 MissedClean=0 FalseClean=200
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 039] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=344 ActualRoundNoisy=156 ActualTrainClean=0.688(344/500) CleanRecall=1.000 MissedClean=0 FalseClean=156
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 049] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=304 ActualRoundNoisy=196 ActualTrainClean=0.608(304/500) CleanRecall=1.000 MissedClean=0 FalseClean=196
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+Train Acc: 20.58% | Train Loss: 2.2060 | Global Acc: 26.59% | Global Loss: 2.0840 | Local Train Loss: 1.4913 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3172/5000(0.634) | ActualRoundNoisy=1828/5000(0.366) | ActualTrainClean=0.634(3172/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1828
+
+==================== Round  40 ====================
+  --> selected_clients=10 local_loss=1.3802 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3196/5000(0.639) | ActualRoundNoisy=1804/5000(0.361) | ActualTrainClean=0.639(3196/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1804
+    [Client 026] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=396 ActualRoundNoisy=104 ActualTrainClean=0.792(396/500) CleanRecall=1.000 MissedClean=0 FalseClean=104
+    [Client 011] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=456 ActualRoundNoisy=44 ActualTrainClean=0.912(456/500) CleanRecall=1.000 MissedClean=0 FalseClean=44
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+    [Client 078] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=188 ActualRoundNoisy=312 ActualTrainClean=0.376(188/500) CleanRecall=1.000 MissedClean=0 FalseClean=312
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 009] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=464 ActualRoundNoisy=36 ActualTrainClean=0.928(464/500) CleanRecall=1.000 MissedClean=0 FalseClean=36
+    [Client 017] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=432 ActualRoundNoisy=68 ActualTrainClean=0.864(432/500) CleanRecall=1.000 MissedClean=0 FalseClean=68
+    [Client 076] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=196 ActualRoundNoisy=304 ActualTrainClean=0.392(196/500) CleanRecall=1.000 MissedClean=0 FalseClean=304
+Train Acc: 19.11% | Train Loss: 2.1867 | Global Acc: 24.99% | Global Loss: 2.0339 | Local Train Loss: 1.3802 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3196/5000(0.639) | ActualRoundNoisy=1804/5000(0.361) | ActualTrainClean=0.639(3196/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1804
+
+==================== Round  41 ====================
+  --> selected_clients=10 local_loss=1.4456 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3036/5000(0.607) | ActualRoundNoisy=1964/5000(0.393) | ActualTrainClean=0.607(3036/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1964
+    [Client 062] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=252 ActualRoundNoisy=248 ActualTrainClean=0.504(252/500) CleanRecall=1.000 MissedClean=0 FalseClean=248
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 004] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=484 ActualRoundNoisy=16 ActualTrainClean=0.968(484/500) CleanRecall=1.000 MissedClean=0 FalseClean=16
+    [Client 076] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=196 ActualRoundNoisy=304 ActualTrainClean=0.392(196/500) CleanRecall=1.000 MissedClean=0 FalseClean=304
+    [Client 007] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=472 ActualRoundNoisy=28 ActualTrainClean=0.944(472/500) CleanRecall=1.000 MissedClean=0 FalseClean=28
+    [Client 097] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=112 ActualRoundNoisy=388 ActualTrainClean=0.224(112/500) CleanRecall=1.000 MissedClean=0 FalseClean=388
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+    [Client 045] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=320 ActualRoundNoisy=180 ActualTrainClean=0.640(320/500) CleanRecall=1.000 MissedClean=0 FalseClean=180
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+Train Acc: 21.36% | Train Loss: 2.1806 | Global Acc: 29.03% | Global Loss: 2.0091 | Local Train Loss: 1.4456 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3036/5000(0.607) | ActualRoundNoisy=1964/5000(0.393) | ActualTrainClean=0.607(3036/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1964
+
+==================== Round  42 ====================
+  --> selected_clients=10 local_loss=1.4792 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3112/5000(0.622) | ActualRoundNoisy=1888/5000(0.378) | ActualTrainClean=0.622(3112/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1888
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 037] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=352 ActualRoundNoisy=148 ActualTrainClean=0.704(352/500) CleanRecall=1.000 MissedClean=0 FalseClean=148
+    [Client 046] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=316 ActualRoundNoisy=184 ActualTrainClean=0.632(316/500) CleanRecall=1.000 MissedClean=0 FalseClean=184
+    [Client 062] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=252 ActualRoundNoisy=248 ActualTrainClean=0.504(252/500) CleanRecall=1.000 MissedClean=0 FalseClean=248
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 060] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=260 ActualRoundNoisy=240 ActualTrainClean=0.520(260/500) CleanRecall=1.000 MissedClean=0 FalseClean=240
+    [Client 024] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=404 ActualRoundNoisy=96 ActualTrainClean=0.808(404/500) CleanRecall=1.000 MissedClean=0 FalseClean=96
+    [Client 071] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=216 ActualRoundNoisy=284 ActualTrainClean=0.432(216/500) CleanRecall=1.000 MissedClean=0 FalseClean=284
+    [Client 009] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=464 ActualRoundNoisy=36 ActualTrainClean=0.928(464/500) CleanRecall=1.000 MissedClean=0 FalseClean=36
+    [Client 073] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=208 ActualRoundNoisy=292 ActualTrainClean=0.416(208/500) CleanRecall=1.000 MissedClean=0 FalseClean=292
+Train Acc: 23.86% | Train Loss: 2.1593 | Global Acc: 32.99% | Global Loss: 1.9954 | Local Train Loss: 1.4792 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3112/5000(0.622) | ActualRoundNoisy=1888/5000(0.378) | ActualTrainClean=0.622(3112/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1888
+
+==================== Round  43 ====================
+  --> selected_clients=10 local_loss=1.3899 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3152/5000(0.630) | ActualRoundNoisy=1848/5000(0.370) | ActualTrainClean=0.630(3152/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1848
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 020] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=420 ActualRoundNoisy=80 ActualTrainClean=0.840(420/500) CleanRecall=1.000 MissedClean=0 FalseClean=80
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+    [Client 005] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=480 ActualRoundNoisy=20 ActualTrainClean=0.960(480/500) CleanRecall=1.000 MissedClean=0 FalseClean=20
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+    [Client 028] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=388 ActualRoundNoisy=112 ActualTrainClean=0.776(388/500) CleanRecall=1.000 MissedClean=0 FalseClean=112
+    [Client 091] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=136 ActualRoundNoisy=364 ActualTrainClean=0.272(136/500) CleanRecall=1.000 MissedClean=0 FalseClean=364
+    [Client 056] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=276 ActualRoundNoisy=224 ActualTrainClean=0.552(276/500) CleanRecall=1.000 MissedClean=0 FalseClean=224
+Train Acc: 22.05% | Train Loss: 2.1995 | Global Acc: 30.74% | Global Loss: 2.0186 | Local Train Loss: 1.3899 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3152/5000(0.630) | ActualRoundNoisy=1848/5000(0.370) | ActualTrainClean=0.630(3152/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1848
+
+==================== Round  44 ====================
+  --> selected_clients=10 local_loss=1.5257 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2976/5000(0.595) | ActualRoundNoisy=2024/5000(0.405) | ActualTrainClean=0.595(2976/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2024
+    [Client 085] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=160 ActualRoundNoisy=340 ActualTrainClean=0.320(160/500) CleanRecall=1.000 MissedClean=0 FalseClean=340
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 043] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=328 ActualRoundNoisy=172 ActualTrainClean=0.656(328/500) CleanRecall=1.000 MissedClean=0 FalseClean=172
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+Train Acc: 21.46% | Train Loss: 2.1678 | Global Acc: 31.80% | Global Loss: 1.9813 | Local Train Loss: 1.5257 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2976/5000(0.595) | ActualRoundNoisy=2024/5000(0.405) | ActualTrainClean=0.595(2976/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2024
+
+==================== Round  45 ====================
+  --> selected_clients=10 local_loss=1.3897 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3204/5000(0.641) | ActualRoundNoisy=1796/5000(0.359) | ActualTrainClean=0.641(3204/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1796
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+    [Client 027] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=392 ActualRoundNoisy=108 ActualTrainClean=0.784(392/500) CleanRecall=1.000 MissedClean=0 FalseClean=108
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 076] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=196 ActualRoundNoisy=304 ActualTrainClean=0.392(196/500) CleanRecall=1.000 MissedClean=0 FalseClean=304
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 017] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=432 ActualRoundNoisy=68 ActualTrainClean=0.864(432/500) CleanRecall=1.000 MissedClean=0 FalseClean=68
+    [Client 070] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=220 ActualRoundNoisy=280 ActualTrainClean=0.440(220/500) CleanRecall=1.000 MissedClean=0 FalseClean=280
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+Train Acc: 19.79% | Train Loss: 2.1966 | Global Acc: 26.05% | Global Loss: 2.0411 | Local Train Loss: 1.3897 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3204/5000(0.641) | ActualRoundNoisy=1796/5000(0.359) | ActualTrainClean=0.641(3204/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1796
+
+==================== Round  46 ====================
+  --> selected_clients=10 local_loss=1.4775 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2872/5000(0.574) | ActualRoundNoisy=2128/5000(0.426) | ActualTrainClean=0.574(2872/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2128
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+    [Client 097] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=112 ActualRoundNoisy=388 ActualTrainClean=0.224(112/500) CleanRecall=1.000 MissedClean=0 FalseClean=388
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+    [Client 092] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=132 ActualRoundNoisy=368 ActualTrainClean=0.264(132/500) CleanRecall=1.000 MissedClean=0 FalseClean=368
+    [Client 067] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=232 ActualRoundNoisy=268 ActualTrainClean=0.464(232/500) CleanRecall=1.000 MissedClean=0 FalseClean=268
+    [Client 032] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=372 ActualRoundNoisy=128 ActualTrainClean=0.744(372/500) CleanRecall=1.000 MissedClean=0 FalseClean=128
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 089] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=144 ActualRoundNoisy=356 ActualTrainClean=0.288(144/500) CleanRecall=1.000 MissedClean=0 FalseClean=356
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+Train Acc: 19.45% | Train Loss: 2.2155 | Global Acc: 27.41% | Global Loss: 2.0357 | Local Train Loss: 1.4775 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2872/5000(0.574) | ActualRoundNoisy=2128/5000(0.426) | ActualTrainClean=0.574(2872/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2128
+
+==================== Round  47 ====================
+  --> selected_clients=10 local_loss=1.2812 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3396/5000(0.679) | ActualRoundNoisy=1604/5000(0.321) | ActualTrainClean=0.679(3396/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1604
+    [Client 030] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=380 ActualRoundNoisy=120 ActualTrainClean=0.760(380/500) CleanRecall=1.000 MissedClean=0 FalseClean=120
+    [Client 032] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=372 ActualRoundNoisy=128 ActualTrainClean=0.744(372/500) CleanRecall=1.000 MissedClean=0 FalseClean=128
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 016] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=436 ActualRoundNoisy=64 ActualTrainClean=0.872(436/500) CleanRecall=1.000 MissedClean=0 FalseClean=64
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+    [Client 077] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=192 ActualRoundNoisy=308 ActualTrainClean=0.384(192/500) CleanRecall=1.000 MissedClean=0 FalseClean=308
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+    [Client 094] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=124 ActualRoundNoisy=376 ActualTrainClean=0.248(124/500) CleanRecall=1.000 MissedClean=0 FalseClean=376
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+Train Acc: 18.87% | Train Loss: 2.2191 | Global Acc: 23.99% | Global Loss: 2.0535 | Local Train Loss: 1.2812 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3396/5000(0.679) | ActualRoundNoisy=1604/5000(0.321) | ActualTrainClean=0.679(3396/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1604
+
+==================== Round  48 ====================
+  --> selected_clients=10 local_loss=1.5091 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2756/5000(0.551) | ActualRoundNoisy=2244/5000(0.449) | ActualTrainClean=0.551(2756/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2244
+    [Client 080] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=180 ActualRoundNoisy=320 ActualTrainClean=0.360(180/500) CleanRecall=1.000 MissedClean=0 FalseClean=320
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 000] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=500 ActualRoundNoisy=0 ActualTrainClean=1.000(500/500) CleanRecall=1.000 MissedClean=0 FalseClean=0
+    [Client 008] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=468 ActualRoundNoisy=32 ActualTrainClean=0.936(468/500) CleanRecall=1.000 MissedClean=0 FalseClean=32
+    [Client 043] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=328 ActualRoundNoisy=172 ActualTrainClean=0.656(328/500) CleanRecall=1.000 MissedClean=0 FalseClean=172
+    [Client 099] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=104 ActualRoundNoisy=396 ActualTrainClean=0.208(104/500) CleanRecall=1.000 MissedClean=0 FalseClean=396
+    [Client 098] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=108 ActualRoundNoisy=392 ActualTrainClean=0.216(108/500) CleanRecall=1.000 MissedClean=0 FalseClean=392
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+    [Client 066] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=236 ActualRoundNoisy=264 ActualTrainClean=0.472(236/500) CleanRecall=1.000 MissedClean=0 FalseClean=264
+    [Client 077] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=192 ActualRoundNoisy=308 ActualTrainClean=0.384(192/500) CleanRecall=1.000 MissedClean=0 FalseClean=308
+Train Acc: 20.73% | Train Loss: 2.1926 | Global Acc: 27.41% | Global Loss: 2.0530 | Local Train Loss: 1.5091 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2756/5000(0.551) | ActualRoundNoisy=2244/5000(0.449) | ActualTrainClean=0.551(2756/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2244
+
+==================== Round  49 ====================
+  --> selected_clients=10 local_loss=1.7472 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2452/5000(0.490) | ActualRoundNoisy=2548/5000(0.510) | ActualTrainClean=0.490(2452/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2548
+    [Client 078] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=188 ActualRoundNoisy=312 ActualTrainClean=0.376(188/500) CleanRecall=1.000 MissedClean=0 FalseClean=312
+    [Client 007] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=472 ActualRoundNoisy=28 ActualTrainClean=0.944(472/500) CleanRecall=1.000 MissedClean=0 FalseClean=28
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 050] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=300 ActualRoundNoisy=200 ActualTrainClean=0.600(300/500) CleanRecall=1.000 MissedClean=0 FalseClean=200
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 055] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=280 ActualRoundNoisy=220 ActualTrainClean=0.560(280/500) CleanRecall=1.000 MissedClean=0 FalseClean=220
+    [Client 088] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=148 ActualRoundNoisy=352 ActualTrainClean=0.296(148/500) CleanRecall=1.000 MissedClean=0 FalseClean=352
+    [Client 085] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=160 ActualRoundNoisy=340 ActualTrainClean=0.320(160/500) CleanRecall=1.000 MissedClean=0 FalseClean=340
+    [Client 095] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=120 ActualRoundNoisy=380 ActualTrainClean=0.240(120/500) CleanRecall=1.000 MissedClean=0 FalseClean=380
+Train Acc: 19.94% | Train Loss: 2.2179 | Global Acc: 26.79% | Global Loss: 2.0929 | Local Train Loss: 1.7472 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2452/5000(0.490) | ActualRoundNoisy=2548/5000(0.510) | ActualTrainClean=0.490(2452/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2548
+
+==================== Round  50 ====================
+  --> selected_clients=10 local_loss=1.4585 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2912/5000(0.582) | ActualRoundNoisy=2088/5000(0.418) | ActualTrainClean=0.582(2912/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2088
+    [Client 069] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=224 ActualRoundNoisy=276 ActualTrainClean=0.448(224/500) CleanRecall=1.000 MissedClean=0 FalseClean=276
+    [Client 058] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=268 ActualRoundNoisy=232 ActualTrainClean=0.536(268/500) CleanRecall=1.000 MissedClean=0 FalseClean=232
+    [Client 073] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=208 ActualRoundNoisy=292 ActualTrainClean=0.416(208/500) CleanRecall=1.000 MissedClean=0 FalseClean=292
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+    [Client 012] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=452 ActualRoundNoisy=48 ActualTrainClean=0.904(452/500) CleanRecall=1.000 MissedClean=0 FalseClean=48
+    [Client 098] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=108 ActualRoundNoisy=392 ActualTrainClean=0.216(108/500) CleanRecall=1.000 MissedClean=0 FalseClean=392
+    [Client 023] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=408 ActualRoundNoisy=92 ActualTrainClean=0.816(408/500) CleanRecall=1.000 MissedClean=0 FalseClean=92
+    [Client 024] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=404 ActualRoundNoisy=96 ActualTrainClean=0.808(404/500) CleanRecall=1.000 MissedClean=0 FalseClean=96
+    [Client 000] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=500 ActualRoundNoisy=0 ActualTrainClean=1.000(500/500) CleanRecall=1.000 MissedClean=0 FalseClean=0
+    [Client 097] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=112 ActualRoundNoisy=388 ActualTrainClean=0.224(112/500) CleanRecall=1.000 MissedClean=0 FalseClean=388
+Train Acc: 19.57% | Train Loss: 2.2073 | Global Acc: 25.36% | Global Loss: 2.0729 | Local Train Loss: 1.4585 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2912/5000(0.582) | ActualRoundNoisy=2088/5000(0.418) | ActualTrainClean=0.582(2912/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2088
+
+==================== Round  51 ====================
+  --> selected_clients=10 local_loss=1.6490 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2612/5000(0.522) | ActualRoundNoisy=2388/5000(0.478) | ActualTrainClean=0.522(2612/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2388
+    [Client 074] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=204 ActualRoundNoisy=296 ActualTrainClean=0.408(204/500) CleanRecall=1.000 MissedClean=0 FalseClean=296
+    [Client 065] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=240 ActualRoundNoisy=260 ActualTrainClean=0.480(240/500) CleanRecall=1.000 MissedClean=0 FalseClean=260
+    [Client 091] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=136 ActualRoundNoisy=364 ActualTrainClean=0.272(136/500) CleanRecall=1.000 MissedClean=0 FalseClean=364
+    [Client 042] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=332 ActualRoundNoisy=168 ActualTrainClean=0.664(332/500) CleanRecall=1.000 MissedClean=0 FalseClean=168
+    [Client 097] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=112 ActualRoundNoisy=388 ActualTrainClean=0.224(112/500) CleanRecall=1.000 MissedClean=0 FalseClean=388
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 026] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=396 ActualRoundNoisy=104 ActualTrainClean=0.792(396/500) CleanRecall=1.000 MissedClean=0 FalseClean=104
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 072] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=212 ActualRoundNoisy=288 ActualTrainClean=0.424(212/500) CleanRecall=1.000 MissedClean=0 FalseClean=288
+    [Client 040] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=340 ActualRoundNoisy=160 ActualTrainClean=0.680(340/500) CleanRecall=1.000 MissedClean=0 FalseClean=160
+Train Acc: 20.92% | Train Loss: 2.1889 | Global Acc: 26.20% | Global Loss: 2.0659 | Local Train Loss: 1.6490 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2612/5000(0.522) | ActualRoundNoisy=2388/5000(0.478) | ActualTrainClean=0.522(2612/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2388
+
+==================== Round  52 ====================
+  --> selected_clients=10 local_loss=1.3598 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3136/5000(0.627) | ActualRoundNoisy=1864/5000(0.373) | ActualTrainClean=0.627(3136/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1864
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 041] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=336 ActualRoundNoisy=164 ActualTrainClean=0.672(336/500) CleanRecall=1.000 MissedClean=0 FalseClean=164
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 085] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=160 ActualRoundNoisy=340 ActualTrainClean=0.320(160/500) CleanRecall=1.000 MissedClean=0 FalseClean=340
+    [Client 095] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=120 ActualRoundNoisy=380 ActualTrainClean=0.240(120/500) CleanRecall=1.000 MissedClean=0 FalseClean=380
+    [Client 088] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=148 ActualRoundNoisy=352 ActualTrainClean=0.296(148/500) CleanRecall=1.000 MissedClean=0 FalseClean=352
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 024] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=404 ActualRoundNoisy=96 ActualTrainClean=0.808(404/500) CleanRecall=1.000 MissedClean=0 FalseClean=96
+    [Client 038] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=348 ActualRoundNoisy=152 ActualTrainClean=0.696(348/500) CleanRecall=1.000 MissedClean=0 FalseClean=152
+Train Acc: 21.20% | Train Loss: 2.1938 | Global Acc: 27.31% | Global Loss: 2.0591 | Local Train Loss: 1.3598 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3136/5000(0.627) | ActualRoundNoisy=1864/5000(0.373) | ActualTrainClean=0.627(3136/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1864
+
+==================== Round  53 ====================
+  --> selected_clients=10 local_loss=1.4241 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2952/5000(0.590) | ActualRoundNoisy=2048/5000(0.410) | ActualTrainClean=0.590(2952/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2048
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 098] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=108 ActualRoundNoisy=392 ActualTrainClean=0.216(108/500) CleanRecall=1.000 MissedClean=0 FalseClean=392
+    [Client 069] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=224 ActualRoundNoisy=276 ActualTrainClean=0.448(224/500) CleanRecall=1.000 MissedClean=0 FalseClean=276
+    [Client 015] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=440 ActualRoundNoisy=60 ActualTrainClean=0.880(440/500) CleanRecall=1.000 MissedClean=0 FalseClean=60
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+    [Client 062] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=252 ActualRoundNoisy=248 ActualTrainClean=0.504(252/500) CleanRecall=1.000 MissedClean=0 FalseClean=248
+    [Client 086] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=156 ActualRoundNoisy=344 ActualTrainClean=0.312(156/500) CleanRecall=1.000 MissedClean=0 FalseClean=344
+    [Client 088] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=148 ActualRoundNoisy=352 ActualTrainClean=0.296(148/500) CleanRecall=1.000 MissedClean=0 FalseClean=352
+    [Client 007] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=472 ActualRoundNoisy=28 ActualTrainClean=0.944(472/500) CleanRecall=1.000 MissedClean=0 FalseClean=28
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+Train Acc: 23.54% | Train Loss: 2.1629 | Global Acc: 32.89% | Global Loss: 1.9874 | Local Train Loss: 1.4241 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2952/5000(0.590) | ActualRoundNoisy=2048/5000(0.410) | ActualTrainClean=0.590(2952/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2048
+
+==================== Round  54 ====================
+  --> selected_clients=10 local_loss=1.6457 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2556/5000(0.511) | ActualRoundNoisy=2444/5000(0.489) | ActualTrainClean=0.511(2556/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2444
+    [Client 013] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=448 ActualRoundNoisy=52 ActualTrainClean=0.896(448/500) CleanRecall=1.000 MissedClean=0 FalseClean=52
+    [Client 054] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=284 ActualRoundNoisy=216 ActualTrainClean=0.568(284/500) CleanRecall=1.000 MissedClean=0 FalseClean=216
+    [Client 068] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=228 ActualRoundNoisy=272 ActualTrainClean=0.456(228/500) CleanRecall=1.000 MissedClean=0 FalseClean=272
+    [Client 048] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=308 ActualRoundNoisy=192 ActualTrainClean=0.616(308/500) CleanRecall=1.000 MissedClean=0 FalseClean=192
+    [Client 063] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=248 ActualRoundNoisy=252 ActualTrainClean=0.496(248/500) CleanRecall=1.000 MissedClean=0 FalseClean=252
+    [Client 088] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=148 ActualRoundNoisy=352 ActualTrainClean=0.296(148/500) CleanRecall=1.000 MissedClean=0 FalseClean=352
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 091] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=136 ActualRoundNoisy=364 ActualTrainClean=0.272(136/500) CleanRecall=1.000 MissedClean=0 FalseClean=364
+Train Acc: 20.80% | Train Loss: 2.1918 | Global Acc: 27.11% | Global Loss: 2.0600 | Local Train Loss: 1.6457 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=2556/5000(0.511) | ActualRoundNoisy=2444/5000(0.489) | ActualTrainClean=0.511(2556/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=2444
+
+==================== Round  55 ====================
+  --> selected_clients=10 local_loss=1.1488 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3536/5000(0.707) | ActualRoundNoisy=1464/5000(0.293) | ActualTrainClean=0.707(3536/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1464
+    [Client 050] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=300 ActualRoundNoisy=200 ActualTrainClean=0.600(300/500) CleanRecall=1.000 MissedClean=0 FalseClean=200
+    [Client 044] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=324 ActualRoundNoisy=176 ActualTrainClean=0.648(324/500) CleanRecall=1.000 MissedClean=0 FalseClean=176
+    [Client 002] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=492 ActualRoundNoisy=8 ActualTrainClean=0.984(492/500) CleanRecall=1.000 MissedClean=0 FalseClean=8
+    [Client 001] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=496 ActualRoundNoisy=4 ActualTrainClean=0.992(496/500) CleanRecall=1.000 MissedClean=0 FalseClean=4
+    [Client 003] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=488 ActualRoundNoisy=12 ActualTrainClean=0.976(488/500) CleanRecall=1.000 MissedClean=0 FalseClean=12
+    [Client 096] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=116 ActualRoundNoisy=384 ActualTrainClean=0.232(116/500) CleanRecall=1.000 MissedClean=0 FalseClean=384
+    [Client 062] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=252 ActualRoundNoisy=248 ActualTrainClean=0.504(252/500) CleanRecall=1.000 MissedClean=0 FalseClean=248
+    [Client 054] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=284 ActualRoundNoisy=216 ActualTrainClean=0.568(284/500) CleanRecall=1.000 MissedClean=0 FalseClean=216
+    [Client 019] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=424 ActualRoundNoisy=76 ActualTrainClean=0.848(424/500) CleanRecall=1.000 MissedClean=0 FalseClean=76
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+Train Acc: 20.09% | Train Loss: 2.2231 | Global Acc: 28.63% | Global Loss: 2.0317 | Local Train Loss: 1.1488 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3536/5000(0.707) | ActualRoundNoisy=1464/5000(0.293) | ActualTrainClean=0.707(3536/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1464
+
+==================== Round  56 ====================
+  --> selected_clients=10 local_loss=1.4127 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3120/5000(0.624) | ActualRoundNoisy=1880/5000(0.376) | ActualTrainClean=0.624(3120/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1880
+    [Client 014] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=444 ActualRoundNoisy=56 ActualTrainClean=0.888(444/500) CleanRecall=1.000 MissedClean=0 FalseClean=56
+    [Client 084] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=164 ActualRoundNoisy=336 ActualTrainClean=0.328(164/500) CleanRecall=1.000 MissedClean=0 FalseClean=336
+    [Client 064] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=244 ActualRoundNoisy=256 ActualTrainClean=0.488(244/500) CleanRecall=1.000 MissedClean=0 FalseClean=256
+    [Client 075] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=200 ActualRoundNoisy=300 ActualTrainClean=0.400(200/500) CleanRecall=1.000 MissedClean=0 FalseClean=300
+    [Client 021] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=416 ActualRoundNoisy=84 ActualTrainClean=0.832(416/500) CleanRecall=1.000 MissedClean=0 FalseClean=84
+    [Client 051] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=296 ActualRoundNoisy=204 ActualTrainClean=0.592(296/500) CleanRecall=1.000 MissedClean=0 FalseClean=204
+    [Client 036] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=356 ActualRoundNoisy=144 ActualTrainClean=0.712(356/500) CleanRecall=1.000 MissedClean=0 FalseClean=144
+    [Client 006] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=476 ActualRoundNoisy=24 ActualTrainClean=0.952(476/500) CleanRecall=1.000 MissedClean=0 FalseClean=24
+    [Client 093] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=128 ActualRoundNoisy=372 ActualTrainClean=0.256(128/500) CleanRecall=1.000 MissedClean=0 FalseClean=372
+    [Client 026] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=396 ActualRoundNoisy=104 ActualTrainClean=0.792(396/500) CleanRecall=1.000 MissedClean=0 FalseClean=104
+Train Acc: 22.93% | Train Loss: 2.1633 | Global Acc: 27.99% | Global Loss: 2.0235 | Local Train Loss: 1.4127 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3120/5000(0.624) | ActualRoundNoisy=1880/5000(0.376) | ActualTrainClean=0.624(3120/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1880
+
+==================== Round  57 ====================
+  --> selected_clients=10 local_loss=1.3586 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3276/5000(0.655) | ActualRoundNoisy=1724/5000(0.345) | ActualTrainClean=0.655(3276/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1724
+    [Client 073] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=208 ActualRoundNoisy=292 ActualTrainClean=0.416(208/500) CleanRecall=1.000 MissedClean=0 FalseClean=292
+    [Client 009] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=464 ActualRoundNoisy=36 ActualTrainClean=0.928(464/500) CleanRecall=1.000 MissedClean=0 FalseClean=36
+    [Client 027] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=392 ActualRoundNoisy=108 ActualTrainClean=0.784(392/500) CleanRecall=1.000 MissedClean=0 FalseClean=108
+    [Client 031] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=376 ActualRoundNoisy=124 ActualTrainClean=0.752(376/500) CleanRecall=1.000 MissedClean=0 FalseClean=124
+    [Client 028] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=388 ActualRoundNoisy=112 ActualTrainClean=0.776(388/500) CleanRecall=1.000 MissedClean=0 FalseClean=112
+    [Client 082] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=172 ActualRoundNoisy=328 ActualTrainClean=0.344(172/500) CleanRecall=1.000 MissedClean=0 FalseClean=328
+    [Client 057] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=272 ActualRoundNoisy=228 ActualTrainClean=0.544(272/500) CleanRecall=1.000 MissedClean=0 FalseClean=228
+    [Client 029] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=384 ActualRoundNoisy=116 ActualTrainClean=0.768(384/500) CleanRecall=1.000 MissedClean=0 FalseClean=116
+    [Client 035] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=360 ActualRoundNoisy=140 ActualTrainClean=0.720(360/500) CleanRecall=1.000 MissedClean=0 FalseClean=140
+    [Client 060] stage=warmup_all_data Train=500/500 FedRNClean=500 FedRNNoisy=0 ActualRoundClean=260 ActualRoundNoisy=240 ActualTrainClean=0.520(260/500) CleanRecall=1.000 MissedClean=0 FalseClean=240
+Train Acc: 20.81% | Train Loss: 2.1863 | Global Acc: 27.22% | Global Loss: 2.0411 | Local Train Loss: 1.3586 | FedRNClean=5000/5000(1.000) | FedRNNoisy=0/5000(0.000) | ActualRoundClean=3276/5000(0.655) | ActualRoundNoisy=1724/5000(0.345) | ActualTrainClean=0.655(3276/5000) | CleanRecall=1.000 | MissedClean=0 | FalseClean=1724

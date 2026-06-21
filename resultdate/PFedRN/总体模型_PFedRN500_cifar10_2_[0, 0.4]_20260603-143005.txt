@@ -1,0 +1,1 @@
+epoch,train_loss,global_test_acc,global_test_loss,personal_apa,personal_loss,clean_ratio,agreement_ratio

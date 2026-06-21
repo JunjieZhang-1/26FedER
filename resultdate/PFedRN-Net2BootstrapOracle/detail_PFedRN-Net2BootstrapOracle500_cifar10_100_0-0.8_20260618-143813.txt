@@ -1,0 +1,12 @@
+Experiment Start: 20260618-143813
+Args: Namespace(method='pfedrn', epochs=500, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, weight_decay=0.0, schedule=[], lr_decay=0.1, fed_method='fedavg', partition='shard', num_shards=200, dd_alpha=0.5, iid=False, split='user', train_ratio=0.8, model='cnn4conv', dataset='cifar10', num_classes=10, num_channels=3, img_size=32, gpu=0, seed=1, verbose=False, all_clients=False, num_workers=4, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[0, 0.8], noise_seed_mode='fedrn', p_threshold=0.5, num_neighbors=2, w_alpha=0.6, neighbor_ft_ep=1, net2_search_epochs=40, fedrn_start_epoch=100, net2_local_ep=5, continue_train_net2_after_search=0, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, exp_method='PFedRN-Net2BootstrapOracle', save_dir='resultdate', log_client_stats=1, device=device(type='cuda', index=0))
+====================================================================================================
+
+==== Round   0 ====
+Global Test Acc: 16.90% | Loss: 2.2912 | Train Loss: 1.5943 | Clean Ratio: 1.000 | Phase: net2_search | Net2 Best Epoch Avg: 0.0 | Selected Net2 Acc Avg: 79.00% | Best Net2 Acc Avg: 79.00%
+
+==== Round   1 ====
+Global Test Acc: 17.94% | Loss: 2.2313 | Train Loss: 1.6210 | Clean Ratio: 1.000 | Phase: net2_search | Net2 Best Epoch Avg: 1.0 | Selected Net2 Acc Avg: 78.60% | Best Net2 Acc Avg: 78.60%
+
+==== Round   2 ====
+Global Test Acc: 16.18% | Loss: 2.2608 | Train Loss: 1.4459 | Clean Ratio: 1.000 | Phase: net2_search | Net2 Best Epoch Avg: 1.9 | Selected Net2 Acc Avg: 72.60% | Best Net2 Acc Avg: 74.40%

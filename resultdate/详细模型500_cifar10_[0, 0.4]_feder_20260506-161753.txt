@@ -1,0 +1,92 @@
+Experiment Start: 20260506-161753
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=500, fed_method='fedavg', feder_exp_weight=0.6, forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[0, 0.4], iid=False, labeling='soft', lambda_u=25, local_bs=50, local_ep=1, lr=0.01, lr_decay=0.1, method='feder', mm_alpha=4, model='cnn4conv', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=5, num_neighbors=2, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=True, split='user', uncertainty_threshold=0.05, verbose=False, w_alpha=0.5, warmup_epochs=8, weight_decay=0)
+==================================================
+Round   0
+  --> [Edge Server 1] Local APA: 16.55% | Aggregated Loss: 0.3055
+  --> [Edge Server 2] Local APA: 13.70% | Aggregated Loss: 0.9223
+  --> [Edge Server 3] Local APA: 13.60% | Aggregated Loss: 1.0743
+  --> [Edge Server 4] Local APA: 12.40% | Aggregated Loss: 1.4099
+  --> [Edge Server 5] Local APA: 13.35% | Aggregated Loss: 1.2561
+train_loss: 0.993631 - test_acc: 15.170000 - test_loss: 2.338575
+------------------------------
+Round   1
+  --> [Edge Server 1] Local APA: 25.60% | Aggregated Loss: 0.5256
+  --> [Edge Server 2] Local APA: 23.30% | Aggregated Loss: 0.5429
+  --> [Edge Server 3] Local APA: 17.60% | Aggregated Loss: 0.7957
+  --> [Edge Server 4] Local APA: 17.00% | Aggregated Loss: 0.8061
+  --> [Edge Server 5] Local APA: 19.20% | Aggregated Loss: 1.4960
+train_loss: 0.833258 - test_acc: 20.440000 - test_loss: 2.219536
+------------------------------
+Round   2
+  --> [Edge Server 1] Local APA: 31.45% | Aggregated Loss: 0.8345
+  --> [Edge Server 2] Local APA: 27.00% | Aggregated Loss: 0.7502
+  --> [Edge Server 3] Local APA: 20.65% | Aggregated Loss: 1.0449
+  --> [Edge Server 4] Local APA: 23.55% | Aggregated Loss: 1.0424
+  --> [Edge Server 5] Local APA: 21.00% | Aggregated Loss: 1.4177
+train_loss: 1.017939 - test_acc: 25.710000 - test_loss: 2.075224
+------------------------------
+Round   3
+  --> [Edge Server 1] Local APA: 36.55% | Aggregated Loss: 0.3333
+  --> [Edge Server 2] Local APA: 29.30% | Aggregated Loss: 0.6000
+  --> [Edge Server 3] Local APA: 28.95% | Aggregated Loss: 1.0105
+  --> [Edge Server 4] Local APA: 25.80% | Aggregated Loss: 1.1016
+  --> [Edge Server 5] Local APA: 24.80% | Aggregated Loss: 1.4048
+train_loss: 0.890054 - test_acc: 29.820000 - test_loss: 1.983047
+------------------------------
+Round   4
+  --> [Edge Server 1] Local APA: 37.65% | Aggregated Loss: 0.1184
+  --> [Edge Server 2] Local APA: 34.75% | Aggregated Loss: 0.8117
+  --> [Edge Server 3] Local APA: 31.50% | Aggregated Loss: 0.9241
+  --> [Edge Server 4] Local APA: 27.20% | Aggregated Loss: 0.7336
+  --> [Edge Server 5] Local APA: 29.90% | Aggregated Loss: 1.2555
+train_loss: 0.768654 - test_acc: 31.900000 - test_loss: 1.945097
+------------------------------
+Round   5
+  --> [Edge Server 1] Local APA: 44.40% | Aggregated Loss: 0.5978
+  --> [Edge Server 2] Local APA: 34.60% | Aggregated Loss: 0.4770
+  --> [Edge Server 3] Local APA: 34.75% | Aggregated Loss: 0.7918
+  --> [Edge Server 4] Local APA: 30.05% | Aggregated Loss: 0.8849
+  --> [Edge Server 5] Local APA: 29.15% | Aggregated Loss: 1.2539
+train_loss: 0.801090 - test_acc: 34.500000 - test_loss: 1.897790
+------------------------------
+Round   6
+  --> [Edge Server 1] Local APA: 49.60% | Aggregated Loss: 0.8081
+  --> [Edge Server 2] Local APA: 37.35% | Aggregated Loss: 0.3518
+  --> [Edge Server 3] Local APA: 40.35% | Aggregated Loss: 0.8719
+  --> [Edge Server 4] Local APA: 35.30% | Aggregated Loss: 1.1313
+  --> [Edge Server 5] Local APA: 31.30% | Aggregated Loss: 1.2598
+train_loss: 0.884597 - test_acc: 39.730000 - test_loss: 1.776580
+------------------------------
+Round   7
+  --> [Edge Server 1] Local APA: 52.90% | Aggregated Loss: 0.4185
+  --> [Edge Server 2] Local APA: 37.20% | Aggregated Loss: 0.4129
+  --> [Edge Server 3] Local APA: 46.45% | Aggregated Loss: 0.7005
+  --> [Edge Server 4] Local APA: 36.45% | Aggregated Loss: 1.0774
+  --> [Edge Server 5] Local APA: 35.00% | Aggregated Loss: 1.2386
+train_loss: 0.769575 - test_acc: 41.270000 - test_loss: 1.747356
+------------------------------
+Round   8
+  --> [Edge Server 1] Local APA: 54.65% | Aggregated Loss: 0.2302
+  --> [Edge Server 2] Local APA: 39.85% | Aggregated Loss: 0.7783
+  --> [Edge Server 3] Local APA: 46.05% | Aggregated Loss: 0.5918
+  --> [Edge Server 4] Local APA: 38.90% | Aggregated Loss: 0.7065
+  --> [Edge Server 5] Local APA: 38.20% | Aggregated Loss: 0.5571
+train_loss: 0.572789 - test_acc: 44.330000 - test_loss: 1.721696
+------------------------------
+Round   9
+  --> [Edge Server 1] Local APA: 58.30% | Aggregated Loss: 0.5827
+  --> [Edge Server 2] Local APA: 46.95% | Aggregated Loss: 0.8990
+  --> [Edge Server 3] Local APA: 48.35% | Aggregated Loss: 0.4118
+  --> [Edge Server 4] Local APA: 40.55% | Aggregated Loss: 0.6796
+  --> [Edge Server 5] Local APA: 40.85% | Aggregated Loss: 0.6508
+train_loss: 0.644801 - test_acc: 47.410000 - test_loss: 1.679220
+------------------------------
+Round  10
+  --> [Edge Server 1] Local APA: 59.75% | Aggregated Loss: 0.3844
+  --> [Edge Server 2] Local APA: 47.40% | Aggregated Loss: 0.2143
+  --> [Edge Server 3] Local APA: 49.70% | Aggregated Loss: 0.4515
+  --> [Edge Server 4] Local APA: 41.70% | Aggregated Loss: 0.2942
+  --> [Edge Server 5] Local APA: 42.60% | Aggregated Loss: 0.7472
+train_loss: 0.418323 - test_acc: 48.630000 - test_loss: 1.683007
+------------------------------

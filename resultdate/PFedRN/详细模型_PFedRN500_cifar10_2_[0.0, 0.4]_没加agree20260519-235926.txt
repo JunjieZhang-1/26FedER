@@ -1,0 +1,2003 @@
+Experiment Start: 20260519-235926
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=500, fed_method='fedavg', feder_exp_weight=0.6, forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[(0.0, 0.4)], iid=False, img_size=32, labeling='soft', lambda_u=25, local_bs=50, local_ep=5, lr=0.01, lr_decay=0.1, method='pfedrn', mm_alpha=4, model='cnn4conv', momentum=0.5, neighbor_scope='global', noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=1, num_neighbors=2, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', pfl_agree_weight=0.0, pfl_local_weight=0.3, pfl_personal_ep=1, queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, w_alpha=0.6, warmup_epochs=100, weight_decay=0)
+================================================================================
+
+==================== Round   0 ====================
+  --> [Edge 01] clients=10 loss=1.1294 clean=1.000 agree=0.000
+Global Acc: 19.93% | Global Loss: 2.2905 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1294 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   1 ====================
+  --> [Edge 01] clients=10 loss=1.1824 clean=1.000 agree=0.000
+Global Acc: 20.67% | Global Loss: 2.1711 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1824 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   2 ====================
+  --> [Edge 01] clients=10 loss=1.0665 clean=1.000 agree=0.000
+Global Acc: 18.52% | Global Loss: 2.2031 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0665 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   3 ====================
+  --> [Edge 01] clients=10 loss=1.0873 clean=1.000 agree=0.000
+Global Acc: 26.94% | Global Loss: 2.0726 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0873 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   4 ====================
+  --> [Edge 01] clients=10 loss=1.1871 clean=1.000 agree=0.000
+Global Acc: 27.99% | Global Loss: 2.1124 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1871 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   5 ====================
+  --> [Edge 01] clients=10 loss=1.3726 clean=1.000 agree=0.000
+Global Acc: 27.28% | Global Loss: 2.0611 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.3726 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   6 ====================
+  --> [Edge 01] clients=10 loss=1.1171 clean=1.000 agree=0.000
+Global Acc: 25.24% | Global Loss: 2.0498 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1171 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   7 ====================
+  --> [Edge 01] clients=10 loss=0.9785 clean=1.000 agree=0.000
+Global Acc: 26.43% | Global Loss: 2.0880 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9785 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   8 ====================
+  --> [Edge 01] clients=10 loss=0.8271 clean=1.000 agree=0.000
+Global Acc: 31.55% | Global Loss: 1.9638 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8271 | Clean: 1.000 | Agree: 0.000
+
+==================== Round   9 ====================
+  --> [Edge 01] clients=10 loss=1.0916 clean=1.000 agree=0.000
+Global Acc: 24.35% | Global Loss: 2.0057 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0916 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  10 ====================
+  --> [Edge 01] clients=10 loss=1.1159 clean=1.000 agree=0.000
+Global Acc: 21.73% | Global Loss: 2.1295 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1159 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  11 ====================
+  --> [Edge 01] clients=10 loss=1.1108 clean=1.000 agree=0.000
+Global Acc: 27.30% | Global Loss: 1.9915 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1108 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  12 ====================
+  --> [Edge 01] clients=10 loss=1.2080 clean=1.000 agree=0.000
+Global Acc: 30.30% | Global Loss: 1.9420 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.2080 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  13 ====================
+  --> [Edge 01] clients=10 loss=1.0377 clean=1.000 agree=0.000
+Global Acc: 29.33% | Global Loss: 1.9294 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0377 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  14 ====================
+  --> [Edge 01] clients=10 loss=0.9151 clean=1.000 agree=0.000
+Global Acc: 26.39% | Global Loss: 1.9892 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9151 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  15 ====================
+  --> [Edge 01] clients=10 loss=1.0601 clean=1.000 agree=0.000
+Global Acc: 21.67% | Global Loss: 2.0048 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0601 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  16 ====================
+  --> [Edge 01] clients=10 loss=0.8960 clean=1.000 agree=0.000
+Global Acc: 35.88% | Global Loss: 1.8832 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8960 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  17 ====================
+  --> [Edge 01] clients=10 loss=1.1581 clean=1.000 agree=0.000
+Global Acc: 36.31% | Global Loss: 1.8812 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1581 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  18 ====================
+  --> [Edge 01] clients=10 loss=1.1638 clean=1.000 agree=0.000
+Global Acc: 31.41% | Global Loss: 1.9157 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1638 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  19 ====================
+  --> [Edge 01] clients=10 loss=1.1686 clean=1.000 agree=0.000
+Global Acc: 35.07% | Global Loss: 1.9074 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1686 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  20 ====================
+  --> [Edge 01] clients=10 loss=0.9819 clean=1.000 agree=0.000
+Global Acc: 34.36% | Global Loss: 1.8938 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9819 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  21 ====================
+  --> [Edge 01] clients=10 loss=1.0377 clean=1.000 agree=0.000
+Global Acc: 38.53% | Global Loss: 1.8545 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0377 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  22 ====================
+  --> [Edge 01] clients=10 loss=1.0249 clean=1.000 agree=0.000
+Global Acc: 33.40% | Global Loss: 1.9398 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0249 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  23 ====================
+  --> [Edge 01] clients=10 loss=1.0444 clean=1.000 agree=0.000
+Global Acc: 31.39% | Global Loss: 1.9154 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0444 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  24 ====================
+  --> [Edge 01] clients=10 loss=1.0355 clean=1.000 agree=0.000
+Global Acc: 29.76% | Global Loss: 1.9065 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0355 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  25 ====================
+  --> [Edge 01] clients=10 loss=0.9252 clean=1.000 agree=0.000
+Global Acc: 35.37% | Global Loss: 1.8576 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9252 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  26 ====================
+  --> [Edge 01] clients=10 loss=1.0543 clean=1.000 agree=0.000
+Global Acc: 32.14% | Global Loss: 1.8729 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0543 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  27 ====================
+  --> [Edge 01] clients=10 loss=0.9696 clean=1.000 agree=0.000
+Global Acc: 36.22% | Global Loss: 1.8225 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9696 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  28 ====================
+  --> [Edge 01] clients=10 loss=1.0470 clean=1.000 agree=0.000
+Global Acc: 36.12% | Global Loss: 1.8535 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0470 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  29 ====================
+  --> [Edge 01] clients=10 loss=0.9744 clean=1.000 agree=0.000
+Global Acc: 36.53% | Global Loss: 1.8663 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9744 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  30 ====================
+  --> [Edge 01] clients=10 loss=0.8803 clean=1.000 agree=0.000
+Global Acc: 26.99% | Global Loss: 1.9283 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8803 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  31 ====================
+  --> [Edge 01] clients=10 loss=1.0292 clean=1.000 agree=0.000
+Global Acc: 31.60% | Global Loss: 1.8724 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0292 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  32 ====================
+  --> [Edge 01] clients=10 loss=1.1587 clean=1.000 agree=0.000
+Global Acc: 38.41% | Global Loss: 1.8236 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1587 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  33 ====================
+  --> [Edge 01] clients=10 loss=1.1832 clean=1.000 agree=0.000
+Global Acc: 35.06% | Global Loss: 1.8982 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1832 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  34 ====================
+  --> [Edge 01] clients=10 loss=0.8441 clean=1.000 agree=0.000
+Global Acc: 37.49% | Global Loss: 1.8647 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8441 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  35 ====================
+  --> [Edge 01] clients=10 loss=1.0852 clean=1.000 agree=0.000
+Global Acc: 35.45% | Global Loss: 1.8578 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0852 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  36 ====================
+  --> [Edge 01] clients=10 loss=0.8958 clean=1.000 agree=0.000
+Global Acc: 27.93% | Global Loss: 1.8943 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8958 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  37 ====================
+  --> [Edge 01] clients=10 loss=0.9955 clean=1.000 agree=0.000
+Global Acc: 33.89% | Global Loss: 1.8337 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9955 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  38 ====================
+  --> [Edge 01] clients=10 loss=1.2890 clean=1.000 agree=0.000
+Global Acc: 37.80% | Global Loss: 1.8538 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.2890 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  39 ====================
+  --> [Edge 01] clients=10 loss=1.0472 clean=1.000 agree=0.000
+Global Acc: 35.61% | Global Loss: 1.8677 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0472 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  40 ====================
+  --> [Edge 01] clients=10 loss=0.9681 clean=1.000 agree=0.000
+Global Acc: 35.61% | Global Loss: 1.8347 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9681 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  41 ====================
+  --> [Edge 01] clients=10 loss=1.0056 clean=1.000 agree=0.000
+Global Acc: 31.66% | Global Loss: 1.8617 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0056 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  42 ====================
+  --> [Edge 01] clients=10 loss=0.9986 clean=1.000 agree=0.000
+Global Acc: 42.30% | Global Loss: 1.7931 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9986 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  43 ====================
+  --> [Edge 01] clients=10 loss=0.9790 clean=1.000 agree=0.000
+Global Acc: 37.09% | Global Loss: 1.8246 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9790 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  44 ====================
+  --> [Edge 01] clients=10 loss=1.0678 clean=1.000 agree=0.000
+Global Acc: 36.73% | Global Loss: 1.8187 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0678 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  45 ====================
+  --> [Edge 01] clients=10 loss=0.9610 clean=1.000 agree=0.000
+Global Acc: 35.42% | Global Loss: 1.8354 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9610 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  46 ====================
+  --> [Edge 01] clients=10 loss=1.0121 clean=1.000 agree=0.000
+Global Acc: 31.80% | Global Loss: 1.9142 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0121 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  47 ====================
+  --> [Edge 01] clients=10 loss=0.8995 clean=1.000 agree=0.000
+Global Acc: 34.28% | Global Loss: 1.8716 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8995 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  48 ====================
+  --> [Edge 01] clients=10 loss=1.0352 clean=1.000 agree=0.000
+Global Acc: 33.28% | Global Loss: 1.8422 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0352 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  49 ====================
+  --> [Edge 01] clients=10 loss=1.2391 clean=1.000 agree=0.000
+Global Acc: 31.73% | Global Loss: 1.9109 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.2391 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  50 ====================
+  --> [Edge 01] clients=10 loss=1.0194 clean=1.000 agree=0.000
+Global Acc: 31.49% | Global Loss: 1.9048 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0194 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  51 ====================
+  --> [Edge 01] clients=10 loss=1.1671 clean=1.000 agree=0.000
+Global Acc: 35.31% | Global Loss: 1.9106 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1671 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  52 ====================
+  --> [Edge 01] clients=10 loss=0.9359 clean=1.000 agree=0.000
+Global Acc: 32.27% | Global Loss: 1.9212 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9359 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  53 ====================
+  --> [Edge 01] clients=10 loss=0.9844 clean=1.000 agree=0.000
+Global Acc: 35.09% | Global Loss: 1.8674 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9844 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  54 ====================
+  --> [Edge 01] clients=10 loss=1.0965 clean=1.000 agree=0.000
+Global Acc: 29.64% | Global Loss: 1.9306 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0965 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  55 ====================
+  --> [Edge 01] clients=10 loss=0.7827 clean=1.000 agree=0.000
+Global Acc: 32.12% | Global Loss: 1.8387 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.7827 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  56 ====================
+  --> [Edge 01] clients=10 loss=0.9600 clean=1.000 agree=0.000
+Global Acc: 34.17% | Global Loss: 1.8386 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9600 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  57 ====================
+  --> [Edge 01] clients=10 loss=0.9079 clean=1.000 agree=0.000
+Global Acc: 39.24% | Global Loss: 1.8217 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9079 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  58 ====================
+  --> [Edge 01] clients=10 loss=1.0133 clean=1.000 agree=0.000
+Global Acc: 32.94% | Global Loss: 1.8623 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0133 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  59 ====================
+  --> [Edge 01] clients=10 loss=0.8176 clean=1.000 agree=0.000
+Global Acc: 33.34% | Global Loss: 1.8557 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8176 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  60 ====================
+  --> [Edge 01] clients=10 loss=1.0555 clean=1.000 agree=0.000
+Global Acc: 37.89% | Global Loss: 1.8485 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0555 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  61 ====================
+  --> [Edge 01] clients=10 loss=0.8525 clean=1.000 agree=0.000
+Global Acc: 36.47% | Global Loss: 1.8314 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8525 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  62 ====================
+  --> [Edge 01] clients=10 loss=1.0257 clean=1.000 agree=0.000
+Global Acc: 39.50% | Global Loss: 1.8262 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0257 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  63 ====================
+  --> [Edge 01] clients=10 loss=0.9772 clean=1.000 agree=0.000
+Global Acc: 39.73% | Global Loss: 1.7878 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9772 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  64 ====================
+  --> [Edge 01] clients=10 loss=0.8191 clean=1.000 agree=0.000
+Global Acc: 34.97% | Global Loss: 1.8196 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8191 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  65 ====================
+  --> [Edge 01] clients=10 loss=1.1198 clean=1.000 agree=0.000
+Global Acc: 33.41% | Global Loss: 1.8914 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1198 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  66 ====================
+  --> [Edge 01] clients=10 loss=1.1202 clean=1.000 agree=0.000
+Global Acc: 39.54% | Global Loss: 1.8115 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1202 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  67 ====================
+  --> [Edge 01] clients=10 loss=0.9642 clean=1.000 agree=0.000
+Global Acc: 36.64% | Global Loss: 1.8424 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9642 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  68 ====================
+  --> [Edge 01] clients=10 loss=0.8824 clean=1.000 agree=0.000
+Global Acc: 36.15% | Global Loss: 1.8281 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8824 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  69 ====================
+  --> [Edge 01] clients=10 loss=1.1089 clean=1.000 agree=0.000
+Global Acc: 34.18% | Global Loss: 1.8604 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1089 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  70 ====================
+  --> [Edge 01] clients=10 loss=0.9139 clean=1.000 agree=0.000
+Global Acc: 42.68% | Global Loss: 1.7469 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9139 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  71 ====================
+  --> [Edge 01] clients=10 loss=1.0637 clean=1.000 agree=0.000
+Global Acc: 28.89% | Global Loss: 1.9019 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0637 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  72 ====================
+  --> [Edge 01] clients=10 loss=1.1200 clean=1.000 agree=0.000
+Global Acc: 32.95% | Global Loss: 1.8818 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1200 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  73 ====================
+  --> [Edge 01] clients=10 loss=0.9654 clean=1.000 agree=0.000
+Global Acc: 39.99% | Global Loss: 1.8035 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9654 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  74 ====================
+  --> [Edge 01] clients=10 loss=0.9424 clean=1.000 agree=0.000
+Global Acc: 34.74% | Global Loss: 1.8719 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9424 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  75 ====================
+  --> [Edge 01] clients=10 loss=0.7960 clean=1.000 agree=0.000
+Global Acc: 42.24% | Global Loss: 1.7410 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.7960 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  76 ====================
+  --> [Edge 01] clients=10 loss=1.1735 clean=1.000 agree=0.000
+Global Acc: 39.48% | Global Loss: 1.8279 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1735 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  77 ====================
+  --> [Edge 01] clients=10 loss=0.7716 clean=1.000 agree=0.000
+Global Acc: 38.29% | Global Loss: 1.8310 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.7716 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  78 ====================
+  --> [Edge 01] clients=10 loss=1.1902 clean=1.000 agree=0.000
+Global Acc: 34.41% | Global Loss: 1.8367 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1902 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  79 ====================
+  --> [Edge 01] clients=10 loss=0.8234 clean=1.000 agree=0.000
+Global Acc: 40.00% | Global Loss: 1.7922 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8234 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  80 ====================
+  --> [Edge 01] clients=10 loss=1.3369 clean=1.000 agree=0.000
+Global Acc: 35.50% | Global Loss: 1.8662 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.3369 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  81 ====================
+  --> [Edge 01] clients=10 loss=1.1060 clean=1.000 agree=0.000
+Global Acc: 36.49% | Global Loss: 1.8502 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1060 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  82 ====================
+  --> [Edge 01] clients=10 loss=0.8985 clean=1.000 agree=0.000
+Global Acc: 35.63% | Global Loss: 1.8282 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8985 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  83 ====================
+  --> [Edge 01] clients=10 loss=1.1305 clean=1.000 agree=0.000
+Global Acc: 37.45% | Global Loss: 1.8636 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1305 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  84 ====================
+  --> [Edge 01] clients=10 loss=0.9007 clean=1.000 agree=0.000
+Global Acc: 31.15% | Global Loss: 1.9260 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9007 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  85 ====================
+  --> [Edge 01] clients=10 loss=0.9025 clean=1.000 agree=0.000
+Global Acc: 39.28% | Global Loss: 1.8174 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9025 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  86 ====================
+  --> [Edge 01] clients=10 loss=1.1315 clean=1.000 agree=0.000
+Global Acc: 35.77% | Global Loss: 1.8443 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.1315 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  87 ====================
+  --> [Edge 01] clients=10 loss=0.9265 clean=1.000 agree=0.000
+Global Acc: 32.74% | Global Loss: 1.8836 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9265 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  88 ====================
+  --> [Edge 01] clients=10 loss=0.8969 clean=1.000 agree=0.000
+Global Acc: 35.78% | Global Loss: 1.8126 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8969 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  89 ====================
+  --> [Edge 01] clients=10 loss=1.0568 clean=1.000 agree=0.000
+Global Acc: 36.21% | Global Loss: 1.8641 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0568 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  90 ====================
+  --> [Edge 01] clients=10 loss=0.7521 clean=1.000 agree=0.000
+Global Acc: 37.06% | Global Loss: 1.8396 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.7521 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  91 ====================
+  --> [Edge 01] clients=10 loss=0.9648 clean=1.000 agree=0.000
+Global Acc: 36.56% | Global Loss: 1.8627 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.9648 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  92 ====================
+  --> [Edge 01] clients=10 loss=1.0040 clean=1.000 agree=0.000
+Global Acc: 31.90% | Global Loss: 1.9070 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0040 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  93 ====================
+  --> [Edge 01] clients=10 loss=0.7635 clean=1.000 agree=0.000
+Global Acc: 35.91% | Global Loss: 1.7968 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.7635 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  94 ====================
+  --> [Edge 01] clients=10 loss=1.0801 clean=1.000 agree=0.000
+Global Acc: 37.93% | Global Loss: 1.8074 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.0801 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  95 ====================
+  --> [Edge 01] clients=10 loss=0.5533 clean=1.000 agree=0.000
+Global Acc: 35.67% | Global Loss: 1.8030 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.5533 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  96 ====================
+  --> [Edge 01] clients=10 loss=0.6888 clean=1.000 agree=0.000
+Global Acc: 38.16% | Global Loss: 1.8262 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.6888 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  97 ====================
+  --> [Edge 01] clients=10 loss=1.2442 clean=1.000 agree=0.000
+Global Acc: 39.58% | Global Loss: 1.8175 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 1.2442 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  98 ====================
+  --> [Edge 01] clients=10 loss=0.8517 clean=1.000 agree=0.000
+Global Acc: 34.94% | Global Loss: 1.8218 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.8517 | Clean: 1.000 | Agree: 0.000
+
+==================== Round  99 ====================
+  --> [Edge 01] clients=10 loss=0.7113 clean=1.000 agree=0.000
+Global Acc: 36.79% | Global Loss: 1.8093 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.7113 | Clean: 1.000 | Agree: 0.000
+
+==================== Round 100 ====================
+  --> [Edge 01] clients=10 loss=0.2552 clean=0.730 agree=0.000
+Global Acc: 38.76% | Global Loss: 1.7394 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2552 | Clean: 0.730 | Agree: 0.000
+
+==================== Round 101 ====================
+  --> [Edge 01] clients=10 loss=0.2498 clean=0.691 agree=0.000
+Global Acc: 38.82% | Global Loss: 1.7683 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2498 | Clean: 0.691 | Agree: 0.000
+
+==================== Round 102 ====================
+  --> [Edge 01] clients=10 loss=0.2431 clean=0.746 agree=0.000
+Global Acc: 38.84% | Global Loss: 1.7269 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2431 | Clean: 0.746 | Agree: 0.000
+
+==================== Round 103 ====================
+  --> [Edge 01] clients=10 loss=0.2589 clean=0.772 agree=0.000
+Global Acc: 41.72% | Global Loss: 1.5933 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2589 | Clean: 0.772 | Agree: 0.000
+
+==================== Round 104 ====================
+  --> [Edge 01] clients=10 loss=0.1895 clean=0.758 agree=0.000
+Global Acc: 49.54% | Global Loss: 1.4262 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1895 | Clean: 0.758 | Agree: 0.000
+
+==================== Round 105 ====================
+  --> [Edge 01] clients=10 loss=0.1456 clean=0.755 agree=0.000
+Global Acc: 46.10% | Global Loss: 1.4795 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1456 | Clean: 0.755 | Agree: 0.000
+
+==================== Round 106 ====================
+  --> [Edge 01] clients=10 loss=0.1794 clean=0.744 agree=0.000
+Global Acc: 46.80% | Global Loss: 1.5074 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1794 | Clean: 0.744 | Agree: 0.000
+
+==================== Round 107 ====================
+  --> [Edge 01] clients=10 loss=0.2029 clean=0.801 agree=0.000
+Global Acc: 43.02% | Global Loss: 1.5525 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2029 | Clean: 0.801 | Agree: 0.000
+
+==================== Round 108 ====================
+  --> [Edge 01] clients=10 loss=0.2196 clean=0.761 agree=0.000
+Global Acc: 51.16% | Global Loss: 1.3713 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2196 | Clean: 0.761 | Agree: 0.000
+
+==================== Round 109 ====================
+  --> [Edge 01] clients=10 loss=0.2445 clean=0.716 agree=0.000
+Global Acc: 47.92% | Global Loss: 1.4484 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2445 | Clean: 0.716 | Agree: 0.000
+
+==================== Round 110 ====================
+  --> [Edge 01] clients=10 loss=0.1765 clean=0.742 agree=0.000
+Global Acc: 46.77% | Global Loss: 1.5230 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1765 | Clean: 0.742 | Agree: 0.000
+
+==================== Round 111 ====================
+  --> [Edge 01] clients=10 loss=0.2444 clean=0.735 agree=0.000
+Global Acc: 41.83% | Global Loss: 1.7143 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2444 | Clean: 0.735 | Agree: 0.000
+
+==================== Round 112 ====================
+  --> [Edge 01] clients=10 loss=0.1351 clean=0.653 agree=0.000
+Global Acc: 34.66% | Global Loss: 2.0797 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1351 | Clean: 0.653 | Agree: 0.000
+
+==================== Round 113 ====================
+  --> [Edge 01] clients=10 loss=0.1781 clean=0.707 agree=0.000
+Global Acc: 36.53% | Global Loss: 1.8335 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1781 | Clean: 0.707 | Agree: 0.000
+
+==================== Round 114 ====================
+  --> [Edge 01] clients=10 loss=0.1470 clean=0.657 agree=0.000
+Global Acc: 43.00% | Global Loss: 1.5467 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1470 | Clean: 0.657 | Agree: 0.000
+
+==================== Round 115 ====================
+  --> [Edge 01] clients=10 loss=0.1708 clean=0.833 agree=0.000
+Global Acc: 43.96% | Global Loss: 1.5766 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1708 | Clean: 0.833 | Agree: 0.000
+
+==================== Round 116 ====================
+  --> [Edge 01] clients=10 loss=0.2145 clean=0.728 agree=0.000
+Global Acc: 45.26% | Global Loss: 1.5523 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2145 | Clean: 0.728 | Agree: 0.000
+
+==================== Round 117 ====================
+  --> [Edge 01] clients=10 loss=0.1807 clean=0.758 agree=0.000
+Global Acc: 50.95% | Global Loss: 1.4669 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1807 | Clean: 0.758 | Agree: 0.000
+
+==================== Round 118 ====================
+  --> [Edge 01] clients=10 loss=0.2053 clean=0.734 agree=0.000
+Global Acc: 43.12% | Global Loss: 1.6607 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2053 | Clean: 0.734 | Agree: 0.000
+
+==================== Round 119 ====================
+  --> [Edge 01] clients=10 loss=0.2883 clean=0.704 agree=0.000
+Global Acc: 47.43% | Global Loss: 1.4379 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2883 | Clean: 0.704 | Agree: 0.000
+
+==================== Round 120 ====================
+  --> [Edge 01] clients=10 loss=0.1825 clean=0.793 agree=0.000
+Global Acc: 38.99% | Global Loss: 1.8815 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1825 | Clean: 0.793 | Agree: 0.000
+
+==================== Round 121 ====================
+  --> [Edge 01] clients=10 loss=0.1874 clean=0.704 agree=0.000
+Global Acc: 50.99% | Global Loss: 1.3890 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1874 | Clean: 0.704 | Agree: 0.000
+
+==================== Round 122 ====================
+  --> [Edge 01] clients=10 loss=0.1731 clean=0.753 agree=0.000
+Global Acc: 47.39% | Global Loss: 1.4610 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1731 | Clean: 0.753 | Agree: 0.000
+
+==================== Round 123 ====================
+  --> [Edge 01] clients=10 loss=0.2678 clean=0.816 agree=0.000
+Global Acc: 53.81% | Global Loss: 1.2840 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2678 | Clean: 0.816 | Agree: 0.000
+
+==================== Round 124 ====================
+  --> [Edge 01] clients=10 loss=0.1811 clean=0.791 agree=0.000
+Global Acc: 50.79% | Global Loss: 1.3358 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1811 | Clean: 0.791 | Agree: 0.000
+
+==================== Round 125 ====================
+  --> [Edge 01] clients=10 loss=0.1612 clean=0.778 agree=0.000
+Global Acc: 49.58% | Global Loss: 1.4017 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1612 | Clean: 0.778 | Agree: 0.000
+
+==================== Round 126 ====================
+  --> [Edge 01] clients=10 loss=0.1726 clean=0.712 agree=0.000
+Global Acc: 59.93% | Global Loss: 1.1756 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1726 | Clean: 0.712 | Agree: 0.000
+
+==================== Round 127 ====================
+  --> [Edge 01] clients=10 loss=0.1697 clean=0.827 agree=0.000
+Global Acc: 40.72% | Global Loss: 1.8018 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1697 | Clean: 0.827 | Agree: 0.000
+
+==================== Round 128 ====================
+  --> [Edge 01] clients=10 loss=0.1734 clean=0.804 agree=0.000
+Global Acc: 47.41% | Global Loss: 1.5533 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1734 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 129 ====================
+  --> [Edge 01] clients=10 loss=0.1759 clean=0.787 agree=0.000
+Global Acc: 48.78% | Global Loss: 1.4461 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1759 | Clean: 0.787 | Agree: 0.000
+
+==================== Round 130 ====================
+  --> [Edge 01] clients=10 loss=0.2074 clean=0.770 agree=0.000
+Global Acc: 54.74% | Global Loss: 1.2412 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2074 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 131 ====================
+  --> [Edge 01] clients=10 loss=0.1772 clean=0.772 agree=0.000
+Global Acc: 51.82% | Global Loss: 1.3134 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1772 | Clean: 0.772 | Agree: 0.000
+
+==================== Round 132 ====================
+  --> [Edge 01] clients=10 loss=0.1819 clean=0.773 agree=0.000
+Global Acc: 46.56% | Global Loss: 1.4649 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1819 | Clean: 0.773 | Agree: 0.000
+
+==================== Round 133 ====================
+  --> [Edge 01] clients=10 loss=0.1590 clean=0.766 agree=0.000
+Global Acc: 50.84% | Global Loss: 1.3776 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1590 | Clean: 0.766 | Agree: 0.000
+
+==================== Round 134 ====================
+  --> [Edge 01] clients=10 loss=0.2191 clean=0.767 agree=0.000
+Global Acc: 56.03% | Global Loss: 1.2427 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2191 | Clean: 0.767 | Agree: 0.000
+
+==================== Round 135 ====================
+  --> [Edge 01] clients=10 loss=0.1741 clean=0.791 agree=0.000
+Global Acc: 55.20% | Global Loss: 1.2685 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1741 | Clean: 0.791 | Agree: 0.000
+
+==================== Round 136 ====================
+  --> [Edge 01] clients=10 loss=0.2030 clean=0.750 agree=0.000
+Global Acc: 55.34% | Global Loss: 1.2807 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2030 | Clean: 0.750 | Agree: 0.000
+
+==================== Round 137 ====================
+  --> [Edge 01] clients=10 loss=0.1249 clean=0.737 agree=0.000
+Global Acc: 47.83% | Global Loss: 1.4774 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1249 | Clean: 0.737 | Agree: 0.000
+
+==================== Round 138 ====================
+  --> [Edge 01] clients=10 loss=0.1811 clean=0.755 agree=0.000
+Global Acc: 53.75% | Global Loss: 1.3034 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1811 | Clean: 0.755 | Agree: 0.000
+
+==================== Round 139 ====================
+  --> [Edge 01] clients=10 loss=0.1621 clean=0.776 agree=0.000
+Global Acc: 49.04% | Global Loss: 1.4009 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1621 | Clean: 0.776 | Agree: 0.000
+
+==================== Round 140 ====================
+  --> [Edge 01] clients=10 loss=0.1708 clean=0.766 agree=0.000
+Global Acc: 50.27% | Global Loss: 1.3748 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1708 | Clean: 0.766 | Agree: 0.000
+
+==================== Round 141 ====================
+  --> [Edge 01] clients=10 loss=0.1952 clean=0.765 agree=0.000
+Global Acc: 55.82% | Global Loss: 1.2595 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1952 | Clean: 0.765 | Agree: 0.000
+
+==================== Round 142 ====================
+  --> [Edge 01] clients=10 loss=0.2295 clean=0.756 agree=0.000
+Global Acc: 61.15% | Global Loss: 1.1226 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2295 | Clean: 0.756 | Agree: 0.000
+
+==================== Round 143 ====================
+  --> [Edge 01] clients=10 loss=0.1325 clean=0.815 agree=0.000
+Global Acc: 56.25% | Global Loss: 1.2706 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1325 | Clean: 0.815 | Agree: 0.000
+
+==================== Round 144 ====================
+  --> [Edge 01] clients=10 loss=0.1438 clean=0.832 agree=0.000
+Global Acc: 53.12% | Global Loss: 1.4271 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1438 | Clean: 0.832 | Agree: 0.000
+
+==================== Round 145 ====================
+  --> [Edge 01] clients=10 loss=0.2499 clean=0.766 agree=0.000
+Global Acc: 54.24% | Global Loss: 1.2945 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2499 | Clean: 0.766 | Agree: 0.000
+
+==================== Round 146 ====================
+  --> [Edge 01] clients=10 loss=0.1521 clean=0.735 agree=0.000
+Global Acc: 53.10% | Global Loss: 1.3481 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1521 | Clean: 0.735 | Agree: 0.000
+
+==================== Round 147 ====================
+  --> [Edge 01] clients=10 loss=0.1656 clean=0.822 agree=0.000
+Global Acc: 49.01% | Global Loss: 1.3992 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1656 | Clean: 0.822 | Agree: 0.000
+
+==================== Round 148 ====================
+  --> [Edge 01] clients=10 loss=0.1993 clean=0.722 agree=0.000
+Global Acc: 58.68% | Global Loss: 1.2208 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1993 | Clean: 0.722 | Agree: 0.000
+
+==================== Round 149 ====================
+  --> [Edge 01] clients=10 loss=0.1400 clean=0.772 agree=0.000
+Global Acc: 53.55% | Global Loss: 1.3870 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1400 | Clean: 0.772 | Agree: 0.000
+
+==================== Round 150 ====================
+  --> [Edge 01] clients=10 loss=0.1216 clean=0.819 agree=0.000
+Global Acc: 51.91% | Global Loss: 1.3880 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1216 | Clean: 0.819 | Agree: 0.000
+
+==================== Round 151 ====================
+  --> [Edge 01] clients=10 loss=0.1534 clean=0.717 agree=0.000
+Global Acc: 51.62% | Global Loss: 1.3874 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1534 | Clean: 0.717 | Agree: 0.000
+
+==================== Round 152 ====================
+  --> [Edge 01] clients=10 loss=0.1719 clean=0.760 agree=0.000
+Global Acc: 55.69% | Global Loss: 1.2468 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1719 | Clean: 0.760 | Agree: 0.000
+
+==================== Round 153 ====================
+  --> [Edge 01] clients=10 loss=0.1380 clean=0.808 agree=0.000
+Global Acc: 57.18% | Global Loss: 1.2154 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1380 | Clean: 0.808 | Agree: 0.000
+
+==================== Round 154 ====================
+  --> [Edge 01] clients=10 loss=0.1670 clean=0.820 agree=0.000
+Global Acc: 48.41% | Global Loss: 1.4367 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1670 | Clean: 0.820 | Agree: 0.000
+
+==================== Round 155 ====================
+  --> [Edge 01] clients=10 loss=0.1510 clean=0.760 agree=0.000
+Global Acc: 55.99% | Global Loss: 1.2203 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1510 | Clean: 0.760 | Agree: 0.000
+
+==================== Round 156 ====================
+  --> [Edge 01] clients=10 loss=0.1391 clean=0.782 agree=0.000
+Global Acc: 52.79% | Global Loss: 1.3010 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1391 | Clean: 0.782 | Agree: 0.000
+
+==================== Round 157 ====================
+  --> [Edge 01] clients=10 loss=0.1294 clean=0.804 agree=0.000
+Global Acc: 58.99% | Global Loss: 1.1864 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1294 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 158 ====================
+  --> [Edge 01] clients=10 loss=0.1328 clean=0.774 agree=0.000
+Global Acc: 59.25% | Global Loss: 1.1976 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1328 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 159 ====================
+  --> [Edge 01] clients=10 loss=0.1147 clean=0.816 agree=0.000
+Global Acc: 52.31% | Global Loss: 1.3149 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1147 | Clean: 0.816 | Agree: 0.000
+
+==================== Round 160 ====================
+  --> [Edge 01] clients=10 loss=0.0999 clean=0.799 agree=0.000
+Global Acc: 58.94% | Global Loss: 1.2004 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0999 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 161 ====================
+  --> [Edge 01] clients=10 loss=0.1173 clean=0.798 agree=0.000
+Global Acc: 55.29% | Global Loss: 1.2863 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1173 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 162 ====================
+  --> [Edge 01] clients=10 loss=0.1489 clean=0.718 agree=0.000
+Global Acc: 51.91% | Global Loss: 1.3700 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1489 | Clean: 0.718 | Agree: 0.000
+
+==================== Round 163 ====================
+  --> [Edge 01] clients=10 loss=0.1520 clean=0.741 agree=0.000
+Global Acc: 56.07% | Global Loss: 1.2578 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1520 | Clean: 0.741 | Agree: 0.000
+
+==================== Round 164 ====================
+  --> [Edge 01] clients=10 loss=0.1645 clean=0.853 agree=0.000
+Global Acc: 53.97% | Global Loss: 1.2736 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1645 | Clean: 0.853 | Agree: 0.000
+
+==================== Round 165 ====================
+  --> [Edge 01] clients=10 loss=0.1858 clean=0.788 agree=0.000
+Global Acc: 56.31% | Global Loss: 1.2484 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1858 | Clean: 0.788 | Agree: 0.000
+
+==================== Round 166 ====================
+  --> [Edge 01] clients=10 loss=0.1494 clean=0.752 agree=0.000
+Global Acc: 59.27% | Global Loss: 1.1840 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1494 | Clean: 0.752 | Agree: 0.000
+
+==================== Round 167 ====================
+  --> [Edge 01] clients=10 loss=0.1492 clean=0.746 agree=0.000
+Global Acc: 57.86% | Global Loss: 1.2007 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1492 | Clean: 0.746 | Agree: 0.000
+
+==================== Round 168 ====================
+  --> [Edge 01] clients=10 loss=0.1325 clean=0.793 agree=0.000
+Global Acc: 57.09% | Global Loss: 1.2582 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1325 | Clean: 0.793 | Agree: 0.000
+
+==================== Round 169 ====================
+  --> [Edge 01] clients=10 loss=0.2019 clean=0.806 agree=0.000
+Global Acc: 44.56% | Global Loss: 1.7251 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2019 | Clean: 0.806 | Agree: 0.000
+
+==================== Round 170 ====================
+  --> [Edge 01] clients=10 loss=0.2005 clean=0.747 agree=0.000
+Global Acc: 51.14% | Global Loss: 1.4316 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2005 | Clean: 0.747 | Agree: 0.000
+
+==================== Round 171 ====================
+  --> [Edge 01] clients=10 loss=0.1725 clean=0.768 agree=0.000
+Global Acc: 50.90% | Global Loss: 1.4490 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1725 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 172 ====================
+  --> [Edge 01] clients=10 loss=0.1235 clean=0.813 agree=0.000
+Global Acc: 50.55% | Global Loss: 1.3973 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1235 | Clean: 0.813 | Agree: 0.000
+
+==================== Round 173 ====================
+  --> [Edge 01] clients=10 loss=0.1940 clean=0.770 agree=0.000
+Global Acc: 58.71% | Global Loss: 1.2039 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1940 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 174 ====================
+  --> [Edge 01] clients=10 loss=0.1716 clean=0.796 agree=0.000
+Global Acc: 55.24% | Global Loss: 1.3422 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1716 | Clean: 0.796 | Agree: 0.000
+
+==================== Round 175 ====================
+  --> [Edge 01] clients=10 loss=0.1176 clean=0.762 agree=0.000
+Global Acc: 58.46% | Global Loss: 1.2155 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1176 | Clean: 0.762 | Agree: 0.000
+
+==================== Round 176 ====================
+  --> [Edge 01] clients=10 loss=0.1485 clean=0.717 agree=0.000
+Global Acc: 59.74% | Global Loss: 1.1983 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1485 | Clean: 0.717 | Agree: 0.000
+
+==================== Round 177 ====================
+  --> [Edge 01] clients=10 loss=0.1905 clean=0.796 agree=0.000
+Global Acc: 61.80% | Global Loss: 1.0983 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1905 | Clean: 0.796 | Agree: 0.000
+
+==================== Round 178 ====================
+  --> [Edge 01] clients=10 loss=0.1523 clean=0.733 agree=0.000
+Global Acc: 54.08% | Global Loss: 1.3423 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1523 | Clean: 0.733 | Agree: 0.000
+
+==================== Round 179 ====================
+  --> [Edge 01] clients=10 loss=0.1469 clean=0.765 agree=0.000
+Global Acc: 51.29% | Global Loss: 1.3892 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1469 | Clean: 0.765 | Agree: 0.000
+
+==================== Round 180 ====================
+  --> [Edge 01] clients=10 loss=0.1823 clean=0.764 agree=0.000
+Global Acc: 56.41% | Global Loss: 1.2124 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1823 | Clean: 0.764 | Agree: 0.000
+
+==================== Round 181 ====================
+  --> [Edge 01] clients=10 loss=0.0994 clean=0.850 agree=0.000
+Global Acc: 57.30% | Global Loss: 1.3181 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0994 | Clean: 0.850 | Agree: 0.000
+
+==================== Round 182 ====================
+  --> [Edge 01] clients=10 loss=0.2436 clean=0.744 agree=0.000
+Global Acc: 62.33% | Global Loss: 1.0990 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2436 | Clean: 0.744 | Agree: 0.000
+
+==================== Round 183 ====================
+  --> [Edge 01] clients=10 loss=0.1862 clean=0.752 agree=0.000
+Global Acc: 55.50% | Global Loss: 1.2329 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1862 | Clean: 0.752 | Agree: 0.000
+
+==================== Round 184 ====================
+  --> [Edge 01] clients=10 loss=0.1759 clean=0.770 agree=0.000
+Global Acc: 52.91% | Global Loss: 1.3096 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1759 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 185 ====================
+  --> [Edge 01] clients=10 loss=0.1912 clean=0.736 agree=0.000
+Global Acc: 56.72% | Global Loss: 1.2525 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1912 | Clean: 0.736 | Agree: 0.000
+
+==================== Round 186 ====================
+  --> [Edge 01] clients=10 loss=0.1612 clean=0.776 agree=0.000
+Global Acc: 57.35% | Global Loss: 1.2024 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1612 | Clean: 0.776 | Agree: 0.000
+
+==================== Round 187 ====================
+  --> [Edge 01] clients=10 loss=0.1367 clean=0.831 agree=0.000
+Global Acc: 58.38% | Global Loss: 1.1948 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1367 | Clean: 0.831 | Agree: 0.000
+
+==================== Round 188 ====================
+  --> [Edge 01] clients=10 loss=0.1065 clean=0.778 agree=0.000
+Global Acc: 55.84% | Global Loss: 1.2504 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1065 | Clean: 0.778 | Agree: 0.000
+
+==================== Round 189 ====================
+  --> [Edge 01] clients=10 loss=0.1748 clean=0.742 agree=0.000
+Global Acc: 56.52% | Global Loss: 1.2392 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1748 | Clean: 0.742 | Agree: 0.000
+
+==================== Round 190 ====================
+  --> [Edge 01] clients=10 loss=0.1606 clean=0.799 agree=0.000
+Global Acc: 55.38% | Global Loss: 1.2750 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1606 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 191 ====================
+  --> [Edge 01] clients=10 loss=0.1589 clean=0.808 agree=0.000
+Global Acc: 57.80% | Global Loss: 1.2145 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1589 | Clean: 0.808 | Agree: 0.000
+
+==================== Round 192 ====================
+  --> [Edge 01] clients=10 loss=0.1066 clean=0.759 agree=0.000
+Global Acc: 53.60% | Global Loss: 1.3022 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1066 | Clean: 0.759 | Agree: 0.000
+
+==================== Round 193 ====================
+  --> [Edge 01] clients=10 loss=0.1629 clean=0.820 agree=0.000
+Global Acc: 55.41% | Global Loss: 1.2451 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1629 | Clean: 0.820 | Agree: 0.000
+
+==================== Round 194 ====================
+  --> [Edge 01] clients=10 loss=0.2190 clean=0.808 agree=0.000
+Global Acc: 54.13% | Global Loss: 1.2554 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2190 | Clean: 0.808 | Agree: 0.000
+
+==================== Round 195 ====================
+  --> [Edge 01] clients=10 loss=0.1703 clean=0.706 agree=0.000
+Global Acc: 61.06% | Global Loss: 1.1174 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1703 | Clean: 0.706 | Agree: 0.000
+
+==================== Round 196 ====================
+  --> [Edge 01] clients=10 loss=0.1521 clean=0.790 agree=0.000
+Global Acc: 59.00% | Global Loss: 1.1829 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1521 | Clean: 0.790 | Agree: 0.000
+
+==================== Round 197 ====================
+  --> [Edge 01] clients=10 loss=0.1471 clean=0.798 agree=0.000
+Global Acc: 58.17% | Global Loss: 1.1965 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1471 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 198 ====================
+  --> [Edge 01] clients=10 loss=0.1214 clean=0.748 agree=0.000
+Global Acc: 57.66% | Global Loss: 1.1745 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1214 | Clean: 0.748 | Agree: 0.000
+
+==================== Round 199 ====================
+  --> [Edge 01] clients=10 loss=0.1688 clean=0.801 agree=0.000
+Global Acc: 53.15% | Global Loss: 1.3802 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1688 | Clean: 0.801 | Agree: 0.000
+
+==================== Round 200 ====================
+  --> [Edge 01] clients=10 loss=0.0930 clean=0.792 agree=0.000
+Global Acc: 57.76% | Global Loss: 1.2140 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0930 | Clean: 0.792 | Agree: 0.000
+
+==================== Round 201 ====================
+  --> [Edge 01] clients=10 loss=0.1472 clean=0.861 agree=0.000
+Global Acc: 59.39% | Global Loss: 1.1536 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1472 | Clean: 0.861 | Agree: 0.000
+
+==================== Round 202 ====================
+  --> [Edge 01] clients=10 loss=0.1590 clean=0.790 agree=0.000
+Global Acc: 60.01% | Global Loss: 1.1367 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1590 | Clean: 0.790 | Agree: 0.000
+
+==================== Round 203 ====================
+  --> [Edge 01] clients=10 loss=0.1309 clean=0.776 agree=0.000
+Global Acc: 62.52% | Global Loss: 1.0745 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1309 | Clean: 0.776 | Agree: 0.000
+
+==================== Round 204 ====================
+  --> [Edge 01] clients=10 loss=0.1103 clean=0.779 agree=0.000
+Global Acc: 59.58% | Global Loss: 1.1988 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1103 | Clean: 0.779 | Agree: 0.000
+
+==================== Round 205 ====================
+  --> [Edge 01] clients=10 loss=0.1397 clean=0.799 agree=0.000
+Global Acc: 60.18% | Global Loss: 1.1638 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1397 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 206 ====================
+  --> [Edge 01] clients=10 loss=0.1888 clean=0.804 agree=0.000
+Global Acc: 59.71% | Global Loss: 1.1283 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1888 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 207 ====================
+  --> [Edge 01] clients=10 loss=0.1173 clean=0.772 agree=0.000
+Global Acc: 59.76% | Global Loss: 1.1652 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1173 | Clean: 0.772 | Agree: 0.000
+
+==================== Round 208 ====================
+  --> [Edge 01] clients=10 loss=0.1206 clean=0.786 agree=0.000
+Global Acc: 55.98% | Global Loss: 1.3335 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1206 | Clean: 0.786 | Agree: 0.000
+
+==================== Round 209 ====================
+  --> [Edge 01] clients=10 loss=0.1204 clean=0.773 agree=0.000
+Global Acc: 56.80% | Global Loss: 1.2272 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1204 | Clean: 0.773 | Agree: 0.000
+
+==================== Round 210 ====================
+  --> [Edge 01] clients=10 loss=0.1107 clean=0.841 agree=0.000
+Global Acc: 52.87% | Global Loss: 1.3894 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1107 | Clean: 0.841 | Agree: 0.000
+
+==================== Round 211 ====================
+  --> [Edge 01] clients=10 loss=0.1432 clean=0.791 agree=0.000
+Global Acc: 62.24% | Global Loss: 1.0742 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1432 | Clean: 0.791 | Agree: 0.000
+
+==================== Round 212 ====================
+  --> [Edge 01] clients=10 loss=0.1539 clean=0.795 agree=0.000
+Global Acc: 54.62% | Global Loss: 1.2279 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1539 | Clean: 0.795 | Agree: 0.000
+
+==================== Round 213 ====================
+  --> [Edge 01] clients=10 loss=0.1594 clean=0.747 agree=0.000
+Global Acc: 56.77% | Global Loss: 1.2776 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1594 | Clean: 0.747 | Agree: 0.000
+
+==================== Round 214 ====================
+  --> [Edge 01] clients=10 loss=0.1800 clean=0.780 agree=0.000
+Global Acc: 61.32% | Global Loss: 1.1197 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1800 | Clean: 0.780 | Agree: 0.000
+
+==================== Round 215 ====================
+  --> [Edge 01] clients=10 loss=0.1450 clean=0.804 agree=0.000
+Global Acc: 59.10% | Global Loss: 1.1749 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1450 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 216 ====================
+  --> [Edge 01] clients=10 loss=0.1134 clean=0.768 agree=0.000
+Global Acc: 43.13% | Global Loss: 1.8038 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1134 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 217 ====================
+  --> [Edge 01] clients=10 loss=0.1414 clean=0.773 agree=0.000
+Global Acc: 56.21% | Global Loss: 1.2447 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1414 | Clean: 0.773 | Agree: 0.000
+
+==================== Round 218 ====================
+  --> [Edge 01] clients=10 loss=0.1397 clean=0.799 agree=0.000
+Global Acc: 56.87% | Global Loss: 1.2959 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1397 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 219 ====================
+  --> [Edge 01] clients=10 loss=0.1760 clean=0.829 agree=0.000
+Global Acc: 56.12% | Global Loss: 1.2314 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1760 | Clean: 0.829 | Agree: 0.000
+
+==================== Round 220 ====================
+  --> [Edge 01] clients=10 loss=0.1535 clean=0.836 agree=0.000
+Global Acc: 55.39% | Global Loss: 1.2485 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1535 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 221 ====================
+  --> [Edge 01] clients=10 loss=0.1476 clean=0.804 agree=0.000
+Global Acc: 61.38% | Global Loss: 1.1173 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1476 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 222 ====================
+  --> [Edge 01] clients=10 loss=0.1923 clean=0.781 agree=0.000
+Global Acc: 58.47% | Global Loss: 1.2137 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1923 | Clean: 0.781 | Agree: 0.000
+
+==================== Round 223 ====================
+  --> [Edge 01] clients=10 loss=0.1155 clean=0.757 agree=0.000
+Global Acc: 61.64% | Global Loss: 1.1154 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1155 | Clean: 0.757 | Agree: 0.000
+
+==================== Round 224 ====================
+  --> [Edge 01] clients=10 loss=0.1367 clean=0.763 agree=0.000
+Global Acc: 60.80% | Global Loss: 1.1132 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1367 | Clean: 0.763 | Agree: 0.000
+
+==================== Round 225 ====================
+  --> [Edge 01] clients=10 loss=0.1260 clean=0.778 agree=0.000
+Global Acc: 61.54% | Global Loss: 1.1001 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1260 | Clean: 0.778 | Agree: 0.000
+
+==================== Round 226 ====================
+  --> [Edge 01] clients=10 loss=0.1594 clean=0.761 agree=0.000
+Global Acc: 58.72% | Global Loss: 1.2100 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1594 | Clean: 0.761 | Agree: 0.000
+
+==================== Round 227 ====================
+  --> [Edge 01] clients=10 loss=0.1477 clean=0.757 agree=0.000
+Global Acc: 60.56% | Global Loss: 1.1198 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1477 | Clean: 0.757 | Agree: 0.000
+
+==================== Round 228 ====================
+  --> [Edge 01] clients=10 loss=0.1706 clean=0.770 agree=0.000
+Global Acc: 61.22% | Global Loss: 1.1210 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1706 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 229 ====================
+  --> [Edge 01] clients=10 loss=0.1325 clean=0.769 agree=0.000
+Global Acc: 56.32% | Global Loss: 1.2722 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1325 | Clean: 0.769 | Agree: 0.000
+
+==================== Round 230 ====================
+  --> [Edge 01] clients=10 loss=0.1693 clean=0.771 agree=0.000
+Global Acc: 59.48% | Global Loss: 1.1806 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1693 | Clean: 0.771 | Agree: 0.000
+
+==================== Round 231 ====================
+  --> [Edge 01] clients=10 loss=0.1169 clean=0.761 agree=0.000
+Global Acc: 47.94% | Global Loss: 1.4839 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1169 | Clean: 0.761 | Agree: 0.000
+
+==================== Round 232 ====================
+  --> [Edge 01] clients=10 loss=0.1041 clean=0.740 agree=0.000
+Global Acc: 61.39% | Global Loss: 1.1366 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1041 | Clean: 0.740 | Agree: 0.000
+
+==================== Round 233 ====================
+  --> [Edge 01] clients=10 loss=0.1464 clean=0.801 agree=0.000
+Global Acc: 62.84% | Global Loss: 1.0562 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1464 | Clean: 0.801 | Agree: 0.000
+
+==================== Round 234 ====================
+  --> [Edge 01] clients=10 loss=0.1527 clean=0.756 agree=0.000
+Global Acc: 61.47% | Global Loss: 1.1100 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1527 | Clean: 0.756 | Agree: 0.000
+
+==================== Round 235 ====================
+  --> [Edge 01] clients=10 loss=0.1335 clean=0.801 agree=0.000
+Global Acc: 58.88% | Global Loss: 1.1590 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1335 | Clean: 0.801 | Agree: 0.000
+
+==================== Round 236 ====================
+  --> [Edge 01] clients=10 loss=0.1177 clean=0.731 agree=0.000
+Global Acc: 58.97% | Global Loss: 1.2308 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1177 | Clean: 0.731 | Agree: 0.000
+
+==================== Round 237 ====================
+  --> [Edge 01] clients=10 loss=0.1587 clean=0.749 agree=0.000
+Global Acc: 58.30% | Global Loss: 1.2319 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1587 | Clean: 0.749 | Agree: 0.000
+
+==================== Round 238 ====================
+  --> [Edge 01] clients=10 loss=0.1433 clean=0.735 agree=0.000
+Global Acc: 55.00% | Global Loss: 1.3447 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1433 | Clean: 0.735 | Agree: 0.000
+
+==================== Round 239 ====================
+  --> [Edge 01] clients=10 loss=0.1225 clean=0.798 agree=0.000
+Global Acc: 63.98% | Global Loss: 1.0471 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1225 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 240 ====================
+  --> [Edge 01] clients=10 loss=0.2100 clean=0.802 agree=0.000
+Global Acc: 58.43% | Global Loss: 1.1854 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2100 | Clean: 0.802 | Agree: 0.000
+
+==================== Round 241 ====================
+  --> [Edge 01] clients=10 loss=0.1218 clean=0.836 agree=0.000
+Global Acc: 62.75% | Global Loss: 1.0770 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1218 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 242 ====================
+  --> [Edge 01] clients=10 loss=0.1151 clean=0.847 agree=0.000
+Global Acc: 56.00% | Global Loss: 1.2720 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1151 | Clean: 0.847 | Agree: 0.000
+
+==================== Round 243 ====================
+  --> [Edge 01] clients=10 loss=0.1360 clean=0.732 agree=0.000
+Global Acc: 61.03% | Global Loss: 1.1181 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1360 | Clean: 0.732 | Agree: 0.000
+
+==================== Round 244 ====================
+  --> [Edge 01] clients=10 loss=0.1245 clean=0.799 agree=0.000
+Global Acc: 59.82% | Global Loss: 1.1566 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1245 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 245 ====================
+  --> [Edge 01] clients=10 loss=0.0956 clean=0.767 agree=0.000
+Global Acc: 57.52% | Global Loss: 1.2742 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0956 | Clean: 0.767 | Agree: 0.000
+
+==================== Round 246 ====================
+  --> [Edge 01] clients=10 loss=0.1307 clean=0.746 agree=0.000
+Global Acc: 60.34% | Global Loss: 1.1877 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1307 | Clean: 0.746 | Agree: 0.000
+
+==================== Round 247 ====================
+  --> [Edge 01] clients=10 loss=0.0873 clean=0.818 agree=0.000
+Global Acc: 58.30% | Global Loss: 1.2811 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0873 | Clean: 0.818 | Agree: 0.000
+
+==================== Round 248 ====================
+  --> [Edge 01] clients=10 loss=0.2232 clean=0.774 agree=0.000
+Global Acc: 61.61% | Global Loss: 1.1192 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2232 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 249 ====================
+  --> [Edge 01] clients=10 loss=0.1363 clean=0.810 agree=0.000
+Global Acc: 54.06% | Global Loss: 1.4101 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1363 | Clean: 0.810 | Agree: 0.000
+
+==================== Round 250 ====================
+  --> [Edge 01] clients=10 loss=0.1078 clean=0.807 agree=0.000
+Global Acc: 60.24% | Global Loss: 1.1734 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1078 | Clean: 0.807 | Agree: 0.000
+
+==================== Round 251 ====================
+  --> [Edge 01] clients=10 loss=0.1680 clean=0.787 agree=0.000
+Global Acc: 59.20% | Global Loss: 1.2531 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1680 | Clean: 0.787 | Agree: 0.000
+
+==================== Round 252 ====================
+  --> [Edge 01] clients=10 loss=0.1163 clean=0.846 agree=0.000
+Global Acc: 55.67% | Global Loss: 1.3364 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1163 | Clean: 0.846 | Agree: 0.000
+
+==================== Round 253 ====================
+  --> [Edge 01] clients=10 loss=0.1578 clean=0.762 agree=0.000
+Global Acc: 51.51% | Global Loss: 1.4417 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1578 | Clean: 0.762 | Agree: 0.000
+
+==================== Round 254 ====================
+  --> [Edge 01] clients=10 loss=0.1186 clean=0.748 agree=0.000
+Global Acc: 59.46% | Global Loss: 1.2199 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1186 | Clean: 0.748 | Agree: 0.000
+
+==================== Round 255 ====================
+  --> [Edge 01] clients=10 loss=0.1510 clean=0.754 agree=0.000
+Global Acc: 59.63% | Global Loss: 1.1504 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1510 | Clean: 0.754 | Agree: 0.000
+
+==================== Round 256 ====================
+  --> [Edge 01] clients=10 loss=0.1534 clean=0.803 agree=0.000
+Global Acc: 60.06% | Global Loss: 1.1399 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1534 | Clean: 0.803 | Agree: 0.000
+
+==================== Round 257 ====================
+  --> [Edge 01] clients=10 loss=0.1223 clean=0.754 agree=0.000
+Global Acc: 63.11% | Global Loss: 1.0345 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1223 | Clean: 0.754 | Agree: 0.000
+
+==================== Round 258 ====================
+  --> [Edge 01] clients=10 loss=0.1320 clean=0.780 agree=0.000
+Global Acc: 61.51% | Global Loss: 1.1414 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1320 | Clean: 0.780 | Agree: 0.000
+
+==================== Round 259 ====================
+  --> [Edge 01] clients=10 loss=0.1332 clean=0.716 agree=0.000
+Global Acc: 58.35% | Global Loss: 1.2287 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1332 | Clean: 0.716 | Agree: 0.000
+
+==================== Round 260 ====================
+  --> [Edge 01] clients=10 loss=0.1094 clean=0.776 agree=0.000
+Global Acc: 63.77% | Global Loss: 1.0523 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1094 | Clean: 0.776 | Agree: 0.000
+
+==================== Round 261 ====================
+  --> [Edge 01] clients=10 loss=0.1061 clean=0.846 agree=0.000
+Global Acc: 63.44% | Global Loss: 1.0806 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1061 | Clean: 0.846 | Agree: 0.000
+
+==================== Round 262 ====================
+  --> [Edge 01] clients=10 loss=0.1285 clean=0.773 agree=0.000
+Global Acc: 61.26% | Global Loss: 1.1708 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1285 | Clean: 0.773 | Agree: 0.000
+
+==================== Round 263 ====================
+  --> [Edge 01] clients=10 loss=0.1177 clean=0.840 agree=0.000
+Global Acc: 57.42% | Global Loss: 1.2257 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1177 | Clean: 0.840 | Agree: 0.000
+
+==================== Round 264 ====================
+  --> [Edge 01] clients=10 loss=0.1103 clean=0.767 agree=0.000
+Global Acc: 56.37% | Global Loss: 1.3108 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1103 | Clean: 0.767 | Agree: 0.000
+
+==================== Round 265 ====================
+  --> [Edge 01] clients=10 loss=0.1133 clean=0.827 agree=0.000
+Global Acc: 60.46% | Global Loss: 1.2130 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1133 | Clean: 0.827 | Agree: 0.000
+
+==================== Round 266 ====================
+  --> [Edge 01] clients=10 loss=0.0875 clean=0.800 agree=0.000
+Global Acc: 55.32% | Global Loss: 1.3813 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0875 | Clean: 0.800 | Agree: 0.000
+
+==================== Round 267 ====================
+  --> [Edge 01] clients=10 loss=0.1998 clean=0.792 agree=0.000
+Global Acc: 60.83% | Global Loss: 1.1419 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1998 | Clean: 0.792 | Agree: 0.000
+
+==================== Round 268 ====================
+  --> [Edge 01] clients=10 loss=0.1063 clean=0.852 agree=0.000
+Global Acc: 63.10% | Global Loss: 1.1030 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1063 | Clean: 0.852 | Agree: 0.000
+
+==================== Round 269 ====================
+  --> [Edge 01] clients=10 loss=0.1169 clean=0.832 agree=0.000
+Global Acc: 60.83% | Global Loss: 1.1940 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1169 | Clean: 0.832 | Agree: 0.000
+
+==================== Round 270 ====================
+  --> [Edge 01] clients=10 loss=0.1299 clean=0.744 agree=0.000
+Global Acc: 56.57% | Global Loss: 1.3739 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1299 | Clean: 0.744 | Agree: 0.000
+
+==================== Round 271 ====================
+  --> [Edge 01] clients=10 loss=0.1310 clean=0.811 agree=0.000
+Global Acc: 59.09% | Global Loss: 1.2269 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1310 | Clean: 0.811 | Agree: 0.000
+
+==================== Round 272 ====================
+  --> [Edge 01] clients=10 loss=0.1156 clean=0.809 agree=0.000
+Global Acc: 51.14% | Global Loss: 1.4763 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1156 | Clean: 0.809 | Agree: 0.000
+
+==================== Round 273 ====================
+  --> [Edge 01] clients=10 loss=0.0965 clean=0.840 agree=0.000
+Global Acc: 53.52% | Global Loss: 1.4066 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0965 | Clean: 0.840 | Agree: 0.000
+
+==================== Round 274 ====================
+  --> [Edge 01] clients=10 loss=0.0996 clean=0.832 agree=0.000
+Global Acc: 64.46% | Global Loss: 1.0309 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0996 | Clean: 0.832 | Agree: 0.000
+
+==================== Round 275 ====================
+  --> [Edge 01] clients=10 loss=0.1196 clean=0.753 agree=0.000
+Global Acc: 45.45% | Global Loss: 1.7275 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1196 | Clean: 0.753 | Agree: 0.000
+
+==================== Round 276 ====================
+  --> [Edge 01] clients=10 loss=0.1146 clean=0.829 agree=0.000
+Global Acc: 58.56% | Global Loss: 1.2431 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1146 | Clean: 0.829 | Agree: 0.000
+
+==================== Round 277 ====================
+  --> [Edge 01] clients=10 loss=0.1360 clean=0.750 agree=0.000
+Global Acc: 60.16% | Global Loss: 1.1971 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1360 | Clean: 0.750 | Agree: 0.000
+
+==================== Round 278 ====================
+  --> [Edge 01] clients=10 loss=0.0972 clean=0.764 agree=0.000
+Global Acc: 57.82% | Global Loss: 1.2690 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0972 | Clean: 0.764 | Agree: 0.000
+
+==================== Round 279 ====================
+  --> [Edge 01] clients=10 loss=0.1124 clean=0.770 agree=0.000
+Global Acc: 59.77% | Global Loss: 1.1808 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1124 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 280 ====================
+  --> [Edge 01] clients=10 loss=0.1561 clean=0.811 agree=0.000
+Global Acc: 61.88% | Global Loss: 1.1059 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1561 | Clean: 0.811 | Agree: 0.000
+
+==================== Round 281 ====================
+  --> [Edge 01] clients=10 loss=0.1070 clean=0.735 agree=0.000
+Global Acc: 61.60% | Global Loss: 1.1522 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1070 | Clean: 0.735 | Agree: 0.000
+
+==================== Round 282 ====================
+  --> [Edge 01] clients=10 loss=0.1376 clean=0.727 agree=0.000
+Global Acc: 60.49% | Global Loss: 1.1800 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1376 | Clean: 0.727 | Agree: 0.000
+
+==================== Round 283 ====================
+  --> [Edge 01] clients=10 loss=0.1932 clean=0.822 agree=0.000
+Global Acc: 62.46% | Global Loss: 1.0960 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1932 | Clean: 0.822 | Agree: 0.000
+
+==================== Round 284 ====================
+  --> [Edge 01] clients=10 loss=0.1059 clean=0.768 agree=0.000
+Global Acc: 58.30% | Global Loss: 1.2549 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1059 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 285 ====================
+  --> [Edge 01] clients=10 loss=0.1103 clean=0.775 agree=0.000
+Global Acc: 59.84% | Global Loss: 1.2205 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1103 | Clean: 0.775 | Agree: 0.000
+
+==================== Round 286 ====================
+  --> [Edge 01] clients=10 loss=0.0934 clean=0.809 agree=0.000
+Global Acc: 56.32% | Global Loss: 1.2957 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0934 | Clean: 0.809 | Agree: 0.000
+
+==================== Round 287 ====================
+  --> [Edge 01] clients=10 loss=0.1679 clean=0.757 agree=0.000
+Global Acc: 60.87% | Global Loss: 1.1351 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1679 | Clean: 0.757 | Agree: 0.000
+
+==================== Round 288 ====================
+  --> [Edge 01] clients=10 loss=0.1010 clean=0.769 agree=0.000
+Global Acc: 61.97% | Global Loss: 1.1194 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1010 | Clean: 0.769 | Agree: 0.000
+
+==================== Round 289 ====================
+  --> [Edge 01] clients=10 loss=0.1140 clean=0.777 agree=0.000
+Global Acc: 62.60% | Global Loss: 1.1005 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1140 | Clean: 0.777 | Agree: 0.000
+
+==================== Round 290 ====================
+  --> [Edge 01] clients=10 loss=0.0815 clean=0.802 agree=0.000
+Global Acc: 57.96% | Global Loss: 1.2462 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0815 | Clean: 0.802 | Agree: 0.000
+
+==================== Round 291 ====================
+  --> [Edge 01] clients=10 loss=0.1298 clean=0.706 agree=0.000
+Global Acc: 61.13% | Global Loss: 1.1658 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1298 | Clean: 0.706 | Agree: 0.000
+
+==================== Round 292 ====================
+  --> [Edge 01] clients=10 loss=0.1010 clean=0.837 agree=0.000
+Global Acc: 58.60% | Global Loss: 1.1868 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1010 | Clean: 0.837 | Agree: 0.000
+
+==================== Round 293 ====================
+  --> [Edge 01] clients=10 loss=0.1073 clean=0.795 agree=0.000
+Global Acc: 55.81% | Global Loss: 1.3025 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1073 | Clean: 0.795 | Agree: 0.000
+
+==================== Round 294 ====================
+  --> [Edge 01] clients=10 loss=0.1080 clean=0.803 agree=0.000
+Global Acc: 61.81% | Global Loss: 1.1427 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1080 | Clean: 0.803 | Agree: 0.000
+
+==================== Round 295 ====================
+  --> [Edge 01] clients=10 loss=0.1010 clean=0.881 agree=0.000
+Global Acc: 55.58% | Global Loss: 1.4721 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1010 | Clean: 0.881 | Agree: 0.000
+
+==================== Round 296 ====================
+  --> [Edge 01] clients=10 loss=0.1034 clean=0.806 agree=0.000
+Global Acc: 57.60% | Global Loss: 1.2689 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1034 | Clean: 0.806 | Agree: 0.000
+
+==================== Round 297 ====================
+  --> [Edge 01] clients=10 loss=0.1135 clean=0.740 agree=0.000
+Global Acc: 60.10% | Global Loss: 1.2115 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1135 | Clean: 0.740 | Agree: 0.000
+
+==================== Round 298 ====================
+  --> [Edge 01] clients=10 loss=0.1358 clean=0.818 agree=0.000
+Global Acc: 61.12% | Global Loss: 1.1722 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1358 | Clean: 0.818 | Agree: 0.000
+
+==================== Round 299 ====================
+  --> [Edge 01] clients=10 loss=0.1002 clean=0.865 agree=0.000
+Global Acc: 51.08% | Global Loss: 1.4446 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1002 | Clean: 0.865 | Agree: 0.000
+
+==================== Round 300 ====================
+  --> [Edge 01] clients=10 loss=0.1312 clean=0.745 agree=0.000
+Global Acc: 60.94% | Global Loss: 1.1384 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1312 | Clean: 0.745 | Agree: 0.000
+
+==================== Round 301 ====================
+  --> [Edge 01] clients=10 loss=0.1322 clean=0.772 agree=0.000
+Global Acc: 52.53% | Global Loss: 1.3995 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1322 | Clean: 0.772 | Agree: 0.000
+
+==================== Round 302 ====================
+  --> [Edge 01] clients=10 loss=0.1135 clean=0.782 agree=0.000
+Global Acc: 61.14% | Global Loss: 1.1049 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1135 | Clean: 0.782 | Agree: 0.000
+
+==================== Round 303 ====================
+  --> [Edge 01] clients=10 loss=0.1182 clean=0.846 agree=0.000
+Global Acc: 59.26% | Global Loss: 1.1799 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1182 | Clean: 0.846 | Agree: 0.000
+
+==================== Round 304 ====================
+  --> [Edge 01] clients=10 loss=0.1467 clean=0.757 agree=0.000
+Global Acc: 60.20% | Global Loss: 1.1926 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1467 | Clean: 0.757 | Agree: 0.000
+
+==================== Round 305 ====================
+  --> [Edge 01] clients=10 loss=0.1549 clean=0.762 agree=0.000
+Global Acc: 62.47% | Global Loss: 1.0940 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1549 | Clean: 0.762 | Agree: 0.000
+
+==================== Round 306 ====================
+  --> [Edge 01] clients=10 loss=0.2044 clean=0.735 agree=0.000
+Global Acc: 62.37% | Global Loss: 1.1360 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2044 | Clean: 0.735 | Agree: 0.000
+
+==================== Round 307 ====================
+  --> [Edge 01] clients=10 loss=0.1605 clean=0.768 agree=0.000
+Global Acc: 58.59% | Global Loss: 1.2446 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1605 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 308 ====================
+  --> [Edge 01] clients=10 loss=0.1180 clean=0.744 agree=0.000
+Global Acc: 58.25% | Global Loss: 1.2420 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1180 | Clean: 0.744 | Agree: 0.000
+
+==================== Round 309 ====================
+  --> [Edge 01] clients=10 loss=0.1295 clean=0.799 agree=0.000
+Global Acc: 61.94% | Global Loss: 1.1044 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1295 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 310 ====================
+  --> [Edge 01] clients=10 loss=0.1096 clean=0.803 agree=0.000
+Global Acc: 62.28% | Global Loss: 1.1212 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1096 | Clean: 0.803 | Agree: 0.000
+
+==================== Round 311 ====================
+  --> [Edge 01] clients=10 loss=0.1658 clean=0.782 agree=0.000
+Global Acc: 58.24% | Global Loss: 1.2438 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1658 | Clean: 0.782 | Agree: 0.000
+
+==================== Round 312 ====================
+  --> [Edge 01] clients=10 loss=0.0976 clean=0.768 agree=0.000
+Global Acc: 63.27% | Global Loss: 1.0797 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0976 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 313 ====================
+  --> [Edge 01] clients=10 loss=0.1172 clean=0.836 agree=0.000
+Global Acc: 62.05% | Global Loss: 1.2170 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1172 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 314 ====================
+  --> [Edge 01] clients=10 loss=0.0937 clean=0.721 agree=0.000
+Global Acc: 63.70% | Global Loss: 1.0595 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0937 | Clean: 0.721 | Agree: 0.000
+
+==================== Round 315 ====================
+  --> [Edge 01] clients=10 loss=0.1227 clean=0.814 agree=0.000
+Global Acc: 62.25% | Global Loss: 1.1101 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1227 | Clean: 0.814 | Agree: 0.000
+
+==================== Round 316 ====================
+  --> [Edge 01] clients=10 loss=0.0735 clean=0.774 agree=0.000
+Global Acc: 56.93% | Global Loss: 1.2484 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0735 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 317 ====================
+  --> [Edge 01] clients=10 loss=0.1540 clean=0.710 agree=0.000
+Global Acc: 59.21% | Global Loss: 1.1962 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1540 | Clean: 0.710 | Agree: 0.000
+
+==================== Round 318 ====================
+  --> [Edge 01] clients=10 loss=0.1308 clean=0.798 agree=0.000
+Global Acc: 62.40% | Global Loss: 1.1046 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1308 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 319 ====================
+  --> [Edge 01] clients=10 loss=0.1477 clean=0.755 agree=0.000
+Global Acc: 61.52% | Global Loss: 1.1445 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1477 | Clean: 0.755 | Agree: 0.000
+
+==================== Round 320 ====================
+  --> [Edge 01] clients=10 loss=0.1022 clean=0.771 agree=0.000
+Global Acc: 64.25% | Global Loss: 1.0611 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1022 | Clean: 0.771 | Agree: 0.000
+
+==================== Round 321 ====================
+  --> [Edge 01] clients=10 loss=0.0977 clean=0.762 agree=0.000
+Global Acc: 58.06% | Global Loss: 1.2273 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0977 | Clean: 0.762 | Agree: 0.000
+
+==================== Round 322 ====================
+  --> [Edge 01] clients=10 loss=0.1078 clean=0.805 agree=0.000
+Global Acc: 56.97% | Global Loss: 1.2776 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1078 | Clean: 0.805 | Agree: 0.000
+
+==================== Round 323 ====================
+  --> [Edge 01] clients=10 loss=0.1195 clean=0.778 agree=0.000
+Global Acc: 61.07% | Global Loss: 1.1531 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1195 | Clean: 0.778 | Agree: 0.000
+
+==================== Round 324 ====================
+  --> [Edge 01] clients=10 loss=0.1481 clean=0.771 agree=0.000
+Global Acc: 63.23% | Global Loss: 1.0914 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1481 | Clean: 0.771 | Agree: 0.000
+
+==================== Round 325 ====================
+  --> [Edge 01] clients=10 loss=0.0826 clean=0.774 agree=0.000
+Global Acc: 62.19% | Global Loss: 1.1132 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0826 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 326 ====================
+  --> [Edge 01] clients=10 loss=0.0957 clean=0.818 agree=0.000
+Global Acc: 58.52% | Global Loss: 1.2087 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0957 | Clean: 0.818 | Agree: 0.000
+
+==================== Round 327 ====================
+  --> [Edge 01] clients=10 loss=0.1282 clean=0.760 agree=0.000
+Global Acc: 56.71% | Global Loss: 1.3351 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1282 | Clean: 0.760 | Agree: 0.000
+
+==================== Round 328 ====================
+  --> [Edge 01] clients=10 loss=0.1094 clean=0.821 agree=0.000
+Global Acc: 63.21% | Global Loss: 1.1123 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1094 | Clean: 0.821 | Agree: 0.000
+
+==================== Round 329 ====================
+  --> [Edge 01] clients=10 loss=0.1462 clean=0.747 agree=0.000
+Global Acc: 63.15% | Global Loss: 1.1156 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1462 | Clean: 0.747 | Agree: 0.000
+
+==================== Round 330 ====================
+  --> [Edge 01] clients=10 loss=0.0895 clean=0.799 agree=0.000
+Global Acc: 65.74% | Global Loss: 1.0273 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0895 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 331 ====================
+  --> [Edge 01] clients=10 loss=0.0906 clean=0.805 agree=0.000
+Global Acc: 66.56% | Global Loss: 0.9975 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0906 | Clean: 0.805 | Agree: 0.000
+
+==================== Round 332 ====================
+  --> [Edge 01] clients=10 loss=0.0917 clean=0.754 agree=0.000
+Global Acc: 60.85% | Global Loss: 1.1839 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0917 | Clean: 0.754 | Agree: 0.000
+
+==================== Round 333 ====================
+  --> [Edge 01] clients=10 loss=0.0915 clean=0.744 agree=0.000
+Global Acc: 65.87% | Global Loss: 1.0022 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0915 | Clean: 0.744 | Agree: 0.000
+
+==================== Round 334 ====================
+  --> [Edge 01] clients=10 loss=0.1257 clean=0.731 agree=0.000
+Global Acc: 64.15% | Global Loss: 1.0390 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1257 | Clean: 0.731 | Agree: 0.000
+
+==================== Round 335 ====================
+  --> [Edge 01] clients=10 loss=0.0843 clean=0.835 agree=0.000
+Global Acc: 62.37% | Global Loss: 1.1212 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0843 | Clean: 0.835 | Agree: 0.000
+
+==================== Round 336 ====================
+  --> [Edge 01] clients=10 loss=0.0959 clean=0.797 agree=0.000
+Global Acc: 59.59% | Global Loss: 1.1768 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0959 | Clean: 0.797 | Agree: 0.000
+
+==================== Round 337 ====================
+  --> [Edge 01] clients=10 loss=0.1241 clean=0.766 agree=0.000
+Global Acc: 65.00% | Global Loss: 1.0183 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1241 | Clean: 0.766 | Agree: 0.000
+
+==================== Round 338 ====================
+  --> [Edge 01] clients=10 loss=0.0953 clean=0.763 agree=0.000
+Global Acc: 65.06% | Global Loss: 1.0099 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0953 | Clean: 0.763 | Agree: 0.000
+
+==================== Round 339 ====================
+  --> [Edge 01] clients=10 loss=0.0919 clean=0.743 agree=0.000
+Global Acc: 63.15% | Global Loss: 1.0746 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0919 | Clean: 0.743 | Agree: 0.000
+
+==================== Round 340 ====================
+  --> [Edge 01] clients=10 loss=0.1295 clean=0.763 agree=0.000
+Global Acc: 62.91% | Global Loss: 1.0478 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1295 | Clean: 0.763 | Agree: 0.000
+
+==================== Round 341 ====================
+  --> [Edge 01] clients=10 loss=0.0784 clean=0.726 agree=0.000
+Global Acc: 56.52% | Global Loss: 1.2996 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0784 | Clean: 0.726 | Agree: 0.000
+
+==================== Round 342 ====================
+  --> [Edge 01] clients=10 loss=0.0818 clean=0.787 agree=0.000
+Global Acc: 57.77% | Global Loss: 1.3408 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0818 | Clean: 0.787 | Agree: 0.000
+
+==================== Round 343 ====================
+  --> [Edge 01] clients=10 loss=0.1364 clean=0.771 agree=0.000
+Global Acc: 61.04% | Global Loss: 1.1970 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1364 | Clean: 0.771 | Agree: 0.000
+
+==================== Round 344 ====================
+  --> [Edge 01] clients=10 loss=0.1614 clean=0.790 agree=0.000
+Global Acc: 63.08% | Global Loss: 1.0766 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1614 | Clean: 0.790 | Agree: 0.000
+
+==================== Round 345 ====================
+  --> [Edge 01] clients=10 loss=0.1076 clean=0.732 agree=0.000
+Global Acc: 59.47% | Global Loss: 1.2361 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1076 | Clean: 0.732 | Agree: 0.000
+
+==================== Round 346 ====================
+  --> [Edge 01] clients=10 loss=0.0956 clean=0.763 agree=0.000
+Global Acc: 62.07% | Global Loss: 1.1444 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0956 | Clean: 0.763 | Agree: 0.000
+
+==================== Round 347 ====================
+  --> [Edge 01] clients=10 loss=0.0926 clean=0.803 agree=0.000
+Global Acc: 62.97% | Global Loss: 1.1385 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0926 | Clean: 0.803 | Agree: 0.000
+
+==================== Round 348 ====================
+  --> [Edge 01] clients=10 loss=0.0881 clean=0.858 agree=0.000
+Global Acc: 64.94% | Global Loss: 1.0186 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0881 | Clean: 0.858 | Agree: 0.000
+
+==================== Round 349 ====================
+  --> [Edge 01] clients=10 loss=0.1049 clean=0.734 agree=0.000
+Global Acc: 62.32% | Global Loss: 1.1134 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1049 | Clean: 0.734 | Agree: 0.000
+
+==================== Round 350 ====================
+  --> [Edge 01] clients=10 loss=0.1298 clean=0.802 agree=0.000
+Global Acc: 65.19% | Global Loss: 1.0154 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1298 | Clean: 0.802 | Agree: 0.000
+
+==================== Round 351 ====================
+  --> [Edge 01] clients=10 loss=0.1596 clean=0.779 agree=0.000
+Global Acc: 61.34% | Global Loss: 1.1579 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1596 | Clean: 0.779 | Agree: 0.000
+
+==================== Round 352 ====================
+  --> [Edge 01] clients=10 loss=0.0981 clean=0.789 agree=0.000
+Global Acc: 61.48% | Global Loss: 1.1454 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0981 | Clean: 0.789 | Agree: 0.000
+
+==================== Round 353 ====================
+  --> [Edge 01] clients=10 loss=0.1076 clean=0.837 agree=0.000
+Global Acc: 62.77% | Global Loss: 1.0954 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1076 | Clean: 0.837 | Agree: 0.000
+
+==================== Round 354 ====================
+  --> [Edge 01] clients=10 loss=0.1245 clean=0.751 agree=0.000
+Global Acc: 61.92% | Global Loss: 1.1619 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1245 | Clean: 0.751 | Agree: 0.000
+
+==================== Round 355 ====================
+  --> [Edge 01] clients=10 loss=0.0966 clean=0.807 agree=0.000
+Global Acc: 64.16% | Global Loss: 1.0676 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0966 | Clean: 0.807 | Agree: 0.000
+
+==================== Round 356 ====================
+  --> [Edge 01] clients=10 loss=0.1013 clean=0.788 agree=0.000
+Global Acc: 59.98% | Global Loss: 1.2370 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1013 | Clean: 0.788 | Agree: 0.000
+
+==================== Round 357 ====================
+  --> [Edge 01] clients=10 loss=0.0837 clean=0.731 agree=0.000
+Global Acc: 59.42% | Global Loss: 1.2250 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0837 | Clean: 0.731 | Agree: 0.000
+
+==================== Round 358 ====================
+  --> [Edge 01] clients=10 loss=0.0931 clean=0.809 agree=0.000
+Global Acc: 63.21% | Global Loss: 1.1183 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0931 | Clean: 0.809 | Agree: 0.000
+
+==================== Round 359 ====================
+  --> [Edge 01] clients=10 loss=0.1232 clean=0.781 agree=0.000
+Global Acc: 60.48% | Global Loss: 1.2513 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1232 | Clean: 0.781 | Agree: 0.000
+
+==================== Round 360 ====================
+  --> [Edge 01] clients=10 loss=0.1249 clean=0.777 agree=0.000
+Global Acc: 60.32% | Global Loss: 1.2041 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1249 | Clean: 0.777 | Agree: 0.000
+
+==================== Round 361 ====================
+  --> [Edge 01] clients=10 loss=0.0794 clean=0.806 agree=0.000
+Global Acc: 64.34% | Global Loss: 1.1076 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0794 | Clean: 0.806 | Agree: 0.000
+
+==================== Round 362 ====================
+  --> [Edge 01] clients=10 loss=0.1348 clean=0.795 agree=0.000
+Global Acc: 54.55% | Global Loss: 1.3473 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1348 | Clean: 0.795 | Agree: 0.000
+
+==================== Round 363 ====================
+  --> [Edge 01] clients=10 loss=0.0911 clean=0.768 agree=0.000
+Global Acc: 62.60% | Global Loss: 1.1243 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0911 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 364 ====================
+  --> [Edge 01] clients=10 loss=0.1055 clean=0.767 agree=0.000
+Global Acc: 58.99% | Global Loss: 1.2347 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1055 | Clean: 0.767 | Agree: 0.000
+
+==================== Round 365 ====================
+  --> [Edge 01] clients=10 loss=0.0935 clean=0.798 agree=0.000
+Global Acc: 61.55% | Global Loss: 1.1790 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0935 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 366 ====================
+  --> [Edge 01] clients=10 loss=0.0912 clean=0.743 agree=0.000
+Global Acc: 59.94% | Global Loss: 1.2145 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0912 | Clean: 0.743 | Agree: 0.000
+
+==================== Round 367 ====================
+  --> [Edge 01] clients=10 loss=0.1026 clean=0.740 agree=0.000
+Global Acc: 62.52% | Global Loss: 1.1094 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1026 | Clean: 0.740 | Agree: 0.000
+
+==================== Round 368 ====================
+  --> [Edge 01] clients=10 loss=0.0862 clean=0.781 agree=0.000
+Global Acc: 64.29% | Global Loss: 1.0630 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0862 | Clean: 0.781 | Agree: 0.000
+
+==================== Round 369 ====================
+  --> [Edge 01] clients=10 loss=0.1161 clean=0.736 agree=0.000
+Global Acc: 60.21% | Global Loss: 1.2375 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1161 | Clean: 0.736 | Agree: 0.000
+
+==================== Round 370 ====================
+  --> [Edge 01] clients=10 loss=0.1047 clean=0.762 agree=0.000
+Global Acc: 62.90% | Global Loss: 1.1345 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1047 | Clean: 0.762 | Agree: 0.000
+
+==================== Round 371 ====================
+  --> [Edge 01] clients=10 loss=0.1003 clean=0.748 agree=0.000
+Global Acc: 62.69% | Global Loss: 1.1484 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1003 | Clean: 0.748 | Agree: 0.000
+
+==================== Round 372 ====================
+  --> [Edge 01] clients=10 loss=0.1035 clean=0.732 agree=0.000
+Global Acc: 59.52% | Global Loss: 1.1570 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1035 | Clean: 0.732 | Agree: 0.000
+
+==================== Round 373 ====================
+  --> [Edge 01] clients=10 loss=0.0979 clean=0.817 agree=0.000
+Global Acc: 65.12% | Global Loss: 1.0358 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0979 | Clean: 0.817 | Agree: 0.000
+
+==================== Round 374 ====================
+  --> [Edge 01] clients=10 loss=0.0874 clean=0.751 agree=0.000
+Global Acc: 61.52% | Global Loss: 1.1129 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0874 | Clean: 0.751 | Agree: 0.000
+
+==================== Round 375 ====================
+  --> [Edge 01] clients=10 loss=0.1073 clean=0.796 agree=0.000
+Global Acc: 64.67% | Global Loss: 1.0525 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1073 | Clean: 0.796 | Agree: 0.000
+
+==================== Round 376 ====================
+  --> [Edge 01] clients=10 loss=0.1051 clean=0.759 agree=0.000
+Global Acc: 67.33% | Global Loss: 0.9887 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1051 | Clean: 0.759 | Agree: 0.000
+
+==================== Round 377 ====================
+  --> [Edge 01] clients=10 loss=0.0604 clean=0.841 agree=0.000
+Global Acc: 65.38% | Global Loss: 1.0546 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0604 | Clean: 0.841 | Agree: 0.000
+
+==================== Round 378 ====================
+  --> [Edge 01] clients=10 loss=0.1031 clean=0.731 agree=0.000
+Global Acc: 61.16% | Global Loss: 1.2083 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1031 | Clean: 0.731 | Agree: 0.000
+
+==================== Round 379 ====================
+  --> [Edge 01] clients=10 loss=0.0922 clean=0.750 agree=0.000
+Global Acc: 58.92% | Global Loss: 1.2653 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0922 | Clean: 0.750 | Agree: 0.000
+
+==================== Round 380 ====================
+  --> [Edge 01] clients=10 loss=0.2424 clean=0.804 agree=0.000
+Global Acc: 56.18% | Global Loss: 1.4102 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2424 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 381 ====================
+  --> [Edge 01] clients=10 loss=0.1480 clean=0.798 agree=0.000
+Global Acc: 61.63% | Global Loss: 1.1453 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1480 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 382 ====================
+  --> [Edge 01] clients=10 loss=0.1073 clean=0.798 agree=0.000
+Global Acc: 63.65% | Global Loss: 1.0726 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1073 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 383 ====================
+  --> [Edge 01] clients=10 loss=0.1069 clean=0.819 agree=0.000
+Global Acc: 62.21% | Global Loss: 1.1009 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1069 | Clean: 0.819 | Agree: 0.000
+
+==================== Round 384 ====================
+  --> [Edge 01] clients=10 loss=0.0826 clean=0.868 agree=0.000
+Global Acc: 63.31% | Global Loss: 1.1021 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0826 | Clean: 0.868 | Agree: 0.000
+
+==================== Round 385 ====================
+  --> [Edge 01] clients=10 loss=0.1141 clean=0.777 agree=0.000
+Global Acc: 60.36% | Global Loss: 1.1797 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1141 | Clean: 0.777 | Agree: 0.000
+
+==================== Round 386 ====================
+  --> [Edge 01] clients=10 loss=0.0958 clean=0.783 agree=0.000
+Global Acc: 62.60% | Global Loss: 1.1312 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0958 | Clean: 0.783 | Agree: 0.000
+
+==================== Round 387 ====================
+  --> [Edge 01] clients=10 loss=0.0797 clean=0.695 agree=0.000
+Global Acc: 62.36% | Global Loss: 1.1465 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0797 | Clean: 0.695 | Agree: 0.000
+
+==================== Round 388 ====================
+  --> [Edge 01] clients=10 loss=0.1231 clean=0.828 agree=0.000
+Global Acc: 64.65% | Global Loss: 1.1041 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1231 | Clean: 0.828 | Agree: 0.000
+
+==================== Round 389 ====================
+  --> [Edge 01] clients=10 loss=0.0792 clean=0.757 agree=0.000
+Global Acc: 65.25% | Global Loss: 1.0373 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0792 | Clean: 0.757 | Agree: 0.000
+
+==================== Round 390 ====================
+  --> [Edge 01] clients=10 loss=0.1278 clean=0.783 agree=0.000
+Global Acc: 59.74% | Global Loss: 1.2560 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1278 | Clean: 0.783 | Agree: 0.000
+
+==================== Round 391 ====================
+  --> [Edge 01] clients=10 loss=0.0892 clean=0.745 agree=0.000
+Global Acc: 64.05% | Global Loss: 1.0661 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0892 | Clean: 0.745 | Agree: 0.000
+
+==================== Round 392 ====================
+  --> [Edge 01] clients=10 loss=0.0824 clean=0.773 agree=0.000
+Global Acc: 63.30% | Global Loss: 1.1261 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0824 | Clean: 0.773 | Agree: 0.000
+
+==================== Round 393 ====================
+  --> [Edge 01] clients=10 loss=0.1063 clean=0.795 agree=0.000
+Global Acc: 59.82% | Global Loss: 1.1967 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1063 | Clean: 0.795 | Agree: 0.000
+
+==================== Round 394 ====================
+  --> [Edge 01] clients=10 loss=0.0880 clean=0.801 agree=0.000
+Global Acc: 67.95% | Global Loss: 0.9480 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0880 | Clean: 0.801 | Agree: 0.000
+
+==================== Round 395 ====================
+  --> [Edge 01] clients=10 loss=0.1139 clean=0.719 agree=0.000
+Global Acc: 66.53% | Global Loss: 1.0027 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1139 | Clean: 0.719 | Agree: 0.000
+
+==================== Round 396 ====================
+  --> [Edge 01] clients=10 loss=0.0770 clean=0.836 agree=0.000
+Global Acc: 65.51% | Global Loss: 1.0474 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0770 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 397 ====================
+  --> [Edge 01] clients=10 loss=0.0849 clean=0.783 agree=0.000
+Global Acc: 61.30% | Global Loss: 1.2193 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0849 | Clean: 0.783 | Agree: 0.000
+
+==================== Round 398 ====================
+  --> [Edge 01] clients=10 loss=0.1057 clean=0.813 agree=0.000
+Global Acc: 61.89% | Global Loss: 1.1456 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1057 | Clean: 0.813 | Agree: 0.000
+
+==================== Round 399 ====================
+  --> [Edge 01] clients=10 loss=0.1519 clean=0.768 agree=0.000
+Global Acc: 61.05% | Global Loss: 1.1851 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1519 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 400 ====================
+  --> [Edge 01] clients=10 loss=0.0874 clean=0.802 agree=0.000
+Global Acc: 60.67% | Global Loss: 1.2006 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0874 | Clean: 0.802 | Agree: 0.000
+
+==================== Round 401 ====================
+  --> [Edge 01] clients=10 loss=0.1149 clean=0.821 agree=0.000
+Global Acc: 62.80% | Global Loss: 1.0669 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1149 | Clean: 0.821 | Agree: 0.000
+
+==================== Round 402 ====================
+  --> [Edge 01] clients=10 loss=0.0802 clean=0.792 agree=0.000
+Global Acc: 63.89% | Global Loss: 1.1363 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0802 | Clean: 0.792 | Agree: 0.000
+
+==================== Round 403 ====================
+  --> [Edge 01] clients=10 loss=0.1839 clean=0.770 agree=0.000
+Global Acc: 56.29% | Global Loss: 1.3600 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1839 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 404 ====================
+  --> [Edge 01] clients=10 loss=0.1838 clean=0.814 agree=0.000
+Global Acc: 60.96% | Global Loss: 1.2355 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1838 | Clean: 0.814 | Agree: 0.000
+
+==================== Round 405 ====================
+  --> [Edge 01] clients=10 loss=0.0659 clean=0.859 agree=0.000
+Global Acc: 56.56% | Global Loss: 1.3885 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0659 | Clean: 0.859 | Agree: 0.000
+
+==================== Round 406 ====================
+  --> [Edge 01] clients=10 loss=0.1052 clean=0.749 agree=0.000
+Global Acc: 61.04% | Global Loss: 1.1931 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1052 | Clean: 0.749 | Agree: 0.000
+
+==================== Round 407 ====================
+  --> [Edge 01] clients=10 loss=0.1312 clean=0.808 agree=0.000
+Global Acc: 56.14% | Global Loss: 1.3717 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1312 | Clean: 0.808 | Agree: 0.000
+
+==================== Round 408 ====================
+  --> [Edge 01] clients=10 loss=0.0857 clean=0.806 agree=0.000
+Global Acc: 58.90% | Global Loss: 1.2632 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0857 | Clean: 0.806 | Agree: 0.000
+
+==================== Round 409 ====================
+  --> [Edge 01] clients=10 loss=0.1203 clean=0.763 agree=0.000
+Global Acc: 61.06% | Global Loss: 1.1602 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1203 | Clean: 0.763 | Agree: 0.000
+
+==================== Round 410 ====================
+  --> [Edge 01] clients=10 loss=0.1078 clean=0.807 agree=0.000
+Global Acc: 64.25% | Global Loss: 1.0601 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1078 | Clean: 0.807 | Agree: 0.000
+
+==================== Round 411 ====================
+  --> [Edge 01] clients=10 loss=0.0988 clean=0.728 agree=0.000
+Global Acc: 63.36% | Global Loss: 1.1137 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0988 | Clean: 0.728 | Agree: 0.000
+
+==================== Round 412 ====================
+  --> [Edge 01] clients=10 loss=0.0763 clean=0.726 agree=0.000
+Global Acc: 50.46% | Global Loss: 1.5883 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0763 | Clean: 0.726 | Agree: 0.000
+
+==================== Round 413 ====================
+  --> [Edge 01] clients=10 loss=0.1604 clean=0.861 agree=0.000
+Global Acc: 59.42% | Global Loss: 1.2585 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1604 | Clean: 0.861 | Agree: 0.000
+
+==================== Round 414 ====================
+  --> [Edge 01] clients=10 loss=0.0857 clean=0.770 agree=0.000
+Global Acc: 63.30% | Global Loss: 1.0994 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0857 | Clean: 0.770 | Agree: 0.000
+
+==================== Round 415 ====================
+  --> [Edge 01] clients=10 loss=0.0977 clean=0.796 agree=0.000
+Global Acc: 63.14% | Global Loss: 1.1135 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0977 | Clean: 0.796 | Agree: 0.000
+
+==================== Round 416 ====================
+  --> [Edge 01] clients=10 loss=0.0715 clean=0.840 agree=0.000
+Global Acc: 65.52% | Global Loss: 1.0364 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0715 | Clean: 0.840 | Agree: 0.000
+
+==================== Round 417 ====================
+  --> [Edge 01] clients=10 loss=0.0904 clean=0.711 agree=0.000
+Global Acc: 56.74% | Global Loss: 1.3351 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0904 | Clean: 0.711 | Agree: 0.000
+
+==================== Round 418 ====================
+  --> [Edge 01] clients=10 loss=0.1149 clean=0.787 agree=0.000
+Global Acc: 63.63% | Global Loss: 1.1163 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1149 | Clean: 0.787 | Agree: 0.000
+
+==================== Round 419 ====================
+  --> [Edge 01] clients=10 loss=0.0814 clean=0.799 agree=0.000
+Global Acc: 61.37% | Global Loss: 1.2015 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0814 | Clean: 0.799 | Agree: 0.000
+
+==================== Round 420 ====================
+  --> [Edge 01] clients=10 loss=0.0562 clean=0.789 agree=0.000
+Global Acc: 59.38% | Global Loss: 1.3100 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0562 | Clean: 0.789 | Agree: 0.000
+
+==================== Round 421 ====================
+  --> [Edge 01] clients=10 loss=0.1191 clean=0.858 agree=0.000
+Global Acc: 62.67% | Global Loss: 1.1495 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1191 | Clean: 0.858 | Agree: 0.000
+
+==================== Round 422 ====================
+  --> [Edge 01] clients=10 loss=0.1119 clean=0.794 agree=0.000
+Global Acc: 59.41% | Global Loss: 1.2243 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1119 | Clean: 0.794 | Agree: 0.000
+
+==================== Round 423 ====================
+  --> [Edge 01] clients=10 loss=0.2134 clean=0.789 agree=0.000
+Global Acc: 62.22% | Global Loss: 1.1496 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2134 | Clean: 0.789 | Agree: 0.000
+
+==================== Round 424 ====================
+  --> [Edge 01] clients=10 loss=0.1095 clean=0.704 agree=0.000
+Global Acc: 68.77% | Global Loss: 0.9286 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1095 | Clean: 0.704 | Agree: 0.000
+
+==================== Round 425 ====================
+  --> [Edge 01] clients=10 loss=0.1614 clean=0.784 agree=0.000
+Global Acc: 67.79% | Global Loss: 0.9508 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1614 | Clean: 0.784 | Agree: 0.000
+
+==================== Round 426 ====================
+  --> [Edge 01] clients=10 loss=0.1148 clean=0.771 agree=0.000
+Global Acc: 64.02% | Global Loss: 1.0885 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1148 | Clean: 0.771 | Agree: 0.000
+
+==================== Round 427 ====================
+  --> [Edge 01] clients=10 loss=0.0959 clean=0.769 agree=0.000
+Global Acc: 67.08% | Global Loss: 0.9710 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0959 | Clean: 0.769 | Agree: 0.000
+
+==================== Round 428 ====================
+  --> [Edge 01] clients=10 loss=0.1421 clean=0.779 agree=0.000
+Global Acc: 59.42% | Global Loss: 1.2418 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1421 | Clean: 0.779 | Agree: 0.000
+
+==================== Round 429 ====================
+  --> [Edge 01] clients=10 loss=0.1764 clean=0.749 agree=0.000
+Global Acc: 56.87% | Global Loss: 1.3255 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1764 | Clean: 0.749 | Agree: 0.000
+
+==================== Round 430 ====================
+  --> [Edge 01] clients=10 loss=0.1908 clean=0.792 agree=0.000
+Global Acc: 62.94% | Global Loss: 1.1134 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1908 | Clean: 0.792 | Agree: 0.000
+
+==================== Round 431 ====================
+  --> [Edge 01] clients=10 loss=0.0822 clean=0.733 agree=0.000
+Global Acc: 59.79% | Global Loss: 1.1843 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0822 | Clean: 0.733 | Agree: 0.000
+
+==================== Round 432 ====================
+  --> [Edge 01] clients=10 loss=0.0952 clean=0.769 agree=0.000
+Global Acc: 61.78% | Global Loss: 1.1288 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0952 | Clean: 0.769 | Agree: 0.000
+
+==================== Round 433 ====================
+  --> [Edge 01] clients=10 loss=0.1153 clean=0.830 agree=0.000
+Global Acc: 63.07% | Global Loss: 1.1016 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1153 | Clean: 0.830 | Agree: 0.000
+
+==================== Round 434 ====================
+  --> [Edge 01] clients=10 loss=0.1023 clean=0.804 agree=0.000
+Global Acc: 62.86% | Global Loss: 1.1314 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1023 | Clean: 0.804 | Agree: 0.000
+
+==================== Round 435 ====================
+  --> [Edge 01] clients=10 loss=0.1022 clean=0.794 agree=0.000
+Global Acc: 60.08% | Global Loss: 1.2573 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1022 | Clean: 0.794 | Agree: 0.000
+
+==================== Round 436 ====================
+  --> [Edge 01] clients=10 loss=0.1832 clean=0.759 agree=0.000
+Global Acc: 63.09% | Global Loss: 1.1023 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1832 | Clean: 0.759 | Agree: 0.000
+
+==================== Round 437 ====================
+  --> [Edge 01] clients=10 loss=0.1354 clean=0.807 agree=0.000
+Global Acc: 63.61% | Global Loss: 1.0808 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1354 | Clean: 0.807 | Agree: 0.000
+
+==================== Round 438 ====================
+  --> [Edge 01] clients=10 loss=0.1262 clean=0.819 agree=0.000
+Global Acc: 63.65% | Global Loss: 1.0631 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1262 | Clean: 0.819 | Agree: 0.000
+
+==================== Round 439 ====================
+  --> [Edge 01] clients=10 loss=0.0710 clean=0.836 agree=0.000
+Global Acc: 64.83% | Global Loss: 1.0359 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0710 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 440 ====================
+  --> [Edge 01] clients=10 loss=0.0893 clean=0.852 agree=0.000
+Global Acc: 60.55% | Global Loss: 1.2198 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0893 | Clean: 0.852 | Agree: 0.000
+
+==================== Round 441 ====================
+  --> [Edge 01] clients=10 loss=0.0829 clean=0.768 agree=0.000
+Global Acc: 61.44% | Global Loss: 1.1485 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0829 | Clean: 0.768 | Agree: 0.000
+
+==================== Round 442 ====================
+  --> [Edge 01] clients=10 loss=0.1027 clean=0.767 agree=0.000
+Global Acc: 63.74% | Global Loss: 1.0833 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1027 | Clean: 0.767 | Agree: 0.000
+
+==================== Round 443 ====================
+  --> [Edge 01] clients=10 loss=0.1511 clean=0.813 agree=0.000
+Global Acc: 63.69% | Global Loss: 1.0924 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1511 | Clean: 0.813 | Agree: 0.000
+
+==================== Round 444 ====================
+  --> [Edge 01] clients=10 loss=0.0830 clean=0.774 agree=0.000
+Global Acc: 63.58% | Global Loss: 1.1370 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0830 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 445 ====================
+  --> [Edge 01] clients=10 loss=0.0793 clean=0.784 agree=0.000
+Global Acc: 62.73% | Global Loss: 1.1577 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0793 | Clean: 0.784 | Agree: 0.000
+
+==================== Round 446 ====================
+  --> [Edge 01] clients=10 loss=0.0891 clean=0.752 agree=0.000
+Global Acc: 65.21% | Global Loss: 1.0599 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0891 | Clean: 0.752 | Agree: 0.000
+
+==================== Round 447 ====================
+  --> [Edge 01] clients=10 loss=0.1184 clean=0.817 agree=0.000
+Global Acc: 65.25% | Global Loss: 1.0527 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1184 | Clean: 0.817 | Agree: 0.000
+
+==================== Round 448 ====================
+  --> [Edge 01] clients=10 loss=0.0952 clean=0.742 agree=0.000
+Global Acc: 54.68% | Global Loss: 1.3741 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0952 | Clean: 0.742 | Agree: 0.000
+
+==================== Round 449 ====================
+  --> [Edge 01] clients=10 loss=0.1103 clean=0.783 agree=0.000
+Global Acc: 66.44% | Global Loss: 1.0311 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1103 | Clean: 0.783 | Agree: 0.000
+
+==================== Round 450 ====================
+  --> [Edge 01] clients=10 loss=0.1145 clean=0.737 agree=0.000
+Global Acc: 63.58% | Global Loss: 1.1324 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1145 | Clean: 0.737 | Agree: 0.000
+
+==================== Round 451 ====================
+  --> [Edge 01] clients=10 loss=0.2078 clean=0.749 agree=0.000
+Global Acc: 61.30% | Global Loss: 1.2107 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.2078 | Clean: 0.749 | Agree: 0.000
+
+==================== Round 452 ====================
+  --> [Edge 01] clients=10 loss=0.1738 clean=0.780 agree=0.000
+Global Acc: 61.39% | Global Loss: 1.2112 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1738 | Clean: 0.780 | Agree: 0.000
+
+==================== Round 453 ====================
+  --> [Edge 01] clients=10 loss=0.0694 clean=0.844 agree=0.000
+Global Acc: 61.62% | Global Loss: 1.1888 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0694 | Clean: 0.844 | Agree: 0.000
+
+==================== Round 454 ====================
+  --> [Edge 01] clients=10 loss=0.0871 clean=0.809 agree=0.000
+Global Acc: 64.14% | Global Loss: 1.0893 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0871 | Clean: 0.809 | Agree: 0.000
+
+==================== Round 455 ====================
+  --> [Edge 01] clients=10 loss=0.1518 clean=0.760 agree=0.000
+Global Acc: 56.75% | Global Loss: 1.4066 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1518 | Clean: 0.760 | Agree: 0.000
+
+==================== Round 456 ====================
+  --> [Edge 01] clients=10 loss=0.0836 clean=0.806 agree=0.000
+Global Acc: 57.23% | Global Loss: 1.3418 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0836 | Clean: 0.806 | Agree: 0.000
+
+==================== Round 457 ====================
+  --> [Edge 01] clients=10 loss=0.0947 clean=0.797 agree=0.000
+Global Acc: 61.78% | Global Loss: 1.1849 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0947 | Clean: 0.797 | Agree: 0.000
+
+==================== Round 458 ====================
+  --> [Edge 01] clients=10 loss=0.0656 clean=0.836 agree=0.000
+Global Acc: 61.62% | Global Loss: 1.1900 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0656 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 459 ====================
+  --> [Edge 01] clients=10 loss=0.1249 clean=0.792 agree=0.000
+Global Acc: 68.86% | Global Loss: 0.9298 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1249 | Clean: 0.792 | Agree: 0.000
+
+==================== Round 460 ====================
+  --> [Edge 01] clients=10 loss=0.0798 clean=0.800 agree=0.000
+Global Acc: 62.50% | Global Loss: 1.1430 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0798 | Clean: 0.800 | Agree: 0.000
+
+==================== Round 461 ====================
+  --> [Edge 01] clients=10 loss=0.1009 clean=0.713 agree=0.000
+Global Acc: 64.14% | Global Loss: 1.0980 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1009 | Clean: 0.713 | Agree: 0.000
+
+==================== Round 462 ====================
+  --> [Edge 01] clients=10 loss=0.0882 clean=0.796 agree=0.000
+Global Acc: 59.03% | Global Loss: 1.2638 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0882 | Clean: 0.796 | Agree: 0.000
+
+==================== Round 463 ====================
+  --> [Edge 01] clients=10 loss=0.1165 clean=0.817 agree=0.000
+Global Acc: 64.55% | Global Loss: 1.0870 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1165 | Clean: 0.817 | Agree: 0.000
+
+==================== Round 464 ====================
+  --> [Edge 01] clients=10 loss=0.1489 clean=0.766 agree=0.000
+Global Acc: 67.65% | Global Loss: 0.9551 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1489 | Clean: 0.766 | Agree: 0.000
+
+==================== Round 465 ====================
+  --> [Edge 01] clients=10 loss=0.1043 clean=0.813 agree=0.000
+Global Acc: 66.06% | Global Loss: 1.0011 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1043 | Clean: 0.813 | Agree: 0.000
+
+==================== Round 466 ====================
+  --> [Edge 01] clients=10 loss=0.0884 clean=0.813 agree=0.000
+Global Acc: 64.96% | Global Loss: 1.0246 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0884 | Clean: 0.813 | Agree: 0.000
+
+==================== Round 467 ====================
+  --> [Edge 01] clients=10 loss=0.1081 clean=0.762 agree=0.000
+Global Acc: 63.45% | Global Loss: 1.0828 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1081 | Clean: 0.762 | Agree: 0.000
+
+==================== Round 468 ====================
+  --> [Edge 01] clients=10 loss=0.1326 clean=0.778 agree=0.000
+Global Acc: 61.20% | Global Loss: 1.1520 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1326 | Clean: 0.778 | Agree: 0.000
+
+==================== Round 469 ====================
+  --> [Edge 01] clients=10 loss=0.0791 clean=0.798 agree=0.000
+Global Acc: 58.78% | Global Loss: 1.2743 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0791 | Clean: 0.798 | Agree: 0.000
+
+==================== Round 470 ====================
+  --> [Edge 01] clients=10 loss=0.1102 clean=0.774 agree=0.000
+Global Acc: 62.79% | Global Loss: 1.1377 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1102 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 471 ====================
+  --> [Edge 01] clients=10 loss=0.1025 clean=0.809 agree=0.000
+Global Acc: 61.62% | Global Loss: 1.1679 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1025 | Clean: 0.809 | Agree: 0.000
+
+==================== Round 472 ====================
+  --> [Edge 01] clients=10 loss=0.0806 clean=0.753 agree=0.000
+Global Acc: 66.94% | Global Loss: 0.9930 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0806 | Clean: 0.753 | Agree: 0.000
+
+==================== Round 473 ====================
+  --> [Edge 01] clients=10 loss=0.0866 clean=0.843 agree=0.000
+Global Acc: 66.99% | Global Loss: 0.9990 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0866 | Clean: 0.843 | Agree: 0.000
+
+==================== Round 474 ====================
+  --> [Edge 01] clients=10 loss=0.1614 clean=0.806 agree=0.000
+Global Acc: 62.09% | Global Loss: 1.1755 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1614 | Clean: 0.806 | Agree: 0.000
+
+==================== Round 475 ====================
+  --> [Edge 01] clients=10 loss=0.1163 clean=0.778 agree=0.000
+Global Acc: 65.64% | Global Loss: 1.0446 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1163 | Clean: 0.778 | Agree: 0.000
+
+==================== Round 476 ====================
+  --> [Edge 01] clients=10 loss=0.1014 clean=0.785 agree=0.000
+Global Acc: 66.64% | Global Loss: 0.9783 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1014 | Clean: 0.785 | Agree: 0.000
+
+==================== Round 477 ====================
+  --> [Edge 01] clients=10 loss=0.0945 clean=0.781 agree=0.000
+Global Acc: 67.15% | Global Loss: 0.9851 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0945 | Clean: 0.781 | Agree: 0.000
+
+==================== Round 478 ====================
+  --> [Edge 01] clients=10 loss=0.1450 clean=0.723 agree=0.000
+Global Acc: 66.46% | Global Loss: 1.0026 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1450 | Clean: 0.723 | Agree: 0.000
+
+==================== Round 479 ====================
+  --> [Edge 01] clients=10 loss=0.0913 clean=0.825 agree=0.000
+Global Acc: 63.41% | Global Loss: 1.1226 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0913 | Clean: 0.825 | Agree: 0.000
+
+==================== Round 480 ====================
+  --> [Edge 01] clients=10 loss=0.0811 clean=0.795 agree=0.000
+Global Acc: 67.17% | Global Loss: 1.0169 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0811 | Clean: 0.795 | Agree: 0.000
+
+==================== Round 481 ====================
+  --> [Edge 01] clients=10 loss=0.0900 clean=0.782 agree=0.000
+Global Acc: 62.95% | Global Loss: 1.1336 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0900 | Clean: 0.782 | Agree: 0.000
+
+==================== Round 482 ====================
+  --> [Edge 01] clients=10 loss=0.0848 clean=0.755 agree=0.000
+Global Acc: 63.53% | Global Loss: 1.0443 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0848 | Clean: 0.755 | Agree: 0.000
+
+==================== Round 483 ====================
+  --> [Edge 01] clients=10 loss=0.0802 clean=0.763 agree=0.000
+Global Acc: 62.57% | Global Loss: 1.0880 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0802 | Clean: 0.763 | Agree: 0.000
+
+==================== Round 484 ====================
+  --> [Edge 01] clients=10 loss=0.1141 clean=0.774 agree=0.000
+Global Acc: 64.41% | Global Loss: 1.0908 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1141 | Clean: 0.774 | Agree: 0.000
+
+==================== Round 485 ====================
+  --> [Edge 01] clients=10 loss=0.0805 clean=0.783 agree=0.000
+Global Acc: 64.41% | Global Loss: 1.0641 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0805 | Clean: 0.783 | Agree: 0.000
+
+==================== Round 486 ====================
+  --> [Edge 01] clients=10 loss=0.0869 clean=0.785 agree=0.000
+Global Acc: 67.19% | Global Loss: 1.0070 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0869 | Clean: 0.785 | Agree: 0.000
+
+==================== Round 487 ====================
+  --> [Edge 01] clients=10 loss=0.0969 clean=0.847 agree=0.000
+Global Acc: 66.56% | Global Loss: 1.0197 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0969 | Clean: 0.847 | Agree: 0.000
+
+==================== Round 488 ====================
+  --> [Edge 01] clients=10 loss=0.0878 clean=0.794 agree=0.000
+Global Acc: 61.89% | Global Loss: 1.1752 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0878 | Clean: 0.794 | Agree: 0.000
+
+==================== Round 489 ====================
+  --> [Edge 01] clients=10 loss=0.0843 clean=0.729 agree=0.000
+Global Acc: 59.06% | Global Loss: 1.3112 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0843 | Clean: 0.729 | Agree: 0.000
+
+==================== Round 490 ====================
+  --> [Edge 01] clients=10 loss=0.1011 clean=0.722 agree=0.000
+Global Acc: 62.28% | Global Loss: 1.1470 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1011 | Clean: 0.722 | Agree: 0.000
+
+==================== Round 491 ====================
+  --> [Edge 01] clients=10 loss=0.1019 clean=0.836 agree=0.000
+Global Acc: 57.02% | Global Loss: 1.3702 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1019 | Clean: 0.836 | Agree: 0.000
+
+==================== Round 492 ====================
+  --> [Edge 01] clients=10 loss=0.1274 clean=0.797 agree=0.000
+Global Acc: 63.04% | Global Loss: 1.0916 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1274 | Clean: 0.797 | Agree: 0.000
+
+==================== Round 493 ====================
+  --> [Edge 01] clients=10 loss=0.1047 clean=0.751 agree=0.000
+Global Acc: 61.98% | Global Loss: 1.1343 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1047 | Clean: 0.751 | Agree: 0.000
+
+==================== Round 494 ====================
+  --> [Edge 01] clients=10 loss=0.1064 clean=0.709 agree=0.000
+Global Acc: 66.25% | Global Loss: 1.0031 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1064 | Clean: 0.709 | Agree: 0.000
+
+==================== Round 495 ====================
+  --> [Edge 01] clients=10 loss=0.0650 clean=0.862 agree=0.000
+Global Acc: 59.82% | Global Loss: 1.2469 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0650 | Clean: 0.862 | Agree: 0.000
+
+==================== Round 496 ====================
+  --> [Edge 01] clients=10 loss=0.0816 clean=0.821 agree=0.000
+Global Acc: 67.51% | Global Loss: 0.9609 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0816 | Clean: 0.821 | Agree: 0.000
+
+==================== Round 497 ====================
+  --> [Edge 01] clients=10 loss=0.0569 clean=0.841 agree=0.000
+Global Acc: 64.25% | Global Loss: 1.1150 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0569 | Clean: 0.841 | Agree: 0.000
+
+==================== Round 498 ====================
+  --> [Edge 01] clients=10 loss=0.1014 clean=0.782 agree=0.000
+Global Acc: 68.95% | Global Loss: 0.9341 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.1014 | Clean: 0.782 | Agree: 0.000
+
+==================== Round 499 ====================
+  --> [Edge 01] clients=10 loss=0.0943 clean=0.769 agree=0.000
+Global Acc: 64.99% | Global Loss: 1.0504 | Personal APA: 0.00% | Personal Loss: 0.0000 | Train Loss: 0.0943 | Clean: 0.769 | Agree: 0.000

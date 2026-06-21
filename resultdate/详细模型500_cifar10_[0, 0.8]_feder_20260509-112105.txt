@@ -1,0 +1,2983 @@
+Experiment Start: 20260509-112105
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=500, fed_method='fedavg', feder_exp_weight=0.6, forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[0, 0.8], iid=False, labeling='soft', lambda_u=25, local_bs=50, local_ep=1, lr=0.01, lr_decay=0.1, method='feder', mm_alpha=4, model='cnn4conv', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=5, num_neighbors=2, num_shards=1000, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=True, split='user', uncertainty_threshold=0.05, verbose=False, w_alpha=0.5, warmup_epochs=80, weight_decay=0)
+==================================================
+
+==================== Round   0 ====================
+  --> [Edge Server 1] Local APA: 11.15% | Local Loss: 2.4443
+  --> [Edge Server 2] Local APA: 10.05% | Local Loss: 2.5273
+  --> [Edge Server 3] Local APA: 12.50% | Local Loss: 2.3833
+  --> [Edge Server 4] Local APA: 10.65% | Local Loss: 2.4668
+  --> [Edge Server 5] Local APA: 9.60% | Local Loss: 2.4733
+----------------------------------------------------
+Overall Metrics -> Train Loss: 2.2250 | Test Loss: 2.4590 | Global APA: 10.79%
+
+==================== Round   1 ====================
+  --> [Edge Server 1] Local APA: 18.20% | Local Loss: 2.1769
+  --> [Edge Server 2] Local APA: 15.95% | Local Loss: 2.2278
+  --> [Edge Server 3] Local APA: 19.15% | Local Loss: 2.1829
+  --> [Edge Server 4] Local APA: 17.10% | Local Loss: 2.2294
+  --> [Edge Server 5] Local APA: 16.30% | Local Loss: 2.2562
+----------------------------------------------------
+Overall Metrics -> Train Loss: 2.1023 | Test Loss: 2.2147 | Global APA: 17.34%
+
+==================== Round   2 ====================
+  --> [Edge Server 1] Local APA: 25.55% | Local Loss: 2.0172
+  --> [Edge Server 2] Local APA: 21.15% | Local Loss: 2.1144
+  --> [Edge Server 3] Local APA: 23.45% | Local Loss: 2.0776
+  --> [Edge Server 4] Local APA: 23.10% | Local Loss: 2.1048
+  --> [Edge Server 5] Local APA: 20.15% | Local Loss: 2.1683
+----------------------------------------------------
+Overall Metrics -> Train Loss: 2.0784 | Test Loss: 2.0965 | Global APA: 22.68%
+
+==================== Round   3 ====================
+  --> [Edge Server 1] Local APA: 27.40% | Local Loss: 1.9517
+  --> [Edge Server 2] Local APA: 24.05% | Local Loss: 2.0381
+  --> [Edge Server 3] Local APA: 25.80% | Local Loss: 1.9982
+  --> [Edge Server 4] Local APA: 26.20% | Local Loss: 2.0750
+  --> [Edge Server 5] Local APA: 22.50% | Local Loss: 2.1065
+----------------------------------------------------
+Overall Metrics -> Train Loss: 2.0029 | Test Loss: 2.0339 | Global APA: 25.19%
+
+==================== Round   4 ====================
+  --> [Edge Server 1] Local APA: 29.80% | Local Loss: 1.9213
+  --> [Edge Server 2] Local APA: 26.15% | Local Loss: 1.9698
+  --> [Edge Server 3] Local APA: 28.85% | Local Loss: 1.9496
+  --> [Edge Server 4] Local APA: 29.05% | Local Loss: 2.0130
+  --> [Edge Server 5] Local APA: 25.20% | Local Loss: 2.0514
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9983 | Test Loss: 1.9810 | Global APA: 27.81%
+
+==================== Round   5 ====================
+  --> [Edge Server 1] Local APA: 32.85% | Local Loss: 1.8209
+  --> [Edge Server 2] Local APA: 28.20% | Local Loss: 1.9372
+  --> [Edge Server 3] Local APA: 32.05% | Local Loss: 1.8892
+  --> [Edge Server 4] Local APA: 29.25% | Local Loss: 1.9773
+  --> [Edge Server 5] Local APA: 29.00% | Local Loss: 2.0201
+----------------------------------------------------
+Overall Metrics -> Train Loss: 2.0387 | Test Loss: 1.9289 | Global APA: 30.27%
+
+==================== Round   6 ====================
+  --> [Edge Server 1] Local APA: 35.05% | Local Loss: 1.7452
+  --> [Edge Server 2] Local APA: 32.20% | Local Loss: 1.8743
+  --> [Edge Server 3] Local APA: 36.00% | Local Loss: 1.8401
+  --> [Edge Server 4] Local APA: 32.30% | Local Loss: 1.9219
+  --> [Edge Server 5] Local APA: 29.25% | Local Loss: 2.0000
+----------------------------------------------------
+Overall Metrics -> Train Loss: 2.0524 | Test Loss: 1.8763 | Global APA: 32.96%
+
+==================== Round   7 ====================
+  --> [Edge Server 1] Local APA: 38.90% | Local Loss: 1.7095
+  --> [Edge Server 2] Local APA: 33.15% | Local Loss: 1.8742
+  --> [Edge Server 3] Local APA: 36.70% | Local Loss: 1.8049
+  --> [Edge Server 4] Local APA: 33.70% | Local Loss: 1.9143
+  --> [Edge Server 5] Local APA: 31.45% | Local Loss: 1.9590
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9921 | Test Loss: 1.8524 | Global APA: 34.78%
+
+==================== Round   8 ====================
+  --> [Edge Server 1] Local APA: 41.30% | Local Loss: 1.6631
+  --> [Edge Server 2] Local APA: 34.05% | Local Loss: 1.8218
+  --> [Edge Server 3] Local APA: 39.40% | Local Loss: 1.7645
+  --> [Edge Server 4] Local APA: 34.65% | Local Loss: 1.9097
+  --> [Edge Server 5] Local APA: 34.20% | Local Loss: 1.9541
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9797 | Test Loss: 1.8226 | Global APA: 36.72%
+
+==================== Round   9 ====================
+  --> [Edge Server 1] Local APA: 41.75% | Local Loss: 1.6215
+  --> [Edge Server 2] Local APA: 36.80% | Local Loss: 1.7692
+  --> [Edge Server 3] Local APA: 39.30% | Local Loss: 1.7575
+  --> [Edge Server 4] Local APA: 37.10% | Local Loss: 1.8806
+  --> [Edge Server 5] Local APA: 33.95% | Local Loss: 1.9462
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9642 | Test Loss: 1.7950 | Global APA: 37.78%
+
+==================== Round  10 ====================
+  --> [Edge Server 1] Local APA: 42.50% | Local Loss: 1.5865
+  --> [Edge Server 2] Local APA: 38.40% | Local Loss: 1.7318
+  --> [Edge Server 3] Local APA: 39.90% | Local Loss: 1.7266
+  --> [Edge Server 4] Local APA: 38.50% | Local Loss: 1.8559
+  --> [Edge Server 5] Local APA: 35.15% | Local Loss: 1.9151
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9490 | Test Loss: 1.7632 | Global APA: 38.89%
+
+==================== Round  11 ====================
+  --> [Edge Server 1] Local APA: 44.50% | Local Loss: 1.5465
+  --> [Edge Server 2] Local APA: 40.65% | Local Loss: 1.6806
+  --> [Edge Server 3] Local APA: 40.00% | Local Loss: 1.7076
+  --> [Edge Server 4] Local APA: 38.30% | Local Loss: 1.8446
+  --> [Edge Server 5] Local APA: 35.75% | Local Loss: 1.9104
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9434 | Test Loss: 1.7379 | Global APA: 39.84%
+
+==================== Round  12 ====================
+  --> [Edge Server 1] Local APA: 45.75% | Local Loss: 1.5150
+  --> [Edge Server 2] Local APA: 42.00% | Local Loss: 1.6570
+  --> [Edge Server 3] Local APA: 41.25% | Local Loss: 1.6842
+  --> [Edge Server 4] Local APA: 38.60% | Local Loss: 1.8192
+  --> [Edge Server 5] Local APA: 37.65% | Local Loss: 1.8878
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9183 | Test Loss: 1.7126 | Global APA: 41.05%
+
+==================== Round  13 ====================
+  --> [Edge Server 1] Local APA: 46.20% | Local Loss: 1.5038
+  --> [Edge Server 2] Local APA: 43.50% | Local Loss: 1.6336
+  --> [Edge Server 3] Local APA: 42.15% | Local Loss: 1.6660
+  --> [Edge Server 4] Local APA: 42.40% | Local Loss: 1.7759
+  --> [Edge Server 5] Local APA: 38.55% | Local Loss: 1.8666
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9470 | Test Loss: 1.6892 | Global APA: 42.56%
+
+==================== Round  14 ====================
+  --> [Edge Server 1] Local APA: 47.30% | Local Loss: 1.4726
+  --> [Edge Server 2] Local APA: 43.95% | Local Loss: 1.6203
+  --> [Edge Server 3] Local APA: 41.55% | Local Loss: 1.6575
+  --> [Edge Server 4] Local APA: 43.70% | Local Loss: 1.7568
+  --> [Edge Server 5] Local APA: 37.55% | Local Loss: 1.8659
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.9102 | Test Loss: 1.6746 | Global APA: 42.81%
+
+==================== Round  15 ====================
+  --> [Edge Server 1] Local APA: 48.10% | Local Loss: 1.4422
+  --> [Edge Server 2] Local APA: 44.55% | Local Loss: 1.6021
+  --> [Edge Server 3] Local APA: 41.70% | Local Loss: 1.6489
+  --> [Edge Server 4] Local APA: 42.40% | Local Loss: 1.7450
+  --> [Edge Server 5] Local APA: 37.70% | Local Loss: 1.8573
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8997 | Test Loss: 1.6591 | Global APA: 42.89%
+
+==================== Round  16 ====================
+  --> [Edge Server 1] Local APA: 48.75% | Local Loss: 1.4231
+  --> [Edge Server 2] Local APA: 47.05% | Local Loss: 1.5896
+  --> [Edge Server 3] Local APA: 44.15% | Local Loss: 1.6258
+  --> [Edge Server 4] Local APA: 44.05% | Local Loss: 1.7305
+  --> [Edge Server 5] Local APA: 39.85% | Local Loss: 1.8332
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8806 | Test Loss: 1.6405 | Global APA: 44.77%
+
+==================== Round  17 ====================
+  --> [Edge Server 1] Local APA: 50.60% | Local Loss: 1.3895
+  --> [Edge Server 2] Local APA: 44.65% | Local Loss: 1.5561
+  --> [Edge Server 3] Local APA: 44.45% | Local Loss: 1.6040
+  --> [Edge Server 4] Local APA: 42.50% | Local Loss: 1.7261
+  --> [Edge Server 5] Local APA: 40.55% | Local Loss: 1.8156
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8755 | Test Loss: 1.6183 | Global APA: 44.55%
+
+==================== Round  18 ====================
+  --> [Edge Server 1] Local APA: 50.55% | Local Loss: 1.3731
+  --> [Edge Server 2] Local APA: 49.15% | Local Loss: 1.5292
+  --> [Edge Server 3] Local APA: 46.55% | Local Loss: 1.5758
+  --> [Edge Server 4] Local APA: 45.35% | Local Loss: 1.6960
+  --> [Edge Server 5] Local APA: 41.85% | Local Loss: 1.8015
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8874 | Test Loss: 1.5951 | Global APA: 46.69%
+
+==================== Round  19 ====================
+  --> [Edge Server 1] Local APA: 50.40% | Local Loss: 1.3685
+  --> [Edge Server 2] Local APA: 47.75% | Local Loss: 1.5049
+  --> [Edge Server 3] Local APA: 46.55% | Local Loss: 1.5683
+  --> [Edge Server 4] Local APA: 44.10% | Local Loss: 1.7058
+  --> [Edge Server 5] Local APA: 41.65% | Local Loss: 1.8083
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8288 | Test Loss: 1.5911 | Global APA: 46.09%
+
+==================== Round  20 ====================
+  --> [Edge Server 1] Local APA: 51.20% | Local Loss: 1.3550
+  --> [Edge Server 2] Local APA: 49.15% | Local Loss: 1.5005
+  --> [Edge Server 3] Local APA: 46.90% | Local Loss: 1.5444
+  --> [Edge Server 4] Local APA: 46.25% | Local Loss: 1.6717
+  --> [Edge Server 5] Local APA: 42.85% | Local Loss: 1.7898
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8356 | Test Loss: 1.5723 | Global APA: 47.27%
+
+==================== Round  21 ====================
+  --> [Edge Server 1] Local APA: 52.55% | Local Loss: 1.3386
+  --> [Edge Server 2] Local APA: 49.15% | Local Loss: 1.4916
+  --> [Edge Server 3] Local APA: 49.95% | Local Loss: 1.5365
+  --> [Edge Server 4] Local APA: 46.55% | Local Loss: 1.6748
+  --> [Edge Server 5] Local APA: 43.20% | Local Loss: 1.7797
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8137 | Test Loss: 1.5642 | Global APA: 48.28%
+
+==================== Round  22 ====================
+  --> [Edge Server 1] Local APA: 51.80% | Local Loss: 1.3346
+  --> [Edge Server 2] Local APA: 50.30% | Local Loss: 1.4717
+  --> [Edge Server 3] Local APA: 48.65% | Local Loss: 1.5337
+  --> [Edge Server 4] Local APA: 47.05% | Local Loss: 1.6619
+  --> [Edge Server 5] Local APA: 44.45% | Local Loss: 1.7701
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8132 | Test Loss: 1.5544 | Global APA: 48.45%
+
+==================== Round  23 ====================
+  --> [Edge Server 1] Local APA: 51.20% | Local Loss: 1.3394
+  --> [Edge Server 2] Local APA: 50.15% | Local Loss: 1.4735
+  --> [Edge Server 3] Local APA: 48.60% | Local Loss: 1.5054
+  --> [Edge Server 4] Local APA: 47.05% | Local Loss: 1.6751
+  --> [Edge Server 5] Local APA: 44.45% | Local Loss: 1.7657
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8478 | Test Loss: 1.5518 | Global APA: 48.29%
+
+==================== Round  24 ====================
+  --> [Edge Server 1] Local APA: 53.15% | Local Loss: 1.3011
+  --> [Edge Server 2] Local APA: 51.15% | Local Loss: 1.4482
+  --> [Edge Server 3] Local APA: 48.80% | Local Loss: 1.5033
+  --> [Edge Server 4] Local APA: 48.30% | Local Loss: 1.6414
+  --> [Edge Server 5] Local APA: 44.85% | Local Loss: 1.7512
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.8036 | Test Loss: 1.5290 | Global APA: 49.25%
+
+==================== Round  25 ====================
+  --> [Edge Server 1] Local APA: 53.15% | Local Loss: 1.2772
+  --> [Edge Server 2] Local APA: 50.90% | Local Loss: 1.4436
+  --> [Edge Server 3] Local APA: 51.45% | Local Loss: 1.4681
+  --> [Edge Server 4] Local APA: 48.85% | Local Loss: 1.6276
+  --> [Edge Server 5] Local APA: 45.30% | Local Loss: 1.7353
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7728 | Test Loss: 1.5103 | Global APA: 49.93%
+
+==================== Round  26 ====================
+  --> [Edge Server 1] Local APA: 54.10% | Local Loss: 1.2770
+  --> [Edge Server 2] Local APA: 52.95% | Local Loss: 1.3881
+  --> [Edge Server 3] Local APA: 50.65% | Local Loss: 1.4681
+  --> [Edge Server 4] Local APA: 47.70% | Local Loss: 1.6337
+  --> [Edge Server 5] Local APA: 45.05% | Local Loss: 1.7416
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7265 | Test Loss: 1.5017 | Global APA: 50.09%
+
+==================== Round  27 ====================
+  --> [Edge Server 1] Local APA: 53.90% | Local Loss: 1.2691
+  --> [Edge Server 2] Local APA: 52.95% | Local Loss: 1.3915
+  --> [Edge Server 3] Local APA: 51.30% | Local Loss: 1.4535
+  --> [Edge Server 4] Local APA: 49.55% | Local Loss: 1.6196
+  --> [Edge Server 5] Local APA: 46.00% | Local Loss: 1.7357
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7780 | Test Loss: 1.4939 | Global APA: 50.74%
+
+==================== Round  28 ====================
+  --> [Edge Server 1] Local APA: 55.20% | Local Loss: 1.2571
+  --> [Edge Server 2] Local APA: 53.05% | Local Loss: 1.3717
+  --> [Edge Server 3] Local APA: 49.65% | Local Loss: 1.4526
+  --> [Edge Server 4] Local APA: 49.65% | Local Loss: 1.6190
+  --> [Edge Server 5] Local APA: 45.70% | Local Loss: 1.7284
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6294 | Test Loss: 1.4858 | Global APA: 50.65%
+
+==================== Round  29 ====================
+  --> [Edge Server 1] Local APA: 54.20% | Local Loss: 1.2461
+  --> [Edge Server 2] Local APA: 53.60% | Local Loss: 1.3767
+  --> [Edge Server 3] Local APA: 51.65% | Local Loss: 1.4451
+  --> [Edge Server 4] Local APA: 49.00% | Local Loss: 1.6162
+  --> [Edge Server 5] Local APA: 48.10% | Local Loss: 1.7135
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7685 | Test Loss: 1.4795 | Global APA: 51.31%
+
+==================== Round  30 ====================
+  --> [Edge Server 1] Local APA: 54.85% | Local Loss: 1.2342
+  --> [Edge Server 2] Local APA: 53.80% | Local Loss: 1.3566
+  --> [Edge Server 3] Local APA: 51.45% | Local Loss: 1.4353
+  --> [Edge Server 4] Local APA: 49.50% | Local Loss: 1.6067
+  --> [Edge Server 5] Local APA: 47.25% | Local Loss: 1.7158
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7288 | Test Loss: 1.4697 | Global APA: 51.37%
+
+==================== Round  31 ====================
+  --> [Edge Server 1] Local APA: 54.70% | Local Loss: 1.2384
+  --> [Edge Server 2] Local APA: 53.40% | Local Loss: 1.3502
+  --> [Edge Server 3] Local APA: 53.25% | Local Loss: 1.4307
+  --> [Edge Server 4] Local APA: 49.85% | Local Loss: 1.6084
+  --> [Edge Server 5] Local APA: 47.70% | Local Loss: 1.7065
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6978 | Test Loss: 1.4668 | Global APA: 51.78%
+
+==================== Round  32 ====================
+  --> [Edge Server 1] Local APA: 55.05% | Local Loss: 1.2297
+  --> [Edge Server 2] Local APA: 53.05% | Local Loss: 1.3525
+  --> [Edge Server 3] Local APA: 51.90% | Local Loss: 1.4133
+  --> [Edge Server 4] Local APA: 50.70% | Local Loss: 1.6031
+  --> [Edge Server 5] Local APA: 47.45% | Local Loss: 1.7011
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6395 | Test Loss: 1.4599 | Global APA: 51.63%
+
+==================== Round  33 ====================
+  --> [Edge Server 1] Local APA: 54.55% | Local Loss: 1.2339
+  --> [Edge Server 2] Local APA: 53.25% | Local Loss: 1.3391
+  --> [Edge Server 3] Local APA: 52.60% | Local Loss: 1.4146
+  --> [Edge Server 4] Local APA: 50.90% | Local Loss: 1.5925
+  --> [Edge Server 5] Local APA: 47.20% | Local Loss: 1.6969
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6812 | Test Loss: 1.4554 | Global APA: 51.70%
+
+==================== Round  34 ====================
+  --> [Edge Server 1] Local APA: 54.35% | Local Loss: 1.2312
+  --> [Edge Server 2] Local APA: 53.00% | Local Loss: 1.3418
+  --> [Edge Server 3] Local APA: 51.70% | Local Loss: 1.4158
+  --> [Edge Server 4] Local APA: 50.15% | Local Loss: 1.5814
+  --> [Edge Server 5] Local APA: 48.00% | Local Loss: 1.6886
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6854 | Test Loss: 1.4518 | Global APA: 51.44%
+
+==================== Round  35 ====================
+  --> [Edge Server 1] Local APA: 55.25% | Local Loss: 1.2162
+  --> [Edge Server 2] Local APA: 55.35% | Local Loss: 1.3201
+  --> [Edge Server 3] Local APA: 54.75% | Local Loss: 1.3649
+  --> [Edge Server 4] Local APA: 50.70% | Local Loss: 1.5784
+  --> [Edge Server 5] Local APA: 47.95% | Local Loss: 1.6934
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7098 | Test Loss: 1.4346 | Global APA: 52.80%
+
+==================== Round  36 ====================
+  --> [Edge Server 1] Local APA: 55.50% | Local Loss: 1.1987
+  --> [Edge Server 2] Local APA: 54.15% | Local Loss: 1.3262
+  --> [Edge Server 3] Local APA: 55.20% | Local Loss: 1.3709
+  --> [Edge Server 4] Local APA: 50.55% | Local Loss: 1.5698
+  --> [Edge Server 5] Local APA: 46.35% | Local Loss: 1.7013
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7984 | Test Loss: 1.4334 | Global APA: 52.35%
+
+==================== Round  37 ====================
+  --> [Edge Server 1] Local APA: 54.85% | Local Loss: 1.2104
+  --> [Edge Server 2] Local APA: 54.40% | Local Loss: 1.3101
+  --> [Edge Server 3] Local APA: 54.85% | Local Loss: 1.3673
+  --> [Edge Server 4] Local APA: 52.15% | Local Loss: 1.5677
+  --> [Edge Server 5] Local APA: 47.40% | Local Loss: 1.7025
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.7087 | Test Loss: 1.4316 | Global APA: 52.73%
+
+==================== Round  38 ====================
+  --> [Edge Server 1] Local APA: 56.20% | Local Loss: 1.1925
+  --> [Edge Server 2] Local APA: 55.40% | Local Loss: 1.3042
+  --> [Edge Server 3] Local APA: 55.15% | Local Loss: 1.3503
+  --> [Edge Server 4] Local APA: 51.80% | Local Loss: 1.5579
+  --> [Edge Server 5] Local APA: 46.40% | Local Loss: 1.6958
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6920 | Test Loss: 1.4201 | Global APA: 52.99%
+
+==================== Round  39 ====================
+  --> [Edge Server 1] Local APA: 56.05% | Local Loss: 1.1829
+  --> [Edge Server 2] Local APA: 54.75% | Local Loss: 1.3162
+  --> [Edge Server 3] Local APA: 55.50% | Local Loss: 1.3497
+  --> [Edge Server 4] Local APA: 51.30% | Local Loss: 1.5552
+  --> [Edge Server 5] Local APA: 46.55% | Local Loss: 1.7015
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6875 | Test Loss: 1.4211 | Global APA: 52.83%
+
+==================== Round  40 ====================
+  --> [Edge Server 1] Local APA: 55.95% | Local Loss: 1.1870
+  --> [Edge Server 2] Local APA: 54.55% | Local Loss: 1.2932
+  --> [Edge Server 3] Local APA: 55.65% | Local Loss: 1.3395
+  --> [Edge Server 4] Local APA: 52.15% | Local Loss: 1.5348
+  --> [Edge Server 5] Local APA: 49.65% | Local Loss: 1.6679
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6363 | Test Loss: 1.4045 | Global APA: 53.59%
+
+==================== Round  41 ====================
+  --> [Edge Server 1] Local APA: 56.15% | Local Loss: 1.1685
+  --> [Edge Server 2] Local APA: 55.30% | Local Loss: 1.2826
+  --> [Edge Server 3] Local APA: 56.70% | Local Loss: 1.3241
+  --> [Edge Server 4] Local APA: 52.40% | Local Loss: 1.5413
+  --> [Edge Server 5] Local APA: 47.35% | Local Loss: 1.6701
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6712 | Test Loss: 1.3973 | Global APA: 53.58%
+
+==================== Round  42 ====================
+  --> [Edge Server 1] Local APA: 55.75% | Local Loss: 1.1711
+  --> [Edge Server 2] Local APA: 55.10% | Local Loss: 1.2756
+  --> [Edge Server 3] Local APA: 54.15% | Local Loss: 1.3237
+  --> [Edge Server 4] Local APA: 51.90% | Local Loss: 1.5483
+  --> [Edge Server 5] Local APA: 49.05% | Local Loss: 1.6643
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6036 | Test Loss: 1.3966 | Global APA: 53.19%
+
+==================== Round  43 ====================
+  --> [Edge Server 1] Local APA: 55.45% | Local Loss: 1.1770
+  --> [Edge Server 2] Local APA: 56.05% | Local Loss: 1.2784
+  --> [Edge Server 3] Local APA: 55.60% | Local Loss: 1.3214
+  --> [Edge Server 4] Local APA: 52.45% | Local Loss: 1.5359
+  --> [Edge Server 5] Local APA: 47.15% | Local Loss: 1.6726
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6411 | Test Loss: 1.3971 | Global APA: 53.34%
+
+==================== Round  44 ====================
+  --> [Edge Server 1] Local APA: 55.85% | Local Loss: 1.1624
+  --> [Edge Server 2] Local APA: 55.85% | Local Loss: 1.2802
+  --> [Edge Server 3] Local APA: 54.90% | Local Loss: 1.3199
+  --> [Edge Server 4] Local APA: 49.95% | Local Loss: 1.5475
+  --> [Edge Server 5] Local APA: 48.45% | Local Loss: 1.6568
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5778 | Test Loss: 1.3934 | Global APA: 53.00%
+
+==================== Round  45 ====================
+  --> [Edge Server 1] Local APA: 56.45% | Local Loss: 1.1561
+  --> [Edge Server 2] Local APA: 55.20% | Local Loss: 1.2615
+  --> [Edge Server 3] Local APA: 55.65% | Local Loss: 1.3188
+  --> [Edge Server 4] Local APA: 52.95% | Local Loss: 1.5332
+  --> [Edge Server 5] Local APA: 47.70% | Local Loss: 1.6583
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6152 | Test Loss: 1.3856 | Global APA: 53.59%
+
+==================== Round  46 ====================
+  --> [Edge Server 1] Local APA: 56.85% | Local Loss: 1.1502
+  --> [Edge Server 2] Local APA: 56.15% | Local Loss: 1.2565
+  --> [Edge Server 3] Local APA: 55.25% | Local Loss: 1.3159
+  --> [Edge Server 4] Local APA: 50.85% | Local Loss: 1.5215
+  --> [Edge Server 5] Local APA: 48.70% | Local Loss: 1.6532
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6433 | Test Loss: 1.3795 | Global APA: 53.56%
+
+==================== Round  47 ====================
+  --> [Edge Server 1] Local APA: 57.90% | Local Loss: 1.1476
+  --> [Edge Server 2] Local APA: 55.70% | Local Loss: 1.2533
+  --> [Edge Server 3] Local APA: 55.30% | Local Loss: 1.3057
+  --> [Edge Server 4] Local APA: 51.55% | Local Loss: 1.5275
+  --> [Edge Server 5] Local APA: 49.35% | Local Loss: 1.6506
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6298 | Test Loss: 1.3769 | Global APA: 53.96%
+
+==================== Round  48 ====================
+  --> [Edge Server 1] Local APA: 56.95% | Local Loss: 1.1457
+  --> [Edge Server 2] Local APA: 55.45% | Local Loss: 1.2562
+  --> [Edge Server 3] Local APA: 55.90% | Local Loss: 1.2985
+  --> [Edge Server 4] Local APA: 51.65% | Local Loss: 1.5153
+  --> [Edge Server 5] Local APA: 48.60% | Local Loss: 1.6463
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5898 | Test Loss: 1.3724 | Global APA: 53.71%
+
+==================== Round  49 ====================
+  --> [Edge Server 1] Local APA: 55.80% | Local Loss: 1.1579
+  --> [Edge Server 2] Local APA: 55.70% | Local Loss: 1.2450
+  --> [Edge Server 3] Local APA: 55.95% | Local Loss: 1.2941
+  --> [Edge Server 4] Local APA: 51.45% | Local Loss: 1.5243
+  --> [Edge Server 5] Local APA: 48.40% | Local Loss: 1.6435
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6397 | Test Loss: 1.3730 | Global APA: 53.46%
+
+==================== Round  50 ====================
+  --> [Edge Server 1] Local APA: 57.55% | Local Loss: 1.1385
+  --> [Edge Server 2] Local APA: 55.70% | Local Loss: 1.2436
+  --> [Edge Server 3] Local APA: 54.75% | Local Loss: 1.3027
+  --> [Edge Server 4] Local APA: 52.20% | Local Loss: 1.5036
+  --> [Edge Server 5] Local APA: 49.00% | Local Loss: 1.6379
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5553 | Test Loss: 1.3652 | Global APA: 53.84%
+
+==================== Round  51 ====================
+  --> [Edge Server 1] Local APA: 57.10% | Local Loss: 1.1281
+  --> [Edge Server 2] Local APA: 55.10% | Local Loss: 1.2385
+  --> [Edge Server 3] Local APA: 55.50% | Local Loss: 1.2940
+  --> [Edge Server 4] Local APA: 52.15% | Local Loss: 1.5140
+  --> [Edge Server 5] Local APA: 48.50% | Local Loss: 1.6474
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5675 | Test Loss: 1.3644 | Global APA: 53.67%
+
+==================== Round  52 ====================
+  --> [Edge Server 1] Local APA: 58.00% | Local Loss: 1.1310
+  --> [Edge Server 2] Local APA: 55.10% | Local Loss: 1.2486
+  --> [Edge Server 3] Local APA: 57.05% | Local Loss: 1.2820
+  --> [Edge Server 4] Local APA: 52.60% | Local Loss: 1.4976
+  --> [Edge Server 5] Local APA: 48.20% | Local Loss: 1.6413
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.6084 | Test Loss: 1.3601 | Global APA: 54.19%
+
+==================== Round  53 ====================
+  --> [Edge Server 1] Local APA: 56.65% | Local Loss: 1.1341
+  --> [Edge Server 2] Local APA: 56.40% | Local Loss: 1.2253
+  --> [Edge Server 3] Local APA: 54.95% | Local Loss: 1.2863
+  --> [Edge Server 4] Local APA: 53.75% | Local Loss: 1.4776
+  --> [Edge Server 5] Local APA: 48.95% | Local Loss: 1.6379
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5879 | Test Loss: 1.3523 | Global APA: 54.14%
+
+==================== Round  54 ====================
+  --> [Edge Server 1] Local APA: 57.85% | Local Loss: 1.1246
+  --> [Edge Server 2] Local APA: 58.25% | Local Loss: 1.2072
+  --> [Edge Server 3] Local APA: 55.25% | Local Loss: 1.2846
+  --> [Edge Server 4] Local APA: 53.75% | Local Loss: 1.4796
+  --> [Edge Server 5] Local APA: 47.95% | Local Loss: 1.6445
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5677 | Test Loss: 1.3481 | Global APA: 54.61%
+
+==================== Round  55 ====================
+  --> [Edge Server 1] Local APA: 57.95% | Local Loss: 1.1213
+  --> [Edge Server 2] Local APA: 56.65% | Local Loss: 1.2196
+  --> [Edge Server 3] Local APA: 56.65% | Local Loss: 1.2672
+  --> [Edge Server 4] Local APA: 53.85% | Local Loss: 1.4813
+  --> [Edge Server 5] Local APA: 47.05% | Local Loss: 1.6401
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5446 | Test Loss: 1.3459 | Global APA: 54.43%
+
+==================== Round  56 ====================
+  --> [Edge Server 1] Local APA: 58.80% | Local Loss: 1.1023
+  --> [Edge Server 2] Local APA: 57.55% | Local Loss: 1.2131
+  --> [Edge Server 3] Local APA: 57.95% | Local Loss: 1.2529
+  --> [Edge Server 4] Local APA: 52.90% | Local Loss: 1.4745
+  --> [Edge Server 5] Local APA: 46.85% | Local Loss: 1.6305
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5552 | Test Loss: 1.3347 | Global APA: 54.81%
+
+==================== Round  57 ====================
+  --> [Edge Server 1] Local APA: 57.95% | Local Loss: 1.1096
+  --> [Edge Server 2] Local APA: 56.15% | Local Loss: 1.2124
+  --> [Edge Server 3] Local APA: 57.45% | Local Loss: 1.2610
+  --> [Edge Server 4] Local APA: 53.35% | Local Loss: 1.4655
+  --> [Edge Server 5] Local APA: 47.85% | Local Loss: 1.6371
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5056 | Test Loss: 1.3371 | Global APA: 54.55%
+
+==================== Round  58 ====================
+  --> [Edge Server 1] Local APA: 58.30% | Local Loss: 1.1081
+  --> [Edge Server 2] Local APA: 58.45% | Local Loss: 1.1955
+  --> [Edge Server 3] Local APA: 56.65% | Local Loss: 1.2535
+  --> [Edge Server 4] Local APA: 53.90% | Local Loss: 1.4715
+  --> [Edge Server 5] Local APA: 46.85% | Local Loss: 1.6389
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5847 | Test Loss: 1.3335 | Global APA: 54.83%
+
+==================== Round  59 ====================
+  --> [Edge Server 1] Local APA: 58.15% | Local Loss: 1.1111
+  --> [Edge Server 2] Local APA: 56.20% | Local Loss: 1.2092
+  --> [Edge Server 3] Local APA: 57.30% | Local Loss: 1.2534
+  --> [Edge Server 4] Local APA: 54.70% | Local Loss: 1.4589
+  --> [Edge Server 5] Local APA: 47.90% | Local Loss: 1.6331
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4829 | Test Loss: 1.3332 | Global APA: 54.85%
+
+==================== Round  60 ====================
+  --> [Edge Server 1] Local APA: 58.20% | Local Loss: 1.1185
+  --> [Edge Server 2] Local APA: 56.70% | Local Loss: 1.1921
+  --> [Edge Server 3] Local APA: 57.00% | Local Loss: 1.2492
+  --> [Edge Server 4] Local APA: 54.95% | Local Loss: 1.4446
+  --> [Edge Server 5] Local APA: 49.45% | Local Loss: 1.6134
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5154 | Test Loss: 1.3235 | Global APA: 55.26%
+
+==================== Round  61 ====================
+  --> [Edge Server 1] Local APA: 58.30% | Local Loss: 1.1240
+  --> [Edge Server 2] Local APA: 56.55% | Local Loss: 1.1955
+  --> [Edge Server 3] Local APA: 57.35% | Local Loss: 1.2429
+  --> [Edge Server 4] Local APA: 53.90% | Local Loss: 1.4483
+  --> [Edge Server 5] Local APA: 48.40% | Local Loss: 1.6304
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4145 | Test Loss: 1.3282 | Global APA: 54.90%
+
+==================== Round  62 ====================
+  --> [Edge Server 1] Local APA: 57.65% | Local Loss: 1.1043
+  --> [Edge Server 2] Local APA: 58.20% | Local Loss: 1.1743
+  --> [Edge Server 3] Local APA: 57.60% | Local Loss: 1.2401
+  --> [Edge Server 4] Local APA: 54.50% | Local Loss: 1.4449
+  --> [Edge Server 5] Local APA: 48.25% | Local Loss: 1.6048
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4801 | Test Loss: 1.3137 | Global APA: 55.24%
+
+==================== Round  63 ====================
+  --> [Edge Server 1] Local APA: 57.55% | Local Loss: 1.1048
+  --> [Edge Server 2] Local APA: 56.75% | Local Loss: 1.1833
+  --> [Edge Server 3] Local APA: 58.00% | Local Loss: 1.2371
+  --> [Edge Server 4] Local APA: 53.65% | Local Loss: 1.4366
+  --> [Edge Server 5] Local APA: 47.70% | Local Loss: 1.6163
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5228 | Test Loss: 1.3156 | Global APA: 54.73%
+
+==================== Round  64 ====================
+  --> [Edge Server 1] Local APA: 58.35% | Local Loss: 1.0876
+  --> [Edge Server 2] Local APA: 56.40% | Local Loss: 1.1786
+  --> [Edge Server 3] Local APA: 57.15% | Local Loss: 1.2334
+  --> [Edge Server 4] Local APA: 54.35% | Local Loss: 1.4210
+  --> [Edge Server 5] Local APA: 47.10% | Local Loss: 1.6132
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4248 | Test Loss: 1.3067 | Global APA: 54.67%
+
+==================== Round  65 ====================
+  --> [Edge Server 1] Local APA: 59.20% | Local Loss: 1.0975
+  --> [Edge Server 2] Local APA: 57.20% | Local Loss: 1.1815
+  --> [Edge Server 3] Local APA: 57.05% | Local Loss: 1.2360
+  --> [Edge Server 4] Local APA: 55.85% | Local Loss: 1.4083
+  --> [Edge Server 5] Local APA: 49.65% | Local Loss: 1.5954
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4475 | Test Loss: 1.3037 | Global APA: 55.79%
+
+==================== Round  66 ====================
+  --> [Edge Server 1] Local APA: 59.75% | Local Loss: 1.0911
+  --> [Edge Server 2] Local APA: 55.90% | Local Loss: 1.1736
+  --> [Edge Server 3] Local APA: 57.60% | Local Loss: 1.2321
+  --> [Edge Server 4] Local APA: 56.20% | Local Loss: 1.4129
+  --> [Edge Server 5] Local APA: 49.65% | Local Loss: 1.5966
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4841 | Test Loss: 1.3013 | Global APA: 55.82%
+
+==================== Round  67 ====================
+  --> [Edge Server 1] Local APA: 58.95% | Local Loss: 1.0886
+  --> [Edge Server 2] Local APA: 57.45% | Local Loss: 1.1693
+  --> [Edge Server 3] Local APA: 57.30% | Local Loss: 1.2233
+  --> [Edge Server 4] Local APA: 56.00% | Local Loss: 1.4121
+  --> [Edge Server 5] Local APA: 50.35% | Local Loss: 1.5851
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4808 | Test Loss: 1.2957 | Global APA: 56.01%
+
+==================== Round  68 ====================
+  --> [Edge Server 1] Local APA: 59.30% | Local Loss: 1.0867
+  --> [Edge Server 2] Local APA: 59.30% | Local Loss: 1.1505
+  --> [Edge Server 3] Local APA: 58.00% | Local Loss: 1.2124
+  --> [Edge Server 4] Local APA: 55.90% | Local Loss: 1.4131
+  --> [Edge Server 5] Local APA: 51.55% | Local Loss: 1.5698
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4200 | Test Loss: 1.2865 | Global APA: 56.81%
+
+==================== Round  69 ====================
+  --> [Edge Server 1] Local APA: 59.50% | Local Loss: 1.0833
+  --> [Edge Server 2] Local APA: 58.15% | Local Loss: 1.1575
+  --> [Edge Server 3] Local APA: 58.35% | Local Loss: 1.2050
+  --> [Edge Server 4] Local APA: 55.15% | Local Loss: 1.3995
+  --> [Edge Server 5] Local APA: 48.65% | Local Loss: 1.5896
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5715 | Test Loss: 1.2870 | Global APA: 55.96%
+
+==================== Round  70 ====================
+  --> [Edge Server 1] Local APA: 58.30% | Local Loss: 1.0843
+  --> [Edge Server 2] Local APA: 58.10% | Local Loss: 1.1466
+  --> [Edge Server 3] Local APA: 58.60% | Local Loss: 1.1991
+  --> [Edge Server 4] Local APA: 55.30% | Local Loss: 1.3891
+  --> [Edge Server 5] Local APA: 50.65% | Local Loss: 1.5768
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4666 | Test Loss: 1.2792 | Global APA: 56.19%
+
+==================== Round  71 ====================
+  --> [Edge Server 1] Local APA: 59.85% | Local Loss: 1.0736
+  --> [Edge Server 2] Local APA: 58.40% | Local Loss: 1.1410
+  --> [Edge Server 3] Local APA: 59.40% | Local Loss: 1.1967
+  --> [Edge Server 4] Local APA: 56.75% | Local Loss: 1.3952
+  --> [Edge Server 5] Local APA: 50.80% | Local Loss: 1.5792
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3942 | Test Loss: 1.2771 | Global APA: 57.04%
+
+==================== Round  72 ====================
+  --> [Edge Server 1] Local APA: 58.45% | Local Loss: 1.0807
+  --> [Edge Server 2] Local APA: 58.95% | Local Loss: 1.1407
+  --> [Edge Server 3] Local APA: 58.65% | Local Loss: 1.2020
+  --> [Edge Server 4] Local APA: 54.80% | Local Loss: 1.3970
+  --> [Edge Server 5] Local APA: 50.15% | Local Loss: 1.5791
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4118 | Test Loss: 1.2799 | Global APA: 56.20%
+
+==================== Round  73 ====================
+  --> [Edge Server 1] Local APA: 59.75% | Local Loss: 1.0691
+  --> [Edge Server 2] Local APA: 59.20% | Local Loss: 1.1395
+  --> [Edge Server 3] Local APA: 58.95% | Local Loss: 1.1943
+  --> [Edge Server 4] Local APA: 55.90% | Local Loss: 1.3887
+  --> [Edge Server 5] Local APA: 50.40% | Local Loss: 1.5715
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3673 | Test Loss: 1.2726 | Global APA: 56.84%
+
+==================== Round  74 ====================
+  --> [Edge Server 1] Local APA: 60.10% | Local Loss: 1.0571
+  --> [Edge Server 2] Local APA: 59.85% | Local Loss: 1.1285
+  --> [Edge Server 3] Local APA: 58.00% | Local Loss: 1.1939
+  --> [Edge Server 4] Local APA: 55.25% | Local Loss: 1.3889
+  --> [Edge Server 5] Local APA: 50.70% | Local Loss: 1.5649
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4815 | Test Loss: 1.2666 | Global APA: 56.78%
+
+==================== Round  75 ====================
+  --> [Edge Server 1] Local APA: 58.40% | Local Loss: 1.0762
+  --> [Edge Server 2] Local APA: 58.30% | Local Loss: 1.1303
+  --> [Edge Server 3] Local APA: 58.75% | Local Loss: 1.1873
+  --> [Edge Server 4] Local APA: 55.85% | Local Loss: 1.3817
+  --> [Edge Server 5] Local APA: 51.05% | Local Loss: 1.5670
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4450 | Test Loss: 1.2685 | Global APA: 56.47%
+
+==================== Round  76 ====================
+  --> [Edge Server 1] Local APA: 59.25% | Local Loss: 1.0634
+  --> [Edge Server 2] Local APA: 58.25% | Local Loss: 1.1356
+  --> [Edge Server 3] Local APA: 58.80% | Local Loss: 1.1769
+  --> [Edge Server 4] Local APA: 56.55% | Local Loss: 1.3699
+  --> [Edge Server 5] Local APA: 50.15% | Local Loss: 1.5566
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3764 | Test Loss: 1.2605 | Global APA: 56.60%
+
+==================== Round  77 ====================
+  --> [Edge Server 1] Local APA: 60.60% | Local Loss: 1.0614
+  --> [Edge Server 2] Local APA: 58.70% | Local Loss: 1.1384
+  --> [Edge Server 3] Local APA: 58.60% | Local Loss: 1.1939
+  --> [Edge Server 4] Local APA: 54.65% | Local Loss: 1.3809
+  --> [Edge Server 5] Local APA: 53.20% | Local Loss: 1.5337
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3922 | Test Loss: 1.2617 | Global APA: 57.15%
+
+==================== Round  78 ====================
+  --> [Edge Server 1] Local APA: 59.35% | Local Loss: 1.0614
+  --> [Edge Server 2] Local APA: 59.40% | Local Loss: 1.1312
+  --> [Edge Server 3] Local APA: 58.55% | Local Loss: 1.1921
+  --> [Edge Server 4] Local APA: 56.45% | Local Loss: 1.3716
+  --> [Edge Server 5] Local APA: 51.15% | Local Loss: 1.5370
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3479 | Test Loss: 1.2587 | Global APA: 56.98%
+
+==================== Round  79 ====================
+  --> [Edge Server 1] Local APA: 58.95% | Local Loss: 1.0648
+  --> [Edge Server 2] Local APA: 59.20% | Local Loss: 1.1222
+  --> [Edge Server 3] Local APA: 58.50% | Local Loss: 1.1865
+  --> [Edge Server 4] Local APA: 56.50% | Local Loss: 1.3789
+  --> [Edge Server 5] Local APA: 51.45% | Local Loss: 1.5429
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4252 | Test Loss: 1.2590 | Global APA: 56.92%
+
+==================== Round  80 ====================
+  --> [Edge Server 1] Local APA: 59.65% | Local Loss: 1.0636
+  --> [Edge Server 2] Local APA: 60.30% | Local Loss: 1.1199
+  --> [Edge Server 3] Local APA: 57.95% | Local Loss: 1.1898
+  --> [Edge Server 4] Local APA: 55.90% | Local Loss: 1.3699
+  --> [Edge Server 5] Local APA: 51.55% | Local Loss: 1.5307
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2184 | Test Loss: 1.2548 | Global APA: 57.07%
+
+==================== Round  81 ====================
+  --> [Edge Server 1] Local APA: 60.25% | Local Loss: 1.0610
+  --> [Edge Server 2] Local APA: 58.30% | Local Loss: 1.1285
+  --> [Edge Server 3] Local APA: 58.65% | Local Loss: 1.1661
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.3569
+  --> [Edge Server 5] Local APA: 49.75% | Local Loss: 1.5252
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3421 | Test Loss: 1.2475 | Global APA: 56.79%
+
+==================== Round  82 ====================
+  --> [Edge Server 1] Local APA: 60.60% | Local Loss: 1.0381
+  --> [Edge Server 2] Local APA: 59.45% | Local Loss: 1.1185
+  --> [Edge Server 3] Local APA: 58.90% | Local Loss: 1.1533
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.3676
+  --> [Edge Server 5] Local APA: 51.70% | Local Loss: 1.5167
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3908 | Test Loss: 1.2388 | Global APA: 57.36%
+
+==================== Round  83 ====================
+  --> [Edge Server 1] Local APA: 61.60% | Local Loss: 1.0410
+  --> [Edge Server 2] Local APA: 59.00% | Local Loss: 1.1235
+  --> [Edge Server 3] Local APA: 59.00% | Local Loss: 1.1499
+  --> [Edge Server 4] Local APA: 55.35% | Local Loss: 1.3656
+  --> [Edge Server 5] Local APA: 51.85% | Local Loss: 1.5222
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3829 | Test Loss: 1.2405 | Global APA: 57.36%
+
+==================== Round  84 ====================
+  --> [Edge Server 1] Local APA: 61.45% | Local Loss: 1.0248
+  --> [Edge Server 2] Local APA: 59.40% | Local Loss: 1.1150
+  --> [Edge Server 3] Local APA: 58.05% | Local Loss: 1.1507
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.3576
+  --> [Edge Server 5] Local APA: 51.10% | Local Loss: 1.5188
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2902 | Test Loss: 1.2334 | Global APA: 57.40%
+
+==================== Round  85 ====================
+  --> [Edge Server 1] Local APA: 61.20% | Local Loss: 1.0279
+  --> [Edge Server 2] Local APA: 59.70% | Local Loss: 1.1184
+  --> [Edge Server 3] Local APA: 58.65% | Local Loss: 1.1262
+  --> [Edge Server 4] Local APA: 54.55% | Local Loss: 1.3665
+  --> [Edge Server 5] Local APA: 52.20% | Local Loss: 1.5142
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3625 | Test Loss: 1.2306 | Global APA: 57.26%
+
+==================== Round  86 ====================
+  --> [Edge Server 1] Local APA: 60.95% | Local Loss: 1.0270
+  --> [Edge Server 2] Local APA: 59.90% | Local Loss: 1.1114
+  --> [Edge Server 3] Local APA: 58.95% | Local Loss: 1.1236
+  --> [Edge Server 4] Local APA: 55.95% | Local Loss: 1.3563
+  --> [Edge Server 5] Local APA: 50.45% | Local Loss: 1.5260
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3231 | Test Loss: 1.2289 | Global APA: 57.24%
+
+==================== Round  87 ====================
+  --> [Edge Server 1] Local APA: 61.05% | Local Loss: 1.0288
+  --> [Edge Server 2] Local APA: 60.55% | Local Loss: 1.0932
+  --> [Edge Server 3] Local APA: 59.70% | Local Loss: 1.1086
+  --> [Edge Server 4] Local APA: 56.25% | Local Loss: 1.3670
+  --> [Edge Server 5] Local APA: 50.70% | Local Loss: 1.5251
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.5101 | Test Loss: 1.2245 | Global APA: 57.65%
+
+==================== Round  88 ====================
+  --> [Edge Server 1] Local APA: 60.90% | Local Loss: 1.0251
+  --> [Edge Server 2] Local APA: 59.70% | Local Loss: 1.0919
+  --> [Edge Server 3] Local APA: 59.80% | Local Loss: 1.1132
+  --> [Edge Server 4] Local APA: 56.45% | Local Loss: 1.3567
+  --> [Edge Server 5] Local APA: 50.60% | Local Loss: 1.5330
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2685 | Test Loss: 1.2240 | Global APA: 57.49%
+
+==================== Round  89 ====================
+  --> [Edge Server 1] Local APA: 60.60% | Local Loss: 1.0226
+  --> [Edge Server 2] Local APA: 60.05% | Local Loss: 1.0911
+  --> [Edge Server 3] Local APA: 60.05% | Local Loss: 1.1135
+  --> [Edge Server 4] Local APA: 57.70% | Local Loss: 1.3481
+  --> [Edge Server 5] Local APA: 50.90% | Local Loss: 1.5125
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1556 | Test Loss: 1.2176 | Global APA: 57.86%
+
+==================== Round  90 ====================
+  --> [Edge Server 1] Local APA: 61.20% | Local Loss: 1.0330
+  --> [Edge Server 2] Local APA: 61.90% | Local Loss: 1.0779
+  --> [Edge Server 3] Local APA: 60.70% | Local Loss: 1.0999
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.3390
+  --> [Edge Server 5] Local APA: 52.15% | Local Loss: 1.5098
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3862 | Test Loss: 1.2119 | Global APA: 58.58%
+
+==================== Round  91 ====================
+  --> [Edge Server 1] Local APA: 62.00% | Local Loss: 1.0240
+  --> [Edge Server 2] Local APA: 60.45% | Local Loss: 1.0914
+  --> [Edge Server 3] Local APA: 60.10% | Local Loss: 1.1015
+  --> [Edge Server 4] Local APA: 57.35% | Local Loss: 1.3330
+  --> [Edge Server 5] Local APA: 50.65% | Local Loss: 1.5107
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1750 | Test Loss: 1.2121 | Global APA: 58.11%
+
+==================== Round  92 ====================
+  --> [Edge Server 1] Local APA: 62.70% | Local Loss: 1.0084
+  --> [Edge Server 2] Local APA: 60.35% | Local Loss: 1.0774
+  --> [Edge Server 3] Local APA: 60.65% | Local Loss: 1.0984
+  --> [Edge Server 4] Local APA: 55.25% | Local Loss: 1.3622
+  --> [Edge Server 5] Local APA: 52.15% | Local Loss: 1.5064
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2495 | Test Loss: 1.2106 | Global APA: 58.22%
+
+==================== Round  93 ====================
+  --> [Edge Server 1] Local APA: 62.00% | Local Loss: 1.0109
+  --> [Edge Server 2] Local APA: 61.35% | Local Loss: 1.0671
+  --> [Edge Server 3] Local APA: 61.05% | Local Loss: 1.1069
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3454
+  --> [Edge Server 5] Local APA: 50.65% | Local Loss: 1.5011
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2623 | Test Loss: 1.2063 | Global APA: 58.15%
+
+==================== Round  94 ====================
+  --> [Edge Server 1] Local APA: 61.80% | Local Loss: 1.0352
+  --> [Edge Server 2] Local APA: 60.95% | Local Loss: 1.0709
+  --> [Edge Server 3] Local APA: 58.60% | Local Loss: 1.1113
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3412
+  --> [Edge Server 5] Local APA: 50.20% | Local Loss: 1.5142
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4041 | Test Loss: 1.2146 | Global APA: 57.45%
+
+==================== Round  95 ====================
+  --> [Edge Server 1] Local APA: 61.70% | Local Loss: 1.0184
+  --> [Edge Server 2] Local APA: 61.60% | Local Loss: 1.0774
+  --> [Edge Server 3] Local APA: 60.35% | Local Loss: 1.0988
+  --> [Edge Server 4] Local APA: 56.05% | Local Loss: 1.3424
+  --> [Edge Server 5] Local APA: 50.15% | Local Loss: 1.5089
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2889 | Test Loss: 1.2092 | Global APA: 57.97%
+
+==================== Round  96 ====================
+  --> [Edge Server 1] Local APA: 61.40% | Local Loss: 1.0242
+  --> [Edge Server 2] Local APA: 61.40% | Local Loss: 1.0748
+  --> [Edge Server 3] Local APA: 60.90% | Local Loss: 1.0903
+  --> [Edge Server 4] Local APA: 54.50% | Local Loss: 1.3443
+  --> [Edge Server 5] Local APA: 50.80% | Local Loss: 1.4942
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1732 | Test Loss: 1.2055 | Global APA: 57.80%
+
+==================== Round  97 ====================
+  --> [Edge Server 1] Local APA: 62.10% | Local Loss: 1.0204
+  --> [Edge Server 2] Local APA: 61.65% | Local Loss: 1.0711
+  --> [Edge Server 3] Local APA: 60.40% | Local Loss: 1.0898
+  --> [Edge Server 4] Local APA: 54.55% | Local Loss: 1.3470
+  --> [Edge Server 5] Local APA: 50.50% | Local Loss: 1.4838
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2300 | Test Loss: 1.2024 | Global APA: 57.84%
+
+==================== Round  98 ====================
+  --> [Edge Server 1] Local APA: 61.10% | Local Loss: 1.0325
+  --> [Edge Server 2] Local APA: 60.95% | Local Loss: 1.0656
+  --> [Edge Server 3] Local APA: 59.55% | Local Loss: 1.0872
+  --> [Edge Server 4] Local APA: 54.80% | Local Loss: 1.3355
+  --> [Edge Server 5] Local APA: 52.10% | Local Loss: 1.4777
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3258 | Test Loss: 1.1997 | Global APA: 57.70%
+
+==================== Round  99 ====================
+  --> [Edge Server 1] Local APA: 62.70% | Local Loss: 1.0169
+  --> [Edge Server 2] Local APA: 60.65% | Local Loss: 1.0652
+  --> [Edge Server 3] Local APA: 61.00% | Local Loss: 1.0905
+  --> [Edge Server 4] Local APA: 55.90% | Local Loss: 1.3343
+  --> [Edge Server 5] Local APA: 52.05% | Local Loss: 1.4875
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3080 | Test Loss: 1.1989 | Global APA: 58.46%
+
+==================== Round 100 ====================
+  --> [Edge Server 1] Local APA: 61.15% | Local Loss: 1.0235
+  --> [Edge Server 2] Local APA: 61.75% | Local Loss: 1.0519
+  --> [Edge Server 3] Local APA: 60.85% | Local Loss: 1.0690
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.3280
+  --> [Edge Server 5] Local APA: 51.30% | Local Loss: 1.5016
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3020 | Test Loss: 1.1948 | Global APA: 58.38%
+
+==================== Round 101 ====================
+  --> [Edge Server 1] Local APA: 61.80% | Local Loss: 1.0159
+  --> [Edge Server 2] Local APA: 61.45% | Local Loss: 1.0699
+  --> [Edge Server 3] Local APA: 59.75% | Local Loss: 1.0891
+  --> [Edge Server 4] Local APA: 57.05% | Local Loss: 1.3333
+  --> [Edge Server 5] Local APA: 50.15% | Local Loss: 1.5095
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3820 | Test Loss: 1.2035 | Global APA: 58.04%
+
+==================== Round 102 ====================
+  --> [Edge Server 1] Local APA: 62.75% | Local Loss: 1.0020
+  --> [Edge Server 2] Local APA: 62.20% | Local Loss: 1.0585
+  --> [Edge Server 3] Local APA: 60.65% | Local Loss: 1.0748
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3323
+  --> [Edge Server 5] Local APA: 49.25% | Local Loss: 1.5200
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.4157 | Test Loss: 1.1975 | Global APA: 58.12%
+
+==================== Round 103 ====================
+  --> [Edge Server 1] Local APA: 63.25% | Local Loss: 0.9981
+  --> [Edge Server 2] Local APA: 61.70% | Local Loss: 1.0431
+  --> [Edge Server 3] Local APA: 60.60% | Local Loss: 1.0839
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3356
+  --> [Edge Server 5] Local APA: 50.80% | Local Loss: 1.5162
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3502 | Test Loss: 1.1954 | Global APA: 58.41%
+
+==================== Round 104 ====================
+  --> [Edge Server 1] Local APA: 61.75% | Local Loss: 1.0051
+  --> [Edge Server 2] Local APA: 61.05% | Local Loss: 1.0578
+  --> [Edge Server 3] Local APA: 60.60% | Local Loss: 1.0767
+  --> [Edge Server 4] Local APA: 55.45% | Local Loss: 1.3282
+  --> [Edge Server 5] Local APA: 49.90% | Local Loss: 1.5116
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3505 | Test Loss: 1.1959 | Global APA: 57.75%
+
+==================== Round 105 ====================
+  --> [Edge Server 1] Local APA: 63.00% | Local Loss: 0.9989
+  --> [Edge Server 2] Local APA: 61.20% | Local Loss: 1.0502
+  --> [Edge Server 3] Local APA: 59.80% | Local Loss: 1.0774
+  --> [Edge Server 4] Local APA: 56.80% | Local Loss: 1.3178
+  --> [Edge Server 5] Local APA: 51.80% | Local Loss: 1.4984
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3762 | Test Loss: 1.1885 | Global APA: 58.52%
+
+==================== Round 106 ====================
+  --> [Edge Server 1] Local APA: 63.15% | Local Loss: 1.0066
+  --> [Edge Server 2] Local APA: 61.80% | Local Loss: 1.0585
+  --> [Edge Server 3] Local APA: 59.80% | Local Loss: 1.0818
+  --> [Edge Server 4] Local APA: 57.15% | Local Loss: 1.3292
+  --> [Edge Server 5] Local APA: 50.30% | Local Loss: 1.5173
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2359 | Test Loss: 1.1987 | Global APA: 58.44%
+
+==================== Round 107 ====================
+  --> [Edge Server 1] Local APA: 63.10% | Local Loss: 0.9913
+  --> [Edge Server 2] Local APA: 61.45% | Local Loss: 1.0443
+  --> [Edge Server 3] Local APA: 60.85% | Local Loss: 1.0730
+  --> [Edge Server 4] Local APA: 54.85% | Local Loss: 1.3473
+  --> [Edge Server 5] Local APA: 49.10% | Local Loss: 1.5077
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2493 | Test Loss: 1.1927 | Global APA: 57.87%
+
+==================== Round 108 ====================
+  --> [Edge Server 1] Local APA: 62.65% | Local Loss: 1.0108
+  --> [Edge Server 2] Local APA: 61.90% | Local Loss: 1.0542
+  --> [Edge Server 3] Local APA: 60.25% | Local Loss: 1.0784
+  --> [Edge Server 4] Local APA: 56.60% | Local Loss: 1.3260
+  --> [Edge Server 5] Local APA: 48.35% | Local Loss: 1.5342
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1432 | Test Loss: 1.2007 | Global APA: 57.95%
+
+==================== Round 109 ====================
+  --> [Edge Server 1] Local APA: 62.60% | Local Loss: 0.9935
+  --> [Edge Server 2] Local APA: 61.65% | Local Loss: 1.0406
+  --> [Edge Server 3] Local APA: 60.30% | Local Loss: 1.0700
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.3200
+  --> [Edge Server 5] Local APA: 49.70% | Local Loss: 1.5178
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2256 | Test Loss: 1.1884 | Global APA: 58.13%
+
+==================== Round 110 ====================
+  --> [Edge Server 1] Local APA: 62.50% | Local Loss: 1.0124
+  --> [Edge Server 2] Local APA: 62.15% | Local Loss: 1.0383
+  --> [Edge Server 3] Local APA: 59.90% | Local Loss: 1.0786
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.3266
+  --> [Edge Server 5] Local APA: 50.00% | Local Loss: 1.5116
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3296 | Test Loss: 1.1935 | Global APA: 58.19%
+
+==================== Round 111 ====================
+  --> [Edge Server 1] Local APA: 63.40% | Local Loss: 0.9910
+  --> [Edge Server 2] Local APA: 61.15% | Local Loss: 1.0411
+  --> [Edge Server 3] Local APA: 60.25% | Local Loss: 1.0683
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3295
+  --> [Edge Server 5] Local APA: 49.25% | Local Loss: 1.5269
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3861 | Test Loss: 1.1914 | Global APA: 57.95%
+
+==================== Round 112 ====================
+  --> [Edge Server 1] Local APA: 63.60% | Local Loss: 0.9958
+  --> [Edge Server 2] Local APA: 62.05% | Local Loss: 1.0346
+  --> [Edge Server 3] Local APA: 61.95% | Local Loss: 1.0562
+  --> [Edge Server 4] Local APA: 55.35% | Local Loss: 1.3278
+  --> [Edge Server 5] Local APA: 49.70% | Local Loss: 1.5210
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2140 | Test Loss: 1.1871 | Global APA: 58.53%
+
+==================== Round 113 ====================
+  --> [Edge Server 1] Local APA: 62.90% | Local Loss: 0.9891
+  --> [Edge Server 2] Local APA: 62.10% | Local Loss: 1.0287
+  --> [Edge Server 3] Local APA: 62.05% | Local Loss: 1.0445
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.3150
+  --> [Edge Server 5] Local APA: 50.95% | Local Loss: 1.5304
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2760 | Test Loss: 1.1815 | Global APA: 58.97%
+
+==================== Round 114 ====================
+  --> [Edge Server 1] Local APA: 63.90% | Local Loss: 0.9982
+  --> [Edge Server 2] Local APA: 62.10% | Local Loss: 1.0340
+  --> [Edge Server 3] Local APA: 61.70% | Local Loss: 1.0515
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3178
+  --> [Edge Server 5] Local APA: 50.15% | Local Loss: 1.5197
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1848 | Test Loss: 1.1842 | Global APA: 58.72%
+
+==================== Round 115 ====================
+  --> [Edge Server 1] Local APA: 63.60% | Local Loss: 0.9948
+  --> [Edge Server 2] Local APA: 63.05% | Local Loss: 1.0223
+  --> [Edge Server 3] Local APA: 60.75% | Local Loss: 1.0503
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3476
+  --> [Edge Server 5] Local APA: 49.60% | Local Loss: 1.5201
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2259 | Test Loss: 1.1870 | Global APA: 58.55%
+
+==================== Round 116 ====================
+  --> [Edge Server 1] Local APA: 63.30% | Local Loss: 0.9891
+  --> [Edge Server 2] Local APA: 62.60% | Local Loss: 1.0331
+  --> [Edge Server 3] Local APA: 61.40% | Local Loss: 1.0588
+  --> [Edge Server 4] Local APA: 56.65% | Local Loss: 1.3260
+  --> [Edge Server 5] Local APA: 49.35% | Local Loss: 1.5249
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2569 | Test Loss: 1.1864 | Global APA: 58.66%
+
+==================== Round 117 ====================
+  --> [Edge Server 1] Local APA: 63.05% | Local Loss: 0.9947
+  --> [Edge Server 2] Local APA: 62.25% | Local Loss: 1.0271
+  --> [Edge Server 3] Local APA: 60.15% | Local Loss: 1.0600
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.3399
+  --> [Edge Server 5] Local APA: 51.50% | Local Loss: 1.5086
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2976 | Test Loss: 1.1861 | Global APA: 58.79%
+
+==================== Round 118 ====================
+  --> [Edge Server 1] Local APA: 64.55% | Local Loss: 0.9796
+  --> [Edge Server 2] Local APA: 62.60% | Local Loss: 1.0290
+  --> [Edge Server 3] Local APA: 61.00% | Local Loss: 1.0453
+  --> [Edge Server 4] Local APA: 56.25% | Local Loss: 1.3320
+  --> [Edge Server 5] Local APA: 48.10% | Local Loss: 1.6756
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1193 | Test Loss: 1.2123 | Global APA: 58.50%
+
+==================== Round 119 ====================
+  --> [Edge Server 1] Local APA: 64.70% | Local Loss: 0.9908
+  --> [Edge Server 2] Local APA: 61.85% | Local Loss: 1.0324
+  --> [Edge Server 3] Local APA: 62.25% | Local Loss: 1.0554
+  --> [Edge Server 4] Local APA: 55.90% | Local Loss: 1.3260
+  --> [Edge Server 5] Local APA: 48.75% | Local Loss: 1.6574
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2442 | Test Loss: 1.2124 | Global APA: 58.69%
+
+==================== Round 120 ====================
+  --> [Edge Server 1] Local APA: 63.40% | Local Loss: 0.9822
+  --> [Edge Server 2] Local APA: 63.30% | Local Loss: 1.0323
+  --> [Edge Server 3] Local APA: 61.55% | Local Loss: 1.0499
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3520
+  --> [Edge Server 5] Local APA: 48.35% | Local Loss: 1.6544
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3089 | Test Loss: 1.2142 | Global APA: 58.46%
+
+==================== Round 121 ====================
+  --> [Edge Server 1] Local APA: 63.80% | Local Loss: 1.0016
+  --> [Edge Server 2] Local APA: 62.40% | Local Loss: 1.0321
+  --> [Edge Server 3] Local APA: 62.45% | Local Loss: 1.0501
+  --> [Edge Server 4] Local APA: 55.20% | Local Loss: 1.3560
+  --> [Edge Server 5] Local APA: 49.30% | Local Loss: 1.6491
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2708 | Test Loss: 1.2178 | Global APA: 58.63%
+
+==================== Round 122 ====================
+  --> [Edge Server 1] Local APA: 63.15% | Local Loss: 0.9982
+  --> [Edge Server 2] Local APA: 62.40% | Local Loss: 1.0247
+  --> [Edge Server 3] Local APA: 61.35% | Local Loss: 1.0480
+  --> [Edge Server 4] Local APA: 55.20% | Local Loss: 1.3508
+  --> [Edge Server 5] Local APA: 47.15% | Local Loss: 1.6590
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3851 | Test Loss: 1.2162 | Global APA: 57.85%
+
+==================== Round 123 ====================
+  --> [Edge Server 1] Local APA: 64.90% | Local Loss: 0.9863
+  --> [Edge Server 2] Local APA: 60.95% | Local Loss: 1.0421
+  --> [Edge Server 3] Local APA: 61.65% | Local Loss: 1.0519
+  --> [Edge Server 4] Local APA: 55.50% | Local Loss: 1.3484
+  --> [Edge Server 5] Local APA: 47.25% | Local Loss: 1.6659
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1551 | Test Loss: 1.2189 | Global APA: 58.05%
+
+==================== Round 124 ====================
+  --> [Edge Server 1] Local APA: 63.30% | Local Loss: 0.9914
+  --> [Edge Server 2] Local APA: 62.70% | Local Loss: 1.0145
+  --> [Edge Server 3] Local APA: 60.60% | Local Loss: 1.0503
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3448
+  --> [Edge Server 5] Local APA: 48.25% | Local Loss: 1.6606
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2764 | Test Loss: 1.2123 | Global APA: 58.11%
+
+==================== Round 125 ====================
+  --> [Edge Server 1] Local APA: 62.25% | Local Loss: 1.0065
+  --> [Edge Server 2] Local APA: 62.35% | Local Loss: 1.0177
+  --> [Edge Server 3] Local APA: 61.70% | Local Loss: 1.0527
+  --> [Edge Server 4] Local APA: 56.05% | Local Loss: 1.3426
+  --> [Edge Server 5] Local APA: 48.45% | Local Loss: 1.6593
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2614 | Test Loss: 1.2158 | Global APA: 58.16%
+
+==================== Round 126 ====================
+  --> [Edge Server 1] Local APA: 64.05% | Local Loss: 0.9900
+  --> [Edge Server 2] Local APA: 62.55% | Local Loss: 1.0274
+  --> [Edge Server 3] Local APA: 61.50% | Local Loss: 1.0304
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.3319
+  --> [Edge Server 5] Local APA: 48.10% | Local Loss: 1.6691
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2297 | Test Loss: 1.2098 | Global APA: 58.52%
+
+==================== Round 127 ====================
+  --> [Edge Server 1] Local APA: 64.55% | Local Loss: 0.9864
+  --> [Edge Server 2] Local APA: 62.20% | Local Loss: 1.0235
+  --> [Edge Server 3] Local APA: 60.65% | Local Loss: 1.0500
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.3341
+  --> [Edge Server 5] Local APA: 46.65% | Local Loss: 1.6775
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3159 | Test Loss: 1.2143 | Global APA: 58.18%
+
+==================== Round 128 ====================
+  --> [Edge Server 1] Local APA: 62.85% | Local Loss: 0.9935
+  --> [Edge Server 2] Local APA: 63.20% | Local Loss: 1.0118
+  --> [Edge Server 3] Local APA: 62.80% | Local Loss: 1.0394
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3468
+  --> [Edge Server 5] Local APA: 46.55% | Local Loss: 1.6735
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1237 | Test Loss: 1.2130 | Global APA: 58.23%
+
+==================== Round 129 ====================
+  --> [Edge Server 1] Local APA: 63.75% | Local Loss: 0.9804
+  --> [Edge Server 2] Local APA: 62.55% | Local Loss: 1.0130
+  --> [Edge Server 3] Local APA: 61.80% | Local Loss: 1.0470
+  --> [Edge Server 4] Local APA: 56.25% | Local Loss: 1.3332
+  --> [Edge Server 5] Local APA: 47.05% | Local Loss: 1.6642
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1585 | Test Loss: 1.2076 | Global APA: 58.28%
+
+==================== Round 130 ====================
+  --> [Edge Server 1] Local APA: 64.40% | Local Loss: 0.9816
+  --> [Edge Server 2] Local APA: 63.30% | Local Loss: 1.0082
+  --> [Edge Server 3] Local APA: 60.55% | Local Loss: 1.0481
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3539
+  --> [Edge Server 5] Local APA: 47.25% | Local Loss: 1.6689
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2592 | Test Loss: 1.2121 | Global APA: 58.25%
+
+==================== Round 131 ====================
+  --> [Edge Server 1] Local APA: 63.55% | Local Loss: 0.9887
+  --> [Edge Server 2] Local APA: 62.80% | Local Loss: 1.0051
+  --> [Edge Server 3] Local APA: 61.80% | Local Loss: 1.0347
+  --> [Edge Server 4] Local APA: 55.55% | Local Loss: 1.3387
+  --> [Edge Server 5] Local APA: 48.70% | Local Loss: 1.6648
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1985 | Test Loss: 1.2064 | Global APA: 58.48%
+
+==================== Round 132 ====================
+  --> [Edge Server 1] Local APA: 64.25% | Local Loss: 0.9702
+  --> [Edge Server 2] Local APA: 63.15% | Local Loss: 1.0132
+  --> [Edge Server 3] Local APA: 60.65% | Local Loss: 1.0379
+  --> [Edge Server 4] Local APA: 56.55% | Local Loss: 1.3377
+  --> [Edge Server 5] Local APA: 45.95% | Local Loss: 1.6741
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1209 | Test Loss: 1.2066 | Global APA: 58.11%
+
+==================== Round 133 ====================
+  --> [Edge Server 1] Local APA: 64.35% | Local Loss: 0.9796
+  --> [Edge Server 2] Local APA: 63.55% | Local Loss: 1.0185
+  --> [Edge Server 3] Local APA: 61.05% | Local Loss: 1.0344
+  --> [Edge Server 4] Local APA: 56.05% | Local Loss: 1.3275
+  --> [Edge Server 5] Local APA: 47.20% | Local Loss: 1.6653
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2977 | Test Loss: 1.2050 | Global APA: 58.44%
+
+==================== Round 134 ====================
+  --> [Edge Server 1] Local APA: 63.25% | Local Loss: 1.0018
+  --> [Edge Server 2] Local APA: 63.80% | Local Loss: 1.0203
+  --> [Edge Server 3] Local APA: 61.55% | Local Loss: 1.0468
+  --> [Edge Server 4] Local APA: 56.35% | Local Loss: 1.3253
+  --> [Edge Server 5] Local APA: 45.95% | Local Loss: 1.6834
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1173 | Test Loss: 1.2155 | Global APA: 58.18%
+
+==================== Round 135 ====================
+  --> [Edge Server 1] Local APA: 63.90% | Local Loss: 0.9945
+  --> [Edge Server 2] Local APA: 62.60% | Local Loss: 0.9996
+  --> [Edge Server 3] Local APA: 61.60% | Local Loss: 1.0364
+  --> [Edge Server 4] Local APA: 56.25% | Local Loss: 1.3255
+  --> [Edge Server 5] Local APA: 46.20% | Local Loss: 1.6823
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1756 | Test Loss: 1.2077 | Global APA: 58.11%
+
+==================== Round 136 ====================
+  --> [Edge Server 1] Local APA: 64.40% | Local Loss: 0.9859
+  --> [Edge Server 2] Local APA: 62.60% | Local Loss: 1.0186
+  --> [Edge Server 3] Local APA: 61.05% | Local Loss: 1.0373
+  --> [Edge Server 4] Local APA: 55.60% | Local Loss: 1.3364
+  --> [Edge Server 5] Local APA: 47.10% | Local Loss: 1.6889
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2544 | Test Loss: 1.2134 | Global APA: 58.15%
+
+==================== Round 137 ====================
+  --> [Edge Server 1] Local APA: 65.35% | Local Loss: 0.9642
+  --> [Edge Server 2] Local APA: 63.95% | Local Loss: 0.9981
+  --> [Edge Server 3] Local APA: 62.55% | Local Loss: 1.0236
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.3659
+  --> [Edge Server 5] Local APA: 46.55% | Local Loss: 1.6896
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9277 | Test Loss: 1.2083 | Global APA: 58.94%
+
+==================== Round 138 ====================
+  --> [Edge Server 1] Local APA: 64.85% | Local Loss: 0.9862
+  --> [Edge Server 2] Local APA: 63.10% | Local Loss: 1.0073
+  --> [Edge Server 3] Local APA: 62.85% | Local Loss: 1.0210
+  --> [Edge Server 4] Local APA: 56.50% | Local Loss: 1.3460
+  --> [Edge Server 5] Local APA: 47.45% | Local Loss: 1.6817
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2441 | Test Loss: 1.2084 | Global APA: 58.95%
+
+==================== Round 139 ====================
+  --> [Edge Server 1] Local APA: 65.10% | Local Loss: 0.9756
+  --> [Edge Server 2] Local APA: 64.55% | Local Loss: 0.9967
+  --> [Edge Server 3] Local APA: 62.70% | Local Loss: 1.0193
+  --> [Edge Server 4] Local APA: 56.20% | Local Loss: 1.3370
+  --> [Edge Server 5] Local APA: 49.25% | Local Loss: 1.6699
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2910 | Test Loss: 1.1997 | Global APA: 59.56%
+
+==================== Round 140 ====================
+  --> [Edge Server 1] Local APA: 63.85% | Local Loss: 0.9994
+  --> [Edge Server 2] Local APA: 62.30% | Local Loss: 1.0070
+  --> [Edge Server 3] Local APA: 63.05% | Local Loss: 1.0161
+  --> [Edge Server 4] Local APA: 58.30% | Local Loss: 1.3342
+  --> [Edge Server 5] Local APA: 46.40% | Local Loss: 1.6805
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2150 | Test Loss: 1.2074 | Global APA: 58.78%
+
+==================== Round 141 ====================
+  --> [Edge Server 1] Local APA: 64.60% | Local Loss: 0.9867
+  --> [Edge Server 2] Local APA: 63.10% | Local Loss: 0.9964
+  --> [Edge Server 3] Local APA: 63.40% | Local Loss: 1.0086
+  --> [Edge Server 4] Local APA: 57.35% | Local Loss: 1.3452
+  --> [Edge Server 5] Local APA: 46.75% | Local Loss: 1.6716
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1691 | Test Loss: 1.2017 | Global APA: 59.04%
+
+==================== Round 142 ====================
+  --> [Edge Server 1] Local APA: 65.10% | Local Loss: 0.9732
+  --> [Edge Server 2] Local APA: 64.10% | Local Loss: 0.9887
+  --> [Edge Server 3] Local APA: 63.00% | Local Loss: 1.0117
+  --> [Edge Server 4] Local APA: 58.65% | Local Loss: 1.2948
+  --> [Edge Server 5] Local APA: 45.95% | Local Loss: 1.6879
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2846 | Test Loss: 1.1913 | Global APA: 59.36%
+
+==================== Round 143 ====================
+  --> [Edge Server 1] Local APA: 64.85% | Local Loss: 0.9802
+  --> [Edge Server 2] Local APA: 64.25% | Local Loss: 0.9932
+  --> [Edge Server 3] Local APA: 61.90% | Local Loss: 1.0226
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.3116
+  --> [Edge Server 5] Local APA: 47.45% | Local Loss: 1.6784
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3559 | Test Loss: 1.1972 | Global APA: 59.06%
+
+==================== Round 144 ====================
+  --> [Edge Server 1] Local APA: 65.25% | Local Loss: 0.9876
+  --> [Edge Server 2] Local APA: 63.15% | Local Loss: 0.9999
+  --> [Edge Server 3] Local APA: 62.50% | Local Loss: 1.0174
+  --> [Edge Server 4] Local APA: 57.85% | Local Loss: 1.3104
+  --> [Edge Server 5] Local APA: 46.95% | Local Loss: 1.6901
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1991 | Test Loss: 1.2011 | Global APA: 59.14%
+
+==================== Round 145 ====================
+  --> [Edge Server 1] Local APA: 65.25% | Local Loss: 0.9827
+  --> [Edge Server 2] Local APA: 63.65% | Local Loss: 1.0024
+  --> [Edge Server 3] Local APA: 62.10% | Local Loss: 1.0218
+  --> [Edge Server 4] Local APA: 57.50% | Local Loss: 1.3149
+  --> [Edge Server 5] Local APA: 47.05% | Local Loss: 1.6900
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0851 | Test Loss: 1.2023 | Global APA: 59.11%
+
+==================== Round 146 ====================
+  --> [Edge Server 1] Local APA: 64.60% | Local Loss: 0.9846
+  --> [Edge Server 2] Local APA: 63.75% | Local Loss: 0.9980
+  --> [Edge Server 3] Local APA: 63.00% | Local Loss: 1.0057
+  --> [Edge Server 4] Local APA: 58.20% | Local Loss: 1.2959
+  --> [Edge Server 5] Local APA: 46.25% | Local Loss: 1.6918
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2395 | Test Loss: 1.1952 | Global APA: 59.16%
+
+==================== Round 147 ====================
+  --> [Edge Server 1] Local APA: 63.70% | Local Loss: 0.9911
+  --> [Edge Server 2] Local APA: 63.00% | Local Loss: 0.9991
+  --> [Edge Server 3] Local APA: 62.90% | Local Loss: 1.0116
+  --> [Edge Server 4] Local APA: 57.40% | Local Loss: 1.3089
+  --> [Edge Server 5] Local APA: 48.60% | Local Loss: 1.6974
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0914 | Test Loss: 1.2016 | Global APA: 59.12%
+
+==================== Round 148 ====================
+  --> [Edge Server 1] Local APA: 65.40% | Local Loss: 0.9734
+  --> [Edge Server 2] Local APA: 63.50% | Local Loss: 0.9891
+  --> [Edge Server 3] Local APA: 62.70% | Local Loss: 1.0224
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.2976
+  --> [Edge Server 5] Local APA: 47.25% | Local Loss: 1.6842
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2040 | Test Loss: 1.1934 | Global APA: 59.22%
+
+==================== Round 149 ====================
+  --> [Edge Server 1] Local APA: 63.90% | Local Loss: 0.9989
+  --> [Edge Server 2] Local APA: 63.40% | Local Loss: 0.9985
+  --> [Edge Server 3] Local APA: 63.85% | Local Loss: 1.0104
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.3054
+  --> [Edge Server 5] Local APA: 49.05% | Local Loss: 1.6683
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.3814 | Test Loss: 1.1963 | Global APA: 59.49%
+
+==================== Round 150 ====================
+  --> [Edge Server 1] Local APA: 64.10% | Local Loss: 0.9883
+  --> [Edge Server 2] Local APA: 63.60% | Local Loss: 0.9979
+  --> [Edge Server 3] Local APA: 63.20% | Local Loss: 1.0084
+  --> [Edge Server 4] Local APA: 59.45% | Local Loss: 1.2920
+  --> [Edge Server 5] Local APA: 48.30% | Local Loss: 1.6771
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2355 | Test Loss: 1.1928 | Global APA: 59.73%
+
+==================== Round 151 ====================
+  --> [Edge Server 1] Local APA: 64.40% | Local Loss: 0.9937
+  --> [Edge Server 2] Local APA: 63.75% | Local Loss: 0.9819
+  --> [Edge Server 3] Local APA: 62.60% | Local Loss: 1.0069
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.2981
+  --> [Edge Server 5] Local APA: 50.45% | Local Loss: 1.5364
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1754 | Test Loss: 1.1634 | Global APA: 59.64%
+
+==================== Round 152 ====================
+  --> [Edge Server 1] Local APA: 66.05% | Local Loss: 0.9748
+  --> [Edge Server 2] Local APA: 63.60% | Local Loss: 0.9847
+  --> [Edge Server 3] Local APA: 62.90% | Local Loss: 1.0056
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.2969
+  --> [Edge Server 5] Local APA: 49.65% | Local Loss: 1.5501
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1483 | Test Loss: 1.1624 | Global APA: 59.84%
+
+==================== Round 153 ====================
+  --> [Edge Server 1] Local APA: 65.65% | Local Loss: 0.9681
+  --> [Edge Server 2] Local APA: 62.80% | Local Loss: 0.9880
+  --> [Edge Server 3] Local APA: 63.75% | Local Loss: 1.0008
+  --> [Edge Server 4] Local APA: 57.95% | Local Loss: 1.3192
+  --> [Edge Server 5] Local APA: 49.50% | Local Loss: 1.5662
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0761 | Test Loss: 1.1685 | Global APA: 59.93%
+
+==================== Round 154 ====================
+  --> [Edge Server 1] Local APA: 64.90% | Local Loss: 0.9814
+  --> [Edge Server 2] Local APA: 63.15% | Local Loss: 0.9837
+  --> [Edge Server 3] Local APA: 62.85% | Local Loss: 1.0040
+  --> [Edge Server 4] Local APA: 57.50% | Local Loss: 1.3186
+  --> [Edge Server 5] Local APA: 48.30% | Local Loss: 1.5638
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2208 | Test Loss: 1.1703 | Global APA: 59.34%
+
+==================== Round 155 ====================
+  --> [Edge Server 1] Local APA: 65.25% | Local Loss: 0.9879
+  --> [Edge Server 2] Local APA: 64.45% | Local Loss: 0.9952
+  --> [Edge Server 3] Local APA: 62.50% | Local Loss: 1.0041
+  --> [Edge Server 4] Local APA: 57.35% | Local Loss: 1.3219
+  --> [Edge Server 5] Local APA: 48.05% | Local Loss: 1.5603
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1615 | Test Loss: 1.1739 | Global APA: 59.52%
+
+==================== Round 156 ====================
+  --> [Edge Server 1] Local APA: 65.30% | Local Loss: 0.9761
+  --> [Edge Server 2] Local APA: 63.55% | Local Loss: 0.9746
+  --> [Edge Server 3] Local APA: 63.05% | Local Loss: 0.9954
+  --> [Edge Server 4] Local APA: 57.80% | Local Loss: 1.3129
+  --> [Edge Server 5] Local APA: 47.75% | Local Loss: 1.5778
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1743 | Test Loss: 1.1674 | Global APA: 59.49%
+
+==================== Round 157 ====================
+  --> [Edge Server 1] Local APA: 64.65% | Local Loss: 0.9906
+  --> [Edge Server 2] Local APA: 65.45% | Local Loss: 0.9604
+  --> [Edge Server 3] Local APA: 63.40% | Local Loss: 1.0048
+  --> [Edge Server 4] Local APA: 58.70% | Local Loss: 1.3029
+  --> [Edge Server 5] Local APA: 48.80% | Local Loss: 1.5628
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2007 | Test Loss: 1.1643 | Global APA: 60.20%
+
+==================== Round 158 ====================
+  --> [Edge Server 1] Local APA: 65.15% | Local Loss: 0.9877
+  --> [Edge Server 2] Local APA: 63.80% | Local Loss: 0.9887
+  --> [Edge Server 3] Local APA: 63.00% | Local Loss: 1.0108
+  --> [Edge Server 4] Local APA: 55.80% | Local Loss: 1.3298
+  --> [Edge Server 5] Local APA: 47.30% | Local Loss: 1.5685
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2955 | Test Loss: 1.1771 | Global APA: 59.01%
+
+==================== Round 159 ====================
+  --> [Edge Server 1] Local APA: 66.30% | Local Loss: 0.9745
+  --> [Edge Server 2] Local APA: 63.95% | Local Loss: 0.9738
+  --> [Edge Server 3] Local APA: 63.60% | Local Loss: 0.9904
+  --> [Edge Server 4] Local APA: 57.95% | Local Loss: 1.3177
+  --> [Edge Server 5] Local APA: 47.05% | Local Loss: 1.5675
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2381 | Test Loss: 1.1648 | Global APA: 59.77%
+
+==================== Round 160 ====================
+  --> [Edge Server 1] Local APA: 65.75% | Local Loss: 0.9661
+  --> [Edge Server 2] Local APA: 63.85% | Local Loss: 0.9713
+  --> [Edge Server 3] Local APA: 64.15% | Local Loss: 0.9869
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.3197
+  --> [Edge Server 5] Local APA: 46.20% | Local Loss: 1.5731
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2838 | Test Loss: 1.1634 | Global APA: 59.38%
+
+==================== Round 161 ====================
+  --> [Edge Server 1] Local APA: 64.30% | Local Loss: 0.9872
+  --> [Edge Server 2] Local APA: 64.75% | Local Loss: 0.9737
+  --> [Edge Server 3] Local APA: 63.65% | Local Loss: 1.0005
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.3212
+  --> [Edge Server 5] Local APA: 47.80% | Local Loss: 1.5747
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2085 | Test Loss: 1.1715 | Global APA: 59.59%
+
+==================== Round 162 ====================
+  --> [Edge Server 1] Local APA: 64.25% | Local Loss: 0.9875
+  --> [Edge Server 2] Local APA: 64.35% | Local Loss: 0.9851
+  --> [Edge Server 3] Local APA: 63.05% | Local Loss: 1.0112
+  --> [Edge Server 4] Local APA: 57.30% | Local Loss: 1.3136
+  --> [Edge Server 5] Local APA: 47.30% | Local Loss: 1.5692
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1167 | Test Loss: 1.1733 | Global APA: 59.25%
+
+==================== Round 163 ====================
+  --> [Edge Server 1] Local APA: 65.20% | Local Loss: 0.9856
+  --> [Edge Server 2] Local APA: 64.50% | Local Loss: 0.9759
+  --> [Edge Server 3] Local APA: 63.25% | Local Loss: 1.0028
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.3182
+  --> [Edge Server 5] Local APA: 47.90% | Local Loss: 1.5709
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1785 | Test Loss: 1.1707 | Global APA: 59.40%
+
+==================== Round 164 ====================
+  --> [Edge Server 1] Local APA: 65.75% | Local Loss: 0.9767
+  --> [Edge Server 2] Local APA: 64.60% | Local Loss: 0.9735
+  --> [Edge Server 3] Local APA: 64.45% | Local Loss: 0.9918
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.3240
+  --> [Edge Server 5] Local APA: 48.20% | Local Loss: 1.5630
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0812 | Test Loss: 1.1658 | Global APA: 60.09%
+
+==================== Round 165 ====================
+  --> [Edge Server 1] Local APA: 65.10% | Local Loss: 0.9874
+  --> [Edge Server 2] Local APA: 65.50% | Local Loss: 0.9756
+  --> [Edge Server 3] Local APA: 63.40% | Local Loss: 1.0008
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.3234
+  --> [Edge Server 5] Local APA: 49.10% | Local Loss: 1.5512
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2376 | Test Loss: 1.1677 | Global APA: 60.01%
+
+==================== Round 166 ====================
+  --> [Edge Server 1] Local APA: 66.40% | Local Loss: 0.9712
+  --> [Edge Server 2] Local APA: 63.80% | Local Loss: 0.9777
+  --> [Edge Server 3] Local APA: 64.15% | Local Loss: 1.0001
+  --> [Edge Server 4] Local APA: 56.70% | Local Loss: 1.3211
+  --> [Edge Server 5] Local APA: 48.75% | Local Loss: 1.5745
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2219 | Test Loss: 1.1689 | Global APA: 59.96%
+
+==================== Round 167 ====================
+  --> [Edge Server 1] Local APA: 65.75% | Local Loss: 0.9783
+  --> [Edge Server 2] Local APA: 64.40% | Local Loss: 0.9842
+  --> [Edge Server 3] Local APA: 62.75% | Local Loss: 1.0020
+  --> [Edge Server 4] Local APA: 57.20% | Local Loss: 1.3181
+  --> [Edge Server 5] Local APA: 48.60% | Local Loss: 1.5595
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2777 | Test Loss: 1.1684 | Global APA: 59.74%
+
+==================== Round 168 ====================
+  --> [Edge Server 1] Local APA: 65.75% | Local Loss: 0.9710
+  --> [Edge Server 2] Local APA: 63.55% | Local Loss: 0.9789
+  --> [Edge Server 3] Local APA: 64.15% | Local Loss: 0.9899
+  --> [Edge Server 4] Local APA: 57.60% | Local Loss: 1.3209
+  --> [Edge Server 5] Local APA: 46.35% | Local Loss: 1.5729
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1107 | Test Loss: 1.1667 | Global APA: 59.48%
+
+==================== Round 169 ====================
+  --> [Edge Server 1] Local APA: 64.75% | Local Loss: 0.9646
+  --> [Edge Server 2] Local APA: 64.10% | Local Loss: 0.9633
+  --> [Edge Server 3] Local APA: 62.85% | Local Loss: 0.9880
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.3163
+  --> [Edge Server 5] Local APA: 49.05% | Local Loss: 1.5535
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0959 | Test Loss: 1.1571 | Global APA: 59.54%
+
+==================== Round 170 ====================
+  --> [Edge Server 1] Local APA: 64.95% | Local Loss: 0.9708
+  --> [Edge Server 2] Local APA: 63.60% | Local Loss: 0.9841
+  --> [Edge Server 3] Local APA: 63.70% | Local Loss: 0.9952
+  --> [Edge Server 4] Local APA: 57.50% | Local Loss: 1.3136
+  --> [Edge Server 5] Local APA: 48.05% | Local Loss: 1.5492
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0944 | Test Loss: 1.1626 | Global APA: 59.56%
+
+==================== Round 171 ====================
+  --> [Edge Server 1] Local APA: 66.75% | Local Loss: 0.9596
+  --> [Edge Server 2] Local APA: 63.85% | Local Loss: 0.9758
+  --> [Edge Server 3] Local APA: 63.70% | Local Loss: 0.9858
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.3210
+  --> [Edge Server 5] Local APA: 49.15% | Local Loss: 1.5532
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2012 | Test Loss: 1.1591 | Global APA: 60.14%
+
+==================== Round 172 ====================
+  --> [Edge Server 1] Local APA: 66.10% | Local Loss: 0.9632
+  --> [Edge Server 2] Local APA: 64.50% | Local Loss: 0.9768
+  --> [Edge Server 3] Local APA: 63.85% | Local Loss: 0.9733
+  --> [Edge Server 4] Local APA: 56.80% | Local Loss: 1.3187
+  --> [Edge Server 5] Local APA: 49.15% | Local Loss: 1.5584
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1429 | Test Loss: 1.1581 | Global APA: 60.08%
+
+==================== Round 173 ====================
+  --> [Edge Server 1] Local APA: 67.45% | Local Loss: 0.9497
+  --> [Edge Server 2] Local APA: 64.35% | Local Loss: 0.9589
+  --> [Edge Server 3] Local APA: 63.25% | Local Loss: 0.9826
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.3204
+  --> [Edge Server 5] Local APA: 48.50% | Local Loss: 1.5545
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1686 | Test Loss: 1.1532 | Global APA: 60.08%
+
+==================== Round 174 ====================
+  --> [Edge Server 1] Local APA: 67.20% | Local Loss: 0.9610
+  --> [Edge Server 2] Local APA: 64.00% | Local Loss: 0.9773
+  --> [Edge Server 3] Local APA: 65.00% | Local Loss: 0.9825
+  --> [Edge Server 4] Local APA: 56.75% | Local Loss: 1.3151
+  --> [Edge Server 5] Local APA: 48.05% | Local Loss: 1.5664
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1076 | Test Loss: 1.1605 | Global APA: 60.20%
+
+==================== Round 175 ====================
+  --> [Edge Server 1] Local APA: 65.25% | Local Loss: 0.9680
+  --> [Edge Server 2] Local APA: 64.30% | Local Loss: 0.9669
+  --> [Edge Server 3] Local APA: 63.60% | Local Loss: 0.9836
+  --> [Edge Server 4] Local APA: 58.95% | Local Loss: 1.3090
+  --> [Edge Server 5] Local APA: 48.00% | Local Loss: 1.5553
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2415 | Test Loss: 1.1566 | Global APA: 60.02%
+
+==================== Round 176 ====================
+  --> [Edge Server 1] Local APA: 65.75% | Local Loss: 0.9778
+  --> [Edge Server 2] Local APA: 64.00% | Local Loss: 0.9658
+  --> [Edge Server 3] Local APA: 63.40% | Local Loss: 0.9847
+  --> [Edge Server 4] Local APA: 58.05% | Local Loss: 1.3223
+  --> [Edge Server 5] Local APA: 49.60% | Local Loss: 1.5525
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2790 | Test Loss: 1.1606 | Global APA: 60.16%
+
+==================== Round 177 ====================
+  --> [Edge Server 1] Local APA: 65.90% | Local Loss: 0.9820
+  --> [Edge Server 2] Local APA: 63.60% | Local Loss: 0.9825
+  --> [Edge Server 3] Local APA: 63.80% | Local Loss: 0.9707
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.3140
+  --> [Edge Server 5] Local APA: 48.20% | Local Loss: 1.5528
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0280 | Test Loss: 1.1604 | Global APA: 59.70%
+
+==================== Round 178 ====================
+  --> [Edge Server 1] Local APA: 67.30% | Local Loss: 0.9574
+  --> [Edge Server 2] Local APA: 64.10% | Local Loss: 0.9738
+  --> [Edge Server 3] Local APA: 63.75% | Local Loss: 0.9766
+  --> [Edge Server 4] Local APA: 57.30% | Local Loss: 1.3210
+  --> [Edge Server 5] Local APA: 47.55% | Local Loss: 1.5684
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1282 | Test Loss: 1.1595 | Global APA: 60.00%
+
+==================== Round 179 ====================
+  --> [Edge Server 1] Local APA: 66.40% | Local Loss: 0.9607
+  --> [Edge Server 2] Local APA: 65.30% | Local Loss: 0.9662
+  --> [Edge Server 3] Local APA: 64.30% | Local Loss: 0.9782
+  --> [Edge Server 4] Local APA: 57.40% | Local Loss: 1.3185
+  --> [Edge Server 5] Local APA: 47.45% | Local Loss: 1.5663
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1360 | Test Loss: 1.1580 | Global APA: 60.17%
+
+==================== Round 180 ====================
+  --> [Edge Server 1] Local APA: 66.60% | Local Loss: 0.9672
+  --> [Edge Server 2] Local APA: 64.30% | Local Loss: 0.9660
+  --> [Edge Server 3] Local APA: 63.60% | Local Loss: 0.9804
+  --> [Edge Server 4] Local APA: 57.15% | Local Loss: 1.3260
+  --> [Edge Server 5] Local APA: 47.90% | Local Loss: 1.5663
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1526 | Test Loss: 1.1611 | Global APA: 59.91%
+
+==================== Round 181 ====================
+  --> [Edge Server 1] Local APA: 65.65% | Local Loss: 0.9775
+  --> [Edge Server 2] Local APA: 64.15% | Local Loss: 0.9675
+  --> [Edge Server 3] Local APA: 64.95% | Local Loss: 0.9669
+  --> [Edge Server 4] Local APA: 57.90% | Local Loss: 1.2992
+  --> [Edge Server 5] Local APA: 48.65% | Local Loss: 1.5657
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1374 | Test Loss: 1.1553 | Global APA: 60.26%
+
+==================== Round 182 ====================
+  --> [Edge Server 1] Local APA: 65.70% | Local Loss: 0.9892
+  --> [Edge Server 2] Local APA: 64.20% | Local Loss: 0.9872
+  --> [Edge Server 3] Local APA: 64.90% | Local Loss: 0.9911
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.3228
+  --> [Edge Server 5] Local APA: 49.00% | Local Loss: 1.5695
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1057 | Test Loss: 1.1719 | Global APA: 60.15%
+
+==================== Round 183 ====================
+  --> [Edge Server 1] Local APA: 65.65% | Local Loss: 0.9642
+  --> [Edge Server 2] Local APA: 64.55% | Local Loss: 0.9644
+  --> [Edge Server 3] Local APA: 64.45% | Local Loss: 0.9845
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.3326
+  --> [Edge Server 5] Local APA: 46.45% | Local Loss: 1.5904
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1083 | Test Loss: 1.1672 | Global APA: 59.45%
+
+==================== Round 184 ====================
+  --> [Edge Server 1] Local APA: 67.20% | Local Loss: 0.9640
+  --> [Edge Server 2] Local APA: 65.75% | Local Loss: 0.9601
+  --> [Edge Server 3] Local APA: 63.70% | Local Loss: 0.9756
+  --> [Edge Server 4] Local APA: 57.70% | Local Loss: 1.3025
+  --> [Edge Server 5] Local APA: 47.35% | Local Loss: 1.5906
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0818 | Test Loss: 1.1586 | Global APA: 60.34%
+
+==================== Round 185 ====================
+  --> [Edge Server 1] Local APA: 66.20% | Local Loss: 0.9622
+  --> [Edge Server 2] Local APA: 64.95% | Local Loss: 0.9667
+  --> [Edge Server 3] Local APA: 64.65% | Local Loss: 0.9860
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.3319
+  --> [Edge Server 5] Local APA: 45.75% | Local Loss: 1.5909
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1811 | Test Loss: 1.1675 | Global APA: 59.57%
+
+==================== Round 186 ====================
+  --> [Edge Server 1] Local APA: 67.30% | Local Loss: 0.9555
+  --> [Edge Server 2] Local APA: 63.85% | Local Loss: 0.9803
+  --> [Edge Server 3] Local APA: 63.50% | Local Loss: 0.9801
+  --> [Edge Server 4] Local APA: 56.35% | Local Loss: 1.3199
+  --> [Edge Server 5] Local APA: 46.10% | Local Loss: 1.5928
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2062 | Test Loss: 1.1658 | Global APA: 59.42%
+
+==================== Round 187 ====================
+  --> [Edge Server 1] Local APA: 66.85% | Local Loss: 0.9465
+  --> [Edge Server 2] Local APA: 63.95% | Local Loss: 0.9824
+  --> [Edge Server 3] Local APA: 63.65% | Local Loss: 0.9718
+  --> [Edge Server 4] Local APA: 57.65% | Local Loss: 1.3227
+  --> [Edge Server 5] Local APA: 46.85% | Local Loss: 1.5726
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1456 | Test Loss: 1.1592 | Global APA: 59.79%
+
+==================== Round 188 ====================
+  --> [Edge Server 1] Local APA: 66.30% | Local Loss: 0.9591
+  --> [Edge Server 2] Local APA: 64.70% | Local Loss: 0.9692
+  --> [Edge Server 3] Local APA: 65.35% | Local Loss: 0.9685
+  --> [Edge Server 4] Local APA: 56.90% | Local Loss: 1.3165
+  --> [Edge Server 5] Local APA: 47.40% | Local Loss: 1.5787
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1378 | Test Loss: 1.1584 | Global APA: 60.13%
+
+==================== Round 189 ====================
+  --> [Edge Server 1] Local APA: 66.35% | Local Loss: 0.9581
+  --> [Edge Server 2] Local APA: 64.25% | Local Loss: 0.9723
+  --> [Edge Server 3] Local APA: 63.75% | Local Loss: 0.9848
+  --> [Edge Server 4] Local APA: 58.15% | Local Loss: 1.2894
+  --> [Edge Server 5] Local APA: 48.45% | Local Loss: 1.5708
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9605 | Test Loss: 1.1551 | Global APA: 60.19%
+
+==================== Round 190 ====================
+  --> [Edge Server 1] Local APA: 66.45% | Local Loss: 0.9709
+  --> [Edge Server 2] Local APA: 65.15% | Local Loss: 0.9566
+  --> [Edge Server 3] Local APA: 64.05% | Local Loss: 0.9930
+  --> [Edge Server 4] Local APA: 58.45% | Local Loss: 1.2823
+  --> [Edge Server 5] Local APA: 47.90% | Local Loss: 1.5690
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9712 | Test Loss: 1.1544 | Global APA: 60.40%
+
+==================== Round 191 ====================
+  --> [Edge Server 1] Local APA: 66.30% | Local Loss: 0.9553
+  --> [Edge Server 2] Local APA: 65.25% | Local Loss: 0.9669
+  --> [Edge Server 3] Local APA: 64.55% | Local Loss: 0.9852
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.2854
+  --> [Edge Server 5] Local APA: 48.50% | Local Loss: 1.5697
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1051 | Test Loss: 1.1525 | Global APA: 60.29%
+
+==================== Round 192 ====================
+  --> [Edge Server 1] Local APA: 67.05% | Local Loss: 0.9601
+  --> [Edge Server 2] Local APA: 64.60% | Local Loss: 0.9663
+  --> [Edge Server 3] Local APA: 63.70% | Local Loss: 0.9788
+  --> [Edge Server 4] Local APA: 57.95% | Local Loss: 1.2827
+  --> [Edge Server 5] Local APA: 46.75% | Local Loss: 1.5880
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2744 | Test Loss: 1.1552 | Global APA: 60.01%
+
+==================== Round 193 ====================
+  --> [Edge Server 1] Local APA: 66.80% | Local Loss: 0.9490
+  --> [Edge Server 2] Local APA: 65.25% | Local Loss: 0.9532
+  --> [Edge Server 3] Local APA: 63.10% | Local Loss: 0.9863
+  --> [Edge Server 4] Local APA: 56.50% | Local Loss: 1.2939
+  --> [Edge Server 5] Local APA: 47.90% | Local Loss: 1.5766
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1951 | Test Loss: 1.1518 | Global APA: 59.91%
+
+==================== Round 194 ====================
+  --> [Edge Server 1] Local APA: 66.65% | Local Loss: 0.9608
+  --> [Edge Server 2] Local APA: 65.20% | Local Loss: 0.9612
+  --> [Edge Server 3] Local APA: 63.75% | Local Loss: 0.9967
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.2955
+  --> [Edge Server 5] Local APA: 48.15% | Local Loss: 1.5813
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1464 | Test Loss: 1.1591 | Global APA: 60.24%
+
+==================== Round 195 ====================
+  --> [Edge Server 1] Local APA: 66.85% | Local Loss: 0.9467
+  --> [Edge Server 2] Local APA: 65.15% | Local Loss: 0.9507
+  --> [Edge Server 3] Local APA: 63.65% | Local Loss: 0.9864
+  --> [Edge Server 4] Local APA: 57.05% | Local Loss: 1.2983
+  --> [Edge Server 5] Local APA: 47.10% | Local Loss: 1.6042
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1063 | Test Loss: 1.1573 | Global APA: 59.96%
+
+==================== Round 196 ====================
+  --> [Edge Server 1] Local APA: 65.65% | Local Loss: 0.9589
+  --> [Edge Server 2] Local APA: 64.30% | Local Loss: 0.9708
+  --> [Edge Server 3] Local APA: 64.25% | Local Loss: 0.9746
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.2958
+  --> [Edge Server 5] Local APA: 47.05% | Local Loss: 1.5824
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1811 | Test Loss: 1.1565 | Global APA: 59.70%
+
+==================== Round 197 ====================
+  --> [Edge Server 1] Local APA: 66.80% | Local Loss: 0.9385
+  --> [Edge Server 2] Local APA: 65.10% | Local Loss: 0.9518
+  --> [Edge Server 3] Local APA: 65.65% | Local Loss: 0.9605
+  --> [Edge Server 4] Local APA: 58.15% | Local Loss: 1.2852
+  --> [Edge Server 5] Local APA: 49.30% | Local Loss: 1.5695
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1388 | Test Loss: 1.1411 | Global APA: 61.00%
+
+==================== Round 198 ====================
+  --> [Edge Server 1] Local APA: 65.85% | Local Loss: 0.9571
+  --> [Edge Server 2] Local APA: 64.95% | Local Loss: 0.9493
+  --> [Edge Server 3] Local APA: 63.95% | Local Loss: 0.9731
+  --> [Edge Server 4] Local APA: 57.80% | Local Loss: 1.2835
+  --> [Edge Server 5] Local APA: 47.95% | Local Loss: 1.5776
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0861 | Test Loss: 1.1481 | Global APA: 60.10%
+
+==================== Round 199 ====================
+  --> [Edge Server 1] Local APA: 67.00% | Local Loss: 0.9524
+  --> [Edge Server 2] Local APA: 65.15% | Local Loss: 0.9540
+  --> [Edge Server 3] Local APA: 63.70% | Local Loss: 0.9744
+  --> [Edge Server 4] Local APA: 58.00% | Local Loss: 1.2898
+  --> [Edge Server 5] Local APA: 49.05% | Local Loss: 1.5717
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1249 | Test Loss: 1.1485 | Global APA: 60.58%
+
+==================== Round 200 ====================
+  --> [Edge Server 1] Local APA: 68.00% | Local Loss: 0.9523
+  --> [Edge Server 2] Local APA: 66.90% | Local Loss: 0.9340
+  --> [Edge Server 3] Local APA: 64.35% | Local Loss: 0.9791
+  --> [Edge Server 4] Local APA: 57.20% | Local Loss: 1.2963
+  --> [Edge Server 5] Local APA: 47.40% | Local Loss: 1.5754
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1637 | Test Loss: 1.1474 | Global APA: 60.77%
+
+==================== Round 201 ====================
+  --> [Edge Server 1] Local APA: 67.80% | Local Loss: 0.9411
+  --> [Edge Server 2] Local APA: 64.85% | Local Loss: 0.9505
+  --> [Edge Server 3] Local APA: 64.90% | Local Loss: 0.9684
+  --> [Edge Server 4] Local APA: 58.65% | Local Loss: 1.2751
+  --> [Edge Server 5] Local APA: 47.10% | Local Loss: 1.5791
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0971 | Test Loss: 1.1428 | Global APA: 60.66%
+
+==================== Round 202 ====================
+  --> [Edge Server 1] Local APA: 67.80% | Local Loss: 0.9449
+  --> [Edge Server 2] Local APA: 64.65% | Local Loss: 0.9533
+  --> [Edge Server 3] Local APA: 64.50% | Local Loss: 0.9735
+  --> [Edge Server 4] Local APA: 56.90% | Local Loss: 1.3043
+  --> [Edge Server 5] Local APA: 47.95% | Local Loss: 1.5848
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1538 | Test Loss: 1.1522 | Global APA: 60.36%
+
+==================== Round 203 ====================
+  --> [Edge Server 1] Local APA: 67.10% | Local Loss: 0.9513
+  --> [Edge Server 2] Local APA: 66.05% | Local Loss: 0.9496
+  --> [Edge Server 3] Local APA: 65.00% | Local Loss: 0.9663
+  --> [Edge Server 4] Local APA: 59.00% | Local Loss: 1.2794
+  --> [Edge Server 5] Local APA: 48.10% | Local Loss: 1.5841
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1941 | Test Loss: 1.1461 | Global APA: 61.05%
+
+==================== Round 204 ====================
+  --> [Edge Server 1] Local APA: 67.70% | Local Loss: 0.9315
+  --> [Edge Server 2] Local APA: 67.05% | Local Loss: 0.9381
+  --> [Edge Server 3] Local APA: 64.65% | Local Loss: 0.9711
+  --> [Edge Server 4] Local APA: 58.05% | Local Loss: 1.2856
+  --> [Edge Server 5] Local APA: 46.35% | Local Loss: 1.6010
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2017 | Test Loss: 1.1454 | Global APA: 60.76%
+
+==================== Round 205 ====================
+  --> [Edge Server 1] Local APA: 67.85% | Local Loss: 0.9401
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.9490
+  --> [Edge Server 3] Local APA: 64.50% | Local Loss: 0.9708
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.2867
+  --> [Edge Server 5] Local APA: 47.60% | Local Loss: 1.5834
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0895 | Test Loss: 1.1460 | Global APA: 60.56%
+
+==================== Round 206 ====================
+  --> [Edge Server 1] Local APA: 66.25% | Local Loss: 0.9574
+  --> [Edge Server 2] Local APA: 66.00% | Local Loss: 0.9526
+  --> [Edge Server 3] Local APA: 64.80% | Local Loss: 0.9660
+  --> [Edge Server 4] Local APA: 58.10% | Local Loss: 1.2879
+  --> [Edge Server 5] Local APA: 46.80% | Local Loss: 1.5980
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2370 | Test Loss: 1.1524 | Global APA: 60.39%
+
+==================== Round 207 ====================
+  --> [Edge Server 1] Local APA: 67.45% | Local Loss: 0.9510
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9461
+  --> [Edge Server 3] Local APA: 63.95% | Local Loss: 0.9815
+  --> [Edge Server 4] Local APA: 57.35% | Local Loss: 1.2876
+  --> [Edge Server 5] Local APA: 47.45% | Local Loss: 1.5977
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0988 | Test Loss: 1.1528 | Global APA: 60.51%
+
+==================== Round 208 ====================
+  --> [Edge Server 1] Local APA: 66.50% | Local Loss: 0.9541
+  --> [Edge Server 2] Local APA: 65.30% | Local Loss: 0.9547
+  --> [Edge Server 3] Local APA: 63.85% | Local Loss: 0.9679
+  --> [Edge Server 4] Local APA: 57.15% | Local Loss: 1.2930
+  --> [Edge Server 5] Local APA: 47.25% | Local Loss: 1.5869
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1083 | Test Loss: 1.1513 | Global APA: 60.01%
+
+==================== Round 209 ====================
+  --> [Edge Server 1] Local APA: 65.95% | Local Loss: 0.9534
+  --> [Edge Server 2] Local APA: 65.00% | Local Loss: 0.9373
+  --> [Edge Server 3] Local APA: 64.85% | Local Loss: 0.9663
+  --> [Edge Server 4] Local APA: 57.85% | Local Loss: 1.2936
+  --> [Edge Server 5] Local APA: 47.25% | Local Loss: 1.5805
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1607 | Test Loss: 1.1462 | Global APA: 60.18%
+
+==================== Round 210 ====================
+  --> [Edge Server 1] Local APA: 66.90% | Local Loss: 0.9477
+  --> [Edge Server 2] Local APA: 65.25% | Local Loss: 0.9494
+  --> [Edge Server 3] Local APA: 64.65% | Local Loss: 0.9687
+  --> [Edge Server 4] Local APA: 56.65% | Local Loss: 1.2957
+  --> [Edge Server 5] Local APA: 48.25% | Local Loss: 1.5781
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0524 | Test Loss: 1.1479 | Global APA: 60.34%
+
+==================== Round 211 ====================
+  --> [Edge Server 1] Local APA: 67.50% | Local Loss: 0.9520
+  --> [Edge Server 2] Local APA: 65.70% | Local Loss: 0.9493
+  --> [Edge Server 3] Local APA: 66.15% | Local Loss: 0.9573
+  --> [Edge Server 4] Local APA: 59.40% | Local Loss: 1.2843
+  --> [Edge Server 5] Local APA: 47.35% | Local Loss: 1.5940
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1270 | Test Loss: 1.1474 | Global APA: 61.22%
+
+==================== Round 212 ====================
+  --> [Edge Server 1] Local APA: 66.15% | Local Loss: 0.9598
+  --> [Edge Server 2] Local APA: 66.05% | Local Loss: 0.9398
+  --> [Edge Server 3] Local APA: 65.00% | Local Loss: 0.9681
+  --> [Edge Server 4] Local APA: 56.55% | Local Loss: 1.2911
+  --> [Edge Server 5] Local APA: 46.60% | Local Loss: 1.5902
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1487 | Test Loss: 1.1498 | Global APA: 60.07%
+
+==================== Round 213 ====================
+  --> [Edge Server 1] Local APA: 67.30% | Local Loss: 0.9403
+  --> [Edge Server 2] Local APA: 66.45% | Local Loss: 0.9378
+  --> [Edge Server 3] Local APA: 64.35% | Local Loss: 0.9511
+  --> [Edge Server 4] Local APA: 56.35% | Local Loss: 1.2848
+  --> [Edge Server 5] Local APA: 48.70% | Local Loss: 1.5811
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0918 | Test Loss: 1.1390 | Global APA: 60.63%
+
+==================== Round 214 ====================
+  --> [Edge Server 1] Local APA: 66.55% | Local Loss: 0.9606
+  --> [Edge Server 2] Local APA: 66.10% | Local Loss: 0.9288
+  --> [Edge Server 3] Local APA: 64.15% | Local Loss: 0.9638
+  --> [Edge Server 4] Local APA: 58.65% | Local Loss: 1.2708
+  --> [Edge Server 5] Local APA: 48.10% | Local Loss: 1.5829
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0931 | Test Loss: 1.1414 | Global APA: 60.71%
+
+==================== Round 215 ====================
+  --> [Edge Server 1] Local APA: 66.95% | Local Loss: 0.9468
+  --> [Edge Server 2] Local APA: 65.10% | Local Loss: 0.9453
+  --> [Edge Server 3] Local APA: 65.45% | Local Loss: 0.9561
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.2958
+  --> [Edge Server 5] Local APA: 47.15% | Local Loss: 1.5942
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1589 | Test Loss: 1.1476 | Global APA: 60.21%
+
+==================== Round 216 ====================
+  --> [Edge Server 1] Local APA: 66.50% | Local Loss: 0.9678
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.9356
+  --> [Edge Server 3] Local APA: 64.40% | Local Loss: 0.9768
+  --> [Edge Server 4] Local APA: 58.95% | Local Loss: 1.2807
+  --> [Edge Server 5] Local APA: 47.45% | Local Loss: 1.6015
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1395 | Test Loss: 1.1525 | Global APA: 60.63%
+
+==================== Round 217 ====================
+  --> [Edge Server 1] Local APA: 66.25% | Local Loss: 0.9529
+  --> [Edge Server 2] Local APA: 65.30% | Local Loss: 0.9325
+  --> [Edge Server 3] Local APA: 64.30% | Local Loss: 0.9501
+  --> [Edge Server 4] Local APA: 57.60% | Local Loss: 1.2891
+  --> [Edge Server 5] Local APA: 48.90% | Local Loss: 1.5683
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0882 | Test Loss: 1.1386 | Global APA: 60.47%
+
+==================== Round 218 ====================
+  --> [Edge Server 1] Local APA: 67.40% | Local Loss: 0.9418
+  --> [Edge Server 2] Local APA: 65.55% | Local Loss: 0.9405
+  --> [Edge Server 3] Local APA: 63.80% | Local Loss: 0.9749
+  --> [Edge Server 4] Local APA: 58.00% | Local Loss: 1.2846
+  --> [Edge Server 5] Local APA: 47.05% | Local Loss: 1.5905
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1223 | Test Loss: 1.1464 | Global APA: 60.36%
+
+==================== Round 219 ====================
+  --> [Edge Server 1] Local APA: 66.65% | Local Loss: 0.9530
+  --> [Edge Server 2] Local APA: 65.95% | Local Loss: 0.9315
+  --> [Edge Server 3] Local APA: 63.55% | Local Loss: 0.9668
+  --> [Edge Server 4] Local APA: 57.95% | Local Loss: 1.2893
+  --> [Edge Server 5] Local APA: 46.10% | Local Loss: 1.6054
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0462 | Test Loss: 1.1492 | Global APA: 60.04%
+
+==================== Round 220 ====================
+  --> [Edge Server 1] Local APA: 66.30% | Local Loss: 0.9677
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9267
+  --> [Edge Server 3] Local APA: 64.80% | Local Loss: 0.9694
+  --> [Edge Server 4] Local APA: 57.50% | Local Loss: 1.2806
+  --> [Edge Server 5] Local APA: 46.65% | Local Loss: 1.6073
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1154 | Test Loss: 1.1503 | Global APA: 60.32%
+
+==================== Round 221 ====================
+  --> [Edge Server 1] Local APA: 67.55% | Local Loss: 0.9577
+  --> [Edge Server 2] Local APA: 65.35% | Local Loss: 0.9465
+  --> [Edge Server 3] Local APA: 64.80% | Local Loss: 0.9669
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.2878
+  --> [Edge Server 5] Local APA: 44.65% | Local Loss: 1.6266
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9782 | Test Loss: 1.1571 | Global APA: 59.92%
+
+==================== Round 222 ====================
+  --> [Edge Server 1] Local APA: 67.05% | Local Loss: 0.9568
+  --> [Edge Server 2] Local APA: 66.05% | Local Loss: 0.9390
+  --> [Edge Server 3] Local APA: 64.95% | Local Loss: 0.9695
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.2812
+  --> [Edge Server 5] Local APA: 43.80% | Local Loss: 1.6271
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1810 | Test Loss: 1.1547 | Global APA: 59.86%
+
+==================== Round 223 ====================
+  --> [Edge Server 1] Local APA: 67.00% | Local Loss: 0.9401
+  --> [Edge Server 2] Local APA: 64.30% | Local Loss: 0.9485
+  --> [Edge Server 3] Local APA: 64.05% | Local Loss: 0.9623
+  --> [Edge Server 4] Local APA: 57.20% | Local Loss: 1.2994
+  --> [Edge Server 5] Local APA: 46.30% | Local Loss: 1.6124
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2313 | Test Loss: 1.1525 | Global APA: 59.77%
+
+==================== Round 224 ====================
+  --> [Edge Server 1] Local APA: 66.55% | Local Loss: 0.9591
+  --> [Edge Server 2] Local APA: 65.45% | Local Loss: 0.9374
+  --> [Edge Server 3] Local APA: 63.80% | Local Loss: 0.9708
+  --> [Edge Server 4] Local APA: 57.05% | Local Loss: 1.2853
+  --> [Edge Server 5] Local APA: 45.15% | Local Loss: 1.6175
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1112 | Test Loss: 1.1540 | Global APA: 59.60%
+
+==================== Round 225 ====================
+  --> [Edge Server 1] Local APA: 67.15% | Local Loss: 0.9553
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.9435
+  --> [Edge Server 3] Local APA: 63.40% | Local Loss: 0.9766
+  --> [Edge Server 4] Local APA: 55.90% | Local Loss: 1.2953
+  --> [Edge Server 5] Local APA: 45.35% | Local Loss: 1.6174
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1118 | Test Loss: 1.1576 | Global APA: 59.53%
+
+==================== Round 226 ====================
+  --> [Edge Server 1] Local APA: 66.80% | Local Loss: 0.9542
+  --> [Edge Server 2] Local APA: 65.70% | Local Loss: 0.9383
+  --> [Edge Server 3] Local APA: 64.10% | Local Loss: 0.9826
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.2834
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6060
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0941 | Test Loss: 1.1529 | Global APA: 59.80%
+
+==================== Round 227 ====================
+  --> [Edge Server 1] Local APA: 67.25% | Local Loss: 0.9462
+  --> [Edge Server 2] Local APA: 66.85% | Local Loss: 0.9200
+  --> [Edge Server 3] Local APA: 63.80% | Local Loss: 0.9729
+  --> [Edge Server 4] Local APA: 57.55% | Local Loss: 1.2857
+  --> [Edge Server 5] Local APA: 46.55% | Local Loss: 1.5986
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.2040 | Test Loss: 1.1447 | Global APA: 60.40%
+
+==================== Round 228 ====================
+  --> [Edge Server 1] Local APA: 67.00% | Local Loss: 0.9571
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.9326
+  --> [Edge Server 3] Local APA: 63.85% | Local Loss: 0.9630
+  --> [Edge Server 4] Local APA: 57.30% | Local Loss: 1.2854
+  --> [Edge Server 5] Local APA: 46.45% | Local Loss: 1.5998
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1869 | Test Loss: 1.1476 | Global APA: 60.09%
+
+==================== Round 229 ====================
+  --> [Edge Server 1] Local APA: 67.05% | Local Loss: 0.9612
+  --> [Edge Server 2] Local APA: 65.70% | Local Loss: 0.9339
+  --> [Edge Server 3] Local APA: 65.00% | Local Loss: 0.9656
+  --> [Edge Server 4] Local APA: 59.15% | Local Loss: 1.2790
+  --> [Edge Server 5] Local APA: 45.20% | Local Loss: 1.6083
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1894 | Test Loss: 1.1496 | Global APA: 60.42%
+
+==================== Round 230 ====================
+  --> [Edge Server 1] Local APA: 66.75% | Local Loss: 0.9589
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.9361
+  --> [Edge Server 3] Local APA: 65.05% | Local Loss: 0.9735
+  --> [Edge Server 4] Local APA: 58.30% | Local Loss: 1.2928
+  --> [Edge Server 5] Local APA: 45.10% | Local Loss: 1.6142
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0670 | Test Loss: 1.1551 | Global APA: 60.21%
+
+==================== Round 231 ====================
+  --> [Edge Server 1] Local APA: 66.05% | Local Loss: 0.9717
+  --> [Edge Server 2] Local APA: 66.45% | Local Loss: 0.9235
+  --> [Edge Server 3] Local APA: 64.20% | Local Loss: 0.9749
+  --> [Edge Server 4] Local APA: 57.85% | Local Loss: 1.2870
+  --> [Edge Server 5] Local APA: 45.70% | Local Loss: 1.6084
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1279 | Test Loss: 1.1531 | Global APA: 60.05%
+
+==================== Round 232 ====================
+  --> [Edge Server 1] Local APA: 66.60% | Local Loss: 0.9474
+  --> [Edge Server 2] Local APA: 66.40% | Local Loss: 0.9224
+  --> [Edge Server 3] Local APA: 64.45% | Local Loss: 0.9747
+  --> [Edge Server 4] Local APA: 59.05% | Local Loss: 1.2855
+  --> [Edge Server 5] Local APA: 46.05% | Local Loss: 1.6054
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0593 | Test Loss: 1.1471 | Global APA: 60.51%
+
+==================== Round 233 ====================
+  --> [Edge Server 1] Local APA: 66.95% | Local Loss: 0.9603
+  --> [Edge Server 2] Local APA: 66.45% | Local Loss: 0.9278
+  --> [Edge Server 3] Local APA: 64.40% | Local Loss: 0.9734
+  --> [Edge Server 4] Local APA: 57.75% | Local Loss: 1.2933
+  --> [Edge Server 5] Local APA: 45.50% | Local Loss: 1.6207
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0599 | Test Loss: 1.1551 | Global APA: 60.21%
+
+==================== Round 234 ====================
+  --> [Edge Server 1] Local APA: 67.75% | Local Loss: 0.9304
+  --> [Edge Server 2] Local APA: 65.90% | Local Loss: 0.9259
+  --> [Edge Server 3] Local APA: 63.85% | Local Loss: 0.9714
+  --> [Edge Server 4] Local APA: 57.90% | Local Loss: 1.2770
+  --> [Edge Server 5] Local APA: 44.85% | Local Loss: 1.6176
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0702 | Test Loss: 1.1445 | Global APA: 60.05%
+
+==================== Round 235 ====================
+  --> [Edge Server 1] Local APA: 66.35% | Local Loss: 0.9423
+  --> [Edge Server 2] Local APA: 65.90% | Local Loss: 0.9341
+  --> [Edge Server 3] Local APA: 63.65% | Local Loss: 0.9693
+  --> [Edge Server 4] Local APA: 57.15% | Local Loss: 1.2857
+  --> [Edge Server 5] Local APA: 45.80% | Local Loss: 1.6132
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1918 | Test Loss: 1.1489 | Global APA: 59.77%
+
+==================== Round 236 ====================
+  --> [Edge Server 1] Local APA: 67.35% | Local Loss: 0.9392
+  --> [Edge Server 2] Local APA: 66.30% | Local Loss: 0.9293
+  --> [Edge Server 3] Local APA: 65.90% | Local Loss: 0.9579
+  --> [Edge Server 4] Local APA: 58.05% | Local Loss: 1.2892
+  --> [Edge Server 5] Local APA: 45.05% | Local Loss: 1.6139
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0446 | Test Loss: 1.1459 | Global APA: 60.53%
+
+==================== Round 237 ====================
+  --> [Edge Server 1] Local APA: 67.90% | Local Loss: 0.9302
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.9366
+  --> [Edge Server 3] Local APA: 64.65% | Local Loss: 0.9653
+  --> [Edge Server 4] Local APA: 57.90% | Local Loss: 1.2800
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6174
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1227 | Test Loss: 1.1459 | Global APA: 60.35%
+
+==================== Round 238 ====================
+  --> [Edge Server 1] Local APA: 67.00% | Local Loss: 0.9572
+  --> [Edge Server 2] Local APA: 67.25% | Local Loss: 0.9344
+  --> [Edge Server 3] Local APA: 65.20% | Local Loss: 0.9631
+  --> [Edge Server 4] Local APA: 56.90% | Local Loss: 1.2906
+  --> [Edge Server 5] Local APA: 44.10% | Local Loss: 1.6284
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1166 | Test Loss: 1.1547 | Global APA: 60.09%
+
+==================== Round 239 ====================
+  --> [Edge Server 1] Local APA: 67.85% | Local Loss: 0.9411
+  --> [Edge Server 2] Local APA: 66.25% | Local Loss: 0.9358
+  --> [Edge Server 3] Local APA: 64.80% | Local Loss: 0.9559
+  --> [Edge Server 4] Local APA: 56.75% | Local Loss: 1.2903
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6043
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0226 | Test Loss: 1.1455 | Global APA: 60.22%
+
+==================== Round 240 ====================
+  --> [Edge Server 1] Local APA: 66.10% | Local Loss: 0.9543
+  --> [Edge Server 2] Local APA: 66.80% | Local Loss: 0.9246
+  --> [Edge Server 3] Local APA: 65.15% | Local Loss: 0.9506
+  --> [Edge Server 4] Local APA: 57.65% | Local Loss: 1.2801
+  --> [Edge Server 5] Local APA: 44.55% | Local Loss: 1.6194
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1753 | Test Loss: 1.1458 | Global APA: 60.05%
+
+==================== Round 241 ====================
+  --> [Edge Server 1] Local APA: 66.65% | Local Loss: 0.9335
+  --> [Edge Server 2] Local APA: 66.60% | Local Loss: 0.9241
+  --> [Edge Server 3] Local APA: 64.00% | Local Loss: 0.9781
+  --> [Edge Server 4] Local APA: 57.30% | Local Loss: 1.2750
+  --> [Edge Server 5] Local APA: 45.60% | Local Loss: 1.6174
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0845 | Test Loss: 1.1456 | Global APA: 60.03%
+
+==================== Round 242 ====================
+  --> [Edge Server 1] Local APA: 67.50% | Local Loss: 0.9394
+  --> [Edge Server 2] Local APA: 66.30% | Local Loss: 0.9234
+  --> [Edge Server 3] Local APA: 64.40% | Local Loss: 0.9622
+  --> [Edge Server 4] Local APA: 57.55% | Local Loss: 1.2837
+  --> [Edge Server 5] Local APA: 44.60% | Local Loss: 1.6071
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1720 | Test Loss: 1.1432 | Global APA: 60.07%
+
+==================== Round 243 ====================
+  --> [Edge Server 1] Local APA: 67.40% | Local Loss: 0.9479
+  --> [Edge Server 2] Local APA: 66.85% | Local Loss: 0.9158
+  --> [Edge Server 3] Local APA: 65.45% | Local Loss: 0.9442
+  --> [Edge Server 4] Local APA: 57.15% | Local Loss: 1.2856
+  --> [Edge Server 5] Local APA: 46.40% | Local Loss: 1.5912
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0487 | Test Loss: 1.1369 | Global APA: 60.65%
+
+==================== Round 244 ====================
+  --> [Edge Server 1] Local APA: 67.20% | Local Loss: 0.9350
+  --> [Edge Server 2] Local APA: 66.10% | Local Loss: 0.9386
+  --> [Edge Server 3] Local APA: 65.90% | Local Loss: 0.9533
+  --> [Edge Server 4] Local APA: 57.75% | Local Loss: 1.2841
+  --> [Edge Server 5] Local APA: 45.75% | Local Loss: 1.6141
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1052 | Test Loss: 1.1450 | Global APA: 60.54%
+
+==================== Round 245 ====================
+  --> [Edge Server 1] Local APA: 68.30% | Local Loss: 0.9250
+  --> [Edge Server 2] Local APA: 65.55% | Local Loss: 0.9464
+  --> [Edge Server 3] Local APA: 65.05% | Local Loss: 0.9587
+  --> [Edge Server 4] Local APA: 57.80% | Local Loss: 1.2623
+  --> [Edge Server 5] Local APA: 43.65% | Local Loss: 1.6233
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1005 | Test Loss: 1.1431 | Global APA: 60.07%
+
+==================== Round 246 ====================
+  --> [Edge Server 1] Local APA: 67.95% | Local Loss: 0.9387
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9196
+  --> [Edge Server 3] Local APA: 65.25% | Local Loss: 0.9480
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.2795
+  --> [Edge Server 5] Local APA: 45.00% | Local Loss: 1.6176
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0432 | Test Loss: 1.1407 | Global APA: 60.36%
+
+==================== Round 247 ====================
+  --> [Edge Server 1] Local APA: 68.70% | Local Loss: 0.9330
+  --> [Edge Server 2] Local APA: 66.20% | Local Loss: 0.9178
+  --> [Edge Server 3] Local APA: 65.15% | Local Loss: 0.9501
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.2804
+  --> [Edge Server 5] Local APA: 45.35% | Local Loss: 1.6100
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1324 | Test Loss: 1.1383 | Global APA: 60.57%
+
+==================== Round 248 ====================
+  --> [Edge Server 1] Local APA: 68.70% | Local Loss: 0.9274
+  --> [Edge Server 2] Local APA: 65.50% | Local Loss: 0.9325
+  --> [Edge Server 3] Local APA: 66.40% | Local Loss: 0.9402
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.2883
+  --> [Edge Server 5] Local APA: 43.85% | Local Loss: 1.6224
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0628 | Test Loss: 1.1422 | Global APA: 60.38%
+
+==================== Round 249 ====================
+  --> [Edge Server 1] Local APA: 67.80% | Local Loss: 0.9361
+  --> [Edge Server 2] Local APA: 66.05% | Local Loss: 0.9295
+  --> [Edge Server 3] Local APA: 65.10% | Local Loss: 0.9554
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.2942
+  --> [Edge Server 5] Local APA: 44.25% | Local Loss: 1.6211
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1867 | Test Loss: 1.1473 | Global APA: 60.01%
+
+==================== Round 250 ====================
+  --> [Edge Server 1] Local APA: 68.35% | Local Loss: 0.9255
+  --> [Edge Server 2] Local APA: 65.60% | Local Loss: 0.9326
+  --> [Edge Server 3] Local APA: 65.55% | Local Loss: 0.9488
+  --> [Edge Server 4] Local APA: 58.70% | Local Loss: 1.2824
+  --> [Edge Server 5] Local APA: 44.30% | Local Loss: 1.6229
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9783 | Test Loss: 1.1425 | Global APA: 60.50%
+
+==================== Round 251 ====================
+  --> [Edge Server 1] Local APA: 67.90% | Local Loss: 0.9327
+  --> [Edge Server 2] Local APA: 65.50% | Local Loss: 0.9284
+  --> [Edge Server 3] Local APA: 64.95% | Local Loss: 0.9403
+  --> [Edge Server 4] Local APA: 58.35% | Local Loss: 1.2745
+  --> [Edge Server 5] Local APA: 44.30% | Local Loss: 1.6197
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0419 | Test Loss: 1.1391 | Global APA: 60.20%
+
+==================== Round 252 ====================
+  --> [Edge Server 1] Local APA: 67.50% | Local Loss: 0.9306
+  --> [Edge Server 2] Local APA: 66.80% | Local Loss: 0.9223
+  --> [Edge Server 3] Local APA: 65.15% | Local Loss: 0.9524
+  --> [Edge Server 4] Local APA: 57.65% | Local Loss: 1.2839
+  --> [Edge Server 5] Local APA: 45.75% | Local Loss: 1.6179
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0795 | Test Loss: 1.1414 | Global APA: 60.57%
+
+==================== Round 253 ====================
+  --> [Edge Server 1] Local APA: 68.15% | Local Loss: 0.9134
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9173
+  --> [Edge Server 3] Local APA: 66.25% | Local Loss: 0.9399
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.2840
+  --> [Edge Server 5] Local APA: 46.00% | Local Loss: 1.6127
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1293 | Test Loss: 1.1335 | Global APA: 60.75%
+
+==================== Round 254 ====================
+  --> [Edge Server 1] Local APA: 68.60% | Local Loss: 0.9165
+  --> [Edge Server 2] Local APA: 66.20% | Local Loss: 0.9325
+  --> [Edge Server 3] Local APA: 65.10% | Local Loss: 0.9503
+  --> [Edge Server 4] Local APA: 59.05% | Local Loss: 1.2727
+  --> [Edge Server 5] Local APA: 44.75% | Local Loss: 1.6182
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0405 | Test Loss: 1.1380 | Global APA: 60.74%
+
+==================== Round 255 ====================
+  --> [Edge Server 1] Local APA: 69.00% | Local Loss: 0.9105
+  --> [Edge Server 2] Local APA: 67.20% | Local Loss: 0.9135
+  --> [Edge Server 3] Local APA: 65.15% | Local Loss: 0.9474
+  --> [Edge Server 4] Local APA: 58.10% | Local Loss: 1.2812
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6050
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9768 | Test Loss: 1.1315 | Global APA: 60.98%
+
+==================== Round 256 ====================
+  --> [Edge Server 1] Local APA: 68.05% | Local Loss: 0.9179
+  --> [Edge Server 2] Local APA: 66.70% | Local Loss: 0.9146
+  --> [Edge Server 3] Local APA: 65.10% | Local Loss: 0.9554
+  --> [Edge Server 4] Local APA: 58.75% | Local Loss: 1.2685
+  --> [Edge Server 5] Local APA: 45.20% | Local Loss: 1.6030
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9440 | Test Loss: 1.1319 | Global APA: 60.76%
+
+==================== Round 257 ====================
+  --> [Edge Server 1] Local APA: 67.70% | Local Loss: 0.9346
+  --> [Edge Server 2] Local APA: 66.00% | Local Loss: 0.9185
+  --> [Edge Server 3] Local APA: 65.90% | Local Loss: 0.9389
+  --> [Edge Server 4] Local APA: 58.50% | Local Loss: 1.2793
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6023
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0482 | Test Loss: 1.1347 | Global APA: 60.71%
+
+==================== Round 258 ====================
+  --> [Edge Server 1] Local APA: 68.90% | Local Loss: 0.9218
+  --> [Edge Server 2] Local APA: 67.05% | Local Loss: 0.9152
+  --> [Edge Server 3] Local APA: 66.35% | Local Loss: 0.9326
+  --> [Edge Server 4] Local APA: 58.00% | Local Loss: 1.2759
+  --> [Edge Server 5] Local APA: 45.95% | Local Loss: 1.5971
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0969 | Test Loss: 1.1285 | Global APA: 61.25%
+
+==================== Round 259 ====================
+  --> [Edge Server 1] Local APA: 68.75% | Local Loss: 0.9220
+  --> [Edge Server 2] Local APA: 67.25% | Local Loss: 0.9197
+  --> [Edge Server 3] Local APA: 66.15% | Local Loss: 0.9335
+  --> [Edge Server 4] Local APA: 56.90% | Local Loss: 1.2854
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6028
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1240 | Test Loss: 1.1327 | Global APA: 60.90%
+
+==================== Round 260 ====================
+  --> [Edge Server 1] Local APA: 67.25% | Local Loss: 0.9367
+  --> [Edge Server 2] Local APA: 65.80% | Local Loss: 0.9387
+  --> [Edge Server 3] Local APA: 66.40% | Local Loss: 0.9408
+  --> [Edge Server 4] Local APA: 56.95% | Local Loss: 1.2983
+  --> [Edge Server 5] Local APA: 46.00% | Local Loss: 1.6012
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0317 | Test Loss: 1.1431 | Global APA: 60.48%
+
+==================== Round 261 ====================
+  --> [Edge Server 1] Local APA: 67.25% | Local Loss: 0.9333
+  --> [Edge Server 2] Local APA: 66.25% | Local Loss: 0.9250
+  --> [Edge Server 3] Local APA: 65.20% | Local Loss: 0.9381
+  --> [Edge Server 4] Local APA: 57.65% | Local Loss: 1.2999
+  --> [Edge Server 5] Local APA: 45.55% | Local Loss: 1.5982
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0746 | Test Loss: 1.1389 | Global APA: 60.38%
+
+==================== Round 262 ====================
+  --> [Edge Server 1] Local APA: 68.75% | Local Loss: 0.9253
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9259
+  --> [Edge Server 3] Local APA: 65.65% | Local Loss: 0.9418
+  --> [Edge Server 4] Local APA: 58.40% | Local Loss: 1.2786
+  --> [Edge Server 5] Local APA: 46.40% | Local Loss: 1.5975
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1916 | Test Loss: 1.1338 | Global APA: 61.11%
+
+==================== Round 263 ====================
+  --> [Edge Server 1] Local APA: 68.60% | Local Loss: 0.9385
+  --> [Edge Server 2] Local APA: 66.90% | Local Loss: 0.9131
+  --> [Edge Server 3] Local APA: 65.05% | Local Loss: 0.9481
+  --> [Edge Server 4] Local APA: 57.45% | Local Loss: 1.2866
+  --> [Edge Server 5] Local APA: 44.85% | Local Loss: 1.6161
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0689 | Test Loss: 1.1405 | Global APA: 60.57%
+
+==================== Round 264 ====================
+  --> [Edge Server 1] Local APA: 68.45% | Local Loss: 0.9343
+  --> [Edge Server 2] Local APA: 67.00% | Local Loss: 0.9210
+  --> [Edge Server 3] Local APA: 65.00% | Local Loss: 0.9497
+  --> [Edge Server 4] Local APA: 58.40% | Local Loss: 1.2907
+  --> [Edge Server 5] Local APA: 46.50% | Local Loss: 1.5771
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1408 | Test Loss: 1.1345 | Global APA: 61.07%
+
+==================== Round 265 ====================
+  --> [Edge Server 1] Local APA: 67.80% | Local Loss: 0.9407
+  --> [Edge Server 2] Local APA: 66.55% | Local Loss: 0.9206
+  --> [Edge Server 3] Local APA: 66.85% | Local Loss: 0.9360
+  --> [Edge Server 4] Local APA: 56.50% | Local Loss: 1.3047
+  --> [Edge Server 5] Local APA: 45.95% | Local Loss: 1.5868
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1281 | Test Loss: 1.1378 | Global APA: 60.73%
+
+==================== Round 266 ====================
+  --> [Edge Server 1] Local APA: 67.85% | Local Loss: 0.9437
+  --> [Edge Server 2] Local APA: 66.50% | Local Loss: 0.9228
+  --> [Edge Server 3] Local APA: 66.20% | Local Loss: 0.9430
+  --> [Edge Server 4] Local APA: 57.80% | Local Loss: 1.2911
+  --> [Edge Server 5] Local APA: 45.40% | Local Loss: 1.6123
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9676 | Test Loss: 1.1426 | Global APA: 60.75%
+
+==================== Round 267 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9306
+  --> [Edge Server 2] Local APA: 66.75% | Local Loss: 0.9133
+  --> [Edge Server 3] Local APA: 65.20% | Local Loss: 0.9429
+  --> [Edge Server 4] Local APA: 58.25% | Local Loss: 1.2883
+  --> [Edge Server 5] Local APA: 44.70% | Local Loss: 1.6080
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0294 | Test Loss: 1.1366 | Global APA: 60.68%
+
+==================== Round 268 ====================
+  --> [Edge Server 1] Local APA: 68.15% | Local Loss: 0.9161
+  --> [Edge Server 2] Local APA: 67.40% | Local Loss: 0.9146
+  --> [Edge Server 3] Local APA: 65.20% | Local Loss: 0.9561
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.2921
+  --> [Edge Server 5] Local APA: 45.65% | Local Loss: 1.6137
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0626 | Test Loss: 1.1385 | Global APA: 60.56%
+
+==================== Round 269 ====================
+  --> [Edge Server 1] Local APA: 68.20% | Local Loss: 0.9455
+  --> [Edge Server 2] Local APA: 65.40% | Local Loss: 0.9361
+  --> [Edge Server 3] Local APA: 65.55% | Local Loss: 0.9293
+  --> [Edge Server 4] Local APA: 56.10% | Local Loss: 1.3103
+  --> [Edge Server 5] Local APA: 45.25% | Local Loss: 1.6165
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1240 | Test Loss: 1.1475 | Global APA: 60.10%
+
+==================== Round 270 ====================
+  --> [Edge Server 1] Local APA: 67.15% | Local Loss: 0.9449
+  --> [Edge Server 2] Local APA: 66.15% | Local Loss: 0.9171
+  --> [Edge Server 3] Local APA: 65.10% | Local Loss: 0.9450
+  --> [Edge Server 4] Local APA: 56.35% | Local Loss: 1.3015
+  --> [Edge Server 5] Local APA: 44.55% | Local Loss: 1.6154
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0833 | Test Loss: 1.1448 | Global APA: 59.86%
+
+==================== Round 271 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9292
+  --> [Edge Server 2] Local APA: 66.05% | Local Loss: 0.9267
+  --> [Edge Server 3] Local APA: 66.50% | Local Loss: 0.9424
+  --> [Edge Server 4] Local APA: 56.70% | Local Loss: 1.3159
+  --> [Edge Server 5] Local APA: 43.50% | Local Loss: 1.6293
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1489 | Test Loss: 1.1487 | Global APA: 60.25%
+
+==================== Round 272 ====================
+  --> [Edge Server 1] Local APA: 67.60% | Local Loss: 0.9438
+  --> [Edge Server 2] Local APA: 66.85% | Local Loss: 0.9380
+  --> [Edge Server 3] Local APA: 65.50% | Local Loss: 0.9537
+  --> [Edge Server 4] Local APA: 55.20% | Local Loss: 1.3135
+  --> [Edge Server 5] Local APA: 44.75% | Local Loss: 1.6253
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0640 | Test Loss: 1.1549 | Global APA: 59.98%
+
+==================== Round 273 ====================
+  --> [Edge Server 1] Local APA: 68.25% | Local Loss: 0.9326
+  --> [Edge Server 2] Local APA: 66.95% | Local Loss: 0.9221
+  --> [Edge Server 3] Local APA: 65.60% | Local Loss: 0.9434
+  --> [Edge Server 4] Local APA: 56.70% | Local Loss: 1.3050
+  --> [Edge Server 5] Local APA: 45.00% | Local Loss: 1.6146
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0300 | Test Loss: 1.1435 | Global APA: 60.50%
+
+==================== Round 274 ====================
+  --> [Edge Server 1] Local APA: 68.85% | Local Loss: 0.9283
+  --> [Edge Server 2] Local APA: 66.40% | Local Loss: 0.9190
+  --> [Edge Server 3] Local APA: 65.40% | Local Loss: 0.9545
+  --> [Edge Server 4] Local APA: 55.70% | Local Loss: 1.3181
+  --> [Edge Server 5] Local APA: 45.75% | Local Loss: 1.6051
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0873 | Test Loss: 1.1450 | Global APA: 60.42%
+
+==================== Round 275 ====================
+  --> [Edge Server 1] Local APA: 68.30% | Local Loss: 0.9368
+  --> [Edge Server 2] Local APA: 66.70% | Local Loss: 0.9316
+  --> [Edge Server 3] Local APA: 65.45% | Local Loss: 0.9475
+  --> [Edge Server 4] Local APA: 56.70% | Local Loss: 1.3080
+  --> [Edge Server 5] Local APA: 45.40% | Local Loss: 1.6130
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1136 | Test Loss: 1.1474 | Global APA: 60.51%
+
+==================== Round 276 ====================
+  --> [Edge Server 1] Local APA: 67.90% | Local Loss: 0.9410
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9208
+  --> [Edge Server 3] Local APA: 64.80% | Local Loss: 0.9448
+  --> [Edge Server 4] Local APA: 57.70% | Local Loss: 1.2868
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6016
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9616 | Test Loss: 1.1390 | Global APA: 60.44%
+
+==================== Round 277 ====================
+  --> [Edge Server 1] Local APA: 68.05% | Local Loss: 0.9462
+  --> [Edge Server 2] Local APA: 66.85% | Local Loss: 0.9163
+  --> [Edge Server 3] Local APA: 65.00% | Local Loss: 0.9478
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.2936
+  --> [Edge Server 5] Local APA: 46.35% | Local Loss: 1.6037
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1909 | Test Loss: 1.1415 | Global APA: 60.53%
+
+==================== Round 278 ====================
+  --> [Edge Server 1] Local APA: 68.15% | Local Loss: 0.9441
+  --> [Edge Server 2] Local APA: 67.25% | Local Loss: 0.9086
+  --> [Edge Server 3] Local APA: 64.95% | Local Loss: 0.9382
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.3022
+  --> [Edge Server 5] Local APA: 45.90% | Local Loss: 1.6039
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0601 | Test Loss: 1.1394 | Global APA: 60.51%
+
+==================== Round 279 ====================
+  --> [Edge Server 1] Local APA: 68.55% | Local Loss: 0.9338
+  --> [Edge Server 2] Local APA: 66.20% | Local Loss: 0.9299
+  --> [Edge Server 3] Local APA: 64.45% | Local Loss: 0.9465
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.3133
+  --> [Edge Server 5] Local APA: 46.15% | Local Loss: 1.5930
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9237 | Test Loss: 1.1433 | Global APA: 60.33%
+
+==================== Round 280 ====================
+  --> [Edge Server 1] Local APA: 68.70% | Local Loss: 0.9238
+  --> [Edge Server 2] Local APA: 66.90% | Local Loss: 0.9175
+  --> [Edge Server 3] Local APA: 65.40% | Local Loss: 0.9412
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3120
+  --> [Edge Server 5] Local APA: 46.95% | Local Loss: 1.6075
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0306 | Test Loss: 1.1404 | Global APA: 60.74%
+
+==================== Round 281 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9346
+  --> [Edge Server 2] Local APA: 66.25% | Local Loss: 0.9203
+  --> [Edge Server 3] Local APA: 64.40% | Local Loss: 0.9352
+  --> [Edge Server 4] Local APA: 56.80% | Local Loss: 1.3092
+  --> [Edge Server 5] Local APA: 45.35% | Local Loss: 1.6074
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0229 | Test Loss: 1.1413 | Global APA: 60.26%
+
+==================== Round 282 ====================
+  --> [Edge Server 1] Local APA: 68.85% | Local Loss: 0.9271
+  --> [Edge Server 2] Local APA: 65.90% | Local Loss: 0.9418
+  --> [Edge Server 3] Local APA: 64.75% | Local Loss: 0.9333
+  --> [Edge Server 4] Local APA: 56.20% | Local Loss: 1.2960
+  --> [Edge Server 5] Local APA: 44.60% | Local Loss: 1.6198
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0874 | Test Loss: 1.1436 | Global APA: 60.06%
+
+==================== Round 283 ====================
+  --> [Edge Server 1] Local APA: 68.90% | Local Loss: 0.9321
+  --> [Edge Server 2] Local APA: 65.70% | Local Loss: 0.9224
+  --> [Edge Server 3] Local APA: 65.55% | Local Loss: 0.9438
+  --> [Edge Server 4] Local APA: 57.50% | Local Loss: 1.2874
+  --> [Edge Server 5] Local APA: 44.75% | Local Loss: 1.6205
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0697 | Test Loss: 1.1412 | Global APA: 60.48%
+
+==================== Round 284 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9140
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9200
+  --> [Edge Server 3] Local APA: 65.50% | Local Loss: 0.9413
+  --> [Edge Server 4] Local APA: 56.45% | Local Loss: 1.2942
+  --> [Edge Server 5] Local APA: 44.40% | Local Loss: 1.6198
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0965 | Test Loss: 1.1379 | Global APA: 60.24%
+
+==================== Round 285 ====================
+  --> [Edge Server 1] Local APA: 69.20% | Local Loss: 0.9193
+  --> [Edge Server 2] Local APA: 66.85% | Local Loss: 0.9205
+  --> [Edge Server 3] Local APA: 65.15% | Local Loss: 0.9404
+  --> [Edge Server 4] Local APA: 56.00% | Local Loss: 1.3073
+  --> [Edge Server 5] Local APA: 44.75% | Local Loss: 1.6118
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0667 | Test Loss: 1.1399 | Global APA: 60.39%
+
+==================== Round 286 ====================
+  --> [Edge Server 1] Local APA: 68.10% | Local Loss: 0.9420
+  --> [Edge Server 2] Local APA: 66.20% | Local Loss: 0.9171
+  --> [Edge Server 3] Local APA: 64.55% | Local Loss: 0.9512
+  --> [Edge Server 4] Local APA: 55.60% | Local Loss: 1.3159
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6026
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9546 | Test Loss: 1.1458 | Global APA: 59.98%
+
+==================== Round 287 ====================
+  --> [Edge Server 1] Local APA: 68.10% | Local Loss: 0.9237
+  --> [Edge Server 2] Local APA: 67.35% | Local Loss: 0.9161
+  --> [Edge Server 3] Local APA: 66.30% | Local Loss: 0.9288
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.2993
+  --> [Edge Server 5] Local APA: 46.00% | Local Loss: 1.6268
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0671 | Test Loss: 1.1390 | Global APA: 60.78%
+
+==================== Round 288 ====================
+  --> [Edge Server 1] Local APA: 68.10% | Local Loss: 0.9239
+  --> [Edge Server 2] Local APA: 66.15% | Local Loss: 0.9284
+  --> [Edge Server 3] Local APA: 65.35% | Local Loss: 0.9505
+  --> [Edge Server 4] Local APA: 56.40% | Local Loss: 1.2999
+  --> [Edge Server 5] Local APA: 45.40% | Local Loss: 1.6141
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1145 | Test Loss: 1.1434 | Global APA: 60.28%
+
+==================== Round 289 ====================
+  --> [Edge Server 1] Local APA: 68.80% | Local Loss: 0.9306
+  --> [Edge Server 2] Local APA: 67.15% | Local Loss: 0.9066
+  --> [Edge Server 3] Local APA: 65.25% | Local Loss: 0.9461
+  --> [Edge Server 4] Local APA: 55.65% | Local Loss: 1.3005
+  --> [Edge Server 5] Local APA: 43.85% | Local Loss: 1.6343
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0311 | Test Loss: 1.1436 | Global APA: 60.14%
+
+==================== Round 290 ====================
+  --> [Edge Server 1] Local APA: 69.00% | Local Loss: 0.9439
+  --> [Edge Server 2] Local APA: 67.00% | Local Loss: 0.9141
+  --> [Edge Server 3] Local APA: 65.80% | Local Loss: 0.9286
+  --> [Edge Server 4] Local APA: 57.40% | Local Loss: 1.3003
+  --> [Edge Server 5] Local APA: 44.55% | Local Loss: 1.6195
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0259 | Test Loss: 1.1413 | Global APA: 60.75%
+
+==================== Round 291 ====================
+  --> [Edge Server 1] Local APA: 68.65% | Local Loss: 0.9228
+  --> [Edge Server 2] Local APA: 65.80% | Local Loss: 0.9282
+  --> [Edge Server 3] Local APA: 64.55% | Local Loss: 0.9438
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.2973
+  --> [Edge Server 5] Local APA: 44.15% | Local Loss: 1.6282
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9769 | Test Loss: 1.1441 | Global APA: 59.89%
+
+==================== Round 292 ====================
+  --> [Edge Server 1] Local APA: 68.70% | Local Loss: 0.9374
+  --> [Edge Server 2] Local APA: 67.20% | Local Loss: 0.9253
+  --> [Edge Server 3] Local APA: 65.75% | Local Loss: 0.9353
+  --> [Edge Server 4] Local APA: 57.30% | Local Loss: 1.2857
+  --> [Edge Server 5] Local APA: 45.55% | Local Loss: 1.6175
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1087 | Test Loss: 1.1402 | Global APA: 60.90%
+
+==================== Round 293 ====================
+  --> [Edge Server 1] Local APA: 68.15% | Local Loss: 0.9318
+  --> [Edge Server 2] Local APA: 67.55% | Local Loss: 0.9086
+  --> [Edge Server 3] Local APA: 66.50% | Local Loss: 0.9333
+  --> [Edge Server 4] Local APA: 57.40% | Local Loss: 1.2946
+  --> [Edge Server 5] Local APA: 46.20% | Local Loss: 1.6117
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9325 | Test Loss: 1.1360 | Global APA: 61.16%
+
+==================== Round 294 ====================
+  --> [Edge Server 1] Local APA: 68.15% | Local Loss: 0.9416
+  --> [Edge Server 2] Local APA: 66.40% | Local Loss: 0.9210
+  --> [Edge Server 3] Local APA: 64.95% | Local Loss: 0.9274
+  --> [Edge Server 4] Local APA: 57.75% | Local Loss: 1.2993
+  --> [Edge Server 5] Local APA: 44.40% | Local Loss: 1.6246
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9573 | Test Loss: 1.1428 | Global APA: 60.33%
+
+==================== Round 295 ====================
+  --> [Edge Server 1] Local APA: 68.55% | Local Loss: 0.9358
+  --> [Edge Server 2] Local APA: 67.85% | Local Loss: 0.9086
+  --> [Edge Server 3] Local APA: 65.85% | Local Loss: 0.9263
+  --> [Edge Server 4] Local APA: 56.55% | Local Loss: 1.2869
+  --> [Edge Server 5] Local APA: 45.05% | Local Loss: 1.6151
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0212 | Test Loss: 1.1345 | Global APA: 60.77%
+
+==================== Round 296 ====================
+  --> [Edge Server 1] Local APA: 68.65% | Local Loss: 0.9480
+  --> [Edge Server 2] Local APA: 67.65% | Local Loss: 0.9121
+  --> [Edge Server 3] Local APA: 66.35% | Local Loss: 0.9266
+  --> [Edge Server 4] Local APA: 57.05% | Local Loss: 1.2950
+  --> [Edge Server 5] Local APA: 43.10% | Local Loss: 1.6376
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0496 | Test Loss: 1.1439 | Global APA: 60.56%
+
+==================== Round 297 ====================
+  --> [Edge Server 1] Local APA: 69.30% | Local Loss: 0.9352
+  --> [Edge Server 2] Local APA: 68.55% | Local Loss: 0.8905
+  --> [Edge Server 3] Local APA: 65.85% | Local Loss: 0.9274
+  --> [Edge Server 4] Local APA: 56.20% | Local Loss: 1.2958
+  --> [Edge Server 5] Local APA: 45.00% | Local Loss: 1.6226
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9421 | Test Loss: 1.1343 | Global APA: 60.98%
+
+==================== Round 298 ====================
+  --> [Edge Server 1] Local APA: 68.95% | Local Loss: 0.9312
+  --> [Edge Server 2] Local APA: 66.95% | Local Loss: 0.9223
+  --> [Edge Server 3] Local APA: 65.15% | Local Loss: 0.9452
+  --> [Edge Server 4] Local APA: 56.90% | Local Loss: 1.2912
+  --> [Edge Server 5] Local APA: 45.00% | Local Loss: 1.6323
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1943 | Test Loss: 1.1445 | Global APA: 60.59%
+
+==================== Round 299 ====================
+  --> [Edge Server 1] Local APA: 69.15% | Local Loss: 0.9228
+  --> [Edge Server 2] Local APA: 67.40% | Local Loss: 0.9006
+  --> [Edge Server 3] Local APA: 65.40% | Local Loss: 0.9551
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.2837
+  --> [Edge Server 5] Local APA: 43.90% | Local Loss: 1.6370
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0954 | Test Loss: 1.1398 | Global APA: 60.40%
+
+==================== Round 300 ====================
+  --> [Edge Server 1] Local APA: 69.25% | Local Loss: 0.9309
+  --> [Edge Server 2] Local APA: 67.85% | Local Loss: 0.9007
+  --> [Edge Server 3] Local APA: 64.30% | Local Loss: 0.9465
+  --> [Edge Server 4] Local APA: 55.95% | Local Loss: 1.2866
+  --> [Edge Server 5] Local APA: 44.65% | Local Loss: 1.6246
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0182 | Test Loss: 1.1379 | Global APA: 60.40%
+
+==================== Round 301 ====================
+  --> [Edge Server 1] Local APA: 68.70% | Local Loss: 0.9492
+  --> [Edge Server 2] Local APA: 66.40% | Local Loss: 0.9143
+  --> [Edge Server 3] Local APA: 64.85% | Local Loss: 0.9426
+  --> [Edge Server 4] Local APA: 57.90% | Local Loss: 1.2927
+  --> [Edge Server 5] Local APA: 44.80% | Local Loss: 1.6240
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0509 | Test Loss: 1.1445 | Global APA: 60.53%
+
+==================== Round 302 ====================
+  --> [Edge Server 1] Local APA: 68.90% | Local Loss: 0.9262
+  --> [Edge Server 2] Local APA: 66.60% | Local Loss: 0.9149
+  --> [Edge Server 3] Local APA: 66.75% | Local Loss: 0.9332
+  --> [Edge Server 4] Local APA: 57.85% | Local Loss: 1.2824
+  --> [Edge Server 5] Local APA: 45.75% | Local Loss: 1.6082
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0426 | Test Loss: 1.1330 | Global APA: 61.17%
+
+==================== Round 303 ====================
+  --> [Edge Server 1] Local APA: 69.65% | Local Loss: 0.9195
+  --> [Edge Server 2] Local APA: 66.95% | Local Loss: 0.9149
+  --> [Edge Server 3] Local APA: 65.10% | Local Loss: 0.9448
+  --> [Edge Server 4] Local APA: 57.50% | Local Loss: 1.2850
+  --> [Edge Server 5] Local APA: 45.45% | Local Loss: 1.6097
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0425 | Test Loss: 1.1348 | Global APA: 60.93%
+
+==================== Round 304 ====================
+  --> [Edge Server 1] Local APA: 69.15% | Local Loss: 0.9207
+  --> [Edge Server 2] Local APA: 67.60% | Local Loss: 0.8980
+  --> [Edge Server 3] Local APA: 66.15% | Local Loss: 0.9281
+  --> [Edge Server 4] Local APA: 57.05% | Local Loss: 1.3012
+  --> [Edge Server 5] Local APA: 44.75% | Local Loss: 1.6139
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0681 | Test Loss: 1.1324 | Global APA: 60.94%
+
+==================== Round 305 ====================
+  --> [Edge Server 1] Local APA: 68.70% | Local Loss: 0.9168
+  --> [Edge Server 2] Local APA: 66.50% | Local Loss: 0.9171
+  --> [Edge Server 3] Local APA: 66.40% | Local Loss: 0.9403
+  --> [Edge Server 4] Local APA: 56.55% | Local Loss: 1.3072
+  --> [Edge Server 5] Local APA: 46.25% | Local Loss: 1.6152
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0729 | Test Loss: 1.1393 | Global APA: 60.88%
+
+==================== Round 306 ====================
+  --> [Edge Server 1] Local APA: 68.05% | Local Loss: 0.9226
+  --> [Edge Server 2] Local APA: 66.55% | Local Loss: 0.9228
+  --> [Edge Server 3] Local APA: 66.80% | Local Loss: 0.9236
+  --> [Edge Server 4] Local APA: 57.60% | Local Loss: 1.3054
+  --> [Edge Server 5] Local APA: 45.65% | Local Loss: 1.6149
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0400 | Test Loss: 1.1379 | Global APA: 60.93%
+
+==================== Round 307 ====================
+  --> [Edge Server 1] Local APA: 68.85% | Local Loss: 0.9339
+  --> [Edge Server 2] Local APA: 66.90% | Local Loss: 0.9197
+  --> [Edge Server 3] Local APA: 65.35% | Local Loss: 0.9296
+  --> [Edge Server 4] Local APA: 55.20% | Local Loss: 1.3154
+  --> [Edge Server 5] Local APA: 46.35% | Local Loss: 1.6238
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0874 | Test Loss: 1.1445 | Global APA: 60.53%
+
+==================== Round 308 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9181
+  --> [Edge Server 2] Local APA: 66.55% | Local Loss: 0.9141
+  --> [Edge Server 3] Local APA: 64.45% | Local Loss: 0.9370
+  --> [Edge Server 4] Local APA: 55.80% | Local Loss: 1.3088
+  --> [Edge Server 5] Local APA: 45.75% | Local Loss: 1.6087
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0027 | Test Loss: 1.1374 | Global APA: 60.21%
+
+==================== Round 309 ====================
+  --> [Edge Server 1] Local APA: 68.40% | Local Loss: 0.9417
+  --> [Edge Server 2] Local APA: 66.55% | Local Loss: 0.9186
+  --> [Edge Server 3] Local APA: 65.90% | Local Loss: 0.9317
+  --> [Edge Server 4] Local APA: 57.10% | Local Loss: 1.3016
+  --> [Edge Server 5] Local APA: 44.20% | Local Loss: 1.6275
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9106 | Test Loss: 1.1442 | Global APA: 60.43%
+
+==================== Round 310 ====================
+  --> [Edge Server 1] Local APA: 69.20% | Local Loss: 0.9318
+  --> [Edge Server 2] Local APA: 66.70% | Local Loss: 0.9266
+  --> [Edge Server 3] Local APA: 66.35% | Local Loss: 0.9389
+  --> [Edge Server 4] Local APA: 57.25% | Local Loss: 1.3022
+  --> [Edge Server 5] Local APA: 45.50% | Local Loss: 1.6075
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0568 | Test Loss: 1.1414 | Global APA: 61.00%
+
+==================== Round 311 ====================
+  --> [Edge Server 1] Local APA: 69.05% | Local Loss: 0.9272
+  --> [Edge Server 2] Local APA: 67.60% | Local Loss: 0.8898
+  --> [Edge Server 3] Local APA: 65.55% | Local Loss: 0.9274
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.3016
+  --> [Edge Server 5] Local APA: 44.00% | Local Loss: 1.6171
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0414 | Test Loss: 1.1326 | Global APA: 60.47%
+
+==================== Round 312 ====================
+  --> [Edge Server 1] Local APA: 69.20% | Local Loss: 0.9260
+  --> [Edge Server 2] Local APA: 67.55% | Local Loss: 0.9071
+  --> [Edge Server 3] Local APA: 66.65% | Local Loss: 0.9195
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.3056
+  --> [Edge Server 5] Local APA: 43.55% | Local Loss: 1.6265
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0602 | Test Loss: 1.1369 | Global APA: 60.65%
+
+==================== Round 313 ====================
+  --> [Edge Server 1] Local APA: 69.25% | Local Loss: 0.9197
+  --> [Edge Server 2] Local APA: 67.25% | Local Loss: 0.9088
+  --> [Edge Server 3] Local APA: 65.40% | Local Loss: 0.9210
+  --> [Edge Server 4] Local APA: 57.00% | Local Loss: 1.3092
+  --> [Edge Server 5] Local APA: 45.35% | Local Loss: 1.6252
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0604 | Test Loss: 1.1368 | Global APA: 60.85%
+
+==================== Round 314 ====================
+  --> [Edge Server 1] Local APA: 69.05% | Local Loss: 0.9297
+  --> [Edge Server 2] Local APA: 66.80% | Local Loss: 0.8995
+  --> [Edge Server 3] Local APA: 67.00% | Local Loss: 0.9099
+  --> [Edge Server 4] Local APA: 55.45% | Local Loss: 1.3140
+  --> [Edge Server 5] Local APA: 44.30% | Local Loss: 1.6127
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9281 | Test Loss: 1.1332 | Global APA: 60.52%
+
+==================== Round 315 ====================
+  --> [Edge Server 1] Local APA: 69.10% | Local Loss: 0.9178
+  --> [Edge Server 2] Local APA: 67.50% | Local Loss: 0.8903
+  --> [Edge Server 3] Local APA: 67.15% | Local Loss: 0.9235
+  --> [Edge Server 4] Local APA: 56.50% | Local Loss: 1.3013
+  --> [Edge Server 5] Local APA: 43.60% | Local Loss: 1.6161
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1199 | Test Loss: 1.1298 | Global APA: 60.77%
+
+==================== Round 316 ====================
+  --> [Edge Server 1] Local APA: 68.40% | Local Loss: 0.9262
+  --> [Edge Server 2] Local APA: 66.90% | Local Loss: 0.9084
+  --> [Edge Server 3] Local APA: 66.60% | Local Loss: 0.9317
+  --> [Edge Server 4] Local APA: 55.40% | Local Loss: 1.3098
+  --> [Edge Server 5] Local APA: 45.10% | Local Loss: 1.6097
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0264 | Test Loss: 1.1372 | Global APA: 60.48%
+
+==================== Round 317 ====================
+  --> [Edge Server 1] Local APA: 67.55% | Local Loss: 0.9376
+  --> [Edge Server 2] Local APA: 67.00% | Local Loss: 0.9048
+  --> [Edge Server 3] Local APA: 66.35% | Local Loss: 0.9254
+  --> [Edge Server 4] Local APA: 56.85% | Local Loss: 1.2942
+  --> [Edge Server 5] Local APA: 44.75% | Local Loss: 1.6178
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9766 | Test Loss: 1.1360 | Global APA: 60.50%
+
+==================== Round 318 ====================
+  --> [Edge Server 1] Local APA: 67.85% | Local Loss: 0.9335
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9031
+  --> [Edge Server 3] Local APA: 66.35% | Local Loss: 0.9271
+  --> [Edge Server 4] Local APA: 55.25% | Local Loss: 1.3042
+  --> [Edge Server 5] Local APA: 43.30% | Local Loss: 1.6260
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0482 | Test Loss: 1.1388 | Global APA: 59.82%
+
+==================== Round 319 ====================
+  --> [Edge Server 1] Local APA: 69.05% | Local Loss: 0.9317
+  --> [Edge Server 2] Local APA: 67.75% | Local Loss: 0.8978
+  --> [Edge Server 3] Local APA: 65.25% | Local Loss: 0.9311
+  --> [Edge Server 4] Local APA: 56.90% | Local Loss: 1.2994
+  --> [Edge Server 5] Local APA: 43.90% | Local Loss: 1.6309
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0590 | Test Loss: 1.1382 | Global APA: 60.57%
+
+==================== Round 320 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9325
+  --> [Edge Server 2] Local APA: 67.15% | Local Loss: 0.9003
+  --> [Edge Server 3] Local APA: 66.20% | Local Loss: 0.9295
+  --> [Edge Server 4] Local APA: 55.95% | Local Loss: 1.2984
+  --> [Edge Server 5] Local APA: 43.95% | Local Loss: 1.6245
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9612 | Test Loss: 1.1371 | Global APA: 60.35%
+
+==================== Round 321 ====================
+  --> [Edge Server 1] Local APA: 68.50% | Local Loss: 0.9306
+  --> [Edge Server 2] Local APA: 66.35% | Local Loss: 0.9203
+  --> [Edge Server 3] Local APA: 66.60% | Local Loss: 0.9320
+  --> [Edge Server 4] Local APA: 57.35% | Local Loss: 1.3010
+  --> [Edge Server 5] Local APA: 44.15% | Local Loss: 1.6188
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0125 | Test Loss: 1.1405 | Global APA: 60.59%
+
+==================== Round 322 ====================
+  --> [Edge Server 1] Local APA: 69.05% | Local Loss: 0.9218
+  --> [Edge Server 2] Local APA: 66.95% | Local Loss: 0.9073
+  --> [Edge Server 3] Local APA: 65.90% | Local Loss: 0.9306
+  --> [Edge Server 4] Local APA: 56.30% | Local Loss: 1.2971
+  --> [Edge Server 5] Local APA: 42.85% | Local Loss: 1.6264
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9319 | Test Loss: 1.1367 | Global APA: 60.21%
+
+==================== Round 323 ====================
+  --> [Edge Server 1] Local APA: 68.75% | Local Loss: 0.9380
+  --> [Edge Server 2] Local APA: 67.55% | Local Loss: 0.9035
+  --> [Edge Server 3] Local APA: 66.90% | Local Loss: 0.9155
+  --> [Edge Server 4] Local APA: 55.40% | Local Loss: 1.3062
+  --> [Edge Server 5] Local APA: 44.50% | Local Loss: 1.6097
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0089 | Test Loss: 1.1346 | Global APA: 60.62%
+
+==================== Round 324 ====================
+  --> [Edge Server 1] Local APA: 68.80% | Local Loss: 0.9343
+  --> [Edge Server 2] Local APA: 66.90% | Local Loss: 0.9076
+  --> [Edge Server 3] Local APA: 66.20% | Local Loss: 0.9278
+  --> [Edge Server 4] Local APA: 56.45% | Local Loss: 1.2961
+  --> [Edge Server 5] Local APA: 44.15% | Local Loss: 1.6083
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9556 | Test Loss: 1.1348 | Global APA: 60.50%
+
+==================== Round 325 ====================
+  --> [Edge Server 1] Local APA: 68.65% | Local Loss: 0.9347
+  --> [Edge Server 2] Local APA: 67.45% | Local Loss: 0.9049
+  --> [Edge Server 3] Local APA: 66.95% | Local Loss: 0.9142
+  --> [Edge Server 4] Local APA: 55.75% | Local Loss: 1.3094
+  --> [Edge Server 5] Local APA: 43.40% | Local Loss: 1.6218
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9807 | Test Loss: 1.1370 | Global APA: 60.44%
+
+==================== Round 326 ====================
+  --> [Edge Server 1] Local APA: 69.55% | Local Loss: 0.9176
+  --> [Edge Server 2] Local APA: 65.85% | Local Loss: 0.8985
+  --> [Edge Server 3] Local APA: 66.05% | Local Loss: 0.9129
+  --> [Edge Server 4] Local APA: 57.35% | Local Loss: 1.2877
+  --> [Edge Server 5] Local APA: 43.60% | Local Loss: 1.6223
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0018 | Test Loss: 1.1278 | Global APA: 60.48%
+
+==================== Round 327 ====================
+  --> [Edge Server 1] Local APA: 68.85% | Local Loss: 0.9327
+  --> [Edge Server 2] Local APA: 68.10% | Local Loss: 0.8993
+  --> [Edge Server 3] Local APA: 65.75% | Local Loss: 0.9349
+  --> [Edge Server 4] Local APA: 57.05% | Local Loss: 1.2927
+  --> [Edge Server 5] Local APA: 42.35% | Local Loss: 1.6209
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.1216 | Test Loss: 1.1361 | Global APA: 60.42%
+
+==================== Round 328 ====================
+  --> [Edge Server 1] Local APA: 69.25% | Local Loss: 0.9229
+  --> [Edge Server 2] Local APA: 68.25% | Local Loss: 0.8836
+  --> [Edge Server 3] Local APA: 66.15% | Local Loss: 0.9207
+  --> [Edge Server 4] Local APA: 56.15% | Local Loss: 1.3038
+  --> [Edge Server 5] Local APA: 43.00% | Local Loss: 1.6371
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9092 | Test Loss: 1.1336 | Global APA: 60.56%
+
+==================== Round 329 ====================
+  --> [Edge Server 1] Local APA: 69.10% | Local Loss: 0.9119
+  --> [Edge Server 2] Local APA: 68.10% | Local Loss: 0.9032
+  --> [Edge Server 3] Local APA: 65.95% | Local Loss: 0.9236
+  --> [Edge Server 4] Local APA: 56.00% | Local Loss: 1.3008
+  --> [Edge Server 5] Local APA: 43.80% | Local Loss: 1.6189
+----------------------------------------------------
+Overall Metrics -> Train Loss: 0.9871 | Test Loss: 1.1317 | Global APA: 60.59%
+
+==================== Round 330 ====================
+  --> [Edge Server 1] Local APA: 69.25% | Local Loss: 0.9283
+  --> [Edge Server 2] Local APA: 68.00% | Local Loss: 0.8921
+  --> [Edge Server 3] Local APA: 66.40% | Local Loss: 0.9305
+  --> [Edge Server 4] Local APA: 55.65% | Local Loss: 1.2991
+  --> [Edge Server 5] Local APA: 43.45% | Local Loss: 1.6232
+----------------------------------------------------
+Overall Metrics -> Train Loss: 1.0654 | Test Loss: 1.1346 | Global APA: 60.55%

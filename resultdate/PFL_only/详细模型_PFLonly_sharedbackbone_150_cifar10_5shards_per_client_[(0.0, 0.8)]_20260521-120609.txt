@@ -1,0 +1,456 @@
+Experiment Start: 20260521-120609
+Mode: shared_backbone_pfl
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=150, eval_every=1, fed_method='fedavg', feder_exp_weight=0.6, forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[(0.0, 0.8)], iid=False, img_size=32, labeling='soft', lambda_u=25, local_bs=50, local_ep=5, local_only=False, lr=0.01, lr_decay=0.1, method='pfl_only', mm_alpha=4, model='cnn4conv', momentum=0.5, neighbor_scope='global', noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=5, num_neighbors=2, num_shards=500, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', pfl_agree_weight=0.15, pfl_local_weight=0.3, pfl_personal_ep=1, queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, w_alpha=0.6, warmup_epochs=100, weight_decay=0)
+Average unique labels/client: 4.1300
+Unique labels/client min/max: 2 / 5
+================================================================================
+
+==================== Round   0 ====================
+PFL APA: 20.75% | Personal Loss: 2.2176 | Train Loss: 1.9777 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   1 ====================
+PFL APA: 28.11% | Personal Loss: 2.0210 | Train Loss: 1.7571 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   2 ====================
+PFL APA: 30.91% | Personal Loss: 1.9518 | Train Loss: 1.7853 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   3 ====================
+PFL APA: 37.34% | Personal Loss: 1.8315 | Train Loss: 1.7095 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   4 ====================
+PFL APA: 40.24% | Personal Loss: 1.7854 | Train Loss: 1.8980 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   5 ====================
+PFL APA: 42.54% | Personal Loss: 1.7351 | Train Loss: 1.6409 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   6 ====================
+PFL APA: 45.73% | Personal Loss: 1.6803 | Train Loss: 1.7470 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   7 ====================
+PFL APA: 46.71% | Personal Loss: 1.6682 | Train Loss: 1.5669 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   8 ====================
+PFL APA: 47.81% | Personal Loss: 1.6367 | Train Loss: 1.6818 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round   9 ====================
+PFL APA: 49.72% | Personal Loss: 1.6121 | Train Loss: 1.7638 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  10 ====================
+PFL APA: 51.41% | Personal Loss: 1.5593 | Train Loss: 1.5541 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  11 ====================
+PFL APA: 52.43% | Personal Loss: 1.5469 | Train Loss: 1.6091 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  12 ====================
+PFL APA: 53.09% | Personal Loss: 1.5165 | Train Loss: 1.5555 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  13 ====================
+PFL APA: 54.13% | Personal Loss: 1.4961 | Train Loss: 1.8119 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  14 ====================
+PFL APA: 54.82% | Personal Loss: 1.4925 | Train Loss: 1.7099 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  15 ====================
+PFL APA: 55.82% | Personal Loss: 1.4698 | Train Loss: 1.6859 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  16 ====================
+PFL APA: 57.10% | Personal Loss: 1.4110 | Train Loss: 1.6196 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  17 ====================
+PFL APA: 59.23% | Personal Loss: 1.3755 | Train Loss: 1.6928 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  18 ====================
+PFL APA: 59.66% | Personal Loss: 1.3830 | Train Loss: 1.7152 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  19 ====================
+PFL APA: 60.67% | Personal Loss: 1.3449 | Train Loss: 1.6562 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  20 ====================
+PFL APA: 60.47% | Personal Loss: 1.3308 | Train Loss: 1.6629 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  21 ====================
+PFL APA: 61.37% | Personal Loss: 1.3254 | Train Loss: 1.6022 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  22 ====================
+PFL APA: 61.08% | Personal Loss: 1.3222 | Train Loss: 1.5155 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  23 ====================
+PFL APA: 61.97% | Personal Loss: 1.3103 | Train Loss: 1.6082 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  24 ====================
+PFL APA: 63.47% | Personal Loss: 1.2722 | Train Loss: 1.2259 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  25 ====================
+PFL APA: 63.49% | Personal Loss: 1.2685 | Train Loss: 1.7032 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  26 ====================
+PFL APA: 64.63% | Personal Loss: 1.2393 | Train Loss: 1.4228 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  27 ====================
+PFL APA: 64.49% | Personal Loss: 1.2357 | Train Loss: 1.6279 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  28 ====================
+PFL APA: 65.90% | Personal Loss: 1.2086 | Train Loss: 1.3444 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  29 ====================
+PFL APA: 64.92% | Personal Loss: 1.2114 | Train Loss: 1.4100 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  30 ====================
+PFL APA: 65.66% | Personal Loss: 1.1886 | Train Loss: 1.4532 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  31 ====================
+PFL APA: 65.44% | Personal Loss: 1.2085 | Train Loss: 1.5927 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  32 ====================
+PFL APA: 65.87% | Personal Loss: 1.1967 | Train Loss: 1.5828 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  33 ====================
+PFL APA: 65.42% | Personal Loss: 1.2135 | Train Loss: 1.5886 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  34 ====================
+PFL APA: 65.09% | Personal Loss: 1.2066 | Train Loss: 1.5198 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  35 ====================
+PFL APA: 65.06% | Personal Loss: 1.2038 | Train Loss: 1.4361 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  36 ====================
+PFL APA: 64.65% | Personal Loss: 1.2308 | Train Loss: 1.8280 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  37 ====================
+PFL APA: 64.97% | Personal Loss: 1.2260 | Train Loss: 1.6779 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  38 ====================
+PFL APA: 65.98% | Personal Loss: 1.1796 | Train Loss: 1.1896 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  39 ====================
+PFL APA: 66.76% | Personal Loss: 1.1661 | Train Loss: 1.4604 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  40 ====================
+PFL APA: 66.62% | Personal Loss: 1.1551 | Train Loss: 1.3876 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  41 ====================
+PFL APA: 66.60% | Personal Loss: 1.1481 | Train Loss: 1.4494 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  42 ====================
+PFL APA: 65.92% | Personal Loss: 1.1650 | Train Loss: 1.6377 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  43 ====================
+PFL APA: 67.16% | Personal Loss: 1.1527 | Train Loss: 1.5200 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  44 ====================
+PFL APA: 66.90% | Personal Loss: 1.1547 | Train Loss: 1.3821 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  45 ====================
+PFL APA: 66.62% | Personal Loss: 1.1514 | Train Loss: 1.3706 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  46 ====================
+PFL APA: 66.62% | Personal Loss: 1.1442 | Train Loss: 1.5335 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  47 ====================
+PFL APA: 66.47% | Personal Loss: 1.1510 | Train Loss: 1.4539 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  48 ====================
+PFL APA: 67.13% | Personal Loss: 1.1442 | Train Loss: 1.5474 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  49 ====================
+PFL APA: 66.51% | Personal Loss: 1.1469 | Train Loss: 1.3896 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  50 ====================
+PFL APA: 65.14% | Personal Loss: 1.1700 | Train Loss: 1.7425 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  51 ====================
+PFL APA: 65.56% | Personal Loss: 1.1629 | Train Loss: 1.4293 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  52 ====================
+PFL APA: 66.45% | Personal Loss: 1.1495 | Train Loss: 1.5464 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  53 ====================
+PFL APA: 66.47% | Personal Loss: 1.1556 | Train Loss: 1.3291 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  54 ====================
+PFL APA: 66.31% | Personal Loss: 1.1494 | Train Loss: 1.4491 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  55 ====================
+PFL APA: 65.49% | Personal Loss: 1.1600 | Train Loss: 1.4586 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  56 ====================
+PFL APA: 66.10% | Personal Loss: 1.1514 | Train Loss: 1.5475 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  57 ====================
+PFL APA: 65.79% | Personal Loss: 1.1509 | Train Loss: 1.5515 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  58 ====================
+PFL APA: 65.77% | Personal Loss: 1.1607 | Train Loss: 1.4469 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  59 ====================
+PFL APA: 65.69% | Personal Loss: 1.1557 | Train Loss: 1.4966 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  60 ====================
+PFL APA: 65.86% | Personal Loss: 1.1497 | Train Loss: 1.4638 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  61 ====================
+PFL APA: 65.78% | Personal Loss: 1.1471 | Train Loss: 1.3606 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  62 ====================
+PFL APA: 65.48% | Personal Loss: 1.1471 | Train Loss: 1.2580 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  63 ====================
+PFL APA: 65.96% | Personal Loss: 1.1337 | Train Loss: 1.5281 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  64 ====================
+PFL APA: 65.95% | Personal Loss: 1.1354 | Train Loss: 1.4505 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  65 ====================
+PFL APA: 66.38% | Personal Loss: 1.1208 | Train Loss: 1.1390 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  66 ====================
+PFL APA: 66.51% | Personal Loss: 1.1180 | Train Loss: 1.1938 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  67 ====================
+PFL APA: 66.78% | Personal Loss: 1.1176 | Train Loss: 1.4168 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  68 ====================
+PFL APA: 66.35% | Personal Loss: 1.1235 | Train Loss: 1.1945 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  69 ====================
+PFL APA: 66.00% | Personal Loss: 1.1172 | Train Loss: 1.5301 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  70 ====================
+PFL APA: 66.87% | Personal Loss: 1.1038 | Train Loss: 1.2127 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  71 ====================
+PFL APA: 66.94% | Personal Loss: 1.1109 | Train Loss: 1.4317 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  72 ====================
+PFL APA: 66.02% | Personal Loss: 1.1357 | Train Loss: 1.5575 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  73 ====================
+PFL APA: 65.78% | Personal Loss: 1.1218 | Train Loss: 1.2793 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  74 ====================
+PFL APA: 66.67% | Personal Loss: 1.1032 | Train Loss: 1.1597 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  75 ====================
+PFL APA: 66.28% | Personal Loss: 1.1176 | Train Loss: 1.4025 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  76 ====================
+PFL APA: 66.13% | Personal Loss: 1.1175 | Train Loss: 1.5408 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  77 ====================
+PFL APA: 66.41% | Personal Loss: 1.1151 | Train Loss: 1.5097 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  78 ====================
+PFL APA: 65.85% | Personal Loss: 1.1199 | Train Loss: 1.2489 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  79 ====================
+PFL APA: 65.65% | Personal Loss: 1.1184 | Train Loss: 1.3747 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  80 ====================
+PFL APA: 66.12% | Personal Loss: 1.1117 | Train Loss: 1.2808 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  81 ====================
+PFL APA: 65.56% | Personal Loss: 1.1206 | Train Loss: 1.4639 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  82 ====================
+PFL APA: 66.25% | Personal Loss: 1.1072 | Train Loss: 1.1643 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  83 ====================
+PFL APA: 66.08% | Personal Loss: 1.1038 | Train Loss: 1.2817 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  84 ====================
+PFL APA: 65.78% | Personal Loss: 1.0996 | Train Loss: 1.3079 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  85 ====================
+PFL APA: 66.59% | Personal Loss: 1.1034 | Train Loss: 1.3062 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  86 ====================
+PFL APA: 65.80% | Personal Loss: 1.1100 | Train Loss: 1.1901 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  87 ====================
+PFL APA: 65.37% | Personal Loss: 1.1174 | Train Loss: 1.4682 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  88 ====================
+PFL APA: 64.70% | Personal Loss: 1.1261 | Train Loss: 1.3752 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  89 ====================
+PFL APA: 64.74% | Personal Loss: 1.1236 | Train Loss: 1.2752 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  90 ====================
+PFL APA: 64.29% | Personal Loss: 1.1310 | Train Loss: 1.1481 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  91 ====================
+PFL APA: 65.46% | Personal Loss: 1.1018 | Train Loss: 1.0967 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  92 ====================
+PFL APA: 65.18% | Personal Loss: 1.1179 | Train Loss: 1.2710 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  93 ====================
+PFL APA: 65.34% | Personal Loss: 1.1107 | Train Loss: 1.2610 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  94 ====================
+PFL APA: 64.64% | Personal Loss: 1.1179 | Train Loss: 1.3124 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  95 ====================
+PFL APA: 63.86% | Personal Loss: 1.1348 | Train Loss: 1.2893 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  96 ====================
+PFL APA: 64.47% | Personal Loss: 1.1306 | Train Loss: 1.2857 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  97 ====================
+PFL APA: 64.67% | Personal Loss: 1.1289 | Train Loss: 1.3386 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  98 ====================
+PFL APA: 63.27% | Personal Loss: 1.1420 | Train Loss: 1.4723 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round  99 ====================
+PFL APA: 63.94% | Personal Loss: 1.1244 | Train Loss: 1.2710 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 100 ====================
+PFL APA: 63.58% | Personal Loss: 1.1375 | Train Loss: 1.3627 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 101 ====================
+PFL APA: 64.44% | Personal Loss: 1.1273 | Train Loss: 1.1504 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 102 ====================
+PFL APA: 63.62% | Personal Loss: 1.1392 | Train Loss: 1.4812 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 103 ====================
+PFL APA: 63.28% | Personal Loss: 1.1435 | Train Loss: 1.3160 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 104 ====================
+PFL APA: 63.78% | Personal Loss: 1.1278 | Train Loss: 1.0147 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 105 ====================
+PFL APA: 64.06% | Personal Loss: 1.1308 | Train Loss: 1.3388 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 106 ====================
+PFL APA: 63.88% | Personal Loss: 1.1297 | Train Loss: 1.1058 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 107 ====================
+PFL APA: 64.66% | Personal Loss: 1.1270 | Train Loss: 0.9408 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 108 ====================
+PFL APA: 63.20% | Personal Loss: 1.1399 | Train Loss: 1.3241 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 109 ====================
+PFL APA: 63.11% | Personal Loss: 1.1422 | Train Loss: 1.2730 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 110 ====================
+PFL APA: 62.27% | Personal Loss: 1.1674 | Train Loss: 1.4458 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 111 ====================
+PFL APA: 62.78% | Personal Loss: 1.1487 | Train Loss: 1.2785 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 112 ====================
+PFL APA: 62.07% | Personal Loss: 1.1571 | Train Loss: 1.3865 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 113 ====================
+PFL APA: 62.40% | Personal Loss: 1.1546 | Train Loss: 1.3244 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 114 ====================
+PFL APA: 62.42% | Personal Loss: 1.1502 | Train Loss: 1.1340 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 115 ====================
+PFL APA: 62.58% | Personal Loss: 1.1509 | Train Loss: 1.1879 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 116 ====================
+PFL APA: 62.29% | Personal Loss: 1.1509 | Train Loss: 1.1945 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 117 ====================
+PFL APA: 61.95% | Personal Loss: 1.1436 | Train Loss: 1.0906 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 118 ====================
+PFL APA: 62.43% | Personal Loss: 1.1528 | Train Loss: 1.2731 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 119 ====================
+PFL APA: 62.62% | Personal Loss: 1.1519 | Train Loss: 1.1809 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 120 ====================
+PFL APA: 62.07% | Personal Loss: 1.1630 | Train Loss: 1.3227 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 121 ====================
+PFL APA: 62.19% | Personal Loss: 1.1554 | Train Loss: 1.2378 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 122 ====================
+PFL APA: 62.08% | Personal Loss: 1.1551 | Train Loss: 1.0895 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 123 ====================
+PFL APA: 62.13% | Personal Loss: 1.1495 | Train Loss: 1.0517 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 124 ====================
+PFL APA: 62.82% | Personal Loss: 1.1492 | Train Loss: 0.9062 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 125 ====================
+PFL APA: 62.09% | Personal Loss: 1.1612 | Train Loss: 1.0623 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 126 ====================
+PFL APA: 61.67% | Personal Loss: 1.1641 | Train Loss: 1.2807 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 127 ====================
+PFL APA: 61.16% | Personal Loss: 1.1647 | Train Loss: 1.1051 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 128 ====================
+PFL APA: 61.50% | Personal Loss: 1.1610 | Train Loss: 1.1263 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 129 ====================
+PFL APA: 62.08% | Personal Loss: 1.1548 | Train Loss: 1.0560 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 130 ====================
+PFL APA: 61.12% | Personal Loss: 1.1811 | Train Loss: 1.3209 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 131 ====================
+PFL APA: 60.63% | Personal Loss: 1.1820 | Train Loss: 0.9844 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 132 ====================
+PFL APA: 61.21% | Personal Loss: 1.1659 | Train Loss: 1.0484 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 133 ====================
+PFL APA: 61.00% | Personal Loss: 1.1705 | Train Loss: 1.1025 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 134 ====================
+PFL APA: 60.99% | Personal Loss: 1.1733 | Train Loss: 1.0943 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 135 ====================
+PFL APA: 60.49% | Personal Loss: 1.1794 | Train Loss: 1.0605 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 136 ====================
+PFL APA: 61.48% | Personal Loss: 1.1672 | Train Loss: 1.1000 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 137 ====================
+PFL APA: 61.45% | Personal Loss: 1.1668 | Train Loss: 1.1286 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 138 ====================
+PFL APA: 60.88% | Personal Loss: 1.1811 | Train Loss: 1.2855 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 139 ====================
+PFL APA: 60.66% | Personal Loss: 1.1813 | Train Loss: 1.1924 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 140 ====================
+PFL APA: 60.92% | Personal Loss: 1.1806 | Train Loss: 1.0228 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 141 ====================
+PFL APA: 60.78% | Personal Loss: 1.1801 | Train Loss: 1.1117 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 142 ====================
+PFL APA: 60.77% | Personal Loss: 1.1768 | Train Loss: 1.0252 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 143 ====================
+PFL APA: 61.09% | Personal Loss: 1.1804 | Train Loss: 1.2183 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 144 ====================
+PFL APA: 60.55% | Personal Loss: 1.1828 | Train Loss: 1.0576 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 145 ====================
+PFL APA: 61.30% | Personal Loss: 1.1696 | Train Loss: 1.0412 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 146 ====================
+PFL APA: 60.79% | Personal Loss: 1.1804 | Train Loss: 1.2058 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 147 ====================
+PFL APA: 60.66% | Personal Loss: 1.1840 | Train Loss: 1.1075 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 148 ====================
+PFL APA: 60.00% | Personal Loss: 1.1876 | Train Loss: 1.2075 | Selected Clients: 10 | Avg Labels/Client: 4.13
+
+==================== Round 149 ====================
+PFL APA: 60.31% | Personal Loss: 1.1893 | Train Loss: 1.2896 | Selected Clients: 10 | Avg Labels/Client: 4.13

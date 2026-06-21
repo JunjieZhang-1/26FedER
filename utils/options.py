@@ -99,7 +99,7 @@ def args_parser():
                         help="联邦学习总通信轮次（默认500轮）")
     parser.add_argument('--num_users', type=int, default=100,
                         help="用户总数K（默认100个用户）")
-    parser.add_argument('--frac', type=float, default=0.5,
+    parser.add_argument('--frac', type=float, default=0.1,
                         help="每轮参与训练的用户比例C（默认10%）")
     parser.add_argument('--local_ep', type=int, default=5,
                         help="每个用户的本地训练轮次E（默认5轮）")
@@ -156,7 +156,7 @@ def args_parser():
                         help="随机种子（默认1，保证实验可复现）")
     parser.add_argument('--all_clients', action='store_true',
                         help="是否聚合所有用户的模型（默认仅聚合本轮参与的用户）")
-    parser.add_argument('--num_workers', type=int, default=0,
+    parser.add_argument('--num_workers', type=int, default=4,
                         help="数据加载的线程数（默认4，加速数据读取）26320##默认4")
 
     # 5. 标签噪声相关参数

@@ -1,0 +1,2420 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Python version: 3.6
+import numpy as np
+from sklearn.mixture import GaussianMixture
+
+import torch.nn.functional as F
+from torch.autograd import Variable
+from torch.utils.data import DataLoader, Dataset
+from .correctors import SelfieCorrector, JointOptimCorrector
+from .nets import get_model
+import copy
+import numpy as np
+import torch
+from torch import nn
+from torch.utils.data import DataLoader
+from sklearn.mixture import GaussianMixture
+
+
+
+class DatasetSplit(Dataset):
+    def __init__(self, dataset, idxs, idx_return=False, real_idx_return=False):
+        self.dataset = dataset
+        self.idxs = list(idxs)
+        self.idx_return = idx_return
+        self.real_idx_return = real_idx_return
+
+    def __len__(self):
+        return len(self.idxs)
+
+    def __getitem__(self, item):
+        item = int(item)
+        image, label = self.dataset[self.idxs[item]]
+
+        if self.idx_return:
+            return image, label, item
+        elif self.real_idx_return:
+            return image, label, item, self.idxs[item]
+        else:
+            return image, label
+
+
+class PairProbDataset(Dataset):
+    def __init__(self, dataset, idxs, prob, idx_return=False):
+        self.dataset = dataset
+        self.idxs = list(idxs)
+        self.idx_return = idx_return
+        self.prob = prob
+
+    def __len__(self):
+        return len(self.idxs)
+
+    def __getitem__(self, item):
+        item = int(item)
+        image1, label = self.dataset[self.idxs[item]]
+        image2, label = self.dataset[self.idxs[item]]
+        prob = self.prob[self.idxs[item]]
+
+        if self.idx_return:
+            return image1, image2, label, prob, item
+        else:
+            return image1, image2, label, prob
+
+
+class PairDataset(Dataset):
+    def __init__(self, dataset, idxs, idx_return=False, label_return=False):
+        self.dataset = dataset
+        self.idxs = list(idxs)
+        self.idx_return = idx_return
+        self.label_return = label_return
+
+    def __len__(self):
+        return len(self.idxs)
+
+    def __getitem__(self, item):
+        item = int(item)
+        image1, label = self.dataset[self.idxs[item]]
+        image2, label = self.dataset[self.idxs[item]]
+        sample = (image1, image2,)
+
+        if self.label_return:
+            sample += (label,)
+
+        if self.idx_return:
+            sample += (item,)
+
+        return sample
+
+
+def mixup(inputs, targets, alpha=1.0):
+    l = np.random.beta(alpha, alpha)
+    l = max(l, 1 - l)
+
+    idx = torch.randperm(inputs.size(0))
+
+    input_a, input_b = inputs, inputs[idx]
+    target_a, target_b = targets, targets[idx]
+
+    mixed_input = l * input_a + (1 - l) * input_b
+    mixed_target = l * target_a + (1 - l) * target_b
+
+    return mixed_input, mixed_target
+
+
+def linear_rampup(current, warm_up, lambda_u, rampup_length=16):
+    current = np.clip((current - warm_up) / rampup_length, 0.0, 1.0)
+    return lambda_u * float(current)
+
+
+class SemiLoss:
+    def __call__(self, outputs_x, targets_x, outputs_u, targets_u, lambda_u, epoch, warm_up):
+        probs_u = torch.softmax(outputs_u, dim=1)
+
+        # labeled data loss
+        Lx = -torch.mean(torch.sum(F.log_softmax(outputs_x, dim=1) * targets_x, dim=1))
+        # unlabeled data loss
+        Lu = torch.mean((probs_u - targets_u) ** 2)
+
+        lamb = linear_rampup(epoch, warm_up, lambda_u)
+
+        return Lx + lamb * Lu
+
+
+def get_local_update_objects(args, dataset_train, dict_users=None, noise_rates=None, gaussian_noise=None):
+    local_update_objects = []
+    for idx, noise_rate in zip(range(args.num_users), noise_rates):
+        local_update_args = dict(
+            args=args,
+            user_idx=idx,
+            dataset=dataset_train,
+            idxs=dict_users[idx],
+        )
+
+        if args.method == 'default':
+            local_update_object = BaseLocalUpdate(**local_update_args)
+
+        elif args.method == 'fedrn':
+            local_update_object = LocalUpdateFedRN(gaussian_noise=gaussian_noise, **local_update_args)
+        elif args.method == 'fedrnn':
+            local_update_object = LocalUpdateFedRNN(gaussian_noise=gaussian_noise, **local_update_args)
+        elif args.method == 'fedco':
+            local_update_object = LocalUpdateFedCO(gaussian_noise=gaussian_noise, **local_update_args)
+        elif args.method == 'fedcoPFL':
+            local_update_object = LocalUpdateFedCOPFL(gaussian_noise=gaussian_noise, **local_update_args)
+        elif args.method == 'selfie':
+            local_update_object = LocalUpdateSELFIE(noise_rate=noise_rate, **local_update_args)
+
+        elif args.method == 'jointoptim':
+            local_update_object = LocalUpdateJointOptim(**local_update_args)
+
+        elif args.method in ['coteaching', 'coteaching+']:
+            local_update_object = LocalUpdateCoteaching(is_coteaching_plus=bool(args.method == 'coteaching+'),
+                                                        **local_update_args)
+        elif args.method == 'dividemix':
+            local_update_object = LocalUpdateDivideMix(**local_update_args)
+        # 👇 新增这一段：让 feder 在本地直接调用我们魔改过的 GMM+Coteaching 类
+        elif args.method == 'feder':
+            local_update_object = LocalUpdateFedER(**local_update_args)
+
+        elif args.method == 'pfedrn':
+            local_update_object = LocalUpdatePFedRN(
+                gaussian_noise=gaussian_noise,
+                **local_update_args)
+
+        local_update_objects.append(local_update_object)
+
+    return local_update_objects
+
+
+class BaseLocalUpdate:
+    def __init__(
+            self,
+            args,
+            user_idx=None,
+            dataset=None,
+            idxs=None,
+            idx_return=False,
+            real_idx_return=False,
+    ):
+        self.args = args
+        self.loss_func = nn.CrossEntropyLoss()
+
+        self.dataset = dataset
+        self.idxs = idxs
+        self.user_idx = user_idx
+
+        self.idx_return = idx_return
+        self.real_idx_return = real_idx_return
+
+        self.ldr_train = DataLoader(
+            DatasetSplit(dataset, idxs, idx_return=idx_return, real_idx_return=real_idx_return),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        self.total_epochs = 0
+        self.epoch = 0
+        self.batch_idx = 0
+
+        self.net1 = get_model(self.args)
+        self.net2 = get_model(self.args)
+        self.net1 = self.net1.to(self.args.device)
+        self.net2 = self.net2.to(self.args.device)
+
+        self.last_updated = 0
+
+    def train(self, net, net2=None):
+        if net2 is None:
+            return self.train_single_model(net)
+        else:
+            return self.train_multiple_models(net, net2)
+
+    def train_single_model(self, net):
+        net.train()
+
+        optimizer = torch.optim.SGD(
+            net.parameters(),
+            lr=self.args.lr,
+            momentum=self.args.momentum,
+            weight_decay=self.args.weight_decay,
+        )
+
+        epoch_loss = []
+        for epoch in range(self.args.local_ep):
+            self.epoch = epoch
+            batch_loss = []
+            for batch_idx, batch in enumerate(self.ldr_train):
+                self.batch_idx = batch_idx
+                net.zero_grad()
+
+                loss = self.forward_pass(batch, net)
+                loss.backward()
+                optimizer.step()
+
+                if self.args.verbose and batch_idx % 10 == 0:
+                    print(f"Epoch: {epoch} [{batch_idx}/{len(self.ldr_train)}"
+                          f"({100. * batch_idx / len(self.ldr_train):.0f}%)]\tLoss: {loss.item():.6f}")
+
+                batch_loss.append(loss.item())
+                self.on_batch_end()
+
+            epoch_loss.append(sum(batch_loss) / len(batch_loss))
+            self.total_epochs += 1
+            self.on_epoch_end()
+
+        self.net1.load_state_dict(net.state_dict())
+        self.last_updated = self.args.g_epoch
+
+        return net.state_dict(), sum(epoch_loss) / len(epoch_loss)
+
+    def train_multiple_models(self, net1, net2):
+        net1.train()
+        net2.train()
+
+        optimizer_args = dict(
+            lr=self.args.lr,
+            momentum=self.args.momentum,
+            weight_decay=self.args.weight_decay,
+        )
+        optimizer1 = torch.optim.SGD(net1.parameters(), **optimizer_args)
+        optimizer2 = torch.optim.SGD(net2.parameters(), **optimizer_args)
+
+        epoch_loss1 = []
+        epoch_loss2 = []
+        for epoch in range(self.args.local_ep):
+            self.epoch = epoch
+            batch_loss1 = []
+            batch_loss2 = []
+            for batch_idx, batch in enumerate(self.ldr_train):
+                self.batch_idx = batch_idx
+                net1.zero_grad()
+                net2.zero_grad()
+
+                loss1, loss2 = self.forward_pass(batch, net1, net2)
+                loss1.backward()
+                loss2.backward()
+                optimizer1.step()
+                optimizer2.step()
+
+                if self.args.verbose and batch_idx % 10 == 0:
+                    print(f"Epoch: {epoch} [{batch_idx}/{len(self.ldr_train)}"
+                          f"({100. * batch_idx / len(self.ldr_train):.0f}%)]\tLoss: {loss1.item():.6f}"
+                          f"\tLoss: {loss2.item():.6f}")
+
+                batch_loss1.append(loss1.item())
+                batch_loss2.append(loss2.item())
+                self.on_batch_end()
+
+            epoch_loss1.append(sum(batch_loss1) / len(batch_loss1))
+            epoch_loss2.append(sum(batch_loss2) / len(batch_loss2))
+            self.total_epochs += 1
+            self.on_epoch_end()
+
+        self.net1.load_state_dict(net1.state_dict())
+        self.net2.load_state_dict(net2.state_dict())
+        self.last_updated = self.args.g_epoch
+
+        return net1.state_dict(), sum(epoch_loss1) / len(epoch_loss1), \
+               net2.state_dict(), sum(epoch_loss2) / len(epoch_loss2)
+
+    def forward_pass(self, batch, net, net2=None):
+        if self.idx_return:
+            images, labels, _ = batch
+
+        elif self.real_idx_return:
+            images, labels, _, ids = batch
+        else:
+            images, labels = batch
+
+        images = images.to(self.args.device)
+        labels = labels.to(self.args.device)
+
+        log_probs = net(images)
+        loss = self.loss_func(log_probs, labels)
+
+        if net2 is None:
+            return loss
+
+        # 2 models
+        log_probs2 = net2(images)
+        loss2 = self.loss_func(log_probs2, labels)
+        return loss, loss2
+
+    def on_batch_end(self):
+        pass
+
+    def on_epoch_end(self):
+        pass
+
+class LocalUpdateFedRNN(BaseLocalUpdate):
+    def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+        super().__init__(
+            args=args,
+            dataset=dataset,
+            user_idx=user_idx,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.gaussian_noise = gaussian_noise
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        self.data_indices = np.array(idxs)
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
+
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        n_total = len(self.ldr_eval.dataset)
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self.net1(inputs)
+                y_pred = outputs.data.max(1, keepdim=True)[1]
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+            self.expertise = correct / n_total
+
+    def set_arbitrary_output(self):
+        self.net1.eval()
+        with torch.no_grad():
+            self.arbitrary_output = self.net1(self.gaussian_noise.to(self.args.device))
+
+    def train_phase1(self, net):
+        w, loss = self.train_single_model(net)
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w, loss
+
+    def fit_gmm(self, net):
+        losses = []
+        net.eval()
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = net(inputs)
+                loss = self.CE(outputs, targets)
+                losses.append(loss)
+
+        losses = torch.cat(losses).cpu().numpy()
+        if losses.max() > losses.min():
+            losses = (losses - losses.min()) / (losses.max() - losses.min() + 1e-8)
+        input_loss = losses.reshape(-1, 1)
+
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()]
+
+        return prob
+
+    def get_clean_idx(self, prob):
+        threshold = self.args.p_threshold
+        pred = (prob > threshold)
+        pred_clean_idx = pred.nonzero()[0]
+        pred_clean_idx = self.data_indices[pred_clean_idx]
+        pred_noisy_idx = (1 - pred).nonzero()[0]
+        pred_noisy_idx = self.data_indices[pred_noisy_idx]
+
+        if len(pred_clean_idx) == 0:
+            pred_clean_idx = pred_noisy_idx
+            pred_noisy_idx = np.array([])
+
+        return pred_clean_idx, pred_noisy_idx
+
+    def finetune_head(self, neighbor_list, pred_clean_idx):
+        if len(pred_clean_idx) == 0:
+            return neighbor_list
+
+        loader = DataLoader(
+            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        optimizer_list = []
+        for neighbor_net in neighbor_list:
+            neighbor_net.train()
+            # 冻结卷积层，只微调分类头
+            body_params = [p for name, p in neighbor_net.named_parameters() if 'linear' not in name]
+            head_params = [p for name, p in neighbor_net.named_parameters() if 'linear' in name]
+
+            optimizer = torch.optim.SGD([
+                {'params': head_params, 'lr': self.args.lr,
+                 'momentum': self.args.momentum,
+                 'weight_decay': self.args.weight_decay},
+                {'params': body_params, 'lr': 0.0},
+            ])
+            optimizer_list.append(optimizer)
+
+        for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+            inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+            for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+                neighbor_net.zero_grad()
+                outputs = neighbor_net(inputs)
+                loss = self.loss_func(outputs, targets)
+                loss.backward()
+                optimizer.step()
+
+        return neighbor_list
+
+    def train_phase2(self, net, prev_score, neighbor_list, neighbor_score_list):
+        # 1. 本地模型初筛干净数据
+        prob = self.fit_gmm(self.net1)
+        pred_clean_idx, pred_noisy_idx = self.get_clean_idx(prob)
+
+        prob_list = [prob]
+
+        # 2. 用初筛数据微调靠谱邻居
+        if len(neighbor_list) > 0:
+            neighbor_list = self.finetune_head(neighbor_list, pred_clean_idx)
+
+            # 3. 邻居微调完毕后跑 GMM
+            for neighbor_net in neighbor_list:
+                neighbor_prob = self.fit_gmm(neighbor_net)
+                prob_list.append(neighbor_prob)
+
+        # 4. 根据靠谱程度 (score) 对所有概率进行加权融合
+        score_list = [prev_score] + neighbor_score_list
+        score_list = [score / sum(score_list) for score in score_list]
+
+        final_prob = np.zeros(len(prob))
+        for p, score in zip(prob_list, score_list):
+            final_prob = np.add(final_prob, np.multiply(p, score))
+
+        # 5. 根据加权融合出来的概率，最后筛一次数据
+        final_clean_idx, final_noisy_idx = self.get_clean_idx(final_prob)
+
+        # 6. 使用高纯度数据训练全局模型
+        self.ldr_train = DataLoader(
+            DatasetSplit(self.dataset, final_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        w, loss = self.train_single_model(net)
+
+        # 7. 更新本地状态，迎战下一轮
+        self.set_expertise()
+        self.set_arbitrary_output()
+
+        return w, loss
+
+    def train_phase_self_clean(self, net):
+        # 1. 拟合 GMM 获取概率 (用最新的全局共识模型 self.net1 拟合)
+        prob = self.fit_gmm(self.net1)
+
+        # 2. 获取干净样本索引
+        pred_clean_idx, _ = self.get_clean_idx(prob)
+
+        # 3. 更新 DataLoader，仅包含干净样本
+        self.ldr_train = DataLoader(
+            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        # 4. 执行本地训练 (复用父类的 train_single_model)
+        w, loss = self.train_single_model(net)
+
+        # 5. 更新用于找邻居和权重的特征（这很重要，不能删）
+        self.set_expertise()
+        self.set_arbitrary_output()
+
+        return w, loss
+
+
+class LocalUpdateFedRN(BaseLocalUpdate):
+    def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+        super().__init__(
+            args=args,
+            dataset=dataset,
+            user_idx=user_idx,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.gaussian_noise = gaussian_noise
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        self.data_indices = np.array(idxs)
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
+
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        n_total = len(self.ldr_eval.dataset)
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self.net1(inputs)
+                y_pred = outputs.data.max(1, keepdim=True)[1]
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+            expertise = correct / n_total
+
+        self.expertise = expertise
+
+    def set_arbitrary_output(self):
+        arbitrary_output = self.net1(self.gaussian_noise.to(self.args.device))
+        self.arbitrary_output = arbitrary_output
+
+    def train_phase1(self, net):
+        # local training
+        w, loss = self.train_single_model(net)
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w, loss
+
+    def fit_gmm(self, net):
+        losses = []
+        net.eval()
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = net(inputs)
+                loss = self.CE(outputs, targets)
+                losses.append(loss)
+
+        losses = torch.cat(losses).cpu().numpy()
+        losses = (losses - losses.min()) / (losses.max() - losses.min())
+        input_loss = losses.reshape(-1, 1)
+
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()]
+
+        return prob
+
+    def get_clean_idx(self, prob):
+        threshold = self.args.p_threshold
+        pred = (prob > threshold)
+        pred_clean_idx = pred.nonzero()[0]
+        pred_clean_idx = self.data_indices[pred_clean_idx]
+        pred_noisy_idx = (1 - pred).nonzero()[0]
+        pred_noisy_idx = self.data_indices[pred_noisy_idx]
+
+        if len(pred_clean_idx) == 0:
+            pred_clean_idx = pred_noisy_idx
+            pred_noisy_idx = np.array([])
+
+        return pred_clean_idx, pred_noisy_idx
+
+    def finetune_head(self, neighbor_list, pred_clean_idx):
+        loader = DataLoader(
+            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        optimizer_list = []
+        for neighbor_net in neighbor_list:
+            neighbor_net.train()
+            body_params = [p for name, p in neighbor_net.named_parameters() if 'linear' not in name]
+            head_params = [p for name, p in neighbor_net.named_parameters() if 'linear' in name]
+
+            optimizer = torch.optim.SGD([
+                {'params': head_params, 'lr': self.args.lr,
+                 'momentum': self.args.momentum,
+                 'weight_decay': self.args.weight_decay},
+                {'params': body_params, 'lr': 0.0},
+            ])
+            optimizer_list.append(optimizer)
+
+        for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+            inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+            for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+                neighbor_net.zero_grad()
+
+                outputs = neighbor_net(inputs)
+                loss = self.loss_func(outputs, targets)
+                loss.backward()
+                optimizer.step()
+
+        return neighbor_list
+
+    def train_phase2(self, net, prev_score, neighbor_list, neighbor_score_list):
+        # Prev fit GMM & get clean idx
+        prob = self.fit_gmm(self.net1)
+        pred_clean_idx, pred_noisy_idx = self.get_clean_idx(prob)
+
+        prob_list = [prob]
+        neighbor_list = self.finetune_head(neighbor_list, pred_clean_idx)
+        for neighbor_net in neighbor_list:
+            neighbor_prob = self.fit_gmm(neighbor_net)
+            prob_list.append(neighbor_prob)
+
+        # Scores
+        score_list = [prev_score] + neighbor_score_list
+        score_list = [score / sum(score_list) for score in score_list]
+
+        # Get final prob
+        final_prob = np.zeros(len(prob))
+        for prob, score in zip(prob_list, score_list):
+            final_prob = np.add(final_prob, np.multiply(prob, score))
+        # Get final clean idx
+        final_clean_idx, final_noisy_idx = self.get_clean_idx(final_prob)
+
+        # Update loader with final clean idxs
+        self.ldr_train = DataLoader(DatasetSplit(self.dataset, final_clean_idx, real_idx_return=True),
+                                    batch_size=self.args.local_bs,
+                                    shuffle=True,
+                                    num_workers=self.args.num_workers,
+                                    pin_memory=True,
+                                    )
+        # local training
+        w, loss = self.train_single_model(net)
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w, loss
+
+
+## 26410以下是单gmm的fedrn没有使用邻居
+# class LocalUpdateFedRN(BaseLocalUpdate):
+#     def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+#         super().__init__(
+#             args=args,
+#             dataset=dataset,
+#             user_idx=user_idx,
+#             idxs=idxs,
+#             real_idx_return=True,
+#         )
+#         self.gaussian_noise = gaussian_noise
+#         self.CE = nn.CrossEntropyLoss(reduction='none')
+#
+#         self.ldr_eval = DataLoader(
+#             DatasetSplit(dataset, idxs, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=False,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#         self.data_indices = np.array(idxs)
+#         #不需要
+#         # self.expertise = 0.5
+#         # self.arbitrary_output = torch.rand((1, self.args.num_classes))
+#
+#     # def set_expertise(self):
+#     #     self.net1.eval()
+#     #     correct = 0
+#     #     n_total = len(self.ldr_eval.dataset)
+#     #
+#     #     with torch.no_grad():
+#     #         for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#     #             inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#     #             outputs = self.net1(inputs)
+#     #             y_pred = outputs.data.max(1, keepdim=True)[1]
+#     #             correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+#     #         expertise = correct / n_total
+#     #
+#     #     self.expertise = expertise
+#     #
+#     def set_arbitrary_output(self):
+#         arbitrary_output = self.net1(self.gaussian_noise.to(self.args.device))
+#         self.arbitrary_output = arbitrary_output
+#
+#     def train_phase1(self, net):
+#         # local training
+#         w, loss = self.train_single_model(net)
+#
+#         # self.set_expertise()
+#         # self.set_arbitrary_output()
+#         #[已删除] 不需要再计算专业度和任意输出
+#         return w, loss
+#
+#     def fit_gmm(self, net):
+#         losses = []
+#         net.eval()
+#
+#         with torch.no_grad():
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#                 outputs = net(inputs)
+#                 loss = self.CE(outputs, targets)
+#                 losses.append(loss)
+#
+#         losses = torch.cat(losses).cpu().numpy()
+#         losses = (losses - losses.min()) / (losses.max() - losses.min())
+#         input_loss = losses.reshape(-1, 1)
+#
+#         gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+#         gmm.fit(input_loss)
+#         prob = gmm.predict_proba(input_loss)
+#         prob = prob[:, gmm.means_.argmin()]
+#
+#         return prob
+#
+#
+#     def get_clean_idx(self, prob):#修改
+#         # [保持原代码不变]
+#         threshold = self.args.p_threshold
+#         pred = (prob > threshold)
+#         pred_clean_idx = pred.nonzero()[0]
+#         pred_clean_idx = self.data_indices[pred_clean_idx]
+#
+#         # 如果筛选为空，为了避免报错，可以使用全部数据或部分数据
+#         if len(pred_clean_idx) == 0:
+#             pred_clean_idx = self.data_indices
+#
+#         return pred_clean_idx, None
+#     # def get_clean_idx(self, prob):
+#     #     threshold = self.args.p_threshold
+#     #     pred = (prob > threshold)
+#     #     pred_clean_idx = pred.nonzero()[0]
+#     #     pred_clean_idx = self.data_indices[pred_clean_idx]
+#     #     pred_noisy_idx = (1 - pred).nonzero()[0]
+#     #     pred_noisy_idx = self.data_indices[pred_noisy_idx]
+#     #
+#     #     if len(pred_clean_idx) == 0:
+#     #         pred_clean_idx = pred_noisy_idx
+#     #         pred_noisy_idx = np.array([])
+#     #
+#     #     return pred_clean_idx, pred_noisy_idx
+#
+#     def finetune_head(self, neighbor_list, pred_clean_idx):
+#         loader = DataLoader(
+#             DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         optimizer_list = []
+#         for neighbor_net in neighbor_list:
+#             neighbor_net.train()
+#             body_params = [p for name, p in neighbor_net.named_parameters() if 'linear' not in name]
+#             head_params = [p for name, p in neighbor_net.named_parameters() if 'linear' in name]
+#
+#             optimizer = torch.optim.SGD([
+#                 {'params': head_params, 'lr': self.args.lr,
+#                  'momentum': self.args.momentum,
+#                  'weight_decay': self.args.weight_decay},
+#                 {'params': body_params, 'lr': 0.0},
+#             ])
+#             optimizer_list.append(optimizer)
+#
+#         for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+#             inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#
+#             for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+#                 neighbor_net.zero_grad()
+#
+#                 outputs = neighbor_net(inputs)
+#                 loss = self.loss_func(outputs, targets)
+#                 loss.backward()
+#                 optimizer.step()
+#
+#         return neighbor_list
+#
+#     # === [新增/修改] 核心训练函数 ===
+#     def train_phase_self_clean(self, net):
+#         """
+#         替代原本的 train_phase2。
+#         不使用 neighbor_list，仅使用 GMM 筛选出的干净样本进行训练。
+#         """
+#         # 1. 拟合 GMM 获取概率
+#         #prob = self.fit_gmm(net)
+#         # 注意：这里必须使用 self.net1 进行 fit_gmm，因为它代表了全局最新的共识知识
+#         prob = self.fit_gmm(self.net1)
+#
+#         # 2. 获取干净样本索引
+#         pred_clean_idx, _ = self.get_clean_idx(prob)
+#
+#         # 3. 更新训练用的 DataLoader，仅包含干净样本
+#         # 注意：这里直接覆盖 self.ldr_train，这样 train_single_model 就会使用新数据
+#         self.ldr_train = DataLoader(
+#             DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=True,  # 训练时需要 Shuffle
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#
+#         # 4. 执行本地训练 (复用父类的 train_single_model)
+#         w, loss = self.train_single_model(net)
+#
+#         return w, loss
+#
+#     # def train_phase2(self, net):
+#     #     # Prev fit GMM & get clean idx
+#     #     # [修改] 不再接收 neighbor_list 等参数
+#     #
+#     #     # 1. 使用本地模型 (self.net1) 拟合 GMM 并计算概率
+#     #     # p(clean|x; {c})
+#     #     prob = self.fit_gmm(self.net1)
+#     #
+#     #     # 2. 根据概率筛选样本 (Sc = {x | p > 0.5})
+#     #     # get_clean_idx 内部使用了 args.p_threshold (通常设为 0.5)
+#     #     final_clean_idx, final_noisy_idx = self.get_clean_idx(prob)
+#     #
+#     #     # 3. 更新 DataLoader，只包含被判定为干净的样本
+#     #     self.ldr_train = DataLoader(
+#     #         DatasetSplit(self.dataset, final_clean_idx, real_idx_return=True),
+#     #         batch_size=self.args.local_bs,
+#     #         shuffle=True,
+#     #         num_workers=self.args.num_workers,
+#     #         pin_memory=True,
+#     #     )
+#     #
+#     #     # 4. 在筛选后的数据集上进行本地训练
+#     #     w, loss = self.train_single_model(net)
+#     #
+#     #     # [已删除] 不再更新指标
+#     #     # self.set_expertise()
+#     #     # self.set_arbitrary_output()
+#     #
+#     #     return w, loss
+
+class LocalUpdateSELFIE(BaseLocalUpdate):
+    def __init__(self, args, user_idx=None, dataset=None, idxs=None, noise_rate=0):
+        super().__init__(
+            args=args,
+            user_idx=user_idx,
+            dataset=dataset,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+
+        self.loss_func = nn.CrossEntropyLoss(reduction='none')
+        self.total_epochs = 0
+        self.warmup = args.warmup_epochs
+        self.corrector = SelfieCorrector(
+            queue_size=args.queue_size,
+            uncertainty_threshold=args.uncertainty_threshold,
+            noise_rate=noise_rate,
+            num_classes=args.num_classes,
+        )
+
+    def forward_pass(self, batch, net, net2=None):
+        images, labels, _, ids = batch
+        images = images.to(self.args.device)
+        labels = labels.to(self.args.device)
+        ids = ids.numpy()
+
+        log_probs = net(images)
+        loss_array = self.loss_func(log_probs, labels)
+
+        # update prediction history
+        self.corrector.update_prediction_history(
+            ids=ids,
+            outputs=log_probs.cpu().detach().numpy(),
+        )
+
+        if self.args.g_epoch >= self.args.warmup_epochs:
+            # correct labels, remove noisy data
+            images, labels, ids = self.corrector.patch_clean_with_corrected_sample_batch(
+                ids=ids,
+                X=images,
+                y=labels,
+                loss_array=loss_array.cpu().detach().numpy(),
+            )
+            images = images.to(self.args.device)
+            labels = labels.to(self.args.device)
+            log_probs = net(images)
+            loss_array = self.loss_func(log_probs, labels)
+
+        loss = loss_array.mean()
+        return loss
+
+
+class LocalUpdateJointOptim(BaseLocalUpdate):
+    def __init__(self, args, user_idx=None, dataset=None, idxs=None):
+        super().__init__(
+            args=args,
+            user_idx=user_idx,
+            dataset=dataset,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.corrector = JointOptimCorrector(
+            queue_size=args.queue_size,
+            num_classes=args.num_classes,
+            data_size=len(idxs),
+        )
+
+    def forward_pass(self, batch, net, net2=None):
+        images, labels, _, ids = batch
+        ids = ids.numpy()
+
+        hard_labels, soft_labels = self.corrector.get_labels(ids, labels)
+        if self.args.labeling == 'soft':
+            labels = soft_labels.to(self.args.device)
+        else:
+            labels = hard_labels.to(self.args.device)
+        images = images.to(self.args.device)
+
+        logits = net(images)
+        probs = F.softmax(logits, dim=1)
+
+        loss = self.joint_optim_loss(logits, probs, labels)
+        self.corrector.update_probability_history(ids, probs.cpu().detach())
+
+        return loss
+
+    def on_epoch_end(self):
+        if self.args.g_epoch >= self.args.warmup_epochs:
+            self.corrector.update_labels()
+
+    def joint_optim_loss(self, logits, probs, soft_targets, is_cross_entropy=False):
+        if is_cross_entropy:
+            loss = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * soft_targets, dim=1))
+
+        else:
+            # We introduce a prior probability distribution p,
+            # which is a distribution of classes among all training data.
+            p = torch.ones(self.args.num_classes, device=self.args.device) / self.args.num_classes
+
+            avg_probs = torch.mean(probs, dim=0)
+
+            L_c = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * soft_targets, dim=1))
+            L_p = -torch.sum(torch.log(avg_probs) * p)
+            L_e = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * probs, dim=1))
+
+            loss = L_c + self.args.alpha * L_p + self.args.beta * L_e
+
+        return loss
+
+
+class LocalUpdateCoteaching(BaseLocalUpdate):
+    def __init__(self, args, user_idx=None, dataset=None, idxs=None, is_coteaching_plus=False):
+        super().__init__(
+            args=args,
+            user_idx=user_idx,
+            dataset=dataset,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.loss_func = nn.CrossEntropyLoss(reduce=False)
+        self.is_coteaching_plus = is_coteaching_plus
+
+        self.init_epoch = 10  # only used for coteaching+
+
+    def forward_pass(self, batch, net, net2=None):
+        images, labels, indices, ids = batch
+
+        images = images.to(self.args.device)
+        labels = labels.to(self.args.device)
+        log_probs1 = net(images)
+        log_probs2 = net2(images)
+
+        loss_args = dict(
+            y_pred1=log_probs1,
+            y_pred2=log_probs2,
+            y_true=labels,
+            forget_rate=self.args.forget_rate,
+        )
+
+        if self.is_coteaching_plus and self.epoch >= self.init_epoch:
+            loss1, loss2, indices = self.loss_coteaching_plus(
+                indices=indices, step=self.epoch * self.batch_idx, **loss_args)
+        else:
+            loss1, loss2, indices = self.loss_coteaching(**loss_args)
+
+        return loss1, loss2
+
+    def loss_coteaching(self, y_pred1, y_pred2, y_true, forget_rate):
+        loss_1 = self.loss_func(y_pred1, y_true)
+        ind_1_sorted = torch.argsort(loss_1)
+
+        loss_2 = self.loss_func(y_pred2, y_true)
+        ind_2_sorted = torch.argsort(loss_2)
+
+        remember_rate = 1 - forget_rate
+        num_remember = int(remember_rate * len(ind_1_sorted))
+
+        ind_1_update = ind_1_sorted[:num_remember]
+        ind_2_update = ind_2_sorted[:num_remember]
+        # exchange
+        loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+        loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+
+        ind_1_update = list(ind_1_update.cpu().detach().numpy())
+
+        return torch.sum(loss_1_update) / num_remember, torch.sum(loss_2_update) / num_remember, ind_1_update
+
+    def loss_coteaching_plus(self, y_pred1, y_pred2, y_true, forget_rate, indices, step):
+        outputs = F.softmax(y_pred1, dim=1)
+        outputs2 = F.softmax(y_pred2, dim=1)
+
+        _, pred1 = torch.max(y_pred1.data, 1)
+        _, pred2 = torch.max(y_pred2.data, 1)
+
+        pred1, pred2 = pred1.cpu().numpy(), pred2.cpu().numpy()
+
+        logical_disagree_id = np.zeros(y_true.size(), dtype=bool)
+        disagree_id = []
+        for idx, p1 in enumerate(pred1):
+            if p1 != pred2[idx]:
+                disagree_id.append(idx)
+                logical_disagree_id[idx] = True
+
+        temp_disagree = indices * logical_disagree_id.astype(np.int64)
+        ind_disagree = np.asarray([i for i in temp_disagree if i != 0]).transpose()
+        try:
+            assert ind_disagree.shape[0] == len(disagree_id)
+        except:
+            disagree_id = disagree_id[:ind_disagree.shape[0]]
+
+        if len(disagree_id) > 0:
+            update_labels = y_true[disagree_id]
+            update_outputs = outputs[disagree_id]
+            update_outputs2 = outputs2[disagree_id]
+            loss_1, loss_2, indices = self.loss_coteaching(update_outputs, update_outputs2, update_labels, forget_rate)
+        else:
+            update_step = np.logical_or(logical_disagree_id, step < 5000).astype(np.float32)
+            update_step = Variable(torch.from_numpy(update_step)).cuda()
+
+            cross_entropy_1 = F.cross_entropy(outputs, y_true)
+            cross_entropy_2 = F.cross_entropy(outputs2, y_true)
+
+            loss_1 = torch.sum(update_step * cross_entropy_1) / y_true.size()[0]
+            loss_2 = torch.sum(update_step * cross_entropy_2) / y_true.size()[0]
+            indices = range(y_true.size()[0])
+        return loss_1, loss_2, indices
+
+
+class LocalUpdateDivideMix(BaseLocalUpdate):
+    def __init__(self, args, user_idx=None, dataset=None, idxs=None):
+        super().__init__(
+            args=args,
+            user_idx=user_idx,
+            dataset=dataset,
+            idxs=idxs,
+            idx_return=True,
+        )
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+        self.CEloss = nn.CrossEntropyLoss()
+        self.semiloss = SemiLoss()
+
+        self.loss_history1 = []
+        self.loss_history2 = []
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+    def train(self, net, net2=None):
+        if self.args.g_epoch <= self.args.warmup_epochs:
+            return self.train_multiple_models(net, net2)
+        else:
+            return self.train_2_phase(net, net2)
+
+    def train_2_phase(self, net, net2):
+        epoch_loss1 = []
+        epoch_loss2 = []
+
+        for ep in range(self.args.local_ep):
+            prob_dict1, label_idx1, unlabel_idx1 = self.update_probabilties_split_data_indices(net, self.loss_history1)
+            prob_dict2, label_idx2, unlabel_idx2 = self.update_probabilties_split_data_indices(net2, self.loss_history2)
+
+            # train net1
+            loss1 = self.divide_mix(
+                net=net,
+                net2=net2,
+                label_idx=label_idx2,
+                prob_dict=prob_dict2,
+                unlabel_idx=unlabel_idx2,
+                warm_up=self.args.warmup_epochs,
+                epoch=self.args.g_epoch,
+            )
+
+            # train net2
+            loss2 = self.divide_mix(
+                net=net2,
+                net2=net,
+                label_idx=label_idx1,
+                prob_dict=prob_dict1,
+                unlabel_idx=unlabel_idx1,
+                warm_up=self.args.warmup_epochs,
+                epoch=self.args.g_epoch,
+            )
+
+            self.net1.load_state_dict(net.state_dict())
+            self.net2.load_state_dict(net2.state_dict())
+
+            self.total_epochs += 1
+            epoch_loss1.append(loss1)
+            epoch_loss2.append(loss2)
+
+        loss1 = sum(epoch_loss1) / len(epoch_loss1)
+        loss2 = sum(epoch_loss2) / len(epoch_loss2)
+        return net.state_dict(), loss1, net2.state_dict(), loss2
+
+    def divide_mix(self, net, net2, label_idx, prob_dict, unlabel_idx, warm_up, epoch):
+        net.train()
+        net2.eval()  # fix one network and train the other
+
+        optimizer = torch.optim.SGD(net.parameters(), lr=self.args.lr, momentum=self.args.momentum)
+
+        # dataloader
+        labeled_trainloader = DataLoader(
+            PairProbDataset(self.dataset, label_idx, prob_dict),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        unlabeled_trainloader = DataLoader(
+            PairDataset(self.dataset, unlabel_idx, label_return=False),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        unlabeled_train_iter = iter(unlabeled_trainloader)
+        num_iter = len(labeled_trainloader)
+
+        batch_loss = []
+        for batch_idx, (inputs_x, inputs_x2, labels_x, w_x) in enumerate(labeled_trainloader):
+            try:
+                inputs_u, inputs_u2 = unlabeled_train_iter.next()
+            except:
+                unlabeled_train_iter = iter(unlabeled_trainloader)
+                inputs_u, inputs_u2 = unlabeled_train_iter.next()
+
+            batch_size = inputs_x.size(0)
+
+            # Transform label to one-hot
+            labels_x = torch.zeros(batch_size, self.args.num_classes) \
+                .scatter_(1, labels_x.view(-1, 1), 1)
+            w_x = w_x.view(-1, 1).type(torch.FloatTensor)
+
+            inputs_x = inputs_x.to(self.args.device)
+            inputs_x2 = inputs_x2.to(self.args.device)
+            labels_x = labels_x.to(self.args.device)
+            w_x = w_x.to(self.args.device)
+
+            inputs_u = inputs_u.to(self.args.device)
+            inputs_u2 = inputs_u2.to(self.args.device)
+
+            with torch.no_grad():
+                # label co-guessing of unlabeled samples
+                outputs_u11 = net(inputs_u)
+                outputs_u12 = net(inputs_u2)
+                outputs_u21 = net2(inputs_u)
+                outputs_u22 = net2(inputs_u2)
+
+                pu = (torch.softmax(outputs_u11, dim=1) + torch.softmax(outputs_u12, dim=1) +
+                      torch.softmax(outputs_u21, dim=1) + torch.softmax(outputs_u22, dim=1)) / 4
+                ptu = pu ** (1 / self.args.T)  # temparature sharpening
+
+                targets_u = ptu / ptu.sum(dim=1, keepdim=True)  # normalize
+                targets_u = targets_u.detach()
+
+                # label refinement of labeled samples
+                outputs_x = net(inputs_x)
+                outputs_x2 = net(inputs_x2)
+
+                px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2
+                px = w_x * labels_x + (1 - w_x) * px
+                ptx = px ** (1 / self.args.T)  # temparature sharpening
+
+                targets_x = ptx / ptx.sum(dim=1, keepdim=True)  # normalize
+                targets_x = targets_x.detach()
+
+            # mixmatch
+            all_inputs = torch.cat([inputs_x, inputs_x2, inputs_u, inputs_u2], dim=0)
+            all_targets = torch.cat([targets_x, targets_x, targets_u, targets_u], dim=0)
+
+            mixed_input, mixed_target = mixup(all_inputs, all_targets, alpha=self.args.mm_alpha)
+
+            logits = net(mixed_input)
+            # compute loss
+            loss = self.semiloss(
+                outputs_x=logits[:batch_size * 2],
+                targets_x=mixed_target[:batch_size * 2],
+                outputs_u=logits[batch_size * 2:],
+                targets_u=mixed_target[batch_size * 2:],
+                lambda_u=self.args.lambda_u,
+                epoch=epoch + batch_idx / num_iter,
+                warm_up=warm_up,
+            )
+            # regularization
+            prior = torch.ones(self.args.num_classes, device=self.args.device) / self.args.num_classes
+            pred_mean = torch.softmax(logits, dim=1).mean(0)
+            penalty = torch.sum(prior * torch.log(prior / pred_mean))
+            loss += penalty
+
+            # compute gradient and do SGD step
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            batch_loss.append(loss.item())
+
+        return sum(batch_loss) / len(batch_loss)
+
+    def update_probabilties_split_data_indices(self, model, loss_history):
+        model.eval()
+        losses_lst = []
+        idx_lst = []
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = model(inputs)
+                losses_lst.append(self.CE(outputs, targets))
+                idx_lst.append(idxs.cpu().numpy())
+
+        indices = np.concatenate(idx_lst)
+        losses = torch.cat(losses_lst).cpu().numpy()
+        losses = (losses - losses.min()) / (losses.max() - losses.min())
+        loss_history.append(losses)
+
+        # Fit a two-component GMM to the loss
+        input_loss = losses.reshape(-1, 1)
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()]
+
+        # Split data to labeled, unlabeled dataset
+        pred = (prob > self.args.p_threshold)
+        label_idx = pred.nonzero()[0]
+        label_idx = indices[label_idx]
+
+        unlabel_idx = (1 - pred).nonzero()[0]
+        unlabel_idx = indices[unlabel_idx]
+
+        # Data index : probability
+        prob_dict = {idx: prob for idx, prob in zip(indices, prob)}
+
+        return prob_dict, label_idx, unlabel_idx
+# =============================================================================
+# 2641LocalUpdateFedER (GMM 动态评估 + 双核交叉互学)
+# =============================================================================
+# class LocalUpdateFedER(BaseLocalUpdate):
+#     def __init__(self, args, user_idx=None, dataset=None, idxs=None):
+#         super().__init__(
+#             args=args,
+#             user_idx=user_idx,
+#             dataset=dataset,
+#             idxs=idxs,
+#             real_idx_return=True,
+#         )
+#         # 使用 reduction='none' 保留每个样本的 loss，以便于后续筛选
+#         self.loss_func = nn.CrossEntropyLoss(reduction='none')
+#         self.CE = nn.CrossEntropyLoss(reduction='none')
+#
+#         # GMM需要的全量本地评估数据加载器
+#         self.ldr_eval = DataLoader(
+#             DatasetSplit(dataset, idxs, real_idx_return=True),
+#             batch_size=self.args.local_bs,
+#             shuffle=False,
+#             num_workers=self.args.num_workers,
+#             pin_memory=True,
+#         )
+#         # 存储两个网络认为样本是干净的概率字典
+#         self.prob1_dict = {}
+#         self.prob2_dict = {}
+#
+#     # ---------------- 🌟 模块 1：GMM 拟合与软概率生成 ----------------
+#     def fit_gmm(self, net):
+#         net.eval()
+#         losses_lst = []
+#         idx_lst = []
+#         with torch.no_grad():
+#             for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+#                 inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+#                 outputs = net(inputs)
+#                 losses_lst.append(self.CE(outputs, targets))
+#                 idx_lst.append(idxs.cpu().numpy())
+#
+#         indices = np.concatenate(idx_lst)
+#         losses = torch.cat(losses_lst).cpu().numpy()
+#
+#         # Loss 归一化，防止极端值导致 GMM 崩溃
+#         if losses.max() > losses.min():
+#             losses = (losses - losses.min()) / (losses.max() - losses.min() + 1e-8)
+#         input_loss = losses.reshape(-1, 1)
+#
+#         # 运行 GMM 聚类
+#         from sklearn.mixture import GaussianMixture
+#         gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+#         gmm.fit(input_loss)
+#         prob = gmm.predict_proba(input_loss)
+#         prob = prob[:, gmm.means_.argmin()] # 取 Loss 较小的那个高斯分布的概率（即判定为干净数据的概率）
+#
+#         prob_dict = {idx: p for idx, p in zip(indices, prob)}
+#         return prob_dict
+#
+#     # ---------------- 🌟 模块 2：训练拦截与概率更新 ----------------
+#     def train_multiple_models(self, net1, net2):
+#         # 只有在热身期结束（warmup_epochs）之后，才开始跑 GMM 清洗数据
+#         if self.args.g_epoch >= self.args.warmup_epochs:
+#             self.prob1_dict = self.fit_gmm(net1)
+#             self.prob2_dict = self.fit_gmm(net2)
+#         # 继续执行父类的双模型训练流程
+#         return super().train_multiple_models(net1, net2)
+#
+#     # ---------------- 🌟 模块 3：前向传播与 Loss 计算分支 ----------------
+#     def forward_pass(self, batch, net, net2=None):
+#         images, labels, _, ids = batch
+#         ids = ids.numpy()
+#
+#         images = images.to(self.args.device)
+#         labels = labels.to(self.args.device)
+#
+#         log_probs1 = net(images)
+#         log_probs2 = net2(images)
+#
+#         # 在预热期 (比如前 80 轮)：使用基础的硬截断 Co-teaching
+#         if self.args.g_epoch < self.args.warmup_epochs:
+#             loss1, loss2, _ = self.loss_coteaching(log_probs1, log_probs2, labels, self.args.forget_rate)
+#             return loss1, loss2
+#
+#         # 过了预热期：开启魔改大招，GMM 软概率交叉选择！
+#         else:
+#             loss1, loss2 = self.loss_coteaching_gmm(log_probs1, log_probs2, labels, ids)
+#             return loss1, loss2
+#
+#     # ---------------- 🌟 模块 4：GMM + Co-teaching 核心交叉逻辑 ----------------
+#     def loss_coteaching_gmm(self, y_pred1, y_pred2, y_true, ids):
+#         # 1. 计算当前批次样本的 Loss
+#         loss_1 = self.loss_func(y_pred1, y_true)
+#         loss_2 = self.loss_func(y_pred2, y_true)
+#
+#         # 2. 从各自的 GMM 字典里查找这些样本是“干净数据”的概率
+#         p1 = np.array([self.prob1_dict.get(idx, 0.0) for idx in ids])
+#         p2 = np.array([self.prob2_dict.get(idx, 0.0) for idx in ids])
+#
+#         # 3. 双方挑选概率大于阈值 (默认 p_threshold=0.5) 的样本作为干净数据
+#         ind_1_update = np.where(p1 > self.args.p_threshold)[0]
+#         ind_2_update = np.where(p2 > self.args.p_threshold)[0]
+#
+#         # 极其重要的防护机制：如果这批数据被 GMM 判定为全脏，为防止模型梯度断裂，强制取 Loss 最小的前 10%
+#         if len(ind_1_update) == 0:
+#             ind_1_update = np.argsort(loss_1.cpu().detach().numpy())[:max(1, int(len(ids)*0.1))]
+#         if len(ind_2_update) == 0:
+#             ind_2_update = np.argsort(loss_2.cpu().detach().numpy())[:max(1, int(len(ids)*0.1))]
+#
+#         # 4. 交叉教学精髓：互相喂数据！
+#         # 网络 1 用网络 2 选出的干净数据 (ind_2_update) 进行更新
+#         loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+#         # 网络 2 用网络 1 选出的干净数据 (ind_1_update) 进行更新
+#         loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+#
+#         return torch.mean(loss_1_update), torch.mean(loss_2_update)
+#
+#     # ---------------- 模块 5：预热期使用的基础硬截断 ----------------
+#     def loss_coteaching(self, y_pred1, y_pred2, y_true, forget_rate):
+#         loss_1 = self.loss_func(y_pred1, y_true)
+#         ind_1_sorted = torch.argsort(loss_1)
+#
+#         loss_2 = self.loss_func(y_pred2, y_true)
+#         ind_2_sorted = torch.argsort(loss_2)
+#
+#         remember_rate = 1 - forget_rate
+#         num_remember = int(remember_rate * len(ind_1_sorted))
+#         num_remember = max(1, num_remember)
+#
+#         ind_1_update = ind_1_sorted[:num_remember]
+#         ind_2_update = ind_2_sorted[:num_remember]
+#
+#         loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+#         loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+#
+#         ind_1_update = list(ind_1_update.cpu().detach().numpy())
+#         return torch.mean(loss_1_update), torch.mean(loss_2_update), ind_1_update
+# =============================================================================
+# 🚀 终极杀器：LocalUpdateFedER (原版 FedRN 锁头微调 + 双核交叉互学)
+# =============================================================================
+class LocalUpdateFedER(BaseLocalUpdate):
+    def __init__(self, args, user_idx=None, dataset=None, idxs=None):
+        super().__init__(
+            args=args,
+            user_idx=user_idx,
+            dataset=dataset,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.loss_func = nn.CrossEntropyLoss(reduction='none')
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        self.prob1_dict = {}
+        self.prob2_dict = {}
+
+    # ---------------- 🌟 模块 1：GMM 拟合与软概率生成 ----------------
+    def fit_gmm(self, net):
+        net.eval()
+        losses_lst = []
+        idx_lst = []
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = net(inputs)
+                losses_lst.append(self.CE(outputs, targets))
+                idx_lst.append(idxs.cpu().numpy())
+
+        indices = np.concatenate(idx_lst)
+        losses = torch.cat(losses_lst).cpu().numpy()
+
+        if losses.max() > losses.min():
+            losses = (losses - losses.min()) / (losses.max() - losses.min() + 1e-8)
+        input_loss = losses.reshape(-1, 1)
+
+        from sklearn.mixture import GaussianMixture
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()]
+
+        prob_dict = {idx: p for idx, p in zip(indices, prob)}
+        return prob_dict
+
+    # ---------------- 🌟 模块 2：原版 FedRN 锁头微调 (Finetune Head) ----------------
+    def finetune_head(self, net, clean_idxs):
+        """
+        原版核心逻辑：冻结特征提取器(body)，仅用干净数据微调 1 个 Epoch 的分类头(head)
+        """
+        if len(clean_idxs) == 0:
+            return net
+
+        loader = DataLoader(
+            DatasetSplit(self.dataset, clean_idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        net.train()
+        # 精准定位网络的主体与分类头 (兼容你原版代码中的 'linear' 关键字)
+        body_params = [p for name, p in net.named_parameters() if 'linear' not in name]
+        head_params = [p for name, p in net.named_parameters() if 'linear' in name]
+
+        # 核心：将 body 的学习率设为 0，彻底冻结
+        optimizer = torch.optim.SGD([
+            {'params': head_params, 'lr': self.args.lr, 'momentum': self.args.momentum,
+             'weight_decay': self.args.weight_decay},
+            {'params': body_params, 'lr': 0.0},
+        ])
+
+        loss_fn = nn.CrossEntropyLoss()
+
+        for batch_idx, (images, labels, _, _) in enumerate(loader):
+            images, labels = images.to(self.args.device), labels.to(self.args.device)
+            optimizer.zero_grad()
+            outputs = net(images)
+            loss = loss_fn(outputs, labels)
+            loss.backward()
+            optimizer.step()
+
+        return net
+
+    # ---------------- 🌟 模块 3：重写双核训练入口，植入交叉微调 ----------------
+    def train_multiple_models(self, net1, net2):
+        if self.args.g_epoch >= self.args.warmup_epochs:
+            # 1. 初始 GMM 评估：让双模型各自找出辅助干净集 (Auxiliary Clean Set)
+            prob1_init = self.fit_gmm(net1)
+            prob2_init = self.fit_gmm(net2)
+
+            clean_idx1 = [idx for idx, p in prob1_init.items() if p > self.args.p_threshold]
+            clean_idx2 = [idx for idx, p in prob2_init.items() if p > self.args.p_threshold]
+
+            # 2. 深度拷贝模型，微调仅用于评估，不污染原始全局参数
+            import copy
+            ft_net1 = copy.deepcopy(net1)
+            ft_net2 = copy.deepcopy(net2)
+
+            # 3. 💥 执行交叉锁头微调 (Cross Fine-tuning)
+            # 网络 2 拿着 网络 1 找出的干净数据去微调分类头
+            if len(clean_idx1) > 0:
+                ft_net2 = self.finetune_head(ft_net2, clean_idx1)
+            # 网络 1 拿着 网络 2 找出的干净数据去微调分类头
+            if len(clean_idx2) > 0:
+                ft_net1 = self.finetune_head(ft_net1, clean_idx2)
+
+            # 4. 用微调后、适应了本地分布的强力模型重新跑 GMM，生成最终的高精度指导概率！
+            self.prob1_dict = self.fit_gmm(ft_net1)
+            self.prob2_dict = self.fit_gmm(ft_net2)
+
+            del ft_net1, ft_net2
+
+        return super().train_multiple_models(net1, net2)
+
+    # ---------------- 模块 4：前向传播与 Co-teaching 核心分支 ----------------
+    def forward_pass(self, batch, net, net2=None):
+        images, labels, _, ids = batch
+        ids = ids.numpy()
+
+        images = images.to(self.args.device)
+        labels = labels.to(self.args.device)
+
+        log_probs1 = net(images)
+        log_probs2 = net2(images)
+
+        if self.args.g_epoch < self.args.warmup_epochs:
+            loss1, loss2, _ = self.loss_coteaching(log_probs1, log_probs2, labels, self.args.forget_rate)
+            return loss1, loss2
+        else:
+            # 结合微调后的 GMM 概率，执行魔改软交叉选择！
+            loss1, loss2 = self.loss_coteaching_gmm(log_probs1, log_probs2, labels, ids)
+            return loss1, loss2
+
+    def loss_coteaching_gmm(self, y_pred1, y_pred2, y_true, ids):
+        loss_1 = self.loss_func(y_pred1, y_true)
+        loss_2 = self.loss_func(y_pred2, y_true)
+
+        p1 = np.array([self.prob1_dict.get(idx, 0.0) for idx in ids])
+        p2 = np.array([self.prob2_dict.get(idx, 0.0) for idx in ids])
+
+        ind_1_update = np.where(p1 > self.args.p_threshold)[0]
+        ind_2_update = np.where(p2 > self.args.p_threshold)[0]
+
+        if len(ind_1_update) == 0:
+            ind_1_update = np.argsort(loss_1.cpu().detach().numpy())[:max(1, int(len(ids) * 0.1))]
+        if len(ind_2_update) == 0:
+            ind_2_update = np.argsort(loss_2.cpu().detach().numpy())[:max(1, int(len(ids) * 0.1))]
+
+        # 互相喂数据更新全局模型
+        loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+        loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+
+        return torch.mean(loss_1_update), torch.mean(loss_2_update)
+
+    def loss_coteaching(self, y_pred1, y_pred2, y_true, forget_rate):
+        loss_1 = self.loss_func(y_pred1, y_true)
+        ind_1_sorted = torch.argsort(loss_1)
+
+        loss_2 = self.loss_func(y_pred2, y_true)
+        ind_2_sorted = torch.argsort(loss_2)
+
+        remember_rate = 1 - forget_rate
+        num_remember = int(remember_rate * len(ind_1_sorted))
+        num_remember = max(1, num_remember)
+
+        ind_1_update = ind_1_sorted[:num_remember]
+        ind_2_update = ind_2_sorted[:num_remember]
+
+        loss_1_update = self.loss_func(y_pred1[ind_2_update], y_true[ind_2_update])
+        loss_2_update = self.loss_func(y_pred2[ind_1_update], y_true[ind_1_update])
+
+        ind_1_update = list(ind_1_update.cpu().detach().numpy())
+        return torch.mean(loss_1_update), torch.mean(loss_2_update), ind_1_update
+
+
+
+
+
+class LocalUpdateFedCO(BaseLocalUpdate):
+    """
+    🌟 创新方法 FedCO (Dual-FedRN): 边缘邻居共识 (Neighbor Consensus) + 本地双核交叉互喂 (Cross-Feeding)
+    """
+
+    def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+        super().__init__(
+            args=args, dataset=dataset, user_idx=user_idx, idxs=idxs, real_idx_return=True,
+        )
+        self.gaussian_noise = gaussian_noise
+
+        # ⚠️ 【极其关键的修复】
+        # CE 保持 reduction='none'，专门用于 GMM 跑概率，输出数组
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+        # loss_func 恢复默认的自动求平均！供预热期、锁头微调和常规反向传播使用，杜绝 NoneType 报错
+        self.loss_func = nn.CrossEntropyLoss()
+
+        # 评估 DataLoader (不打乱，用于跑 GMM 和提取特征)
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs, shuffle=False, num_workers=self.args.num_workers, pin_memory=True,
+        )
+        # 训练 DataLoader (打乱，用于双核交叉训练)
+        self.ldr_train = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs, shuffle=True, num_workers=self.args.num_workers, pin_memory=True,
+        )
+
+        self.data_indices = np.array(idxs)
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
+        self.prob1_dict = {}
+        self.prob2_dict = {}
+
+    # ---------------- 🌟 模块 1：特征提取与专业度 (复用 FedRNN) ----------------
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, _, _) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                y_pred = self.net1(inputs).data.max(1, keepdim=True)[1]
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+        self.expertise = correct / len(self.ldr_eval.dataset)
+
+    def set_arbitrary_output(self):
+        self.net1.eval()
+        with torch.no_grad():
+            self.arbitrary_output = self.net1(self.gaussian_noise.to(self.args.device))
+
+    # ---------------- 🌟 模块 2：GMM 与锁头微调 (复用 FedRNN/ER，修复损失) ----------------
+    def fit_gmm(self, net):
+        net.eval()
+        losses = []
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, _, _) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                # 使用 self.CE (none) 才能得到每个样本的独立 loss
+                losses.append(self.CE(net(inputs), targets))
+
+        losses = torch.cat(losses).cpu().numpy()
+        if losses.max() > losses.min():
+            losses = (losses - losses.min()) / (losses.max() - losses.min() + 1e-8)
+
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(losses.reshape(-1, 1))
+        prob = gmm.predict_proba(losses.reshape(-1, 1))[:, gmm.means_.argmin()]
+        return prob
+
+    def get_clean_idx(self, prob):
+        pred = (prob > self.args.p_threshold)
+        pred_clean_idx = self.data_indices[pred.nonzero()[0]]
+        return pred_clean_idx
+
+    def finetune_head(self, neighbor_list, pred_clean_idx):
+        if len(pred_clean_idx) == 0: return neighbor_list
+        loader = DataLoader(DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+                            batch_size=self.args.local_bs, shuffle=True, num_workers=self.args.num_workers)
+
+        optimizer_list = []
+        for n_net in neighbor_list:
+            n_net.train()
+            body_params = [p for n, p in n_net.named_parameters() if 'linear' not in n]
+            head_params = [p for n, p in n_net.named_parameters() if 'linear' in n]
+            # 冻结特征提取器
+            optimizer_list.append(torch.optim.SGD([
+                {'params': head_params, 'lr': self.args.lr, 'weight_decay': self.args.weight_decay},
+                {'params': body_params, 'lr': 0.0},
+            ]))
+
+        for _, (inputs, targets, _, _) in enumerate(loader):
+            inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+            for n_net, opt in zip(neighbor_list, optimizer_list):
+                opt.zero_grad()
+                # 修复：这里使用 self.loss_func (求平均的)，完美运行 backward!
+                loss = self.loss_func(n_net(inputs), targets)
+                loss.backward()
+                opt.step()
+        return neighbor_list
+
+    # ---------------- 🌟 模块 3：主流程控制 (预热期 vs 发力期) ----------------
+    def train_phase1_dual(self, net1, net2):
+        """ 预热期：双模型普通训练 (调用父类)，同时生成评价指纹 """
+        w1, loss1, w2, loss2 = super().train_multiple_models(net1, net2)
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w1, loss1, w2, loss2
+
+    def train_phase2_dual(self, net1, net2, prev_score, neighbor_list, neighbor_score_list):
+        """ 发力期：交叉生成指纹 + 邻居共识 + 终极交叉互喂 """
+
+        # 1. 独立跑初始 GMM：保留网络 1 和 网络 2 的多样性
+        prob1 = self.fit_gmm(net1)
+        prob2 = self.fit_gmm(net2)
+
+        # 2. 独立微调邻居：让网络 1 和 2 分别用自己认为干净的数据，去微调两套不同的邻居
+        clean_idx1 = self.get_clean_idx(prob1)
+        clean_idx2 = self.get_clean_idx(prob2)
+
+        neighbor_list1 = self.finetune_head(copy.deepcopy(neighbor_list), clean_idx1) if neighbor_list else []
+        neighbor_list2 = self.finetune_head(copy.deepcopy(neighbor_list), clean_idx2) if neighbor_list else []
+
+        # 3. 收集两套概率阵营 (自己打分 + 专属微调邻居打分)
+        prob_list1 = [prob1] + [self.fit_gmm(n) for n in neighbor_list1]
+        prob_list2 = [prob2] + [self.fit_gmm(n) for n in neighbor_list2]
+
+        # 4. 根据邻居的靠谱程度 (Score) 进行加权融合，形成强共识
+        scores = [prev_score] + neighbor_score_list
+        scores = [s / sum(scores) for s in scores]
+
+        final_prob1 = np.zeros(len(prob1))
+        final_prob2 = np.zeros(len(prob2))
+        for p, s in zip(prob_list1, scores): final_prob1 += p * s
+        for p, s in zip(prob_list2, scores): final_prob2 += p * s
+
+        # 将高度共识的概率存入字典，供交叉互喂时精确制导
+        self.prob1_dict = {idx: p for idx, p in zip(self.data_indices, final_prob1)}
+        self.prob2_dict = {idx: p for idx, p in zip(self.data_indices, final_prob2)}
+
+        # 5. 🎯 终极发力：调用内部双模型交叉互喂函数
+        w1, loss1, w2, loss2 = self.cross_train(net1, net2)
+
+        # 更新指纹准备迎战下一轮
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w1, loss1, w2, loss2
+
+    # ---------------- 🌟 模块 4：终极大招：双模型交叉互喂 ----------------
+    def cross_train(self, net1, net2):
+        net1.train()
+        net2.train()
+        opt1 = torch.optim.SGD(net1.parameters(), lr=self.args.lr, momentum=self.args.momentum)
+        opt2 = torch.optim.SGD(net2.parameters(), lr=self.args.lr, momentum=self.args.momentum)
+        ep_loss1, ep_loss2 = [], []
+
+        for _ in range(self.args.local_ep):
+            b_loss1, b_loss2 = [], []
+            for _, (images, labels, _, idxs) in enumerate(self.ldr_train):
+                images, labels = images.to(self.args.device), labels.to(self.args.device)
+                batch_idxs = idxs.cpu().tolist() if torch.is_tensor(idxs) else list(idxs)
+
+                # 提取两个网络生成的掩码概率
+                p1_batch = np.array([self.prob1_dict.get(i, 0.0) for i in batch_idxs])
+                p2_batch = np.array([self.prob2_dict.get(i, 0.0) for i in batch_idxs])
+
+                mask1 = p1_batch > self.args.p_threshold
+                mask2 = p2_batch > self.args.p_threshold
+
+                # 兜底防御：防止极端情况下掩码全为空导致报错
+                if not mask1.any():
+                    mask1 = np.ones(len(labels), dtype=bool)
+                if not mask2.any():
+                    mask2 = np.ones(len(labels), dtype=bool)
+
+                mask1 = torch.tensor(mask1, dtype=torch.bool).to(self.args.device)
+                mask2 = torch.tensor(mask2, dtype=torch.bool).to(self.args.device)
+
+                # 💥 【核心互喂】：
+                # 网络 1 吃 网络 2 选出的数据 (mask2)
+                out1 = net1(images[mask2])
+                loss1 = self.loss_func(out1, labels[mask2])
+
+                # 网络 2 吃 网络 1 选出的数据 (mask1)
+                out2 = net2(images[mask1])
+                loss2 = self.loss_func(out2, labels[mask1])
+
+                opt1.zero_grad()
+                loss1.backward()
+                opt1.step()
+
+                opt2.zero_grad()
+                loss2.backward()
+                opt2.step()
+
+                b_loss1.append(loss1.item())
+                b_loss2.append(loss2.item())
+
+            ep_loss1.append(sum(b_loss1) / len(b_loss1))
+            ep_loss2.append(sum(b_loss2) / len(b_loss2))
+
+        return net1.state_dict(), sum(ep_loss1) / len(ep_loss1), net2.state_dict(), sum(ep_loss2) / len(ep_loss2)
+
+
+class LocalUpdateFedCOPFL(BaseLocalUpdate):
+    """
+    🌟 创新方法 FedCO (Dual-FedRN): 边缘邻居共识 + 本地双核交叉互喂 + 双头解耦 (Dual-Head PFL)
+    """
+
+    def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+        super().__init__(
+            args=args, dataset=dataset, user_idx=user_idx, idxs=idxs, real_idx_return=True,
+        )
+        self.gaussian_noise = gaussian_noise
+
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+        self.loss_func = nn.CrossEntropyLoss()
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs, shuffle=False, num_workers=self.args.num_workers, pin_memory=True,
+        )
+        self.ldr_train = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs, shuffle=True, num_workers=self.args.num_workers, pin_memory=True,
+        )
+
+        self.data_indices = np.array(idxs)
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
+        self.prob1_dict = {}
+        self.prob2_dict = {}
+
+        # 判断是否开启双头模式
+        self.is_dual_head = 'dual' in self.args.method.lower()
+
+    # ---------------- 🌟 模块 1：特征提取与专业度 ----------------
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, _, _) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+                # 🚀 双头改造：如果是双头，我们用本地个性化头 (local) 的表现来评估专业度
+                if self.is_dual_head:
+                    _, logits_local = self.net1(inputs)
+                    y_pred = logits_local.data.max(1, keepdim=True)[1]
+                else:
+                    y_pred = self.net1(inputs).data.max(1, keepdim=True)[1]
+
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+        self.expertise = correct / len(self.ldr_eval.dataset)
+
+    def set_arbitrary_output(self):
+        self.net1.eval()
+        with torch.no_grad():
+            noise_input = self.gaussian_noise.to(self.args.device)
+            # 🚀 双头改造：用本地头的输出作为唯一的身份指纹
+            if self.is_dual_head:
+                _, logits_local = self.net1(noise_input)
+                self.arbitrary_output = logits_local
+            else:
+                self.arbitrary_output = self.net1(noise_input)
+
+    # ---------------- 🌟 模块 2：GMM 与锁头微调 ----------------
+    def fit_gmm(self, net):
+        net.eval()
+        losses = []
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, _, _) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+                # 🚀 双头改造：评估样本质量时，综合全局和本地的 Loss
+                if self.is_dual_head:
+                    logits_global, logits_local = net(inputs)
+                    loss_g = self.CE(logits_global, targets)
+                    loss_l = self.CE(logits_local, targets)
+                    losses.append(loss_g + loss_l)
+                else:
+                    losses.append(self.CE(net(inputs), targets))
+
+        losses = torch.cat(losses).cpu().numpy()
+        if losses.max() > losses.min():
+            losses = (losses - losses.min()) / (losses.max() - losses.min() + 1e-8)
+
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(losses.reshape(-1, 1))
+        prob = gmm.predict_proba(losses.reshape(-1, 1))[:, gmm.means_.argmin()]
+        return prob
+
+    def get_clean_idx(self, prob):
+        pred = (prob > self.args.p_threshold)
+        pred_clean_idx = self.data_indices[pred.nonzero()[0]]
+        return pred_clean_idx
+
+    def finetune_head(self, neighbor_list, pred_clean_idx):
+        if len(pred_clean_idx) == 0: return neighbor_list
+        loader = DataLoader(DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+                            batch_size=self.args.local_bs, shuffle=True, num_workers=self.args.num_workers)
+
+        optimizer_list = []
+        for n_net in neighbor_list:
+            n_net.train()
+
+            # 🚀 极其关键的隐患修复：兼容 'linear' (单头) 和 'fc_' (双头) 命名
+            body_params = [p for n, p in n_net.named_parameters() if 'linear' not in n and 'fc_' not in n]
+            head_params = [p for n, p in n_net.named_parameters() if 'linear' in n or 'fc_' in n]
+
+            optimizer_list.append(torch.optim.SGD([
+                {'params': head_params, 'lr': self.args.lr, 'weight_decay': self.args.weight_decay},
+                {'params': body_params, 'lr': 0.0},
+            ]))
+
+        for _, (inputs, targets, _, _) in enumerate(loader):
+            inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+            for n_net, opt in zip(neighbor_list, optimizer_list):
+                opt.zero_grad()
+
+                # 🚀 双头改造：微调时更新双头
+                if self.is_dual_head:
+                    logits_global, logits_local = n_net(inputs)
+                    loss = self.loss_func(logits_global, targets) + self.loss_func(logits_local, targets)
+                else:
+                    loss = self.loss_func(n_net(inputs), targets)
+
+                loss.backward()
+                opt.step()
+        return neighbor_list
+
+    # ---------------- 🌟 模块 3：主流程控制 (不变，完美复用) ----------------
+    def train_phase1_dual(self, net1, net2):
+        w1, loss1, w2, loss2 = super().train_multiple_models(net1, net2)
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w1, loss1, w2, loss2
+
+    def train_phase2_dual(self, net1, net2, prev_score, neighbor_list, neighbor_score_list):
+        prob1 = self.fit_gmm(net1)
+        prob2 = self.fit_gmm(net2)
+
+        clean_idx1 = self.get_clean_idx(prob1)
+        clean_idx2 = self.get_clean_idx(prob2)
+
+        neighbor_list1 = self.finetune_head(copy.deepcopy(neighbor_list), clean_idx1) if neighbor_list else []
+        neighbor_list2 = self.finetune_head(copy.deepcopy(neighbor_list), clean_idx2) if neighbor_list else []
+
+        prob_list1 = [prob1] + [self.fit_gmm(n) for n in neighbor_list1]
+        prob_list2 = [prob2] + [self.fit_gmm(n) for n in neighbor_list2]
+
+        scores = [prev_score] + neighbor_score_list
+        scores = [s / sum(scores) for s in scores]
+
+        final_prob1 = np.zeros(len(prob1))
+        final_prob2 = np.zeros(len(prob2))
+        for p, s in zip(prob_list1, scores): final_prob1 += p * s
+        for p, s in zip(prob_list2, scores): final_prob2 += p * s
+
+        self.prob1_dict = {idx: p for idx, p in zip(self.data_indices, final_prob1)}
+        self.prob2_dict = {idx: p for idx, p in zip(self.data_indices, final_prob2)}
+
+        w1, loss1, w2, loss2 = self.cross_train(net1, net2)
+
+        self.set_expertise()
+        self.set_arbitrary_output()
+        return w1, loss1, w2, loss2
+
+    # ---------------- 🌟 模块 4：终极大招：双模型交叉互喂 ----------------
+    def cross_train(self, net1, net2):
+        net1.train()
+        net2.train()
+        opt1 = torch.optim.SGD(net1.parameters(), lr=self.args.lr, momentum=self.args.momentum)
+        opt2 = torch.optim.SGD(net2.parameters(), lr=self.args.lr, momentum=self.args.momentum)
+        ep_loss1, ep_loss2 = [], []
+
+        for _ in range(self.args.local_ep):
+            b_loss1, b_loss2 = [], []
+            for _, (images, labels, _, idxs) in enumerate(self.ldr_train):
+                images, labels = images.to(self.args.device), labels.to(self.args.device)
+                batch_idxs = idxs.cpu().tolist() if torch.is_tensor(idxs) else list(idxs)
+
+                p1_batch = np.array([self.prob1_dict.get(i, 0.0) for i in batch_idxs])
+                p2_batch = np.array([self.prob2_dict.get(i, 0.0) for i in batch_idxs])
+
+                mask1 = p1_batch > self.args.p_threshold
+                mask2 = p2_batch > self.args.p_threshold
+
+                if not mask1.any(): mask1 = np.ones(len(labels), dtype=bool)
+                if not mask2.any(): mask2 = np.ones(len(labels), dtype=bool)
+
+                mask1 = torch.tensor(mask1, dtype=torch.bool).to(self.args.device)
+                mask2 = torch.tensor(mask2, dtype=torch.bool).to(self.args.device)
+
+                opt1.zero_grad()
+                opt2.zero_grad()
+
+                # 🚀 终极双头改造：交叉互喂时融合双头 Loss
+                if self.is_dual_head:
+                    # 网络 1 吃网络 2 选出的数据
+                    out1_g, out1_l = net1(images[mask2])
+                    loss1 = self.loss_func(out1_g, labels[mask2]) + self.loss_func(out1_l, labels[mask2])
+
+                    # 网络 2 吃网络 1 选出的数据
+                    out2_g, out2_l = net2(images[mask1])
+                    loss2 = self.loss_func(out2_g, labels[mask1]) + self.loss_func(out2_l, labels[mask1])
+                else:
+                    out1 = net1(images[mask2])
+                    loss1 = self.loss_func(out1, labels[mask2])
+
+                    out2 = net2(images[mask1])
+                    loss2 = self.loss_func(out2, labels[mask1])
+
+                loss1.backward()
+                opt1.step()
+
+                loss2.backward()
+                opt2.step()
+
+                b_loss1.append(loss1.item())
+                b_loss2.append(loss2.item())
+
+            ep_loss1.append(sum(b_loss1) / len(b_loss1))
+            ep_loss2.append(sum(b_loss2) / len(b_loss2))
+
+        return net1.state_dict(), sum(ep_loss1) / len(ep_loss1), net2.state_dict(), sum(ep_loss2) / len(ep_loss2)
+class LocalUpdatePFedRN(BaseLocalUpdate):
+    """
+    PFedRN: FedRN + Personalized Local Model Guidance.
+
+    net1: global model，参与上传和 FedAvg 聚合。
+    net2: personalized local model，只保存在客户端本地，不上传、不聚合。
+
+    Phase 1 warmup:
+        同时训练 net1 和 net2，使用全部本地样本。
+
+    Phase 2 denoising:
+        1. FedRN reliable-neighbor GMM 产生 p_rn_clean。
+        2. personalized local model GMM 产生 p_local_clean。
+        3. global-local prediction agreement 修正 clean probability。
+        4. 用最终 clean samples 同时更新 global model 和 personalized model。
+    """
+
+    def __init__(self, args, dataset=None, user_idx=None, idxs=None, gaussian_noise=None):
+        super().__init__(
+            args=args,
+            dataset=dataset,
+            user_idx=user_idx,
+            idxs=idxs,
+            real_idx_return=True,
+        )
+        self.gaussian_noise = gaussian_noise
+        self.CE = nn.CrossEntropyLoss(reduction='none')
+
+        self.ldr_eval = DataLoader(
+            DatasetSplit(dataset, idxs, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=False,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+        self.data_indices = np.array(idxs)
+        self.expertise = 0.5
+        self.arbitrary_output = torch.rand((1, self.args.num_classes))
+
+    # -------------------------------------------------------------------------
+    # 输出兼容：如果 CNN4Conv 返回 (logits_global, logits_local)，这里统一取出需要的 head。
+    # -------------------------------------------------------------------------
+    def _select_logits(self, outputs, head='global'):
+        if isinstance(outputs, (tuple, list)):
+            if head == 'local' and len(outputs) > 1:
+                return outputs[1]
+            return outputs[0]
+        return outputs
+
+    def _forward_logits(self, net, inputs, head='global'):
+        outputs = net(inputs)
+        return self._select_logits(outputs, head=head)
+
+    # -------------------------------------------------------------------------
+    # FedRN 需要的 reliability signals
+    # -------------------------------------------------------------------------
+    def set_expertise(self):
+        self.net1.eval()
+        correct = 0
+        n_total = len(self.ldr_eval.dataset)
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self._forward_logits(self.net1, inputs, head='global')
+                y_pred = outputs.data.max(1, keepdim=True)[1]
+                correct += y_pred.eq(targets.data.view_as(y_pred)).float().sum().item()
+
+        self.expertise = correct / max(n_total, 1)
+
+    def set_arbitrary_output(self):
+        self.net1.eval()
+        with torch.no_grad():
+            outputs = self._forward_logits(self.net1, self.gaussian_noise.to(self.args.device), head='global')
+        self.arbitrary_output = outputs.detach()
+
+    # -------------------------------------------------------------------------
+    # GMM clean probability
+    # -------------------------------------------------------------------------
+    def fit_gmm(self, net, head='global'):
+        losses = []
+        net.eval()
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+                outputs = self._forward_logits(net, inputs, head=head)
+                loss = self.CE(outputs, targets)
+                losses.append(loss)
+
+        losses = torch.cat(losses).cpu().numpy()
+
+        # 防止全部 loss 接近导致除 0。
+        loss_min, loss_max = losses.min(), losses.max()
+        losses = (losses - loss_min) / (loss_max - loss_min + 1e-8)
+        input_loss = losses.reshape(-1, 1)
+
+        gmm = GaussianMixture(n_components=2, max_iter=100, tol=1e-2, reg_covar=5e-4)
+        gmm.fit(input_loss)
+        prob = gmm.predict_proba(input_loss)
+        prob = prob[:, gmm.means_.argmin()]
+
+        return prob
+
+    def get_clean_idx(self, prob):
+        threshold = self.args.p_threshold
+        pred = (prob > threshold)
+        pred_clean_idx = pred.nonzero()[0]
+        pred_clean_idx = self.data_indices[pred_clean_idx]
+        pred_noisy_idx = (1 - pred).nonzero()[0]
+        pred_noisy_idx = self.data_indices[pred_noisy_idx]
+
+        # 避免极端情况下一个 clean 都选不到。
+        if len(pred_clean_idx) == 0:
+            pred_clean_idx = pred_noisy_idx
+            pred_noisy_idx = np.array([])
+
+        return pred_clean_idx, pred_noisy_idx
+
+    # -------------------------------------------------------------------------
+    # Neighbor head finetuning：兼容 linear / fc_global / fc_local 等命名。
+    # -------------------------------------------------------------------------
+    def finetune_head(self, neighbor_list, pred_clean_idx):
+        """FedRN 原始逻辑：只在目标客户端的初筛 clean 样本上微调邻居模型的分类头。
+
+        兼容你现在的双头 CNN4Conv：只训练 global head（linear / fc_global / classifier），
+        冻结 backbone 和 fc_local。这样等价于原 FedRN 的 "finetune linear head"。
+        """
+        loader = DataLoader(
+            DatasetSplit(self.dataset, pred_clean_idx, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        optimizer_list = []
+        for neighbor_net in neighbor_list:
+            neighbor_net = neighbor_net.to(self.args.device)
+            neighbor_net.train()
+
+            head_params = []
+            body_params = []
+            for name, p in neighbor_net.named_parameters():
+                # 原 FedRN 是 linear；当前双头模型使用 fc_global/fc_local。
+                # 为了恢复 FedRN，本阶段只微调 global 分类头，不训练 fc_local。
+                is_global_head = (
+                    ('linear' in name)
+                    or ('fc_global' in name)
+                    or ('classifier' in name)
+                )
+                if is_global_head:
+                    head_params.append(p)
+                else:
+                    body_params.append(p)
+
+            param_groups = []
+            if len(head_params) > 0:
+                param_groups.append({
+                    'params': head_params,
+                    'lr': self.args.lr,
+                    'momentum': self.args.momentum,
+                    'weight_decay': self.args.weight_decay,
+                })
+            if len(body_params) > 0:
+                param_groups.append({
+                    'params': body_params,
+                    'lr': 0.0,
+                })
+
+            optimizer_list.append(torch.optim.SGD(param_groups))
+
+        for batch_idx, (inputs, targets, items, idxs) in enumerate(loader):
+            inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+            for neighbor_net, optimizer in zip(neighbor_list, optimizer_list):
+                neighbor_net.zero_grad()
+                outputs = self._forward_logits(neighbor_net, inputs, head='global')
+                loss = self.loss_func(outputs, targets)
+                loss.backward()
+                optimizer.step()
+
+        return neighbor_list
+
+    # -------------------------------------------------------------------------
+    # global-local agreement
+    # -------------------------------------------------------------------------
+    def get_global_local_agreement(self, net_global, net_personal):
+        agreement_list = []
+        net_global.eval()
+        net_personal.eval()
+
+        with torch.no_grad():
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(self.ldr_eval):
+                inputs = inputs.to(self.args.device)
+                logits_g = self._forward_logits(net_global, inputs, head='global')
+                logits_p = self._forward_logits(net_personal, inputs, head='local')
+
+                pred_g = torch.argmax(logits_g, dim=1)
+                pred_p = torch.argmax(logits_p, dim=1)
+                agreement = pred_g.eq(pred_p).float().cpu().numpy()
+                agreement_list.append(agreement)
+
+        return np.concatenate(agreement_list, axis=0)
+
+    # -------------------------------------------------------------------------
+    # 训练函数：不永久改变 self.ldr_train，避免下一轮 DataLoader 被 clean subset 污染。
+    # -------------------------------------------------------------------------
+    def train_global_and_personal(self, net_global, net_personal, train_indices):
+        train_loader = DataLoader(
+            DatasetSplit(self.dataset, train_indices, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        net_global.train()
+        net_personal.train()
+
+        optimizer_args = dict(
+            lr=self.args.lr,
+            momentum=self.args.momentum,
+            weight_decay=self.args.weight_decay,
+        )
+        optimizer_g = torch.optim.SGD(net_global.parameters(), **optimizer_args)
+        optimizer_p = torch.optim.SGD(net_personal.parameters(), **optimizer_args)
+
+        epoch_loss_g = []
+        epoch_loss_p = []
+
+        local_ep_g = self.args.local_ep
+        local_ep_p = getattr(self.args, 'pfl_personal_ep', self.args.local_ep)
+        total_ep = max(local_ep_g, local_ep_p)
+
+        for epoch in range(total_ep):
+            batch_loss_g = []
+            batch_loss_p = []
+
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(train_loader):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+                if epoch < local_ep_g:
+                    net_global.zero_grad()
+                    logits_g = self._forward_logits(net_global, inputs, head='global')
+                    loss_g = self.loss_func(logits_g, targets)
+                    loss_g.backward()
+                    optimizer_g.step()
+                    batch_loss_g.append(loss_g.item())
+
+                if epoch < local_ep_p:
+                    net_personal.zero_grad()
+                    logits_p = self._forward_logits(net_personal, inputs, head='local')
+                    loss_p = self.loss_func(logits_p, targets)
+                    loss_p.backward()
+                    optimizer_p.step()
+                    batch_loss_p.append(loss_p.item())
+
+            if len(batch_loss_g) > 0:
+                epoch_loss_g.append(sum(batch_loss_g) / len(batch_loss_g))
+            if len(batch_loss_p) > 0:
+                epoch_loss_p.append(sum(batch_loss_p) / len(batch_loss_p))
+
+        loss_g_mean = sum(epoch_loss_g) / max(len(epoch_loss_g), 1)
+        loss_p_mean = sum(epoch_loss_p) / max(len(epoch_loss_p), 1)
+
+        self.net1.load_state_dict(net_global.state_dict())
+        self.net2.load_state_dict(net_personal.state_dict())
+        self.last_updated = self.args.g_epoch
+
+        return net_global.state_dict(), loss_g_mean, net_personal.state_dict(), loss_p_mean
+
+    # -------------------------------------------------------------------------
+    # FedRN-only local training helper
+    # -------------------------------------------------------------------------
+    def _train_global_fedrn_only(self, net_global, train_indices):
+        """只训练 global model，恢复原 FedRN 的单模型本地更新逻辑。
+
+        注意：当前 CNN4Conv 可能返回 (logits_global, logits_local)，所以这里显式取 global head。
+        net2 / local head 不参与 loss、不上传、不影响 FedRN。
+        """
+        train_loader = DataLoader(
+            DatasetSplit(self.dataset, train_indices, real_idx_return=True),
+            batch_size=self.args.local_bs,
+            shuffle=True,
+            num_workers=self.args.num_workers,
+            pin_memory=True,
+        )
+
+        net_global.train()
+        optimizer = torch.optim.SGD(
+            net_global.parameters(),
+            lr=self.args.lr,
+            momentum=self.args.momentum,
+            weight_decay=self.args.weight_decay,
+        )
+
+        epoch_loss = []
+        for epoch in range(self.args.local_ep):
+            batch_loss = []
+            for batch_idx, (inputs, targets, items, idxs) in enumerate(train_loader):
+                inputs, targets = inputs.to(self.args.device), targets.to(self.args.device)
+
+                net_global.zero_grad()
+                logits_g = self._forward_logits(net_global, inputs, head='global')
+                loss = self.loss_func(logits_g, targets)
+                loss.backward()
+                optimizer.step()
+                batch_loss.append(loss.item())
+
+            if len(batch_loss) > 0:
+                epoch_loss.append(sum(batch_loss) / len(batch_loss))
+
+        loss_mean = sum(epoch_loss) / max(len(epoch_loss), 1)
+        self.net1.load_state_dict(net_global.state_dict())
+        self.last_updated = self.args.g_epoch
+
+        return net_global.state_dict(), loss_mean
+
+    # -------------------------------------------------------------------------
+    # Phase 1: 原 FedRN warmup，只训练 global model
+    # -------------------------------------------------------------------------
+    def train_phase1_pfedrn(self, net_global, net_personal):
+        w_g, loss_g = self._train_global_fedrn_only(
+            net_global,
+            self.data_indices,
+        )
+        self.set_expertise()
+        self.set_arbitrary_output()
+
+        # 为了兼容 main_pfedrn.py 的返回格式，保留 w_p/loss_p，但不训练、不使用 net2。
+        return w_g, loss_g, net_personal.state_dict(), 0.0
+
+    # -------------------------------------------------------------------------
+    # Phase 2: 恢复原 FedRN 方法，不使用 PFL local GMM，不使用 agreement
+    # -------------------------------------------------------------------------
+    def train_phase2_pfedrn(self, net_global, net_personal, prev_score, neighbor_list, neighbor_score_list):
+        # 1. target client 当前 global model：loss-GMM 得到初筛 clean probability。
+        prob = self.fit_gmm(self.net1, head='global')
+        pred_clean_idx, pred_noisy_idx = self.get_clean_idx(prob)
+
+        # 2. 原 FedRN：在目标客户端初筛 clean 样本上微调邻居模型分类头。
+        prob_list = [prob]
+        neighbor_list = self.finetune_head(neighbor_list, pred_clean_idx)
+        for neighbor_net in neighbor_list:
+            neighbor_prob = self.fit_gmm(neighbor_net, head='global')
+            prob_list.append(neighbor_prob)
+
+        # 3. 原 FedRN：根据 target 自身 score + reliable neighbors score 加权融合概率。
+        score_list = [prev_score] + neighbor_score_list
+        score_sum = sum(score_list) + 1e-8
+        score_list = [score / score_sum for score in score_list]
+
+        final_prob = np.zeros(len(prob))
+        for prob_item, score in zip(prob_list, score_list):
+            final_prob = np.add(final_prob, np.multiply(prob_item, score))
+
+        # 4. 原 FedRN：根据 final_prob 选择 clean 样本。
+        final_clean_idx, final_noisy_idx = self.get_clean_idx(final_prob)
+        clean_ratio = float(len(final_clean_idx)) / float(len(self.data_indices) + 1e-8)
+
+        # 5. 原 FedRN：只用 clean 样本训练 global model；net2/PFL 不参与。
+        w_g, loss_g = self._train_global_fedrn_only(
+            net_global,
+            final_clean_idx,
+        )
+
+        self.set_expertise()
+        self.set_arbitrary_output()
+
+        # agreement 固定 0，表示这个 ablation 完全不使用 PFL agreement。
+        agreement_ratio = 0.0
+
+        # 为了兼容 main_pfedrn.py 的返回格式，w_p/loss_p 仍返回，但不参与训练。
+        return w_g, loss_g, net_personal.state_dict(), 0.0, clean_ratio, agreement_ratio

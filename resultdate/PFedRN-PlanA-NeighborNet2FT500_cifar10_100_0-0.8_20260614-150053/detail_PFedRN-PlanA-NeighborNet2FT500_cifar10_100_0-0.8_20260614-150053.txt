@@ -1,0 +1,303 @@
+Experiment Start: 20260614-150053
+Args: Namespace(method='pfedrn', epochs=500, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, weight_decay=0.0, schedule=[], lr_decay=0.1, fed_method='fedavg', partition='shard', num_shards=200, dd_alpha=0.5, iid=False, split='user', model='cnn4conv', dataset='cifar10', num_classes=10, num_channels=3, img_size=32, gpu=0, seed=1, verbose=False, all_clients=False, num_workers=4, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[0, 0.8], noise_seed_mode='fedrn', warmup_epochs=100, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, neighbor_net1_weight=0.7, neighbor_net2_weight=0.3, net2_local_ep=5, exp_method='PFedRN-PlanA-NeighborNet2FT', save_dir='resultdate', log_client_stats=1, device=device(type='cuda', index=0))
+====================================================================================================
+
+==== Round   0 ====
+Global Test Acc: 19.88% | Loss: 2.2634 | Train Loss: 1.5917 | Clean Ratio: 1.000
+
+==== Round   1 ====
+Global Test Acc: 21.71% | Loss: 2.1575 | Train Loss: 1.6192 | Clean Ratio: 1.000
+
+==== Round   2 ====
+Global Test Acc: 18.59% | Loss: 2.1958 | Train Loss: 1.4384 | Clean Ratio: 1.000
+
+==== Round   3 ====
+Global Test Acc: 26.74% | Loss: 2.1158 | Train Loss: 1.5696 | Clean Ratio: 1.000
+
+==== Round   4 ====
+Global Test Acc: 27.03% | Loss: 2.1313 | Train Loss: 1.6484 | Clean Ratio: 1.000
+
+==== Round   5 ====
+Global Test Acc: 27.54% | Loss: 2.1296 | Train Loss: 1.9055 | Clean Ratio: 1.000
+
+==== Round   6 ====
+Global Test Acc: 27.67% | Loss: 2.0865 | Train Loss: 1.5953 | Clean Ratio: 1.000
+
+==== Round   7 ====
+Global Test Acc: 23.80% | Loss: 2.1311 | Train Loss: 1.4097 | Clean Ratio: 1.000
+
+==== Round   8 ====
+Global Test Acc: 28.49% | Loss: 2.0601 | Train Loss: 1.1280 | Clean Ratio: 1.000
+
+==== Round   9 ====
+Global Test Acc: 20.69% | Loss: 2.1239 | Train Loss: 1.5416 | Clean Ratio: 1.000
+
+==== Round  10 ====
+Global Test Acc: 20.28% | Loss: 2.1589 | Train Loss: 1.5874 | Clean Ratio: 1.000
+
+==== Round  11 ====
+Global Test Acc: 26.03% | Loss: 2.0730 | Train Loss: 1.5605 | Clean Ratio: 1.000
+
+==== Round  12 ====
+Global Test Acc: 25.51% | Loss: 2.1049 | Train Loss: 1.6889 | Clean Ratio: 1.000
+
+==== Round  13 ====
+Global Test Acc: 25.71% | Loss: 2.0721 | Train Loss: 1.4852 | Clean Ratio: 1.000
+
+==== Round  14 ====
+Global Test Acc: 24.39% | Loss: 2.0655 | Train Loss: 1.3091 | Clean Ratio: 1.000
+
+==== Round  15 ====
+Global Test Acc: 21.15% | Loss: 2.0695 | Train Loss: 1.4744 | Clean Ratio: 1.000
+
+==== Round  16 ====
+Global Test Acc: 32.72% | Loss: 2.0081 | Train Loss: 1.2828 | Clean Ratio: 1.000
+
+==== Round  17 ====
+Global Test Acc: 31.35% | Loss: 2.0091 | Train Loss: 1.6428 | Clean Ratio: 1.000
+
+==== Round  18 ====
+Global Test Acc: 24.23% | Loss: 2.0560 | Train Loss: 1.6597 | Clean Ratio: 1.000
+
+==== Round  19 ====
+Global Test Acc: 30.35% | Loss: 2.0485 | Train Loss: 1.6694 | Clean Ratio: 1.000
+
+==== Round  20 ====
+Global Test Acc: 30.96% | Loss: 2.0166 | Train Loss: 1.3850 | Clean Ratio: 1.000
+
+==== Round  21 ====
+Global Test Acc: 34.71% | Loss: 1.9805 | Train Loss: 1.5043 | Clean Ratio: 1.000
+
+==== Round  22 ====
+Global Test Acc: 27.48% | Loss: 2.0331 | Train Loss: 1.4833 | Clean Ratio: 1.000
+
+==== Round  23 ====
+Global Test Acc: 28.02% | Loss: 2.0488 | Train Loss: 1.4994 | Clean Ratio: 1.000
+
+==== Round  24 ====
+Global Test Acc: 27.66% | Loss: 2.0377 | Train Loss: 1.4975 | Clean Ratio: 1.000
+
+==== Round  25 ====
+Global Test Acc: 30.53% | Loss: 1.9882 | Train Loss: 1.3473 | Clean Ratio: 1.000
+
+==== Round  26 ====
+Global Test Acc: 28.90% | Loss: 2.0029 | Train Loss: 1.4850 | Clean Ratio: 1.000
+
+==== Round  27 ====
+Global Test Acc: 31.72% | Loss: 1.9672 | Train Loss: 1.3589 | Clean Ratio: 1.000
+
+==== Round  28 ====
+Global Test Acc: 33.46% | Loss: 1.9670 | Train Loss: 1.5148 | Clean Ratio: 1.000
+
+==== Round  29 ====
+Global Test Acc: 32.28% | Loss: 2.0044 | Train Loss: 1.4062 | Clean Ratio: 1.000
+
+==== Round  30 ====
+Global Test Acc: 24.11% | Loss: 2.0431 | Train Loss: 1.2524 | Clean Ratio: 1.000
+
+==== Round  31 ====
+Global Test Acc: 28.16% | Loss: 2.0107 | Train Loss: 1.4682 | Clean Ratio: 1.000
+
+==== Round  32 ====
+Global Test Acc: 30.90% | Loss: 2.0013 | Train Loss: 1.6500 | Clean Ratio: 1.000
+
+==== Round  33 ====
+Global Test Acc: 31.13% | Loss: 2.0147 | Train Loss: 1.6776 | Clean Ratio: 1.000
+
+==== Round  34 ====
+Global Test Acc: 33.21% | Loss: 1.9625 | Train Loss: 1.2715 | Clean Ratio: 1.000
+
+==== Round  35 ====
+Global Test Acc: 32.83% | Loss: 1.9805 | Train Loss: 1.5651 | Clean Ratio: 1.000
+
+==== Round  36 ====
+Global Test Acc: 19.26% | Loss: 2.0646 | Train Loss: 1.2845 | Clean Ratio: 1.000
+
+==== Round  37 ====
+Global Test Acc: 27.09% | Loss: 2.0042 | Train Loss: 1.4245 | Clean Ratio: 1.000
+
+==== Round  38 ====
+Global Test Acc: 32.92% | Loss: 2.0077 | Train Loss: 1.8602 | Clean Ratio: 1.000
+
+==== Round  39 ====
+Global Test Acc: 30.27% | Loss: 2.0187 | Train Loss: 1.4983 | Clean Ratio: 1.000
+
+==== Round  40 ====
+Global Test Acc: 25.55% | Loss: 2.0109 | Train Loss: 1.3772 | Clean Ratio: 1.000
+
+==== Round  41 ====
+Global Test Acc: 26.60% | Loss: 2.0211 | Train Loss: 1.4530 | Clean Ratio: 1.000
+
+==== Round  42 ====
+Global Test Acc: 31.27% | Loss: 2.0014 | Train Loss: 1.4760 | Clean Ratio: 1.000
+
+==== Round  43 ====
+Global Test Acc: 28.69% | Loss: 1.9962 | Train Loss: 1.3854 | Clean Ratio: 1.000
+
+==== Round  44 ====
+Global Test Acc: 33.99% | Loss: 1.9551 | Train Loss: 1.5324 | Clean Ratio: 1.000
+
+==== Round  45 ====
+Global Test Acc: 29.29% | Loss: 1.9845 | Train Loss: 1.3860 | Clean Ratio: 1.000
+
+==== Round  46 ====
+Global Test Acc: 25.43% | Loss: 2.0440 | Train Loss: 1.4701 | Clean Ratio: 1.000
+
+==== Round  47 ====
+Global Test Acc: 29.56% | Loss: 1.9999 | Train Loss: 1.2791 | Clean Ratio: 1.000
+
+==== Round  48 ====
+Global Test Acc: 27.73% | Loss: 2.0305 | Train Loss: 1.5048 | Clean Ratio: 1.000
+
+==== Round  49 ====
+Global Test Acc: 30.11% | Loss: 2.0422 | Train Loss: 1.7479 | Clean Ratio: 1.000
+
+==== Round  50 ====
+Global Test Acc: 24.33% | Loss: 2.0565 | Train Loss: 1.4635 | Clean Ratio: 1.000
+
+==== Round  51 ====
+Global Test Acc: 32.83% | Loss: 2.0085 | Train Loss: 1.6379 | Clean Ratio: 1.000
+
+==== Round  52 ====
+Global Test Acc: 29.61% | Loss: 2.0402 | Train Loss: 1.3649 | Clean Ratio: 1.000
+
+==== Round  53 ====
+Global Test Acc: 30.24% | Loss: 2.0359 | Train Loss: 1.4346 | Clean Ratio: 1.000
+
+==== Round  54 ====
+Global Test Acc: 27.24% | Loss: 2.0511 | Train Loss: 1.6469 | Clean Ratio: 1.000
+
+==== Round  55 ====
+Global Test Acc: 27.26% | Loss: 2.0010 | Train Loss: 1.1548 | Clean Ratio: 1.000
+
+==== Round  56 ====
+Global Test Acc: 30.36% | Loss: 2.0043 | Train Loss: 1.4165 | Clean Ratio: 1.000
+
+==== Round  57 ====
+Global Test Acc: 28.78% | Loss: 1.9973 | Train Loss: 1.3653 | Clean Ratio: 1.000
+
+==== Round  58 ====
+Global Test Acc: 31.57% | Loss: 1.9744 | Train Loss: 1.4659 | Clean Ratio: 1.000
+
+==== Round  59 ====
+Global Test Acc: 28.41% | Loss: 1.9966 | Train Loss: 1.2032 | Clean Ratio: 1.000
+
+==== Round  60 ====
+Global Test Acc: 30.19% | Loss: 2.0344 | Train Loss: 1.5549 | Clean Ratio: 1.000
+
+==== Round  61 ====
+Global Test Acc: 30.69% | Loss: 1.9784 | Train Loss: 1.2397 | Clean Ratio: 1.000
+
+==== Round  62 ====
+Global Test Acc: 31.24% | Loss: 1.9862 | Train Loss: 1.5151 | Clean Ratio: 1.000
+
+==== Round  63 ====
+Global Test Acc: 30.80% | Loss: 1.9650 | Train Loss: 1.4375 | Clean Ratio: 1.000
+
+==== Round  64 ====
+Global Test Acc: 29.88% | Loss: 1.9687 | Train Loss: 1.1714 | Clean Ratio: 1.000
+
+==== Round  65 ====
+Global Test Acc: 28.19% | Loss: 2.0272 | Train Loss: 1.6086 | Clean Ratio: 1.000
+
+==== Round  66 ====
+Global Test Acc: 32.73% | Loss: 1.9769 | Train Loss: 1.6306 | Clean Ratio: 1.000
+
+==== Round  67 ====
+Global Test Acc: 30.88% | Loss: 2.0007 | Train Loss: 1.4627 | Clean Ratio: 1.000
+
+==== Round  68 ====
+Global Test Acc: 32.04% | Loss: 1.9609 | Train Loss: 1.3054 | Clean Ratio: 1.000
+
+==== Round  69 ====
+Global Test Acc: 26.48% | Loss: 2.0358 | Train Loss: 1.6007 | Clean Ratio: 1.000
+
+==== Round  70 ====
+Global Test Acc: 33.69% | Loss: 1.9602 | Train Loss: 1.3276 | Clean Ratio: 1.000
+
+==== Round  71 ====
+Global Test Acc: 23.50% | Loss: 2.0756 | Train Loss: 1.5477 | Clean Ratio: 1.000
+
+==== Round  72 ====
+Global Test Acc: 26.53% | Loss: 2.0647 | Train Loss: 1.6092 | Clean Ratio: 1.000
+
+==== Round  73 ====
+Global Test Acc: 31.15% | Loss: 1.9956 | Train Loss: 1.4370 | Clean Ratio: 1.000
+
+==== Round  74 ====
+Global Test Acc: 23.40% | Loss: 2.0486 | Train Loss: 1.4381 | Clean Ratio: 1.000
+
+==== Round  75 ====
+Global Test Acc: 32.81% | Loss: 1.9466 | Train Loss: 1.1858 | Clean Ratio: 1.000
+
+==== Round  76 ====
+Global Test Acc: 30.92% | Loss: 2.0066 | Train Loss: 1.7002 | Clean Ratio: 1.000
+
+==== Round  77 ====
+Global Test Acc: 30.36% | Loss: 2.0011 | Train Loss: 1.1019 | Clean Ratio: 1.000
+
+==== Round  78 ====
+Global Test Acc: 29.53% | Loss: 2.0099 | Train Loss: 1.7377 | Clean Ratio: 1.000
+
+==== Round  79 ====
+Global Test Acc: 33.32% | Loss: 1.9498 | Train Loss: 1.2353 | Clean Ratio: 1.000
+
+==== Round  80 ====
+Global Test Acc: 28.77% | Loss: 2.0546 | Train Loss: 1.9415 | Clean Ratio: 1.000
+
+==== Round  81 ====
+Global Test Acc: 29.29% | Loss: 2.0640 | Train Loss: 1.6027 | Clean Ratio: 1.000
+
+==== Round  82 ====
+Global Test Acc: 31.08% | Loss: 1.9786 | Train Loss: 1.3126 | Clean Ratio: 1.000
+
+==== Round  83 ====
+Global Test Acc: 30.14% | Loss: 2.0244 | Train Loss: 1.6275 | Clean Ratio: 1.000
+
+==== Round  84 ====
+Global Test Acc: 30.42% | Loss: 2.0040 | Train Loss: 1.3263 | Clean Ratio: 1.000
+
+==== Round  85 ====
+Global Test Acc: 27.48% | Loss: 2.0391 | Train Loss: 1.3249 | Clean Ratio: 1.000
+
+==== Round  86 ====
+Global Test Acc: 27.59% | Loss: 2.0258 | Train Loss: 1.6873 | Clean Ratio: 1.000
+
+==== Round  87 ====
+Global Test Acc: 27.61% | Loss: 2.0215 | Train Loss: 1.3421 | Clean Ratio: 1.000
+
+==== Round  88 ====
+Global Test Acc: 26.86% | Loss: 2.0192 | Train Loss: 1.3607 | Clean Ratio: 1.000
+
+==== Round  89 ====
+Global Test Acc: 29.52% | Loss: 2.0089 | Train Loss: 1.5444 | Clean Ratio: 1.000
+
+==== Round  90 ====
+Global Test Acc: 31.02% | Loss: 2.0112 | Train Loss: 1.0931 | Clean Ratio: 1.000
+
+==== Round  91 ====
+Global Test Acc: 30.62% | Loss: 2.0103 | Train Loss: 1.3831 | Clean Ratio: 1.000
+
+==== Round  92 ====
+Global Test Acc: 27.79% | Loss: 2.0839 | Train Loss: 1.4599 | Clean Ratio: 1.000
+
+==== Round  93 ====
+Global Test Acc: 27.72% | Loss: 2.0301 | Train Loss: 1.1070 | Clean Ratio: 1.000
+
+==== Round  94 ====
+Global Test Acc: 28.23% | Loss: 2.0292 | Train Loss: 1.5631 | Clean Ratio: 1.000
+
+==== Round  95 ====
+Global Test Acc: 30.12% | Loss: 1.9813 | Train Loss: 0.8419 | Clean Ratio: 1.000
+
+==== Round  96 ====
+Global Test Acc: 32.76% | Loss: 1.9629 | Train Loss: 1.0241 | Clean Ratio: 1.000
+
+==== Round  97 ====
+Global Test Acc: 26.94% | Loss: 2.0540 | Train Loss: 1.8146 | Clean Ratio: 1.000
+
+==== Round  98 ====
+Global Test Acc: 26.60% | Loss: 2.0462 | Train Loss: 1.2382 | Clean Ratio: 1.000
+
+==== Round  99 ====
+Global Test Acc: 28.29% | Loss: 1.9936 | Train Loss: 1.0627 | Clean Ratio: 1.000

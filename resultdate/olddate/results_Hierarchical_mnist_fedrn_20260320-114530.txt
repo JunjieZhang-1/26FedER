@@ -1,0 +1,34 @@
+Experiment Start: 20260320-114530
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='mnist', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=10, fed_method='fedavg', forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[0.2], iid=False, labeling='soft', lambda_u=25, local_bs=10, local_ep=1, lr=0.01, lr_decay=0.1, method='fedrn', mm_alpha=4, model='cnn_mnist', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=1, num_classes=10, num_edges=5, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, warmup_epochs=5, weight_decay=0)
+==================================================
+Round   0
+train_acc: 11.550000 - train_loss: 2.300188 - test_acc: 11.840000 - test_loss: 2.297340
+------------------------------
+Round   1
+train_acc: 10.083333 - train_loss: 2.298148 - test_acc: 8.650000 - test_loss: 2.295356
+------------------------------
+Round   2
+train_acc: 9.983333 - train_loss: 2.295432 - test_acc: 8.640000 - test_loss: 2.291851
+------------------------------
+Round   3
+train_acc: 12.850000 - train_loss: 2.293389 - test_acc: 11.290000 - test_loss: 2.290131
+------------------------------
+Round   4
+train_acc: 14.100000 - train_loss: 2.286106 - test_acc: 13.350000 - test_loss: 2.284493
+------------------------------
+Round   5
+train_acc: 13.016667 - train_loss: 2.284879 - test_acc: 11.270000 - test_loss: 2.285278
+------------------------------
+Round   6
+train_acc: 12.416667 - train_loss: 2.292433 - test_acc: 10.130000 - test_loss: 2.294746
+------------------------------
+Round   7
+train_acc: 12.416667 - train_loss: 2.325694 - test_acc: 10.090000 - test_loss: 2.331120
+------------------------------
+Round   8
+train_acc: 12.483333 - train_loss: 2.405636 - test_acc: 10.740000 - test_loss: 2.415324
+------------------------------
+Round   9
+train_acc: 12.416667 - train_loss: 2.617795 - test_acc: 10.090000 - test_loss: 2.639039
+------------------------------

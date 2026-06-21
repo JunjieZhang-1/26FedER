@@ -47,7 +47,7 @@ import torchvision
 from torch.utils.data import DataLoader, Dataset
 
 from utils import load_dataset
-from utils.options import args_parser
+from utils.options_fedrn_t1pr import args_parser
 from utils.sampling import sample_iid, sample_noniid_shard, sample_dirichlet
 from utils.utils import noisify_label
 from models.nets import get_model

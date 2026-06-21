@@ -1,0 +1,28 @@
+Experiment Start: 20260416-144410
+==================================================
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=500, fed_method='fedavg', feder_exp_weight=0.6, forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[0, 0.4], iid=False, labeling='soft', lambda_u=25, local_bs=50, local_ep=4, lr=0.01, lr_decay=0.1, method='fedco', mm_alpha=4, model='cnn4conv', momentum=0.5, noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=5, num_neighbors=2, num_shards=200, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', queue_size=15, schedule=[], seed=1, send_2_models=True, split='user', uncertainty_threshold=0.05, verbose=False, w_alpha=0.5, warmup_epochs=5, weight_decay=0)
+==================================================
+Round   0
+  --> [Edge Server 1] Test Acc: 15.52% | Test Loss: 3.770082
+  --> [Edge Server 2] Test Acc: 11.80% | Test Loss: 2.842905
+  --> [Edge Server 3] Test Acc: 20.86% | Test Loss: 2.559002
+  --> [Edge Server 4] Test Acc: 17.73% | Test Loss: 2.490238
+  --> [Edge Server 5] Test Acc: 18.73% | Test Loss: 2.432416
+train_acc: 15.542000 - train_loss: 2.319457 - test_acc: 16.620000 - test_loss: 2.293469
+------------------------------
+Round   1
+  --> [Edge Server 1] Test Acc: 20.53% | Test Loss: 2.590961
+  --> [Edge Server 2] Test Acc: 17.48% | Test Loss: 2.674820
+  --> [Edge Server 3] Test Acc: 21.14% | Test Loss: 2.446942
+  --> [Edge Server 4] Test Acc: 15.31% | Test Loss: 2.553817
+  --> [Edge Server 5] Test Acc: 17.43% | Test Loss: 2.418899
+train_acc: 19.944000 - train_loss: 2.237211 - test_acc: 25.250000 - test_loss: 2.179092
+------------------------------
+Round   2
+  --> [Edge Server 1] Test Acc: 24.28% | Test Loss: 2.701034
+  --> [Edge Server 2] Test Acc: 21.34% | Test Loss: 2.461177
+  --> [Edge Server 3] Test Acc: 15.04% | Test Loss: 2.990780
+  --> [Edge Server 4] Test Acc: 10.59% | Test Loss: 2.747106
+  --> [Edge Server 5] Test Acc: 17.70% | Test Loss: 2.471075
+train_acc: 19.506000 - train_loss: 2.262321 - test_acc: 22.220000 - test_loss: 2.204428
+------------------------------

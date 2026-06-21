@@ -11,3 +11,28 @@ __pycache__/
 *.pycdata/
 *.tar.gz
 *.zip
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 深度学习模型、权重与检查点
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.bin
+
+# 训练运行日志与可视化文件
+runs/
+logs/
+checkpoints/
+tensorboard/
+wandb/
+outputs/
+
+# 临时文件
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db

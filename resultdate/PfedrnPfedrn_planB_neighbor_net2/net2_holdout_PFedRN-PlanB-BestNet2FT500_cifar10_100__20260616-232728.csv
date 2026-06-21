@@ -1,0 +1,1 @@
+epoch,client_id,scoreA_count,holdout_count,net2_holdout_acc,net2_holdout_loss,is_best_net2,eval_stage

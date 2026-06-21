@@ -1,0 +1,1553 @@
+Experiment Start: 20260616-230210
+Args: Namespace(method='default', epochs=500, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=4, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[0.4], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.5, device=device(type='cuda', index=0), send_2_models=False)
+================================================================================
+
+('method', 'default')
+('epochs', 500)
+('num_users', 100)
+('frac', 0.1)
+('local_ep', 5)
+('local_bs', 50)
+('bs', 128)
+('lr', 0.01)
+('momentum', 0.5)
+('split', 'user')
+('schedule', [])
+('lr_decay', 0.1)
+('weight_decay', 0)
+('partition', 'shard')
+('dd_alpha', 0.5)
+('num_shards', 200)
+('fed_method', 'fedavg')
+('model', 'cnn4conv')
+('dataset', 'cifar10')
+('iid', False)
+('num_classes', 10)
+('num_channels', 3)
+('gpu', 0)
+('verbose', False)
+('seed', 1)
+('all_clients', False)
+('num_workers', 4)
+('noise_type_lst', ['symmetric'])
+('noise_group_num', [100])
+('group_noise_rate', [0.4])
+('warmup_epochs', 100)
+('queue_size', 15)
+('forget_rate', 0.2)
+('uncertainty_threshold', 0.05)
+('alpha', 1.2)
+('beta', 0.8)
+('labeling', 'soft')
+('mm_alpha', 4)
+('lambda_u', 25)
+('T', 0.5)
+('p_threshold', 0.5)
+('num_neighbors', 2)
+('w_alpha', 0.5)
+('device', device(type='cuda', index=0))
+('send_2_models', False)
+torch version: 2.11.0+cu128
+torchvision version: 0.26.0+cu128
+
+Round   0
+train_acc: 13.050000 - train_loss: 2.330672 - test_acc: 15.440000 - test_loss: 2.291738 - local_update_loss: 1.720317
+
+Round   1
+train_acc: 13.546000 - train_loss: 2.301554 - test_acc: 17.410000 - test_loss: 2.241925 - local_update_loss: 1.716604
+
+Round   2
+train_acc: 14.834000 - train_loss: 2.298867 - test_acc: 16.620000 - test_loss: 2.244728 - local_update_loss: 1.706598
+
+Round   3
+train_acc: 16.722000 - train_loss: 2.271833 - test_acc: 21.680000 - test_loss: 2.189633 - local_update_loss: 1.674723
+
+Round   4
+train_acc: 17.690000 - train_loss: 2.289713 - test_acc: 24.100000 - test_loss: 2.217128 - local_update_loss: 1.701951
+
+Round   5
+train_acc: 16.690000 - train_loss: 2.269282 - test_acc: 22.740000 - test_loss: 2.176764 - local_update_loss: 1.693121
+
+Round   6
+train_acc: 17.804000 - train_loss: 2.246268 - test_acc: 25.130000 - test_loss: 2.134592 - local_update_loss: 1.667784
+
+Round   7
+train_acc: 18.412000 - train_loss: 2.250033 - test_acc: 24.720000 - test_loss: 2.125491 - local_update_loss: 1.650354
+
+Round   8
+train_acc: 18.974000 - train_loss: 2.227200 - test_acc: 26.800000 - test_loss: 2.104967 - local_update_loss: 1.676399
+
+Round   9
+train_acc: 17.236000 - train_loss: 2.224363 - test_acc: 20.680000 - test_loss: 2.118910 - local_update_loss: 1.647260
+
+Round  10
+train_acc: 16.302000 - train_loss: 2.273456 - test_acc: 21.570000 - test_loss: 2.147796 - local_update_loss: 1.664912
+
+Round  11
+train_acc: 17.488000 - train_loss: 2.232085 - test_acc: 23.990000 - test_loss: 2.104736 - local_update_loss: 1.668906
+
+Round  12
+train_acc: 18.522000 - train_loss: 2.212459 - test_acc: 24.580000 - test_loss: 2.087589 - local_update_loss: 1.670125
+
+Round  13
+train_acc: 18.004000 - train_loss: 2.219325 - test_acc: 21.890000 - test_loss: 2.099820 - local_update_loss: 1.646349
+
+Round  14
+train_acc: 19.224000 - train_loss: 2.215173 - test_acc: 26.290000 - test_loss: 2.078103 - local_update_loss: 1.653122
+
+Round  15
+train_acc: 16.228000 - train_loss: 2.235573 - test_acc: 21.190000 - test_loss: 2.114249 - local_update_loss: 1.667564
+
+Round  16
+train_acc: 19.466000 - train_loss: 2.213395 - test_acc: 26.730000 - test_loss: 2.098135 - local_update_loss: 1.640782
+
+Round  17
+train_acc: 19.688000 - train_loss: 2.198903 - test_acc: 26.050000 - test_loss: 2.052816 - local_update_loss: 1.646129
+
+Round  18
+train_acc: 20.036000 - train_loss: 2.213397 - test_acc: 28.320000 - test_loss: 2.067757 - local_update_loss: 1.637504
+
+Round  19
+train_acc: 17.928000 - train_loss: 2.206699 - test_acc: 23.530000 - test_loss: 2.086596 - local_update_loss: 1.650850
+
+Round  20
+train_acc: 19.398000 - train_loss: 2.213745 - test_acc: 26.840000 - test_loss: 2.101296 - local_update_loss: 1.653856
+
+Round  21
+train_acc: 20.638000 - train_loss: 2.209734 - test_acc: 27.220000 - test_loss: 2.088573 - local_update_loss: 1.629248
+
+Round  22
+train_acc: 18.738000 - train_loss: 2.220082 - test_acc: 23.750000 - test_loss: 2.089133 - local_update_loss: 1.625280
+
+Round  23
+train_acc: 19.054000 - train_loss: 2.213413 - test_acc: 24.780000 - test_loss: 2.095530 - local_update_loss: 1.624587
+
+Round  24
+train_acc: 20.310000 - train_loss: 2.187182 - test_acc: 27.850000 - test_loss: 2.038648 - local_update_loss: 1.616893
+
+Round  25
+train_acc: 18.614000 - train_loss: 2.218583 - test_acc: 24.460000 - test_loss: 2.097112 - local_update_loss: 1.622365
+
+Round  26
+train_acc: 20.512000 - train_loss: 2.213242 - test_acc: 28.270000 - test_loss: 2.077172 - local_update_loss: 1.656457
+
+Round  27
+train_acc: 18.614000 - train_loss: 2.207603 - test_acc: 25.510000 - test_loss: 2.070094 - local_update_loss: 1.630125
+
+Round  28
+train_acc: 22.000000 - train_loss: 2.185533 - test_acc: 29.970000 - test_loss: 2.025681 - local_update_loss: 1.616394
+
+Round  29
+train_acc: 21.888000 - train_loss: 2.192411 - test_acc: 30.270000 - test_loss: 2.046973 - local_update_loss: 1.604450
+
+Round  30
+train_acc: 20.016000 - train_loss: 2.202078 - test_acc: 24.600000 - test_loss: 2.077315 - local_update_loss: 1.622996
+
+Round  31
+train_acc: 20.714000 - train_loss: 2.189144 - test_acc: 26.320000 - test_loss: 2.052654 - local_update_loss: 1.627975
+
+Round  32
+train_acc: 20.652000 - train_loss: 2.189523 - test_acc: 27.900000 - test_loss: 2.059393 - local_update_loss: 1.635682
+
+Round  33
+train_acc: 18.316000 - train_loss: 2.225900 - test_acc: 24.080000 - test_loss: 2.113969 - local_update_loss: 1.645931
+
+Round  34
+train_acc: 20.354000 - train_loss: 2.193560 - test_acc: 26.900000 - test_loss: 2.054431 - local_update_loss: 1.593640
+
+Round  35
+train_acc: 20.222000 - train_loss: 2.215359 - test_acc: 26.670000 - test_loss: 2.077202 - local_update_loss: 1.613369
+
+Round  36
+train_acc: 20.684000 - train_loss: 2.208452 - test_acc: 28.350000 - test_loss: 2.074311 - local_update_loss: 1.596394
+
+Round  37
+train_acc: 21.292000 - train_loss: 2.182308 - test_acc: 28.660000 - test_loss: 2.026485 - local_update_loss: 1.610004
+
+Round  38
+train_acc: 22.044000 - train_loss: 2.175050 - test_acc: 29.100000 - test_loss: 2.026042 - local_update_loss: 1.603712
+
+Round  39
+train_acc: 20.668000 - train_loss: 2.192620 - test_acc: 27.320000 - test_loss: 2.057062 - local_update_loss: 1.621235
+
+Round  40
+train_acc: 21.292000 - train_loss: 2.175440 - test_acc: 27.950000 - test_loss: 2.030535 - local_update_loss: 1.609573
+
+Round  41
+train_acc: 22.020000 - train_loss: 2.172139 - test_acc: 30.360000 - test_loss: 2.007449 - local_update_loss: 1.613076
+
+Round  42
+train_acc: 22.028000 - train_loss: 2.182604 - test_acc: 30.690000 - test_loss: 2.033308 - local_update_loss: 1.580279
+
+Round  43
+train_acc: 20.834000 - train_loss: 2.191075 - test_acc: 29.060000 - test_loss: 2.038146 - local_update_loss: 1.603055
+
+Round  44
+train_acc: 22.502000 - train_loss: 2.162018 - test_acc: 30.630000 - test_loss: 1.998121 - local_update_loss: 1.599671
+
+Round  45
+train_acc: 20.308000 - train_loss: 2.184281 - test_acc: 26.820000 - test_loss: 2.038234 - local_update_loss: 1.585719
+
+Round  46
+train_acc: 20.142000 - train_loss: 2.203700 - test_acc: 23.830000 - test_loss: 2.075960 - local_update_loss: 1.578032
+
+Round  47
+train_acc: 20.830000 - train_loss: 2.187408 - test_acc: 26.940000 - test_loss: 2.048992 - local_update_loss: 1.608888
+
+Round  48
+train_acc: 20.996000 - train_loss: 2.191522 - test_acc: 26.160000 - test_loss: 2.069513 - local_update_loss: 1.578996
+
+Round  49
+train_acc: 19.612000 - train_loss: 2.225148 - test_acc: 26.030000 - test_loss: 2.098475 - local_update_loss: 1.619169
+
+Round  50
+train_acc: 20.104000 - train_loss: 2.201766 - test_acc: 26.410000 - test_loss: 2.074920 - local_update_loss: 1.588826
+
+Round  51
+train_acc: 21.310000 - train_loss: 2.196727 - test_acc: 25.960000 - test_loss: 2.092134 - local_update_loss: 1.605141
+
+Round  52
+train_acc: 22.060000 - train_loss: 2.175421 - test_acc: 29.160000 - test_loss: 2.050763 - local_update_loss: 1.580699
+
+Round  53
+train_acc: 23.838000 - train_loss: 2.152827 - test_acc: 31.930000 - test_loss: 2.006784 - local_update_loss: 1.562606
+
+Round  54
+train_acc: 19.328000 - train_loss: 2.201494 - test_acc: 24.930000 - test_loss: 2.056491 - local_update_loss: 1.538949
+
+Round  55
+train_acc: 22.798000 - train_loss: 2.159697 - test_acc: 31.050000 - test_loss: 2.002050 - local_update_loss: 1.554432
+
+Round  56
+train_acc: 21.194000 - train_loss: 2.172348 - test_acc: 24.330000 - test_loss: 2.042716 - local_update_loss: 1.569279
+
+Round  57
+train_acc: 21.752000 - train_loss: 2.177006 - test_acc: 27.740000 - test_loss: 2.045583 - local_update_loss: 1.552953
+
+Round  58
+train_acc: 21.488000 - train_loss: 2.185619 - test_acc: 27.580000 - test_loss: 2.054700 - local_update_loss: 1.588809
+
+Round  59
+train_acc: 21.980000 - train_loss: 2.178852 - test_acc: 28.970000 - test_loss: 2.017237 - local_update_loss: 1.602016
+
+Round  60
+train_acc: 22.248000 - train_loss: 2.175890 - test_acc: 28.330000 - test_loss: 2.037928 - local_update_loss: 1.567438
+
+Round  61
+train_acc: 22.562000 - train_loss: 2.177582 - test_acc: 30.320000 - test_loss: 2.039360 - local_update_loss: 1.551664
+
+Round  62
+train_acc: 21.294000 - train_loss: 2.183651 - test_acc: 25.300000 - test_loss: 2.077792 - local_update_loss: 1.538315
+
+Round  63
+train_acc: 21.950000 - train_loss: 2.162775 - test_acc: 28.120000 - test_loss: 2.011346 - local_update_loss: 1.561710
+
+Round  64
+train_acc: 21.840000 - train_loss: 2.163710 - test_acc: 25.610000 - test_loss: 2.019495 - local_update_loss: 1.577681
+
+Round  65
+train_acc: 22.258000 - train_loss: 2.174169 - test_acc: 28.890000 - test_loss: 2.026417 - local_update_loss: 1.579921
+
+Round  66
+train_acc: 22.966000 - train_loss: 2.165088 - test_acc: 30.620000 - test_loss: 2.010859 - local_update_loss: 1.552073
+
+Round  67
+train_acc: 23.114000 - train_loss: 2.150179 - test_acc: 27.960000 - test_loss: 2.010405 - local_update_loss: 1.539268
+
+Round  68
+train_acc: 23.078000 - train_loss: 2.155896 - test_acc: 28.340000 - test_loss: 2.022793 - local_update_loss: 1.557276
+
+Round  69
+train_acc: 21.068000 - train_loss: 2.195263 - test_acc: 27.550000 - test_loss: 2.057589 - local_update_loss: 1.560742
+
+Round  70
+train_acc: 21.880000 - train_loss: 2.164326 - test_acc: 29.620000 - test_loss: 2.020958 - local_update_loss: 1.557983
+
+Round  71
+train_acc: 21.736000 - train_loss: 2.173470 - test_acc: 27.750000 - test_loss: 2.034343 - local_update_loss: 1.566787
+
+Round  72
+train_acc: 19.862000 - train_loss: 2.198381 - test_acc: 26.330000 - test_loss: 2.066110 - local_update_loss: 1.556858
+
+Round  73
+train_acc: 23.026000 - train_loss: 2.168349 - test_acc: 28.580000 - test_loss: 2.052034 - local_update_loss: 1.531053
+
+Round  74
+train_acc: 21.530000 - train_loss: 2.160083 - test_acc: 25.860000 - test_loss: 2.042808 - local_update_loss: 1.516492
+
+Round  75
+train_acc: 23.182000 - train_loss: 2.158733 - test_acc: 29.440000 - test_loss: 2.038993 - local_update_loss: 1.546869
+
+Round  76
+train_acc: 24.088000 - train_loss: 2.143919 - test_acc: 31.410000 - test_loss: 2.007080 - local_update_loss: 1.569491
+
+Round  77
+train_acc: 21.992000 - train_loss: 2.192636 - test_acc: 27.830000 - test_loss: 2.065554 - local_update_loss: 1.535883
+
+Round  78
+train_acc: 21.610000 - train_loss: 2.173224 - test_acc: 27.860000 - test_loss: 2.034215 - local_update_loss: 1.541872
+
+Round  79
+train_acc: 23.158000 - train_loss: 2.173037 - test_acc: 28.770000 - test_loss: 2.051002 - local_update_loss: 1.521871
+
+Round  80
+train_acc: 23.528000 - train_loss: 2.166117 - test_acc: 30.130000 - test_loss: 2.031589 - local_update_loss: 1.542231
+
+Round  81
+train_acc: 23.726000 - train_loss: 2.163960 - test_acc: 31.160000 - test_loss: 2.021901 - local_update_loss: 1.537905
+
+Round  82
+train_acc: 23.110000 - train_loss: 2.154432 - test_acc: 29.450000 - test_loss: 2.024910 - local_update_loss: 1.539571
+
+Round  83
+train_acc: 21.968000 - train_loss: 2.187951 - test_acc: 27.480000 - test_loss: 2.077497 - local_update_loss: 1.533225
+
+Round  84
+train_acc: 22.734000 - train_loss: 2.180685 - test_acc: 29.740000 - test_loss: 2.048493 - local_update_loss: 1.522311
+
+Round  85
+train_acc: 21.210000 - train_loss: 2.185273 - test_acc: 25.710000 - test_loss: 2.080099 - local_update_loss: 1.506289
+
+Round  86
+train_acc: 22.188000 - train_loss: 2.155457 - test_acc: 28.210000 - test_loss: 2.020772 - local_update_loss: 1.500503
+
+Round  87
+train_acc: 20.488000 - train_loss: 2.188811 - test_acc: 24.920000 - test_loss: 2.086320 - local_update_loss: 1.526876
+
+Round  88
+train_acc: 21.648000 - train_loss: 2.185585 - test_acc: 26.170000 - test_loss: 2.051835 - local_update_loss: 1.503240
+
+Round  89
+train_acc: 21.396000 - train_loss: 2.176875 - test_acc: 25.770000 - test_loss: 2.071096 - local_update_loss: 1.542611
+
+Round  90
+train_acc: 21.864000 - train_loss: 2.199657 - test_acc: 26.860000 - test_loss: 2.101899 - local_update_loss: 1.496039
+
+Round  91
+train_acc: 20.684000 - train_loss: 2.197931 - test_acc: 24.200000 - test_loss: 2.107142 - local_update_loss: 1.489291
+
+Round  92
+train_acc: 19.548000 - train_loss: 2.227795 - test_acc: 20.940000 - test_loss: 2.162023 - local_update_loss: 1.511331
+
+Round  93
+train_acc: 20.210000 - train_loss: 2.213267 - test_acc: 23.450000 - test_loss: 2.131108 - local_update_loss: 1.536786
+
+Round  94
+train_acc: 22.348000 - train_loss: 2.161964 - test_acc: 27.070000 - test_loss: 2.052276 - local_update_loss: 1.531300
+
+Round  95
+train_acc: 22.106000 - train_loss: 2.188908 - test_acc: 27.650000 - test_loss: 2.065216 - local_update_loss: 1.494058
+
+Round  96
+train_acc: 21.790000 - train_loss: 2.199814 - test_acc: 26.240000 - test_loss: 2.102152 - local_update_loss: 1.511255
+
+Round  97
+train_acc: 20.484000 - train_loss: 2.205978 - test_acc: 24.580000 - test_loss: 2.121535 - local_update_loss: 1.503209
+
+Round  98
+train_acc: 21.528000 - train_loss: 2.172596 - test_acc: 25.400000 - test_loss: 2.068246 - local_update_loss: 1.524816
+
+Round  99
+train_acc: 21.100000 - train_loss: 2.187393 - test_acc: 25.290000 - test_loss: 2.083628 - local_update_loss: 1.477458
+
+Round 100
+train_acc: 22.210000 - train_loss: 2.167330 - test_acc: 25.520000 - test_loss: 2.070830 - local_update_loss: 1.507019
+
+Round 101
+train_acc: 21.232000 - train_loss: 2.186095 - test_acc: 25.680000 - test_loss: 2.083254 - local_update_loss: 1.506946
+
+Round 102
+train_acc: 22.442000 - train_loss: 2.162119 - test_acc: 27.460000 - test_loss: 2.041740 - local_update_loss: 1.527592
+
+Round 103
+train_acc: 21.854000 - train_loss: 2.161998 - test_acc: 26.190000 - test_loss: 2.051584 - local_update_loss: 1.500389
+
+Round 104
+train_acc: 23.434000 - train_loss: 2.166039 - test_acc: 29.030000 - test_loss: 2.043104 - local_update_loss: 1.494249
+
+Round 105
+train_acc: 21.698000 - train_loss: 2.197164 - test_acc: 27.130000 - test_loss: 2.085725 - local_update_loss: 1.519348
+
+Round 106
+train_acc: 22.152000 - train_loss: 2.166861 - test_acc: 25.790000 - test_loss: 2.066815 - local_update_loss: 1.505491
+
+Round 107
+train_acc: 21.406000 - train_loss: 2.177836 - test_acc: 26.150000 - test_loss: 2.074285 - local_update_loss: 1.469956
+
+Round 108
+train_acc: 21.976000 - train_loss: 2.192571 - test_acc: 26.410000 - test_loss: 2.106347 - local_update_loss: 1.458136
+
+Round 109
+train_acc: 21.688000 - train_loss: 2.156229 - test_acc: 25.380000 - test_loss: 2.049561 - local_update_loss: 1.493210
+
+Round 110
+train_acc: 21.982000 - train_loss: 2.165025 - test_acc: 26.210000 - test_loss: 2.074382 - local_update_loss: 1.505073
+
+Round 111
+train_acc: 21.852000 - train_loss: 2.210949 - test_acc: 25.820000 - test_loss: 2.131798 - local_update_loss: 1.488215
+
+Round 112
+train_acc: 21.546000 - train_loss: 2.191730 - test_acc: 26.640000 - test_loss: 2.084957 - local_update_loss: 1.492742
+
+Round 113
+train_acc: 21.734000 - train_loss: 2.174564 - test_acc: 24.500000 - test_loss: 2.081578 - local_update_loss: 1.476006
+
+Round 114
+train_acc: 20.596000 - train_loss: 2.188670 - test_acc: 24.380000 - test_loss: 2.103590 - local_update_loss: 1.461422
+
+Round 115
+train_acc: 21.030000 - train_loss: 2.199698 - test_acc: 23.680000 - test_loss: 2.133951 - local_update_loss: 1.484811
+
+Round 116
+train_acc: 22.788000 - train_loss: 2.180033 - test_acc: 26.860000 - test_loss: 2.083762 - local_update_loss: 1.508578
+
+Round 117
+train_acc: 21.362000 - train_loss: 2.180801 - test_acc: 26.620000 - test_loss: 2.061616 - local_update_loss: 1.484880
+
+Round 118
+train_acc: 22.034000 - train_loss: 2.164731 - test_acc: 25.710000 - test_loss: 2.055786 - local_update_loss: 1.480799
+
+Round 119
+train_acc: 23.234000 - train_loss: 2.150911 - test_acc: 28.260000 - test_loss: 2.002401 - local_update_loss: 1.443028
+
+Round 120
+train_acc: 23.030000 - train_loss: 2.143652 - test_acc: 27.570000 - test_loss: 2.012914 - local_update_loss: 1.485767
+
+Round 121
+train_acc: 20.108000 - train_loss: 2.225028 - test_acc: 23.220000 - test_loss: 2.151001 - local_update_loss: 1.479063
+
+Round 122
+train_acc: 20.706000 - train_loss: 2.181903 - test_acc: 23.120000 - test_loss: 2.083436 - local_update_loss: 1.454721
+
+Round 123
+train_acc: 21.926000 - train_loss: 2.162302 - test_acc: 26.010000 - test_loss: 2.050745 - local_update_loss: 1.486517
+
+Round 124
+train_acc: 21.830000 - train_loss: 2.159805 - test_acc: 27.590000 - test_loss: 2.037581 - local_update_loss: 1.509644
+
+Round 125
+train_acc: 22.980000 - train_loss: 2.155397 - test_acc: 27.070000 - test_loss: 2.051286 - local_update_loss: 1.482849
+
+Round 126
+train_acc: 22.306000 - train_loss: 2.173619 - test_acc: 26.280000 - test_loss: 2.071034 - local_update_loss: 1.450430
+
+Round 127
+train_acc: 21.234000 - train_loss: 2.179060 - test_acc: 25.760000 - test_loss: 2.047316 - local_update_loss: 1.458559
+
+Round 128
+train_acc: 23.342000 - train_loss: 2.157308 - test_acc: 28.800000 - test_loss: 2.036949 - local_update_loss: 1.478900
+
+Round 129
+train_acc: 22.510000 - train_loss: 2.179839 - test_acc: 28.540000 - test_loss: 2.045871 - local_update_loss: 1.457213
+
+Round 130
+train_acc: 22.268000 - train_loss: 2.171891 - test_acc: 26.930000 - test_loss: 2.050421 - local_update_loss: 1.515328
+
+Round 131
+train_acc: 21.802000 - train_loss: 2.173479 - test_acc: 25.350000 - test_loss: 2.087530 - local_update_loss: 1.484718
+
+Round 132
+train_acc: 23.516000 - train_loss: 2.152662 - test_acc: 27.090000 - test_loss: 2.046172 - local_update_loss: 1.450470
+
+Round 133
+train_acc: 22.486000 - train_loss: 2.158316 - test_acc: 26.340000 - test_loss: 2.068972 - local_update_loss: 1.461973
+
+Round 134
+train_acc: 23.220000 - train_loss: 2.162133 - test_acc: 28.110000 - test_loss: 2.057884 - local_update_loss: 1.479953
+
+Round 135
+train_acc: 22.206000 - train_loss: 2.178562 - test_acc: 25.820000 - test_loss: 2.083099 - local_update_loss: 1.447371
+
+Round 136
+train_acc: 21.268000 - train_loss: 2.197219 - test_acc: 23.990000 - test_loss: 2.127791 - local_update_loss: 1.467432
+
+Round 137
+train_acc: 21.832000 - train_loss: 2.194366 - test_acc: 24.890000 - test_loss: 2.128424 - local_update_loss: 1.443246
+
+Round 138
+train_acc: 21.808000 - train_loss: 2.182870 - test_acc: 26.030000 - test_loss: 2.095468 - local_update_loss: 1.469012
+
+Round 139
+train_acc: 20.918000 - train_loss: 2.193164 - test_acc: 22.820000 - test_loss: 2.121268 - local_update_loss: 1.466071
+
+Round 140
+train_acc: 19.826000 - train_loss: 2.222266 - test_acc: 22.670000 - test_loss: 2.147635 - local_update_loss: 1.467670
+
+Round 141
+train_acc: 21.778000 - train_loss: 2.182547 - test_acc: 26.060000 - test_loss: 2.083534 - local_update_loss: 1.484956
+
+Round 142
+train_acc: 21.538000 - train_loss: 2.175750 - test_acc: 25.060000 - test_loss: 2.080933 - local_update_loss: 1.449293
+
+Round 143
+train_acc: 22.532000 - train_loss: 2.175881 - test_acc: 27.350000 - test_loss: 2.047634 - local_update_loss: 1.459118
+
+Round 144
+train_acc: 23.354000 - train_loss: 2.144765 - test_acc: 27.070000 - test_loss: 2.034879 - local_update_loss: 1.469302
+
+Round 145
+train_acc: 23.828000 - train_loss: 2.129578 - test_acc: 27.980000 - test_loss: 2.004585 - local_update_loss: 1.435409
+
+Round 146
+train_acc: 22.392000 - train_loss: 2.162176 - test_acc: 25.430000 - test_loss: 2.061126 - local_update_loss: 1.433049
+
+Round 147
+train_acc: 21.630000 - train_loss: 2.184502 - test_acc: 24.440000 - test_loss: 2.096235 - local_update_loss: 1.454433
+
+Round 148
+train_acc: 21.618000 - train_loss: 2.161652 - test_acc: 24.770000 - test_loss: 2.065174 - local_update_loss: 1.449314
+
+Round 149
+train_acc: 20.616000 - train_loss: 2.238877 - test_acc: 24.170000 - test_loss: 2.155314 - local_update_loss: 1.477982
+
+Round 150
+train_acc: 21.238000 - train_loss: 2.195895 - test_acc: 23.300000 - test_loss: 2.139081 - local_update_loss: 1.462160
+
+Round 151
+train_acc: 22.082000 - train_loss: 2.177459 - test_acc: 24.050000 - test_loss: 2.100531 - local_update_loss: 1.419257
+
+Round 152
+train_acc: 21.570000 - train_loss: 2.192133 - test_acc: 24.640000 - test_loss: 2.119670 - local_update_loss: 1.444362
+
+Round 153
+train_acc: 23.212000 - train_loss: 2.161732 - test_acc: 27.590000 - test_loss: 2.051429 - local_update_loss: 1.422914
+
+Round 154
+train_acc: 22.458000 - train_loss: 2.179039 - test_acc: 26.550000 - test_loss: 2.077265 - local_update_loss: 1.404946
+
+Round 155
+train_acc: 22.134000 - train_loss: 2.179487 - test_acc: 26.340000 - test_loss: 2.065057 - local_update_loss: 1.395984
+
+Round 156
+train_acc: 22.086000 - train_loss: 2.181922 - test_acc: 25.430000 - test_loss: 2.087901 - local_update_loss: 1.407560
+
+Round 157
+train_acc: 21.168000 - train_loss: 2.203014 - test_acc: 24.810000 - test_loss: 2.095899 - local_update_loss: 1.441890
+
+Round 158
+train_acc: 21.312000 - train_loss: 2.198332 - test_acc: 24.590000 - test_loss: 2.119540 - local_update_loss: 1.436046
+
+Round 159
+train_acc: 21.772000 - train_loss: 2.165122 - test_acc: 23.890000 - test_loss: 2.080693 - local_update_loss: 1.408722
+
+Round 160
+train_acc: 21.268000 - train_loss: 2.204154 - test_acc: 23.580000 - test_loss: 2.129154 - local_update_loss: 1.400104
+
+Round 161
+train_acc: 21.300000 - train_loss: 2.197753 - test_acc: 23.320000 - test_loss: 2.143414 - local_update_loss: 1.401798
+
+Round 162
+train_acc: 22.792000 - train_loss: 2.209166 - test_acc: 26.990000 - test_loss: 2.105208 - local_update_loss: 1.404232
+
+Round 163
+train_acc: 21.902000 - train_loss: 2.198716 - test_acc: 24.590000 - test_loss: 2.129815 - local_update_loss: 1.401526
+
+Round 164
+train_acc: 22.302000 - train_loss: 2.186366 - test_acc: 25.530000 - test_loss: 2.099984 - local_update_loss: 1.371607
+
+Round 165
+train_acc: 23.404000 - train_loss: 2.154959 - test_acc: 26.250000 - test_loss: 2.052838 - local_update_loss: 1.391512
+
+Round 166
+train_acc: 22.788000 - train_loss: 2.172159 - test_acc: 24.990000 - test_loss: 2.091576 - local_update_loss: 1.434292
+
+Round 167
+train_acc: 22.638000 - train_loss: 2.152969 - test_acc: 24.600000 - test_loss: 2.077959 - local_update_loss: 1.409213
+
+Round 168
+train_acc: 22.154000 - train_loss: 2.197709 - test_acc: 24.500000 - test_loss: 2.147409 - local_update_loss: 1.442222
+
+Round 169
+train_acc: 19.754000 - train_loss: 2.220380 - test_acc: 20.880000 - test_loss: 2.199522 - local_update_loss: 1.416268
+
+Round 170
+train_acc: 21.164000 - train_loss: 2.201806 - test_acc: 23.250000 - test_loss: 2.130418 - local_update_loss: 1.389959
+
+Round 171
+train_acc: 21.656000 - train_loss: 2.177097 - test_acc: 24.120000 - test_loss: 2.107005 - local_update_loss: 1.423733
+
+Round 172
+train_acc: 21.898000 - train_loss: 2.187151 - test_acc: 24.420000 - test_loss: 2.120224 - local_update_loss: 1.435446
+
+Round 173
+train_acc: 23.462000 - train_loss: 2.144846 - test_acc: 26.190000 - test_loss: 2.047333 - local_update_loss: 1.401882
+
+Round 174
+train_acc: 23.224000 - train_loss: 2.155809 - test_acc: 25.500000 - test_loss: 2.075494 - local_update_loss: 1.390987
+
+Round 175
+train_acc: 22.634000 - train_loss: 2.180138 - test_acc: 24.700000 - test_loss: 2.106492 - local_update_loss: 1.388776
+
+Round 176
+train_acc: 20.396000 - train_loss: 2.263843 - test_acc: 22.870000 - test_loss: 2.171238 - local_update_loss: 1.359644
+
+Round 177
+train_acc: 23.272000 - train_loss: 2.143491 - test_acc: 25.320000 - test_loss: 2.063582 - local_update_loss: 1.427778
+
+Round 178
+train_acc: 22.252000 - train_loss: 2.173557 - test_acc: 23.970000 - test_loss: 2.106134 - local_update_loss: 1.396274
+
+Round 179
+train_acc: 22.158000 - train_loss: 2.169892 - test_acc: 24.330000 - test_loss: 2.097875 - local_update_loss: 1.398639
+
+Round 180
+train_acc: 22.256000 - train_loss: 2.168209 - test_acc: 23.990000 - test_loss: 2.097921 - local_update_loss: 1.367678
+
+Round 181
+train_acc: 22.060000 - train_loss: 2.175878 - test_acc: 23.600000 - test_loss: 2.096245 - local_update_loss: 1.379851
+
+Round 182
+train_acc: 20.452000 - train_loss: 2.229880 - test_acc: 22.430000 - test_loss: 2.193360 - local_update_loss: 1.392473
+
+Round 183
+train_acc: 21.446000 - train_loss: 2.215608 - test_acc: 23.520000 - test_loss: 2.160115 - local_update_loss: 1.383073
+
+Round 184
+train_acc: 21.906000 - train_loss: 2.189055 - test_acc: 24.610000 - test_loss: 2.125917 - local_update_loss: 1.388314
+
+Round 185
+train_acc: 22.110000 - train_loss: 2.179138 - test_acc: 24.330000 - test_loss: 2.115940 - local_update_loss: 1.425548
+
+Round 186
+train_acc: 21.480000 - train_loss: 2.211759 - test_acc: 23.950000 - test_loss: 2.127651 - local_update_loss: 1.382602
+
+Round 187
+train_acc: 21.576000 - train_loss: 2.177824 - test_acc: 22.600000 - test_loss: 2.105191 - local_update_loss: 1.395778
+
+Round 188
+train_acc: 22.450000 - train_loss: 2.175758 - test_acc: 24.360000 - test_loss: 2.098451 - local_update_loss: 1.387673
+
+Round 189
+train_acc: 22.650000 - train_loss: 2.182479 - test_acc: 24.180000 - test_loss: 2.126032 - local_update_loss: 1.382379
+
+Round 190
+train_acc: 22.084000 - train_loss: 2.180651 - test_acc: 24.250000 - test_loss: 2.115448 - local_update_loss: 1.387922
+
+Round 191
+train_acc: 22.462000 - train_loss: 2.182701 - test_acc: 23.740000 - test_loss: 2.123944 - local_update_loss: 1.380784
+
+Round 192
+train_acc: 23.228000 - train_loss: 2.140339 - test_acc: 25.700000 - test_loss: 2.032725 - local_update_loss: 1.373152
+
+Round 193
+train_acc: 22.412000 - train_loss: 2.166353 - test_acc: 24.250000 - test_loss: 2.082216 - local_update_loss: 1.399345
+
+Round 194
+train_acc: 22.548000 - train_loss: 2.162256 - test_acc: 25.260000 - test_loss: 2.064610 - local_update_loss: 1.370010
+
+Round 195
+train_acc: 20.972000 - train_loss: 2.229551 - test_acc: 24.330000 - test_loss: 2.172796 - local_update_loss: 1.365376
+
+Round 196
+train_acc: 22.104000 - train_loss: 2.181179 - test_acc: 23.550000 - test_loss: 2.136026 - local_update_loss: 1.370833
+
+Round 197
+train_acc: 23.592000 - train_loss: 2.160716 - test_acc: 26.880000 - test_loss: 2.078250 - local_update_loss: 1.351555
+
+Round 198
+train_acc: 21.602000 - train_loss: 2.211787 - test_acc: 23.530000 - test_loss: 2.162657 - local_update_loss: 1.395700
+
+Round 199
+train_acc: 22.660000 - train_loss: 2.161078 - test_acc: 24.430000 - test_loss: 2.071758 - local_update_loss: 1.367206
+
+Round 200
+train_acc: 20.906000 - train_loss: 2.203448 - test_acc: 22.050000 - test_loss: 2.179559 - local_update_loss: 1.417617
+
+Round 201
+train_acc: 21.032000 - train_loss: 2.211918 - test_acc: 22.510000 - test_loss: 2.168887 - local_update_loss: 1.381542
+
+Round 202
+train_acc: 21.140000 - train_loss: 2.180913 - test_acc: 22.580000 - test_loss: 2.127240 - local_update_loss: 1.410388
+
+Round 203
+train_acc: 20.430000 - train_loss: 2.208943 - test_acc: 21.000000 - test_loss: 2.189317 - local_update_loss: 1.363823
+
+Round 204
+train_acc: 20.008000 - train_loss: 2.242223 - test_acc: 21.040000 - test_loss: 2.214533 - local_update_loss: 1.403200
+
+Round 205
+train_acc: 18.346000 - train_loss: 2.279699 - test_acc: 17.900000 - test_loss: 2.289024 - local_update_loss: 1.389020
+
+Round 206
+train_acc: 21.054000 - train_loss: 2.218909 - test_acc: 23.310000 - test_loss: 2.178679 - local_update_loss: 1.388116
+
+Round 207
+train_acc: 20.390000 - train_loss: 2.216260 - test_acc: 21.080000 - test_loss: 2.183325 - local_update_loss: 1.360151
+
+Round 208
+train_acc: 21.292000 - train_loss: 2.209793 - test_acc: 23.110000 - test_loss: 2.177467 - local_update_loss: 1.365981
+
+Round 209
+train_acc: 21.324000 - train_loss: 2.221236 - test_acc: 22.920000 - test_loss: 2.179780 - local_update_loss: 1.374583
+
+Round 210
+train_acc: 20.918000 - train_loss: 2.214042 - test_acc: 22.510000 - test_loss: 2.175265 - local_update_loss: 1.382437
+
+Round 211
+train_acc: 22.384000 - train_loss: 2.170137 - test_acc: 24.540000 - test_loss: 2.087780 - local_update_loss: 1.341516
+
+Round 212
+train_acc: 20.494000 - train_loss: 2.198041 - test_acc: 22.200000 - test_loss: 2.135842 - local_update_loss: 1.369655
+
+Round 213
+train_acc: 22.054000 - train_loss: 2.184789 - test_acc: 24.300000 - test_loss: 2.117952 - local_update_loss: 1.369067
+
+Round 214
+train_acc: 21.242000 - train_loss: 2.219584 - test_acc: 22.670000 - test_loss: 2.176626 - local_update_loss: 1.354254
+
+Round 215
+train_acc: 22.112000 - train_loss: 2.193736 - test_acc: 24.620000 - test_loss: 2.129931 - local_update_loss: 1.402037
+
+Round 216
+train_acc: 22.322000 - train_loss: 2.199323 - test_acc: 24.760000 - test_loss: 2.136550 - local_update_loss: 1.351521
+
+Round 217
+train_acc: 22.198000 - train_loss: 2.189257 - test_acc: 24.380000 - test_loss: 2.118105 - local_update_loss: 1.354966
+
+Round 218
+train_acc: 22.760000 - train_loss: 2.159938 - test_acc: 25.130000 - test_loss: 2.080605 - local_update_loss: 1.346606
+
+Round 219
+train_acc: 22.604000 - train_loss: 2.172059 - test_acc: 25.650000 - test_loss: 2.085686 - local_update_loss: 1.343337
+
+Round 220
+train_acc: 23.058000 - train_loss: 2.157043 - test_acc: 25.220000 - test_loss: 2.072137 - local_update_loss: 1.328554
+
+Round 221
+train_acc: 21.690000 - train_loss: 2.181192 - test_acc: 23.310000 - test_loss: 2.126715 - local_update_loss: 1.366056
+
+Round 222
+train_acc: 21.180000 - train_loss: 2.194648 - test_acc: 21.660000 - test_loss: 2.160230 - local_update_loss: 1.319623
+
+Round 223
+train_acc: 22.646000 - train_loss: 2.207735 - test_acc: 25.000000 - test_loss: 2.134331 - local_update_loss: 1.354181
+
+Round 224
+train_acc: 20.454000 - train_loss: 2.235873 - test_acc: 21.040000 - test_loss: 2.203740 - local_update_loss: 1.350210
+
+Round 225
+train_acc: 21.524000 - train_loss: 2.241069 - test_acc: 23.240000 - test_loss: 2.205319 - local_update_loss: 1.330905
+
+Round 226
+train_acc: 21.726000 - train_loss: 2.211807 - test_acc: 23.470000 - test_loss: 2.182783 - local_update_loss: 1.328280
+
+Round 227
+train_acc: 21.996000 - train_loss: 2.200535 - test_acc: 23.700000 - test_loss: 2.145342 - local_update_loss: 1.332016
+
+Round 228
+train_acc: 22.344000 - train_loss: 2.185491 - test_acc: 24.670000 - test_loss: 2.125859 - local_update_loss: 1.347289
+
+Round 229
+train_acc: 22.314000 - train_loss: 2.175545 - test_acc: 23.370000 - test_loss: 2.117809 - local_update_loss: 1.370557
+
+Round 230
+train_acc: 22.298000 - train_loss: 2.189426 - test_acc: 24.810000 - test_loss: 2.119581 - local_update_loss: 1.329372
+
+Round 231
+train_acc: 21.566000 - train_loss: 2.204674 - test_acc: 23.520000 - test_loss: 2.139347 - local_update_loss: 1.326505
+
+Round 232
+train_acc: 21.152000 - train_loss: 2.199864 - test_acc: 22.690000 - test_loss: 2.141314 - local_update_loss: 1.325356
+
+Round 233
+train_acc: 22.074000 - train_loss: 2.180443 - test_acc: 23.650000 - test_loss: 2.132990 - local_update_loss: 1.331078
+
+Round 234
+train_acc: 22.186000 - train_loss: 2.202525 - test_acc: 23.730000 - test_loss: 2.158761 - local_update_loss: 1.333044
+
+Round 235
+train_acc: 22.170000 - train_loss: 2.175402 - test_acc: 24.580000 - test_loss: 2.089204 - local_update_loss: 1.331438
+
+Round 236
+train_acc: 20.770000 - train_loss: 2.234173 - test_acc: 21.410000 - test_loss: 2.207430 - local_update_loss: 1.387866
+
+Round 237
+train_acc: 19.714000 - train_loss: 2.263809 - test_acc: 19.770000 - test_loss: 2.243544 - local_update_loss: 1.313599
+
+Round 238
+train_acc: 22.200000 - train_loss: 2.231643 - test_acc: 24.880000 - test_loss: 2.189642 - local_update_loss: 1.303070
+
+Round 239
+train_acc: 22.184000 - train_loss: 2.195546 - test_acc: 23.960000 - test_loss: 2.148166 - local_update_loss: 1.313037
+
+Round 240
+train_acc: 21.850000 - train_loss: 2.191704 - test_acc: 22.800000 - test_loss: 2.148539 - local_update_loss: 1.335020
+
+Round 241
+train_acc: 20.228000 - train_loss: 2.223697 - test_acc: 20.470000 - test_loss: 2.224404 - local_update_loss: 1.348877
+
+Round 242
+train_acc: 21.568000 - train_loss: 2.197135 - test_acc: 21.980000 - test_loss: 2.178006 - local_update_loss: 1.304585
+
+Round 243
+train_acc: 21.726000 - train_loss: 2.204043 - test_acc: 22.870000 - test_loss: 2.144233 - local_update_loss: 1.317327
+
+Round 244
+train_acc: 22.088000 - train_loss: 2.173776 - test_acc: 24.490000 - test_loss: 2.109576 - local_update_loss: 1.344326
+
+Round 245
+train_acc: 23.404000 - train_loss: 2.176352 - test_acc: 24.990000 - test_loss: 2.117845 - local_update_loss: 1.332697
+
+Round 246
+train_acc: 22.910000 - train_loss: 2.165584 - test_acc: 25.120000 - test_loss: 2.077985 - local_update_loss: 1.301950
+
+Round 247
+train_acc: 21.382000 - train_loss: 2.240053 - test_acc: 23.860000 - test_loss: 2.158514 - local_update_loss: 1.314862
+
+Round 248
+train_acc: 22.500000 - train_loss: 2.166035 - test_acc: 24.040000 - test_loss: 2.121405 - local_update_loss: 1.329852
+
+Round 249
+train_acc: 21.754000 - train_loss: 2.190269 - test_acc: 23.430000 - test_loss: 2.137474 - local_update_loss: 1.292846
+
+Round 250
+train_acc: 21.400000 - train_loss: 2.210285 - test_acc: 21.570000 - test_loss: 2.195531 - local_update_loss: 1.365127
+
+Round 251
+train_acc: 22.258000 - train_loss: 2.178355 - test_acc: 22.830000 - test_loss: 2.137540 - local_update_loss: 1.339834
+
+Round 252
+train_acc: 22.394000 - train_loss: 2.180565 - test_acc: 23.120000 - test_loss: 2.129085 - local_update_loss: 1.295258
+
+Round 253
+train_acc: 21.572000 - train_loss: 2.195689 - test_acc: 21.840000 - test_loss: 2.173289 - local_update_loss: 1.324286
+
+Round 254
+train_acc: 21.912000 - train_loss: 2.179913 - test_acc: 22.350000 - test_loss: 2.163081 - local_update_loss: 1.335841
+
+Round 255
+train_acc: 22.908000 - train_loss: 2.194331 - test_acc: 25.340000 - test_loss: 2.122470 - local_update_loss: 1.306971
+
+Round 256
+train_acc: 22.062000 - train_loss: 2.225665 - test_acc: 24.700000 - test_loss: 2.145316 - local_update_loss: 1.299260
+
+Round 257
+train_acc: 22.594000 - train_loss: 2.166961 - test_acc: 23.490000 - test_loss: 2.111642 - local_update_loss: 1.310276
+
+Round 258
+train_acc: 23.222000 - train_loss: 2.149283 - test_acc: 24.570000 - test_loss: 2.098682 - local_update_loss: 1.345201
+
+Round 259
+train_acc: 22.382000 - train_loss: 2.194835 - test_acc: 23.810000 - test_loss: 2.164347 - local_update_loss: 1.293926
+
+Round 260
+train_acc: 22.130000 - train_loss: 2.196570 - test_acc: 23.690000 - test_loss: 2.151902 - local_update_loss: 1.321726
+
+Round 261
+train_acc: 22.662000 - train_loss: 2.186703 - test_acc: 23.730000 - test_loss: 2.151803 - local_update_loss: 1.303814
+
+Round 262
+train_acc: 22.364000 - train_loss: 2.173936 - test_acc: 22.960000 - test_loss: 2.135637 - local_update_loss: 1.297891
+
+Round 263
+train_acc: 21.568000 - train_loss: 2.199655 - test_acc: 22.760000 - test_loss: 2.164542 - local_update_loss: 1.308976
+
+Round 264
+train_acc: 22.032000 - train_loss: 2.186370 - test_acc: 22.950000 - test_loss: 2.141779 - local_update_loss: 1.283268
+
+Round 265
+train_acc: 22.464000 - train_loss: 2.182790 - test_acc: 23.550000 - test_loss: 2.136894 - local_update_loss: 1.293541
+
+Round 266
+train_acc: 21.446000 - train_loss: 2.223892 - test_acc: 22.020000 - test_loss: 2.192945 - local_update_loss: 1.300227
+
+Round 267
+train_acc: 20.926000 - train_loss: 2.226205 - test_acc: 20.380000 - test_loss: 2.239605 - local_update_loss: 1.304830
+
+Round 268
+train_acc: 21.784000 - train_loss: 2.220313 - test_acc: 23.800000 - test_loss: 2.194162 - local_update_loss: 1.279288
+
+Round 269
+train_acc: 21.822000 - train_loss: 2.247673 - test_acc: 23.400000 - test_loss: 2.234309 - local_update_loss: 1.280845
+
+Round 270
+train_acc: 21.692000 - train_loss: 2.215380 - test_acc: 22.580000 - test_loss: 2.208244 - local_update_loss: 1.323584
+
+Round 271
+train_acc: 22.234000 - train_loss: 2.182412 - test_acc: 22.810000 - test_loss: 2.156992 - local_update_loss: 1.309848
+
+Round 272
+train_acc: 21.922000 - train_loss: 2.194035 - test_acc: 22.060000 - test_loss: 2.168921 - local_update_loss: 1.307735
+
+Round 273
+train_acc: 21.384000 - train_loss: 2.204845 - test_acc: 22.030000 - test_loss: 2.197629 - local_update_loss: 1.299161
+
+Round 274
+train_acc: 20.994000 - train_loss: 2.233203 - test_acc: 21.660000 - test_loss: 2.224002 - local_update_loss: 1.268614
+
+Round 275
+train_acc: 22.316000 - train_loss: 2.221620 - test_acc: 24.240000 - test_loss: 2.183868 - local_update_loss: 1.282905
+
+Round 276
+train_acc: 21.456000 - train_loss: 2.248636 - test_acc: 24.070000 - test_loss: 2.222032 - local_update_loss: 1.279015
+
+Round 277
+train_acc: 21.226000 - train_loss: 2.232284 - test_acc: 22.020000 - test_loss: 2.212002 - local_update_loss: 1.247739
+
+Round 278
+train_acc: 21.738000 - train_loss: 2.198398 - test_acc: 22.710000 - test_loss: 2.175042 - local_update_loss: 1.300933
+
+Round 279
+train_acc: 22.484000 - train_loss: 2.203966 - test_acc: 25.120000 - test_loss: 2.146966 - local_update_loss: 1.306717
+
+Round 280
+train_acc: 21.210000 - train_loss: 2.244061 - test_acc: 22.660000 - test_loss: 2.199664 - local_update_loss: 1.294021
+
+Round 281
+train_acc: 20.908000 - train_loss: 2.234070 - test_acc: 22.700000 - test_loss: 2.169860 - local_update_loss: 1.336362
+
+Round 282
+train_acc: 21.376000 - train_loss: 2.207631 - test_acc: 21.950000 - test_loss: 2.183278 - local_update_loss: 1.304232
+
+Round 283
+train_acc: 21.096000 - train_loss: 2.209455 - test_acc: 21.350000 - test_loss: 2.194913 - local_update_loss: 1.268952
+
+Round 284
+train_acc: 22.076000 - train_loss: 2.212480 - test_acc: 23.230000 - test_loss: 2.187254 - local_update_loss: 1.256779
+
+Round 285
+train_acc: 21.892000 - train_loss: 2.193431 - test_acc: 21.970000 - test_loss: 2.188629 - local_update_loss: 1.305484
+
+Round 286
+train_acc: 23.064000 - train_loss: 2.184336 - test_acc: 24.100000 - test_loss: 2.145422 - local_update_loss: 1.282017
+
+Round 287
+train_acc: 22.810000 - train_loss: 2.173666 - test_acc: 24.420000 - test_loss: 2.123879 - local_update_loss: 1.292594
+
+Round 288
+train_acc: 22.922000 - train_loss: 2.185859 - test_acc: 23.770000 - test_loss: 2.159825 - local_update_loss: 1.305424
+
+Round 289
+train_acc: 22.146000 - train_loss: 2.197726 - test_acc: 24.020000 - test_loss: 2.162145 - local_update_loss: 1.298970
+
+Round 290
+train_acc: 22.356000 - train_loss: 2.179556 - test_acc: 23.570000 - test_loss: 2.157675 - local_update_loss: 1.315520
+
+Round 291
+train_acc: 21.714000 - train_loss: 2.203939 - test_acc: 22.270000 - test_loss: 2.174667 - local_update_loss: 1.281936
+
+Round 292
+train_acc: 21.800000 - train_loss: 2.201708 - test_acc: 23.040000 - test_loss: 2.173063 - local_update_loss: 1.275732
+
+Round 293
+train_acc: 20.860000 - train_loss: 2.229505 - test_acc: 21.650000 - test_loss: 2.203945 - local_update_loss: 1.245089
+
+Round 294
+train_acc: 22.312000 - train_loss: 2.215245 - test_acc: 23.380000 - test_loss: 2.203007 - local_update_loss: 1.240743
+
+Round 295
+train_acc: 22.248000 - train_loss: 2.188405 - test_acc: 22.830000 - test_loss: 2.165240 - local_update_loss: 1.283172
+
+Round 296
+train_acc: 22.650000 - train_loss: 2.172897 - test_acc: 24.020000 - test_loss: 2.121540 - local_update_loss: 1.248290
+
+Round 297
+train_acc: 22.740000 - train_loss: 2.177582 - test_acc: 23.620000 - test_loss: 2.128033 - local_update_loss: 1.285124
+
+Round 298
+train_acc: 21.714000 - train_loss: 2.211633 - test_acc: 21.830000 - test_loss: 2.197828 - local_update_loss: 1.265846
+
+Round 299
+train_acc: 21.836000 - train_loss: 2.199824 - test_acc: 22.210000 - test_loss: 2.175089 - local_update_loss: 1.272957
+
+Round 300
+train_acc: 21.700000 - train_loss: 2.199359 - test_acc: 22.150000 - test_loss: 2.176285 - local_update_loss: 1.254687
+
+Round 301
+train_acc: 21.352000 - train_loss: 2.251115 - test_acc: 21.920000 - test_loss: 2.254924 - local_update_loss: 1.266872
+
+Round 302
+train_acc: 20.800000 - train_loss: 2.244002 - test_acc: 21.380000 - test_loss: 2.250430 - local_update_loss: 1.300061
+
+Round 303
+train_acc: 22.624000 - train_loss: 2.188266 - test_acc: 23.050000 - test_loss: 2.169511 - local_update_loss: 1.268069
+
+Round 304
+train_acc: 22.244000 - train_loss: 2.213311 - test_acc: 23.730000 - test_loss: 2.162744 - local_update_loss: 1.262861
+
+Round 305
+train_acc: 21.772000 - train_loss: 2.196674 - test_acc: 22.780000 - test_loss: 2.175344 - local_update_loss: 1.255253
+
+Round 306
+train_acc: 22.004000 - train_loss: 2.235957 - test_acc: 22.110000 - test_loss: 2.227131 - local_update_loss: 1.236910
+
+Round 307
+train_acc: 23.266000 - train_loss: 2.192904 - test_acc: 25.150000 - test_loss: 2.139493 - local_update_loss: 1.254067
+
+Round 308
+train_acc: 22.170000 - train_loss: 2.204796 - test_acc: 22.950000 - test_loss: 2.176881 - local_update_loss: 1.285966
+
+Round 309
+train_acc: 21.434000 - train_loss: 2.222866 - test_acc: 21.720000 - test_loss: 2.195687 - local_update_loss: 1.258361
+
+Round 310
+train_acc: 22.158000 - train_loss: 2.217631 - test_acc: 21.860000 - test_loss: 2.222274 - local_update_loss: 1.227031
+
+Round 311
+train_acc: 22.392000 - train_loss: 2.182062 - test_acc: 22.490000 - test_loss: 2.168981 - local_update_loss: 1.267240
+
+Round 312
+train_acc: 22.628000 - train_loss: 2.220718 - test_acc: 23.720000 - test_loss: 2.211897 - local_update_loss: 1.253121
+
+Round 313
+train_acc: 22.760000 - train_loss: 2.260026 - test_acc: 23.510000 - test_loss: 2.257716 - local_update_loss: 1.226865
+
+Round 314
+train_acc: 21.690000 - train_loss: 2.242736 - test_acc: 21.300000 - test_loss: 2.250739 - local_update_loss: 1.258789
+
+Round 315
+train_acc: 21.974000 - train_loss: 2.215312 - test_acc: 21.810000 - test_loss: 2.232825 - local_update_loss: 1.243708
+
+Round 316
+train_acc: 23.194000 - train_loss: 2.175723 - test_acc: 23.700000 - test_loss: 2.155505 - local_update_loss: 1.210340
+
+Round 317
+train_acc: 22.962000 - train_loss: 2.186016 - test_acc: 24.930000 - test_loss: 2.117856 - local_update_loss: 1.238424
+
+Round 318
+train_acc: 22.812000 - train_loss: 2.191976 - test_acc: 23.720000 - test_loss: 2.173028 - local_update_loss: 1.282214
+
+Round 319
+train_acc: 22.566000 - train_loss: 2.202647 - test_acc: 24.430000 - test_loss: 2.155540 - local_update_loss: 1.238289
+
+Round 320
+train_acc: 22.236000 - train_loss: 2.239678 - test_acc: 22.530000 - test_loss: 2.239257 - local_update_loss: 1.254162
+
+Round 321
+train_acc: 22.610000 - train_loss: 2.197205 - test_acc: 22.220000 - test_loss: 2.186753 - local_update_loss: 1.248002
+
+Round 322
+train_acc: 23.234000 - train_loss: 2.177277 - test_acc: 23.290000 - test_loss: 2.146591 - local_update_loss: 1.239919
+
+Round 323
+train_acc: 21.536000 - train_loss: 2.213996 - test_acc: 21.550000 - test_loss: 2.221871 - local_update_loss: 1.267388
+
+Round 324
+train_acc: 21.706000 - train_loss: 2.221762 - test_acc: 21.230000 - test_loss: 2.244611 - local_update_loss: 1.246295
+
+Round 325
+train_acc: 21.544000 - train_loss: 2.225031 - test_acc: 20.250000 - test_loss: 2.279507 - local_update_loss: 1.225477
+
+Round 326
+train_acc: 22.628000 - train_loss: 2.182329 - test_acc: 22.280000 - test_loss: 2.176507 - local_update_loss: 1.260868
+
+Round 327
+train_acc: 22.250000 - train_loss: 2.226034 - test_acc: 23.390000 - test_loss: 2.231891 - local_update_loss: 1.227486
+
+Round 328
+train_acc: 22.378000 - train_loss: 2.217394 - test_acc: 21.920000 - test_loss: 2.261415 - local_update_loss: 1.297859
+
+Round 329
+train_acc: 23.580000 - train_loss: 2.166800 - test_acc: 22.890000 - test_loss: 2.162146 - local_update_loss: 1.253017
+
+Round 330
+train_acc: 22.480000 - train_loss: 2.214808 - test_acc: 21.460000 - test_loss: 2.258109 - local_update_loss: 1.241326
+
+Round 331
+train_acc: 23.714000 - train_loss: 2.167419 - test_acc: 23.930000 - test_loss: 2.150343 - local_update_loss: 1.237365
+
+Round 332
+train_acc: 22.312000 - train_loss: 2.182470 - test_acc: 21.350000 - test_loss: 2.190318 - local_update_loss: 1.247611
+
+Round 333
+train_acc: 22.512000 - train_loss: 2.213722 - test_acc: 22.450000 - test_loss: 2.209240 - local_update_loss: 1.223499
+
+Round 334
+train_acc: 21.216000 - train_loss: 2.228651 - test_acc: 20.160000 - test_loss: 2.243110 - local_update_loss: 1.233873
+
+Round 335
+train_acc: 22.568000 - train_loss: 2.215025 - test_acc: 22.660000 - test_loss: 2.208605 - local_update_loss: 1.223448
+
+Round 336
+train_acc: 23.714000 - train_loss: 2.181890 - test_acc: 24.560000 - test_loss: 2.146589 - local_update_loss: 1.222301
+
+Round 337
+train_acc: 22.682000 - train_loss: 2.215411 - test_acc: 22.800000 - test_loss: 2.199309 - local_update_loss: 1.200638
+
+Round 338
+train_acc: 23.450000 - train_loss: 2.182167 - test_acc: 23.770000 - test_loss: 2.163491 - local_update_loss: 1.241929
+
+Round 339
+train_acc: 23.320000 - train_loss: 2.173607 - test_acc: 24.330000 - test_loss: 2.139752 - local_update_loss: 1.214428
+
+Round 340
+train_acc: 22.628000 - train_loss: 2.201585 - test_acc: 23.440000 - test_loss: 2.172986 - local_update_loss: 1.180847
+
+Round 341
+train_acc: 21.490000 - train_loss: 2.217131 - test_acc: 20.890000 - test_loss: 2.241598 - local_update_loss: 1.234522
+
+Round 342
+train_acc: 21.326000 - train_loss: 2.238722 - test_acc: 20.990000 - test_loss: 2.252140 - local_update_loss: 1.232689
+
+Round 343
+train_acc: 22.016000 - train_loss: 2.240664 - test_acc: 21.190000 - test_loss: 2.261288 - local_update_loss: 1.202061
+
+Round 344
+train_acc: 22.054000 - train_loss: 2.216108 - test_acc: 22.080000 - test_loss: 2.214344 - local_update_loss: 1.241437
+
+Round 345
+train_acc: 22.598000 - train_loss: 2.215704 - test_acc: 22.510000 - test_loss: 2.227368 - local_update_loss: 1.241661
+
+Round 346
+train_acc: 21.380000 - train_loss: 2.229394 - test_acc: 20.610000 - test_loss: 2.257719 - local_update_loss: 1.242157
+
+Round 347
+train_acc: 22.580000 - train_loss: 2.203432 - test_acc: 22.360000 - test_loss: 2.196493 - local_update_loss: 1.225279
+
+Round 348
+train_acc: 20.254000 - train_loss: 2.272491 - test_acc: 19.490000 - test_loss: 2.326327 - local_update_loss: 1.224801
+
+Round 349
+train_acc: 22.142000 - train_loss: 2.222917 - test_acc: 22.030000 - test_loss: 2.239555 - local_update_loss: 1.214501
+
+Round 350
+train_acc: 21.918000 - train_loss: 2.228003 - test_acc: 21.030000 - test_loss: 2.251799 - local_update_loss: 1.177712
+
+Round 351
+train_acc: 21.792000 - train_loss: 2.254466 - test_acc: 22.140000 - test_loss: 2.277293 - local_update_loss: 1.244247
+
+Round 352
+train_acc: 20.338000 - train_loss: 2.264722 - test_acc: 19.310000 - test_loss: 2.308695 - local_update_loss: 1.233920
+
+Round 353
+train_acc: 22.088000 - train_loss: 2.254434 - test_acc: 21.960000 - test_loss: 2.270664 - local_update_loss: 1.193107
+
+Round 354
+train_acc: 21.694000 - train_loss: 2.226985 - test_acc: 20.660000 - test_loss: 2.264741 - local_update_loss: 1.255564
+
+Round 355
+train_acc: 21.450000 - train_loss: 2.238786 - test_acc: 20.170000 - test_loss: 2.285478 - local_update_loss: 1.246811
+
+Round 356
+train_acc: 22.018000 - train_loss: 2.196024 - test_acc: 20.250000 - test_loss: 2.213395 - local_update_loss: 1.230795
+
+Round 357
+train_acc: 22.044000 - train_loss: 2.210806 - test_acc: 21.720000 - test_loss: 2.238650 - local_update_loss: 1.228583
+
+Round 358
+train_acc: 22.406000 - train_loss: 2.220130 - test_acc: 22.120000 - test_loss: 2.235421 - local_update_loss: 1.218570
+
+Round 359
+train_acc: 23.080000 - train_loss: 2.212104 - test_acc: 22.390000 - test_loss: 2.245574 - local_update_loss: 1.225626
+
+Round 360
+train_acc: 22.354000 - train_loss: 2.233281 - test_acc: 22.160000 - test_loss: 2.273222 - local_update_loss: 1.213607
+
+Round 361
+train_acc: 22.874000 - train_loss: 2.218194 - test_acc: 23.250000 - test_loss: 2.196360 - local_update_loss: 1.239265
+
+Round 362
+train_acc: 23.026000 - train_loss: 2.187603 - test_acc: 23.360000 - test_loss: 2.176191 - local_update_loss: 1.199276
+
+Round 363
+train_acc: 22.898000 - train_loss: 2.187785 - test_acc: 22.290000 - test_loss: 2.184251 - local_update_loss: 1.235248
+
+Round 364
+train_acc: 23.826000 - train_loss: 2.175388 - test_acc: 23.780000 - test_loss: 2.150946 - local_update_loss: 1.164062
+
+Round 365
+train_acc: 21.148000 - train_loss: 2.264028 - test_acc: 20.250000 - test_loss: 2.314584 - local_update_loss: 1.183889
+
+Round 366
+train_acc: 22.822000 - train_loss: 2.172564 - test_acc: 21.770000 - test_loss: 2.188403 - local_update_loss: 1.239602
+
+Round 367
+train_acc: 22.434000 - train_loss: 2.200631 - test_acc: 21.210000 - test_loss: 2.221338 - local_update_loss: 1.246574
+
+Round 368
+train_acc: 21.984000 - train_loss: 2.225907 - test_acc: 20.990000 - test_loss: 2.245653 - local_update_loss: 1.209043
+
+Round 369
+train_acc: 21.470000 - train_loss: 2.229264 - test_acc: 20.140000 - test_loss: 2.268269 - local_update_loss: 1.278788
+
+Round 370
+train_acc: 22.400000 - train_loss: 2.215921 - test_acc: 20.710000 - test_loss: 2.249725 - local_update_loss: 1.233278
+
+Round 371
+train_acc: 22.440000 - train_loss: 2.193404 - test_acc: 20.960000 - test_loss: 2.215062 - local_update_loss: 1.209200
+
+Round 372
+train_acc: 22.996000 - train_loss: 2.189745 - test_acc: 21.120000 - test_loss: 2.212746 - local_update_loss: 1.225277
+
+Round 373
+train_acc: 20.834000 - train_loss: 2.278370 - test_acc: 19.270000 - test_loss: 2.324392 - local_update_loss: 1.202574
+
+Round 374
+train_acc: 22.630000 - train_loss: 2.229130 - test_acc: 21.390000 - test_loss: 2.241236 - local_update_loss: 1.177958
+
+Round 375
+train_acc: 21.570000 - train_loss: 2.259001 - test_acc: 20.810000 - test_loss: 2.291736 - local_update_loss: 1.156804
+
+Round 376
+train_acc: 21.880000 - train_loss: 2.229061 - test_acc: 21.010000 - test_loss: 2.268982 - local_update_loss: 1.185097
+
+Round 377
+train_acc: 21.706000 - train_loss: 2.226405 - test_acc: 20.910000 - test_loss: 2.253537 - local_update_loss: 1.168001
+
+Round 378
+train_acc: 21.338000 - train_loss: 2.236055 - test_acc: 19.870000 - test_loss: 2.286738 - local_update_loss: 1.216806
+
+Round 379
+train_acc: 21.442000 - train_loss: 2.277197 - test_acc: 19.900000 - test_loss: 2.320302 - local_update_loss: 1.257533
+
+Round 380
+train_acc: 22.348000 - train_loss: 2.213489 - test_acc: 21.590000 - test_loss: 2.219454 - local_update_loss: 1.236346
+
+Round 381
+train_acc: 21.688000 - train_loss: 2.257555 - test_acc: 21.360000 - test_loss: 2.281038 - local_update_loss: 1.207440
+
+Round 382
+train_acc: 22.382000 - train_loss: 2.232797 - test_acc: 22.640000 - test_loss: 2.245516 - local_update_loss: 1.202767
+
+Round 383
+train_acc: 22.550000 - train_loss: 2.205842 - test_acc: 21.320000 - test_loss: 2.238409 - local_update_loss: 1.245379
+
+Round 384
+train_acc: 21.774000 - train_loss: 2.223374 - test_acc: 20.840000 - test_loss: 2.237649 - local_update_loss: 1.200312
+
+Round 385
+train_acc: 21.836000 - train_loss: 2.240077 - test_acc: 21.400000 - test_loss: 2.259352 - local_update_loss: 1.142835
+
+Round 386
+train_acc: 22.376000 - train_loss: 2.200898 - test_acc: 21.230000 - test_loss: 2.231723 - local_update_loss: 1.177025
+
+Round 387
+train_acc: 21.434000 - train_loss: 2.263988 - test_acc: 20.910000 - test_loss: 2.294478 - local_update_loss: 1.237618
+
+Round 388
+train_acc: 22.136000 - train_loss: 2.205572 - test_acc: 21.630000 - test_loss: 2.215955 - local_update_loss: 1.220825
+
+Round 389
+train_acc: 22.792000 - train_loss: 2.210417 - test_acc: 21.320000 - test_loss: 2.250115 - local_update_loss: 1.190851
+
+Round 390
+train_acc: 22.518000 - train_loss: 2.202394 - test_acc: 20.720000 - test_loss: 2.247576 - local_update_loss: 1.207678
+
+Round 391
+train_acc: 21.770000 - train_loss: 2.262014 - test_acc: 19.610000 - test_loss: 2.324712 - local_update_loss: 1.201176
+
+Round 392
+train_acc: 21.812000 - train_loss: 2.235629 - test_acc: 19.160000 - test_loss: 2.315860 - local_update_loss: 1.167341
+
+Round 393
+train_acc: 23.130000 - train_loss: 2.215571 - test_acc: 21.000000 - test_loss: 2.268921 - local_update_loss: 1.210851
+
+Round 394
+train_acc: 22.814000 - train_loss: 2.232689 - test_acc: 21.370000 - test_loss: 2.286039 - local_update_loss: 1.199572
+
+Round 395
+train_acc: 22.320000 - train_loss: 2.235132 - test_acc: 21.500000 - test_loss: 2.291208 - local_update_loss: 1.221718
+
+Round 396
+train_acc: 22.840000 - train_loss: 2.208030 - test_acc: 21.960000 - test_loss: 2.246659 - local_update_loss: 1.167296
+
+Round 397
+train_acc: 23.574000 - train_loss: 2.201525 - test_acc: 22.860000 - test_loss: 2.224329 - local_update_loss: 1.159798
+
+Round 398
+train_acc: 22.452000 - train_loss: 2.225854 - test_acc: 20.830000 - test_loss: 2.265493 - local_update_loss: 1.156733
+
+Round 399
+train_acc: 21.864000 - train_loss: 2.225728 - test_acc: 19.930000 - test_loss: 2.262510 - local_update_loss: 1.161263
+
+Round 400
+train_acc: 22.292000 - train_loss: 2.215074 - test_acc: 19.650000 - test_loss: 2.286675 - local_update_loss: 1.190249
+
+Round 401
+train_acc: 22.770000 - train_loss: 2.222845 - test_acc: 21.300000 - test_loss: 2.272661 - local_update_loss: 1.179058
+
+Round 402
+train_acc: 21.270000 - train_loss: 2.233202 - test_acc: 19.270000 - test_loss: 2.281966 - local_update_loss: 1.174195
+
+Round 403
+train_acc: 21.144000 - train_loss: 2.264054 - test_acc: 19.030000 - test_loss: 2.366605 - local_update_loss: 1.183293
+
+Round 404
+train_acc: 21.360000 - train_loss: 2.249544 - test_acc: 20.310000 - test_loss: 2.317133 - local_update_loss: 1.188502
+
+Round 405
+train_acc: 21.798000 - train_loss: 2.271829 - test_acc: 20.590000 - test_loss: 2.324642 - local_update_loss: 1.151272
+
+Round 406
+train_acc: 22.244000 - train_loss: 2.253872 - test_acc: 21.280000 - test_loss: 2.305918 - local_update_loss: 1.181433
+
+Round 407
+train_acc: 23.448000 - train_loss: 2.185186 - test_acc: 22.160000 - test_loss: 2.214126 - local_update_loss: 1.179576
+
+Round 408
+train_acc: 23.418000 - train_loss: 2.192311 - test_acc: 21.980000 - test_loss: 2.221461 - local_update_loss: 1.183477
+
+Round 409
+train_acc: 21.256000 - train_loss: 2.239407 - test_acc: 20.100000 - test_loss: 2.291397 - local_update_loss: 1.158032
+
+Round 410
+train_acc: 21.938000 - train_loss: 2.245931 - test_acc: 20.970000 - test_loss: 2.278005 - local_update_loss: 1.189664
+
+Round 411
+train_acc: 22.682000 - train_loss: 2.210933 - test_acc: 21.330000 - test_loss: 2.251105 - local_update_loss: 1.225067
+
+Round 412
+train_acc: 22.562000 - train_loss: 2.213167 - test_acc: 21.370000 - test_loss: 2.254589 - local_update_loss: 1.188582
+
+Round 413
+train_acc: 22.552000 - train_loss: 2.208322 - test_acc: 21.510000 - test_loss: 2.251244 - local_update_loss: 1.184709
+
+Round 414
+train_acc: 23.192000 - train_loss: 2.220643 - test_acc: 23.190000 - test_loss: 2.250555 - local_update_loss: 1.181977
+
+Round 415
+train_acc: 22.244000 - train_loss: 2.220362 - test_acc: 20.300000 - test_loss: 2.285594 - local_update_loss: 1.166664
+
+Round 416
+train_acc: 24.054000 - train_loss: 2.182804 - test_acc: 23.550000 - test_loss: 2.193384 - local_update_loss: 1.154184
+
+Round 417
+train_acc: 23.160000 - train_loss: 2.213838 - test_acc: 22.570000 - test_loss: 2.238590 - local_update_loss: 1.182002
+
+Round 418
+train_acc: 22.816000 - train_loss: 2.220258 - test_acc: 20.910000 - test_loss: 2.269629 - local_update_loss: 1.150267
+
+Round 419
+train_acc: 21.960000 - train_loss: 2.252138 - test_acc: 19.800000 - test_loss: 2.327790 - local_update_loss: 1.213695
+
+Round 420
+train_acc: 22.950000 - train_loss: 2.257587 - test_acc: 21.090000 - test_loss: 2.312726 - local_update_loss: 1.171432
+
+Round 421
+train_acc: 21.586000 - train_loss: 2.262551 - test_acc: 19.460000 - test_loss: 2.325265 - local_update_loss: 1.185876
+
+Round 422
+train_acc: 20.742000 - train_loss: 2.274599 - test_acc: 18.060000 - test_loss: 2.378520 - local_update_loss: 1.232214
+
+Round 423
+train_acc: 21.300000 - train_loss: 2.260139 - test_acc: 18.970000 - test_loss: 2.366178 - local_update_loss: 1.206589
+
+Round 424
+train_acc: 22.174000 - train_loss: 2.218742 - test_acc: 19.930000 - test_loss: 2.290312 - local_update_loss: 1.168314
+
+Round 425
+train_acc: 22.366000 - train_loss: 2.229086 - test_acc: 19.230000 - test_loss: 2.334139 - local_update_loss: 1.180984
+
+Round 426
+train_acc: 22.054000 - train_loss: 2.275988 - test_acc: 20.580000 - test_loss: 2.336705 - local_update_loss: 1.150740
+
+Round 427
+train_acc: 20.526000 - train_loss: 2.322612 - test_acc: 18.790000 - test_loss: 2.414209 - local_update_loss: 1.193036
+
+Round 428
+train_acc: 21.438000 - train_loss: 2.249401 - test_acc: 18.140000 - test_loss: 2.362287 - local_update_loss: 1.198765
+
+Round 429
+train_acc: 22.942000 - train_loss: 2.232654 - test_acc: 21.140000 - test_loss: 2.327036 - local_update_loss: 1.179468
+
+Round 430
+train_acc: 23.062000 - train_loss: 2.221598 - test_acc: 21.160000 - test_loss: 2.290087 - local_update_loss: 1.167984
+
+Round 431
+train_acc: 22.744000 - train_loss: 2.203494 - test_acc: 20.700000 - test_loss: 2.259974 - local_update_loss: 1.209295
+
+Round 432
+train_acc: 21.888000 - train_loss: 2.230113 - test_acc: 20.100000 - test_loss: 2.297626 - local_update_loss: 1.193603
+
+Round 433
+train_acc: 22.346000 - train_loss: 2.221498 - test_acc: 20.390000 - test_loss: 2.281058 - local_update_loss: 1.155053
+
+Round 434
+train_acc: 22.218000 - train_loss: 2.231522 - test_acc: 19.810000 - test_loss: 2.318153 - local_update_loss: 1.180139
+
+Round 435
+train_acc: 22.778000 - train_loss: 2.211405 - test_acc: 20.100000 - test_loss: 2.287457 - local_update_loss: 1.170838
+
+Round 436
+train_acc: 22.604000 - train_loss: 2.265060 - test_acc: 21.420000 - test_loss: 2.310214 - local_update_loss: 1.156398
+
+Round 437
+train_acc: 22.850000 - train_loss: 2.224200 - test_acc: 19.970000 - test_loss: 2.310828 - local_update_loss: 1.155251
+
+Round 438
+train_acc: 22.784000 - train_loss: 2.194078 - test_acc: 20.220000 - test_loss: 2.268951 - local_update_loss: 1.186776
+
+Round 439
+train_acc: 22.340000 - train_loss: 2.243104 - test_acc: 20.100000 - test_loss: 2.325510 - local_update_loss: 1.149348
+
+Round 440
+train_acc: 21.508000 - train_loss: 2.281999 - test_acc: 18.390000 - test_loss: 2.380258 - local_update_loss: 1.170975
+
+Round 441
+train_acc: 21.476000 - train_loss: 2.253147 - test_acc: 19.390000 - test_loss: 2.322817 - local_update_loss: 1.206349
+
+Round 442
+train_acc: 22.706000 - train_loss: 2.215098 - test_acc: 20.030000 - test_loss: 2.295995 - local_update_loss: 1.201576
+
+Round 443
+train_acc: 21.642000 - train_loss: 2.265826 - test_acc: 18.170000 - test_loss: 2.370978 - local_update_loss: 1.163617
+
+Round 444
+train_acc: 21.736000 - train_loss: 2.255689 - test_acc: 18.580000 - test_loss: 2.364291 - local_update_loss: 1.139955
+
+Round 445
+train_acc: 23.042000 - train_loss: 2.209819 - test_acc: 21.050000 - test_loss: 2.269072 - local_update_loss: 1.168767
+
+Round 446
+train_acc: 21.548000 - train_loss: 2.252433 - test_acc: 18.950000 - test_loss: 2.340534 - local_update_loss: 1.138830
+
+Round 447
+train_acc: 22.912000 - train_loss: 2.216652 - test_acc: 20.440000 - test_loss: 2.287122 - local_update_loss: 1.111966
+
+Round 448
+train_acc: 22.838000 - train_loss: 2.228024 - test_acc: 20.290000 - test_loss: 2.308841 - local_update_loss: 1.168618
+
+Round 449
+train_acc: 21.328000 - train_loss: 2.328030 - test_acc: 19.930000 - test_loss: 2.408879 - local_update_loss: 1.159363
+
+Round 450
+train_acc: 21.612000 - train_loss: 2.259931 - test_acc: 18.890000 - test_loss: 2.366969 - local_update_loss: 1.192862
+
+Round 451
+train_acc: 22.512000 - train_loss: 2.235911 - test_acc: 20.680000 - test_loss: 2.297569 - local_update_loss: 1.161945
+
+Round 452
+train_acc: 21.116000 - train_loss: 2.267601 - test_acc: 18.340000 - test_loss: 2.361058 - local_update_loss: 1.175851
+
+Round 453
+train_acc: 22.038000 - train_loss: 2.254156 - test_acc: 19.760000 - test_loss: 2.342596 - local_update_loss: 1.162611
+
+Round 454
+train_acc: 22.122000 - train_loss: 2.221263 - test_acc: 18.950000 - test_loss: 2.328092 - local_update_loss: 1.178716
+
+Round 455
+train_acc: 23.382000 - train_loss: 2.231316 - test_acc: 21.100000 - test_loss: 2.296136 - local_update_loss: 1.141709
+
+Round 456
+train_acc: 22.968000 - train_loss: 2.216302 - test_acc: 19.580000 - test_loss: 2.301859 - local_update_loss: 1.151419
+
+Round 457
+train_acc: 22.026000 - train_loss: 2.297783 - test_acc: 21.510000 - test_loss: 2.355857 - local_update_loss: 1.136439
+
+Round 458
+train_acc: 22.204000 - train_loss: 2.231283 - test_acc: 19.630000 - test_loss: 2.313986 - local_update_loss: 1.151063
+
+Round 459
+train_acc: 22.664000 - train_loss: 2.226000 - test_acc: 20.910000 - test_loss: 2.282555 - local_update_loss: 1.146116
+
+Round 460
+train_acc: 21.498000 - train_loss: 2.273776 - test_acc: 19.160000 - test_loss: 2.390806 - local_update_loss: 1.151368
+
+Round 461
+train_acc: 22.654000 - train_loss: 2.227239 - test_acc: 20.460000 - test_loss: 2.312967 - local_update_loss: 1.115415
+
+Round 462
+train_acc: 21.902000 - train_loss: 2.296764 - test_acc: 19.700000 - test_loss: 2.417858 - local_update_loss: 1.136177
+
+Round 463
+train_acc: 23.002000 - train_loss: 2.237742 - test_acc: 21.650000 - test_loss: 2.313566 - local_update_loss: 1.194796
+
+Round 464
+train_acc: 23.298000 - train_loss: 2.204092 - test_acc: 22.360000 - test_loss: 2.245438 - local_update_loss: 1.154139
+
+Round 465
+train_acc: 22.698000 - train_loss: 2.226034 - test_acc: 20.470000 - test_loss: 2.304834 - local_update_loss: 1.162686
+
+Round 466
+train_acc: 22.652000 - train_loss: 2.250191 - test_acc: 20.780000 - test_loss: 2.326037 - local_update_loss: 1.131805
+
+Round 467
+train_acc: 21.780000 - train_loss: 2.246136 - test_acc: 19.890000 - test_loss: 2.312630 - local_update_loss: 1.141822
+
+Round 468
+train_acc: 22.266000 - train_loss: 2.266349 - test_acc: 20.320000 - test_loss: 2.351728 - local_update_loss: 1.168160
+
+Round 469
+train_acc: 22.050000 - train_loss: 2.248438 - test_acc: 19.280000 - test_loss: 2.359587 - local_update_loss: 1.118557
+
+Round 470
+train_acc: 23.214000 - train_loss: 2.229273 - test_acc: 21.030000 - test_loss: 2.308423 - local_update_loss: 1.107261
+
+Round 471
+train_acc: 23.056000 - train_loss: 2.206296 - test_acc: 19.900000 - test_loss: 2.306226 - local_update_loss: 1.188848
+
+Round 472
+train_acc: 22.318000 - train_loss: 2.228476 - test_acc: 18.980000 - test_loss: 2.317405 - local_update_loss: 1.148529
+
+Round 473
+train_acc: 23.236000 - train_loss: 2.202008 - test_acc: 20.660000 - test_loss: 2.270857 - local_update_loss: 1.143991
+
+Round 474
+train_acc: 22.328000 - train_loss: 2.244398 - test_acc: 20.050000 - test_loss: 2.328889 - local_update_loss: 1.153064
+
+Round 475
+train_acc: 21.702000 - train_loss: 2.260861 - test_acc: 19.220000 - test_loss: 2.362326 - local_update_loss: 1.153351
+
+Round 476
+train_acc: 22.580000 - train_loss: 2.239849 - test_acc: 20.610000 - test_loss: 2.346585 - local_update_loss: 1.163460
+
+Round 477
+train_acc: 23.580000 - train_loss: 2.253639 - test_acc: 21.550000 - test_loss: 2.349522 - local_update_loss: 1.137274
+
+Round 478
+train_acc: 22.638000 - train_loss: 2.266119 - test_acc: 20.220000 - test_loss: 2.354642 - local_update_loss: 1.129886
+
+Round 479
+train_acc: 23.082000 - train_loss: 2.218509 - test_acc: 20.630000 - test_loss: 2.311541 - local_update_loss: 1.141329
+
+Round 480
+train_acc: 21.716000 - train_loss: 2.275055 - test_acc: 19.340000 - test_loss: 2.399152 - local_update_loss: 1.129083
+
+Round 481
+train_acc: 22.702000 - train_loss: 2.220126 - test_acc: 20.050000 - test_loss: 2.313856 - local_update_loss: 1.143114
+
+Round 482
+train_acc: 21.714000 - train_loss: 2.285925 - test_acc: 18.580000 - test_loss: 2.435099 - local_update_loss: 1.118941
+
+Round 483
+train_acc: 23.190000 - train_loss: 2.251429 - test_acc: 21.410000 - test_loss: 2.339325 - local_update_loss: 1.116846
+
+Round 484
+train_acc: 23.062000 - train_loss: 2.266771 - test_acc: 20.240000 - test_loss: 2.380668 - local_update_loss: 1.160895
+
+Round 485
+train_acc: 21.946000 - train_loss: 2.301708 - test_acc: 20.240000 - test_loss: 2.395745 - local_update_loss: 1.063481
+
+Round 486
+train_acc: 23.830000 - train_loss: 2.208253 - test_acc: 21.420000 - test_loss: 2.274712 - local_update_loss: 1.129287
+
+Round 487
+train_acc: 23.462000 - train_loss: 2.216338 - test_acc: 21.050000 - test_loss: 2.289792 - local_update_loss: 1.138643
+
+Round 488
+train_acc: 23.478000 - train_loss: 2.213306 - test_acc: 21.530000 - test_loss: 2.286420 - local_update_loss: 1.091636
+
+Round 489
+train_acc: 22.724000 - train_loss: 2.257191 - test_acc: 19.270000 - test_loss: 2.374033 - local_update_loss: 1.144245
+
+Round 490
+train_acc: 21.646000 - train_loss: 2.264112 - test_acc: 18.990000 - test_loss: 2.364855 - local_update_loss: 1.110056
+
+Round 491
+train_acc: 22.672000 - train_loss: 2.233475 - test_acc: 20.790000 - test_loss: 2.304841 - local_update_loss: 1.145696
+
+Round 492
+train_acc: 23.308000 - train_loss: 2.238204 - test_acc: 21.590000 - test_loss: 2.289156 - local_update_loss: 1.065765
+
+Round 493
+train_acc: 23.098000 - train_loss: 2.238531 - test_acc: 19.820000 - test_loss: 2.337543 - local_update_loss: 1.134338
+
+Round 494
+train_acc: 21.922000 - train_loss: 2.273654 - test_acc: 18.210000 - test_loss: 2.407544 - local_update_loss: 1.106728
+
+Round 495
+train_acc: 22.114000 - train_loss: 2.248784 - test_acc: 19.340000 - test_loss: 2.368263 - local_update_loss: 1.114060
+
+Round 496
+train_acc: 23.166000 - train_loss: 2.208703 - test_acc: 20.900000 - test_loss: 2.271856 - local_update_loss: 1.153999
+
+Round 497
+train_acc: 21.898000 - train_loss: 2.267685 - test_acc: 19.160000 - test_loss: 2.376727 - local_update_loss: 1.141990
+
+Round 498
+train_acc: 22.008000 - train_loss: 2.291991 - test_acc: 18.880000 - test_loss: 2.412497 - local_update_loss: 1.108777
+
+Round 499
+train_acc: 22.352000 - train_loss: 2.234670 - test_acc: 20.300000 - test_loss: 2.319860 - local_update_loss: 1.145778
+
+Total training time: 3554.50 seconds

@@ -1,0 +1,3 @@
+epoch,train_acc,train_loss,test_acc,test_loss,local_train_loss,selected_clients,total_count,actual_round_clean_count,actual_round_noisy_count,fedrn_clean_count,fedrn_noisy_count,train_count,actual_train_clean_count,actual_train_noisy_count,missed_clean_count,false_clean_count,correctly_excluded_noisy_count,actual_round_clean_ratio,fedrn_clean_ratio,fedrn_noisy_ratio,actual_train_clean_ratio,clean_recall,train_ratio
+0,17.942000,2.277549,18.830000,2.257614,0.401180,50,25000,25000,0,25000,0,25000,25000,0,0,0,0,1.000000,1.000000,0.000000,1.000000,1.000000,1.000000
+1,23.942000,2.126888,26.210000,2.097457,0.413266,50,25000,25000,0,25000,0,25000,25000,0,0,0,0,1.000000,1.000000,0.000000,1.000000,1.000000,1.000000

@@ -1,0 +1,2 @@
+epoch,train_loss,global_test_acc,global_test_loss,personal_apa,personal_loss,core_clean_ratio,recover_ratio,train_ratio,agreement_ratio,recovery_trigger,core_count,recover_count,train_count,total_count,actual_train_clean_count,actual_round_clean_count,missed_clean_count,false_clean_count,total_wrong_count,actual_train_clean_ratio,clean_recall,recover_true_clean_count,recover_false_clean_count,recover_precision
+0,1.127513,20.870000,2.204838,0.000000,0.000000,1.000000,0.000000,1.000000,0.000000,0,25000,0,25000,25000,20184,20184,0,4816,4816,0.807360,1.000000,0,0,0.000000

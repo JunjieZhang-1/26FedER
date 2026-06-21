@@ -1,0 +1,2303 @@
+Experiment Start: 20260616-095448
+Args: Namespace(method='pfedrn', epochs=500, num_users=100, frac=0.5, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, weight_decay=0.0, schedule=[], lr_decay=0.1, fed_method='fedavg', partition='shard', num_shards=200, dd_alpha=0.5, iid=False, split='user', model='cnn4conv', dataset='cifar10', num_classes=10, num_channels=3, img_size=32, gpu=0, seed=1, verbose=False, all_clients=False, num_workers=4, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[0, 0.8], noise_seed_mode='fedrn', warmup_epochs=100, p_threshold=0.5, num_neighbors=2, w_alpha=0.8, neighbor_ft_ep=1, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, neighbor_net1_weight=0.7, neighbor_net2_weight=0.3, net2_local_ep=5, net2_ft_ep=1, net2_start_epoch=200, exp_method='PFedRN-PlanA-NeighborNet2FT', save_dir='resultdate', log_client_stats=1, device=device(type='cuda', index=0))
+====================================================================================================
+
+==== Round   0 ====
+Global Test Acc: 15.86% | Loss: 2.2745 | Train Loss: 1.5641 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   1 ====
+Global Test Acc: 19.13% | Loss: 2.2196 | Train Loss: 1.6517 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   2 ====
+Global Test Acc: 21.13% | Loss: 2.1786 | Train Loss: 1.6429 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   3 ====
+Global Test Acc: 22.08% | Loss: 2.1618 | Train Loss: 1.6536 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   4 ====
+Global Test Acc: 23.96% | Loss: 2.1365 | Train Loss: 1.5101 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   5 ====
+Global Test Acc: 24.51% | Loss: 2.1246 | Train Loss: 1.5272 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   6 ====
+Global Test Acc: 26.53% | Loss: 2.1050 | Train Loss: 1.5560 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   7 ====
+Global Test Acc: 27.20% | Loss: 2.0966 | Train Loss: 1.5902 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   8 ====
+Global Test Acc: 27.67% | Loss: 2.0865 | Train Loss: 1.4524 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round   9 ====
+Global Test Acc: 30.93% | Loss: 2.0607 | Train Loss: 1.5814 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  10 ====
+Global Test Acc: 30.73% | Loss: 2.0488 | Train Loss: 1.5371 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  11 ====
+Global Test Acc: 32.29% | Loss: 2.0343 | Train Loss: 1.5051 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  12 ====
+Global Test Acc: 32.56% | Loss: 2.0219 | Train Loss: 1.4529 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  13 ====
+Global Test Acc: 32.79% | Loss: 2.0299 | Train Loss: 1.4096 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  14 ====
+Global Test Acc: 32.16% | Loss: 2.0309 | Train Loss: 1.5600 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  15 ====
+Global Test Acc: 29.89% | Loss: 2.0443 | Train Loss: 1.5392 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  16 ====
+Global Test Acc: 31.88% | Loss: 2.0306 | Train Loss: 1.5925 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  17 ====
+Global Test Acc: 32.55% | Loss: 2.0193 | Train Loss: 1.5584 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  18 ====
+Global Test Acc: 34.34% | Loss: 2.0108 | Train Loss: 1.5472 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  19 ====
+Global Test Acc: 35.09% | Loss: 2.0117 | Train Loss: 1.4875 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  20 ====
+Global Test Acc: 31.10% | Loss: 2.0324 | Train Loss: 1.6074 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  21 ====
+Global Test Acc: 31.92% | Loss: 2.0204 | Train Loss: 1.4437 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  22 ====
+Global Test Acc: 32.87% | Loss: 2.0101 | Train Loss: 1.5004 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  23 ====
+Global Test Acc: 33.30% | Loss: 2.0026 | Train Loss: 1.4534 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  24 ====
+Global Test Acc: 35.84% | Loss: 1.9789 | Train Loss: 1.5002 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  25 ====
+Global Test Acc: 35.13% | Loss: 1.9823 | Train Loss: 1.5062 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  26 ====
+Global Test Acc: 34.36% | Loss: 1.9807 | Train Loss: 1.5350 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  27 ====
+Global Test Acc: 33.52% | Loss: 1.9938 | Train Loss: 1.4550 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  28 ====
+Global Test Acc: 34.67% | Loss: 1.9780 | Train Loss: 1.4639 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  29 ====
+Global Test Acc: 30.66% | Loss: 2.0093 | Train Loss: 1.5549 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  30 ====
+Global Test Acc: 33.94% | Loss: 1.9923 | Train Loss: 1.5325 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  31 ====
+Global Test Acc: 35.86% | Loss: 1.9679 | Train Loss: 1.4067 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  32 ====
+Global Test Acc: 33.63% | Loss: 1.9915 | Train Loss: 1.6302 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  33 ====
+Global Test Acc: 32.63% | Loss: 1.9958 | Train Loss: 1.6075 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  34 ====
+Global Test Acc: 32.47% | Loss: 1.9982 | Train Loss: 1.4637 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  35 ====
+Global Test Acc: 34.22% | Loss: 1.9888 | Train Loss: 1.5475 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  36 ====
+Global Test Acc: 34.90% | Loss: 1.9652 | Train Loss: 1.4354 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  37 ====
+Global Test Acc: 36.74% | Loss: 1.9521 | Train Loss: 1.4107 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  38 ====
+Global Test Acc: 37.38% | Loss: 1.9466 | Train Loss: 1.4227 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  39 ====
+Global Test Acc: 34.65% | Loss: 1.9763 | Train Loss: 1.5617 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  40 ====
+Global Test Acc: 34.96% | Loss: 1.9660 | Train Loss: 1.4166 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  41 ====
+Global Test Acc: 35.14% | Loss: 1.9624 | Train Loss: 1.4771 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  42 ====
+Global Test Acc: 33.91% | Loss: 1.9922 | Train Loss: 1.5776 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  43 ====
+Global Test Acc: 33.37% | Loss: 1.9824 | Train Loss: 1.4782 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  44 ====
+Global Test Acc: 34.28% | Loss: 1.9674 | Train Loss: 1.4902 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  45 ====
+Global Test Acc: 34.71% | Loss: 1.9628 | Train Loss: 1.4419 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  46 ====
+Global Test Acc: 36.59% | Loss: 1.9556 | Train Loss: 1.4751 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  47 ====
+Global Test Acc: 33.86% | Loss: 1.9766 | Train Loss: 1.5256 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  48 ====
+Global Test Acc: 35.04% | Loss: 1.9578 | Train Loss: 1.4356 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  49 ====
+Global Test Acc: 34.18% | Loss: 1.9779 | Train Loss: 1.5240 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  50 ====
+Global Test Acc: 34.39% | Loss: 1.9616 | Train Loss: 1.3973 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  51 ====
+Global Test Acc: 34.28% | Loss: 1.9619 | Train Loss: 1.4186 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  52 ====
+Global Test Acc: 34.05% | Loss: 1.9684 | Train Loss: 1.4925 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  53 ====
+Global Test Acc: 33.89% | Loss: 1.9651 | Train Loss: 1.4198 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  54 ====
+Global Test Acc: 34.48% | Loss: 1.9599 | Train Loss: 1.3989 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  55 ====
+Global Test Acc: 35.95% | Loss: 1.9481 | Train Loss: 1.4182 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  56 ====
+Global Test Acc: 36.41% | Loss: 1.9468 | Train Loss: 1.5405 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  57 ====
+Global Test Acc: 34.55% | Loss: 1.9640 | Train Loss: 1.4531 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  58 ====
+Global Test Acc: 35.07% | Loss: 1.9626 | Train Loss: 1.4446 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  59 ====
+Global Test Acc: 32.24% | Loss: 1.9776 | Train Loss: 1.4351 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  60 ====
+Global Test Acc: 32.16% | Loss: 1.9781 | Train Loss: 1.4849 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  61 ====
+Global Test Acc: 34.86% | Loss: 1.9419 | Train Loss: 1.3339 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  62 ====
+Global Test Acc: 35.01% | Loss: 1.9460 | Train Loss: 1.3986 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  63 ====
+Global Test Acc: 34.76% | Loss: 1.9476 | Train Loss: 1.3893 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  64 ====
+Global Test Acc: 35.23% | Loss: 1.9406 | Train Loss: 1.3753 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  65 ====
+Global Test Acc: 34.06% | Loss: 1.9546 | Train Loss: 1.4348 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  66 ====
+Global Test Acc: 35.06% | Loss: 1.9568 | Train Loss: 1.4569 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  67 ====
+Global Test Acc: 32.55% | Loss: 1.9768 | Train Loss: 1.4735 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  68 ====
+Global Test Acc: 35.23% | Loss: 1.9402 | Train Loss: 1.3791 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  69 ====
+Global Test Acc: 33.23% | Loss: 1.9705 | Train Loss: 1.5087 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  70 ====
+Global Test Acc: 34.01% | Loss: 1.9594 | Train Loss: 1.4525 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  71 ====
+Global Test Acc: 34.93% | Loss: 1.9510 | Train Loss: 1.4328 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  72 ====
+Global Test Acc: 34.74% | Loss: 1.9392 | Train Loss: 1.3634 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  73 ====
+Global Test Acc: 32.21% | Loss: 1.9650 | Train Loss: 1.3092 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  74 ====
+Global Test Acc: 32.12% | Loss: 1.9691 | Train Loss: 1.3894 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  75 ====
+Global Test Acc: 34.09% | Loss: 1.9569 | Train Loss: 1.3521 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  76 ====
+Global Test Acc: 34.80% | Loss: 1.9491 | Train Loss: 1.4440 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  77 ====
+Global Test Acc: 33.01% | Loss: 1.9581 | Train Loss: 1.3245 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  78 ====
+Global Test Acc: 34.16% | Loss: 1.9378 | Train Loss: 1.3911 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  79 ====
+Global Test Acc: 32.03% | Loss: 1.9638 | Train Loss: 1.3833 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  80 ====
+Global Test Acc: 32.43% | Loss: 1.9693 | Train Loss: 1.4428 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  81 ====
+Global Test Acc: 33.19% | Loss: 1.9563 | Train Loss: 1.3580 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  82 ====
+Global Test Acc: 33.34% | Loss: 1.9582 | Train Loss: 1.3927 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  83 ====
+Global Test Acc: 33.48% | Loss: 1.9593 | Train Loss: 1.4121 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  84 ====
+Global Test Acc: 33.43% | Loss: 1.9573 | Train Loss: 1.4392 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  85 ====
+Global Test Acc: 31.40% | Loss: 1.9804 | Train Loss: 1.3595 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  86 ====
+Global Test Acc: 32.06% | Loss: 1.9675 | Train Loss: 1.4511 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  87 ====
+Global Test Acc: 33.40% | Loss: 1.9404 | Train Loss: 1.3001 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  88 ====
+Global Test Acc: 32.77% | Loss: 1.9649 | Train Loss: 1.4297 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  89 ====
+Global Test Acc: 34.01% | Loss: 1.9531 | Train Loss: 1.3730 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  90 ====
+Global Test Acc: 33.19% | Loss: 1.9572 | Train Loss: 1.3206 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  91 ====
+Global Test Acc: 31.99% | Loss: 1.9725 | Train Loss: 1.3546 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  92 ====
+Global Test Acc: 31.72% | Loss: 1.9752 | Train Loss: 1.4717 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  93 ====
+Global Test Acc: 34.12% | Loss: 1.9538 | Train Loss: 1.2822 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  94 ====
+Global Test Acc: 32.02% | Loss: 1.9761 | Train Loss: 1.4522 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  95 ====
+Global Test Acc: 32.28% | Loss: 1.9560 | Train Loss: 1.2596 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  96 ====
+Global Test Acc: 33.59% | Loss: 1.9439 | Train Loss: 1.3959 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  97 ====
+Global Test Acc: 31.47% | Loss: 1.9779 | Train Loss: 1.4580 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  98 ====
+Global Test Acc: 31.17% | Loss: 1.9758 | Train Loss: 1.3512 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round  99 ====
+Global Test Acc: 32.19% | Loss: 1.9650 | Train Loss: 1.3925 | Clean Ratio: 1.000 | Neighbor Net2 Used: -1.000
+
+==== Round 100 ====
+Global Test Acc: 38.87% | Loss: 1.8041 | Train Loss: 0.4161 | Clean Ratio: 0.654 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 101 ====
+Global Test Acc: 43.57% | Loss: 1.6648 | Train Loss: 0.4166 | Clean Ratio: 0.649 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 102 ====
+Global Test Acc: 43.82% | Loss: 1.6263 | Train Loss: 0.4246 | Clean Ratio: 0.615 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 103 ====
+Global Test Acc: 44.24% | Loss: 1.5830 | Train Loss: 0.3842 | Clean Ratio: 0.645 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 104 ====
+Global Test Acc: 46.93% | Loss: 1.5527 | Train Loss: 0.3938 | Clean Ratio: 0.630 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 105 ====
+Global Test Acc: 47.54% | Loss: 1.5094 | Train Loss: 0.3056 | Clean Ratio: 0.623 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 106 ====
+Global Test Acc: 49.73% | Loss: 1.4868 | Train Loss: 0.3304 | Clean Ratio: 0.635 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 107 ====
+Global Test Acc: 46.26% | Loss: 1.5067 | Train Loss: 0.3596 | Clean Ratio: 0.606 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 108 ====
+Global Test Acc: 49.95% | Loss: 1.4494 | Train Loss: 0.3219 | Clean Ratio: 0.619 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 109 ====
+Global Test Acc: 50.08% | Loss: 1.4435 | Train Loss: 0.3368 | Clean Ratio: 0.595 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 110 ====
+Global Test Acc: 50.43% | Loss: 1.4500 | Train Loss: 0.3709 | Clean Ratio: 0.623 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 111 ====
+Global Test Acc: 48.35% | Loss: 1.4397 | Train Loss: 0.3086 | Clean Ratio: 0.626 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 112 ====
+Global Test Acc: 51.64% | Loss: 1.3849 | Train Loss: 0.2596 | Clean Ratio: 0.640 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 113 ====
+Global Test Acc: 50.79% | Loss: 1.4028 | Train Loss: 0.2316 | Clean Ratio: 0.644 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 114 ====
+Global Test Acc: 49.51% | Loss: 1.4289 | Train Loss: 0.3194 | Clean Ratio: 0.615 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 115 ====
+Global Test Acc: 52.67% | Loss: 1.3559 | Train Loss: 0.3207 | Clean Ratio: 0.593 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 116 ====
+Global Test Acc: 50.92% | Loss: 1.3929 | Train Loss: 0.2768 | Clean Ratio: 0.662 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 117 ====
+Global Test Acc: 51.34% | Loss: 1.3789 | Train Loss: 0.2858 | Clean Ratio: 0.624 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 118 ====
+Global Test Acc: 51.90% | Loss: 1.3746 | Train Loss: 0.3104 | Clean Ratio: 0.591 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 119 ====
+Global Test Acc: 54.11% | Loss: 1.3348 | Train Loss: 0.3350 | Clean Ratio: 0.618 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 120 ====
+Global Test Acc: 52.72% | Loss: 1.3508 | Train Loss: 0.3021 | Clean Ratio: 0.631 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 121 ====
+Global Test Acc: 53.43% | Loss: 1.3333 | Train Loss: 0.3082 | Clean Ratio: 0.602 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 122 ====
+Global Test Acc: 52.64% | Loss: 1.3631 | Train Loss: 0.2669 | Clean Ratio: 0.615 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 123 ====
+Global Test Acc: 53.50% | Loss: 1.3327 | Train Loss: 0.2937 | Clean Ratio: 0.597 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 124 ====
+Global Test Acc: 56.01% | Loss: 1.2968 | Train Loss: 0.2682 | Clean Ratio: 0.606 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 125 ====
+Global Test Acc: 54.39% | Loss: 1.3156 | Train Loss: 0.3264 | Clean Ratio: 0.587 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 126 ====
+Global Test Acc: 54.64% | Loss: 1.3125 | Train Loss: 0.2447 | Clean Ratio: 0.619 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 127 ====
+Global Test Acc: 54.82% | Loss: 1.3097 | Train Loss: 0.3119 | Clean Ratio: 0.574 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 128 ====
+Global Test Acc: 53.70% | Loss: 1.3235 | Train Loss: 0.2622 | Clean Ratio: 0.623 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 129 ====
+Global Test Acc: 55.19% | Loss: 1.3128 | Train Loss: 0.2962 | Clean Ratio: 0.628 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 130 ====
+Global Test Acc: 53.54% | Loss: 1.3258 | Train Loss: 0.2953 | Clean Ratio: 0.608 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 131 ====
+Global Test Acc: 53.16% | Loss: 1.3117 | Train Loss: 0.2890 | Clean Ratio: 0.587 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 132 ====
+Global Test Acc: 55.01% | Loss: 1.2917 | Train Loss: 0.2813 | Clean Ratio: 0.624 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 133 ====
+Global Test Acc: 54.42% | Loss: 1.3117 | Train Loss: 0.2779 | Clean Ratio: 0.600 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 134 ====
+Global Test Acc: 55.14% | Loss: 1.2864 | Train Loss: 0.2790 | Clean Ratio: 0.612 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 135 ====
+Global Test Acc: 54.61% | Loss: 1.3021 | Train Loss: 0.2958 | Clean Ratio: 0.579 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 136 ====
+Global Test Acc: 54.96% | Loss: 1.2887 | Train Loss: 0.2357 | Clean Ratio: 0.618 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 137 ====
+Global Test Acc: 53.41% | Loss: 1.3077 | Train Loss: 0.2728 | Clean Ratio: 0.603 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 138 ====
+Global Test Acc: 55.24% | Loss: 1.2755 | Train Loss: 0.2530 | Clean Ratio: 0.596 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 139 ====
+Global Test Acc: 55.76% | Loss: 1.2734 | Train Loss: 0.2606 | Clean Ratio: 0.622 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 140 ====
+Global Test Acc: 54.29% | Loss: 1.2941 | Train Loss: 0.2444 | Clean Ratio: 0.606 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 141 ====
+Global Test Acc: 54.16% | Loss: 1.3001 | Train Loss: 0.2594 | Clean Ratio: 0.606 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 142 ====
+Global Test Acc: 56.85% | Loss: 1.2457 | Train Loss: 0.2467 | Clean Ratio: 0.604 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 143 ====
+Global Test Acc: 56.94% | Loss: 1.2442 | Train Loss: 0.2335 | Clean Ratio: 0.619 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 144 ====
+Global Test Acc: 55.11% | Loss: 1.2918 | Train Loss: 0.2380 | Clean Ratio: 0.598 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 145 ====
+Global Test Acc: 55.28% | Loss: 1.2960 | Train Loss: 0.2237 | Clean Ratio: 0.624 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 146 ====
+Global Test Acc: 56.26% | Loss: 1.2424 | Train Loss: 0.2545 | Clean Ratio: 0.595 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 147 ====
+Global Test Acc: 56.51% | Loss: 1.2376 | Train Loss: 0.2426 | Clean Ratio: 0.602 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 148 ====
+Global Test Acc: 56.42% | Loss: 1.2365 | Train Loss: 0.2748 | Clean Ratio: 0.575 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 149 ====
+Global Test Acc: 58.28% | Loss: 1.2111 | Train Loss: 0.2231 | Clean Ratio: 0.610 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 150 ====
+Global Test Acc: 56.43% | Loss: 1.2384 | Train Loss: 0.2506 | Clean Ratio: 0.617 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 151 ====
+Global Test Acc: 55.50% | Loss: 1.2661 | Train Loss: 0.2709 | Clean Ratio: 0.595 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 152 ====
+Global Test Acc: 56.91% | Loss: 1.2396 | Train Loss: 0.2390 | Clean Ratio: 0.601 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 153 ====
+Global Test Acc: 54.96% | Loss: 1.2671 | Train Loss: 0.2396 | Clean Ratio: 0.634 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 154 ====
+Global Test Acc: 56.29% | Loss: 1.2393 | Train Loss: 0.2325 | Clean Ratio: 0.601 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 155 ====
+Global Test Acc: 55.18% | Loss: 1.2598 | Train Loss: 0.2432 | Clean Ratio: 0.593 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 156 ====
+Global Test Acc: 57.39% | Loss: 1.2414 | Train Loss: 0.2269 | Clean Ratio: 0.609 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 157 ====
+Global Test Acc: 58.30% | Loss: 1.2118 | Train Loss: 0.2438 | Clean Ratio: 0.596 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 158 ====
+Global Test Acc: 56.53% | Loss: 1.2442 | Train Loss: 0.2713 | Clean Ratio: 0.623 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 159 ====
+Global Test Acc: 57.17% | Loss: 1.2398 | Train Loss: 0.2089 | Clean Ratio: 0.611 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 160 ====
+Global Test Acc: 57.25% | Loss: 1.2128 | Train Loss: 0.2069 | Clean Ratio: 0.627 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 161 ====
+Global Test Acc: 57.26% | Loss: 1.2390 | Train Loss: 0.1845 | Clean Ratio: 0.610 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 162 ====
+Global Test Acc: 58.26% | Loss: 1.2071 | Train Loss: 0.2742 | Clean Ratio: 0.617 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 163 ====
+Global Test Acc: 57.88% | Loss: 1.2167 | Train Loss: 0.1880 | Clean Ratio: 0.629 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 164 ====
+Global Test Acc: 57.68% | Loss: 1.2120 | Train Loss: 0.2285 | Clean Ratio: 0.624 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 165 ====
+Global Test Acc: 56.90% | Loss: 1.2210 | Train Loss: 0.2607 | Clean Ratio: 0.607 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 166 ====
+Global Test Acc: 57.02% | Loss: 1.2141 | Train Loss: 0.2344 | Clean Ratio: 0.584 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 167 ====
+Global Test Acc: 55.69% | Loss: 1.2489 | Train Loss: 0.2390 | Clean Ratio: 0.577 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 168 ====
+Global Test Acc: 57.80% | Loss: 1.2142 | Train Loss: 0.2376 | Clean Ratio: 0.604 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 169 ====
+Global Test Acc: 57.93% | Loss: 1.1856 | Train Loss: 0.2861 | Clean Ratio: 0.597 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 170 ====
+Global Test Acc: 58.16% | Loss: 1.1880 | Train Loss: 0.2013 | Clean Ratio: 0.584 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 171 ====
+Global Test Acc: 54.99% | Loss: 1.2602 | Train Loss: 0.1846 | Clean Ratio: 0.641 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 172 ====
+Global Test Acc: 57.14% | Loss: 1.2267 | Train Loss: 0.2216 | Clean Ratio: 0.599 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 173 ====
+Global Test Acc: 57.54% | Loss: 1.2085 | Train Loss: 0.2470 | Clean Ratio: 0.603 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 174 ====
+Global Test Acc: 57.04% | Loss: 1.2304 | Train Loss: 0.2379 | Clean Ratio: 0.605 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 175 ====
+Global Test Acc: 54.70% | Loss: 1.2648 | Train Loss: 0.2695 | Clean Ratio: 0.586 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 176 ====
+Global Test Acc: 56.43% | Loss: 1.2311 | Train Loss: 0.2648 | Clean Ratio: 0.610 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 177 ====
+Global Test Acc: 57.60% | Loss: 1.2242 | Train Loss: 0.2674 | Clean Ratio: 0.588 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 178 ====
+Global Test Acc: 58.72% | Loss: 1.1937 | Train Loss: 0.3251 | Clean Ratio: 0.587 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 179 ====
+Global Test Acc: 57.02% | Loss: 1.2243 | Train Loss: 0.2627 | Clean Ratio: 0.611 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 180 ====
+Global Test Acc: 55.81% | Loss: 1.2670 | Train Loss: 0.2376 | Clean Ratio: 0.624 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 181 ====
+Global Test Acc: 58.12% | Loss: 1.2006 | Train Loss: 0.2596 | Clean Ratio: 0.602 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 182 ====
+Global Test Acc: 55.87% | Loss: 1.2693 | Train Loss: 0.2363 | Clean Ratio: 0.637 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 183 ====
+Global Test Acc: 56.41% | Loss: 1.2317 | Train Loss: 0.1993 | Clean Ratio: 0.616 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 184 ====
+Global Test Acc: 58.98% | Loss: 1.1948 | Train Loss: 0.2618 | Clean Ratio: 0.631 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 185 ====
+Global Test Acc: 55.60% | Loss: 1.2561 | Train Loss: 0.2626 | Clean Ratio: 0.569 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 186 ====
+Global Test Acc: 58.05% | Loss: 1.2097 | Train Loss: 0.2055 | Clean Ratio: 0.610 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 187 ====
+Global Test Acc: 57.37% | Loss: 1.2200 | Train Loss: 0.2041 | Clean Ratio: 0.633 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 188 ====
+Global Test Acc: 59.21% | Loss: 1.1723 | Train Loss: 0.2266 | Clean Ratio: 0.632 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 189 ====
+Global Test Acc: 57.94% | Loss: 1.2128 | Train Loss: 0.1993 | Clean Ratio: 0.596 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 190 ====
+Global Test Acc: 58.40% | Loss: 1.1867 | Train Loss: 0.1783 | Clean Ratio: 0.578 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 191 ====
+Global Test Acc: 58.30% | Loss: 1.1976 | Train Loss: 0.2398 | Clean Ratio: 0.628 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 192 ====
+Global Test Acc: 59.42% | Loss: 1.1618 | Train Loss: 0.2601 | Clean Ratio: 0.603 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 193 ====
+Global Test Acc: 59.07% | Loss: 1.1758 | Train Loss: 0.1656 | Clean Ratio: 0.608 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 194 ====
+Global Test Acc: 57.95% | Loss: 1.1920 | Train Loss: 0.2088 | Clean Ratio: 0.598 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 195 ====
+Global Test Acc: 59.14% | Loss: 1.1784 | Train Loss: 0.2026 | Clean Ratio: 0.598 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 196 ====
+Global Test Acc: 59.30% | Loss: 1.1661 | Train Loss: 0.2136 | Clean Ratio: 0.622 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 197 ====
+Global Test Acc: 59.60% | Loss: 1.1660 | Train Loss: 0.2369 | Clean Ratio: 0.644 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 198 ====
+Global Test Acc: 57.25% | Loss: 1.2105 | Train Loss: 0.1766 | Clean Ratio: 0.604 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 199 ====
+Global Test Acc: 57.53% | Loss: 1.2074 | Train Loss: 0.1868 | Clean Ratio: 0.610 | Neighbor Net2 Used: 0.000
+
+  (showing 50 clients)
+
+==== Round 200 ====
+Global Test Acc: 57.47% | Loss: 1.2135 | Train Loss: 0.2495 | Clean Ratio: 0.620 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 201 ====
+Global Test Acc: 58.64% | Loss: 1.1881 | Train Loss: 0.2075 | Clean Ratio: 0.642 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 202 ====
+Global Test Acc: 58.33% | Loss: 1.1817 | Train Loss: 0.2500 | Clean Ratio: 0.656 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 203 ====
+Global Test Acc: 58.70% | Loss: 1.1851 | Train Loss: 0.2380 | Clean Ratio: 0.572 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 204 ====
+Global Test Acc: 58.72% | Loss: 1.1802 | Train Loss: 0.2438 | Clean Ratio: 0.640 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 205 ====
+Global Test Acc: 58.99% | Loss: 1.1844 | Train Loss: 0.2821 | Clean Ratio: 0.588 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 206 ====
+Global Test Acc: 57.30% | Loss: 1.2174 | Train Loss: 0.2405 | Clean Ratio: 0.631 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 207 ====
+Global Test Acc: 57.79% | Loss: 1.2169 | Train Loss: 0.2210 | Clean Ratio: 0.603 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 208 ====
+Global Test Acc: 57.07% | Loss: 1.2177 | Train Loss: 0.2072 | Clean Ratio: 0.642 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 209 ====
+Global Test Acc: 59.12% | Loss: 1.1709 | Train Loss: 0.2162 | Clean Ratio: 0.618 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 210 ====
+Global Test Acc: 58.08% | Loss: 1.2160 | Train Loss: 0.2102 | Clean Ratio: 0.567 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 211 ====
+Global Test Acc: 56.77% | Loss: 1.2256 | Train Loss: 0.2355 | Clean Ratio: 0.594 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 212 ====
+Global Test Acc: 59.64% | Loss: 1.1568 | Train Loss: 0.2291 | Clean Ratio: 0.588 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 213 ====
+Global Test Acc: 59.32% | Loss: 1.1694 | Train Loss: 0.2455 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 214 ====
+Global Test Acc: 58.02% | Loss: 1.2234 | Train Loss: 0.2968 | Clean Ratio: 0.595 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 215 ====
+Global Test Acc: 58.29% | Loss: 1.1910 | Train Loss: 0.2557 | Clean Ratio: 0.634 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 216 ====
+Global Test Acc: 55.18% | Loss: 1.2639 | Train Loss: 0.1788 | Clean Ratio: 0.633 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 217 ====
+Global Test Acc: 59.77% | Loss: 1.1568 | Train Loss: 0.2004 | Clean Ratio: 0.618 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 218 ====
+Global Test Acc: 58.37% | Loss: 1.1852 | Train Loss: 0.2363 | Clean Ratio: 0.628 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 219 ====
+Global Test Acc: 58.47% | Loss: 1.1907 | Train Loss: 0.2484 | Clean Ratio: 0.591 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 220 ====
+Global Test Acc: 55.95% | Loss: 1.2530 | Train Loss: 0.2380 | Clean Ratio: 0.645 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 221 ====
+Global Test Acc: 58.23% | Loss: 1.1970 | Train Loss: 0.2592 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 222 ====
+Global Test Acc: 59.04% | Loss: 1.1713 | Train Loss: 0.1872 | Clean Ratio: 0.611 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 223 ====
+Global Test Acc: 58.84% | Loss: 1.1769 | Train Loss: 0.2138 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 224 ====
+Global Test Acc: 56.91% | Loss: 1.2359 | Train Loss: 0.2346 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 225 ====
+Global Test Acc: 58.86% | Loss: 1.1747 | Train Loss: 0.2553 | Clean Ratio: 0.621 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 226 ====
+Global Test Acc: 58.95% | Loss: 1.1722 | Train Loss: 0.2141 | Clean Ratio: 0.639 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 227 ====
+Global Test Acc: 59.24% | Loss: 1.1725 | Train Loss: 0.2649 | Clean Ratio: 0.678 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 228 ====
+Global Test Acc: 58.95% | Loss: 1.1702 | Train Loss: 0.2158 | Clean Ratio: 0.582 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 229 ====
+Global Test Acc: 58.26% | Loss: 1.2000 | Train Loss: 0.2180 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 230 ====
+Global Test Acc: 58.58% | Loss: 1.1879 | Train Loss: 0.1913 | Clean Ratio: 0.662 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 231 ====
+Global Test Acc: 59.03% | Loss: 1.1830 | Train Loss: 0.2055 | Clean Ratio: 0.611 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 232 ====
+Global Test Acc: 58.34% | Loss: 1.1857 | Train Loss: 0.2275 | Clean Ratio: 0.584 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 233 ====
+Global Test Acc: 60.29% | Loss: 1.1566 | Train Loss: 0.2448 | Clean Ratio: 0.614 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 234 ====
+Global Test Acc: 58.43% | Loss: 1.1857 | Train Loss: 0.2116 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 235 ====
+Global Test Acc: 57.46% | Loss: 1.2308 | Train Loss: 0.2373 | Clean Ratio: 0.616 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 236 ====
+Global Test Acc: 56.77% | Loss: 1.2193 | Train Loss: 0.2236 | Clean Ratio: 0.640 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 237 ====
+Global Test Acc: 60.02% | Loss: 1.1566 | Train Loss: 0.2386 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 238 ====
+Global Test Acc: 57.77% | Loss: 1.1913 | Train Loss: 0.2375 | Clean Ratio: 0.621 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 239 ====
+Global Test Acc: 57.01% | Loss: 1.2242 | Train Loss: 0.3046 | Clean Ratio: 0.629 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 240 ====
+Global Test Acc: 59.05% | Loss: 1.1785 | Train Loss: 0.2233 | Clean Ratio: 0.600 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 241 ====
+Global Test Acc: 57.85% | Loss: 1.2096 | Train Loss: 0.2146 | Clean Ratio: 0.625 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 242 ====
+Global Test Acc: 57.53% | Loss: 1.2058 | Train Loss: 0.2182 | Clean Ratio: 0.582 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 243 ====
+Global Test Acc: 57.30% | Loss: 1.2155 | Train Loss: 0.2102 | Clean Ratio: 0.636 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 244 ====
+Global Test Acc: 59.27% | Loss: 1.1840 | Train Loss: 0.2588 | Clean Ratio: 0.620 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 245 ====
+Global Test Acc: 58.12% | Loss: 1.1948 | Train Loss: 0.1937 | Clean Ratio: 0.637 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 246 ====
+Global Test Acc: 58.71% | Loss: 1.1782 | Train Loss: 0.1585 | Clean Ratio: 0.647 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 247 ====
+Global Test Acc: 57.75% | Loss: 1.1951 | Train Loss: 0.2438 | Clean Ratio: 0.600 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 248 ====
+Global Test Acc: 59.43% | Loss: 1.1772 | Train Loss: 0.2362 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 249 ====
+Global Test Acc: 57.53% | Loss: 1.2197 | Train Loss: 0.2064 | Clean Ratio: 0.612 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 250 ====
+Global Test Acc: 58.03% | Loss: 1.2203 | Train Loss: 0.1794 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 251 ====
+Global Test Acc: 60.62% | Loss: 1.1347 | Train Loss: 0.2252 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 252 ====
+Global Test Acc: 60.63% | Loss: 1.1507 | Train Loss: 0.2563 | Clean Ratio: 0.614 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 253 ====
+Global Test Acc: 57.40% | Loss: 1.1968 | Train Loss: 0.2287 | Clean Ratio: 0.589 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 254 ====
+Global Test Acc: 57.28% | Loss: 1.2314 | Train Loss: 0.2521 | Clean Ratio: 0.625 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 255 ====
+Global Test Acc: 59.43% | Loss: 1.1742 | Train Loss: 0.2346 | Clean Ratio: 0.603 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 256 ====
+Global Test Acc: 58.25% | Loss: 1.1840 | Train Loss: 0.1905 | Clean Ratio: 0.621 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 257 ====
+Global Test Acc: 59.49% | Loss: 1.1732 | Train Loss: 0.2527 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 258 ====
+Global Test Acc: 59.75% | Loss: 1.1452 | Train Loss: 0.1990 | Clean Ratio: 0.606 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 259 ====
+Global Test Acc: 58.89% | Loss: 1.1673 | Train Loss: 0.1931 | Clean Ratio: 0.614 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 260 ====
+Global Test Acc: 59.14% | Loss: 1.1686 | Train Loss: 0.2330 | Clean Ratio: 0.582 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 261 ====
+Global Test Acc: 58.73% | Loss: 1.1842 | Train Loss: 0.2606 | Clean Ratio: 0.623 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 262 ====
+Global Test Acc: 58.83% | Loss: 1.1774 | Train Loss: 0.2355 | Clean Ratio: 0.632 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 263 ====
+Global Test Acc: 58.56% | Loss: 1.1626 | Train Loss: 0.2022 | Clean Ratio: 0.601 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 264 ====
+Global Test Acc: 58.24% | Loss: 1.1966 | Train Loss: 0.2563 | Clean Ratio: 0.630 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 265 ====
+Global Test Acc: 59.75% | Loss: 1.1574 | Train Loss: 0.2056 | Clean Ratio: 0.596 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 266 ====
+Global Test Acc: 60.07% | Loss: 1.1357 | Train Loss: 0.2395 | Clean Ratio: 0.595 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 267 ====
+Global Test Acc: 58.20% | Loss: 1.1948 | Train Loss: 0.2580 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 268 ====
+Global Test Acc: 57.37% | Loss: 1.2158 | Train Loss: 0.1638 | Clean Ratio: 0.588 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 269 ====
+Global Test Acc: 59.69% | Loss: 1.1575 | Train Loss: 0.1974 | Clean Ratio: 0.625 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 270 ====
+Global Test Acc: 60.65% | Loss: 1.1278 | Train Loss: 0.1988 | Clean Ratio: 0.633 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 271 ====
+Global Test Acc: 57.45% | Loss: 1.1990 | Train Loss: 0.1990 | Clean Ratio: 0.590 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 272 ====
+Global Test Acc: 59.41% | Loss: 1.1624 | Train Loss: 0.2625 | Clean Ratio: 0.618 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 273 ====
+Global Test Acc: 60.45% | Loss: 1.1389 | Train Loss: 0.2372 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 274 ====
+Global Test Acc: 59.46% | Loss: 1.1670 | Train Loss: 0.1863 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 275 ====
+Global Test Acc: 57.71% | Loss: 1.2070 | Train Loss: 0.2276 | Clean Ratio: 0.589 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 276 ====
+Global Test Acc: 58.85% | Loss: 1.1826 | Train Loss: 0.1726 | Clean Ratio: 0.573 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 277 ====
+Global Test Acc: 59.41% | Loss: 1.1663 | Train Loss: 0.1753 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 278 ====
+Global Test Acc: 60.59% | Loss: 1.1449 | Train Loss: 0.2486 | Clean Ratio: 0.623 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 279 ====
+Global Test Acc: 59.73% | Loss: 1.1615 | Train Loss: 0.1857 | Clean Ratio: 0.583 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 280 ====
+Global Test Acc: 59.02% | Loss: 1.1664 | Train Loss: 0.1921 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 281 ====
+Global Test Acc: 58.34% | Loss: 1.1970 | Train Loss: 0.1958 | Clean Ratio: 0.632 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 282 ====
+Global Test Acc: 59.68% | Loss: 1.1655 | Train Loss: 0.2147 | Clean Ratio: 0.606 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 283 ====
+Global Test Acc: 59.99% | Loss: 1.1584 | Train Loss: 0.1955 | Clean Ratio: 0.594 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 284 ====
+Global Test Acc: 59.38% | Loss: 1.1722 | Train Loss: 0.2193 | Clean Ratio: 0.581 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 285 ====
+Global Test Acc: 57.68% | Loss: 1.2095 | Train Loss: 0.1977 | Clean Ratio: 0.650 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 286 ====
+Global Test Acc: 59.83% | Loss: 1.1536 | Train Loss: 0.2028 | Clean Ratio: 0.586 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 287 ====
+Global Test Acc: 60.63% | Loss: 1.1378 | Train Loss: 0.1962 | Clean Ratio: 0.601 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 288 ====
+Global Test Acc: 57.52% | Loss: 1.1785 | Train Loss: 0.2261 | Clean Ratio: 0.586 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 289 ====
+Global Test Acc: 59.06% | Loss: 1.1795 | Train Loss: 0.2019 | Clean Ratio: 0.607 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 290 ====
+Global Test Acc: 60.03% | Loss: 1.1557 | Train Loss: 0.1937 | Clean Ratio: 0.595 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 291 ====
+Global Test Acc: 60.01% | Loss: 1.1529 | Train Loss: 0.1601 | Clean Ratio: 0.661 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 292 ====
+Global Test Acc: 58.44% | Loss: 1.1862 | Train Loss: 0.2392 | Clean Ratio: 0.624 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 293 ====
+Global Test Acc: 60.29% | Loss: 1.1313 | Train Loss: 0.2256 | Clean Ratio: 0.628 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 294 ====
+Global Test Acc: 58.76% | Loss: 1.1680 | Train Loss: 0.1747 | Clean Ratio: 0.593 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 295 ====
+Global Test Acc: 60.17% | Loss: 1.1435 | Train Loss: 0.1899 | Clean Ratio: 0.617 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 296 ====
+Global Test Acc: 58.26% | Loss: 1.1852 | Train Loss: 0.2509 | Clean Ratio: 0.622 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 297 ====
+Global Test Acc: 60.26% | Loss: 1.1496 | Train Loss: 0.1789 | Clean Ratio: 0.584 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 298 ====
+Global Test Acc: 59.97% | Loss: 1.1471 | Train Loss: 0.1882 | Clean Ratio: 0.595 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 299 ====
+Global Test Acc: 60.26% | Loss: 1.1407 | Train Loss: 0.2418 | Clean Ratio: 0.674 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 300 ====
+Global Test Acc: 59.98% | Loss: 1.1399 | Train Loss: 0.2034 | Clean Ratio: 0.586 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 301 ====
+Global Test Acc: 60.14% | Loss: 1.1378 | Train Loss: 0.1916 | Clean Ratio: 0.626 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 302 ====
+Global Test Acc: 60.54% | Loss: 1.1330 | Train Loss: 0.1681 | Clean Ratio: 0.610 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 303 ====
+Global Test Acc: 59.94% | Loss: 1.1541 | Train Loss: 0.2407 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 304 ====
+Global Test Acc: 58.47% | Loss: 1.1903 | Train Loss: 0.2181 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 305 ====
+Global Test Acc: 59.04% | Loss: 1.1735 | Train Loss: 0.2227 | Clean Ratio: 0.650 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 306 ====
+Global Test Acc: 60.10% | Loss: 1.1488 | Train Loss: 0.1899 | Clean Ratio: 0.635 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 307 ====
+Global Test Acc: 59.04% | Loss: 1.1632 | Train Loss: 0.1983 | Clean Ratio: 0.658 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 308 ====
+Global Test Acc: 58.79% | Loss: 1.1820 | Train Loss: 0.2360 | Clean Ratio: 0.623 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 309 ====
+Global Test Acc: 59.75% | Loss: 1.1428 | Train Loss: 0.2034 | Clean Ratio: 0.636 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 310 ====
+Global Test Acc: 58.56% | Loss: 1.1802 | Train Loss: 0.1906 | Clean Ratio: 0.599 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 311 ====
+Global Test Acc: 60.38% | Loss: 1.1443 | Train Loss: 0.2122 | Clean Ratio: 0.571 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 312 ====
+Global Test Acc: 58.98% | Loss: 1.1683 | Train Loss: 0.1806 | Clean Ratio: 0.577 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 313 ====
+Global Test Acc: 59.49% | Loss: 1.1601 | Train Loss: 0.2041 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 314 ====
+Global Test Acc: 58.07% | Loss: 1.1918 | Train Loss: 0.2363 | Clean Ratio: 0.590 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 315 ====
+Global Test Acc: 58.81% | Loss: 1.1717 | Train Loss: 0.2382 | Clean Ratio: 0.591 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 316 ====
+Global Test Acc: 60.02% | Loss: 1.1452 | Train Loss: 0.2216 | Clean Ratio: 0.590 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 317 ====
+Global Test Acc: 59.81% | Loss: 1.1429 | Train Loss: 0.2179 | Clean Ratio: 0.642 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 318 ====
+Global Test Acc: 60.91% | Loss: 1.1194 | Train Loss: 0.2500 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 319 ====
+Global Test Acc: 59.55% | Loss: 1.1585 | Train Loss: 0.2411 | Clean Ratio: 0.651 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 320 ====
+Global Test Acc: 60.07% | Loss: 1.1560 | Train Loss: 0.1608 | Clean Ratio: 0.631 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 321 ====
+Global Test Acc: 59.38% | Loss: 1.1814 | Train Loss: 0.1666 | Clean Ratio: 0.616 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 322 ====
+Global Test Acc: 61.23% | Loss: 1.1222 | Train Loss: 0.1876 | Clean Ratio: 0.613 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 323 ====
+Global Test Acc: 60.53% | Loss: 1.1344 | Train Loss: 0.1859 | Clean Ratio: 0.648 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 324 ====
+Global Test Acc: 58.81% | Loss: 1.1699 | Train Loss: 0.2193 | Clean Ratio: 0.590 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 325 ====
+Global Test Acc: 59.46% | Loss: 1.1627 | Train Loss: 0.1444 | Clean Ratio: 0.650 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 326 ====
+Global Test Acc: 59.32% | Loss: 1.1405 | Train Loss: 0.1869 | Clean Ratio: 0.593 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 327 ====
+Global Test Acc: 58.33% | Loss: 1.2004 | Train Loss: 0.1651 | Clean Ratio: 0.607 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 328 ====
+Global Test Acc: 60.13% | Loss: 1.1380 | Train Loss: 0.2492 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 329 ====
+Global Test Acc: 60.73% | Loss: 1.1306 | Train Loss: 0.1887 | Clean Ratio: 0.606 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 330 ====
+Global Test Acc: 59.67% | Loss: 1.1477 | Train Loss: 0.1753 | Clean Ratio: 0.618 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 331 ====
+Global Test Acc: 60.40% | Loss: 1.1414 | Train Loss: 0.2031 | Clean Ratio: 0.624 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 332 ====
+Global Test Acc: 59.68% | Loss: 1.1742 | Train Loss: 0.2108 | Clean Ratio: 0.629 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 333 ====
+Global Test Acc: 59.51% | Loss: 1.1692 | Train Loss: 0.2376 | Clean Ratio: 0.629 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 334 ====
+Global Test Acc: 58.27% | Loss: 1.1874 | Train Loss: 0.2385 | Clean Ratio: 0.633 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 335 ====
+Global Test Acc: 59.16% | Loss: 1.1709 | Train Loss: 0.2171 | Clean Ratio: 0.602 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 336 ====
+Global Test Acc: 60.51% | Loss: 1.1369 | Train Loss: 0.1762 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 337 ====
+Global Test Acc: 60.18% | Loss: 1.1374 | Train Loss: 0.1854 | Clean Ratio: 0.611 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 338 ====
+Global Test Acc: 60.10% | Loss: 1.1477 | Train Loss: 0.1931 | Clean Ratio: 0.588 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 339 ====
+Global Test Acc: 60.72% | Loss: 1.1186 | Train Loss: 0.2320 | Clean Ratio: 0.579 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 340 ====
+Global Test Acc: 61.12% | Loss: 1.1111 | Train Loss: 0.1547 | Clean Ratio: 0.633 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 341 ====
+Global Test Acc: 60.42% | Loss: 1.1358 | Train Loss: 0.2421 | Clean Ratio: 0.599 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 342 ====
+Global Test Acc: 59.72% | Loss: 1.1354 | Train Loss: 0.2253 | Clean Ratio: 0.630 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 343 ====
+Global Test Acc: 59.33% | Loss: 1.1704 | Train Loss: 0.1457 | Clean Ratio: 0.622 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 344 ====
+Global Test Acc: 59.46% | Loss: 1.1588 | Train Loss: 0.1894 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 345 ====
+Global Test Acc: 60.06% | Loss: 1.1543 | Train Loss: 0.1513 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 346 ====
+Global Test Acc: 60.02% | Loss: 1.1501 | Train Loss: 0.1926 | Clean Ratio: 0.637 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 347 ====
+Global Test Acc: 59.84% | Loss: 1.1557 | Train Loss: 0.1849 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 348 ====
+Global Test Acc: 60.80% | Loss: 1.1311 | Train Loss: 0.2238 | Clean Ratio: 0.597 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 349 ====
+Global Test Acc: 59.37% | Loss: 1.1595 | Train Loss: 0.2283 | Clean Ratio: 0.595 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 350 ====
+Global Test Acc: 60.45% | Loss: 1.1589 | Train Loss: 0.1542 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 351 ====
+Global Test Acc: 59.51% | Loss: 1.1554 | Train Loss: 0.1691 | Clean Ratio: 0.587 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 352 ====
+Global Test Acc: 60.85% | Loss: 1.1188 | Train Loss: 0.2396 | Clean Ratio: 0.600 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 353 ====
+Global Test Acc: 58.97% | Loss: 1.1593 | Train Loss: 0.1804 | Clean Ratio: 0.592 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 354 ====
+Global Test Acc: 59.11% | Loss: 1.1671 | Train Loss: 0.1584 | Clean Ratio: 0.576 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 355 ====
+Global Test Acc: 60.44% | Loss: 1.1396 | Train Loss: 0.1818 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 356 ====
+Global Test Acc: 60.51% | Loss: 1.1335 | Train Loss: 0.1803 | Clean Ratio: 0.622 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 357 ====
+Global Test Acc: 60.58% | Loss: 1.1394 | Train Loss: 0.1913 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 358 ====
+Global Test Acc: 58.18% | Loss: 1.1989 | Train Loss: 0.1978 | Clean Ratio: 0.589 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 359 ====
+Global Test Acc: 59.26% | Loss: 1.1753 | Train Loss: 0.1552 | Clean Ratio: 0.577 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 360 ====
+Global Test Acc: 59.21% | Loss: 1.1600 | Train Loss: 0.1577 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 361 ====
+Global Test Acc: 59.98% | Loss: 1.1640 | Train Loss: 0.2112 | Clean Ratio: 0.641 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 362 ====
+Global Test Acc: 58.88% | Loss: 1.1648 | Train Loss: 0.1797 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 363 ====
+Global Test Acc: 58.37% | Loss: 1.2068 | Train Loss: 0.1829 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 364 ====
+Global Test Acc: 59.96% | Loss: 1.1603 | Train Loss: 0.1460 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 365 ====
+Global Test Acc: 57.61% | Loss: 1.2130 | Train Loss: 0.1819 | Clean Ratio: 0.574 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 366 ====
+Global Test Acc: 59.04% | Loss: 1.1761 | Train Loss: 0.1818 | Clean Ratio: 0.630 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 367 ====
+Global Test Acc: 59.05% | Loss: 1.1750 | Train Loss: 0.2204 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 368 ====
+Global Test Acc: 60.39% | Loss: 1.1365 | Train Loss: 0.1968 | Clean Ratio: 0.635 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 369 ====
+Global Test Acc: 58.90% | Loss: 1.1676 | Train Loss: 0.2146 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 370 ====
+Global Test Acc: 61.24% | Loss: 1.1167 | Train Loss: 0.1926 | Clean Ratio: 0.639 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 371 ====
+Global Test Acc: 61.41% | Loss: 1.1110 | Train Loss: 0.2152 | Clean Ratio: 0.633 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 372 ====
+Global Test Acc: 59.11% | Loss: 1.1738 | Train Loss: 0.2232 | Clean Ratio: 0.576 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 373 ====
+Global Test Acc: 59.61% | Loss: 1.1713 | Train Loss: 0.2300 | Clean Ratio: 0.646 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 374 ====
+Global Test Acc: 60.04% | Loss: 1.1496 | Train Loss: 0.1820 | Clean Ratio: 0.637 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 375 ====
+Global Test Acc: 60.36% | Loss: 1.1446 | Train Loss: 0.1985 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 376 ====
+Global Test Acc: 58.76% | Loss: 1.1695 | Train Loss: 0.1989 | Clean Ratio: 0.612 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 377 ====
+Global Test Acc: 59.09% | Loss: 1.1875 | Train Loss: 0.1480 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 378 ====
+Global Test Acc: 57.80% | Loss: 1.2153 | Train Loss: 0.1698 | Clean Ratio: 0.587 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 379 ====
+Global Test Acc: 60.36% | Loss: 1.1334 | Train Loss: 0.1853 | Clean Ratio: 0.594 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 380 ====
+Global Test Acc: 58.04% | Loss: 1.1746 | Train Loss: 0.2123 | Clean Ratio: 0.560 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 381 ====
+Global Test Acc: 60.12% | Loss: 1.1420 | Train Loss: 0.1531 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 382 ====
+Global Test Acc: 58.87% | Loss: 1.1808 | Train Loss: 0.1850 | Clean Ratio: 0.612 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 383 ====
+Global Test Acc: 60.57% | Loss: 1.1419 | Train Loss: 0.1623 | Clean Ratio: 0.587 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 384 ====
+Global Test Acc: 59.67% | Loss: 1.1685 | Train Loss: 0.1909 | Clean Ratio: 0.661 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 385 ====
+Global Test Acc: 59.94% | Loss: 1.1497 | Train Loss: 0.1587 | Clean Ratio: 0.652 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 386 ====
+Global Test Acc: 60.58% | Loss: 1.1350 | Train Loss: 0.2139 | Clean Ratio: 0.593 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 387 ====
+Global Test Acc: 58.41% | Loss: 1.1894 | Train Loss: 0.1662 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 388 ====
+Global Test Acc: 60.44% | Loss: 1.1419 | Train Loss: 0.1590 | Clean Ratio: 0.638 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 389 ====
+Global Test Acc: 58.90% | Loss: 1.1726 | Train Loss: 0.1661 | Clean Ratio: 0.601 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 390 ====
+Global Test Acc: 59.52% | Loss: 1.1690 | Train Loss: 0.2105 | Clean Ratio: 0.613 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 391 ====
+Global Test Acc: 59.96% | Loss: 1.1545 | Train Loss: 0.2321 | Clean Ratio: 0.569 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 392 ====
+Global Test Acc: 59.24% | Loss: 1.1712 | Train Loss: 0.1779 | Clean Ratio: 0.642 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 393 ====
+Global Test Acc: 59.79% | Loss: 1.1431 | Train Loss: 0.1819 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 394 ====
+Global Test Acc: 60.57% | Loss: 1.1371 | Train Loss: 0.1389 | Clean Ratio: 0.606 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 395 ====
+Global Test Acc: 59.46% | Loss: 1.1602 | Train Loss: 0.2183 | Clean Ratio: 0.597 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 396 ====
+Global Test Acc: 58.51% | Loss: 1.1773 | Train Loss: 0.1612 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 397 ====
+Global Test Acc: 59.36% | Loss: 1.1569 | Train Loss: 0.1664 | Clean Ratio: 0.611 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 398 ====
+Global Test Acc: 58.97% | Loss: 1.1618 | Train Loss: 0.2078 | Clean Ratio: 0.616 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 399 ====
+Global Test Acc: 59.64% | Loss: 1.1576 | Train Loss: 0.2153 | Clean Ratio: 0.626 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 400 ====
+Global Test Acc: 58.28% | Loss: 1.2161 | Train Loss: 0.1488 | Clean Ratio: 0.626 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 401 ====
+Global Test Acc: 58.91% | Loss: 1.1775 | Train Loss: 0.1914 | Clean Ratio: 0.647 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 402 ====
+Global Test Acc: 59.51% | Loss: 1.1565 | Train Loss: 0.1934 | Clean Ratio: 0.590 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 403 ====
+Global Test Acc: 59.83% | Loss: 1.1587 | Train Loss: 0.2196 | Clean Ratio: 0.597 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 404 ====
+Global Test Acc: 59.72% | Loss: 1.1642 | Train Loss: 0.2014 | Clean Ratio: 0.616 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 405 ====
+Global Test Acc: 60.14% | Loss: 1.1531 | Train Loss: 0.1930 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 406 ====
+Global Test Acc: 60.95% | Loss: 1.1334 | Train Loss: 0.2179 | Clean Ratio: 0.614 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 407 ====
+Global Test Acc: 60.15% | Loss: 1.1417 | Train Loss: 0.2086 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 408 ====
+Global Test Acc: 58.59% | Loss: 1.1934 | Train Loss: 0.1502 | Clean Ratio: 0.579 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 409 ====
+Global Test Acc: 59.17% | Loss: 1.1907 | Train Loss: 0.1680 | Clean Ratio: 0.593 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 410 ====
+Global Test Acc: 60.03% | Loss: 1.1564 | Train Loss: 0.1855 | Clean Ratio: 0.666 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 411 ====
+Global Test Acc: 61.72% | Loss: 1.1002 | Train Loss: 0.1920 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 412 ====
+Global Test Acc: 60.82% | Loss: 1.1285 | Train Loss: 0.1866 | Clean Ratio: 0.628 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 413 ====
+Global Test Acc: 59.46% | Loss: 1.1522 | Train Loss: 0.2066 | Clean Ratio: 0.596 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 414 ====
+Global Test Acc: 60.47% | Loss: 1.1504 | Train Loss: 0.1432 | Clean Ratio: 0.601 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 415 ====
+Global Test Acc: 61.70% | Loss: 1.1199 | Train Loss: 0.2035 | Clean Ratio: 0.621 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 416 ====
+Global Test Acc: 59.03% | Loss: 1.1622 | Train Loss: 0.1943 | Clean Ratio: 0.578 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 417 ====
+Global Test Acc: 61.04% | Loss: 1.1199 | Train Loss: 0.1823 | Clean Ratio: 0.646 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 418 ====
+Global Test Acc: 59.92% | Loss: 1.1457 | Train Loss: 0.1977 | Clean Ratio: 0.568 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 419 ====
+Global Test Acc: 60.61% | Loss: 1.1298 | Train Loss: 0.2015 | Clean Ratio: 0.632 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 420 ====
+Global Test Acc: 59.54% | Loss: 1.1719 | Train Loss: 0.1715 | Clean Ratio: 0.617 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 421 ====
+Global Test Acc: 60.82% | Loss: 1.1263 | Train Loss: 0.1407 | Clean Ratio: 0.606 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 422 ====
+Global Test Acc: 57.51% | Loss: 1.2194 | Train Loss: 0.1584 | Clean Ratio: 0.607 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 423 ====
+Global Test Acc: 60.36% | Loss: 1.1461 | Train Loss: 0.1740 | Clean Ratio: 0.620 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 424 ====
+Global Test Acc: 58.89% | Loss: 1.1817 | Train Loss: 0.2283 | Clean Ratio: 0.585 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 425 ====
+Global Test Acc: 60.08% | Loss: 1.1499 | Train Loss: 0.1690 | Clean Ratio: 0.630 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 426 ====
+Global Test Acc: 59.43% | Loss: 1.1795 | Train Loss: 0.1220 | Clean Ratio: 0.641 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 427 ====
+Global Test Acc: 60.11% | Loss: 1.1429 | Train Loss: 0.1595 | Clean Ratio: 0.630 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 428 ====
+Global Test Acc: 60.56% | Loss: 1.1347 | Train Loss: 0.1728 | Clean Ratio: 0.621 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 429 ====
+Global Test Acc: 59.68% | Loss: 1.1679 | Train Loss: 0.1836 | Clean Ratio: 0.631 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 430 ====
+Global Test Acc: 60.02% | Loss: 1.1391 | Train Loss: 0.1630 | Clean Ratio: 0.631 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 431 ====
+Global Test Acc: 61.67% | Loss: 1.1112 | Train Loss: 0.2219 | Clean Ratio: 0.614 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 432 ====
+Global Test Acc: 60.37% | Loss: 1.1382 | Train Loss: 0.1902 | Clean Ratio: 0.630 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 433 ====
+Global Test Acc: 59.47% | Loss: 1.1568 | Train Loss: 0.1664 | Clean Ratio: 0.623 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 434 ====
+Global Test Acc: 61.98% | Loss: 1.0939 | Train Loss: 0.1657 | Clean Ratio: 0.587 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 435 ====
+Global Test Acc: 61.10% | Loss: 1.1191 | Train Loss: 0.1775 | Clean Ratio: 0.559 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 436 ====
+Global Test Acc: 60.48% | Loss: 1.1396 | Train Loss: 0.1752 | Clean Ratio: 0.607 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 437 ====
+Global Test Acc: 58.80% | Loss: 1.1758 | Train Loss: 0.1604 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 438 ====
+Global Test Acc: 60.47% | Loss: 1.1351 | Train Loss: 0.1812 | Clean Ratio: 0.647 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 439 ====
+Global Test Acc: 59.61% | Loss: 1.1570 | Train Loss: 0.2081 | Clean Ratio: 0.623 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 440 ====
+Global Test Acc: 57.35% | Loss: 1.2192 | Train Loss: 0.2128 | Clean Ratio: 0.601 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 441 ====
+Global Test Acc: 60.46% | Loss: 1.1369 | Train Loss: 0.1786 | Clean Ratio: 0.628 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 442 ====
+Global Test Acc: 59.45% | Loss: 1.1781 | Train Loss: 0.1445 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 443 ====
+Global Test Acc: 60.46% | Loss: 1.1223 | Train Loss: 0.2241 | Clean Ratio: 0.627 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 444 ====
+Global Test Acc: 57.51% | Loss: 1.2207 | Train Loss: 0.1921 | Clean Ratio: 0.633 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 445 ====
+Global Test Acc: 61.54% | Loss: 1.1098 | Train Loss: 0.1808 | Clean Ratio: 0.647 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 446 ====
+Global Test Acc: 61.46% | Loss: 1.1037 | Train Loss: 0.1622 | Clean Ratio: 0.639 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 447 ====
+Global Test Acc: 58.91% | Loss: 1.1724 | Train Loss: 0.1775 | Clean Ratio: 0.588 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 448 ====
+Global Test Acc: 58.68% | Loss: 1.1911 | Train Loss: 0.1976 | Clean Ratio: 0.603 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 449 ====
+Global Test Acc: 62.02% | Loss: 1.1146 | Train Loss: 0.1606 | Clean Ratio: 0.588 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 450 ====
+Global Test Acc: 60.06% | Loss: 1.1547 | Train Loss: 0.2065 | Clean Ratio: 0.617 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 451 ====
+Global Test Acc: 60.27% | Loss: 1.1510 | Train Loss: 0.1550 | Clean Ratio: 0.616 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 452 ====
+Global Test Acc: 61.30% | Loss: 1.1247 | Train Loss: 0.1819 | Clean Ratio: 0.634 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 453 ====
+Global Test Acc: 60.01% | Loss: 1.1346 | Train Loss: 0.1672 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 454 ====
+Global Test Acc: 60.33% | Loss: 1.1442 | Train Loss: 0.1172 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 455 ====
+Global Test Acc: 60.20% | Loss: 1.1450 | Train Loss: 0.2066 | Clean Ratio: 0.619 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 456 ====
+Global Test Acc: 60.05% | Loss: 1.1507 | Train Loss: 0.1740 | Clean Ratio: 0.572 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 457 ====
+Global Test Acc: 59.93% | Loss: 1.1588 | Train Loss: 0.2027 | Clean Ratio: 0.594 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 458 ====
+Global Test Acc: 61.01% | Loss: 1.1348 | Train Loss: 0.1699 | Clean Ratio: 0.652 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 459 ====
+Global Test Acc: 59.56% | Loss: 1.1504 | Train Loss: 0.1909 | Clean Ratio: 0.568 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 460 ====
+Global Test Acc: 60.49% | Loss: 1.1422 | Train Loss: 0.2046 | Clean Ratio: 0.596 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 461 ====
+Global Test Acc: 59.90% | Loss: 1.1671 | Train Loss: 0.1904 | Clean Ratio: 0.572 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 462 ====
+Global Test Acc: 59.89% | Loss: 1.1574 | Train Loss: 0.1680 | Clean Ratio: 0.600 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 463 ====
+Global Test Acc: 61.15% | Loss: 1.1300 | Train Loss: 0.2181 | Clean Ratio: 0.625 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 464 ====
+Global Test Acc: 60.48% | Loss: 1.1334 | Train Loss: 0.1716 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 465 ====
+Global Test Acc: 61.87% | Loss: 1.1158 | Train Loss: 0.1336 | Clean Ratio: 0.626 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 466 ====
+Global Test Acc: 59.48% | Loss: 1.1581 | Train Loss: 0.1573 | Clean Ratio: 0.628 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 467 ====
+Global Test Acc: 61.50% | Loss: 1.1130 | Train Loss: 0.1826 | Clean Ratio: 0.591 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 468 ====
+Global Test Acc: 58.90% | Loss: 1.1745 | Train Loss: 0.1944 | Clean Ratio: 0.620 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 469 ====
+Global Test Acc: 60.61% | Loss: 1.1423 | Train Loss: 0.1700 | Clean Ratio: 0.605 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 470 ====
+Global Test Acc: 60.11% | Loss: 1.1536 | Train Loss: 0.1898 | Clean Ratio: 0.620 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 471 ====
+Global Test Acc: 61.01% | Loss: 1.1311 | Train Loss: 0.1730 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 472 ====
+Global Test Acc: 60.86% | Loss: 1.1161 | Train Loss: 0.1608 | Clean Ratio: 0.628 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 473 ====
+Global Test Acc: 60.28% | Loss: 1.1517 | Train Loss: 0.1934 | Clean Ratio: 0.615 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 474 ====
+Global Test Acc: 59.07% | Loss: 1.1819 | Train Loss: 0.2029 | Clean Ratio: 0.612 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 475 ====
+Global Test Acc: 59.16% | Loss: 1.1822 | Train Loss: 0.1755 | Clean Ratio: 0.587 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 476 ====
+Global Test Acc: 60.69% | Loss: 1.1390 | Train Loss: 0.1601 | Clean Ratio: 0.572 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 477 ====
+Global Test Acc: 59.36% | Loss: 1.1609 | Train Loss: 0.1524 | Clean Ratio: 0.610 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 478 ====
+Global Test Acc: 59.32% | Loss: 1.1755 | Train Loss: 0.1912 | Clean Ratio: 0.636 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 479 ====
+Global Test Acc: 61.51% | Loss: 1.1073 | Train Loss: 0.1710 | Clean Ratio: 0.604 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 480 ====
+Global Test Acc: 61.14% | Loss: 1.1351 | Train Loss: 0.1913 | Clean Ratio: 0.585 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 481 ====
+Global Test Acc: 59.65% | Loss: 1.1796 | Train Loss: 0.1872 | Clean Ratio: 0.660 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 482 ====
+Global Test Acc: 59.67% | Loss: 1.1638 | Train Loss: 0.2293 | Clean Ratio: 0.612 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 483 ====
+Global Test Acc: 59.93% | Loss: 1.1524 | Train Loss: 0.1668 | Clean Ratio: 0.623 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 484 ====
+Global Test Acc: 59.67% | Loss: 1.1637 | Train Loss: 0.1844 | Clean Ratio: 0.651 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 485 ====
+Global Test Acc: 60.22% | Loss: 1.1495 | Train Loss: 0.1802 | Clean Ratio: 0.601 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 486 ====
+Global Test Acc: 61.05% | Loss: 1.1231 | Train Loss: 0.2203 | Clean Ratio: 0.560 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 487 ====
+Global Test Acc: 60.17% | Loss: 1.1465 | Train Loss: 0.1497 | Clean Ratio: 0.598 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 488 ====
+Global Test Acc: 60.57% | Loss: 1.1366 | Train Loss: 0.2022 | Clean Ratio: 0.644 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 489 ====
+Global Test Acc: 58.05% | Loss: 1.1936 | Train Loss: 0.1564 | Clean Ratio: 0.613 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 490 ====
+Global Test Acc: 60.64% | Loss: 1.1465 | Train Loss: 0.1867 | Clean Ratio: 0.624 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 491 ====
+Global Test Acc: 59.47% | Loss: 1.1714 | Train Loss: 0.1861 | Clean Ratio: 0.565 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 492 ====
+Global Test Acc: 60.12% | Loss: 1.1499 | Train Loss: 0.1727 | Clean Ratio: 0.575 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 493 ====
+Global Test Acc: 61.31% | Loss: 1.1228 | Train Loss: 0.2365 | Clean Ratio: 0.590 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 494 ====
+Global Test Acc: 60.56% | Loss: 1.1403 | Train Loss: 0.1220 | Clean Ratio: 0.609 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 495 ====
+Global Test Acc: 60.81% | Loss: 1.1289 | Train Loss: 0.2312 | Clean Ratio: 0.654 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 496 ====
+Global Test Acc: 60.96% | Loss: 1.1334 | Train Loss: 0.1950 | Clean Ratio: 0.608 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 497 ====
+Global Test Acc: 58.75% | Loss: 1.1794 | Train Loss: 0.2254 | Clean Ratio: 0.631 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 498 ====
+Global Test Acc: 60.30% | Loss: 1.1509 | Train Loss: 0.2116 | Clean Ratio: 0.625 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)
+
+==== Round 499 ====
+Global Test Acc: 59.98% | Loss: 1.1478 | Train Loss: 0.1258 | Clean Ratio: 0.649 | Neighbor Net2 Used: 1.000
+
+  (showing 50 clients)

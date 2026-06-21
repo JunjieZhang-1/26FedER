@@ -1,0 +1,1 @@
+epoch,global_test_acc,global_test_loss,train_loss,clean_ratio,selection_precision,selection_recall,false_clean,missed_clean,neighbor_net2_used_ratio

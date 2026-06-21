@@ -1,0 +1,16 @@
+Experiment Start: 20260601-162426
+Args: Namespace(method='default', epochs=10, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=4, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[0.2], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.5, device=device(type='cuda', index=0), send_2_models=False)
+================================================================================
+
+round,train_acc,train_loss,test_acc,test_loss,local_update_loss,time_sec
+0,15.550000,2.348560,18.240000,2.298886,1.209053,5.93
+1,15.618000,2.270989,19.240000,2.211854,1.205920,10.86
+2,17.196000,2.269543,18.480000,2.204131,1.193981,15.66
+3,20.382000,2.218226,23.640000,2.124568,1.144497,20.43
+4,23.030000,2.233642,28.710000,2.146667,1.209374,25.33
+5,19.984000,2.232775,24.910000,2.125640,1.179896,30.13
+6,22.782000,2.156595,28.240000,2.047607,1.139391,34.91
+7,21.234000,2.205126,24.170000,2.089614,1.106122,39.87
+8,24.200000,2.130972,29.770000,2.021585,1.155589,44.68
+9,21.588000,2.125149,24.200000,2.034082,1.110782,49.57
+Total training time: 49.57 seconds

@@ -1,0 +1,45 @@
+Experiment Start: 20260605-000357
+Mode: shared_backbone_pfl
+Eval mode: global
+Noise seed mode: fedrn
+Args: Namespace(method='net2_personalized_only', epochs=200, num_users=100, frac=0.5, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0.0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=0, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[(0.0, 0.8)], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, num_edges=5, feder_exp_weight=0.6, neighbor_scope='global', pfl_local_weight=0.3, pfl_agree_weight=0, pfl_personal_ep=4, send_2_models=False, local_only=False, eval_every=1, test_mode='global', train_ratio=1.0, noise_seed_mode='fedrn', device=device(type='cuda', index=0), img_size=32)
+Average unique labels/client: 1.9000
+Unique labels/client min/max: 1 / 2
+Total intended noisy labels: 19800
+================================================================================
+
+==================== Round   0 ====================
+Net2/PFL Acc: 14.44% | Personal Loss: 2.5278 | Train Loss: 1.5597 | Selected Clients: 50 | TrainLabelCorrect: 0.615 (15368/25000) | Avg Labels/Client: 1.90
+
+==================== Round   1 ====================
+Net2/PFL Acc: 14.98% | Personal Loss: 2.5838 | Train Loss: 1.6339 | Selected Clients: 50 | TrainLabelCorrect: 0.581 (14536/25000) | Avg Labels/Client: 1.90
+
+==================== Round   2 ====================
+Net2/PFL Acc: 14.80% | Personal Loss: 2.6641 | Train Loss: 1.6184 | Selected Clients: 50 | TrainLabelCorrect: 0.573 (14336/25000) | Avg Labels/Client: 1.90
+
+==================== Round   3 ====================
+Net2/PFL Acc: 15.03% | Personal Loss: 2.6958 | Train Loss: 1.6131 | Selected Clients: 50 | TrainLabelCorrect: 0.565 (14136/25000) | Avg Labels/Client: 1.90
+
+==================== Round   4 ====================
+Net2/PFL Acc: 15.37% | Personal Loss: 2.7312 | Train Loss: 1.4647 | Selected Clients: 50 | TrainLabelCorrect: 0.627 (15684/25000) | Avg Labels/Client: 1.90
+
+==================== Round   5 ====================
+Net2/PFL Acc: 15.61% | Personal Loss: 2.7604 | Train Loss: 1.4718 | Selected Clients: 50 | TrainLabelCorrect: 0.611 (15264/25000) | Avg Labels/Client: 1.90
+
+==================== Round   6 ====================
+Net2/PFL Acc: 15.67% | Personal Loss: 2.7808 | Train Loss: 1.4956 | Selected Clients: 50 | TrainLabelCorrect: 0.603 (15084/25000) | Avg Labels/Client: 1.90
+
+==================== Round   7 ====================
+Net2/PFL Acc: 15.74% | Personal Loss: 2.7970 | Train Loss: 1.5197 | Selected Clients: 50 | TrainLabelCorrect: 0.591 (14776/25000) | Avg Labels/Client: 1.90
+
+==================== Round   8 ====================
+Net2/PFL Acc: 15.90% | Personal Loss: 2.8178 | Train Loss: 1.3768 | Selected Clients: 50 | TrainLabelCorrect: 0.645 (16124/25000) | Avg Labels/Client: 1.90
+
+==================== Round   9 ====================
+Net2/PFL Acc: 16.00% | Personal Loss: 2.8228 | Train Loss: 1.4970 | Selected Clients: 50 | TrainLabelCorrect: 0.592 (14788/25000) | Avg Labels/Client: 1.90
+
+==================== Round  10 ====================
+Net2/PFL Acc: 15.98% | Personal Loss: 2.8404 | Train Loss: 1.4479 | Selected Clients: 50 | TrainLabelCorrect: 0.606 (15144/25000) | Avg Labels/Client: 1.90
+
+==================== Round  11 ====================
+Net2/PFL Acc: 16.00% | Personal Loss: 2.8598 | Train Loss: 1.4119 | Selected Clients: 50 | TrainLabelCorrect: 0.603 (15068/25000) | Avg Labels/Client: 1.90

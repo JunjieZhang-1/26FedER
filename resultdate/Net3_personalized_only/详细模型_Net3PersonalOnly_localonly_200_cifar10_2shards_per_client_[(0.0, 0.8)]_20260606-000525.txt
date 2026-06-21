@@ -1,0 +1,975 @@
+Experiment Start: 20260606-000525
+Mode: local_only
+Model role: net3 personalized local model, local head only
+Eval mode: local_eval
+Eval scope: all_clients
+Noise seed mode: fedrn
+Args: Namespace(method='net3_personalized_only', epochs=200, num_users=100, frac=0.5, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=0, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[(0.0, 0.8)], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, num_edges=5, feder_exp_weight=0.6, neighbor_scope='global', pfl_local_weight=0.3, pfl_agree_weight=0, pfl_personal_ep=4, send_2_models=False, local_only=True, eval_every=5, test_mode='local_eval', train_ratio=0.8, eval_scope='all_clients', noise_seed_mode='fedrn', conf_thresholds=[0.6, 0.7, 0.8, 0.9], aggregate_head=False, use_clean_holdout_label=1, device=device(type='cuda', index=0), img_size=32)
+Average unique labels/client: 1.9000
+Unique labels/client min/max: 1 / 2
+Total intended noisy labels: 15800
+====================================================================================================
+
+==================== Round   0 ====================
+Net3 TrainLoss: 1.5683 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.616 (12315/20000) | LocalTrain Acc(noisy): 32.58% | LocalTrain Acc(true): 45.48% | LocalTrain Loss(noisy): 1.9406 | Holdout Acc: 44.76%
+  [conf>=0.80] HC_Cov=0.092 | HC_AccTrue=98.51% | DisagreeCount=343 | DisagreeCorrAcc=83.97% | DisagreeNoisePrecision=0.857 | AgreeCount=3342 | AgreeLabelPrecision=1.000
+  [conf>=0.60] HC_Cov=0.1866 HC_AccTrue=95.28% HC_AccNoisy=81.03% HC_LabelClean=0.8454 DisagreeCount=1416 DisagreeCorrAcc=76.20% DisagreeNoisePrecision=0.8044 AgreeCount=6047 AgreeLabelPrecision=0.9975
+  [conf>=0.70] HC_Cov=0.1361 HC_AccTrue=97.06% HC_AccNoisy=85.91% HC_LabelClean=0.8822 DisagreeCount=767 DisagreeCorrAcc=80.18% DisagreeNoisePrecision=0.8253 AgreeCount=4676 AgreeLabelPrecision=0.9983
+  [conf>=0.80] HC_Cov=0.0921 HC_AccTrue=98.51% HC_AccNoisy=90.69% HC_LabelClean=0.9202 DisagreeCount=343 DisagreeCorrAcc=83.97% DisagreeNoisePrecision=0.8571 AgreeCount=3342 AgreeLabelPrecision=1.0000
+  [conf>=0.90] HC_Cov=0.0507 HC_AccTrue=99.51% HC_AccNoisy=95.91% HC_LabelClean=0.9630 DisagreeCount=83 DisagreeCorrAcc=87.95% DisagreeNoisePrecision=0.9036 AgreeCount=1945 AgreeLabelPrecision=1.0000
+
+==================== Round   1 ====================
+Net3 TrainLoss: 1.5823 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.582 (11647/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   2 ====================
+Net3 TrainLoss: 1.5308 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.574 (11489/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   3 ====================
+Net3 TrainLoss: 1.4842 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.566 (11328/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   4 ====================
+Net3 TrainLoss: 1.3078 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.628 (12569/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   5 ====================
+Net3 TrainLoss: 1.2919 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.612 (12231/20000) | LocalTrain Acc(noisy): 58.59% | LocalTrain Acc(true): 77.50% | LocalTrain Loss(noisy): 1.2681 | Holdout Acc: 74.91%
+  [conf>=0.80] HC_Cov=0.218 | HC_AccTrue=98.56% | DisagreeCount=610 | DisagreeCorrAcc=83.77% | DisagreeNoisePrecision=0.874 | AgreeCount=8114 | AgreeLabelPrecision=0.997
+  [conf>=0.60] HC_Cov=0.4089 HC_AccTrue=95.75% HC_AccNoisy=83.88% HC_LabelClean=0.8606 DisagreeCount=2637 DisagreeCorrAcc=77.51% DisagreeNoisePrecision=0.8256 AgreeCount=13721 AgreeLabelPrecision=0.9925
+  [conf>=0.70] HC_Cov=0.3107 HC_AccTrue=97.31% HC_AccNoisy=88.56% HC_LabelClean=0.8995 DisagreeCount=1422 DisagreeCorrAcc=80.17% DisagreeNoisePrecision=0.8418 AgreeCount=11005 AgreeLabelPrecision=0.9953
+  [conf>=0.80] HC_Cov=0.2181 HC_AccTrue=98.56% HC_AccNoisy=93.01% HC_LabelClean=0.9358 DisagreeCount=610 DisagreeCorrAcc=83.77% DisagreeNoisePrecision=0.8738 AgreeCount=8114 AgreeLabelPrecision=0.9967
+  [conf>=0.90] HC_Cov=0.1248 HC_AccTrue=99.52% HC_AccNoisy=96.73% HC_LabelClean=0.9695 DisagreeCount=163 DisagreeCorrAcc=87.73% DisagreeNoisePrecision=0.9080 AgreeCount=4828 AgreeLabelPrecision=0.9992
+
+==================== Round   6 ====================
+Net3 TrainLoss: 1.2772 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12086/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   7 ====================
+Net3 TrainLoss: 1.2489 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.592 (11841/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   8 ====================
+Net3 TrainLoss: 1.1230 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.646 (12920/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round   9 ====================
+Net3 TrainLoss: 1.1879 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.593 (11850/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  10 ====================
+Net3 TrainLoss: 1.1081 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.607 (12135/20000) | LocalTrain Acc(noisy): 65.08% | LocalTrain Acc(true): 76.84% | LocalTrain Loss(noisy): 1.0664 | Holdout Acc: 73.95%
+  [conf>=0.80] HC_Cov=0.273 | HC_AccTrue=98.62% | DisagreeCount=578 | DisagreeCorrAcc=89.79% | DisagreeNoisePrecision=0.919 | AgreeCount=10350 | AgreeLabelPrecision=0.991
+  [conf>=0.60] HC_Cov=0.4674 HC_AccTrue=95.44% HC_AccNoisy=87.60% HC_LabelClean=0.8684 DisagreeCount=2318 DisagreeCorrAcc=81.84% DisagreeNoisePrecision=0.8753 AgreeCount=16379 AgreeLabelPrecision=0.9736
+  [conf>=0.70] HC_Cov=0.3691 HC_AccTrue=97.36% HC_AccNoisy=91.50% HC_LabelClean=0.9109 DisagreeCount=1255 DisagreeCorrAcc=84.86% DisagreeNoisePrecision=0.8892 AgreeCount=13511 AgreeLabelPrecision=0.9852
+  [conf>=0.80] HC_Cov=0.2732 HC_AccTrue=98.62% HC_AccNoisy=94.71% HC_LabelClean=0.9430 DisagreeCount=578 DisagreeCorrAcc=89.79% DisagreeNoisePrecision=0.9187 AgreeCount=10350 AgreeLabelPrecision=0.9911
+  [conf>=0.90] HC_Cov=0.1699 HC_AccTrue=99.48% HC_AccNoisy=97.60% HC_LabelClean=0.9732 DisagreeCount=163 DisagreeCorrAcc=94.48% DisagreeNoisePrecision=0.9571 AgreeCount=6633 AgreeLabelPrecision=0.9961
+
+==================== Round  11 ====================
+Net3 TrainLoss: 1.0730 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12075/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  12 ====================
+Net3 TrainLoss: 0.9996 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.639 (12777/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  13 ====================
+Net3 TrainLoss: 0.9108 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.640 (12809/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  14 ====================
+Net3 TrainLoss: 0.9951 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.591 (11822/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  15 ====================
+Net3 TrainLoss: 0.9923 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.600 (11999/20000) | LocalTrain Acc(noisy): 71.44% | LocalTrain Acc(true): 72.58% | LocalTrain Loss(noisy): 0.8890 | Holdout Acc: 70.13%
+  [conf>=0.80] HC_Cov=0.326 | HC_AccTrue=97.23% | DisagreeCount=452 | DisagreeCorrAcc=86.95% | DisagreeNoisePrecision=0.903 | AgreeCount=12605 | AgreeLabelPrecision=0.976
+  [conf>=0.60] HC_Cov=0.5232 HC_AccTrue=92.12% HC_AccNoisy=90.05% HC_LabelClean=0.8511 DisagreeCount=2083 DisagreeCorrAcc=81.42% DisagreeNoisePrecision=0.8901 AgreeCount=18844 AgreeLabelPrecision=0.9330
+  [conf>=0.70] HC_Cov=0.4244 HC_AccTrue=95.09% HC_AccNoisy=93.59% HC_LabelClean=0.9021 DisagreeCount=1088 DisagreeCorrAcc=85.39% DisagreeNoisePrecision=0.9072 AgreeCount=15886 AgreeLabelPrecision=0.9575
+  [conf>=0.80] HC_Cov=0.3264 HC_AccTrue=97.23% HC_AccNoisy=96.54% HC_LabelClean=0.9455 DisagreeCount=452 DisagreeCorrAcc=86.95% DisagreeNoisePrecision=0.9027 AgreeCount=12605 AgreeLabelPrecision=0.9760
+  [conf>=0.90] HC_Cov=0.2131 HC_AccTrue=98.80% HC_AccNoisy=98.79% HC_LabelClean=0.9788 DisagreeCount=103 DisagreeCorrAcc=87.38% DisagreeNoisePrecision=0.8932 AgreeCount=8422 AgreeLabelPrecision=0.9894
+
+==================== Round  16 ====================
+Net3 TrainLoss: 0.9590 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.581 (11626/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  17 ====================
+Net3 TrainLoss: 0.8861 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.592 (11837/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  18 ====================
+Net3 TrainLoss: 0.8772 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.587 (11734/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  19 ====================
+Net3 TrainLoss: 0.7967 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.616 (12320/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  20 ====================
+Net3 TrainLoss: 0.8155 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.560 (11203/20000) | LocalTrain Acc(noisy): 78.02% | LocalTrain Acc(true): 68.67% | LocalTrain Loss(noisy): 0.7101 | Holdout Acc: 67.18%
+  [conf>=0.80] HC_Cov=0.392 | HC_AccTrue=93.40% | DisagreeCount=348 | DisagreeCorrAcc=87.64% | DisagreeNoisePrecision=0.908 | AgreeCount=15341 | AgreeLabelPrecision=0.935
+  [conf>=0.60] HC_Cov=0.5917 HC_AccTrue=85.83% HC_AccNoisy=93.46% HC_LabelClean=0.8134 DisagreeCount=1548 DisagreeCorrAcc=80.04% DisagreeNoisePrecision=0.8863 AgreeCount=22119 AgreeLabelPrecision=0.8624
+  [conf>=0.70] HC_Cov=0.4958 HC_AccTrue=89.59% HC_AccNoisy=95.82% HC_LabelClean=0.8653 DisagreeCount=828 DisagreeCorrAcc=83.70% DisagreeNoisePrecision=0.8949 AgreeCount=19003 AgreeLabelPrecision=0.8984
+  [conf>=0.80] HC_Cov=0.3922 HC_AccTrue=93.40% HC_AccNoisy=97.78% HC_LabelClean=0.9166 DisagreeCount=348 DisagreeCorrAcc=87.64% DisagreeNoisePrecision=0.9080 AgreeCount=15341 AgreeLabelPrecision=0.9353
+  [conf>=0.90] HC_Cov=0.2642 HC_AccTrue=97.07% HC_AccNoisy=99.34% HC_LabelClean=0.9646 DisagreeCount=70 DisagreeCorrAcc=95.71% DisagreeNoisePrecision=0.9571 AgreeCount=10499 AgreeLabelPrecision=0.9708
+
+==================== Round  21 ====================
+Net3 TrainLoss: 0.7073 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.634 (12689/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  22 ====================
+Net3 TrainLoss: 0.7055 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12073/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  23 ====================
+Net3 TrainLoss: 0.6204 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.615 (12303/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  24 ====================
+Net3 TrainLoss: 0.6374 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.598 (11960/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  25 ====================
+Net3 TrainLoss: 0.6338 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.610 (12209/20000) | LocalTrain Acc(noisy): 83.53% | LocalTrain Acc(true): 66.72% | LocalTrain Loss(noisy): 0.5646 | Holdout Acc: 66.08%
+  [conf>=0.80] HC_Cov=0.463 | HC_AccTrue=88.61% | DisagreeCount=279 | DisagreeCorrAcc=88.53% | DisagreeNoisePrecision=0.921 | AgreeCount=18248 | AgreeLabelPrecision=0.886
+  [conf>=0.60] HC_Cov=0.6681 HC_AccTrue=79.67% HC_AccNoisy=95.19% HC_LabelClean=0.7673 DisagreeCount=1286 DisagreeCorrAcc=75.35% DisagreeNoisePrecision=0.8593 AgreeCount=25438 AgreeLabelPrecision=0.7989
+  [conf>=0.70] HC_Cov=0.5709 HC_AccTrue=84.00% HC_AccNoisy=97.02% HC_LabelClean=0.8193 DisagreeCount=680 DisagreeCorrAcc=81.18% DisagreeNoisePrecision=0.8838 AgreeCount=22156 AgreeLabelPrecision=0.8409
+  [conf>=0.80] HC_Cov=0.4632 HC_AccTrue=88.61% HC_AccNoisy=98.49% HC_LabelClean=0.8740 DisagreeCount=279 DisagreeCorrAcc=88.53% DisagreeNoisePrecision=0.9211 AgreeCount=18248 AgreeLabelPrecision=0.8861
+  [conf>=0.90] HC_Cov=0.3302 HC_AccTrue=93.78% HC_AccNoisy=99.41% HC_LabelClean=0.9325 DisagreeCount=78 DisagreeCorrAcc=93.59% DisagreeNoisePrecision=0.9487 AgreeCount=13131 AgreeLabelPrecision=0.9378
+
+==================== Round  26 ====================
+Net3 TrainLoss: 0.5853 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.588 (11767/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  27 ====================
+Net3 TrainLoss: 0.5330 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.630 (12605/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  28 ====================
+Net3 TrainLoss: 0.5310 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.613 (12264/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  29 ====================
+Net3 TrainLoss: 0.5295 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.589 (11780/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  30 ====================
+Net3 TrainLoss: 0.5231 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.580 (11604/20000) | LocalTrain Acc(noisy): 87.94% | LocalTrain Acc(true): 64.15% | LocalTrain Loss(noisy): 0.4396 | Holdout Acc: 63.47%
+  [conf>=0.80] HC_Cov=0.546 | HC_AccTrue=82.77% | DisagreeCount=263 | DisagreeCorrAcc=76.05% | DisagreeNoisePrecision=0.863 | AgreeCount=21577 | AgreeLabelPrecision=0.828
+  [conf>=0.60] HC_Cov=0.7436 HC_AccTrue=74.16% HC_AccNoisy=96.33% HC_LabelClean=0.7221 DisagreeCount=1092 DisagreeCorrAcc=70.33% DisagreeNoisePrecision=0.8278 AgreeCount=28652 AgreeLabelPrecision=0.7430
+  [conf>=0.70] HC_Cov=0.6514 HC_AccTrue=78.02% HC_AccNoisy=97.82% HC_LabelClean=0.7673 DisagreeCount=567 DisagreeCorrAcc=74.43% DisagreeNoisePrecision=0.8483 AgreeCount=25491 AgreeLabelPrecision=0.7810
+  [conf>=0.80] HC_Cov=0.5460 HC_AccTrue=82.77% HC_AccNoisy=98.80% HC_LabelClean=0.8201 DisagreeCount=263 DisagreeCorrAcc=76.05% DisagreeNoisePrecision=0.8631 AgreeCount=21577 AgreeLabelPrecision=0.8285
+  [conf>=0.90] HC_Cov=0.4061 HC_AccTrue=89.13% HC_AccNoisy=99.53% HC_LabelClean=0.8880 DisagreeCount=77 DisagreeCorrAcc=81.82% DisagreeNoisePrecision=0.8831 AgreeCount=16167 AgreeLabelPrecision=0.8916
+
+==================== Round  31 ====================
+Net3 TrainLoss: 0.4123 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.634 (12673/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  32 ====================
+Net3 TrainLoss: 0.4831 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.548 (10954/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  33 ====================
+Net3 TrainLoss: 0.4512 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.556 (11121/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  34 ====================
+Net3 TrainLoss: 0.3794 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.612 (12235/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  35 ====================
+Net3 TrainLoss: 0.4078 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.580 (11601/20000) | LocalTrain Acc(noisy): 91.58% | LocalTrain Acc(true): 62.78% | LocalTrain Loss(noisy): 0.3321 | Holdout Acc: 63.24%
+  [conf>=0.80] HC_Cov=0.628 | HC_AccTrue=77.41% | DisagreeCount=165 | DisagreeCorrAcc=78.79% | DisagreeNoisePrecision=0.879 | AgreeCount=24940 | AgreeLabelPrecision=0.774
+  [conf>=0.60] HC_Cov=0.8122 HC_AccTrue=69.88% HC_AccNoisy=97.58% HC_LabelClean=0.6877 DisagreeCount=786 DisagreeCorrAcc=63.99% DisagreeNoisePrecision=0.8181 AgreeCount=31700 AgreeLabelPrecision=0.7002
+  [conf>=0.70] HC_Cov=0.7294 HC_AccTrue=73.08% HC_AccNoisy=98.68% HC_LabelClean=0.7237 DisagreeCount=384 DisagreeCorrAcc=70.57% DisagreeNoisePrecision=0.8359 AgreeCount=28793 AgreeLabelPrecision=0.7311
+  [conf>=0.80] HC_Cov=0.6276 HC_AccTrue=77.41% HC_AccNoisy=99.34% HC_LabelClean=0.7697 DisagreeCount=165 DisagreeCorrAcc=78.79% DisagreeNoisePrecision=0.8788 AgreeCount=24940 AgreeLabelPrecision=0.7740
+  [conf>=0.90] HC_Cov=0.4825 HC_AccTrue=83.95% HC_AccNoisy=99.83% HC_LabelClean=0.8383 DisagreeCount=33 DisagreeCorrAcc=81.82% DisagreeNoisePrecision=0.8485 AgreeCount=19266 AgreeLabelPrecision=0.8395
+
+==================== Round  36 ====================
+Net3 TrainLoss: 0.3418 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.617 (12333/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  37 ====================
+Net3 TrainLoss: 0.3190 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.630 (12605/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  38 ====================
+Net3 TrainLoss: 0.3173 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.615 (12304/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  39 ====================
+Net3 TrainLoss: 0.3244 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.562 (11245/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  40 ====================
+Net3 TrainLoss: 0.2582 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.631 (12616/20000) | LocalTrain Acc(noisy): 93.90% | LocalTrain Acc(true): 62.17% | LocalTrain Loss(noisy): 0.2548 | Holdout Acc: 62.78%
+  [conf>=0.80] HC_Cov=0.706 | HC_AccTrue=73.37% | DisagreeCount=164 | DisagreeCorrAcc=71.95% | DisagreeNoisePrecision=0.829 | AgreeCount=28080 | AgreeLabelPrecision=0.734
+  [conf>=0.60] HC_Cov=0.8636 HC_AccTrue=67.07% HC_AccNoisy=98.05% HC_LabelClean=0.6617 DisagreeCount=673 DisagreeCorrAcc=64.78% DisagreeNoisePrecision=0.8128 AgreeCount=33871 AgreeLabelPrecision=0.6712
+  [conf>=0.70] HC_Cov=0.7963 HC_AccTrue=69.59% HC_AccNoisy=98.84% HC_LabelClean=0.6899 DisagreeCount=368 DisagreeCorrAcc=69.29% DisagreeNoisePrecision=0.8315 AgreeCount=31483 AgreeLabelPrecision=0.6960
+  [conf>=0.80] HC_Cov=0.7061 HC_AccTrue=73.37% HC_AccNoisy=99.42% HC_LabelClean=0.7305 DisagreeCount=164 DisagreeCorrAcc=71.95% DisagreeNoisePrecision=0.8293 AgreeCount=28080 AgreeLabelPrecision=0.7338
+  [conf>=0.90] HC_Cov=0.5604 HC_AccTrue=80.27% HC_AccNoisy=99.79% HC_LabelClean=0.8012 DisagreeCount=48 DisagreeCorrAcc=83.33% DisagreeNoisePrecision=0.8750 AgreeCount=22368 AgreeLabelPrecision=0.8027
+
+==================== Round  41 ====================
+Net3 TrainLoss: 0.2692 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.593 (11856/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  42 ====================
+Net3 TrainLoss: 0.2943 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.558 (11157/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  43 ====================
+Net3 TrainLoss: 0.2402 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.590 (11802/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  44 ====================
+Net3 TrainLoss: 0.2302 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.598 (11969/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  45 ====================
+Net3 TrainLoss: 0.2201 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.614 (12282/20000) | LocalTrain Acc(noisy): 95.99% | LocalTrain Acc(true): 61.46% | LocalTrain Loss(noisy): 0.1895 | Holdout Acc: 62.29%
+  [conf>=0.80] HC_Cov=0.774 | HC_AccTrue=69.73% | DisagreeCount=90 | DisagreeCorrAcc=66.67% | DisagreeNoisePrecision=0.811 | AgreeCount=30854 | AgreeLabelPrecision=0.697
+  [conf>=0.60] HC_Cov=0.9061 HC_AccTrue=64.70% HC_AccNoisy=98.69% HC_LabelClean=0.6421 DisagreeCount=473 DisagreeCorrAcc=58.56% DisagreeNoisePrecision=0.7886 AgreeCount=35772 AgreeLabelPrecision=0.6478
+  [conf>=0.70] HC_Cov=0.8520 HC_AccTrue=66.58% HC_AccNoisy=99.26% HC_LabelClean=0.6626 DisagreeCount=253 DisagreeCorrAcc=62.06% DisagreeNoisePrecision=0.8024 AgreeCount=33829 AgreeLabelPrecision=0.6661
+  [conf>=0.80] HC_Cov=0.7736 HC_AccTrue=69.73% HC_AccNoisy=99.71% HC_LabelClean=0.6959 DisagreeCount=90 DisagreeCorrAcc=66.67% DisagreeNoisePrecision=0.8111 AgreeCount=30854 AgreeLabelPrecision=0.6973
+  [conf>=0.90] HC_Cov=0.6361 HC_AccTrue=75.44% HC_AccNoisy=99.93% HC_LabelClean=0.7540 DisagreeCount=19 DisagreeCorrAcc=73.68% DisagreeNoisePrecision=0.7368 AgreeCount=25423 AgreeLabelPrecision=0.7544
+
+==================== Round  46 ====================
+Net3 TrainLoss: 0.2141 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.581 (11613/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  47 ====================
+Net3 TrainLoss: 0.1760 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.569 (11375/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  48 ====================
+Net3 TrainLoss: 0.1860 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.614 (12277/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  49 ====================
+Net3 TrainLoss: 0.1791 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.569 (11388/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  50 ====================
+Net3 TrainLoss: 0.1303 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.621 (12414/20000) | LocalTrain Acc(noisy): 97.13% | LocalTrain Acc(true): 61.12% | LocalTrain Loss(noisy): 0.1458 | Holdout Acc: 61.98%
+  [conf>=0.80] HC_Cov=0.825 | HC_AccTrue=67.28% | DisagreeCount=72 | DisagreeCorrAcc=70.83% | DisagreeNoisePrecision=0.861 | AgreeCount=32929 | AgreeLabelPrecision=0.673
+  [conf>=0.60] HC_Cov=0.9353 HC_AccTrue=63.17% HC_AccNoisy=99.00% HC_LabelClean=0.6286 DisagreeCount=373 DisagreeCorrAcc=54.42% DisagreeNoisePrecision=0.7694 AgreeCount=37040 AgreeLabelPrecision=0.6326
+  [conf>=0.70] HC_Cov=0.8921 HC_AccTrue=64.75% HC_AccNoisy=99.48% HC_LabelClean=0.6455 DisagreeCount=184 DisagreeCorrAcc=60.33% DisagreeNoisePrecision=0.7935 AgreeCount=35501 AgreeLabelPrecision=0.6478
+  [conf>=0.80] HC_Cov=0.8250 HC_AccTrue=67.28% HC_AccNoisy=99.78% HC_LabelClean=0.6715 DisagreeCount=72 DisagreeCorrAcc=70.83% DisagreeNoisePrecision=0.8611 AgreeCount=32929 AgreeLabelPrecision=0.6727
+  [conf>=0.90] HC_Cov=0.6997 HC_AccTrue=72.20% HC_AccNoisy=99.92% HC_LabelClean=0.7216 DisagreeCount=22 DisagreeCorrAcc=68.18% DisagreeNoisePrecision=0.8636 AgreeCount=27967 AgreeLabelPrecision=0.7220
+
+==================== Round  51 ====================
+Net3 TrainLoss: 0.1466 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.614 (12287/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  52 ====================
+Net3 TrainLoss: 0.1593 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.577 (11534/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  53 ====================
+Net3 TrainLoss: 0.1465 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.599 (11982/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  54 ====================
+Net3 TrainLoss: 0.1279 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.621 (12417/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  55 ====================
+Net3 TrainLoss: 0.1260 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.612 (12232/20000) | LocalTrain Acc(noisy): 97.96% | LocalTrain Acc(true): 60.92% | LocalTrain Loss(noisy): 0.1167 | Holdout Acc: 62.73%
+  [conf>=0.80] HC_Cov=0.863 | HC_AccTrue=65.69% | DisagreeCount=67 | DisagreeCorrAcc=55.22% | DisagreeNoisePrecision=0.687 | AgreeCount=34452 | AgreeLabelPrecision=0.657
+  [conf>=0.60] HC_Cov=0.9522 HC_AccTrue=62.50% HC_AccNoisy=99.21% HC_LabelClean=0.6227 DisagreeCount=299 DisagreeCorrAcc=53.85% DisagreeNoisePrecision=0.7492 AgreeCount=37789 AgreeLabelPrecision=0.6257
+  [conf>=0.70] HC_Cov=0.9184 HC_AccTrue=63.72% HC_AccNoisy=99.56% HC_LabelClean=0.6357 DisagreeCount=160 DisagreeCorrAcc=58.12% DisagreeNoisePrecision=0.7812 AgreeCount=36578 AgreeLabelPrecision=0.6375
+  [conf>=0.80] HC_Cov=0.8630 HC_AccTrue=65.69% HC_AccNoisy=99.81% HC_LabelClean=0.6565 DisagreeCount=67 DisagreeCorrAcc=55.22% DisagreeNoisePrecision=0.6866 AgreeCount=34452 AgreeLabelPrecision=0.6571
+  [conf>=0.90] HC_Cov=0.7530 HC_AccTrue=70.09% HC_AccNoisy=99.94% HC_LabelClean=0.7008 DisagreeCount=18 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.7222 AgreeCount=30100 AgreeLabelPrecision=0.7011
+
+==================== Round  56 ====================
+Net3 TrainLoss: 0.1289 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.556 (11121/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  57 ====================
+Net3 TrainLoss: 0.1138 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.591 (11818/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  58 ====================
+Net3 TrainLoss: 0.1043 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.607 (12147/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  59 ====================
+Net3 TrainLoss: 0.1065 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.603 (12061/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  60 ====================
+Net3 TrainLoss: 0.0966 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.586 (11714/20000) | LocalTrain Acc(noisy): 98.77% | LocalTrain Acc(true): 60.69% | LocalTrain Loss(noisy): 0.0853 | Holdout Acc: 62.50%
+  [conf>=0.80] HC_Cov=0.905 | HC_AccTrue=64.02% | DisagreeCount=44 | DisagreeCorrAcc=50.00% | DisagreeNoisePrecision=0.705 | AgreeCount=36144 | AgreeLabelPrecision=0.640
+  [conf>=0.60] HC_Cov=0.9701 HC_AccTrue=61.70% HC_AccNoisy=99.56% HC_LabelClean=0.6159 DisagreeCount=172 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.7384 AgreeCount=38633 AgreeLabelPrecision=0.6175
+  [conf>=0.70] HC_Cov=0.9459 HC_AccTrue=62.48% HC_AccNoisy=99.76% HC_LabelClean=0.6243 DisagreeCount=91 DisagreeCorrAcc=48.35% DisagreeNoisePrecision=0.7143 AgreeCount=37745 AgreeLabelPrecision=0.6251
+  [conf>=0.80] HC_Cov=0.9047 HC_AccTrue=64.02% HC_AccNoisy=99.88% HC_LabelClean=0.6399 DisagreeCount=44 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.7045 AgreeCount=36144 AgreeLabelPrecision=0.6403
+  [conf>=0.90] HC_Cov=0.8107 HC_AccTrue=67.59% HC_AccNoisy=99.96% HC_LabelClean=0.6758 DisagreeCount=14 DisagreeCorrAcc=42.86% DisagreeNoisePrecision=0.7143 AgreeCount=32416 AgreeLabelPrecision=0.6760
+
+==================== Round  61 ====================
+Net3 TrainLoss: 0.0849 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.639 (12771/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  62 ====================
+Net3 TrainLoss: 0.0783 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.612 (12244/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  63 ====================
+Net3 TrainLoss: 0.0846 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.623 (12453/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  64 ====================
+Net3 TrainLoss: 0.0816 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.629 (12580/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  65 ====================
+Net3 TrainLoss: 0.0776 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.594 (11876/20000) | LocalTrain Acc(noisy): 98.97% | LocalTrain Acc(true): 60.66% | LocalTrain Loss(noisy): 0.0711 | Holdout Acc: 62.46%
+  [conf>=0.80] HC_Cov=0.924 | HC_AccTrue=63.15% | DisagreeCount=32 | DisagreeCorrAcc=62.50% | DisagreeNoisePrecision=0.781 | AgreeCount=36916 | AgreeLabelPrecision=0.632
+  [conf>=0.60] HC_Cov=0.9765 HC_AccTrue=61.37% HC_AccNoisy=99.62% HC_LabelClean=0.6126 DisagreeCount=149 DisagreeCorrAcc=53.02% DisagreeNoisePrecision=0.7718 AgreeCount=38910 AgreeLabelPrecision=0.6140
+  [conf>=0.70] HC_Cov=0.9587 HC_AccTrue=61.96% HC_AccNoisy=99.77% HC_LabelClean=0.6188 DisagreeCount=87 DisagreeCorrAcc=59.77% DisagreeNoisePrecision=0.7816 AgreeCount=38260 AgreeLabelPrecision=0.6197
+  [conf>=0.80] HC_Cov=0.9237 HC_AccTrue=63.15% HC_AccNoisy=99.91% HC_LabelClean=0.6312 DisagreeCount=32 DisagreeCorrAcc=62.50% DisagreeNoisePrecision=0.7812 AgreeCount=36916 AgreeLabelPrecision=0.6315
+  [conf>=0.90] HC_Cov=0.8418 HC_AccTrue=66.33% HC_AccNoisy=99.97% HC_LabelClean=0.6633 DisagreeCount=10 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.6000 AgreeCount=33662 AgreeLabelPrecision=0.6633
+
+==================== Round  66 ====================
+Net3 TrainLoss: 0.0772 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.587 (11748/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  67 ====================
+Net3 TrainLoss: 0.0717 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.580 (11604/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  68 ====================
+Net3 TrainLoss: 0.0600 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.614 (12273/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  69 ====================
+Net3 TrainLoss: 0.0686 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.562 (11243/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  70 ====================
+Net3 TrainLoss: 0.0651 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.583 (11664/20000) | LocalTrain Acc(noisy): 99.27% | LocalTrain Acc(true): 60.62% | LocalTrain Loss(noisy): 0.0571 | Holdout Acc: 62.46%
+  [conf>=0.80] HC_Cov=0.943 | HC_AccTrue=62.44% | DisagreeCount=32 | DisagreeCorrAcc=62.50% | DisagreeNoisePrecision=0.719 | AgreeCount=37686 | AgreeLabelPrecision=0.624
+  [conf>=0.60] HC_Cov=0.9838 HC_AccTrue=61.11% HC_AccNoisy=99.67% HC_LabelClean=0.6105 DisagreeCount=129 DisagreeCorrAcc=49.61% DisagreeNoisePrecision=0.6822 AgreeCount=39224 AgreeLabelPrecision=0.6114
+  [conf>=0.70] HC_Cov=0.9698 HC_AccTrue=61.53% HC_AccNoisy=99.82% HC_LabelClean=0.6148 DisagreeCount=69 DisagreeCorrAcc=53.62% DisagreeNoisePrecision=0.7246 AgreeCount=38723 AgreeLabelPrecision=0.6154
+  [conf>=0.80] HC_Cov=0.9429 HC_AccTrue=62.44% HC_AccNoisy=99.92% HC_LabelClean=0.6242 DisagreeCount=32 DisagreeCorrAcc=62.50% DisagreeNoisePrecision=0.7188 AgreeCount=37686 AgreeLabelPrecision=0.6244
+  [conf>=0.90] HC_Cov=0.8737 HC_AccTrue=64.95% HC_AccNoisy=99.97% HC_LabelClean=0.6494 DisagreeCount=9 DisagreeCorrAcc=55.56% DisagreeNoisePrecision=0.6667 AgreeCount=34938 AgreeLabelPrecision=0.6495
+
+==================== Round  71 ====================
+Net3 TrainLoss: 0.0642 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.593 (11857/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  72 ====================
+Net3 TrainLoss: 0.0506 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.619 (12378/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  73 ====================
+Net3 TrainLoss: 0.0504 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.646 (12925/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  74 ====================
+Net3 TrainLoss: 0.0576 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.601 (12028/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  75 ====================
+Net3 TrainLoss: 0.0502 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.625 (12494/20000) | LocalTrain Acc(noisy): 99.42% | LocalTrain Acc(true): 60.59% | LocalTrain Loss(noisy): 0.0482 | Holdout Acc: 62.64%
+  [conf>=0.80] HC_Cov=0.954 | HC_AccTrue=62.09% | DisagreeCount=27 | DisagreeCorrAcc=44.44% | DisagreeNoisePrecision=0.741 | AgreeCount=38130 | AgreeLabelPrecision=0.621
+  [conf>=0.60] HC_Cov=0.9880 HC_AccTrue=60.94% HC_AccNoisy=99.74% HC_LabelClean=0.6092 DisagreeCount=103 DisagreeCorrAcc=44.66% DisagreeNoisePrecision=0.6602 AgreeCount=39418 AgreeLabelPrecision=0.6099
+  [conf>=0.70] HC_Cov=0.9761 HC_AccTrue=61.33% HC_AccNoisy=99.86% HC_LabelClean=0.6131 DisagreeCount=53 DisagreeCorrAcc=45.28% DisagreeNoisePrecision=0.6981 AgreeCount=38990 AgreeLabelPrecision=0.6135
+  [conf>=0.80] HC_Cov=0.9539 HC_AccTrue=62.09% HC_AccNoisy=99.93% HC_LabelClean=0.6208 DisagreeCount=27 DisagreeCorrAcc=44.44% DisagreeNoisePrecision=0.7407 AgreeCount=38130 AgreeLabelPrecision=0.6211
+  [conf>=0.90] HC_Cov=0.8946 HC_AccTrue=64.24% HC_AccNoisy=99.97% HC_LabelClean=0.6424 DisagreeCount=9 DisagreeCorrAcc=44.44% DisagreeNoisePrecision=0.5556 AgreeCount=35777 AgreeLabelPrecision=0.6424
+
+==================== Round  76 ====================
+Net3 TrainLoss: 0.0502 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.592 (11837/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  77 ====================
+Net3 TrainLoss: 0.0430 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.638 (12761/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  78 ====================
+Net3 TrainLoss: 0.0437 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12074/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  79 ====================
+Net3 TrainLoss: 0.0449 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.627 (12534/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  80 ====================
+Net3 TrainLoss: 0.0404 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.583 (11668/20000) | LocalTrain Acc(noisy): 99.62% | LocalTrain Acc(true): 60.55% | LocalTrain Loss(noisy): 0.0390 | Holdout Acc: 62.43%
+  [conf>=0.80] HC_Cov=0.966 | HC_AccTrue=61.59% | DisagreeCount=21 | DisagreeCorrAcc=66.67% | DisagreeNoisePrecision=0.762 | AgreeCount=38605 | AgreeLabelPrecision=0.616
+  [conf>=0.60] HC_Cov=0.9918 HC_AccTrue=60.78% HC_AccNoisy=99.82% HC_LabelClean=0.6075 DisagreeCount=71 DisagreeCorrAcc=49.30% DisagreeNoisePrecision=0.6761 AgreeCount=39600 AgreeLabelPrecision=0.6080
+  [conf>=0.70] HC_Cov=0.9829 HC_AccTrue=61.02% HC_AccNoisy=99.90% HC_LabelClean=0.6100 DisagreeCount=39 DisagreeCorrAcc=58.97% DisagreeNoisePrecision=0.6923 AgreeCount=39278 AgreeLabelPrecision=0.6103
+  [conf>=0.80] HC_Cov=0.9657 HC_AccTrue=61.59% HC_AccNoisy=99.95% HC_LabelClean=0.6157 DisagreeCount=21 DisagreeCorrAcc=66.67% DisagreeNoisePrecision=0.7619 AgreeCount=38605 AgreeLabelPrecision=0.6159
+  [conf>=0.90] HC_Cov=0.9157 HC_AccTrue=63.40% HC_AccNoisy=99.98% HC_LabelClean=0.6338 DisagreeCount=8 DisagreeCorrAcc=100.00% DisagreeNoisePrecision=1.0000 AgreeCount=36619 AgreeLabelPrecision=0.6339
+
+==================== Round  81 ====================
+Net3 TrainLoss: 0.0409 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.616 (12318/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  82 ====================
+Net3 TrainLoss: 0.0376 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.610 (12198/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  83 ====================
+Net3 TrainLoss: 0.0377 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.583 (11668/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  84 ====================
+Net3 TrainLoss: 0.0344 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.588 (11755/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  85 ====================
+Net3 TrainLoss: 0.0347 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.612 (12244/20000) | LocalTrain Acc(noisy): 99.68% | LocalTrain Acc(true): 60.52% | LocalTrain Loss(noisy): 0.0335 | Holdout Acc: 62.63%
+  [conf>=0.80] HC_Cov=0.972 | HC_AccTrue=61.40% | DisagreeCount=16 | DisagreeCorrAcc=43.75% | DisagreeNoisePrecision=0.625 | AgreeCount=38867 | AgreeLabelPrecision=0.614
+  [conf>=0.60] HC_Cov=0.9937 HC_AccTrue=60.70% HC_AccNoisy=99.84% HC_LabelClean=0.6071 DisagreeCount=62 DisagreeCorrAcc=30.65% DisagreeNoisePrecision=0.6129 AgreeCount=39687 AgreeLabelPrecision=0.6075
+  [conf>=0.70] HC_Cov=0.9867 HC_AccTrue=60.94% HC_AccNoisy=99.93% HC_LabelClean=0.6095 DisagreeCount=28 DisagreeCorrAcc=32.14% DisagreeNoisePrecision=0.5357 AgreeCount=39438 AgreeLabelPrecision=0.6096
+  [conf>=0.80] HC_Cov=0.9721 HC_AccTrue=61.40% HC_AccNoisy=99.96% HC_LabelClean=0.6140 DisagreeCount=16 DisagreeCorrAcc=43.75% DisagreeNoisePrecision=0.6250 AgreeCount=38867 AgreeLabelPrecision=0.6141
+  [conf>=0.90] HC_Cov=0.9303 HC_AccTrue=62.92% HC_AccNoisy=99.98% HC_LabelClean=0.6293 DisagreeCount=8 DisagreeCorrAcc=37.50% DisagreeNoisePrecision=0.5000 AgreeCount=37205 AgreeLabelPrecision=0.6293
+
+==================== Round  86 ====================
+Net3 TrainLoss: 0.0357 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.582 (11649/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  87 ====================
+Net3 TrainLoss: 0.0339 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.637 (12747/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  88 ====================
+Net3 TrainLoss: 0.0339 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.588 (11766/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  89 ====================
+Net3 TrainLoss: 0.0323 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.609 (12172/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  90 ====================
+Net3 TrainLoss: 0.0288 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.628 (12552/20000) | LocalTrain Acc(noisy): 99.74% | LocalTrain Acc(true): 60.47% | LocalTrain Loss(noisy): 0.0284 | Holdout Acc: 62.39%
+  [conf>=0.80] HC_Cov=0.978 | HC_AccTrue=61.22% | DisagreeCount=12 | DisagreeCorrAcc=33.33% | DisagreeNoisePrecision=0.417 | AgreeCount=39092 | AgreeLabelPrecision=0.612
+  [conf>=0.60] HC_Cov=0.9943 HC_AccTrue=60.67% HC_AccNoisy=99.88% HC_LabelClean=0.6067 DisagreeCount=47 DisagreeCorrAcc=31.91% DisagreeNoisePrecision=0.6170 AgreeCount=39727 AgreeLabelPrecision=0.6070
+  [conf>=0.70] HC_Cov=0.9888 HC_AccTrue=60.83% HC_AccNoisy=99.94% HC_LabelClean=0.6083 DisagreeCount=25 DisagreeCorrAcc=40.00% DisagreeNoisePrecision=0.6000 AgreeCount=39528 AgreeLabelPrecision=0.6085
+  [conf>=0.80] HC_Cov=0.9776 HC_AccTrue=61.22% HC_AccNoisy=99.97% HC_LabelClean=0.6123 DisagreeCount=12 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.4167 AgreeCount=39092 AgreeLabelPrecision=0.6123
+  [conf>=0.90] HC_Cov=0.9433 HC_AccTrue=62.42% HC_AccNoisy=99.99% HC_LabelClean=0.6242 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=37730 AgreeLabelPrecision=0.6242
+
+==================== Round  91 ====================
+Net3 TrainLoss: 0.0301 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.607 (12134/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  92 ====================
+Net3 TrainLoss: 0.0318 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.561 (11214/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  93 ====================
+Net3 TrainLoss: 0.0265 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.638 (12751/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  94 ====================
+Net3 TrainLoss: 0.0293 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.565 (11308/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  95 ====================
+Net3 TrainLoss: 0.0241 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.650 (13000/20000) | LocalTrain Acc(noisy): 99.83% | LocalTrain Acc(true): 60.49% | LocalTrain Loss(noisy): 0.0237 | Holdout Acc: 62.27%
+  [conf>=0.80] HC_Cov=0.983 | HC_AccTrue=61.00% | DisagreeCount=9 | DisagreeCorrAcc=44.44% | DisagreeNoisePrecision=0.667 | AgreeCount=39312 | AgreeLabelPrecision=0.610
+  [conf>=0.60] HC_Cov=0.9962 HC_AccTrue=60.61% HC_AccNoisy=99.91% HC_LabelClean=0.6062 DisagreeCount=35 DisagreeCorrAcc=31.43% DisagreeNoisePrecision=0.6000 AgreeCount=39814 AgreeLabelPrecision=0.6064
+  [conf>=0.70] HC_Cov=0.9916 HC_AccTrue=60.72% HC_AccNoisy=99.96% HC_LabelClean=0.6073 DisagreeCount=17 DisagreeCorrAcc=23.53% DisagreeNoisePrecision=0.5294 AgreeCount=39646 AgreeLabelPrecision=0.6074
+  [conf>=0.80] HC_Cov=0.9830 HC_AccTrue=61.00% HC_AccNoisy=99.98% HC_LabelClean=0.6100 DisagreeCount=9 DisagreeCorrAcc=44.44% DisagreeNoisePrecision=0.6667 AgreeCount=39312 AgreeLabelPrecision=0.6100
+  [conf>=0.90] HC_Cov=0.9539 HC_AccTrue=61.94% HC_AccNoisy=100.00% HC_LabelClean=0.6194 DisagreeCount=0 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=38158 AgreeLabelPrecision=0.6194
+
+==================== Round  96 ====================
+Net3 TrainLoss: 0.0255 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.582 (11635/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  97 ====================
+Net3 TrainLoss: 0.0264 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.559 (11180/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  98 ====================
+Net3 TrainLoss: 0.0232 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.612 (12235/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round  99 ====================
+Net3 TrainLoss: 0.0221 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.594 (11874/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 100 ====================
+Net3 TrainLoss: 0.0214 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.622 (12432/20000) | LocalTrain Acc(noisy): 99.86% | LocalTrain Acc(true): 60.49% | LocalTrain Loss(noisy): 0.0201 | Holdout Acc: 62.74%
+  [conf>=0.80] HC_Cov=0.987 | HC_AccTrue=60.89% | DisagreeCount=8 | DisagreeCorrAcc=25.00% | DisagreeNoisePrecision=0.375 | AgreeCount=39466 | AgreeLabelPrecision=0.609
+  [conf>=0.60] HC_Cov=0.9973 HC_AccTrue=60.55% HC_AccNoisy=99.93% HC_LabelClean=0.6056 DisagreeCount=28 DisagreeCorrAcc=28.57% DisagreeNoisePrecision=0.6786 AgreeCount=39863 AgreeLabelPrecision=0.6057
+  [conf>=0.70] HC_Cov=0.9941 HC_AccTrue=60.66% HC_AccNoisy=99.97% HC_LabelClean=0.6067 DisagreeCount=11 DisagreeCorrAcc=27.27% DisagreeNoisePrecision=0.4545 AgreeCount=39754 AgreeLabelPrecision=0.6067
+  [conf>=0.80] HC_Cov=0.9869 HC_AccTrue=60.89% HC_AccNoisy=99.98% HC_LabelClean=0.6090 DisagreeCount=8 DisagreeCorrAcc=25.00% DisagreeNoisePrecision=0.3750 AgreeCount=39466 AgreeLabelPrecision=0.6090
+  [conf>=0.90] HC_Cov=0.9630 HC_AccTrue=61.70% HC_AccNoisy=99.99% HC_LabelClean=0.6170 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=38516 AgreeLabelPrecision=0.6170
+
+==================== Round 101 ====================
+Net3 TrainLoss: 0.0213 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.619 (12381/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 102 ====================
+Net3 TrainLoss: 0.0214 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.606 (12110/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 103 ====================
+Net3 TrainLoss: 0.0212 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.602 (12036/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 104 ====================
+Net3 TrainLoss: 0.0199 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.587 (11734/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 105 ====================
+Net3 TrainLoss: 0.0196 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.624 (12476/20000) | LocalTrain Acc(noisy): 99.87% | LocalTrain Acc(true): 60.49% | LocalTrain Loss(noisy): 0.0182 | Holdout Acc: 62.73%
+  [conf>=0.80] HC_Cov=0.989 | HC_AccTrue=60.82% | DisagreeCount=7 | DisagreeCorrAcc=28.57% | DisagreeNoisePrecision=0.571 | AgreeCount=39552 | AgreeLabelPrecision=0.608
+  [conf>=0.60] HC_Cov=0.9971 HC_AccTrue=60.57% HC_AccNoisy=99.95% HC_LabelClean=0.6057 DisagreeCount=21 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.6667 AgreeCount=39863 AgreeLabelPrecision=0.6059
+  [conf>=0.70] HC_Cov=0.9947 HC_AccTrue=60.65% HC_AccNoisy=99.97% HC_LabelClean=0.6065 DisagreeCount=12 DisagreeCorrAcc=41.67% DisagreeNoisePrecision=0.6667 AgreeCount=39774 AgreeLabelPrecision=0.6066
+  [conf>=0.80] HC_Cov=0.9890 HC_AccTrue=60.82% HC_AccNoisy=99.98% HC_LabelClean=0.6083 DisagreeCount=7 DisagreeCorrAcc=28.57% DisagreeNoisePrecision=0.5714 AgreeCount=39552 AgreeLabelPrecision=0.6083
+  [conf>=0.90] HC_Cov=0.9692 HC_AccTrue=61.49% HC_AccNoisy=99.99% HC_LabelClean=0.6149 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=38767 AgreeLabelPrecision=0.6149
+
+==================== Round 106 ====================
+Net3 TrainLoss: 0.0179 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.621 (12420/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 107 ====================
+Net3 TrainLoss: 0.0222 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.585 (11704/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 108 ====================
+Net3 TrainLoss: 0.0178 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.599 (11982/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 109 ====================
+Net3 TrainLoss: 0.0191 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12082/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 110 ====================
+Net3 TrainLoss: 0.0184 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.589 (11783/20000) | LocalTrain Acc(noisy): 99.90% | LocalTrain Acc(true): 60.48% | LocalTrain Loss(noisy): 0.0163 | Holdout Acc: 63.26%
+  [conf>=0.80] HC_Cov=0.990 | HC_AccTrue=60.75% | DisagreeCount=3 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.333 | AgreeCount=39600 | AgreeLabelPrecision=0.608
+  [conf>=0.60] HC_Cov=0.9982 HC_AccTrue=60.51% HC_AccNoisy=99.95% HC_LabelClean=0.6053 DisagreeCount=20 DisagreeCorrAcc=15.00% DisagreeNoisePrecision=0.4500 AgreeCount=39908 AgreeLabelPrecision=0.6053
+  [conf>=0.70] HC_Cov=0.9958 HC_AccTrue=60.58% HC_AccNoisy=99.97% HC_LabelClean=0.6059 DisagreeCount=13 DisagreeCorrAcc=23.08% DisagreeNoisePrecision=0.4615 AgreeCount=39820 AgreeLabelPrecision=0.6059
+  [conf>=0.80] HC_Cov=0.9901 HC_AccTrue=60.75% HC_AccNoisy=99.99% HC_LabelClean=0.6076 DisagreeCount=3 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.3333 AgreeCount=39600 AgreeLabelPrecision=0.6076
+  [conf>=0.90] HC_Cov=0.9718 HC_AccTrue=61.30% HC_AccNoisy=100.00% HC_LabelClean=0.6130 DisagreeCount=0 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=38874 AgreeLabelPrecision=0.6130
+
+==================== Round 111 ====================
+Net3 TrainLoss: 0.0164 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.581 (11628/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 112 ====================
+Net3 TrainLoss: 0.0158 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.615 (12308/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 113 ====================
+Net3 TrainLoss: 0.0183 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.557 (11143/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 114 ====================
+Net3 TrainLoss: 0.0179 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12085/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 115 ====================
+Net3 TrainLoss: 0.0162 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.623 (12465/20000) | LocalTrain Acc(noisy): 99.89% | LocalTrain Acc(true): 60.48% | LocalTrain Loss(noisy): 0.0161 | Holdout Acc: 63.29%
+  [conf>=0.80] HC_Cov=0.991 | HC_AccTrue=60.76% | DisagreeCount=12 | DisagreeCorrAcc=16.67% | DisagreeNoisePrecision=0.417 | AgreeCount=39623 | AgreeLabelPrecision=0.608
+  [conf>=0.60] HC_Cov=0.9983 HC_AccTrue=60.52% HC_AccNoisy=99.93% HC_LabelClean=0.6055 DisagreeCount=27 DisagreeCorrAcc=14.81% DisagreeNoisePrecision=0.4815 AgreeCount=39905 AgreeLabelPrecision=0.6055
+  [conf>=0.70] HC_Cov=0.9959 HC_AccTrue=60.60% HC_AccNoisy=99.96% HC_LabelClean=0.6062 DisagreeCount=15 DisagreeCorrAcc=20.00% DisagreeNoisePrecision=0.4667 AgreeCount=39820 AgreeLabelPrecision=0.6062
+  [conf>=0.80] HC_Cov=0.9909 HC_AccTrue=60.76% HC_AccNoisy=99.97% HC_LabelClean=0.6077 DisagreeCount=12 DisagreeCorrAcc=16.67% DisagreeNoisePrecision=0.4167 AgreeCount=39623 AgreeLabelPrecision=0.6077
+  [conf>=0.90] HC_Cov=0.9737 HC_AccTrue=61.31% HC_AccNoisy=99.98% HC_LabelClean=0.6132 DisagreeCount=8 DisagreeCorrAcc=12.50% DisagreeNoisePrecision=0.5000 AgreeCount=38941 AgreeLabelPrecision=0.6132
+
+==================== Round 116 ====================
+Net3 TrainLoss: 0.0184 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.548 (10960/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 117 ====================
+Net3 TrainLoss: 0.0156 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.602 (12045/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 118 ====================
+Net3 TrainLoss: 0.0159 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.581 (11624/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 119 ====================
+Net3 TrainLoss: 0.0135 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.620 (12390/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 120 ====================
+Net3 TrainLoss: 0.0134 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.585 (11706/20000) | LocalTrain Acc(noisy): 99.91% | LocalTrain Acc(true): 60.48% | LocalTrain Loss(noisy): 0.0145 | Holdout Acc: 62.92%
+  [conf>=0.80] HC_Cov=0.992 | HC_AccTrue=60.69% | DisagreeCount=7 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.571 | AgreeCount=39688 | AgreeLabelPrecision=0.607
+  [conf>=0.60] HC_Cov=0.9984 HC_AccTrue=60.52% HC_AccNoisy=99.96% HC_LabelClean=0.6053 DisagreeCount=17 DisagreeCorrAcc=17.65% DisagreeNoisePrecision=0.6471 AgreeCount=39920 AgreeLabelPrecision=0.6054
+  [conf>=0.70] HC_Cov=0.9965 HC_AccTrue=60.57% HC_AccNoisy=99.97% HC_LabelClean=0.6058 DisagreeCount=11 DisagreeCorrAcc=9.09% DisagreeNoisePrecision=0.5455 AgreeCount=39850 AgreeLabelPrecision=0.6058
+  [conf>=0.80] HC_Cov=0.9924 HC_AccTrue=60.69% HC_AccNoisy=99.98% HC_LabelClean=0.6070 DisagreeCount=7 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.5714 AgreeCount=39688 AgreeLabelPrecision=0.6070
+  [conf>=0.90] HC_Cov=0.9775 HC_AccTrue=61.14% HC_AccNoisy=99.99% HC_LabelClean=0.6114 DisagreeCount=5 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.6000 AgreeCount=39096 AgreeLabelPrecision=0.6115
+
+==================== Round 121 ====================
+Net3 TrainLoss: 0.0162 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.615 (12308/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 122 ====================
+Net3 TrainLoss: 0.0139 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.630 (12605/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 123 ====================
+Net3 TrainLoss: 0.0147 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.616 (12317/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 124 ====================
+Net3 TrainLoss: 0.0143 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.561 (11213/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 125 ====================
+Net3 TrainLoss: 0.0131 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.583 (11662/20000) | LocalTrain Acc(noisy): 99.95% | LocalTrain Acc(true): 60.51% | LocalTrain Loss(noisy): 0.0117 | Holdout Acc: 62.50%
+  [conf>=0.80] HC_Cov=0.994 | HC_AccTrue=60.67% | DisagreeCount=2 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.500 | AgreeCount=39775 | AgreeLabelPrecision=0.607
+  [conf>=0.60] HC_Cov=0.9991 HC_AccTrue=60.53% HC_AccNoisy=99.98% HC_LabelClean=0.6053 DisagreeCount=8 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.8750 AgreeCount=39956 AgreeLabelPrecision=0.6054
+  [conf>=0.70] HC_Cov=0.9977 HC_AccTrue=60.56% HC_AccNoisy=99.98% HC_LabelClean=0.6056 DisagreeCount=6 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.8333 AgreeCount=39902 AgreeLabelPrecision=0.6057
+  [conf>=0.80] HC_Cov=0.9944 HC_AccTrue=60.67% HC_AccNoisy=99.99% HC_LabelClean=0.6067 DisagreeCount=2 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.5000 AgreeCount=39775 AgreeLabelPrecision=0.6067
+  [conf>=0.90] HC_Cov=0.9822 HC_AccTrue=61.08% HC_AccNoisy=100.00% HC_LabelClean=0.6108 DisagreeCount=1 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39286 AgreeLabelPrecision=0.6108
+
+==================== Round 126 ====================
+Net3 TrainLoss: 0.0118 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.590 (11809/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 127 ====================
+Net3 TrainLoss: 0.0123 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.581 (11616/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 128 ====================
+Net3 TrainLoss: 0.0121 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.610 (12207/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 129 ====================
+Net3 TrainLoss: 0.0132 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.590 (11798/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 130 ====================
+Net3 TrainLoss: 0.0121 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.577 (11535/20000) | LocalTrain Acc(noisy): 99.94% | LocalTrain Acc(true): 60.49% | LocalTrain Loss(noisy): 0.0115 | Holdout Acc: 63.22%
+  [conf>=0.80] HC_Cov=0.995 | HC_AccTrue=60.61% | DisagreeCount=7 | DisagreeCorrAcc=42.86% | DisagreeNoisePrecision=0.429 | AgreeCount=39782 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9989 HC_AccTrue=60.52% HC_AccNoisy=99.97% HC_LabelClean=0.6052 DisagreeCount=11 DisagreeCorrAcc=36.36% DisagreeNoisePrecision=0.4545 AgreeCount=39943 AgreeLabelPrecision=0.6052
+  [conf>=0.70] HC_Cov=0.9976 HC_AccTrue=60.54% HC_AccNoisy=99.97% HC_LabelClean=0.6055 DisagreeCount=10 DisagreeCorrAcc=40.00% DisagreeNoisePrecision=0.4000 AgreeCount=39894 AgreeLabelPrecision=0.6055
+  [conf>=0.80] HC_Cov=0.9947 HC_AccTrue=60.61% HC_AccNoisy=99.98% HC_LabelClean=0.6061 DisagreeCount=7 DisagreeCorrAcc=42.86% DisagreeNoisePrecision=0.4286 AgreeCount=39782 AgreeLabelPrecision=0.6061
+  [conf>=0.90] HC_Cov=0.9839 HC_AccTrue=60.92% HC_AccNoisy=99.99% HC_LabelClean=0.6092 DisagreeCount=5 DisagreeCorrAcc=60.00% DisagreeNoisePrecision=0.6000 AgreeCount=39353 AgreeLabelPrecision=0.6092
+
+==================== Round 131 ====================
+Net3 TrainLoss: 0.0113 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.580 (11604/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 132 ====================
+Net3 TrainLoss: 0.0121 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.609 (12179/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 133 ====================
+Net3 TrainLoss: 0.0121 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.590 (11804/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 134 ====================
+Net3 TrainLoss: 0.0120 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.590 (11791/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 135 ====================
+Net3 TrainLoss: 0.0112 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.596 (11910/20000) | LocalTrain Acc(noisy): 99.90% | LocalTrain Acc(true): 60.45% | LocalTrain Loss(noisy): 0.0112 | Holdout Acc: 63.05%
+  [conf>=0.80] HC_Cov=0.995 | HC_AccTrue=60.57% | DisagreeCount=8 | DisagreeCorrAcc=12.50% | DisagreeNoisePrecision=0.250 | AgreeCount=39793 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9989 HC_AccTrue=60.46% HC_AccNoisy=99.92% HC_LabelClean=0.6050 DisagreeCount=30 DisagreeCorrAcc=16.67% DisagreeNoisePrecision=0.2667 AgreeCount=39926 AgreeLabelPrecision=0.6049
+  [conf>=0.70] HC_Cov=0.9975 HC_AccTrue=60.49% HC_AccNoisy=99.96% HC_LabelClean=0.6051 DisagreeCount=16 DisagreeCorrAcc=25.00% DisagreeNoisePrecision=0.3750 AgreeCount=39885 AgreeLabelPrecision=0.6051
+  [conf>=0.80] HC_Cov=0.9950 HC_AccTrue=60.57% HC_AccNoisy=99.98% HC_LabelClean=0.6059 DisagreeCount=8 DisagreeCorrAcc=12.50% DisagreeNoisePrecision=0.2500 AgreeCount=39793 AgreeLabelPrecision=0.6058
+  [conf>=0.90] HC_Cov=0.9857 HC_AccTrue=60.87% HC_AccNoisy=99.99% HC_LabelClean=0.6087 DisagreeCount=5 DisagreeCorrAcc=20.00% DisagreeNoisePrecision=0.2000 AgreeCount=39421 AgreeLabelPrecision=0.6087
+
+==================== Round 136 ====================
+Net3 TrainLoss: 0.0119 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.599 (11978/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 137 ====================
+Net3 TrainLoss: 0.0104 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.614 (12270/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 138 ====================
+Net3 TrainLoss: 0.0105 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.594 (11879/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 139 ====================
+Net3 TrainLoss: 0.0101 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.599 (11985/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 140 ====================
+Net3 TrainLoss: 0.0091 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.596 (11920/20000) | LocalTrain Acc(noisy): 99.94% | LocalTrain Acc(true): 60.48% | LocalTrain Loss(noisy): 0.0099 | Holdout Acc: 62.33%
+  [conf>=0.80] HC_Cov=0.996 | HC_AccTrue=60.57% | DisagreeCount=7 | DisagreeCorrAcc=14.29% | DisagreeNoisePrecision=0.286 | AgreeCount=39832 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9992 HC_AccTrue=60.50% HC_AccNoisy=99.96% HC_LabelClean=0.6051 DisagreeCount=16 DisagreeCorrAcc=25.00% DisagreeNoisePrecision=0.3750 AgreeCount=39952 AgreeLabelPrecision=0.6051
+  [conf>=0.70] HC_Cov=0.9982 HC_AccTrue=60.52% HC_AccNoisy=99.97% HC_LabelClean=0.6053 DisagreeCount=10 DisagreeCorrAcc=20.00% DisagreeNoisePrecision=0.4000 AgreeCount=39917 AgreeLabelPrecision=0.6053
+  [conf>=0.80] HC_Cov=0.9960 HC_AccTrue=60.57% HC_AccNoisy=99.98% HC_LabelClean=0.6058 DisagreeCount=7 DisagreeCorrAcc=14.29% DisagreeNoisePrecision=0.2857 AgreeCount=39832 AgreeLabelPrecision=0.6058
+  [conf>=0.90] HC_Cov=0.9868 HC_AccTrue=60.89% HC_AccNoisy=99.99% HC_LabelClean=0.6090 DisagreeCount=3 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39469 AgreeLabelPrecision=0.6090
+
+==================== Round 141 ====================
+Net3 TrainLoss: 0.0091 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.617 (12335/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 142 ====================
+Net3 TrainLoss: 0.0094 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.566 (11322/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 143 ====================
+Net3 TrainLoss: 0.0103 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.584 (11684/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 144 ====================
+Net3 TrainLoss: 0.0098 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.618 (12362/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 145 ====================
+Net3 TrainLoss: 0.0092 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.619 (12389/20000) | LocalTrain Acc(noisy): 99.96% | LocalTrain Acc(true): 60.51% | LocalTrain Loss(noisy): 0.0088 | Holdout Acc: 62.96%
+  [conf>=0.80] HC_Cov=0.996 | HC_AccTrue=60.61% | DisagreeCount=3 | DisagreeCorrAcc=33.33% | DisagreeNoisePrecision=0.667 | AgreeCount=39852 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9993 HC_AccTrue=60.53% HC_AccNoisy=99.98% HC_LabelClean=0.6053 DisagreeCount=9 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.6667 AgreeCount=39964 AgreeLabelPrecision=0.6053
+  [conf>=0.70] HC_Cov=0.9982 HC_AccTrue=60.57% HC_AccNoisy=99.99% HC_LabelClean=0.6057 DisagreeCount=5 DisagreeCorrAcc=40.00% DisagreeNoisePrecision=0.8000 AgreeCount=39923 AgreeLabelPrecision=0.6057
+  [conf>=0.80] HC_Cov=0.9964 HC_AccTrue=60.61% HC_AccNoisy=99.99% HC_LabelClean=0.6061 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.6667 AgreeCount=39852 AgreeLabelPrecision=0.6062
+  [conf>=0.90] HC_Cov=0.9893 HC_AccTrue=60.84% HC_AccNoisy=99.99% HC_LabelClean=0.6084 DisagreeCount=2 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.5000 AgreeCount=39569 AgreeLabelPrecision=0.6084
+
+==================== Round 146 ====================
+Net3 TrainLoss: 0.0096 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.622 (12438/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 147 ====================
+Net3 TrainLoss: 0.0101 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.571 (11429/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 148 ====================
+Net3 TrainLoss: 0.0094 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.602 (12035/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 149 ====================
+Net3 TrainLoss: 0.0092 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.625 (12508/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 150 ====================
+Net3 TrainLoss: 0.0087 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.603 (12065/20000) | LocalTrain Acc(noisy): 99.94% | LocalTrain Acc(true): 60.51% | LocalTrain Loss(noisy): 0.0085 | Holdout Acc: 63.12%
+  [conf>=0.80] HC_Cov=0.997 | HC_AccTrue=60.61% | DisagreeCount=6 | DisagreeCorrAcc=50.00% | DisagreeNoisePrecision=0.833 | AgreeCount=39870 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9994 HC_AccTrue=60.53% HC_AccNoisy=99.96% HC_LabelClean=0.6052 DisagreeCount=14 DisagreeCorrAcc=42.86% DisagreeNoisePrecision=0.6429 AgreeCount=39962 AgreeLabelPrecision=0.6053
+  [conf>=0.70] HC_Cov=0.9986 HC_AccTrue=60.55% HC_AccNoisy=99.98% HC_LabelClean=0.6054 DisagreeCount=8 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.7500 AgreeCount=39936 AgreeLabelPrecision=0.6055
+  [conf>=0.80] HC_Cov=0.9969 HC_AccTrue=60.61% HC_AccNoisy=99.98% HC_LabelClean=0.6060 DisagreeCount=6 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.8333 AgreeCount=39870 AgreeLabelPrecision=0.6061
+  [conf>=0.90] HC_Cov=0.9897 HC_AccTrue=60.85% HC_AccNoisy=100.00% HC_LabelClean=0.6086 DisagreeCount=1 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39585 AgreeLabelPrecision=0.6086
+
+==================== Round 151 ====================
+Net3 TrainLoss: 0.0081 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.592 (11831/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 152 ====================
+Net3 TrainLoss: 0.0086 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.624 (12475/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 153 ====================
+Net3 TrainLoss: 0.0079 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.637 (12746/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 154 ====================
+Net3 TrainLoss: 0.0089 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12080/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 155 ====================
+Net3 TrainLoss: 0.0106 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.638 (12769/20000) | LocalTrain Acc(noisy): 99.92% | LocalTrain Acc(true): 60.50% | LocalTrain Loss(noisy): 0.0091 | Holdout Acc: 63.00%
+  [conf>=0.80] HC_Cov=0.997 | HC_AccTrue=60.60% | DisagreeCount=12 | DisagreeCorrAcc=33.33% | DisagreeNoisePrecision=0.750 | AgreeCount=39856 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9992 HC_AccTrue=60.53% HC_AccNoisy=99.94% HC_LabelClean=0.6053 DisagreeCount=23 DisagreeCorrAcc=39.13% DisagreeNoisePrecision=0.7391 AgreeCount=39946 AgreeLabelPrecision=0.6055
+  [conf>=0.70] HC_Cov=0.9983 HC_AccTrue=60.56% HC_AccNoisy=99.96% HC_LabelClean=0.6055 DisagreeCount=16 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.8125 AgreeCount=39916 AgreeLabelPrecision=0.6056
+  [conf>=0.80] HC_Cov=0.9967 HC_AccTrue=60.60% HC_AccNoisy=99.97% HC_LabelClean=0.6060 DisagreeCount=12 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.7500 AgreeCount=39856 AgreeLabelPrecision=0.6061
+  [conf>=0.90] HC_Cov=0.9890 HC_AccTrue=60.84% HC_AccNoisy=99.99% HC_LabelClean=0.6084 DisagreeCount=5 DisagreeCorrAcc=20.00% DisagreeNoisePrecision=0.6000 AgreeCount=39555 AgreeLabelPrecision=0.6084
+
+==================== Round 156 ====================
+Net3 TrainLoss: 0.0086 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.559 (11180/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 157 ====================
+Net3 TrainLoss: 0.0083 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.609 (12174/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 158 ====================
+Net3 TrainLoss: 0.0078 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.601 (12023/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 159 ====================
+Net3 TrainLoss: 0.0077 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.615 (12301/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 160 ====================
+Net3 TrainLoss: 0.0072 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.618 (12356/20000) | LocalTrain Acc(noisy): 99.98% | LocalTrain Acc(true): 60.49% | LocalTrain Loss(noisy): 0.0073 | Holdout Acc: 63.30%
+  [conf>=0.80] HC_Cov=0.997 | HC_AccTrue=60.55% | DisagreeCount=1 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.000 | AgreeCount=39886 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9994 HC_AccTrue=60.51% HC_AccNoisy=99.99% HC_LabelClean=0.6051 DisagreeCount=4 DisagreeCorrAcc=25.00% DisagreeNoisePrecision=0.2500 AgreeCount=39974 AgreeLabelPrecision=0.6051
+  [conf>=0.70] HC_Cov=0.9990 HC_AccTrue=60.51% HC_AccNoisy=99.99% HC_LabelClean=0.6052 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=39955 AgreeLabelPrecision=0.6052
+  [conf>=0.80] HC_Cov=0.9972 HC_AccTrue=60.55% HC_AccNoisy=100.00% HC_LabelClean=0.6055 DisagreeCount=1 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39886 AgreeLabelPrecision=0.6055
+  [conf>=0.90] HC_Cov=0.9915 HC_AccTrue=60.73% HC_AccNoisy=100.00% HC_LabelClean=0.6073 DisagreeCount=1 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39660 AgreeLabelPrecision=0.6073
+
+==================== Round 161 ====================
+Net3 TrainLoss: 0.0075 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.569 (11374/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 162 ====================
+Net3 TrainLoss: 0.0072 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.596 (11917/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 163 ====================
+Net3 TrainLoss: 0.0068 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.597 (11944/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 164 ====================
+Net3 TrainLoss: 0.0068 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.597 (11948/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 165 ====================
+Net3 TrainLoss: 0.0084 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.595 (11906/20000) | LocalTrain Acc(noisy): 99.97% | LocalTrain Acc(true): 60.51% | LocalTrain Loss(noisy): 0.0068 | Holdout Acc: 63.12%
+  [conf>=0.80] HC_Cov=0.998 | HC_AccTrue=60.55% | DisagreeCount=3 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.667 | AgreeCount=39916 | AgreeLabelPrecision=0.606
+  [conf>=0.60] HC_Cov=0.9998 HC_AccTrue=60.51% HC_AccNoisy=99.97% HC_LabelClean=0.6051 DisagreeCount=10 DisagreeCorrAcc=30.00% DisagreeNoisePrecision=0.8000 AgreeCount=39980 AgreeLabelPrecision=0.6052
+  [conf>=0.70] HC_Cov=0.9993 HC_AccTrue=60.51% HC_AccNoisy=99.98% HC_LabelClean=0.6051 DisagreeCount=6 DisagreeCorrAcc=16.67% DisagreeNoisePrecision=0.6667 AgreeCount=39966 AgreeLabelPrecision=0.6052
+  [conf>=0.80] HC_Cov=0.9980 HC_AccTrue=60.55% HC_AccNoisy=99.99% HC_LabelClean=0.6056 DisagreeCount=3 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.6667 AgreeCount=39916 AgreeLabelPrecision=0.6056
+  [conf>=0.90] HC_Cov=0.9929 HC_AccTrue=60.72% HC_AccNoisy=99.99% HC_LabelClean=0.6072 DisagreeCount=2 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.5000 AgreeCount=39712 AgreeLabelPrecision=0.6072
+
+==================== Round 166 ====================
+Net3 TrainLoss: 0.0073 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.571 (11410/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 167 ====================
+Net3 TrainLoss: 0.0069 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.598 (11950/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 168 ====================
+Net3 TrainLoss: 0.0061 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.637 (12738/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 169 ====================
+Net3 TrainLoss: 0.0064 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12082/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 170 ====================
+Net3 TrainLoss: 0.0063 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.633 (12658/20000) | LocalTrain Acc(noisy): 99.95% | LocalTrain Acc(true): 60.47% | LocalTrain Loss(noisy): 0.0070 | Holdout Acc: 62.99%
+  [conf>=0.80] HC_Cov=0.998 | HC_AccTrue=60.53% | DisagreeCount=4 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.000 | AgreeCount=39904 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9995 HC_AccTrue=60.48% HC_AccNoisy=99.96% HC_LabelClean=0.6050 DisagreeCount=16 DisagreeCorrAcc=18.75% DisagreeNoisePrecision=0.2500 AgreeCount=39963 AgreeLabelPrecision=0.6050
+  [conf>=0.70] HC_Cov=0.9989 HC_AccTrue=60.50% HC_AccNoisy=99.98% HC_LabelClean=0.6051 DisagreeCount=8 DisagreeCorrAcc=25.00% DisagreeNoisePrecision=0.2500 AgreeCount=39946 AgreeLabelPrecision=0.6051
+  [conf>=0.80] HC_Cov=0.9977 HC_AccTrue=60.53% HC_AccNoisy=99.99% HC_LabelClean=0.6054 DisagreeCount=4 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39904 AgreeLabelPrecision=0.6054
+  [conf>=0.90] HC_Cov=0.9928 HC_AccTrue=60.67% HC_AccNoisy=99.99% HC_LabelClean=0.6068 DisagreeCount=2 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39709 AgreeLabelPrecision=0.6068
+
+==================== Round 171 ====================
+Net3 TrainLoss: 0.0062 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.585 (11703/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 172 ====================
+Net3 TrainLoss: 0.0061 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.596 (11922/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 173 ====================
+Net3 TrainLoss: 0.0066 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.592 (11844/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 174 ====================
+Net3 TrainLoss: 0.0053 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.647 (12937/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 175 ====================
+Net3 TrainLoss: 0.0057 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.644 (12888/20000) | LocalTrain Acc(noisy): 99.98% | LocalTrain Acc(true): 60.50% | LocalTrain Loss(noisy): 0.0058 | Holdout Acc: 63.06%
+  [conf>=0.80] HC_Cov=0.998 | HC_AccTrue=60.54% | DisagreeCount=1 | DisagreeCorrAcc=100.00% | DisagreeNoisePrecision=1.000 | AgreeCount=39930 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9997 HC_AccTrue=60.51% HC_AccNoisy=99.99% HC_LabelClean=0.6051 DisagreeCount=5 DisagreeCorrAcc=40.00% DisagreeNoisePrecision=0.4000 AgreeCount=39981 AgreeLabelPrecision=0.6051
+  [conf>=0.70] HC_Cov=0.9992 HC_AccTrue=60.52% HC_AccNoisy=100.00% HC_LabelClean=0.6052 DisagreeCount=1 DisagreeCorrAcc=100.00% DisagreeNoisePrecision=1.0000 AgreeCount=39968 AgreeLabelPrecision=0.6052
+  [conf>=0.80] HC_Cov=0.9983 HC_AccTrue=60.54% HC_AccNoisy=100.00% HC_LabelClean=0.6053 DisagreeCount=1 DisagreeCorrAcc=100.00% DisagreeNoisePrecision=1.0000 AgreeCount=39930 AgreeLabelPrecision=0.6054
+  [conf>=0.90] HC_Cov=0.9940 HC_AccTrue=60.66% HC_AccNoisy=100.00% HC_LabelClean=0.6066 DisagreeCount=0 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39761 AgreeLabelPrecision=0.6066
+
+==================== Round 176 ====================
+Net3 TrainLoss: 0.0061 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.618 (12357/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 177 ====================
+Net3 TrainLoss: 0.0064 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.650 (13003/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 178 ====================
+Net3 TrainLoss: 0.0060 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.624 (12475/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 179 ====================
+Net3 TrainLoss: 0.0057 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.585 (11708/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 180 ====================
+Net3 TrainLoss: 0.0060 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.619 (12374/20000) | LocalTrain Acc(noisy): 99.94% | LocalTrain Acc(true): 60.48% | LocalTrain Loss(noisy): 0.0067 | Holdout Acc: 63.08%
+  [conf>=0.80] HC_Cov=0.998 | HC_AccTrue=60.55% | DisagreeCount=4 | DisagreeCorrAcc=50.00% | DisagreeNoisePrecision=0.750 | AgreeCount=39906 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9996 HC_AccTrue=60.49% HC_AccNoisy=99.96% HC_LabelClean=0.6051 DisagreeCount=17 DisagreeCorrAcc=29.41% DisagreeNoisePrecision=0.4118 AgreeCount=39965 AgreeLabelPrecision=0.6051
+  [conf>=0.70] HC_Cov=0.9990 HC_AccTrue=60.52% HC_AccNoisy=99.97% HC_LabelClean=0.6053 DisagreeCount=11 DisagreeCorrAcc=36.36% DisagreeNoisePrecision=0.4545 AgreeCount=39948 AgreeLabelPrecision=0.6053
+  [conf>=0.80] HC_Cov=0.9978 HC_AccTrue=60.55% HC_AccNoisy=99.99% HC_LabelClean=0.6055 DisagreeCount=4 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.7500 AgreeCount=39906 AgreeLabelPrecision=0.6055
+  [conf>=0.90] HC_Cov=0.9936 HC_AccTrue=60.69% HC_AccNoisy=99.99% HC_LabelClean=0.6069 DisagreeCount=2 DisagreeCorrAcc=100.00% DisagreeNoisePrecision=1.0000 AgreeCount=39743 AgreeLabelPrecision=0.6069
+
+==================== Round 181 ====================
+Net3 TrainLoss: 0.0080 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.602 (12036/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 182 ====================
+Net3 TrainLoss: 0.0075 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.608 (12168/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 183 ====================
+Net3 TrainLoss: 0.0063 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.608 (12160/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 184 ====================
+Net3 TrainLoss: 0.0064 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.601 (12016/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 185 ====================
+Net3 TrainLoss: 0.0059 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.600 (12008/20000) | LocalTrain Acc(noisy): 99.99% | LocalTrain Acc(true): 60.50% | LocalTrain Loss(noisy): 0.0054 | Holdout Acc: 62.77%
+  [conf>=0.80] HC_Cov=0.998 | HC_AccTrue=60.55% | DisagreeCount=1 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.000 | AgreeCount=39931 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9997 HC_AccTrue=60.51% HC_AccNoisy=99.99% HC_LabelClean=0.6051 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.6667 AgreeCount=39984 AgreeLabelPrecision=0.6051
+  [conf>=0.70] HC_Cov=0.9994 HC_AccTrue=60.52% HC_AccNoisy=99.99% HC_LabelClean=0.6053 DisagreeCount=2 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.5000 AgreeCount=39974 AgreeLabelPrecision=0.6053
+  [conf>=0.80] HC_Cov=0.9983 HC_AccTrue=60.55% HC_AccNoisy=100.00% HC_LabelClean=0.6055 DisagreeCount=1 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39931 AgreeLabelPrecision=0.6055
+  [conf>=0.90] HC_Cov=0.9947 HC_AccTrue=60.66% HC_AccNoisy=100.00% HC_LabelClean=0.6066 DisagreeCount=0 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39789 AgreeLabelPrecision=0.6066
+
+==================== Round 186 ====================
+Net3 TrainLoss: 0.0060 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.622 (12444/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 187 ====================
+Net3 TrainLoss: 0.0053 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.603 (12060/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 188 ====================
+Net3 TrainLoss: 0.0052 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.586 (11723/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 189 ====================
+Net3 TrainLoss: 0.0051 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.645 (12904/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 190 ====================
+Net3 TrainLoss: 0.0050 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.621 (12419/20000) | LocalTrain Acc(noisy): 99.99% | LocalTrain Acc(true): 60.50% | LocalTrain Loss(noisy): 0.0049 | Holdout Acc: 63.53%
+  [conf>=0.80] HC_Cov=0.999 | HC_AccTrue=60.53% | DisagreeCount=1 | DisagreeCorrAcc=0.00% | DisagreeNoisePrecision=0.000 | AgreeCount=39956 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9999 HC_AccTrue=60.50% HC_AccNoisy=99.99% HC_LabelClean=0.6050 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=39991 AgreeLabelPrecision=0.6050
+  [conf>=0.70] HC_Cov=0.9996 HC_AccTrue=60.51% HC_AccNoisy=99.99% HC_LabelClean=0.6051 DisagreeCount=2 DisagreeCorrAcc=50.00% DisagreeNoisePrecision=0.5000 AgreeCount=39983 AgreeLabelPrecision=0.6051
+  [conf>=0.80] HC_Cov=0.9989 HC_AccTrue=60.53% HC_AccNoisy=100.00% HC_LabelClean=0.6053 DisagreeCount=1 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39956 AgreeLabelPrecision=0.6053
+  [conf>=0.90] HC_Cov=0.9957 HC_AccTrue=60.61% HC_AccNoisy=100.00% HC_LabelClean=0.6061 DisagreeCount=0 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39827 AgreeLabelPrecision=0.6061
+
+==================== Round 191 ====================
+Net3 TrainLoss: 0.0053 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.588 (11758/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 192 ====================
+Net3 TrainLoss: 0.0048 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.629 (12584/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 193 ====================
+Net3 TrainLoss: 0.0055 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.595 (11906/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 194 ====================
+Net3 TrainLoss: 0.0058 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.573 (11450/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 195 ====================
+Net3 TrainLoss: 0.0049 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.619 (12376/20000) | LocalTrain Acc(noisy): 99.97% | LocalTrain Acc(true): 60.50% | LocalTrain Loss(noisy): 0.0050 | Holdout Acc: 62.61%
+  [conf>=0.80] HC_Cov=0.999 | HC_AccTrue=60.51% | DisagreeCount=3 | DisagreeCorrAcc=33.33% | DisagreeNoisePrecision=0.333 | AgreeCount=39952 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9998 HC_AccTrue=60.50% HC_AccNoisy=99.98% HC_LabelClean=0.6050 DisagreeCount=8 DisagreeCorrAcc=37.50% DisagreeNoisePrecision=0.5000 AgreeCount=39985 AgreeLabelPrecision=0.6051
+  [conf>=0.70] HC_Cov=0.9996 HC_AccTrue=60.50% HC_AccNoisy=99.98% HC_LabelClean=0.6051 DisagreeCount=6 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=39976 AgreeLabelPrecision=0.6051
+  [conf>=0.80] HC_Cov=0.9989 HC_AccTrue=60.51% HC_AccNoisy=99.99% HC_LabelClean=0.6052 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=39952 AgreeLabelPrecision=0.6052
+  [conf>=0.90] HC_Cov=0.9957 HC_AccTrue=60.64% HC_AccNoisy=100.00% HC_LabelClean=0.6064 DisagreeCount=0 DisagreeCorrAcc=0.00% DisagreeNoisePrecision=0.0000 AgreeCount=39828 AgreeLabelPrecision=0.6064
+
+==================== Round 196 ====================
+Net3 TrainLoss: 0.0046 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.626 (12514/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 197 ====================
+Net3 TrainLoss: 0.0050 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.604 (12072/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 198 ====================
+Net3 TrainLoss: 0.0054 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.629 (12584/20000) | LocalTrain Acc(noisy): -1.00% | LocalTrain Acc(true): -1.00% | LocalTrain Loss(noisy): -1.0000 | Holdout Acc: -1.00%
+  [conf>=0.80] HC_Cov=-1.000 | HC_AccTrue=-1.00% | DisagreeCount=0 | DisagreeCorrAcc=-1.00% | DisagreeNoisePrecision=-1.000 | AgreeCount=0 | AgreeLabelPrecision=-1.000
+
+==================== Round 199 ====================
+Net3 TrainLoss: 0.0053 | Selected Clients: 50 | SelectedTrainLabelCorrect: 0.602 (12041/20000) | LocalTrain Acc(noisy): 99.96% | LocalTrain Acc(true): 60.48% | LocalTrain Loss(noisy): 0.0055 | Holdout Acc: 63.34%
+  [conf>=0.80] HC_Cov=0.999 | HC_AccTrue=60.50% | DisagreeCount=8 | DisagreeCorrAcc=12.50% | DisagreeNoisePrecision=0.125 | AgreeCount=39939 | AgreeLabelPrecision=0.605
+  [conf>=0.60] HC_Cov=0.9998 HC_AccTrue=60.48% HC_AccNoisy=99.97% HC_LabelClean=0.6050 DisagreeCount=12 DisagreeCorrAcc=16.67% DisagreeNoisePrecision=0.1667 AgreeCount=39979 AgreeLabelPrecision=0.6049
+  [conf>=0.70] HC_Cov=0.9996 HC_AccTrue=60.48% HC_AccNoisy=99.97% HC_LabelClean=0.6050 DisagreeCount=10 DisagreeCorrAcc=20.00% DisagreeNoisePrecision=0.2000 AgreeCount=39973 AgreeLabelPrecision=0.6049
+  [conf>=0.80] HC_Cov=0.9987 HC_AccTrue=60.50% HC_AccNoisy=99.98% HC_LabelClean=0.6052 DisagreeCount=8 DisagreeCorrAcc=12.50% DisagreeNoisePrecision=0.1250 AgreeCount=39939 AgreeLabelPrecision=0.6051
+  [conf>=0.90] HC_Cov=0.9954 HC_AccTrue=60.60% HC_AccNoisy=99.99% HC_LabelClean=0.6060 DisagreeCount=3 DisagreeCorrAcc=33.33% DisagreeNoisePrecision=0.3333 AgreeCount=39812 AgreeLabelPrecision=0.6060

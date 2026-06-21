@@ -1,0 +1,4 @@
+epoch,phase,selected_client_count,selected_net2_current_holdout_acc_avg,selected_net2_best_holdout_acc_avg,selected_net2_best_epoch_avg
+0,net2_search,10,79.000000,79.000000,0.000000
+1,net2_search,10,78.600000,78.600000,1.000000
+2,net2_search,10,72.600000,74.400000,1.900000

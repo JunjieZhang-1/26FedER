@@ -1,0 +1,609 @@
+Experiment Start: 20260605-001936
+Mode: local_only
+Eval mode: global
+Noise seed mode: fedrn
+Args: Namespace(method='net2_personalized_only', epochs=200, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0.0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=0, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[(0.0, 0.8)], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, num_edges=5, feder_exp_weight=0.6, neighbor_scope='global', pfl_local_weight=0.3, pfl_agree_weight=0, pfl_personal_ep=4, send_2_models=False, local_only=True, eval_every=1, test_mode='global', train_ratio=1.0, noise_seed_mode='fedrn', device=device(type='cuda', index=0), img_size=32)
+Average unique labels/client: 1.9000
+Unique labels/client min/max: 1 / 2
+Total intended noisy labels: 19800
+================================================================================
+
+==================== Round   0 ====================
+Net2/PFL Acc: 9.78% | Personal Loss: 2.4948 | Train Loss: 1.5853 | Selected Clients: 10 | TrainLabelCorrect: 0.643 (3216/5000) | Avg Labels/Client: 1.90
+
+==================== Round   1 ====================
+Net2/PFL Acc: 10.39% | Personal Loss: 2.5448 | Train Loss: 1.6358 | Selected Clients: 10 | TrainLabelCorrect: 0.596 (2980/5000) | Avg Labels/Client: 1.90
+
+==================== Round   2 ====================
+Net2/PFL Acc: 10.91% | Personal Loss: 2.6437 | Train Loss: 1.4398 | Selected Clients: 10 | TrainLabelCorrect: 0.622 (3112/5000) | Avg Labels/Client: 1.90
+
+==================== Round   3 ====================
+Net2/PFL Acc: 11.41% | Personal Loss: 2.6718 | Train Loss: 1.5780 | Selected Clients: 10 | TrainLabelCorrect: 0.619 (3096/5000) | Avg Labels/Client: 1.90
+
+==================== Round   4 ====================
+Net2/PFL Acc: 11.80% | Personal Loss: 2.7025 | Train Loss: 1.6488 | Selected Clients: 10 | TrainLabelCorrect: 0.585 (2924/5000) | Avg Labels/Client: 1.90
+
+==================== Round   5 ====================
+Net2/PFL Acc: 12.02% | Personal Loss: 2.7139 | Train Loss: 1.8452 | Selected Clients: 10 | TrainLabelCorrect: 0.454 (2272/5000) | Avg Labels/Client: 1.90
+
+==================== Round   6 ====================
+Net2/PFL Acc: 12.24% | Personal Loss: 2.7400 | Train Loss: 1.5125 | Selected Clients: 10 | TrainLabelCorrect: 0.602 (3012/5000) | Avg Labels/Client: 1.90
+
+==================== Round   7 ====================
+Net2/PFL Acc: 12.56% | Personal Loss: 2.7623 | Train Loss: 1.3752 | Selected Clients: 10 | TrainLabelCorrect: 0.633 (3164/5000) | Avg Labels/Client: 1.90
+
+==================== Round   8 ====================
+Net2/PFL Acc: 12.83% | Personal Loss: 2.8263 | Train Loss: 1.0909 | Selected Clients: 10 | TrainLabelCorrect: 0.754 (3772/5000) | Avg Labels/Client: 1.90
+
+==================== Round   9 ====================
+Net2/PFL Acc: 13.12% | Personal Loss: 2.8517 | Train Loss: 1.5197 | Selected Clients: 10 | TrainLabelCorrect: 0.550 (2752/5000) | Avg Labels/Client: 1.90
+
+==================== Round  10 ====================
+Net2/PFL Acc: 13.18% | Personal Loss: 2.8528 | Train Loss: 1.4684 | Selected Clients: 10 | TrainLabelCorrect: 0.578 (2888/5000) | Avg Labels/Client: 1.90
+
+==================== Round  11 ====================
+Net2/PFL Acc: 13.38% | Personal Loss: 2.8738 | Train Loss: 1.4809 | Selected Clients: 10 | TrainLabelCorrect: 0.588 (2940/5000) | Avg Labels/Client: 1.90
+
+==================== Round  12 ====================
+Net2/PFL Acc: 13.54% | Personal Loss: 2.8803 | Train Loss: 1.6372 | Selected Clients: 10 | TrainLabelCorrect: 0.547 (2736/5000) | Avg Labels/Client: 1.90
+
+==================== Round  13 ====================
+Net2/PFL Acc: 13.63% | Personal Loss: 2.8983 | Train Loss: 1.3775 | Selected Clients: 10 | TrainLabelCorrect: 0.630 (3148/5000) | Avg Labels/Client: 1.90
+
+==================== Round  14 ====================
+Net2/PFL Acc: 13.80% | Personal Loss: 2.9187 | Train Loss: 1.2131 | Selected Clients: 10 | TrainLabelCorrect: 0.698 (3492/5000) | Avg Labels/Client: 1.90
+
+==================== Round  15 ====================
+Net2/PFL Acc: 14.04% | Personal Loss: 2.9504 | Train Loss: 1.4454 | Selected Clients: 10 | TrainLabelCorrect: 0.632 (3160/5000) | Avg Labels/Client: 1.90
+
+==================== Round  16 ====================
+Net2/PFL Acc: 14.10% | Personal Loss: 2.9727 | Train Loss: 1.1535 | Selected Clients: 10 | TrainLabelCorrect: 0.702 (3508/5000) | Avg Labels/Client: 1.90
+
+==================== Round  17 ====================
+Net2/PFL Acc: 14.16% | Personal Loss: 2.9773 | Train Loss: 1.5189 | Selected Clients: 10 | TrainLabelCorrect: 0.556 (2780/5000) | Avg Labels/Client: 1.90
+
+==================== Round  18 ====================
+Net2/PFL Acc: 14.28% | Personal Loss: 2.9846 | Train Loss: 1.5780 | Selected Clients: 10 | TrainLabelCorrect: 0.526 (2632/5000) | Avg Labels/Client: 1.90
+
+==================== Round  19 ====================
+Net2/PFL Acc: 14.36% | Personal Loss: 2.9921 | Train Loss: 1.5660 | Selected Clients: 10 | TrainLabelCorrect: 0.543 (2716/5000) | Avg Labels/Client: 1.90
+
+==================== Round  20 ====================
+Net2/PFL Acc: 14.46% | Personal Loss: 3.0102 | Train Loss: 1.2609 | Selected Clients: 10 | TrainLabelCorrect: 0.654 (3272/5000) | Avg Labels/Client: 1.90
+
+==================== Round  21 ====================
+Net2/PFL Acc: 14.76% | Personal Loss: 3.0319 | Train Loss: 1.4375 | Selected Clients: 10 | TrainLabelCorrect: 0.634 (3172/5000) | Avg Labels/Client: 1.90
+
+==================== Round  22 ====================
+Net2/PFL Acc: 14.73% | Personal Loss: 3.0405 | Train Loss: 1.3083 | Selected Clients: 10 | TrainLabelCorrect: 0.606 (3028/5000) | Avg Labels/Client: 1.90
+
+==================== Round  23 ====================
+Net2/PFL Acc: 14.72% | Personal Loss: 3.0467 | Train Loss: 1.2898 | Selected Clients: 10 | TrainLabelCorrect: 0.601 (3004/5000) | Avg Labels/Client: 1.90
+
+==================== Round  24 ====================
+Net2/PFL Acc: 14.83% | Personal Loss: 3.0580 | Train Loss: 1.3339 | Selected Clients: 10 | TrainLabelCorrect: 0.606 (3028/5000) | Avg Labels/Client: 1.90
+
+==================== Round  25 ====================
+Net2/PFL Acc: 14.85% | Personal Loss: 3.0644 | Train Loss: 1.2059 | Selected Clients: 10 | TrainLabelCorrect: 0.673 (3364/5000) | Avg Labels/Client: 1.90
+
+==================== Round  26 ====================
+Net2/PFL Acc: 14.86% | Personal Loss: 3.0693 | Train Loss: 1.2957 | Selected Clients: 10 | TrainLabelCorrect: 0.642 (3208/5000) | Avg Labels/Client: 1.90
+
+==================== Round  27 ====================
+Net2/PFL Acc: 14.94% | Personal Loss: 3.0859 | Train Loss: 1.1739 | Selected Clients: 10 | TrainLabelCorrect: 0.665 (3324/5000) | Avg Labels/Client: 1.90
+
+==================== Round  28 ====================
+Net2/PFL Acc: 14.96% | Personal Loss: 3.0897 | Train Loss: 1.3430 | Selected Clients: 10 | TrainLabelCorrect: 0.594 (2968/5000) | Avg Labels/Client: 1.90
+
+==================== Round  29 ====================
+Net2/PFL Acc: 14.97% | Personal Loss: 3.0939 | Train Loss: 1.2236 | Selected Clients: 10 | TrainLabelCorrect: 0.653 (3264/5000) | Avg Labels/Client: 1.90
+
+==================== Round  30 ====================
+Net2/PFL Acc: 15.01% | Personal Loss: 3.0925 | Train Loss: 1.0761 | Selected Clients: 10 | TrainLabelCorrect: 0.701 (3504/5000) | Avg Labels/Client: 1.90
+
+==================== Round  31 ====================
+Net2/PFL Acc: 15.05% | Personal Loss: 3.1015 | Train Loss: 1.2453 | Selected Clients: 10 | TrainLabelCorrect: 0.630 (3148/5000) | Avg Labels/Client: 1.90
+
+==================== Round  32 ====================
+Net2/PFL Acc: 15.06% | Personal Loss: 3.1091 | Train Loss: 1.4195 | Selected Clients: 10 | TrainLabelCorrect: 0.558 (2788/5000) | Avg Labels/Client: 1.90
+
+==================== Round  33 ====================
+Net2/PFL Acc: 15.10% | Personal Loss: 3.1149 | Train Loss: 1.4681 | Selected Clients: 10 | TrainLabelCorrect: 0.559 (2796/5000) | Avg Labels/Client: 1.90
+
+==================== Round  34 ====================
+Net2/PFL Acc: 15.14% | Personal Loss: 3.1205 | Train Loss: 1.1130 | Selected Clients: 10 | TrainLabelCorrect: 0.699 (3496/5000) | Avg Labels/Client: 1.90
+
+==================== Round  35 ====================
+Net2/PFL Acc: 15.14% | Personal Loss: 3.1222 | Train Loss: 1.3557 | Selected Clients: 10 | TrainLabelCorrect: 0.582 (2908/5000) | Avg Labels/Client: 1.90
+
+==================== Round  36 ====================
+Net2/PFL Acc: 15.17% | Personal Loss: 3.1854 | Train Loss: 1.0477 | Selected Clients: 10 | TrainLabelCorrect: 0.686 (3428/5000) | Avg Labels/Client: 1.90
+
+==================== Round  37 ====================
+Net2/PFL Acc: 15.16% | Personal Loss: 3.1882 | Train Loss: 1.1983 | Selected Clients: 10 | TrainLabelCorrect: 0.639 (3196/5000) | Avg Labels/Client: 1.90
+
+==================== Round  38 ====================
+Net2/PFL Acc: 15.28% | Personal Loss: 3.1982 | Train Loss: 1.6681 | Selected Clients: 10 | TrainLabelCorrect: 0.430 (2148/5000) | Avg Labels/Client: 1.90
+
+==================== Round  39 ====================
+Net2/PFL Acc: 15.24% | Personal Loss: 3.2000 | Train Loss: 1.1769 | Selected Clients: 10 | TrainLabelCorrect: 0.634 (3172/5000) | Avg Labels/Client: 1.90
+
+==================== Round  40 ====================
+Net2/PFL Acc: 15.28% | Personal Loss: 3.2013 | Train Loss: 1.1494 | Selected Clients: 10 | TrainLabelCorrect: 0.639 (3196/5000) | Avg Labels/Client: 1.90
+
+==================== Round  41 ====================
+Net2/PFL Acc: 15.25% | Personal Loss: 3.2067 | Train Loss: 1.2341 | Selected Clients: 10 | TrainLabelCorrect: 0.607 (3036/5000) | Avg Labels/Client: 1.90
+
+==================== Round  42 ====================
+Net2/PFL Acc: 15.22% | Personal Loss: 3.2124 | Train Loss: 1.2119 | Selected Clients: 10 | TrainLabelCorrect: 0.622 (3112/5000) | Avg Labels/Client: 1.90
+
+==================== Round  43 ====================
+Net2/PFL Acc: 15.18% | Personal Loss: 3.2190 | Train Loss: 1.1214 | Selected Clients: 10 | TrainLabelCorrect: 0.630 (3152/5000) | Avg Labels/Client: 1.90
+
+==================== Round  44 ====================
+Net2/PFL Acc: 15.15% | Personal Loss: 3.2224 | Train Loss: 1.2070 | Selected Clients: 10 | TrainLabelCorrect: 0.595 (2976/5000) | Avg Labels/Client: 1.90
+
+==================== Round  45 ====================
+Net2/PFL Acc: 15.12% | Personal Loss: 3.2371 | Train Loss: 1.0803 | Selected Clients: 10 | TrainLabelCorrect: 0.641 (3204/5000) | Avg Labels/Client: 1.90
+
+==================== Round  46 ====================
+Net2/PFL Acc: 15.15% | Personal Loss: 3.2412 | Train Loss: 1.2117 | Selected Clients: 10 | TrainLabelCorrect: 0.574 (2872/5000) | Avg Labels/Client: 1.90
+
+==================== Round  47 ====================
+Net2/PFL Acc: 15.16% | Personal Loss: 3.2526 | Train Loss: 1.0153 | Selected Clients: 10 | TrainLabelCorrect: 0.679 (3396/5000) | Avg Labels/Client: 1.90
+
+==================== Round  48 ====================
+Net2/PFL Acc: 15.15% | Personal Loss: 3.2680 | Train Loss: 1.2870 | Selected Clients: 10 | TrainLabelCorrect: 0.551 (2756/5000) | Avg Labels/Client: 1.90
+
+==================== Round  49 ====================
+Net2/PFL Acc: 15.13% | Personal Loss: 3.2752 | Train Loss: 1.4067 | Selected Clients: 10 | TrainLabelCorrect: 0.490 (2452/5000) | Avg Labels/Client: 1.90
+
+==================== Round  50 ====================
+Net2/PFL Acc: 15.11% | Personal Loss: 3.2857 | Train Loss: 1.2626 | Selected Clients: 10 | TrainLabelCorrect: 0.582 (2912/5000) | Avg Labels/Client: 1.90
+
+==================== Round  51 ====================
+Net2/PFL Acc: 15.11% | Personal Loss: 3.2937 | Train Loss: 1.2329 | Selected Clients: 10 | TrainLabelCorrect: 0.522 (2612/5000) | Avg Labels/Client: 1.90
+
+==================== Round  52 ====================
+Net2/PFL Acc: 15.12% | Personal Loss: 3.3001 | Train Loss: 1.1795 | Selected Clients: 10 | TrainLabelCorrect: 0.627 (3136/5000) | Avg Labels/Client: 1.90
+
+==================== Round  53 ====================
+Net2/PFL Acc: 15.12% | Personal Loss: 3.3121 | Train Loss: 1.1793 | Selected Clients: 10 | TrainLabelCorrect: 0.590 (2952/5000) | Avg Labels/Client: 1.90
+
+==================== Round  54 ====================
+Net2/PFL Acc: 15.08% | Personal Loss: 3.3140 | Train Loss: 1.3289 | Selected Clients: 10 | TrainLabelCorrect: 0.511 (2556/5000) | Avg Labels/Client: 1.90
+
+==================== Round  55 ====================
+Net2/PFL Acc: 15.05% | Personal Loss: 3.3226 | Train Loss: 0.8524 | Selected Clients: 10 | TrainLabelCorrect: 0.707 (3536/5000) | Avg Labels/Client: 1.90
+
+==================== Round  56 ====================
+Net2/PFL Acc: 15.07% | Personal Loss: 3.3231 | Train Loss: 1.1096 | Selected Clients: 10 | TrainLabelCorrect: 0.624 (3120/5000) | Avg Labels/Client: 1.90
+
+==================== Round  57 ====================
+Net2/PFL Acc: 15.11% | Personal Loss: 3.3240 | Train Loss: 1.0182 | Selected Clients: 10 | TrainLabelCorrect: 0.655 (3276/5000) | Avg Labels/Client: 1.90
+
+==================== Round  58 ====================
+Net2/PFL Acc: 15.10% | Personal Loss: 3.3338 | Train Loss: 1.1241 | Selected Clients: 10 | TrainLabelCorrect: 0.610 (3048/5000) | Avg Labels/Client: 1.90
+
+==================== Round  59 ====================
+Net2/PFL Acc: 15.08% | Personal Loss: 3.3437 | Train Loss: 0.9459 | Selected Clients: 10 | TrainLabelCorrect: 0.724 (3620/5000) | Avg Labels/Client: 1.90
+
+==================== Round  60 ====================
+Net2/PFL Acc: 15.08% | Personal Loss: 3.3546 | Train Loss: 1.1798 | Selected Clients: 10 | TrainLabelCorrect: 0.584 (2920/5000) | Avg Labels/Client: 1.90
+
+==================== Round  61 ====================
+Net2/PFL Acc: 15.10% | Personal Loss: 3.3609 | Train Loss: 0.9040 | Selected Clients: 10 | TrainLabelCorrect: 0.680 (3400/5000) | Avg Labels/Client: 1.90
+
+==================== Round  62 ====================
+Net2/PFL Acc: 15.13% | Personal Loss: 3.3693 | Train Loss: 1.1069 | Selected Clients: 10 | TrainLabelCorrect: 0.577 (2884/5000) | Avg Labels/Client: 1.90
+
+==================== Round  63 ====================
+Net2/PFL Acc: 15.12% | Personal Loss: 3.3756 | Train Loss: 0.9689 | Selected Clients: 10 | TrainLabelCorrect: 0.628 (3140/5000) | Avg Labels/Client: 1.90
+
+==================== Round  64 ====================
+Net2/PFL Acc: 15.15% | Personal Loss: 3.3788 | Train Loss: 0.8717 | Selected Clients: 10 | TrainLabelCorrect: 0.693 (3464/5000) | Avg Labels/Client: 1.90
+
+==================== Round  65 ====================
+Net2/PFL Acc: 15.15% | Personal Loss: 3.3869 | Train Loss: 1.1790 | Selected Clients: 10 | TrainLabelCorrect: 0.538 (2692/5000) | Avg Labels/Client: 1.90
+
+==================== Round  66 ====================
+Net2/PFL Acc: 15.14% | Personal Loss: 3.3953 | Train Loss: 1.1672 | Selected Clients: 10 | TrainLabelCorrect: 0.530 (2648/5000) | Avg Labels/Client: 1.90
+
+==================== Round  67 ====================
+Net2/PFL Acc: 15.13% | Personal Loss: 3.4075 | Train Loss: 1.0649 | Selected Clients: 10 | TrainLabelCorrect: 0.601 (3004/5000) | Avg Labels/Client: 1.90
+
+==================== Round  68 ====================
+Net2/PFL Acc: 15.11% | Personal Loss: 3.4135 | Train Loss: 0.9108 | Selected Clients: 10 | TrainLabelCorrect: 0.666 (3332/5000) | Avg Labels/Client: 1.90
+
+==================== Round  69 ====================
+Net2/PFL Acc: 15.09% | Personal Loss: 3.4269 | Train Loss: 1.1413 | Selected Clients: 10 | TrainLabelCorrect: 0.540 (2700/5000) | Avg Labels/Client: 1.90
+
+==================== Round  70 ====================
+Net2/PFL Acc: 15.06% | Personal Loss: 3.4344 | Train Loss: 1.0027 | Selected Clients: 10 | TrainLabelCorrect: 0.642 (3208/5000) | Avg Labels/Client: 1.90
+
+==================== Round  71 ====================
+Net2/PFL Acc: 15.14% | Personal Loss: 3.4409 | Train Loss: 1.1433 | Selected Clients: 10 | TrainLabelCorrect: 0.565 (2824/5000) | Avg Labels/Client: 1.90
+
+==================== Round  72 ====================
+Net2/PFL Acc: 15.05% | Personal Loss: 3.4475 | Train Loss: 1.1823 | Selected Clients: 10 | TrainLabelCorrect: 0.522 (2612/5000) | Avg Labels/Client: 1.90
+
+==================== Round  73 ====================
+Net2/PFL Acc: 15.06% | Personal Loss: 3.4592 | Train Loss: 1.0467 | Selected Clients: 10 | TrainLabelCorrect: 0.600 (3000/5000) | Avg Labels/Client: 1.90
+
+==================== Round  74 ====================
+Net2/PFL Acc: 15.05% | Personal Loss: 3.4751 | Train Loss: 1.0639 | Selected Clients: 10 | TrainLabelCorrect: 0.596 (2980/5000) | Avg Labels/Client: 1.90
+
+==================== Round  75 ====================
+Net2/PFL Acc: 15.08% | Personal Loss: 3.4856 | Train Loss: 0.8545 | Selected Clients: 10 | TrainLabelCorrect: 0.719 (3596/5000) | Avg Labels/Client: 1.90
+
+==================== Round  76 ====================
+Net2/PFL Acc: 15.09% | Personal Loss: 3.4887 | Train Loss: 1.2609 | Selected Clients: 10 | TrainLabelCorrect: 0.509 (2544/5000) | Avg Labels/Client: 1.90
+
+==================== Round  77 ====================
+Net2/PFL Acc: 15.09% | Personal Loss: 3.4915 | Train Loss: 0.7316 | Selected Clients: 10 | TrainLabelCorrect: 0.718 (3592/5000) | Avg Labels/Client: 1.90
+
+==================== Round  78 ====================
+Net2/PFL Acc: 15.09% | Personal Loss: 3.4994 | Train Loss: 1.2489 | Selected Clients: 10 | TrainLabelCorrect: 0.476 (2380/5000) | Avg Labels/Client: 1.90
+
+==================== Round  79 ====================
+Net2/PFL Acc: 15.09% | Personal Loss: 3.5079 | Train Loss: 0.8846 | Selected Clients: 10 | TrainLabelCorrect: 0.667 (3336/5000) | Avg Labels/Client: 1.90
+
+==================== Round  80 ====================
+Net2/PFL Acc: 15.07% | Personal Loss: 3.5115 | Train Loss: 1.5014 | Selected Clients: 10 | TrainLabelCorrect: 0.365 (1824/5000) | Avg Labels/Client: 1.90
+
+==================== Round  81 ====================
+Net2/PFL Acc: 15.03% | Personal Loss: 3.5217 | Train Loss: 1.0894 | Selected Clients: 10 | TrainLabelCorrect: 0.515 (2576/5000) | Avg Labels/Client: 1.90
+
+==================== Round  82 ====================
+Net2/PFL Acc: 14.99% | Personal Loss: 3.5301 | Train Loss: 0.9300 | Selected Clients: 10 | TrainLabelCorrect: 0.673 (3364/5000) | Avg Labels/Client: 1.90
+
+==================== Round  83 ====================
+Net2/PFL Acc: 15.01% | Personal Loss: 3.5361 | Train Loss: 1.0641 | Selected Clients: 10 | TrainLabelCorrect: 0.510 (2552/5000) | Avg Labels/Client: 1.90
+
+==================== Round  84 ====================
+Net2/PFL Acc: 15.01% | Personal Loss: 3.5421 | Train Loss: 0.8707 | Selected Clients: 10 | TrainLabelCorrect: 0.638 (3192/5000) | Avg Labels/Client: 1.90
+
+==================== Round  85 ====================
+Net2/PFL Acc: 14.99% | Personal Loss: 3.5531 | Train Loss: 0.8930 | Selected Clients: 10 | TrainLabelCorrect: 0.605 (3024/5000) | Avg Labels/Client: 1.90
+
+==================== Round  86 ====================
+Net2/PFL Acc: 14.93% | Personal Loss: 3.5550 | Train Loss: 1.0632 | Selected Clients: 10 | TrainLabelCorrect: 0.491 (2456/5000) | Avg Labels/Client: 1.90
+
+==================== Round  87 ====================
+Net2/PFL Acc: 14.95% | Personal Loss: 3.5633 | Train Loss: 0.8672 | Selected Clients: 10 | TrainLabelCorrect: 0.641 (3204/5000) | Avg Labels/Client: 1.90
+
+==================== Round  88 ====================
+Net2/PFL Acc: 14.95% | Personal Loss: 3.5710 | Train Loss: 0.8390 | Selected Clients: 10 | TrainLabelCorrect: 0.619 (3096/5000) | Avg Labels/Client: 1.90
+
+==================== Round  89 ====================
+Net2/PFL Acc: 14.89% | Personal Loss: 3.5726 | Train Loss: 1.0456 | Selected Clients: 10 | TrainLabelCorrect: 0.568 (2840/5000) | Avg Labels/Client: 1.90
+
+==================== Round  90 ====================
+Net2/PFL Acc: 14.88% | Personal Loss: 3.5792 | Train Loss: 0.7098 | Selected Clients: 10 | TrainLabelCorrect: 0.710 (3548/5000) | Avg Labels/Client: 1.90
+
+==================== Round  91 ====================
+Net2/PFL Acc: 14.91% | Personal Loss: 3.5979 | Train Loss: 0.7982 | Selected Clients: 10 | TrainLabelCorrect: 0.557 (2784/5000) | Avg Labels/Client: 1.90
+
+==================== Round  92 ====================
+Net2/PFL Acc: 14.92% | Personal Loss: 3.6132 | Train Loss: 0.9463 | Selected Clients: 10 | TrainLabelCorrect: 0.562 (2812/5000) | Avg Labels/Client: 1.90
+
+==================== Round  93 ====================
+Net2/PFL Acc: 14.89% | Personal Loss: 3.6170 | Train Loss: 0.7811 | Selected Clients: 10 | TrainLabelCorrect: 0.730 (3648/5000) | Avg Labels/Client: 1.90
+
+==================== Round  94 ====================
+Net2/PFL Acc: 14.88% | Personal Loss: 3.6260 | Train Loss: 0.9466 | Selected Clients: 10 | TrainLabelCorrect: 0.538 (2692/5000) | Avg Labels/Client: 1.90
+
+==================== Round  95 ====================
+Net2/PFL Acc: 14.87% | Personal Loss: 3.6368 | Train Loss: 0.5106 | Selected Clients: 10 | TrainLabelCorrect: 0.812 (4060/5000) | Avg Labels/Client: 1.90
+
+==================== Round  96 ====================
+Net2/PFL Acc: 14.86% | Personal Loss: 3.6520 | Train Loss: 0.5678 | Selected Clients: 10 | TrainLabelCorrect: 0.778 (3888/5000) | Avg Labels/Client: 1.90
+
+==================== Round  97 ====================
+Net2/PFL Acc: 14.84% | Personal Loss: 3.6613 | Train Loss: 1.1007 | Selected Clients: 10 | TrainLabelCorrect: 0.422 (2108/5000) | Avg Labels/Client: 1.90
+
+==================== Round  98 ====================
+Net2/PFL Acc: 14.85% | Personal Loss: 3.6681 | Train Loss: 0.7356 | Selected Clients: 10 | TrainLabelCorrect: 0.685 (3424/5000) | Avg Labels/Client: 1.90
+
+==================== Round  99 ====================
+Net2/PFL Acc: 14.86% | Personal Loss: 3.6753 | Train Loss: 0.6039 | Selected Clients: 10 | TrainLabelCorrect: 0.730 (3648/5000) | Avg Labels/Client: 1.90
+
+==================== Round 100 ====================
+Net2/PFL Acc: 14.82% | Personal Loss: 3.6804 | Train Loss: 0.8055 | Selected Clients: 10 | TrainLabelCorrect: 0.625 (3124/5000) | Avg Labels/Client: 1.90
+
+==================== Round 101 ====================
+Net2/PFL Acc: 14.83% | Personal Loss: 3.6897 | Train Loss: 0.7059 | Selected Clients: 10 | TrainLabelCorrect: 0.700 (3500/5000) | Avg Labels/Client: 1.90
+
+==================== Round 102 ====================
+Net2/PFL Acc: 14.84% | Personal Loss: 3.6925 | Train Loss: 0.6715 | Selected Clients: 10 | TrainLabelCorrect: 0.744 (3720/5000) | Avg Labels/Client: 1.90
+
+==================== Round 103 ====================
+Net2/PFL Acc: 14.81% | Personal Loss: 3.7122 | Train Loss: 0.8013 | Selected Clients: 10 | TrainLabelCorrect: 0.633 (3164/5000) | Avg Labels/Client: 1.90
+
+==================== Round 104 ====================
+Net2/PFL Acc: 14.80% | Personal Loss: 3.7288 | Train Loss: 0.8029 | Selected Clients: 10 | TrainLabelCorrect: 0.647 (3236/5000) | Avg Labels/Client: 1.90
+
+==================== Round 105 ====================
+Net2/PFL Acc: 14.78% | Personal Loss: 3.7411 | Train Loss: 0.8548 | Selected Clients: 10 | TrainLabelCorrect: 0.609 (3044/5000) | Avg Labels/Client: 1.90
+
+==================== Round 106 ====================
+Net2/PFL Acc: 14.78% | Personal Loss: 3.7438 | Train Loss: 0.7920 | Selected Clients: 10 | TrainLabelCorrect: 0.629 (3144/5000) | Avg Labels/Client: 1.90
+
+==================== Round 107 ====================
+Net2/PFL Acc: 14.79% | Personal Loss: 3.7521 | Train Loss: 0.9540 | Selected Clients: 10 | TrainLabelCorrect: 0.554 (2772/5000) | Avg Labels/Client: 1.90
+
+==================== Round 108 ====================
+Net2/PFL Acc: 14.78% | Personal Loss: 3.7611 | Train Loss: 0.7277 | Selected Clients: 10 | TrainLabelCorrect: 0.646 (3228/5000) | Avg Labels/Client: 1.90
+
+==================== Round 109 ====================
+Net2/PFL Acc: 14.74% | Personal Loss: 3.7705 | Train Loss: 0.8903 | Selected Clients: 10 | TrainLabelCorrect: 0.545 (2724/5000) | Avg Labels/Client: 1.90
+
+==================== Round 110 ====================
+Net2/PFL Acc: 14.71% | Personal Loss: 3.7786 | Train Loss: 1.0256 | Selected Clients: 10 | TrainLabelCorrect: 0.459 (2296/5000) | Avg Labels/Client: 1.90
+
+==================== Round 111 ====================
+Net2/PFL Acc: 14.69% | Personal Loss: 3.7813 | Train Loss: 0.9466 | Selected Clients: 10 | TrainLabelCorrect: 0.513 (2564/5000) | Avg Labels/Client: 1.90
+
+==================== Round 112 ====================
+Net2/PFL Acc: 14.70% | Personal Loss: 3.7905 | Train Loss: 0.5873 | Selected Clients: 10 | TrainLabelCorrect: 0.712 (3560/5000) | Avg Labels/Client: 1.90
+
+==================== Round 113 ====================
+Net2/PFL Acc: 14.72% | Personal Loss: 3.7977 | Train Loss: 0.9064 | Selected Clients: 10 | TrainLabelCorrect: 0.420 (2100/5000) | Avg Labels/Client: 1.90
+
+==================== Round 114 ====================
+Net2/PFL Acc: 14.69% | Personal Loss: 3.8105 | Train Loss: 0.6918 | Selected Clients: 10 | TrainLabelCorrect: 0.604 (3020/5000) | Avg Labels/Client: 1.90
+
+==================== Round 115 ====================
+Net2/PFL Acc: 14.69% | Personal Loss: 3.8285 | Train Loss: 0.8477 | Selected Clients: 10 | TrainLabelCorrect: 0.605 (3024/5000) | Avg Labels/Client: 1.90
+
+==================== Round 116 ====================
+Net2/PFL Acc: 14.67% | Personal Loss: 3.8402 | Train Loss: 0.9444 | Selected Clients: 10 | TrainLabelCorrect: 0.501 (2504/5000) | Avg Labels/Client: 1.90
+
+==================== Round 117 ====================
+Net2/PFL Acc: 14.68% | Personal Loss: 3.8496 | Train Loss: 0.8730 | Selected Clients: 10 | TrainLabelCorrect: 0.522 (2612/5000) | Avg Labels/Client: 1.90
+
+==================== Round 118 ====================
+Net2/PFL Acc: 14.64% | Personal Loss: 3.8565 | Train Loss: 0.8439 | Selected Clients: 10 | TrainLabelCorrect: 0.539 (2696/5000) | Avg Labels/Client: 1.90
+
+==================== Round 119 ====================
+Net2/PFL Acc: 14.59% | Personal Loss: 3.8624 | Train Loss: 0.5869 | Selected Clients: 10 | TrainLabelCorrect: 0.690 (3448/5000) | Avg Labels/Client: 1.90
+
+==================== Round 120 ====================
+Net2/PFL Acc: 14.63% | Personal Loss: 3.8750 | Train Loss: 0.9325 | Selected Clients: 10 | TrainLabelCorrect: 0.486 (2432/5000) | Avg Labels/Client: 1.90
+
+==================== Round 121 ====================
+Net2/PFL Acc: 14.59% | Personal Loss: 3.8831 | Train Loss: 0.6749 | Selected Clients: 10 | TrainLabelCorrect: 0.555 (2776/5000) | Avg Labels/Client: 1.90
+
+==================== Round 122 ====================
+Net2/PFL Acc: 14.61% | Personal Loss: 3.8964 | Train Loss: 0.4910 | Selected Clients: 10 | TrainLabelCorrect: 0.719 (3596/5000) | Avg Labels/Client: 1.90
+
+==================== Round 123 ====================
+Net2/PFL Acc: 14.63% | Personal Loss: 3.9059 | Train Loss: 0.6721 | Selected Clients: 10 | TrainLabelCorrect: 0.594 (2972/5000) | Avg Labels/Client: 1.90
+
+==================== Round 124 ====================
+Net2/PFL Acc: 14.64% | Personal Loss: 3.9132 | Train Loss: 0.7965 | Selected Clients: 10 | TrainLabelCorrect: 0.611 (3056/5000) | Avg Labels/Client: 1.90
+
+==================== Round 125 ====================
+Net2/PFL Acc: 14.65% | Personal Loss: 3.9279 | Train Loss: 0.6600 | Selected Clients: 10 | TrainLabelCorrect: 0.590 (2948/5000) | Avg Labels/Client: 1.90
+
+==================== Round 126 ====================
+Net2/PFL Acc: 14.62% | Personal Loss: 3.9369 | Train Loss: 0.7706 | Selected Clients: 10 | TrainLabelCorrect: 0.533 (2664/5000) | Avg Labels/Client: 1.90
+
+==================== Round 127 ====================
+Net2/PFL Acc: 14.63% | Personal Loss: 3.9426 | Train Loss: 0.5131 | Selected Clients: 10 | TrainLabelCorrect: 0.721 (3604/5000) | Avg Labels/Client: 1.90
+
+==================== Round 128 ====================
+Net2/PFL Acc: 14.63% | Personal Loss: 3.9569 | Train Loss: 0.8056 | Selected Clients: 10 | TrainLabelCorrect: 0.538 (2688/5000) | Avg Labels/Client: 1.90
+
+==================== Round 129 ====================
+Net2/PFL Acc: 14.61% | Personal Loss: 3.9787 | Train Loss: 0.6567 | Selected Clients: 10 | TrainLabelCorrect: 0.597 (2984/5000) | Avg Labels/Client: 1.90
+
+==================== Round 130 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 3.9815 | Train Loss: 0.7410 | Selected Clients: 10 | TrainLabelCorrect: 0.594 (2972/5000) | Avg Labels/Client: 1.90
+
+==================== Round 131 ====================
+Net2/PFL Acc: 14.59% | Personal Loss: 3.9983 | Train Loss: 0.6962 | Selected Clients: 10 | TrainLabelCorrect: 0.577 (2884/5000) | Avg Labels/Client: 1.90
+
+==================== Round 132 ====================
+Net2/PFL Acc: 14.65% | Personal Loss: 4.0046 | Train Loss: 0.7441 | Selected Clients: 10 | TrainLabelCorrect: 0.535 (2676/5000) | Avg Labels/Client: 1.90
+
+==================== Round 133 ====================
+Net2/PFL Acc: 14.67% | Personal Loss: 4.0165 | Train Loss: 0.6624 | Selected Clients: 10 | TrainLabelCorrect: 0.568 (2840/5000) | Avg Labels/Client: 1.90
+
+==================== Round 134 ====================
+Net2/PFL Acc: 14.66% | Personal Loss: 4.0137 | Train Loss: 0.7507 | Selected Clients: 10 | TrainLabelCorrect: 0.600 (3000/5000) | Avg Labels/Client: 1.90
+
+==================== Round 135 ====================
+Net2/PFL Acc: 14.62% | Personal Loss: 4.0219 | Train Loss: 0.7391 | Selected Clients: 10 | TrainLabelCorrect: 0.598 (2988/5000) | Avg Labels/Client: 1.90
+
+==================== Round 136 ====================
+Net2/PFL Acc: 14.56% | Personal Loss: 4.0279 | Train Loss: 0.7875 | Selected Clients: 10 | TrainLabelCorrect: 0.539 (2696/5000) | Avg Labels/Client: 1.90
+
+==================== Round 137 ====================
+Net2/PFL Acc: 14.55% | Personal Loss: 4.0293 | Train Loss: 0.5036 | Selected Clients: 10 | TrainLabelCorrect: 0.677 (3384/5000) | Avg Labels/Client: 1.90
+
+==================== Round 138 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.0348 | Train Loss: 0.7118 | Selected Clients: 10 | TrainLabelCorrect: 0.587 (2936/5000) | Avg Labels/Client: 1.90
+
+==================== Round 139 ====================
+Net2/PFL Acc: 14.53% | Personal Loss: 4.0453 | Train Loss: 0.5893 | Selected Clients: 10 | TrainLabelCorrect: 0.659 (3296/5000) | Avg Labels/Client: 1.90
+
+==================== Round 140 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.0575 | Train Loss: 0.4465 | Selected Clients: 10 | TrainLabelCorrect: 0.707 (3536/5000) | Avg Labels/Client: 1.90
+
+==================== Round 141 ====================
+Net2/PFL Acc: 14.55% | Personal Loss: 4.0726 | Train Loss: 0.5911 | Selected Clients: 10 | TrainLabelCorrect: 0.660 (3300/5000) | Avg Labels/Client: 1.90
+
+==================== Round 142 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 4.0822 | Train Loss: 0.5597 | Selected Clients: 10 | TrainLabelCorrect: 0.672 (3360/5000) | Avg Labels/Client: 1.90
+
+==================== Round 143 ====================
+Net2/PFL Acc: 14.58% | Personal Loss: 4.0883 | Train Loss: 0.5828 | Selected Clients: 10 | TrainLabelCorrect: 0.672 (3360/5000) | Avg Labels/Client: 1.90
+
+==================== Round 144 ====================
+Net2/PFL Acc: 14.59% | Personal Loss: 4.0942 | Train Loss: 0.5738 | Selected Clients: 10 | TrainLabelCorrect: 0.643 (3216/5000) | Avg Labels/Client: 1.90
+
+==================== Round 145 ====================
+Net2/PFL Acc: 14.62% | Personal Loss: 4.1086 | Train Loss: 0.4540 | Selected Clients: 10 | TrainLabelCorrect: 0.659 (3296/5000) | Avg Labels/Client: 1.90
+
+==================== Round 146 ====================
+Net2/PFL Acc: 14.58% | Personal Loss: 4.1134 | Train Loss: 0.3894 | Selected Clients: 10 | TrainLabelCorrect: 0.665 (3324/5000) | Avg Labels/Client: 1.90
+
+==================== Round 147 ====================
+Net2/PFL Acc: 14.55% | Personal Loss: 4.1195 | Train Loss: 0.5302 | Selected Clients: 10 | TrainLabelCorrect: 0.620 (3100/5000) | Avg Labels/Client: 1.90
+
+==================== Round 148 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 4.1277 | Train Loss: 0.5081 | Selected Clients: 10 | TrainLabelCorrect: 0.696 (3480/5000) | Avg Labels/Client: 1.90
+
+==================== Round 149 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 4.1307 | Train Loss: 0.6072 | Selected Clients: 10 | TrainLabelCorrect: 0.592 (2960/5000) | Avg Labels/Client: 1.90
+
+==================== Round 150 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 4.1454 | Train Loss: 0.7657 | Selected Clients: 10 | TrainLabelCorrect: 0.459 (2296/5000) | Avg Labels/Client: 1.90
+
+==================== Round 151 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 4.1524 | Train Loss: 0.6342 | Selected Clients: 10 | TrainLabelCorrect: 0.555 (2776/5000) | Avg Labels/Client: 1.90
+
+==================== Round 152 ====================
+Net2/PFL Acc: 14.57% | Personal Loss: 4.1728 | Train Loss: 0.4135 | Selected Clients: 10 | TrainLabelCorrect: 0.666 (3332/5000) | Avg Labels/Client: 1.90
+
+==================== Round 153 ====================
+Net2/PFL Acc: 14.56% | Personal Loss: 4.1828 | Train Loss: 0.4800 | Selected Clients: 10 | TrainLabelCorrect: 0.654 (3272/5000) | Avg Labels/Client: 1.90
+
+==================== Round 154 ====================
+Net2/PFL Acc: 14.54% | Personal Loss: 4.1882 | Train Loss: 0.4261 | Selected Clients: 10 | TrainLabelCorrect: 0.736 (3680/5000) | Avg Labels/Client: 1.90
+
+==================== Round 155 ====================
+Net2/PFL Acc: 14.54% | Personal Loss: 4.2013 | Train Loss: 0.6262 | Selected Clients: 10 | TrainLabelCorrect: 0.556 (2780/5000) | Avg Labels/Client: 1.90
+
+==================== Round 156 ====================
+Net2/PFL Acc: 14.54% | Personal Loss: 4.2066 | Train Loss: 0.6715 | Selected Clients: 10 | TrainLabelCorrect: 0.534 (2668/5000) | Avg Labels/Client: 1.90
+
+==================== Round 157 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.2204 | Train Loss: 0.5248 | Selected Clients: 10 | TrainLabelCorrect: 0.679 (3396/5000) | Avg Labels/Client: 1.90
+
+==================== Round 158 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.2295 | Train Loss: 0.5213 | Selected Clients: 10 | TrainLabelCorrect: 0.622 (3112/5000) | Avg Labels/Client: 1.90
+
+==================== Round 159 ====================
+Net2/PFL Acc: 14.53% | Personal Loss: 4.2406 | Train Loss: 0.5204 | Selected Clients: 10 | TrainLabelCorrect: 0.638 (3188/5000) | Avg Labels/Client: 1.90
+
+==================== Round 160 ====================
+Net2/PFL Acc: 14.54% | Personal Loss: 4.2473 | Train Loss: 0.5718 | Selected Clients: 10 | TrainLabelCorrect: 0.602 (3012/5000) | Avg Labels/Client: 1.90
+
+==================== Round 161 ====================
+Net2/PFL Acc: 14.56% | Personal Loss: 4.2582 | Train Loss: 0.6070 | Selected Clients: 10 | TrainLabelCorrect: 0.517 (2584/5000) | Avg Labels/Client: 1.90
+
+==================== Round 162 ====================
+Net2/PFL Acc: 14.50% | Personal Loss: 4.2606 | Train Loss: 0.4205 | Selected Clients: 10 | TrainLabelCorrect: 0.660 (3300/5000) | Avg Labels/Client: 1.90
+
+==================== Round 163 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.2702 | Train Loss: 0.3808 | Selected Clients: 10 | TrainLabelCorrect: 0.620 (3100/5000) | Avg Labels/Client: 1.90
+
+==================== Round 164 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.2780 | Train Loss: 0.4278 | Selected Clients: 10 | TrainLabelCorrect: 0.608 (3040/5000) | Avg Labels/Client: 1.90
+
+==================== Round 165 ====================
+Net2/PFL Acc: 14.51% | Personal Loss: 4.2828 | Train Loss: 0.5797 | Selected Clients: 10 | TrainLabelCorrect: 0.518 (2588/5000) | Avg Labels/Client: 1.90
+
+==================== Round 166 ====================
+Net2/PFL Acc: 14.49% | Personal Loss: 4.2884 | Train Loss: 0.5430 | Selected Clients: 10 | TrainLabelCorrect: 0.552 (2760/5000) | Avg Labels/Client: 1.90
+
+==================== Round 167 ====================
+Net2/PFL Acc: 14.48% | Personal Loss: 4.2988 | Train Loss: 0.5296 | Selected Clients: 10 | TrainLabelCorrect: 0.582 (2912/5000) | Avg Labels/Client: 1.90
+
+==================== Round 168 ====================
+Net2/PFL Acc: 14.45% | Personal Loss: 4.3110 | Train Loss: 0.5465 | Selected Clients: 10 | TrainLabelCorrect: 0.643 (3216/5000) | Avg Labels/Client: 1.90
+
+==================== Round 169 ====================
+Net2/PFL Acc: 14.44% | Personal Loss: 4.3208 | Train Loss: 0.5221 | Selected Clients: 10 | TrainLabelCorrect: 0.565 (2824/5000) | Avg Labels/Client: 1.90
+
+==================== Round 170 ====================
+Net2/PFL Acc: 14.43% | Personal Loss: 4.3360 | Train Loss: 0.4176 | Selected Clients: 10 | TrainLabelCorrect: 0.562 (2808/5000) | Avg Labels/Client: 1.90
+
+==================== Round 171 ====================
+Net2/PFL Acc: 14.46% | Personal Loss: 4.3526 | Train Loss: 0.4970 | Selected Clients: 10 | TrainLabelCorrect: 0.612 (3060/5000) | Avg Labels/Client: 1.90
+
+==================== Round 172 ====================
+Net2/PFL Acc: 14.52% | Personal Loss: 4.3652 | Train Loss: 0.4643 | Selected Clients: 10 | TrainLabelCorrect: 0.628 (3140/5000) | Avg Labels/Client: 1.90
+
+==================== Round 173 ====================
+Net2/PFL Acc: 14.53% | Personal Loss: 4.3799 | Train Loss: 0.4397 | Selected Clients: 10 | TrainLabelCorrect: 0.617 (3084/5000) | Avg Labels/Client: 1.90
+
+==================== Round 174 ====================
+Net2/PFL Acc: 14.53% | Personal Loss: 4.3842 | Train Loss: 0.4016 | Selected Clients: 10 | TrainLabelCorrect: 0.650 (3252/5000) | Avg Labels/Client: 1.90
+
+==================== Round 175 ====================
+Net2/PFL Acc: 14.53% | Personal Loss: 4.4012 | Train Loss: 0.3411 | Selected Clients: 10 | TrainLabelCorrect: 0.586 (2928/5000) | Avg Labels/Client: 1.90
+
+==================== Round 176 ====================
+Net2/PFL Acc: 14.50% | Personal Loss: 4.4123 | Train Loss: 0.2222 | Selected Clients: 10 | TrainLabelCorrect: 0.742 (3712/5000) | Avg Labels/Client: 1.90
+
+==================== Round 177 ====================
+Net2/PFL Acc: 14.46% | Personal Loss: 4.4240 | Train Loss: 0.5348 | Selected Clients: 10 | TrainLabelCorrect: 0.552 (2760/5000) | Avg Labels/Client: 1.90
+
+==================== Round 178 ====================
+Net2/PFL Acc: 14.47% | Personal Loss: 4.4381 | Train Loss: 0.3763 | Selected Clients: 10 | TrainLabelCorrect: 0.706 (3532/5000) | Avg Labels/Client: 1.90
+
+==================== Round 179 ====================
+Net2/PFL Acc: 14.45% | Personal Loss: 4.4460 | Train Loss: 0.3712 | Selected Clients: 10 | TrainLabelCorrect: 0.557 (2784/5000) | Avg Labels/Client: 1.90
+
+==================== Round 180 ====================
+Net2/PFL Acc: 14.43% | Personal Loss: 4.4607 | Train Loss: 0.3378 | Selected Clients: 10 | TrainLabelCorrect: 0.675 (3376/5000) | Avg Labels/Client: 1.90
+
+==================== Round 181 ====================
+Net2/PFL Acc: 14.45% | Personal Loss: 4.4774 | Train Loss: 0.3297 | Selected Clients: 10 | TrainLabelCorrect: 0.646 (3232/5000) | Avg Labels/Client: 1.90
+
+==================== Round 182 ====================
+Net2/PFL Acc: 14.41% | Personal Loss: 4.4905 | Train Loss: 0.3410 | Selected Clients: 10 | TrainLabelCorrect: 0.651 (3256/5000) | Avg Labels/Client: 1.90
+
+==================== Round 183 ====================
+Net2/PFL Acc: 14.40% | Personal Loss: 4.5054 | Train Loss: 0.4071 | Selected Clients: 10 | TrainLabelCorrect: 0.567 (2836/5000) | Avg Labels/Client: 1.90
+
+==================== Round 184 ====================
+Net2/PFL Acc: 14.38% | Personal Loss: 4.5242 | Train Loss: 0.4588 | Selected Clients: 10 | TrainLabelCorrect: 0.582 (2908/5000) | Avg Labels/Client: 1.90
+
+==================== Round 185 ====================
+Net2/PFL Acc: 14.39% | Personal Loss: 4.5404 | Train Loss: 0.4203 | Selected Clients: 10 | TrainLabelCorrect: 0.557 (2784/5000) | Avg Labels/Client: 1.90
+
+==================== Round 186 ====================
+Net2/PFL Acc: 14.40% | Personal Loss: 4.5449 | Train Loss: 0.4320 | Selected Clients: 10 | TrainLabelCorrect: 0.622 (3108/5000) | Avg Labels/Client: 1.90
+
+==================== Round 187 ====================
+Net2/PFL Acc: 14.40% | Personal Loss: 4.5595 | Train Loss: 0.4325 | Selected Clients: 10 | TrainLabelCorrect: 0.635 (3176/5000) | Avg Labels/Client: 1.90
+
+==================== Round 188 ====================
+Net2/PFL Acc: 14.31% | Personal Loss: 4.5765 | Train Loss: 0.5654 | Selected Clients: 10 | TrainLabelCorrect: 0.423 (2116/5000) | Avg Labels/Client: 1.90
+
+==================== Round 189 ====================
+Net2/PFL Acc: 14.36% | Personal Loss: 4.5812 | Train Loss: 0.5466 | Selected Clients: 10 | TrainLabelCorrect: 0.513 (2564/5000) | Avg Labels/Client: 1.90
+
+==================== Round 190 ====================
+Net2/PFL Acc: 14.36% | Personal Loss: 4.5791 | Train Loss: 0.2495 | Selected Clients: 10 | TrainLabelCorrect: 0.790 (3948/5000) | Avg Labels/Client: 1.90
+
+==================== Round 191 ====================
+Net2/PFL Acc: 14.38% | Personal Loss: 4.5811 | Train Loss: 0.3954 | Selected Clients: 10 | TrainLabelCorrect: 0.619 (3096/5000) | Avg Labels/Client: 1.90
+
+==================== Round 192 ====================
+Net2/PFL Acc: 14.37% | Personal Loss: 4.5920 | Train Loss: 0.2986 | Selected Clients: 10 | TrainLabelCorrect: 0.649 (3244/5000) | Avg Labels/Client: 1.90
+
+==================== Round 193 ====================
+Net2/PFL Acc: 14.40% | Personal Loss: 4.5962 | Train Loss: 0.3640 | Selected Clients: 10 | TrainLabelCorrect: 0.618 (3092/5000) | Avg Labels/Client: 1.90
+
+==================== Round 194 ====================
+Net2/PFL Acc: 14.42% | Personal Loss: 4.6029 | Train Loss: 0.4849 | Selected Clients: 10 | TrainLabelCorrect: 0.547 (2736/5000) | Avg Labels/Client: 1.90
+
+==================== Round 195 ====================
+Net2/PFL Acc: 14.41% | Personal Loss: 4.6090 | Train Loss: 0.3573 | Selected Clients: 10 | TrainLabelCorrect: 0.612 (3060/5000) | Avg Labels/Client: 1.90
+
+==================== Round 196 ====================
+Net2/PFL Acc: 14.39% | Personal Loss: 4.6214 | Train Loss: 0.3296 | Selected Clients: 10 | TrainLabelCorrect: 0.674 (3368/5000) | Avg Labels/Client: 1.90
+
+==================== Round 197 ====================
+Net2/PFL Acc: 14.43% | Personal Loss: 4.6316 | Train Loss: 0.2635 | Selected Clients: 10 | TrainLabelCorrect: 0.632 (3160/5000) | Avg Labels/Client: 1.90
+
+==================== Round 198 ====================
+Net2/PFL Acc: 14.46% | Personal Loss: 4.6383 | Train Loss: 0.3594 | Selected Clients: 10 | TrainLabelCorrect: 0.609 (3044/5000) | Avg Labels/Client: 1.90
+
+==================== Round 199 ====================
+Net2/PFL Acc: 14.43% | Personal Loss: 4.6447 | Train Loss: 0.3585 | Selected Clients: 10 | TrainLabelCorrect: 0.595 (2976/5000) | Avg Labels/Client: 1.90

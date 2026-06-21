@@ -1,0 +1,804 @@
+Experiment Start: 20260604-112213
+Args: Namespace(method='pfedrn_t1pr_three', epochs=200, num_users=100, frac=0.1, local_ep=5, local_bs=50, bs=128, lr=0.01, momentum=0.5, split='user', schedule=[], lr_decay=0.1, weight_decay=0.0, partition='shard', dd_alpha=0.5, num_shards=200, fed_method='fedavg', model='cnn4conv', dataset='cifar10', iid=False, num_classes=10, num_channels=3, gpu=0, verbose=False, seed=1, all_clients=False, num_workers=0, noise_type_lst=['symmetric'], noise_group_num=[100], group_noise_rate=[(0.0, 0.8)], warmup_epochs=100, queue_size=15, forget_rate=0.2, uncertainty_threshold=0.05, alpha=1.2, beta=0.8, labeling='soft', mm_alpha=4, lambda_u=25, T=0.5, p_threshold=0.5, num_neighbors=2, w_alpha=0.6, num_edges=1, feder_exp_weight=0.6, neighbor_scope='global', pfl_local_weight=0.3, pfl_agree_weight=0.0, pfl_personal_ep=1, recover_interval=5, recover_threshold=0.6, recover_max_ratio=0.3, recover_ep=4, recover_train_global=0, t1pr_rn_weight=1.0, t1pr_rec_weight=0.0, t1pr_pfl_weight=0.0, t1pr_mutual_weight=0.0, t1pr_mutual_temp=1.0, recover_need_main_support=1, recover_main_min_prob=0.3, recover_need_personal_support=0, recover_personal_min_prob=0.6, personal_train_mode='core_recover', personal_distill_weight=0.0, exp_method='PFedRN-T1PR-3M', device=device(type='cuda', index=0), send_2_models=False, img_size=32)
+Actual clean labels in noisy train set: 30200/50000 (0.604)
+================================================================================
+
+==================== Round   0 ====================
+  --> [Edge 01] clients=10 loss=1.5932 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.643 CleanRecall=1.000 MissedClean=0 FalseClean=1784 TotalWrong=1784 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 19.34% | Global Loss: 2.2387 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5932 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.643 (3216/5000) | ActualCleanInRound: 3216 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1784 | TotalWrong: 1784 | RecoveryTrigger: 0
+
+==================== Round   1 ====================
+  --> [Edge 01] clients=10 loss=1.6154 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.596 CleanRecall=1.000 MissedClean=0 FalseClean=2020 TotalWrong=2020 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 20.42% | Global Loss: 2.2092 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6154 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.596 (2980/5000) | ActualCleanInRound: 2980 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2020 | TotalWrong: 2020 | RecoveryTrigger: 0
+
+==================== Round   2 ====================
+  --> [Edge 01] clients=10 loss=1.4295 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.622 CleanRecall=1.000 MissedClean=0 FalseClean=1888 TotalWrong=1888 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 16.49% | Global Loss: 2.2707 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4295 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.622 (3112/5000) | ActualCleanInRound: 3112 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1888 | TotalWrong: 1888 | RecoveryTrigger: 0
+
+==================== Round   3 ====================
+  --> [Edge 01] clients=10 loss=1.5735 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.619 CleanRecall=1.000 MissedClean=0 FalseClean=1904 TotalWrong=1904 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 23.19% | Global Loss: 2.1597 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5735 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.619 (3096/5000) | ActualCleanInRound: 3096 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1904 | TotalWrong: 1904 | RecoveryTrigger: 0
+
+==================== Round   4 ====================
+  --> [Edge 01] clients=10 loss=1.6585 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.585 CleanRecall=1.000 MissedClean=0 FalseClean=2076 TotalWrong=2076 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.73% | Global Loss: 2.1775 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6585 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.585 (2924/5000) | ActualCleanInRound: 2924 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2076 | TotalWrong: 2076 | RecoveryTrigger: 0
+
+==================== Round   5 ====================
+  --> [Edge 01] clients=10 loss=1.9021 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.454 CleanRecall=1.000 MissedClean=0 FalseClean=2728 TotalWrong=2728 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 24.08% | Global Loss: 2.1731 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.9021 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.454 (2272/5000) | ActualCleanInRound: 2272 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2728 | TotalWrong: 2728 | RecoveryTrigger: 0
+
+==================== Round   6 ====================
+  --> [Edge 01] clients=10 loss=1.5939 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.602 CleanRecall=1.000 MissedClean=0 FalseClean=1988 TotalWrong=1988 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.31% | Global Loss: 2.1182 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5939 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.602 (3012/5000) | ActualCleanInRound: 3012 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1988 | TotalWrong: 1988 | RecoveryTrigger: 0
+
+==================== Round   7 ====================
+  --> [Edge 01] clients=10 loss=1.4121 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.633 CleanRecall=1.000 MissedClean=0 FalseClean=1836 TotalWrong=1836 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 22.35% | Global Loss: 2.1671 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4121 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.633 (3164/5000) | ActualCleanInRound: 3164 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1836 | TotalWrong: 1836 | RecoveryTrigger: 0
+
+==================== Round   8 ====================
+  --> [Edge 01] clients=10 loss=1.1405 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.754 CleanRecall=1.000 MissedClean=0 FalseClean=1228 TotalWrong=1228 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.45% | Global Loss: 2.0991 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1405 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.754 (3772/5000) | ActualCleanInRound: 3772 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1228 | TotalWrong: 1228 | RecoveryTrigger: 0
+
+==================== Round   9 ====================
+  --> [Edge 01] clients=10 loss=1.5409 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.550 CleanRecall=1.000 MissedClean=0 FalseClean=2248 TotalWrong=2248 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 17.16% | Global Loss: 2.1285 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5409 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.550 (2752/5000) | ActualCleanInRound: 2752 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2248 | TotalWrong: 2248 | RecoveryTrigger: 0
+
+==================== Round  10 ====================
+  --> [Edge 01] clients=10 loss=1.5860 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.578 CleanRecall=1.000 MissedClean=0 FalseClean=2112 TotalWrong=2112 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 20.07% | Global Loss: 2.2025 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5860 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.578 (2888/5000) | ActualCleanInRound: 2888 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2112 | TotalWrong: 2112 | RecoveryTrigger: 0
+
+==================== Round  11 ====================
+  --> [Edge 01] clients=10 loss=1.5485 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.588 CleanRecall=1.000 MissedClean=0 FalseClean=2060 TotalWrong=2060 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 24.19% | Global Loss: 2.1125 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5485 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.588 (2940/5000) | ActualCleanInRound: 2940 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2060 | TotalWrong: 2060 | RecoveryTrigger: 0
+
+==================== Round  12 ====================
+  --> [Edge 01] clients=10 loss=1.6968 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.547 CleanRecall=1.000 MissedClean=0 FalseClean=2264 TotalWrong=2264 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.69% | Global Loss: 2.0902 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6968 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.547 (2736/5000) | ActualCleanInRound: 2736 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2264 | TotalWrong: 2264 | RecoveryTrigger: 0
+
+==================== Round  13 ====================
+  --> [Edge 01] clients=10 loss=1.4791 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.630 CleanRecall=1.000 MissedClean=0 FalseClean=1852 TotalWrong=1852 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 23.75% | Global Loss: 2.1112 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4791 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.630 (3148/5000) | ActualCleanInRound: 3148 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1852 | TotalWrong: 1852 | RecoveryTrigger: 0
+
+==================== Round  14 ====================
+  --> [Edge 01] clients=10 loss=1.3109 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.698 CleanRecall=1.000 MissedClean=0 FalseClean=1508 TotalWrong=1508 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 24.90% | Global Loss: 2.0811 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3109 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.698 (3492/5000) | ActualCleanInRound: 3492 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1508 | TotalWrong: 1508 | RecoveryTrigger: 0
+
+==================== Round  15 ====================
+  --> [Edge 01] clients=10 loss=1.4782 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.632 CleanRecall=1.000 MissedClean=0 FalseClean=1840 TotalWrong=1840 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 23.10% | Global Loss: 2.0929 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4782 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.632 (3160/5000) | ActualCleanInRound: 3160 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1840 | TotalWrong: 1840 | RecoveryTrigger: 0
+
+==================== Round  16 ====================
+  --> [Edge 01] clients=10 loss=1.2883 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.702 CleanRecall=1.000 MissedClean=0 FalseClean=1492 TotalWrong=1492 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.25% | Global Loss: 2.0426 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2883 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.702 (3508/5000) | ActualCleanInRound: 3508 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1492 | TotalWrong: 1492 | RecoveryTrigger: 0
+
+==================== Round  17 ====================
+  --> [Edge 01] clients=10 loss=1.6411 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.556 CleanRecall=1.000 MissedClean=0 FalseClean=2220 TotalWrong=2220 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.01% | Global Loss: 2.0196 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6411 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.556 (2780/5000) | ActualCleanInRound: 2780 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2220 | TotalWrong: 2220 | RecoveryTrigger: 0
+
+==================== Round  18 ====================
+  --> [Edge 01] clients=10 loss=1.6676 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.526 CleanRecall=1.000 MissedClean=0 FalseClean=2368 TotalWrong=2368 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.78% | Global Loss: 2.0412 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6676 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.526 (2632/5000) | ActualCleanInRound: 2632 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2368 | TotalWrong: 2368 | RecoveryTrigger: 0
+
+==================== Round  19 ====================
+  --> [Edge 01] clients=10 loss=1.6729 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.543 CleanRecall=1.000 MissedClean=0 FalseClean=2284 TotalWrong=2284 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.18% | Global Loss: 2.0534 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6729 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.543 (2716/5000) | ActualCleanInRound: 2716 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2284 | TotalWrong: 2284 | RecoveryTrigger: 0
+
+==================== Round  20 ====================
+  --> [Edge 01] clients=10 loss=1.3837 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.654 CleanRecall=1.000 MissedClean=0 FalseClean=1728 TotalWrong=1728 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.78% | Global Loss: 2.0521 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3837 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.654 (3272/5000) | ActualCleanInRound: 3272 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1728 | TotalWrong: 1728 | RecoveryTrigger: 0
+
+==================== Round  21 ====================
+  --> [Edge 01] clients=10 loss=1.5021 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.634 CleanRecall=1.000 MissedClean=0 FalseClean=1828 TotalWrong=1828 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.69% | Global Loss: 2.0475 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5021 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.634 (3172/5000) | ActualCleanInRound: 3172 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1828 | TotalWrong: 1828 | RecoveryTrigger: 0
+
+==================== Round  22 ====================
+  --> [Edge 01] clients=10 loss=1.4878 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.606 CleanRecall=1.000 MissedClean=0 FalseClean=1972 TotalWrong=1972 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.08% | Global Loss: 2.0627 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4878 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.606 (3028/5000) | ActualCleanInRound: 3028 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1972 | TotalWrong: 1972 | RecoveryTrigger: 0
+
+==================== Round  23 ====================
+  --> [Edge 01] clients=10 loss=1.4997 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.601 CleanRecall=1.000 MissedClean=0 FalseClean=1996 TotalWrong=1996 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.91% | Global Loss: 2.0798 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4997 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.601 (3004/5000) | ActualCleanInRound: 3004 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1996 | TotalWrong: 1996 | RecoveryTrigger: 0
+
+==================== Round  24 ====================
+  --> [Edge 01] clients=10 loss=1.5002 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.606 CleanRecall=1.000 MissedClean=0 FalseClean=1972 TotalWrong=1972 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.01% | Global Loss: 2.0488 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5002 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.606 (3028/5000) | ActualCleanInRound: 3028 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1972 | TotalWrong: 1972 | RecoveryTrigger: 0
+
+==================== Round  25 ====================
+  --> [Edge 01] clients=10 loss=1.3561 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.673 CleanRecall=1.000 MissedClean=0 FalseClean=1636 TotalWrong=1636 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.17% | Global Loss: 2.0719 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3561 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.673 (3364/5000) | ActualCleanInRound: 3364 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1636 | TotalWrong: 1636 | RecoveryTrigger: 0
+
+==================== Round  26 ====================
+  --> [Edge 01] clients=10 loss=1.4800 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.642 CleanRecall=1.000 MissedClean=0 FalseClean=1792 TotalWrong=1792 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.27% | Global Loss: 2.0477 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4800 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.642 (3208/5000) | ActualCleanInRound: 3208 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1792 | TotalWrong: 1792 | RecoveryTrigger: 0
+
+==================== Round  27 ====================
+  --> [Edge 01] clients=10 loss=1.3622 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.665 CleanRecall=1.000 MissedClean=0 FalseClean=1676 TotalWrong=1676 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.61% | Global Loss: 2.0274 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3622 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.665 (3324/5000) | ActualCleanInRound: 3324 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1676 | TotalWrong: 1676 | RecoveryTrigger: 0
+
+==================== Round  28 ====================
+  --> [Edge 01] clients=10 loss=1.5218 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.594 CleanRecall=1.000 MissedClean=0 FalseClean=2032 TotalWrong=2032 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.75% | Global Loss: 1.9997 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5218 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.594 (2968/5000) | ActualCleanInRound: 2968 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2032 | TotalWrong: 2032 | RecoveryTrigger: 0
+
+==================== Round  29 ====================
+  --> [Edge 01] clients=10 loss=1.4090 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.653 CleanRecall=1.000 MissedClean=0 FalseClean=1736 TotalWrong=1736 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.31% | Global Loss: 2.0172 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4090 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.653 (3264/5000) | ActualCleanInRound: 3264 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1736 | TotalWrong: 1736 | RecoveryTrigger: 0
+
+==================== Round  30 ====================
+  --> [Edge 01] clients=10 loss=1.2592 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.701 CleanRecall=1.000 MissedClean=0 FalseClean=1496 TotalWrong=1496 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 20.68% | Global Loss: 2.0583 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2592 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.701 (3504/5000) | ActualCleanInRound: 3504 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1496 | TotalWrong: 1496 | RecoveryTrigger: 0
+
+==================== Round  31 ====================
+  --> [Edge 01] clients=10 loss=1.4611 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.630 CleanRecall=1.000 MissedClean=0 FalseClean=1852 TotalWrong=1852 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.89% | Global Loss: 2.0247 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4611 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.630 (3148/5000) | ActualCleanInRound: 3148 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1852 | TotalWrong: 1852 | RecoveryTrigger: 0
+
+==================== Round  32 ====================
+  --> [Edge 01] clients=10 loss=1.6599 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.558 CleanRecall=1.000 MissedClean=0 FalseClean=2212 TotalWrong=2212 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.54% | Global Loss: 2.0008 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6599 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.558 (2788/5000) | ActualCleanInRound: 2788 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2212 | TotalWrong: 2212 | RecoveryTrigger: 0
+
+==================== Round  33 ====================
+  --> [Edge 01] clients=10 loss=1.6778 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.559 CleanRecall=1.000 MissedClean=0 FalseClean=2204 TotalWrong=2204 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.50% | Global Loss: 2.0950 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6778 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.559 (2796/5000) | ActualCleanInRound: 2796 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2204 | TotalWrong: 2204 | RecoveryTrigger: 0
+
+==================== Round  34 ====================
+  --> [Edge 01] clients=10 loss=1.2678 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.699 CleanRecall=1.000 MissedClean=0 FalseClean=1504 TotalWrong=1504 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.98% | Global Loss: 2.0358 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2678 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.699 (3496/5000) | ActualCleanInRound: 3496 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1504 | TotalWrong: 1504 | RecoveryTrigger: 0
+
+==================== Round  35 ====================
+  --> [Edge 01] clients=10 loss=1.5581 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.582 CleanRecall=1.000 MissedClean=0 FalseClean=2092 TotalWrong=2092 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.27% | Global Loss: 2.0272 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5581 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.582 (2908/5000) | ActualCleanInRound: 2908 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2092 | TotalWrong: 2092 | RecoveryTrigger: 0
+
+==================== Round  36 ====================
+  --> [Edge 01] clients=10 loss=1.2890 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.686 CleanRecall=1.000 MissedClean=0 FalseClean=1572 TotalWrong=1572 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 21.87% | Global Loss: 2.1105 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2890 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.686 (3428/5000) | ActualCleanInRound: 3428 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1572 | TotalWrong: 1572 | RecoveryTrigger: 0
+
+==================== Round  37 ====================
+  --> [Edge 01] clients=10 loss=1.4258 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.639 CleanRecall=1.000 MissedClean=0 FalseClean=1804 TotalWrong=1804 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.35% | Global Loss: 1.9993 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4258 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.639 (3196/5000) | ActualCleanInRound: 3196 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1804 | TotalWrong: 1804 | RecoveryTrigger: 0
+
+==================== Round  38 ====================
+  --> [Edge 01] clients=10 loss=1.8538 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.430 CleanRecall=1.000 MissedClean=0 FalseClean=2852 TotalWrong=2852 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.37% | Global Loss: 2.0552 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.8538 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.430 (2148/5000) | ActualCleanInRound: 2148 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2852 | TotalWrong: 2852 | RecoveryTrigger: 0
+
+==================== Round  39 ====================
+  --> [Edge 01] clients=10 loss=1.4928 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.634 CleanRecall=1.000 MissedClean=0 FalseClean=1828 TotalWrong=1828 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.37% | Global Loss: 2.0774 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4928 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.634 (3172/5000) | ActualCleanInRound: 3172 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1828 | TotalWrong: 1828 | RecoveryTrigger: 0
+
+==================== Round  40 ====================
+  --> [Edge 01] clients=10 loss=1.3824 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.639 CleanRecall=1.000 MissedClean=0 FalseClean=1804 TotalWrong=1804 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.53% | Global Loss: 2.0189 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3824 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.639 (3196/5000) | ActualCleanInRound: 3196 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1804 | TotalWrong: 1804 | RecoveryTrigger: 0
+
+==================== Round  41 ====================
+  --> [Edge 01] clients=10 loss=1.4423 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.607 CleanRecall=1.000 MissedClean=0 FalseClean=1964 TotalWrong=1964 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.70% | Global Loss: 2.0118 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4423 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.607 (3036/5000) | ActualCleanInRound: 3036 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1964 | TotalWrong: 1964 | RecoveryTrigger: 0
+
+==================== Round  42 ====================
+  --> [Edge 01] clients=10 loss=1.4772 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.622 CleanRecall=1.000 MissedClean=0 FalseClean=1888 TotalWrong=1888 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.60% | Global Loss: 1.9967 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4772 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.622 (3112/5000) | ActualCleanInRound: 3112 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1888 | TotalWrong: 1888 | RecoveryTrigger: 0
+
+==================== Round  43 ====================
+  --> [Edge 01] clients=10 loss=1.3868 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.630 CleanRecall=1.000 MissedClean=0 FalseClean=1848 TotalWrong=1848 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.99% | Global Loss: 2.0312 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3868 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.630 (3152/5000) | ActualCleanInRound: 3152 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1848 | TotalWrong: 1848 | RecoveryTrigger: 0
+
+==================== Round  44 ====================
+  --> [Edge 01] clients=10 loss=1.5294 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.595 CleanRecall=1.000 MissedClean=0 FalseClean=2024 TotalWrong=2024 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.12% | Global Loss: 1.9783 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5294 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.595 (2976/5000) | ActualCleanInRound: 2976 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2024 | TotalWrong: 2024 | RecoveryTrigger: 0
+
+==================== Round  45 ====================
+  --> [Edge 01] clients=10 loss=1.3877 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.641 CleanRecall=1.000 MissedClean=0 FalseClean=1796 TotalWrong=1796 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.10% | Global Loss: 2.0323 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3877 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.641 (3204/5000) | ActualCleanInRound: 3204 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1796 | TotalWrong: 1796 | RecoveryTrigger: 0
+
+==================== Round  46 ====================
+  --> [Edge 01] clients=10 loss=1.4725 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.574 CleanRecall=1.000 MissedClean=0 FalseClean=2128 TotalWrong=2128 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.12% | Global Loss: 2.0619 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4725 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.574 (2872/5000) | ActualCleanInRound: 2872 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2128 | TotalWrong: 2128 | RecoveryTrigger: 0
+
+==================== Round  47 ====================
+  --> [Edge 01] clients=10 loss=1.2769 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.679 CleanRecall=1.000 MissedClean=0 FalseClean=1604 TotalWrong=1604 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.86% | Global Loss: 2.0290 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2769 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.679 (3396/5000) | ActualCleanInRound: 3396 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1604 | TotalWrong: 1604 | RecoveryTrigger: 0
+
+==================== Round  48 ====================
+  --> [Edge 01] clients=10 loss=1.5122 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.551 CleanRecall=1.000 MissedClean=0 FalseClean=2244 TotalWrong=2244 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.73% | Global Loss: 2.0658 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5122 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.551 (2756/5000) | ActualCleanInRound: 2756 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2244 | TotalWrong: 2244 | RecoveryTrigger: 0
+
+==================== Round  49 ====================
+  --> [Edge 01] clients=10 loss=1.7459 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.490 CleanRecall=1.000 MissedClean=0 FalseClean=2548 TotalWrong=2548 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.68% | Global Loss: 2.0451 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.7459 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.490 (2452/5000) | ActualCleanInRound: 2452 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2548 | TotalWrong: 2548 | RecoveryTrigger: 0
+
+==================== Round  50 ====================
+  --> [Edge 01] clients=10 loss=1.4572 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.582 CleanRecall=1.000 MissedClean=0 FalseClean=2088 TotalWrong=2088 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.76% | Global Loss: 2.0572 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4572 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.582 (2912/5000) | ActualCleanInRound: 2912 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2088 | TotalWrong: 2088 | RecoveryTrigger: 0
+
+==================== Round  51 ====================
+  --> [Edge 01] clients=10 loss=1.6538 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.522 CleanRecall=1.000 MissedClean=0 FalseClean=2388 TotalWrong=2388 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.52% | Global Loss: 2.0600 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6538 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.522 (2612/5000) | ActualCleanInRound: 2612 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2388 | TotalWrong: 2388 | RecoveryTrigger: 0
+
+==================== Round  52 ====================
+  --> [Edge 01] clients=10 loss=1.3608 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.627 CleanRecall=1.000 MissedClean=0 FalseClean=1864 TotalWrong=1864 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.06% | Global Loss: 2.0399 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3608 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.627 (3136/5000) | ActualCleanInRound: 3136 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1864 | TotalWrong: 1864 | RecoveryTrigger: 0
+
+==================== Round  53 ====================
+  --> [Edge 01] clients=10 loss=1.4272 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.590 CleanRecall=1.000 MissedClean=0 FalseClean=2048 TotalWrong=2048 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.71% | Global Loss: 1.9912 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4272 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.590 (2952/5000) | ActualCleanInRound: 2952 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2048 | TotalWrong: 2048 | RecoveryTrigger: 0
+
+==================== Round  54 ====================
+  --> [Edge 01] clients=10 loss=1.6446 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.511 CleanRecall=1.000 MissedClean=0 FalseClean=2444 TotalWrong=2444 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.74% | Global Loss: 2.0338 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6446 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.511 (2556/5000) | ActualCleanInRound: 2556 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2444 | TotalWrong: 2444 | RecoveryTrigger: 0
+
+==================== Round  55 ====================
+  --> [Edge 01] clients=10 loss=1.1524 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.707 CleanRecall=1.000 MissedClean=0 FalseClean=1464 TotalWrong=1464 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.02% | Global Loss: 2.0090 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1524 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.707 (3536/5000) | ActualCleanInRound: 3536 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1464 | TotalWrong: 1464 | RecoveryTrigger: 0
+
+==================== Round  56 ====================
+  --> [Edge 01] clients=10 loss=1.4164 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.624 CleanRecall=1.000 MissedClean=0 FalseClean=1880 TotalWrong=1880 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.10% | Global Loss: 2.0232 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4164 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.624 (3120/5000) | ActualCleanInRound: 3120 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1880 | TotalWrong: 1880 | RecoveryTrigger: 0
+
+==================== Round  57 ====================
+  --> [Edge 01] clients=10 loss=1.3630 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.655 CleanRecall=1.000 MissedClean=0 FalseClean=1724 TotalWrong=1724 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.86% | Global Loss: 2.0422 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3630 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.655 (3276/5000) | ActualCleanInRound: 3276 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1724 | TotalWrong: 1724 | RecoveryTrigger: 0
+
+==================== Round  58 ====================
+  --> [Edge 01] clients=10 loss=1.4776 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.610 CleanRecall=1.000 MissedClean=0 FalseClean=1952 TotalWrong=1952 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.83% | Global Loss: 1.9960 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4776 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.610 (3048/5000) | ActualCleanInRound: 3048 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1952 | TotalWrong: 1952 | RecoveryTrigger: 0
+
+==================== Round  59 ====================
+  --> [Edge 01] clients=10 loss=1.2030 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.724 CleanRecall=1.000 MissedClean=0 FalseClean=1380 TotalWrong=1380 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.41% | Global Loss: 2.0057 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2030 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.724 (3620/5000) | ActualCleanInRound: 3620 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1380 | TotalWrong: 1380 | RecoveryTrigger: 0
+
+==================== Round  60 ====================
+  --> [Edge 01] clients=10 loss=1.5527 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.584 CleanRecall=1.000 MissedClean=0 FalseClean=2080 TotalWrong=2080 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.75% | Global Loss: 2.0251 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5527 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.584 (2920/5000) | ActualCleanInRound: 2920 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2080 | TotalWrong: 2080 | RecoveryTrigger: 0
+
+==================== Round  61 ====================
+  --> [Edge 01] clients=10 loss=1.2325 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.680 CleanRecall=1.000 MissedClean=0 FalseClean=1600 TotalWrong=1600 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.97% | Global Loss: 2.0151 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2325 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.680 (3400/5000) | ActualCleanInRound: 3400 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1600 | TotalWrong: 1600 | RecoveryTrigger: 0
+
+==================== Round  62 ====================
+  --> [Edge 01] clients=10 loss=1.5120 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.577 CleanRecall=1.000 MissedClean=0 FalseClean=2116 TotalWrong=2116 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.92% | Global Loss: 2.0533 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5120 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.577 (2884/5000) | ActualCleanInRound: 2884 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2116 | TotalWrong: 2116 | RecoveryTrigger: 0
+
+==================== Round  63 ====================
+  --> [Edge 01] clients=10 loss=1.4415 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.628 CleanRecall=1.000 MissedClean=0 FalseClean=1860 TotalWrong=1860 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.72% | Global Loss: 1.9725 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4415 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.628 (3140/5000) | ActualCleanInRound: 3140 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1860 | TotalWrong: 1860 | RecoveryTrigger: 0
+
+==================== Round  64 ====================
+  --> [Edge 01] clients=10 loss=1.1648 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.693 CleanRecall=1.000 MissedClean=0 FalseClean=1536 TotalWrong=1536 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.03% | Global Loss: 1.9857 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1648 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.693 (3464/5000) | ActualCleanInRound: 3464 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1536 | TotalWrong: 1536 | RecoveryTrigger: 0
+
+==================== Round  65 ====================
+  --> [Edge 01] clients=10 loss=1.6095 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.538 CleanRecall=1.000 MissedClean=0 FalseClean=2308 TotalWrong=2308 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.29% | Global Loss: 1.9857 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6095 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.538 (2692/5000) | ActualCleanInRound: 2692 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2308 | TotalWrong: 2308 | RecoveryTrigger: 0
+
+==================== Round  66 ====================
+  --> [Edge 01] clients=10 loss=1.6336 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.530 CleanRecall=1.000 MissedClean=0 FalseClean=2352 TotalWrong=2352 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.31% | Global Loss: 1.9915 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6336 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.530 (2648/5000) | ActualCleanInRound: 2648 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2352 | TotalWrong: 2352 | RecoveryTrigger: 0
+
+==================== Round  67 ====================
+  --> [Edge 01] clients=10 loss=1.4497 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.601 CleanRecall=1.000 MissedClean=0 FalseClean=1996 TotalWrong=1996 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.22% | Global Loss: 1.9866 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4497 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.601 (3004/5000) | ActualCleanInRound: 3004 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1996 | TotalWrong: 1996 | RecoveryTrigger: 0
+
+==================== Round  68 ====================
+  --> [Edge 01] clients=10 loss=1.3078 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.666 CleanRecall=1.000 MissedClean=0 FalseClean=1668 TotalWrong=1668 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.39% | Global Loss: 1.9782 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3078 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.666 (3332/5000) | ActualCleanInRound: 3332 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1668 | TotalWrong: 1668 | RecoveryTrigger: 0
+
+==================== Round  69 ====================
+  --> [Edge 01] clients=10 loss=1.5916 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.540 CleanRecall=1.000 MissedClean=0 FalseClean=2300 TotalWrong=2300 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.35% | Global Loss: 2.0318 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5916 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.540 (2700/5000) | ActualCleanInRound: 2700 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2300 | TotalWrong: 2300 | RecoveryTrigger: 0
+
+==================== Round  70 ====================
+  --> [Edge 01] clients=10 loss=1.3339 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.642 CleanRecall=1.000 MissedClean=0 FalseClean=1792 TotalWrong=1792 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.25% | Global Loss: 1.9969 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3339 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.642 (3208/5000) | ActualCleanInRound: 3208 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1792 | TotalWrong: 1792 | RecoveryTrigger: 0
+
+==================== Round  71 ====================
+  --> [Edge 01] clients=10 loss=1.5599 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.565 CleanRecall=1.000 MissedClean=0 FalseClean=2176 TotalWrong=2176 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.64% | Global Loss: 2.0516 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5599 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.565 (2824/5000) | ActualCleanInRound: 2824 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2176 | TotalWrong: 2176 | RecoveryTrigger: 0
+
+==================== Round  72 ====================
+  --> [Edge 01] clients=10 loss=1.6111 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.522 CleanRecall=1.000 MissedClean=0 FalseClean=2388 TotalWrong=2388 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.13% | Global Loss: 2.0891 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6111 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.522 (2612/5000) | ActualCleanInRound: 2612 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2388 | TotalWrong: 2388 | RecoveryTrigger: 0
+
+==================== Round  73 ====================
+  --> [Edge 01] clients=10 loss=1.4473 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.600 CleanRecall=1.000 MissedClean=0 FalseClean=2000 TotalWrong=2000 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.96% | Global Loss: 2.0651 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4473 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.600 (3000/5000) | ActualCleanInRound: 3000 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2000 | TotalWrong: 2000 | RecoveryTrigger: 0
+
+==================== Round  74 ====================
+  --> [Edge 01] clients=10 loss=1.4468 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.596 CleanRecall=1.000 MissedClean=0 FalseClean=2020 TotalWrong=2020 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 19.65% | Global Loss: 2.0952 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4468 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.596 (2980/5000) | ActualCleanInRound: 2980 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2020 | TotalWrong: 2020 | RecoveryTrigger: 0
+
+==================== Round  75 ====================
+  --> [Edge 01] clients=10 loss=1.1857 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.719 CleanRecall=1.000 MissedClean=0 FalseClean=1404 TotalWrong=1404 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.57% | Global Loss: 1.9641 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1857 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.719 (3596/5000) | ActualCleanInRound: 3596 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1404 | TotalWrong: 1404 | RecoveryTrigger: 0
+
+==================== Round  76 ====================
+  --> [Edge 01] clients=10 loss=1.7012 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.509 CleanRecall=1.000 MissedClean=0 FalseClean=2456 TotalWrong=2456 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.32% | Global Loss: 2.0237 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.7012 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.509 (2544/5000) | ActualCleanInRound: 2544 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2456 | TotalWrong: 2456 | RecoveryTrigger: 0
+
+==================== Round  77 ====================
+  --> [Edge 01] clients=10 loss=1.1100 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.718 CleanRecall=1.000 MissedClean=0 FalseClean=1408 TotalWrong=1408 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.16% | Global Loss: 2.0517 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1100 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.718 (3592/5000) | ActualCleanInRound: 3592 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1408 | TotalWrong: 1408 | RecoveryTrigger: 0
+
+==================== Round  78 ====================
+  --> [Edge 01] clients=10 loss=1.7160 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.476 CleanRecall=1.000 MissedClean=0 FalseClean=2620 TotalWrong=2620 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.12% | Global Loss: 2.0437 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.7160 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.476 (2380/5000) | ActualCleanInRound: 2380 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2620 | TotalWrong: 2620 | RecoveryTrigger: 0
+
+==================== Round  79 ====================
+  --> [Edge 01] clients=10 loss=1.2450 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.667 CleanRecall=1.000 MissedClean=0 FalseClean=1664 TotalWrong=1664 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.56% | Global Loss: 1.9856 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2450 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.667 (3336/5000) | ActualCleanInRound: 3336 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1664 | TotalWrong: 1664 | RecoveryTrigger: 0
+
+==================== Round  80 ====================
+  --> [Edge 01] clients=10 loss=1.9259 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.365 CleanRecall=1.000 MissedClean=0 FalseClean=3176 TotalWrong=3176 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.47% | Global Loss: 2.0506 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.9259 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.365 (1824/5000) | ActualCleanInRound: 1824 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 3176 | TotalWrong: 3176 | RecoveryTrigger: 0
+
+==================== Round  81 ====================
+  --> [Edge 01] clients=10 loss=1.5959 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.515 CleanRecall=1.000 MissedClean=0 FalseClean=2424 TotalWrong=2424 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.86% | Global Loss: 2.0184 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5959 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.515 (2576/5000) | ActualCleanInRound: 2576 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2424 | TotalWrong: 2424 | RecoveryTrigger: 0
+
+==================== Round  82 ====================
+  --> [Edge 01] clients=10 loss=1.3254 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.673 CleanRecall=1.000 MissedClean=0 FalseClean=1636 TotalWrong=1636 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.85% | Global Loss: 1.9727 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3254 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.673 (3364/5000) | ActualCleanInRound: 3364 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1636 | TotalWrong: 1636 | RecoveryTrigger: 0
+
+==================== Round  83 ====================
+  --> [Edge 01] clients=10 loss=1.6155 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.510 CleanRecall=1.000 MissedClean=0 FalseClean=2448 TotalWrong=2448 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.80% | Global Loss: 2.0870 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6155 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.510 (2552/5000) | ActualCleanInRound: 2552 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2448 | TotalWrong: 2448 | RecoveryTrigger: 0
+
+==================== Round  84 ====================
+  --> [Edge 01] clients=10 loss=1.3468 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.638 CleanRecall=1.000 MissedClean=0 FalseClean=1808 TotalWrong=1808 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.97% | Global Loss: 2.0418 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3468 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.638 (3192/5000) | ActualCleanInRound: 3192 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1808 | TotalWrong: 1808 | RecoveryTrigger: 0
+
+==================== Round  85 ====================
+  --> [Edge 01] clients=10 loss=1.3289 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.605 CleanRecall=1.000 MissedClean=0 FalseClean=1976 TotalWrong=1976 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.95% | Global Loss: 2.0891 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3289 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.605 (3024/5000) | ActualCleanInRound: 3024 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1976 | TotalWrong: 1976 | RecoveryTrigger: 0
+
+==================== Round  86 ====================
+  --> [Edge 01] clients=10 loss=1.6770 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.491 CleanRecall=1.000 MissedClean=0 FalseClean=2544 TotalWrong=2544 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.02% | Global Loss: 2.0753 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.6770 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.491 (2456/5000) | ActualCleanInRound: 2456 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2544 | TotalWrong: 2544 | RecoveryTrigger: 0
+
+==================== Round  87 ====================
+  --> [Edge 01] clients=10 loss=1.3385 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.641 CleanRecall=1.000 MissedClean=0 FalseClean=1796 TotalWrong=1796 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 23.43% | Global Loss: 2.1039 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3385 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.641 (3204/5000) | ActualCleanInRound: 3204 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1796 | TotalWrong: 1796 | RecoveryTrigger: 0
+
+==================== Round  88 ====================
+  --> [Edge 01] clients=10 loss=1.3596 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.619 CleanRecall=1.000 MissedClean=0 FalseClean=1904 TotalWrong=1904 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.77% | Global Loss: 2.0274 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3596 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.619 (3096/5000) | ActualCleanInRound: 3096 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1904 | TotalWrong: 1904 | RecoveryTrigger: 0
+
+==================== Round  89 ====================
+  --> [Edge 01] clients=10 loss=1.5549 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.568 CleanRecall=1.000 MissedClean=0 FalseClean=2160 TotalWrong=2160 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.95% | Global Loss: 2.0555 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5549 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.568 (2840/5000) | ActualCleanInRound: 2840 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2160 | TotalWrong: 2160 | RecoveryTrigger: 0
+
+==================== Round  90 ====================
+  --> [Edge 01] clients=10 loss=1.1057 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.710 CleanRecall=1.000 MissedClean=0 FalseClean=1452 TotalWrong=1452 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.47% | Global Loss: 2.0454 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1057 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.710 (3548/5000) | ActualCleanInRound: 3548 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1452 | TotalWrong: 1452 | RecoveryTrigger: 0
+
+==================== Round  91 ====================
+  --> [Edge 01] clients=10 loss=1.3974 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.557 CleanRecall=1.000 MissedClean=0 FalseClean=2216 TotalWrong=2216 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.07% | Global Loss: 2.0681 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3974 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.557 (2784/5000) | ActualCleanInRound: 2784 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2216 | TotalWrong: 2216 | RecoveryTrigger: 0
+
+==================== Round  92 ====================
+  --> [Edge 01] clients=10 loss=1.4728 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.562 CleanRecall=1.000 MissedClean=0 FalseClean=2188 TotalWrong=2188 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 20.69% | Global Loss: 2.1606 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4728 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.562 (2812/5000) | ActualCleanInRound: 2812 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2188 | TotalWrong: 2188 | RecoveryTrigger: 0
+
+==================== Round  93 ====================
+  --> [Edge 01] clients=10 loss=1.1301 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.730 CleanRecall=1.000 MissedClean=0 FalseClean=1352 TotalWrong=1352 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.47% | Global Loss: 2.0849 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1301 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.730 (3648/5000) | ActualCleanInRound: 3648 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1352 | TotalWrong: 1352 | RecoveryTrigger: 0
+
+==================== Round  94 ====================
+  --> [Edge 01] clients=10 loss=1.5679 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.538 CleanRecall=1.000 MissedClean=0 FalseClean=2308 TotalWrong=2308 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.42% | Global Loss: 2.0680 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5679 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.538 (2692/5000) | ActualCleanInRound: 2692 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2308 | TotalWrong: 2308 | RecoveryTrigger: 0
+
+==================== Round  95 ====================
+  --> [Edge 01] clients=10 loss=0.8415 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.812 CleanRecall=1.000 MissedClean=0 FalseClean=940 TotalWrong=940 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.99% | Global Loss: 1.9919 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8415 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.812 (4060/5000) | ActualCleanInRound: 4060 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 940 | TotalWrong: 940 | RecoveryTrigger: 0
+
+==================== Round  96 ====================
+  --> [Edge 01] clients=10 loss=1.0324 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.778 CleanRecall=1.000 MissedClean=0 FalseClean=1112 TotalWrong=1112 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.03% | Global Loss: 2.0159 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0324 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.778 (3888/5000) | ActualCleanInRound: 3888 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1112 | TotalWrong: 1112 | RecoveryTrigger: 0
+
+==================== Round  97 ====================
+  --> [Edge 01] clients=10 loss=1.8136 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.422 CleanRecall=1.000 MissedClean=0 FalseClean=2892 TotalWrong=2892 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.55% | Global Loss: 2.0834 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.8136 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.422 (2108/5000) | ActualCleanInRound: 2108 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 2892 | TotalWrong: 2892 | RecoveryTrigger: 0
+
+==================== Round  98 ====================
+  --> [Edge 01] clients=10 loss=1.2380 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.685 CleanRecall=1.000 MissedClean=0 FalseClean=1576 TotalWrong=1576 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.27% | Global Loss: 2.0665 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2380 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.685 (3424/5000) | ActualCleanInRound: 3424 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1576 | TotalWrong: 1576 | RecoveryTrigger: 0
+
+==================== Round  99 ====================
+  --> [Edge 01] clients=10 loss=1.0696 core=1.000 recover=0.000 train=1.000 agree=0.000 CleanCount=5000/5000 ActualTrainClean=0.730 CleanRecall=1.000 MissedClean=0 FalseClean=1352 TotalWrong=1352 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.05% | Global Loss: 2.0184 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0696 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | Agree: 0.000 | Weights: (1.00,0.00,0.00) | CleanCount: 5000/5000 | ActualTrainClean: 0.730 (3648/5000) | ActualCleanInRound: 3648 | CleanRecall: 1.000 | MissedClean: 0 | FalseClean: 1352 | TotalWrong: 1352 | RecoveryTrigger: 0
+
+==================== Round 100 ====================
+  --> [Edge 01] clients=10 loss=0.4534 core=0.548 recover=0.026 train=0.548 agree=0.268 CleanCount=2742/5000 ActualTrainClean=0.880 CleanRecall=0.773 MissedClean=710 FalseClean=328 TotalWrong=1038 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 28.59% | Global Loss: 2.1390 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.4534 | CoreClean: 0.548 | Recover: 0.026 | TrainRatio: 0.548 | Agree: 0.268 | Weights: (1.00,0.00,0.00) | CleanCount: 2742/5000 | ActualTrainClean: 0.880 (2414/2742) | ActualCleanInRound: 3124 | CleanRecall: 0.773 | MissedClean: 710 | FalseClean: 328 | TotalWrong: 1038 | RecoveryTrigger: 1
+
+==================== Round 101 ====================
+  --> [Edge 01] clients=10 loss=0.4985 core=0.556 recover=0.000 train=0.556 agree=0.232 CleanCount=2782/5000 ActualTrainClean=0.910 CleanRecall=0.797 MissedClean=645 FalseClean=251 TotalWrong=896 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.96% | Global Loss: 2.2726 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.4985 | CoreClean: 0.556 | Recover: 0.000 | TrainRatio: 0.556 | Agree: 0.232 | Weights: (1.00,0.00,0.00) | CleanCount: 2782/5000 | ActualTrainClean: 0.910 (2531/2782) | ActualCleanInRound: 3176 | CleanRecall: 0.797 | MissedClean: 645 | FalseClean: 251 | TotalWrong: 896 | RecoveryTrigger: 0
+
+==================== Round 102 ====================
+  --> [Edge 01] clients=10 loss=0.3819 core=0.606 recover=0.000 train=0.606 agree=0.253 CleanCount=3030/5000 ActualTrainClean=0.890 CleanRecall=0.728 MissedClean=1008 FalseClean=334 TotalWrong=1342 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.55% | Global Loss: 2.3157 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.3819 | CoreClean: 0.606 | Recover: 0.000 | TrainRatio: 0.606 | Agree: 0.253 | Weights: (1.00,0.00,0.00) | CleanCount: 3030/5000 | ActualTrainClean: 0.890 (2696/3030) | ActualCleanInRound: 3704 | CleanRecall: 0.728 | MissedClean: 1008 | FalseClean: 334 | TotalWrong: 1342 | RecoveryTrigger: 0
+
+==================== Round 103 ====================
+  --> [Edge 01] clients=10 loss=0.5278 core=0.607 recover=0.000 train=0.607 agree=0.271 CleanCount=3034/5000 ActualTrainClean=0.849 CleanRecall=0.768 MissedClean=779 FalseClean=457 TotalWrong=1236 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 38.94% | Global Loss: 2.2711 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.5278 | CoreClean: 0.607 | Recover: 0.000 | TrainRatio: 0.607 | Agree: 0.271 | Weights: (1.00,0.00,0.00) | CleanCount: 3034/5000 | ActualTrainClean: 0.849 (2577/3034) | ActualCleanInRound: 3356 | CleanRecall: 0.768 | MissedClean: 779 | FalseClean: 457 | TotalWrong: 1236 | RecoveryTrigger: 0
+
+==================== Round 104 ====================
+  --> [Edge 01] clients=10 loss=0.8578 core=0.593 recover=0.000 train=0.593 agree=0.265 CleanCount=2965/5000 ActualTrainClean=0.711 CleanRecall=0.679 MissedClean=999 FalseClean=856 TotalWrong=1855 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.40% | Global Loss: 2.3727 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8578 | CoreClean: 0.593 | Recover: 0.000 | TrainRatio: 0.593 | Agree: 0.265 | Weights: (1.00,0.00,0.00) | CleanCount: 2965/5000 | ActualTrainClean: 0.711 (2109/2965) | ActualCleanInRound: 3108 | CleanRecall: 0.679 | MissedClean: 999 | FalseClean: 856 | TotalWrong: 1855 | RecoveryTrigger: 0
+
+==================== Round 105 ====================
+  --> [Edge 01] clients=10 loss=0.4163 core=0.485 recover=0.015 train=0.485 agree=0.258 CleanCount=2427/5000 ActualTrainClean=0.889 CleanRecall=0.583 MissedClean=1543 FalseClean=270 TotalWrong=1813 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 28.50% | Global Loss: 2.7182 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.4163 | CoreClean: 0.485 | Recover: 0.015 | TrainRatio: 0.485 | Agree: 0.258 | Weights: (1.00,0.00,0.00) | CleanCount: 2427/5000 | ActualTrainClean: 0.889 (2157/2427) | ActualCleanInRound: 3700 | CleanRecall: 0.583 | MissedClean: 1543 | FalseClean: 270 | TotalWrong: 1813 | RecoveryTrigger: 1
+
+==================== Round 106 ====================
+  --> [Edge 01] clients=10 loss=0.7290 core=0.520 recover=0.000 train=0.520 agree=0.220 CleanCount=2600/5000 ActualTrainClean=0.722 CleanRecall=0.629 MissedClean=1106 FalseClean=722 TotalWrong=1828 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.94% | Global Loss: 2.5659 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.7290 | CoreClean: 0.520 | Recover: 0.000 | TrainRatio: 0.520 | Agree: 0.220 | Weights: (1.00,0.00,0.00) | CleanCount: 2600/5000 | ActualTrainClean: 0.722 (1878/2600) | ActualCleanInRound: 2984 | CleanRecall: 0.629 | MissedClean: 1106 | FalseClean: 722 | TotalWrong: 1828 | RecoveryTrigger: 0
+
+==================== Round 107 ====================
+  --> [Edge 01] clients=10 loss=0.5855 core=0.591 recover=0.000 train=0.591 agree=0.342 CleanCount=2953/5000 ActualTrainClean=0.847 CleanRecall=0.680 MissedClean=1178 FalseClean=451 TotalWrong=1629 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.64% | Global Loss: 2.5613 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.5855 | CoreClean: 0.591 | Recover: 0.000 | TrainRatio: 0.591 | Agree: 0.342 | Weights: (1.00,0.00,0.00) | CleanCount: 2953/5000 | ActualTrainClean: 0.847 (2502/2953) | ActualCleanInRound: 3680 | CleanRecall: 0.680 | MissedClean: 1178 | FalseClean: 451 | TotalWrong: 1629 | RecoveryTrigger: 0
+
+==================== Round 108 ====================
+  --> [Edge 01] clients=10 loss=0.5196 core=0.588 recover=0.000 train=0.588 agree=0.405 CleanCount=2941/5000 ActualTrainClean=0.844 CleanRecall=0.801 MissedClean=617 FalseClean=458 TotalWrong=1075 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.23% | Global Loss: 2.6179 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.5196 | CoreClean: 0.588 | Recover: 0.000 | TrainRatio: 0.588 | Agree: 0.405 | Weights: (1.00,0.00,0.00) | CleanCount: 2941/5000 | ActualTrainClean: 0.844 (2483/2941) | ActualCleanInRound: 3100 | CleanRecall: 0.801 | MissedClean: 617 | FalseClean: 458 | TotalWrong: 1075 | RecoveryTrigger: 0
+
+==================== Round 109 ====================
+  --> [Edge 01] clients=10 loss=0.5626 core=0.572 recover=0.000 train=0.572 agree=0.334 CleanCount=2859/5000 ActualTrainClean=0.853 CleanRecall=0.791 MissedClean=644 FalseClean=419 TotalWrong=1063 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.33% | Global Loss: 2.5919 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.5626 | CoreClean: 0.572 | Recover: 0.000 | TrainRatio: 0.572 | Agree: 0.334 | Weights: (1.00,0.00,0.00) | CleanCount: 2859/5000 | ActualTrainClean: 0.853 (2440/2859) | ActualCleanInRound: 3084 | CleanRecall: 0.791 | MissedClean: 644 | FalseClean: 419 | TotalWrong: 1063 | RecoveryTrigger: 0
+
+==================== Round 110 ====================
+  --> [Edge 01] clients=10 loss=1.1902 core=0.709 recover=0.004 train=0.709 agree=0.197 CleanCount=3547/5000 ActualTrainClean=0.600 CleanRecall=0.872 MissedClean=312 FalseClean=1419 TotalWrong=1731 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 34.72% | Global Loss: 2.4001 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1902 | CoreClean: 0.709 | Recover: 0.004 | TrainRatio: 0.709 | Agree: 0.197 | Weights: (1.00,0.00,0.00) | CleanCount: 3547/5000 | ActualTrainClean: 0.600 (2128/3547) | ActualCleanInRound: 2440 | CleanRecall: 0.872 | MissedClean: 312 | FalseClean: 1419 | TotalWrong: 1731 | RecoveryTrigger: 1
+
+==================== Round 111 ====================
+  --> [Edge 01] clients=10 loss=1.0802 core=0.705 recover=0.000 train=0.705 agree=0.336 CleanCount=3524/5000 ActualTrainClean=0.610 CleanRecall=0.798 MissedClean=544 FalseClean=1376 TotalWrong=1920 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 36.28% | Global Loss: 2.3936 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0802 | CoreClean: 0.705 | Recover: 0.000 | TrainRatio: 0.705 | Agree: 0.336 | Weights: (1.00,0.00,0.00) | CleanCount: 3524/5000 | ActualTrainClean: 0.610 (2148/3524) | ActualCleanInRound: 2692 | CleanRecall: 0.798 | MissedClean: 544 | FalseClean: 1376 | TotalWrong: 1920 | RecoveryTrigger: 0
+
+==================== Round 112 ====================
+  --> [Edge 01] clients=10 loss=0.4768 core=0.784 recover=0.000 train=0.784 agree=0.357 CleanCount=3921/5000 ActualTrainClean=0.902 CleanRecall=0.938 MissedClean=232 FalseClean=385 TotalWrong=617 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 38.73% | Global Loss: 2.3212 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.4768 | CoreClean: 0.784 | Recover: 0.000 | TrainRatio: 0.784 | Agree: 0.357 | Weights: (1.00,0.00,0.00) | CleanCount: 3921/5000 | ActualTrainClean: 0.902 (3536/3921) | ActualCleanInRound: 3768 | CleanRecall: 0.938 | MissedClean: 232 | FalseClean: 385 | TotalWrong: 617 | RecoveryTrigger: 0
+
+==================== Round 113 ====================
+  --> [Edge 01] clients=10 loss=0.7597 core=0.648 recover=0.000 train=0.648 agree=0.354 CleanCount=3240/5000 ActualTrainClean=0.748 CleanRecall=0.704 MissedClean=1021 FalseClean=817 TotalWrong=1838 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.86% | Global Loss: 2.5439 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.7597 | CoreClean: 0.648 | Recover: 0.000 | TrainRatio: 0.648 | Agree: 0.354 | Weights: (1.00,0.00,0.00) | CleanCount: 3240/5000 | ActualTrainClean: 0.748 (2423/3240) | ActualCleanInRound: 3444 | CleanRecall: 0.704 | MissedClean: 1021 | FalseClean: 817 | TotalWrong: 1838 | RecoveryTrigger: 0
+
+==================== Round 114 ====================
+  --> [Edge 01] clients=10 loss=1.1401 core=0.729 recover=0.000 train=0.729 agree=0.344 CleanCount=3644/5000 ActualTrainClean=0.583 CleanRecall=0.840 MissedClean=406 FalseClean=1518 TotalWrong=1924 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 35.33% | Global Loss: 2.4404 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1401 | CoreClean: 0.729 | Recover: 0.000 | TrainRatio: 0.729 | Agree: 0.344 | Weights: (1.00,0.00,0.00) | CleanCount: 3644/5000 | ActualTrainClean: 0.583 (2126/3644) | ActualCleanInRound: 2532 | CleanRecall: 0.840 | MissedClean: 406 | FalseClean: 1518 | TotalWrong: 1924 | RecoveryTrigger: 0
+
+==================== Round 115 ====================
+  --> [Edge 01] clients=10 loss=0.8356 core=0.746 recover=0.009 train=0.746 agree=0.356 CleanCount=3729/5000 ActualTrainClean=0.735 CleanRecall=0.914 MissedClean=259 FalseClean=988 TotalWrong=1247 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 26.67% | Global Loss: 2.6018 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8356 | CoreClean: 0.746 | Recover: 0.009 | TrainRatio: 0.746 | Agree: 0.356 | Weights: (1.00,0.00,0.00) | CleanCount: 3729/5000 | ActualTrainClean: 0.735 (2741/3729) | ActualCleanInRound: 3000 | CleanRecall: 0.914 | MissedClean: 259 | FalseClean: 988 | TotalWrong: 1247 | RecoveryTrigger: 1
+
+==================== Round 116 ====================
+  --> [Edge 01] clients=10 loss=1.0088 core=0.765 recover=0.000 train=0.765 agree=0.250 CleanCount=3827/5000 ActualTrainClean=0.659 CleanRecall=0.818 MissedClean=562 FalseClean=1305 TotalWrong=1867 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.88% | Global Loss: 2.5748 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0088 | CoreClean: 0.765 | Recover: 0.000 | TrainRatio: 0.765 | Agree: 0.250 | Weights: (1.00,0.00,0.00) | CleanCount: 3827/5000 | ActualTrainClean: 0.659 (2522/3827) | ActualCleanInRound: 3084 | CleanRecall: 0.818 | MissedClean: 562 | FalseClean: 1305 | TotalWrong: 1867 | RecoveryTrigger: 0
+
+==================== Round 117 ====================
+  --> [Edge 01] clients=10 loss=0.6975 core=0.771 recover=0.000 train=0.771 agree=0.281 CleanCount=3855/5000 ActualTrainClean=0.775 CleanRecall=0.901 MissedClean=329 FalseClean=868 TotalWrong=1197 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.47% | Global Loss: 2.6197 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6975 | CoreClean: 0.771 | Recover: 0.000 | TrainRatio: 0.771 | Agree: 0.281 | Weights: (1.00,0.00,0.00) | CleanCount: 3855/5000 | ActualTrainClean: 0.775 (2987/3855) | ActualCleanInRound: 3316 | CleanRecall: 0.901 | MissedClean: 329 | FalseClean: 868 | TotalWrong: 1197 | RecoveryTrigger: 0
+
+==================== Round 118 ====================
+  --> [Edge 01] clients=10 loss=1.0485 core=0.713 recover=0.000 train=0.713 agree=0.419 CleanCount=3563/5000 ActualTrainClean=0.616 CleanRecall=0.793 MissedClean=573 FalseClean=1368 TotalWrong=1941 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 22.19% | Global Loss: 2.7813 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0485 | CoreClean: 0.713 | Recover: 0.000 | TrainRatio: 0.713 | Agree: 0.419 | Weights: (1.00,0.00,0.00) | CleanCount: 3563/5000 | ActualTrainClean: 0.616 (2195/3563) | ActualCleanInRound: 2768 | CleanRecall: 0.793 | MissedClean: 573 | FalseClean: 1368 | TotalWrong: 1941 | RecoveryTrigger: 0
+
+==================== Round 119 ====================
+  --> [Edge 01] clients=10 loss=0.7557 core=0.704 recover=0.000 train=0.704 agree=0.434 CleanCount=3520/5000 ActualTrainClean=0.736 CleanRecall=0.807 MissedClean=618 FalseClean=930 TotalWrong=1548 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 24.65% | Global Loss: 2.7581 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.7557 | CoreClean: 0.704 | Recover: 0.000 | TrainRatio: 0.704 | Agree: 0.434 | Weights: (1.00,0.00,0.00) | CleanCount: 3520/5000 | ActualTrainClean: 0.736 (2590/3520) | ActualCleanInRound: 3208 | CleanRecall: 0.807 | MissedClean: 618 | FalseClean: 930 | TotalWrong: 1548 | RecoveryTrigger: 0
+
+==================== Round 120 ====================
+  --> [Edge 01] clients=10 loss=0.8658 core=0.732 recover=0.005 train=0.732 agree=0.239 CleanCount=3662/5000 ActualTrainClean=0.722 CleanRecall=0.883 MissedClean=352 FalseClean=1018 TotalWrong=1370 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 27.13% | Global Loss: 2.7073 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8658 | CoreClean: 0.732 | Recover: 0.005 | TrainRatio: 0.732 | Agree: 0.239 | Weights: (1.00,0.00,0.00) | CleanCount: 3662/5000 | ActualTrainClean: 0.722 (2644/3662) | ActualCleanInRound: 2996 | CleanRecall: 0.883 | MissedClean: 352 | FalseClean: 1018 | TotalWrong: 1370 | RecoveryTrigger: 1
+
+==================== Round 121 ====================
+  --> [Edge 01] clients=10 loss=0.9969 core=0.680 recover=0.000 train=0.680 agree=0.270 CleanCount=3402/5000 ActualTrainClean=0.639 CleanRecall=0.725 MissedClean=825 FalseClean=1227 TotalWrong=2052 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.60% | Global Loss: 2.5107 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9969 | CoreClean: 0.680 | Recover: 0.000 | TrainRatio: 0.680 | Agree: 0.270 | Weights: (1.00,0.00,0.00) | CleanCount: 3402/5000 | ActualTrainClean: 0.639 (2175/3402) | ActualCleanInRound: 3000 | CleanRecall: 0.725 | MissedClean: 825 | FalseClean: 1227 | TotalWrong: 2052 | RecoveryTrigger: 0
+
+==================== Round 122 ====================
+  --> [Edge 01] clients=10 loss=0.9260 core=0.797 recover=0.000 train=0.797 agree=0.329 CleanCount=3987/5000 ActualTrainClean=0.714 CleanRecall=0.905 MissedClean=299 FalseClean=1142 TotalWrong=1441 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.04% | Global Loss: 2.5717 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9260 | CoreClean: 0.797 | Recover: 0.000 | TrainRatio: 0.797 | Agree: 0.329 | Weights: (1.00,0.00,0.00) | CleanCount: 3987/5000 | ActualTrainClean: 0.714 (2845/3987) | ActualCleanInRound: 3144 | CleanRecall: 0.905 | MissedClean: 299 | FalseClean: 1142 | TotalWrong: 1441 | RecoveryTrigger: 0
+
+==================== Round 123 ====================
+  --> [Edge 01] clients=10 loss=1.1025 core=0.815 recover=0.000 train=0.815 agree=0.439 CleanCount=4077/5000 ActualTrainClean=0.631 CleanRecall=0.959 MissedClean=109 FalseClean=1506 TotalWrong=1615 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.99% | Global Loss: 2.4876 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1025 | CoreClean: 0.815 | Recover: 0.000 | TrainRatio: 0.815 | Agree: 0.439 | Weights: (1.00,0.00,0.00) | CleanCount: 4077/5000 | ActualTrainClean: 0.631 (2571/4077) | ActualCleanInRound: 2680 | CleanRecall: 0.959 | MissedClean: 109 | FalseClean: 1506 | TotalWrong: 1615 | RecoveryTrigger: 0
+
+==================== Round 124 ====================
+  --> [Edge 01] clients=10 loss=0.9654 core=0.785 recover=0.000 train=0.785 agree=0.217 CleanCount=3923/5000 ActualTrainClean=0.694 CleanRecall=0.965 MissedClean=99 FalseClean=1202 TotalWrong=1301 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.32% | Global Loss: 2.5384 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9654 | CoreClean: 0.785 | Recover: 0.000 | TrainRatio: 0.785 | Agree: 0.217 | Weights: (1.00,0.00,0.00) | CleanCount: 3923/5000 | ActualTrainClean: 0.694 (2721/3923) | ActualCleanInRound: 2820 | CleanRecall: 0.965 | MissedClean: 99 | FalseClean: 1202 | TotalWrong: 1301 | RecoveryTrigger: 0
+
+==================== Round 125 ====================
+  --> [Edge 01] clients=10 loss=0.9010 core=0.772 recover=0.006 train=0.772 agree=0.340 CleanCount=3862/5000 ActualTrainClean=0.704 CleanRecall=0.900 MissedClean=303 FalseClean=1145 TotalWrong=1448 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 30.27% | Global Loss: 2.2999 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9010 | CoreClean: 0.772 | Recover: 0.006 | TrainRatio: 0.772 | Agree: 0.340 | Weights: (1.00,0.00,0.00) | CleanCount: 3862/5000 | ActualTrainClean: 0.704 (2717/3862) | ActualCleanInRound: 3020 | CleanRecall: 0.900 | MissedClean: 303 | FalseClean: 1145 | TotalWrong: 1448 | RecoveryTrigger: 1
+
+==================== Round 126 ====================
+  --> [Edge 01] clients=10 loss=1.0988 core=0.793 recover=0.000 train=0.793 agree=0.285 CleanCount=3967/5000 ActualTrainClean=0.628 CleanRecall=0.901 MissedClean=273 FalseClean=1476 TotalWrong=1749 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 24.58% | Global Loss: 2.4065 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0988 | CoreClean: 0.793 | Recover: 0.000 | TrainRatio: 0.793 | Agree: 0.285 | Weights: (1.00,0.00,0.00) | CleanCount: 3967/5000 | ActualTrainClean: 0.628 (2491/3967) | ActualCleanInRound: 2764 | CleanRecall: 0.901 | MissedClean: 273 | FalseClean: 1476 | TotalWrong: 1749 | RecoveryTrigger: 0
+
+==================== Round 127 ====================
+  --> [Edge 01] clients=10 loss=1.1141 core=0.792 recover=0.000 train=0.792 agree=0.199 CleanCount=3958/5000 ActualTrainClean=0.599 CleanRecall=0.846 MissedClean=432 FalseClean=1586 TotalWrong=2018 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.50% | Global Loss: 2.3114 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1141 | CoreClean: 0.792 | Recover: 0.000 | TrainRatio: 0.792 | Agree: 0.199 | Weights: (1.00,0.00,0.00) | CleanCount: 3958/5000 | ActualTrainClean: 0.599 (2372/3958) | ActualCleanInRound: 2804 | CleanRecall: 0.846 | MissedClean: 432 | FalseClean: 1586 | TotalWrong: 2018 | RecoveryTrigger: 0
+
+==================== Round 128 ====================
+  --> [Edge 01] clients=10 loss=0.8226 core=0.722 recover=0.000 train=0.722 agree=0.290 CleanCount=3610/5000 ActualTrainClean=0.731 CleanRecall=0.769 MissedClean=792 FalseClean=970 TotalWrong=1762 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 20.66% | Global Loss: 2.6413 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8226 | CoreClean: 0.722 | Recover: 0.000 | TrainRatio: 0.722 | Agree: 0.290 | Weights: (1.00,0.00,0.00) | CleanCount: 3610/5000 | ActualTrainClean: 0.731 (2640/3610) | ActualCleanInRound: 3432 | CleanRecall: 0.769 | MissedClean: 792 | FalseClean: 970 | TotalWrong: 1762 | RecoveryTrigger: 0
+
+==================== Round 129 ====================
+  --> [Edge 01] clients=10 loss=1.0507 core=0.849 recover=0.000 train=0.849 agree=0.178 CleanCount=4245/5000 ActualTrainClean=0.674 CleanRecall=0.935 MissedClean=200 FalseClean=1385 TotalWrong=1585 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.30% | Global Loss: 2.4019 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0507 | CoreClean: 0.849 | Recover: 0.000 | TrainRatio: 0.849 | Agree: 0.178 | Weights: (1.00,0.00,0.00) | CleanCount: 4245/5000 | ActualTrainClean: 0.674 (2860/4245) | ActualCleanInRound: 3060 | CleanRecall: 0.935 | MissedClean: 200 | FalseClean: 1385 | TotalWrong: 1585 | RecoveryTrigger: 0
+
+==================== Round 130 ====================
+  --> [Edge 01] clients=10 loss=1.0512 core=0.779 recover=0.002 train=0.779 agree=0.268 CleanCount=3896/5000 ActualTrainClean=0.660 CleanRecall=0.876 MissedClean=365 FalseClean=1325 TotalWrong=1690 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 31.41% | Global Loss: 2.3181 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0512 | CoreClean: 0.779 | Recover: 0.002 | TrainRatio: 0.779 | Agree: 0.268 | Weights: (1.00,0.00,0.00) | CleanCount: 3896/5000 | ActualTrainClean: 0.660 (2571/3896) | ActualCleanInRound: 2936 | CleanRecall: 0.876 | MissedClean: 365 | FalseClean: 1325 | TotalWrong: 1690 | RecoveryTrigger: 1
+
+==================== Round 131 ====================
+  --> [Edge 01] clients=10 loss=1.3437 core=0.854 recover=0.000 train=0.854 agree=0.321 CleanCount=4270/5000 ActualTrainClean=0.539 CleanRecall=0.954 MissedClean=111 FalseClean=1969 TotalWrong=2080 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.78% | Global Loss: 2.3851 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3437 | CoreClean: 0.854 | Recover: 0.000 | TrainRatio: 0.854 | Agree: 0.321 | Weights: (1.00,0.00,0.00) | CleanCount: 4270/5000 | ActualTrainClean: 0.539 (2301/4270) | ActualCleanInRound: 2412 | CleanRecall: 0.954 | MissedClean: 111 | FalseClean: 1969 | TotalWrong: 2080 | RecoveryTrigger: 0
+
+==================== Round 132 ====================
+  --> [Edge 01] clients=10 loss=0.9846 core=0.794 recover=0.000 train=0.794 agree=0.382 CleanCount=3969/5000 ActualTrainClean=0.690 CleanRecall=0.991 MissedClean=26 FalseClean=1231 TotalWrong=1257 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.36% | Global Loss: 2.3830 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9846 | CoreClean: 0.794 | Recover: 0.000 | TrainRatio: 0.794 | Agree: 0.382 | Weights: (1.00,0.00,0.00) | CleanCount: 3969/5000 | ActualTrainClean: 0.690 (2738/3969) | ActualCleanInRound: 2764 | CleanRecall: 0.991 | MissedClean: 26 | FalseClean: 1231 | TotalWrong: 1257 | RecoveryTrigger: 0
+
+==================== Round 133 ====================
+  --> [Edge 01] clients=10 loss=0.9018 core=0.795 recover=0.000 train=0.795 agree=0.323 CleanCount=3975/5000 ActualTrainClean=0.708 CleanRecall=0.908 MissedClean=286 FalseClean=1161 TotalWrong=1447 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.91% | Global Loss: 2.3336 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9018 | CoreClean: 0.795 | Recover: 0.000 | TrainRatio: 0.795 | Agree: 0.323 | Weights: (1.00,0.00,0.00) | CleanCount: 3975/5000 | ActualTrainClean: 0.708 (2814/3975) | ActualCleanInRound: 3100 | CleanRecall: 0.908 | MissedClean: 286 | FalseClean: 1161 | TotalWrong: 1447 | RecoveryTrigger: 0
+
+==================== Round 134 ====================
+  --> [Edge 01] clients=10 loss=0.8097 core=0.820 recover=0.000 train=0.820 agree=0.365 CleanCount=4100/5000 ActualTrainClean=0.747 CleanRecall=0.899 MissedClean=344 FalseClean=1036 TotalWrong=1380 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.01% | Global Loss: 2.3421 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8097 | CoreClean: 0.820 | Recover: 0.000 | TrainRatio: 0.820 | Agree: 0.365 | Weights: (1.00,0.00,0.00) | CleanCount: 4100/5000 | ActualTrainClean: 0.747 (3064/4100) | ActualCleanInRound: 3408 | CleanRecall: 0.899 | MissedClean: 344 | FalseClean: 1036 | TotalWrong: 1380 | RecoveryTrigger: 0
+
+==================== Round 135 ====================
+  --> [Edge 01] clients=10 loss=0.9811 core=0.771 recover=0.012 train=0.771 agree=0.196 CleanCount=3857/5000 ActualTrainClean=0.707 CleanRecall=0.927 MissedClean=214 FalseClean=1131 TotalWrong=1345 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 32.00% | Global Loss: 2.3078 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9811 | CoreClean: 0.771 | Recover: 0.012 | TrainRatio: 0.771 | Agree: 0.196 | Weights: (1.00,0.00,0.00) | CleanCount: 3857/5000 | ActualTrainClean: 0.707 (2726/3857) | ActualCleanInRound: 2940 | CleanRecall: 0.927 | MissedClean: 214 | FalseClean: 1131 | TotalWrong: 1345 | RecoveryTrigger: 1
+
+==================== Round 136 ====================
+  --> [Edge 01] clients=10 loss=0.6329 core=0.741 recover=0.000 train=0.741 agree=0.376 CleanCount=3705/5000 ActualTrainClean=0.808 CleanRecall=0.860 MissedClean=487 FalseClean=712 TotalWrong=1199 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.22% | Global Loss: 2.4554 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6329 | CoreClean: 0.741 | Recover: 0.000 | TrainRatio: 0.741 | Agree: 0.376 | Weights: (1.00,0.00,0.00) | CleanCount: 3705/5000 | ActualTrainClean: 0.808 (2993/3705) | ActualCleanInRound: 3480 | CleanRecall: 0.860 | MissedClean: 487 | FalseClean: 712 | TotalWrong: 1199 | RecoveryTrigger: 0
+
+==================== Round 137 ====================
+  --> [Edge 01] clients=10 loss=0.9586 core=0.821 recover=0.000 train=0.821 agree=0.225 CleanCount=4105/5000 ActualTrainClean=0.685 CleanRecall=0.833 MissedClean=562 FalseClean=1295 TotalWrong=1857 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.24% | Global Loss: 2.4315 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9586 | CoreClean: 0.821 | Recover: 0.000 | TrainRatio: 0.821 | Agree: 0.225 | Weights: (1.00,0.00,0.00) | CleanCount: 4105/5000 | ActualTrainClean: 0.685 (2810/4105) | ActualCleanInRound: 3372 | CleanRecall: 0.833 | MissedClean: 562 | FalseClean: 1295 | TotalWrong: 1857 | RecoveryTrigger: 0
+
+==================== Round 138 ====================
+  --> [Edge 01] clients=10 loss=1.0103 core=0.848 recover=0.000 train=0.848 agree=0.248 CleanCount=4238/5000 ActualTrainClean=0.675 CleanRecall=0.989 MissedClean=33 FalseClean=1379 TotalWrong=1412 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.18% | Global Loss: 2.3406 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0103 | CoreClean: 0.848 | Recover: 0.000 | TrainRatio: 0.848 | Agree: 0.248 | Weights: (1.00,0.00,0.00) | CleanCount: 4238/5000 | ActualTrainClean: 0.675 (2859/4238) | ActualCleanInRound: 2892 | CleanRecall: 0.989 | MissedClean: 33 | FalseClean: 1379 | TotalWrong: 1412 | RecoveryTrigger: 0
+
+==================== Round 139 ====================
+  --> [Edge 01] clients=10 loss=0.9473 core=0.775 recover=0.000 train=0.775 agree=0.301 CleanCount=3873/5000 ActualTrainClean=0.646 CleanRecall=0.793 MissedClean=654 FalseClean=1371 TotalWrong=2025 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.46% | Global Loss: 2.4335 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9473 | CoreClean: 0.775 | Recover: 0.000 | TrainRatio: 0.775 | Agree: 0.301 | Weights: (1.00,0.00,0.00) | CleanCount: 3873/5000 | ActualTrainClean: 0.646 (2502/3873) | ActualCleanInRound: 3156 | CleanRecall: 0.793 | MissedClean: 654 | FalseClean: 1371 | TotalWrong: 2025 | RecoveryTrigger: 0
+
+==================== Round 140 ====================
+  --> [Edge 01] clients=10 loss=0.9744 core=0.722 recover=0.003 train=0.722 agree=0.294 CleanCount=3608/5000 ActualTrainClean=0.618 CleanRecall=0.838 MissedClean=431 FalseClean=1379 TotalWrong=1810 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 27.93% | Global Loss: 2.4797 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9744 | CoreClean: 0.722 | Recover: 0.003 | TrainRatio: 0.722 | Agree: 0.294 | Weights: (1.00,0.00,0.00) | CleanCount: 3608/5000 | ActualTrainClean: 0.618 (2229/3608) | ActualCleanInRound: 2660 | CleanRecall: 0.838 | MissedClean: 431 | FalseClean: 1379 | TotalWrong: 1810 | RecoveryTrigger: 1
+
+==================== Round 141 ====================
+  --> [Edge 01] clients=10 loss=1.1211 core=0.776 recover=0.000 train=0.776 agree=0.201 CleanCount=3881/5000 ActualTrainClean=0.617 CleanRecall=0.891 MissedClean=292 FalseClean=1485 TotalWrong=1777 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.02% | Global Loss: 2.3569 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1211 | CoreClean: 0.776 | Recover: 0.000 | TrainRatio: 0.776 | Agree: 0.201 | Weights: (1.00,0.00,0.00) | CleanCount: 3881/5000 | ActualTrainClean: 0.617 (2396/3881) | ActualCleanInRound: 2688 | CleanRecall: 0.891 | MissedClean: 292 | FalseClean: 1485 | TotalWrong: 1777 | RecoveryTrigger: 0
+
+==================== Round 142 ====================
+  --> [Edge 01] clients=10 loss=0.7562 core=0.784 recover=0.000 train=0.784 agree=0.388 CleanCount=3919/5000 ActualTrainClean=0.742 CleanRecall=0.916 MissedClean=267 FalseClean=1010 TotalWrong=1277 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.05% | Global Loss: 2.4346 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.7562 | CoreClean: 0.784 | Recover: 0.000 | TrainRatio: 0.784 | Agree: 0.388 | Weights: (1.00,0.00,0.00) | CleanCount: 3919/5000 | ActualTrainClean: 0.742 (2909/3919) | ActualCleanInRound: 3176 | CleanRecall: 0.916 | MissedClean: 267 | FalseClean: 1010 | TotalWrong: 1277 | RecoveryTrigger: 0
+
+==================== Round 143 ====================
+  --> [Edge 01] clients=10 loss=0.6900 core=0.754 recover=0.000 train=0.754 agree=0.176 CleanCount=3770/5000 ActualTrainClean=0.793 CleanRecall=0.853 MissedClean=515 FalseClean=781 TotalWrong=1296 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.60% | Global Loss: 2.3634 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6900 | CoreClean: 0.754 | Recover: 0.000 | TrainRatio: 0.754 | Agree: 0.176 | Weights: (1.00,0.00,0.00) | CleanCount: 3770/5000 | ActualTrainClean: 0.793 (2989/3770) | ActualCleanInRound: 3504 | CleanRecall: 0.853 | MissedClean: 515 | FalseClean: 781 | TotalWrong: 1296 | RecoveryTrigger: 0
+
+==================== Round 144 ====================
+  --> [Edge 01] clients=10 loss=0.7716 core=0.768 recover=0.000 train=0.768 agree=0.298 CleanCount=3838/5000 ActualTrainClean=0.784 CleanRecall=0.936 MissedClean=207 FalseClean=829 TotalWrong=1036 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 34.26% | Global Loss: 2.2759 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.7716 | CoreClean: 0.768 | Recover: 0.000 | TrainRatio: 0.768 | Agree: 0.298 | Weights: (1.00,0.00,0.00) | CleanCount: 3838/5000 | ActualTrainClean: 0.784 (3009/3838) | ActualCleanInRound: 3216 | CleanRecall: 0.936 | MissedClean: 207 | FalseClean: 829 | TotalWrong: 1036 | RecoveryTrigger: 0
+
+==================== Round 145 ====================
+  --> [Edge 01] clients=10 loss=0.6440 core=0.702 recover=0.002 train=0.702 agree=0.384 CleanCount=3509/5000 ActualTrainClean=0.822 CleanRecall=0.831 MissedClean=588 FalseClean=625 TotalWrong=1213 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 26.80% | Global Loss: 2.5103 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6440 | CoreClean: 0.702 | Recover: 0.002 | TrainRatio: 0.702 | Agree: 0.384 | Weights: (1.00,0.00,0.00) | CleanCount: 3509/5000 | ActualTrainClean: 0.822 (2884/3509) | ActualCleanInRound: 3472 | CleanRecall: 0.831 | MissedClean: 588 | FalseClean: 625 | TotalWrong: 1213 | RecoveryTrigger: 1
+
+==================== Round 146 ====================
+  --> [Edge 01] clients=10 loss=1.0061 core=0.883 recover=0.000 train=0.883 agree=0.310 CleanCount=4414/5000 ActualTrainClean=0.669 CleanRecall=0.964 MissedClean=111 FalseClean=1461 TotalWrong=1572 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.17% | Global Loss: 2.4877 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0061 | CoreClean: 0.883 | Recover: 0.000 | TrainRatio: 0.883 | Agree: 0.310 | Weights: (1.00,0.00,0.00) | CleanCount: 4414/5000 | ActualTrainClean: 0.669 (2953/4414) | ActualCleanInRound: 3064 | CleanRecall: 0.964 | MissedClean: 111 | FalseClean: 1461 | TotalWrong: 1572 | RecoveryTrigger: 0
+
+==================== Round 147 ====================
+  --> [Edge 01] clients=10 loss=0.9647 core=0.718 recover=0.000 train=0.718 agree=0.219 CleanCount=3590/5000 ActualTrainClean=0.631 CleanRecall=0.785 MissedClean=619 FalseClean=1325 TotalWrong=1944 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 34.71% | Global Loss: 2.3116 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9647 | CoreClean: 0.718 | Recover: 0.000 | TrainRatio: 0.718 | Agree: 0.219 | Weights: (1.00,0.00,0.00) | CleanCount: 3590/5000 | ActualTrainClean: 0.631 (2265/3590) | ActualCleanInRound: 2884 | CleanRecall: 0.785 | MissedClean: 619 | FalseClean: 1325 | TotalWrong: 1944 | RecoveryTrigger: 0
+
+==================== Round 148 ====================
+  --> [Edge 01] clients=10 loss=1.0091 core=0.825 recover=0.000 train=0.825 agree=0.304 CleanCount=4126/5000 ActualTrainClean=0.646 CleanRecall=0.909 MissedClean=267 FalseClean=1461 TotalWrong=1728 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.59% | Global Loss: 2.4531 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0091 | CoreClean: 0.825 | Recover: 0.000 | TrainRatio: 0.825 | Agree: 0.304 | Weights: (1.00,0.00,0.00) | CleanCount: 4126/5000 | ActualTrainClean: 0.646 (2665/4126) | ActualCleanInRound: 2932 | CleanRecall: 0.909 | MissedClean: 267 | FalseClean: 1461 | TotalWrong: 1728 | RecoveryTrigger: 0
+
+==================== Round 149 ====================
+  --> [Edge 01] clients=10 loss=1.2830 core=0.765 recover=0.000 train=0.765 agree=0.257 CleanCount=3823/5000 ActualTrainClean=0.517 CleanRecall=0.682 MissedClean=921 FalseClean=1848 TotalWrong=2769 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.71% | Global Loss: 2.4064 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2830 | CoreClean: 0.765 | Recover: 0.000 | TrainRatio: 0.765 | Agree: 0.257 | Weights: (1.00,0.00,0.00) | CleanCount: 3823/5000 | ActualTrainClean: 0.517 (1975/3823) | ActualCleanInRound: 2896 | CleanRecall: 0.682 | MissedClean: 921 | FalseClean: 1848 | TotalWrong: 2769 | RecoveryTrigger: 0
+
+==================== Round 150 ====================
+  --> [Edge 01] clients=10 loss=1.1432 core=0.812 recover=0.002 train=0.812 agree=0.275 CleanCount=4062/5000 ActualTrainClean=0.596 CleanRecall=0.913 MissedClean=230 FalseClean=1640 TotalWrong=1870 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 26.30% | Global Loss: 2.4822 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1432 | CoreClean: 0.812 | Recover: 0.002 | TrainRatio: 0.812 | Agree: 0.275 | Weights: (1.00,0.00,0.00) | CleanCount: 4062/5000 | ActualTrainClean: 0.596 (2422/4062) | ActualCleanInRound: 2652 | CleanRecall: 0.913 | MissedClean: 230 | FalseClean: 1640 | TotalWrong: 1870 | RecoveryTrigger: 1
+
+==================== Round 151 ====================
+  --> [Edge 01] clients=10 loss=1.1830 core=0.778 recover=0.000 train=0.778 agree=0.303 CleanCount=3892/5000 ActualTrainClean=0.600 CleanRecall=0.783 MissedClean=649 FalseClean=1557 TotalWrong=2206 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.69% | Global Loss: 2.3830 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1830 | CoreClean: 0.778 | Recover: 0.000 | TrainRatio: 0.778 | Agree: 0.303 | Weights: (1.00,0.00,0.00) | CleanCount: 3892/5000 | ActualTrainClean: 0.600 (2335/3892) | ActualCleanInRound: 2984 | CleanRecall: 0.783 | MissedClean: 649 | FalseClean: 1557 | TotalWrong: 2206 | RecoveryTrigger: 0
+
+==================== Round 152 ====================
+  --> [Edge 01] clients=10 loss=1.0025 core=0.789 recover=0.000 train=0.789 agree=0.335 CleanCount=3945/5000 ActualTrainClean=0.646 CleanRecall=0.900 MissedClean=284 FalseClean=1397 TotalWrong=1681 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.64% | Global Loss: 2.3579 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0025 | CoreClean: 0.789 | Recover: 0.000 | TrainRatio: 0.789 | Agree: 0.335 | Weights: (1.00,0.00,0.00) | CleanCount: 3945/5000 | ActualTrainClean: 0.646 (2548/3945) | ActualCleanInRound: 2832 | CleanRecall: 0.900 | MissedClean: 284 | FalseClean: 1397 | TotalWrong: 1681 | RecoveryTrigger: 0
+
+==================== Round 153 ====================
+  --> [Edge 01] clients=10 loss=0.8642 core=0.828 recover=0.000 train=0.828 agree=0.284 CleanCount=4140/5000 ActualTrainClean=0.738 CleanRecall=0.937 MissedClean=205 FalseClean=1085 TotalWrong=1290 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 34.37% | Global Loss: 2.3247 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8642 | CoreClean: 0.828 | Recover: 0.000 | TrainRatio: 0.828 | Agree: 0.284 | Weights: (1.00,0.00,0.00) | CleanCount: 4140/5000 | ActualTrainClean: 0.738 (3055/4140) | ActualCleanInRound: 3260 | CleanRecall: 0.937 | MissedClean: 205 | FalseClean: 1085 | TotalWrong: 1290 | RecoveryTrigger: 0
+
+==================== Round 154 ====================
+  --> [Edge 01] clients=10 loss=0.6601 core=0.793 recover=0.000 train=0.793 agree=0.442 CleanCount=3966/5000 ActualTrainClean=0.798 CleanRecall=0.862 MissedClean=507 FalseClean=801 TotalWrong=1308 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.71% | Global Loss: 2.4410 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6601 | CoreClean: 0.793 | Recover: 0.000 | TrainRatio: 0.793 | Agree: 0.442 | Weights: (1.00,0.00,0.00) | CleanCount: 3966/5000 | ActualTrainClean: 0.798 (3165/3966) | ActualCleanInRound: 3672 | CleanRecall: 0.862 | MissedClean: 507 | FalseClean: 801 | TotalWrong: 1308 | RecoveryTrigger: 0
+
+==================== Round 155 ====================
+  --> [Edge 01] clients=10 loss=1.1264 core=0.849 recover=0.006 train=0.849 agree=0.359 CleanCount=4244/5000 ActualTrainClean=0.611 CleanRecall=0.980 MissedClean=52 FalseClean=1652 TotalWrong=1704 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 33.24% | Global Loss: 2.3305 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1264 | CoreClean: 0.849 | Recover: 0.006 | TrainRatio: 0.849 | Agree: 0.359 | Weights: (1.00,0.00,0.00) | CleanCount: 4244/5000 | ActualTrainClean: 0.611 (2592/4244) | ActualCleanInRound: 2644 | CleanRecall: 0.980 | MissedClean: 52 | FalseClean: 1652 | TotalWrong: 1704 | RecoveryTrigger: 1
+
+==================== Round 156 ====================
+  --> [Edge 01] clients=10 loss=0.8304 core=0.813 recover=0.000 train=0.813 agree=0.404 CleanCount=4063/5000 ActualTrainClean=0.710 CleanRecall=0.902 MissedClean=314 FalseClean=1177 TotalWrong=1491 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.80% | Global Loss: 2.5156 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8304 | CoreClean: 0.813 | Recover: 0.000 | TrainRatio: 0.813 | Agree: 0.404 | Weights: (1.00,0.00,0.00) | CleanCount: 4063/5000 | ActualTrainClean: 0.710 (2886/4063) | ActualCleanInRound: 3200 | CleanRecall: 0.902 | MissedClean: 314 | FalseClean: 1177 | TotalWrong: 1491 | RecoveryTrigger: 0
+
+==================== Round 157 ====================
+  --> [Edge 01] clients=10 loss=0.9774 core=0.816 recover=0.000 train=0.816 agree=0.252 CleanCount=4079/5000 ActualTrainClean=0.710 CleanRecall=0.895 MissedClean=341 FalseClean=1184 TotalWrong=1525 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.09% | Global Loss: 2.4516 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9774 | CoreClean: 0.816 | Recover: 0.000 | TrainRatio: 0.816 | Agree: 0.252 | Weights: (1.00,0.00,0.00) | CleanCount: 4079/5000 | ActualTrainClean: 0.710 (2895/4079) | ActualCleanInRound: 3236 | CleanRecall: 0.895 | MissedClean: 341 | FalseClean: 1184 | TotalWrong: 1525 | RecoveryTrigger: 0
+
+==================== Round 158 ====================
+  --> [Edge 01] clients=10 loss=0.5852 core=0.745 recover=0.000 train=0.745 agree=0.186 CleanCount=3724/5000 ActualTrainClean=0.857 CleanRecall=0.840 MissedClean=606 FalseClean=534 TotalWrong=1140 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.71% | Global Loss: 2.3296 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.5852 | CoreClean: 0.745 | Recover: 0.000 | TrainRatio: 0.745 | Agree: 0.186 | Weights: (1.00,0.00,0.00) | CleanCount: 3724/5000 | ActualTrainClean: 0.857 (3190/3724) | ActualCleanInRound: 3796 | CleanRecall: 0.840 | MissedClean: 606 | FalseClean: 534 | TotalWrong: 1140 | RecoveryTrigger: 0
+
+==================== Round 159 ====================
+  --> [Edge 01] clients=10 loss=1.0598 core=0.703 recover=0.000 train=0.703 agree=0.291 CleanCount=3517/5000 ActualTrainClean=0.597 CleanRecall=0.694 MissedClean=926 FalseClean=1419 TotalWrong=2345 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.39% | Global Loss: 2.4566 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0598 | CoreClean: 0.703 | Recover: 0.000 | TrainRatio: 0.703 | Agree: 0.291 | Weights: (1.00,0.00,0.00) | CleanCount: 3517/5000 | ActualTrainClean: 0.597 (2098/3517) | ActualCleanInRound: 3024 | CleanRecall: 0.694 | MissedClean: 926 | FalseClean: 1419 | TotalWrong: 2345 | RecoveryTrigger: 0
+
+==================== Round 160 ====================
+  --> [Edge 01] clients=10 loss=1.1151 core=0.810 recover=0.002 train=0.810 agree=0.319 CleanCount=4050/5000 ActualTrainClean=0.617 CleanRecall=0.896 MissedClean=291 FalseClean=1553 TotalWrong=1844 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 34.90% | Global Loss: 2.3736 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1151 | CoreClean: 0.810 | Recover: 0.002 | TrainRatio: 0.810 | Agree: 0.319 | Weights: (1.00,0.00,0.00) | CleanCount: 4050/5000 | ActualTrainClean: 0.617 (2497/4050) | ActualCleanInRound: 2788 | CleanRecall: 0.896 | MissedClean: 291 | FalseClean: 1553 | TotalWrong: 1844 | RecoveryTrigger: 1
+
+==================== Round 161 ====================
+  --> [Edge 01] clients=10 loss=0.9153 core=0.793 recover=0.000 train=0.793 agree=0.367 CleanCount=3967/5000 ActualTrainClean=0.712 CleanRecall=0.870 MissedClean=423 FalseClean=1142 TotalWrong=1565 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.99% | Global Loss: 2.3967 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9153 | CoreClean: 0.793 | Recover: 0.000 | TrainRatio: 0.793 | Agree: 0.367 | Weights: (1.00,0.00,0.00) | CleanCount: 3967/5000 | ActualTrainClean: 0.712 (2825/3967) | ActualCleanInRound: 3248 | CleanRecall: 0.870 | MissedClean: 423 | FalseClean: 1142 | TotalWrong: 1565 | RecoveryTrigger: 0
+
+==================== Round 162 ====================
+  --> [Edge 01] clients=10 loss=1.0698 core=0.832 recover=0.000 train=0.832 agree=0.287 CleanCount=4162/5000 ActualTrainClean=0.679 CleanRecall=0.845 MissedClean=520 FalseClean=1334 TotalWrong=1854 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.65% | Global Loss: 2.4088 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0698 | CoreClean: 0.832 | Recover: 0.000 | TrainRatio: 0.832 | Agree: 0.287 | Weights: (1.00,0.00,0.00) | CleanCount: 4162/5000 | ActualTrainClean: 0.679 (2828/4162) | ActualCleanInRound: 3348 | CleanRecall: 0.845 | MissedClean: 520 | FalseClean: 1334 | TotalWrong: 1854 | RecoveryTrigger: 0
+
+==================== Round 163 ====================
+  --> [Edge 01] clients=10 loss=0.9718 core=0.739 recover=0.000 train=0.739 agree=0.316 CleanCount=3694/5000 ActualTrainClean=0.626 CleanRecall=0.698 MissedClean=1000 FalseClean=1382 TotalWrong=2382 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.46% | Global Loss: 2.4299 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9718 | CoreClean: 0.739 | Recover: 0.000 | TrainRatio: 0.739 | Agree: 0.316 | Weights: (1.00,0.00,0.00) | CleanCount: 3694/5000 | ActualTrainClean: 0.626 (2312/3694) | ActualCleanInRound: 3312 | CleanRecall: 0.698 | MissedClean: 1000 | FalseClean: 1382 | TotalWrong: 2382 | RecoveryTrigger: 0
+
+==================== Round 164 ====================
+  --> [Edge 01] clients=10 loss=1.0581 core=0.842 recover=0.000 train=0.842 agree=0.388 CleanCount=4210/5000 ActualTrainClean=0.652 CleanRecall=0.971 MissedClean=81 FalseClean=1467 TotalWrong=1548 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.77% | Global Loss: 2.4741 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0581 | CoreClean: 0.842 | Recover: 0.000 | TrainRatio: 0.842 | Agree: 0.388 | Weights: (1.00,0.00,0.00) | CleanCount: 4210/5000 | ActualTrainClean: 0.652 (2743/4210) | ActualCleanInRound: 2824 | CleanRecall: 0.971 | MissedClean: 81 | FalseClean: 1467 | TotalWrong: 1548 | RecoveryTrigger: 0
+
+==================== Round 165 ====================
+  --> [Edge 01] clients=10 loss=1.0684 core=0.870 recover=0.002 train=0.870 agree=0.352 CleanCount=4349/5000 ActualTrainClean=0.687 CleanRecall=0.997 MissedClean=10 FalseClean=1363 TotalWrong=1373 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 29.48% | Global Loss: 2.4289 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0684 | CoreClean: 0.870 | Recover: 0.002 | TrainRatio: 0.870 | Agree: 0.352 | Weights: (1.00,0.00,0.00) | CleanCount: 4349/5000 | ActualTrainClean: 0.687 (2986/4349) | ActualCleanInRound: 2996 | CleanRecall: 0.997 | MissedClean: 10 | FalseClean: 1363 | TotalWrong: 1373 | RecoveryTrigger: 1
+
+==================== Round 166 ====================
+  --> [Edge 01] clients=10 loss=1.4400 core=0.869 recover=0.000 train=0.869 agree=0.275 CleanCount=4343/5000 ActualTrainClean=0.492 CleanRecall=0.874 MissedClean=308 FalseClean=2207 TotalWrong=2515 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 35.31% | Global Loss: 2.3803 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.4400 | CoreClean: 0.869 | Recover: 0.000 | TrainRatio: 0.869 | Agree: 0.275 | Weights: (1.00,0.00,0.00) | CleanCount: 4343/5000 | ActualTrainClean: 0.492 (2136/4343) | ActualCleanInRound: 2444 | CleanRecall: 0.874 | MissedClean: 308 | FalseClean: 2207 | TotalWrong: 2515 | RecoveryTrigger: 0
+
+==================== Round 167 ====================
+  --> [Edge 01] clients=10 loss=0.9113 core=0.798 recover=0.000 train=0.798 agree=0.366 CleanCount=3989/5000 ActualTrainClean=0.714 CleanRecall=0.886 MissedClean=367 FalseClean=1140 TotalWrong=1507 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.19% | Global Loss: 2.4845 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9113 | CoreClean: 0.798 | Recover: 0.000 | TrainRatio: 0.798 | Agree: 0.366 | Weights: (1.00,0.00,0.00) | CleanCount: 3989/5000 | ActualTrainClean: 0.714 (2849/3989) | ActualCleanInRound: 3216 | CleanRecall: 0.886 | MissedClean: 367 | FalseClean: 1140 | TotalWrong: 1507 | RecoveryTrigger: 0
+
+==================== Round 168 ====================
+  --> [Edge 01] clients=10 loss=1.2935 core=0.755 recover=0.000 train=0.755 agree=0.190 CleanCount=3777/5000 ActualTrainClean=0.533 CleanRecall=0.689 MissedClean=909 FalseClean=1762 TotalWrong=2671 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.46% | Global Loss: 2.4740 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2935 | CoreClean: 0.755 | Recover: 0.000 | TrainRatio: 0.755 | Agree: 0.190 | Weights: (1.00,0.00,0.00) | CleanCount: 3777/5000 | ActualTrainClean: 0.533 (2015/3777) | ActualCleanInRound: 2924 | CleanRecall: 0.689 | MissedClean: 909 | FalseClean: 1762 | TotalWrong: 2671 | RecoveryTrigger: 0
+
+==================== Round 169 ====================
+  --> [Edge 01] clients=10 loss=0.8873 core=0.796 recover=0.000 train=0.796 agree=0.360 CleanCount=3980/5000 ActualTrainClean=0.723 CleanRecall=0.849 MissedClean=513 FalseClean=1101 TotalWrong=1614 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.76% | Global Loss: 2.5332 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8873 | CoreClean: 0.796 | Recover: 0.000 | TrainRatio: 0.796 | Agree: 0.360 | Weights: (1.00,0.00,0.00) | CleanCount: 3980/5000 | ActualTrainClean: 0.723 (2879/3980) | ActualCleanInRound: 3392 | CleanRecall: 0.849 | MissedClean: 513 | FalseClean: 1101 | TotalWrong: 1614 | RecoveryTrigger: 0
+
+==================== Round 170 ====================
+  --> [Edge 01] clients=10 loss=0.8655 core=0.883 recover=0.007 train=0.883 agree=0.209 CleanCount=4416/5000 ActualTrainClean=0.738 CleanRecall=0.978 MissedClean=75 FalseClean=1155 TotalWrong=1230 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 28.97% | Global Loss: 2.4813 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8655 | CoreClean: 0.883 | Recover: 0.007 | TrainRatio: 0.883 | Agree: 0.209 | Weights: (1.00,0.00,0.00) | CleanCount: 4416/5000 | ActualTrainClean: 0.738 (3261/4416) | ActualCleanInRound: 3336 | CleanRecall: 0.978 | MissedClean: 75 | FalseClean: 1155 | TotalWrong: 1230 | RecoveryTrigger: 1
+
+==================== Round 171 ====================
+  --> [Edge 01] clients=10 loss=1.0933 core=0.847 recover=0.000 train=0.847 agree=0.264 CleanCount=4233/5000 ActualTrainClean=0.645 CleanRecall=0.913 MissedClean=261 FalseClean=1502 TotalWrong=1763 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.96% | Global Loss: 2.5400 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0933 | CoreClean: 0.847 | Recover: 0.000 | TrainRatio: 0.847 | Agree: 0.264 | Weights: (1.00,0.00,0.00) | CleanCount: 4233/5000 | ActualTrainClean: 0.645 (2731/4233) | ActualCleanInRound: 2992 | CleanRecall: 0.913 | MissedClean: 261 | FalseClean: 1502 | TotalWrong: 1763 | RecoveryTrigger: 0
+
+==================== Round 172 ====================
+  --> [Edge 01] clients=10 loss=1.2230 core=0.868 recover=0.000 train=0.868 agree=0.412 CleanCount=4342/5000 ActualTrainClean=0.593 CleanRecall=0.935 MissedClean=179 FalseClean=1769 TotalWrong=1948 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.30% | Global Loss: 2.4821 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2230 | CoreClean: 0.868 | Recover: 0.000 | TrainRatio: 0.868 | Agree: 0.412 | Weights: (1.00,0.00,0.00) | CleanCount: 4342/5000 | ActualTrainClean: 0.593 (2573/4342) | ActualCleanInRound: 2752 | CleanRecall: 0.935 | MissedClean: 179 | FalseClean: 1769 | TotalWrong: 1948 | RecoveryTrigger: 0
+
+==================== Round 173 ====================
+  --> [Edge 01] clients=10 loss=0.9848 core=0.777 recover=0.000 train=0.777 agree=0.352 CleanCount=3886/5000 ActualTrainClean=0.670 CleanRecall=0.777 MissedClean=746 FalseClean=1284 TotalWrong=2030 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.61% | Global Loss: 2.5046 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9848 | CoreClean: 0.777 | Recover: 0.000 | TrainRatio: 0.777 | Agree: 0.352 | Weights: (1.00,0.00,0.00) | CleanCount: 3886/5000 | ActualTrainClean: 0.670 (2602/3886) | ActualCleanInRound: 3348 | CleanRecall: 0.777 | MissedClean: 746 | FalseClean: 1284 | TotalWrong: 2030 | RecoveryTrigger: 0
+
+==================== Round 174 ====================
+  --> [Edge 01] clients=10 loss=0.6730 core=0.802 recover=0.000 train=0.802 agree=0.374 CleanCount=4012/5000 ActualTrainClean=0.816 CleanRecall=0.965 MissedClean=118 FalseClean=738 TotalWrong=856 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.34% | Global Loss: 2.5116 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6730 | CoreClean: 0.802 | Recover: 0.000 | TrainRatio: 0.802 | Agree: 0.374 | Weights: (1.00,0.00,0.00) | CleanCount: 4012/5000 | ActualTrainClean: 0.816 (3274/4012) | ActualCleanInRound: 3392 | CleanRecall: 0.965 | MissedClean: 118 | FalseClean: 738 | TotalWrong: 856 | RecoveryTrigger: 0
+
+==================== Round 175 ====================
+  --> [Edge 01] clients=10 loss=1.2533 core=0.921 recover=0.001 train=0.921 agree=0.372 CleanCount=4604/5000 ActualTrainClean=0.612 CleanRecall=0.995 MissedClean=15 FalseClean=1787 TotalWrong=1802 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 27.37% | Global Loss: 2.5054 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2533 | CoreClean: 0.921 | Recover: 0.001 | TrainRatio: 0.921 | Agree: 0.372 | Weights: (1.00,0.00,0.00) | CleanCount: 4604/5000 | ActualTrainClean: 0.612 (2817/4604) | ActualCleanInRound: 2832 | CleanRecall: 0.995 | MissedClean: 15 | FalseClean: 1787 | TotalWrong: 1802 | RecoveryTrigger: 1
+
+==================== Round 176 ====================
+  --> [Edge 01] clients=10 loss=0.9973 core=0.815 recover=0.000 train=0.815 agree=0.272 CleanCount=4073/5000 ActualTrainClean=0.672 CleanRecall=0.898 MissedClean=310 FalseClean=1335 TotalWrong=1645 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.11% | Global Loss: 2.4387 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9973 | CoreClean: 0.815 | Recover: 0.000 | TrainRatio: 0.815 | Agree: 0.272 | Weights: (1.00,0.00,0.00) | CleanCount: 4073/5000 | ActualTrainClean: 0.672 (2738/4073) | ActualCleanInRound: 3048 | CleanRecall: 0.898 | MissedClean: 310 | FalseClean: 1335 | TotalWrong: 1645 | RecoveryTrigger: 0
+
+==================== Round 177 ====================
+  --> [Edge 01] clients=10 loss=0.8571 core=0.854 recover=0.000 train=0.854 agree=0.347 CleanCount=4271/5000 ActualTrainClean=0.741 CleanRecall=0.929 MissedClean=241 FalseClean=1108 TotalWrong=1349 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.80% | Global Loss: 2.5036 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8571 | CoreClean: 0.854 | Recover: 0.000 | TrainRatio: 0.854 | Agree: 0.347 | Weights: (1.00,0.00,0.00) | CleanCount: 4271/5000 | ActualTrainClean: 0.741 (3163/4271) | ActualCleanInRound: 3404 | CleanRecall: 0.929 | MissedClean: 241 | FalseClean: 1108 | TotalWrong: 1349 | RecoveryTrigger: 0
+
+==================== Round 178 ====================
+  --> [Edge 01] clients=10 loss=1.1287 core=0.708 recover=0.000 train=0.708 agree=0.254 CleanCount=3540/5000 ActualTrainClean=0.581 CleanRecall=0.691 MissedClean=920 FalseClean=1484 TotalWrong=2404 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.23% | Global Loss: 2.4939 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1287 | CoreClean: 0.708 | Recover: 0.000 | TrainRatio: 0.708 | Agree: 0.254 | Weights: (1.00,0.00,0.00) | CleanCount: 3540/5000 | ActualTrainClean: 0.581 (2056/3540) | ActualCleanInRound: 2976 | CleanRecall: 0.691 | MissedClean: 920 | FalseClean: 1484 | TotalWrong: 2404 | RecoveryTrigger: 0
+
+==================== Round 179 ====================
+  --> [Edge 01] clients=10 loss=0.8698 core=0.851 recover=0.000 train=0.851 agree=0.298 CleanCount=4255/5000 ActualTrainClean=0.725 CleanRecall=0.992 MissedClean=25 FalseClean=1172 TotalWrong=1197 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.68% | Global Loss: 2.3997 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8698 | CoreClean: 0.851 | Recover: 0.000 | TrainRatio: 0.851 | Agree: 0.298 | Weights: (1.00,0.00,0.00) | CleanCount: 4255/5000 | ActualTrainClean: 0.725 (3083/4255) | ActualCleanInRound: 3108 | CleanRecall: 0.992 | MissedClean: 25 | FalseClean: 1172 | TotalWrong: 1197 | RecoveryTrigger: 0
+
+==================== Round 180 ====================
+  --> [Edge 01] clients=10 loss=0.8152 core=0.867 recover=0.007 train=0.867 agree=0.317 CleanCount=4335/5000 ActualTrainClean=0.725 CleanRecall=0.942 MissedClean=192 FalseClean=1191 TotalWrong=1383 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 38.80% | Global Loss: 2.3032 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8152 | CoreClean: 0.867 | Recover: 0.007 | TrainRatio: 0.867 | Agree: 0.317 | Weights: (1.00,0.00,0.00) | CleanCount: 4335/5000 | ActualTrainClean: 0.725 (3144/4335) | ActualCleanInRound: 3336 | CleanRecall: 0.942 | MissedClean: 192 | FalseClean: 1191 | TotalWrong: 1383 | RecoveryTrigger: 1
+
+==================== Round 181 ====================
+  --> [Edge 01] clients=10 loss=0.8009 core=0.758 recover=0.000 train=0.758 agree=0.369 CleanCount=3789/5000 ActualTrainClean=0.747 CleanRecall=0.882 MissedClean=378 FalseClean=959 TotalWrong=1337 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 33.93% | Global Loss: 2.3690 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8009 | CoreClean: 0.758 | Recover: 0.000 | TrainRatio: 0.758 | Agree: 0.369 | Weights: (1.00,0.00,0.00) | CleanCount: 3789/5000 | ActualTrainClean: 0.747 (2830/3789) | ActualCleanInRound: 3208 | CleanRecall: 0.882 | MissedClean: 378 | FalseClean: 959 | TotalWrong: 1337 | RecoveryTrigger: 0
+
+==================== Round 182 ====================
+  --> [Edge 01] clients=10 loss=1.5006 core=0.869 recover=0.000 train=0.869 agree=0.346 CleanCount=4345/5000 ActualTrainClean=0.429 CleanRecall=0.910 MissedClean=185 FalseClean=2482 TotalWrong=2667 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 35.02% | Global Loss: 2.3867 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.5006 | CoreClean: 0.869 | Recover: 0.000 | TrainRatio: 0.869 | Agree: 0.346 | Weights: (1.00,0.00,0.00) | CleanCount: 4345/5000 | ActualTrainClean: 0.429 (1863/4345) | ActualCleanInRound: 2048 | CleanRecall: 0.910 | MissedClean: 185 | FalseClean: 2482 | TotalWrong: 2667 | RecoveryTrigger: 0
+
+==================== Round 183 ====================
+  --> [Edge 01] clients=10 loss=1.1199 core=0.892 recover=0.000 train=0.892 agree=0.410 CleanCount=4461/5000 ActualTrainClean=0.597 CleanRecall=0.975 MissedClean=67 FalseClean=1796 TotalWrong=1863 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 27.40% | Global Loss: 2.5226 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1199 | CoreClean: 0.892 | Recover: 0.000 | TrainRatio: 0.892 | Agree: 0.410 | Weights: (1.00,0.00,0.00) | CleanCount: 4461/5000 | ActualTrainClean: 0.597 (2665/4461) | ActualCleanInRound: 2732 | CleanRecall: 0.975 | MissedClean: 67 | FalseClean: 1796 | TotalWrong: 1863 | RecoveryTrigger: 0
+
+==================== Round 184 ====================
+  --> [Edge 01] clients=10 loss=1.2287 core=0.843 recover=0.000 train=0.843 agree=0.252 CleanCount=4216/5000 ActualTrainClean=0.547 CleanRecall=0.875 MissedClean=329 FalseClean=1909 TotalWrong=2238 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 29.70% | Global Loss: 2.4619 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2287 | CoreClean: 0.843 | Recover: 0.000 | TrainRatio: 0.843 | Agree: 0.252 | Weights: (1.00,0.00,0.00) | CleanCount: 4216/5000 | ActualTrainClean: 0.547 (2307/4216) | ActualCleanInRound: 2636 | CleanRecall: 0.875 | MissedClean: 329 | FalseClean: 1909 | TotalWrong: 2238 | RecoveryTrigger: 0
+
+==================== Round 185 ====================
+  --> [Edge 01] clients=10 loss=0.6965 core=0.803 recover=0.003 train=0.803 agree=0.309 CleanCount=4017/5000 ActualTrainClean=0.813 CleanRecall=0.873 MissedClean=474 FalseClean=751 TotalWrong=1225 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 32.29% | Global Loss: 2.4647 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.6965 | CoreClean: 0.803 | Recover: 0.003 | TrainRatio: 0.803 | Agree: 0.309 | Weights: (1.00,0.00,0.00) | CleanCount: 4017/5000 | ActualTrainClean: 0.813 (3266/4017) | ActualCleanInRound: 3740 | CleanRecall: 0.873 | MissedClean: 474 | FalseClean: 751 | TotalWrong: 1225 | RecoveryTrigger: 1
+
+==================== Round 186 ====================
+  --> [Edge 01] clients=10 loss=0.8995 core=0.841 recover=0.000 train=0.841 agree=0.280 CleanCount=4207/5000 ActualTrainClean=0.726 CleanRecall=0.923 MissedClean=255 FalseClean=1154 TotalWrong=1409 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 22.98% | Global Loss: 2.6815 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8995 | CoreClean: 0.841 | Recover: 0.000 | TrainRatio: 0.841 | Agree: 0.280 | Weights: (1.00,0.00,0.00) | CleanCount: 4207/5000 | ActualTrainClean: 0.726 (3053/4207) | ActualCleanInRound: 3308 | CleanRecall: 0.923 | MissedClean: 255 | FalseClean: 1154 | TotalWrong: 1409 | RecoveryTrigger: 0
+
+==================== Round 187 ====================
+  --> [Edge 01] clients=10 loss=1.0397 core=0.767 recover=0.000 train=0.767 agree=0.241 CleanCount=3835/5000 ActualTrainClean=0.613 CleanRecall=0.762 MissedClean=733 FalseClean=1484 TotalWrong=2217 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.51% | Global Loss: 2.5164 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0397 | CoreClean: 0.767 | Recover: 0.000 | TrainRatio: 0.767 | Agree: 0.241 | Weights: (1.00,0.00,0.00) | CleanCount: 3835/5000 | ActualTrainClean: 0.613 (2351/3835) | ActualCleanInRound: 3084 | CleanRecall: 0.762 | MissedClean: 733 | FalseClean: 1484 | TotalWrong: 2217 | RecoveryTrigger: 0
+
+==================== Round 188 ====================
+  --> [Edge 01] clients=10 loss=1.3172 core=0.847 recover=0.000 train=0.847 agree=0.300 CleanCount=4234/5000 ActualTrainClean=0.553 CleanRecall=0.863 MissedClean=371 FalseClean=1893 TotalWrong=2264 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 28.96% | Global Loss: 2.5146 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3172 | CoreClean: 0.847 | Recover: 0.000 | TrainRatio: 0.847 | Agree: 0.300 | Weights: (1.00,0.00,0.00) | CleanCount: 4234/5000 | ActualTrainClean: 0.553 (2341/4234) | ActualCleanInRound: 2712 | CleanRecall: 0.863 | MissedClean: 371 | FalseClean: 1893 | TotalWrong: 2264 | RecoveryTrigger: 0
+
+==================== Round 189 ====================
+  --> [Edge 01] clients=10 loss=1.0821 core=0.798 recover=0.000 train=0.798 agree=0.315 CleanCount=3992/5000 ActualTrainClean=0.641 CleanRecall=0.851 MissedClean=448 FalseClean=1432 TotalWrong=1880 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.28% | Global Loss: 2.4409 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0821 | CoreClean: 0.798 | Recover: 0.000 | TrainRatio: 0.798 | Agree: 0.315 | Weights: (1.00,0.00,0.00) | CleanCount: 3992/5000 | ActualTrainClean: 0.641 (2560/3992) | ActualCleanInRound: 3008 | CleanRecall: 0.851 | MissedClean: 448 | FalseClean: 1432 | TotalWrong: 1880 | RecoveryTrigger: 0
+
+==================== Round 190 ====================
+  --> [Edge 01] clients=10 loss=0.7727 core=0.873 recover=0.004 train=0.873 agree=0.415 CleanCount=4364/5000 ActualTrainClean=0.782 CleanRecall=0.965 MissedClean=125 FalseClean=953 TotalWrong=1078 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 33.18% | Global Loss: 2.4237 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.7727 | CoreClean: 0.873 | Recover: 0.004 | TrainRatio: 0.873 | Agree: 0.415 | Weights: (1.00,0.00,0.00) | CleanCount: 4364/5000 | ActualTrainClean: 0.782 (3411/4364) | ActualCleanInRound: 3536 | CleanRecall: 0.965 | MissedClean: 125 | FalseClean: 953 | TotalWrong: 1078 | RecoveryTrigger: 1
+
+==================== Round 191 ====================
+  --> [Edge 01] clients=10 loss=0.9487 core=0.809 recover=0.000 train=0.809 agree=0.314 CleanCount=4046/5000 ActualTrainClean=0.686 CleanRecall=0.868 MissedClean=421 FalseClean=1271 TotalWrong=1692 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 36.10% | Global Loss: 2.3719 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9487 | CoreClean: 0.809 | Recover: 0.000 | TrainRatio: 0.809 | Agree: 0.314 | Weights: (1.00,0.00,0.00) | CleanCount: 4046/5000 | ActualTrainClean: 0.686 (2775/4046) | ActualCleanInRound: 3196 | CleanRecall: 0.868 | MissedClean: 421 | FalseClean: 1271 | TotalWrong: 1692 | RecoveryTrigger: 0
+
+==================== Round 192 ====================
+  --> [Edge 01] clients=10 loss=1.1866 core=0.839 recover=0.000 train=0.839 agree=0.370 CleanCount=4193/5000 ActualTrainClean=0.591 CleanRecall=0.842 MissedClean=465 FalseClean=1714 TotalWrong=2179 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 31.94% | Global Loss: 2.4526 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1866 | CoreClean: 0.839 | Recover: 0.000 | TrainRatio: 0.839 | Agree: 0.370 | Weights: (1.00,0.00,0.00) | CleanCount: 4193/5000 | ActualTrainClean: 0.591 (2479/4193) | ActualCleanInRound: 2944 | CleanRecall: 0.842 | MissedClean: 465 | FalseClean: 1714 | TotalWrong: 2179 | RecoveryTrigger: 0
+
+==================== Round 193 ====================
+  --> [Edge 01] clients=10 loss=0.9397 core=0.827 recover=0.000 train=0.827 agree=0.349 CleanCount=4137/5000 ActualTrainClean=0.698 CleanRecall=0.927 MissedClean=229 FalseClean=1250 TotalWrong=1479 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 34.83% | Global Loss: 2.4540 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9397 | CoreClean: 0.827 | Recover: 0.000 | TrainRatio: 0.827 | Agree: 0.349 | Weights: (1.00,0.00,0.00) | CleanCount: 4137/5000 | ActualTrainClean: 0.698 (2887/4137) | ActualCleanInRound: 3116 | CleanRecall: 0.927 | MissedClean: 229 | FalseClean: 1250 | TotalWrong: 1479 | RecoveryTrigger: 0
+
+==================== Round 194 ====================
+  --> [Edge 01] clients=10 loss=0.9686 core=0.827 recover=0.000 train=0.827 agree=0.394 CleanCount=4133/5000 ActualTrainClean=0.682 CleanRecall=0.892 MissedClean=342 FalseClean=1315 TotalWrong=1657 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 34.22% | Global Loss: 2.3966 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.9686 | CoreClean: 0.827 | Recover: 0.000 | TrainRatio: 0.827 | Agree: 0.394 | Weights: (1.00,0.00,0.00) | CleanCount: 4133/5000 | ActualTrainClean: 0.682 (2818/4133) | ActualCleanInRound: 3160 | CleanRecall: 0.892 | MissedClean: 342 | FalseClean: 1315 | TotalWrong: 1657 | RecoveryTrigger: 0
+
+==================== Round 195 ====================
+  --> [Edge 01] clients=10 loss=1.1136 core=0.866 recover=0.004 train=0.866 agree=0.304 CleanCount=4329/5000 ActualTrainClean=0.639 CleanRecall=0.901 MissedClean=305 FalseClean=1562 TotalWrong=1867 trigger=1 weights=(1.00,0.00,0.00)
+Global Acc: 33.91% | Global Loss: 2.4141 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.1136 | CoreClean: 0.866 | Recover: 0.004 | TrainRatio: 0.866 | Agree: 0.304 | Weights: (1.00,0.00,0.00) | CleanCount: 4329/5000 | ActualTrainClean: 0.639 (2767/4329) | ActualCleanInRound: 3072 | CleanRecall: 0.901 | MissedClean: 305 | FalseClean: 1562 | TotalWrong: 1867 | RecoveryTrigger: 1
+
+==================== Round 196 ====================
+  --> [Edge 01] clients=10 loss=1.3131 core=0.876 recover=0.000 train=0.876 agree=0.286 CleanCount=4381/5000 ActualTrainClean=0.570 CleanRecall=0.941 MissedClean=156 FalseClean=1885 TotalWrong=2041 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 25.52% | Global Loss: 2.5686 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.3131 | CoreClean: 0.876 | Recover: 0.000 | TrainRatio: 0.876 | Agree: 0.286 | Weights: (1.00,0.00,0.00) | CleanCount: 4381/5000 | ActualTrainClean: 0.570 (2496/4381) | ActualCleanInRound: 2652 | CleanRecall: 0.941 | MissedClean: 156 | FalseClean: 1885 | TotalWrong: 2041 | RecoveryTrigger: 0
+
+==================== Round 197 ====================
+  --> [Edge 01] clients=10 loss=0.8170 core=0.861 recover=0.000 train=0.861 agree=0.284 CleanCount=4306/5000 ActualTrainClean=0.740 CleanRecall=0.973 MissedClean=87 FalseClean=1121 TotalWrong=1208 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 30.88% | Global Loss: 2.5439 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 0.8170 | CoreClean: 0.861 | Recover: 0.000 | TrainRatio: 0.861 | Agree: 0.284 | Weights: (1.00,0.00,0.00) | CleanCount: 4306/5000 | ActualTrainClean: 0.740 (3185/4306) | ActualCleanInRound: 3272 | CleanRecall: 0.973 | MissedClean: 87 | FalseClean: 1121 | TotalWrong: 1208 | RecoveryTrigger: 0
+
+==================== Round 198 ====================
+  --> [Edge 01] clients=10 loss=1.0789 core=0.790 recover=0.000 train=0.790 agree=0.166 CleanCount=3950/5000 ActualTrainClean=0.630 CleanRecall=0.862 MissedClean=398 FalseClean=1460 TotalWrong=1858 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 26.49% | Global Loss: 2.6088 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.0789 | CoreClean: 0.790 | Recover: 0.000 | TrainRatio: 0.790 | Agree: 0.166 | Weights: (1.00,0.00,0.00) | CleanCount: 3950/5000 | ActualTrainClean: 0.630 (2490/3950) | ActualCleanInRound: 2888 | CleanRecall: 0.862 | MissedClean: 398 | FalseClean: 1460 | TotalWrong: 1858 | RecoveryTrigger: 0
+
+==================== Round 199 ====================
+  --> [Edge 01] clients=10 loss=1.2665 core=0.901 recover=0.000 train=0.901 agree=0.214 CleanCount=4507/5000 ActualTrainClean=0.593 CleanRecall=0.939 MissedClean=175 FalseClean=1834 TotalWrong=2009 trigger=0 weights=(1.00,0.00,0.00)
+Global Acc: 32.28% | Global Loss: 2.4308 | Rec APA: 0.00% | Personal APA: 0.00% | Train Loss: 1.2665 | CoreClean: 0.901 | Recover: 0.000 | TrainRatio: 0.901 | Agree: 0.214 | Weights: (1.00,0.00,0.00) | CleanCount: 4507/5000 | ActualTrainClean: 0.593 (2673/4507) | ActualCleanInRound: 2848 | CleanRecall: 0.939 | MissedClean: 175 | FalseClean: 1834 | TotalWrong: 2009 | RecoveryTrigger: 0

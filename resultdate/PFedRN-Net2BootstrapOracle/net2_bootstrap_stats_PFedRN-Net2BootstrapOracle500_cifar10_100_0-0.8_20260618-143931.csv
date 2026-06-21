@@ -1,0 +1,1 @@
+epoch,client_id,net2_clean_count,net2_precision,net2_recall,net2_false_clean,net2_missed_clean,true_clean_count,total_count,best_epoch,best_holdout_acc

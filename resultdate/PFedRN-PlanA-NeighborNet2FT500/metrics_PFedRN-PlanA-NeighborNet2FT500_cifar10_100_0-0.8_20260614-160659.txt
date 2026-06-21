@@ -1,0 +1,1 @@
+epoch,global_test_acc,global_test_loss,train_loss,clean_ratio,net2_holdout_acc,net2_holdout_loss

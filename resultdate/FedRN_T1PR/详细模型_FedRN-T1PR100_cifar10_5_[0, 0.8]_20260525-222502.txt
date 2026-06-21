@@ -1,0 +1,79 @@
+Experiment Start: 20260525-222502
+Args: Namespace(T=0.5, all_clients=False, alpha=1.2, beta=0.8, bs=128, dataset='cifar10', dd_alpha=0.5, device=device(type='cuda', index=0), epochs=100, exp_method='FedRN-T1PR', fed_method='fedavg', feder_exp_weight=0.6, forget_rate=0.2, frac=0.1, gpu=0, group_noise_rate=[(0, 0.8)], iid=False, img_size=32, labeling='soft', lambda_u=25, local_bs=50, local_ep=1, lr=0.01, lr_decay=0.1, method='fedrn_t1pr', mm_alpha=4, model='cnn4conv', momentum=0.5, neighbor_scope='global', noise_group_num=[100], noise_type_lst=['symmetric'], num_channels=3, num_classes=10, num_edges=1, num_neighbors=1, num_shards=500, num_users=100, num_workers=0, p_threshold=0.5, partition='shard', pfl_agree_weight=0.15, pfl_local_weight=0.3, pfl_personal_ep=1, queue_size=15, recover_ep=1, recover_interval=5, recover_max_ratio=0.3, recover_threshold=0.6, recover_train_global=1, schedule=[], seed=1, send_2_models=False, split='user', uncertainty_threshold=0.05, verbose=False, w_alpha=0.5, warmup_epochs=5, weight_decay=0)
+================================================================================
+
+==================== Round   0 ====================
+  --> [Edge 01] clients=10 loss=2.1665 core=1.000 recover=0.000 train=1.000 CleanCount=5000/5000 ActualTrainClean=0.549 trigger=0
+Global Acc: 20.35% | Global Loss: 2.2046 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 2.1665 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | CleanCount: 5000/5000 | ActualTrainClean: 0.549 (2744/5000) | RecoveryTrigger: 0
+
+==================== Round   1 ====================
+  --> [Edge 01] clients=10 loss=1.9537 core=1.000 recover=0.000 train=1.000 CleanCount=5000/5000 ActualTrainClean=0.657 trigger=0
+Global Acc: 23.56% | Global Loss: 2.1102 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.9537 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | CleanCount: 5000/5000 | ActualTrainClean: 0.657 (3284/5000) | RecoveryTrigger: 0
+
+==================== Round   2 ====================
+  --> [Edge 01] clients=10 loss=1.9863 core=1.000 recover=0.000 train=1.000 CleanCount=5000/5000 ActualTrainClean=0.592 trigger=0
+Global Acc: 19.21% | Global Loss: 2.1453 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.9863 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | CleanCount: 5000/5000 | ActualTrainClean: 0.592 (2960/5000) | RecoveryTrigger: 0
+
+==================== Round   3 ====================
+  --> [Edge 01] clients=10 loss=1.9308 core=1.000 recover=0.000 train=1.000 CleanCount=5000/5000 ActualTrainClean=0.606 trigger=0
+Global Acc: 28.19% | Global Loss: 2.0354 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.9308 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | CleanCount: 5000/5000 | ActualTrainClean: 0.606 (3028/5000) | RecoveryTrigger: 0
+
+==================== Round   4 ====================
+  --> [Edge 01] clients=10 loss=2.0882 core=1.000 recover=0.000 train=1.000 CleanCount=5000/5000 ActualTrainClean=0.525 trigger=0
+Global Acc: 29.40% | Global Loss: 2.0353 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 2.0882 | CoreClean: 1.000 | Recover: 0.000 | TrainRatio: 1.000 | CleanCount: 5000/5000 | ActualTrainClean: 0.525 (2624/5000) | RecoveryTrigger: 0
+
+==================== Round   5 ====================
+  --> [Edge 01] clients=10 loss=1.5214 core=0.551 recover=0.120 train=0.671 CleanCount=3354/5000 ActualTrainClean=0.738 trigger=1
+Global Acc: 23.91% | Global Loss: 2.1431 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.5214 | CoreClean: 0.551 | Recover: 0.120 | TrainRatio: 0.671 | CleanCount: 3354/5000 | ActualTrainClean: 0.738 (2514/3354) | RecoveryTrigger: 1
+
+==================== Round   6 ====================
+  --> [Edge 01] clients=10 loss=1.3333 core=0.535 recover=0.000 train=0.535 CleanCount=2674/5000 ActualTrainClean=0.723 trigger=0
+Global Acc: 25.94% | Global Loss: 2.1452 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.3333 | CoreClean: 0.535 | Recover: 0.000 | TrainRatio: 0.535 | CleanCount: 2674/5000 | ActualTrainClean: 0.723 (1897/2674) | RecoveryTrigger: 0
+
+==================== Round   7 ====================
+  --> [Edge 01] clients=10 loss=1.3464 core=0.668 recover=0.000 train=0.668 CleanCount=3339/5000 ActualTrainClean=0.690 trigger=0
+Global Acc: 22.69% | Global Loss: 2.3368 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.3464 | CoreClean: 0.668 | Recover: 0.000 | TrainRatio: 0.668 | CleanCount: 3339/5000 | ActualTrainClean: 0.690 (2390/3339) | RecoveryTrigger: 0
+
+==================== Round   8 ====================
+  --> [Edge 01] clients=10 loss=1.3301 core=0.682 recover=0.000 train=0.682 CleanCount=3410/5000 ActualTrainClean=0.760 trigger=0
+Global Acc: 25.71% | Global Loss: 2.3069 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.3301 | CoreClean: 0.682 | Recover: 0.000 | TrainRatio: 0.682 | CleanCount: 3410/5000 | ActualTrainClean: 0.760 (2587/3410) | RecoveryTrigger: 0
+
+==================== Round   9 ====================
+  --> [Edge 01] clients=10 loss=1.4825 core=0.651 recover=0.000 train=0.651 CleanCount=3255/5000 ActualTrainClean=0.669 trigger=0
+Global Acc: 30.29% | Global Loss: 2.2616 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.4825 | CoreClean: 0.651 | Recover: 0.000 | TrainRatio: 0.651 | CleanCount: 3255/5000 | ActualTrainClean: 0.669 (2092/3255) | RecoveryTrigger: 0
+
+==================== Round  10 ====================
+  --> [Edge 01] clients=10 loss=1.8209 core=0.721 recover=0.026 train=0.747 CleanCount=3733/5000 ActualTrainClean=0.569 trigger=1
+Global Acc: 28.82% | Global Loss: 2.2167 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.8209 | CoreClean: 0.721 | Recover: 0.026 | TrainRatio: 0.747 | CleanCount: 3733/5000 | ActualTrainClean: 0.569 (2104/3733) | RecoveryTrigger: 1
+
+==================== Round  11 ====================
+  --> [Edge 01] clients=10 loss=1.5886 core=0.775 recover=0.000 train=0.775 CleanCount=3873/5000 ActualTrainClean=0.669 trigger=0
+Global Acc: 33.19% | Global Loss: 2.1980 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.5886 | CoreClean: 0.775 | Recover: 0.000 | TrainRatio: 0.775 | CleanCount: 3873/5000 | ActualTrainClean: 0.669 (2650/3873) | RecoveryTrigger: 0
+
+==================== Round  12 ====================
+  --> [Edge 01] clients=10 loss=1.4546 core=0.679 recover=0.000 train=0.679 CleanCount=3394/5000 ActualTrainClean=0.709 trigger=0
+Global Acc: 33.37% | Global Loss: 2.2240 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.4546 | CoreClean: 0.679 | Recover: 0.000 | TrainRatio: 0.679 | CleanCount: 3394/5000 | ActualTrainClean: 0.709 (2408/3394) | RecoveryTrigger: 0
+
+==================== Round  13 ====================
+  --> [Edge 01] clients=10 loss=1.6030 core=0.790 recover=0.000 train=0.790 CleanCount=3952/5000 ActualTrainClean=0.649 trigger=0
+Global Acc: 32.42% | Global Loss: 2.3133 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.6030 | CoreClean: 0.790 | Recover: 0.000 | TrainRatio: 0.790 | CleanCount: 3952/5000 | ActualTrainClean: 0.649 (2565/3952) | RecoveryTrigger: 0
+
+==================== Round  14 ====================
+  --> [Edge 01] clients=10 loss=1.4357 core=0.680 recover=0.000 train=0.680 CleanCount=3402/5000 ActualTrainClean=0.687 trigger=0
+Global Acc: 33.04% | Global Loss: 2.3202 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.4357 | CoreClean: 0.680 | Recover: 0.000 | TrainRatio: 0.680 | CleanCount: 3402/5000 | ActualTrainClean: 0.687 (2281/3402) | RecoveryTrigger: 0
+
+==================== Round  15 ====================
+  --> [Edge 01] clients=10 loss=1.6964 core=0.802 recover=0.020 train=0.821 CleanCount=4107/5000 ActualTrainClean=0.656 trigger=1
+Global Acc: 30.41% | Global Loss: 2.2858 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.6964 | CoreClean: 0.802 | Recover: 0.020 | TrainRatio: 0.821 | CleanCount: 4107/5000 | ActualTrainClean: 0.656 (2678/4107) | RecoveryTrigger: 1
+
+==================== Round  16 ====================
+  --> [Edge 01] clients=10 loss=1.7865 core=0.694 recover=0.000 train=0.694 CleanCount=3468/5000 ActualTrainClean=0.507 trigger=0
+Global Acc: 28.66% | Global Loss: 2.3708 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.7865 | CoreClean: 0.694 | Recover: 0.000 | TrainRatio: 0.694 | CleanCount: 3468/5000 | ActualTrainClean: 0.507 (1754/3468) | RecoveryTrigger: 0
+
+==================== Round  17 ====================
+  --> [Edge 01] clients=10 loss=1.6708 core=0.728 recover=0.000 train=0.728 CleanCount=3639/5000 ActualTrainClean=0.575 trigger=0
+Global Acc: 30.82% | Global Loss: 2.3855 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.6708 | CoreClean: 0.728 | Recover: 0.000 | TrainRatio: 0.728 | CleanCount: 3639/5000 | ActualTrainClean: 0.575 (2032/3639) | RecoveryTrigger: 0
+
+==================== Round  18 ====================
+  --> [Edge 01] clients=10 loss=1.7295 core=0.811 recover=0.000 train=0.811 CleanCount=4055/5000 ActualTrainClean=0.604 trigger=0
+Global Acc: 31.09% | Global Loss: 2.4028 | Aux APA: 0.00% | Aux Loss: 0.0000 | Train Loss: 1.7295 | CoreClean: 0.811 | Recover: 0.000 | TrainRatio: 0.811 | CleanCount: 4055/5000 | ActualTrainClean: 0.604 (2505/4055) | RecoveryTrigger: 0
