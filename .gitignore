@@ -36,3 +36,26 @@ outputs/
 *.bak
 .DS_Store
 Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Data and logs
+data/
+logs/
+*.tar.gz
+*.gz
+*.zip
+*.pth
+*.pt
+*.pkl
+*.npy
+
+# System
+.DS_Store
